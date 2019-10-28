@@ -1,3 +1,5 @@
+require 'net/http'
+
 ##
 # Type d'API.
 
