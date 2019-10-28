@@ -2,8 +2,8 @@
 # Type d'API.
 
 module ApiType
-	TWITTER = 1 		##< Twitter
-	# MASTODON = 2		##< Mastodon
+	## Twitter
+	TWITTER = 1
 end
 
 ##
@@ -29,9 +29,6 @@ class Api
 		when ApiType::TWITTER
 			@instance = "twitter.com"
 			@urlBase = "https://api.twitter.com/"
-		else
-			@instance = nomInstance
-			@urlBase = "https://" + @instance + "/"
 		end
 	end
 end
