@@ -39,13 +39,13 @@ class Api
 		when ApiType::TWITTER
 			@instance = "twitter.com"
 			@url_base = "https://api.twitter.com"
-			twitter_auth(cleApi, cleSecret)
+			auth_initiale_twitter(cleApi, cleSecret)
 		end
 	end
 	
 	private
 	
-	def twitter_first_auth(cleApi, cleSecret)
+	def auth_initiale_twitter(cleApi, cleSecret)
 		
 		consumer = OAuth::Consumer.new(cleApi,
 		                               cleSecret,
