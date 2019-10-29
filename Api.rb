@@ -1,4 +1,3 @@
-require 'net/http'
 require 'oauth'
 require 'json'
 
@@ -16,10 +15,11 @@ end
 
 class Api
 	
-	attr_reader :type, :instance
+	## Type du réseau social, voir ApiType
+	attr :type, false
+	## Nom de domaine du réseau social (ex : twitter.com, mastodon.social)
+	attr :instance, false
 	
-	# @type			=> Type de réseau social, voir ApiType
-	# @instance		=> Nom de domaine du réseau social (ex : twitter.com)
 	# @url_base		=> URL de base de l'API (ex : https://api.twitter.com)
 	# @session		=> Stockage des tokens
 	# @access_token	=> Token d'accès à l'API
@@ -41,6 +41,9 @@ class Api
 	                  cle_secret)
 		new(type, nom_instance, cle_api, cle_secret)
 	end
+	
+	##
+	# Elle est privée normalement elle
 	
 	def initialize(type, nom_instance, cle_api, cle_secret)
 		@session = Hash.new
