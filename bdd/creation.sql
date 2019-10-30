@@ -1,0 +1,133 @@
+CREATE TABLE accroche (
+	id SERIAL PRIMARY KEY,
+	accroche VARCHAR(280) NOT NULL,
+	poids INTEGER NOT NULL DEFAULT 10
+);
+
+CREATE TABLE structure (
+	id SERIAL PRIMARY KEY,
+	structure VARCHAR(280) NOT NULL,
+	poids INTEGER NOT NULL DEFAULT 10
+);
+
+CREATE TYPE genre AS ENUM ('M', 'F');
+
+CREATE TABLE pers (
+	id SERIAL PRIMARY KEY,
+	description VARCHAR(280),
+	poids INTEGER NOT NULL DEFAULT 10,
+	genre GENRE NOT NULL
+);
+
+CREATE TABLE nom_pers (
+	id SERIAL PRIMARY KEY,
+	nom VARCHAR(280) NOT NULL,
+	poids INTEGER NOT NULL DEFAULT 10,
+	id_pers INTEGER NOT NULL REFERENCES pers(id)
+
+);
+
+CREATE TABLE surnom (
+	id SERIAL PRIMARY KEY,
+	surnom VARCHAR(240) NOT NULL,
+	poids INTEGER NOT NULL DEFAULT 10,
+	id_pers INTEGER NOT NULL REFERENCES pers(id)
+);
+
+CREATE TABLE nom_colle (
+	id SERIAL PRIMARY KEY,
+	nom VARCHAR(280) NOT NULL,
+	poids INTEGER NOT NULL DEFAULT 10,
+	id_pers INTEGER NOT NULL REFERENCES pers(id)
+);
+
+CREATE TABLE parti (
+	id SERIAL PRIMARY KEY,
+	parti VARCHAR(280) NOT NULL,
+	poids INTEGER NOT NULL DEFAULT 10,
+	adjm VARCHAR(280),
+	adjf VARCHAR(280)
+);
+
+CREATE TABLE media (
+	id SERIAL PRIMARY KEY,
+	media VARCHAR(280) NOT NULL,
+	poids INTEGER NOT NULL DEFAULT 10
+);
+
+CREATE TABLE date (
+	id SERIAL PRIMARY KEY,
+	date VARCHAR(280) NOT NULL,
+	poids INTEGER NOT NULL DEFAULT 10
+);
+
+CREATE TABLE lieu (
+	id SERIAL PRIMARY KEY,
+	lieu VARCHAR(280) NOT NULL,
+	poids INTEGER NOT NULL DEFAULT 10
+);
+
+CREATE TYPE type_localite AS ENUM ('ville', 'pays', 'region');
+
+CREATE TABLE localite (
+	id SERIAL PRIMARY KEY,
+	localite VARCHAR(280) NOT NULL,
+	poids INTEGER NOT NULL DEFAULT 10,
+	adjm VARCHAR(280),
+	adjf VARCHAR(280),
+	departement VARCHAR(280),
+	type TYPE_LOCALITE NOT NULL
+);
+
+CREATE TYPE type_circo AS ENUM (
+	'specifique',
+	'universel',
+	'accuse',
+	'est_accuse'
+);
+
+CREATE TABLE info (
+	id SERIAL PRIMARY KEY,
+	type VARCHAR(280) NOT NULL,
+	description VARCHAR(280),
+	type_circo TYPE_CIRCO NOT NULL
+);
+
+CREATE TABLE action (
+	id SERIAL PRIMARY KEY,
+	action VARCHAR(280) NOT NULL,
+	poids INTEGER NOT NULL DEFAULT 10,
+	id_info INTEGER NOT NULL REFERENCES info(id)
+);
+
+CREATE TABLE circo (
+	id SERIAL PRIMARY KEY,
+	circo VARCHAR(280) NOT NULL,
+	poids INTEGER NOT NULL DEFAULT 10,
+	type TYPE_CIRCO NOT NULL,
+	id_info INTEGER REFERENCES info(id)
+);
+
+CREATE TABLE decla (
+	id SERIAL PRIMARY KEY,
+	decla VARCHAR(280) NOT NULL,
+	poids INTEGER NOT NULL DEFAULT 10,
+	id_info REFERENCES info(id)
+);
+
+CREATE TYPE type_app AS ENUM ('twitter', 'mastodon');
+
+CREATE TABLE application (
+	id SERIAL PRIMARY KEY,
+	type TYPE_APP NOT NULL,
+	domaine VARCHAR(64) UNIQUE NOT NULL,
+	oauth_token VARCHAR(256),
+	oauth_token_secret VARCHAR(256)
+);
+
+CREATE TABLE historique (
+	id BIGINT NOT NULL,
+	id_app INTEGER REFERENCES application(id),
+	PRIMARY KEY (id, id_app),
+	date TIMESTAMPTZ NOT NULL
+);
