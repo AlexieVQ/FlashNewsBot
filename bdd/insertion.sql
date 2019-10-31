@@ -202,7 +202,6 @@ INSERT INTO pers(nom_colle, genre, poids) VALUES
 	('Internet', 'M', 10),
 	('Plantu', 'M', 10),
 	('YannMoix', 'M', 10),
-	('Prantu', 'M', 10),
 	('AlainTeub', 'M', 2),
 	('BakariKonté', 'M', 2),
 	('DimitriCrackers', 'M', 2),
