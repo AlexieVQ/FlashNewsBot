@@ -444,7 +444,7 @@ INSERT INTO nom_pers(id_pers, nom) VALUES
 	((SELECT id FROM pers WHERE nom_colle = 'GiletJaune'), 'un gilet jaune'),
 	((SELECT id FROM pers WHERE nom_colle = 'Thanos'), 'Thanos'),
 	((SELECT id FROM pers WHERE nom_colle = 'InventeurDuDab'), 'l’inventeur du dab'),
-	((SELECT id FROM pers WHERE nom_colle = '{inventeur_dab.nom_colle}'), 'l’inventeur du dab {inventeur_dab=pers}{inventeur_dab.nom(0)}'),
+	((SELECT id FROM pers WHERE nom_colle = '{inventeur_dab.nom_colle}'), 'l’inventeur du dab {inventeur_dab=pers(M)}{inventeur_dab.nom(0)}'),
 	((SELECT id FROM pers WHERE nom_colle = 'AdministrateurDeLaPageGiletsJaunes'), 'l’administrateur de la page Gilets Jaunes {rand(15,17,18,19,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83)}'),
 	((SELECT id FROM pers WHERE nom_colle = 'AdministrateurDeLaPageGiletsJaunes'), 'l’administrateur de la page Gilets Jaunes {loc_gj=localite(ville,region)}{loc_gj.nom(de)}'),
 	((SELECT id FROM pers WHERE nom_colle = 'AdministrateurDeLaPageGiletsJaunes'), 'l’administrateur de la page Gilets Jaunes {loc_gj=localite(ville)}{loc_gj.nom(de)} ({loc_gj.departement})'),
