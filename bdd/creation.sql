@@ -20,7 +20,7 @@ CREATE TYPE genre AS ENUM ('M', 'F');
 -- Personne
 CREATE TABLE pers (
 	id SERIAL PRIMARY KEY,
-	description VARCHAR(280),
+	nom_colle VARCHAR(280) UNIQUE NOT NULL,
 	poids INTEGER NOT NULL DEFAULT 10,
 	genre GENRE NOT NULL
 );
@@ -42,18 +42,11 @@ CREATE TABLE surnom (
 	id_pers INTEGER NOT NULL REFERENCES pers(id)
 );
 
--- Nom d'une personne à utiliser dans un hashtag
-CREATE TABLE nom_colle (
-	id SERIAL PRIMARY KEY,
-	nom VARCHAR(280) NOT NULL,
-	poids INTEGER NOT NULL DEFAULT 10,
-	id_pers INTEGER NOT NULL REFERENCES pers(id)
-);
-
 -- Parti politique ou syndicat
 CREATE TABLE parti (
 	id SERIAL PRIMARY KEY,
-	parti VARCHAR(280) NOT NULL,
+	nom VARCHAR(280) NOT NULL,
+	sigle VARCHAR(280) NOT NULL,
 	poids INTEGER NOT NULL DEFAULT 10,
 	adjm VARCHAR(280),
 	adjf VARCHAR(280)
@@ -62,7 +55,7 @@ CREATE TABLE parti (
 -- Média (papier, TV, radio, internet…)
 CREATE TABLE media (
 	id SERIAL PRIMARY KEY,
-	media VARCHAR(280) NOT NULL,
+	nom VARCHAR(280) NOT NULL,
 	poids INTEGER NOT NULL DEFAULT 10
 );
 
@@ -86,7 +79,8 @@ CREATE TYPE type_localite AS ENUM ('ville', 'pays', 'region');
 -- Localité (ville, pays, région)
 CREATE TABLE localite (
 	id SERIAL PRIMARY KEY,
-	localite VARCHAR(280) NOT NULL,
+	nom VARCHAR(280) NOT NULL,
+	nom_colle VARCHAR(280) NOT NULL,
 	poids INTEGER NOT NULL DEFAULT 10,
 	adjm VARCHAR(280),
 	adjf VARCHAR(280),
@@ -133,7 +127,7 @@ CREATE TABLE decla (
 	id SERIAL PRIMARY KEY,
 	decla VARCHAR(280) NOT NULL,
 	poids INTEGER NOT NULL DEFAULT 10,
-	id_info REFERENCES info(id)
+	id_info INTEGER REFERENCES info(id)
 );
 
 -- Type du réseau social
