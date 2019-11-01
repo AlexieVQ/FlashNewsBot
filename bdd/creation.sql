@@ -27,6 +27,7 @@ CREATE TABLE localite (
 	adjm VARCHAR(280),
 	adjf VARCHAR(280),
 	departement VARCHAR(280),
+	emoji VARCHAR(8),
 	type TYPE_LOCALITE NOT NULL
 );
 
@@ -115,7 +116,8 @@ CREATE TABLE info (
 	description VARCHAR(280) UNIQUE,	-- Pour faciliter la lecture de la base,
 										-- non utilisé par le bot
 	type_circo TYPE_CIRCO NOT NULL,
-	hashtag VARCHAR(280)
+	hashtag VARCHAR(280),
+	poids INTEGER NOT NULL DEFAULT 10
 );
 
 -- Catégories d'une information
