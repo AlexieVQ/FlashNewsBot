@@ -109,7 +109,8 @@ CREATE TABLE info (
 	type VARCHAR(280) NOT NULL,
 	description VARCHAR(280) UNIQUE,	-- Pour faciliter la lecture de la base,
 										-- non utilisé par le bot
-	type_circo TYPE_CIRCO NOT NULL
+	type_circo TYPE_CIRCO NOT NULL,
+	hashtag VARCHAR(280)
 );
 
 -- Catégories d'une information
