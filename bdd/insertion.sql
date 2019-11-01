@@ -1216,7 +1216,7 @@ INSERT INTO lieu(lieu, poids) VALUES
 	('au domicile {pers.nom(de)}', 10),
 	('dans un manoir hanté', 1),
 	('dans les catacombes', 1),
-	('à Barbès', 2),è
+	('à Barbès', 2),
 	('à Châtelet{rand(,-les-Halles)}', 5),
 	('à l’aéroport d’Orly', 2),
 	('dans le hall de l’aéroport d’Orly', 5),
@@ -1228,8 +1228,8 @@ INSERT INTO lieu(lieu, poids) VALUES
 	('{ville_lieu=localite(ville)}{ville_lieu.nom(à)}', 20),
 	('{ville_lieu=localite(ville)}{ville_lieu.nom(à)} ({ville_lieu.departement})', 20),
 	('{region=localite(pays,region)}{region.nom(en)}'),
-	('au siège {parti.nom(de)}' 10),
-	('au siège {media.nom(de)}' 10);
+	('au siège {parti.nom(de)}', 10),
+	('au siège {media.nom(de)}', 10);
 
 INSERT INTO info(description, type, type_circo, hashtag, poids) VALUES
 	('Mort', '{rand(sa mort,son décès)}', 'universel', '#RIP{sujet.nom_colle}', 50),
