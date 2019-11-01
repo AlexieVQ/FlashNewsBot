@@ -14,6 +14,12 @@ CREATE TABLE structure (
 	poids INTEGER NOT NULL DEFAULT 10
 );
 
+-- Catégorie d'une personne et d'une information
+CREATE TABLE categorie (
+	id SERIAL PRIMARY KEY,
+	nom VARCHAR(32) UNIQUE NOT NULL
+);
+
 -- Genre grammatical d'une personne
 CREATE TYPE genre AS ENUM ('M', 'F');
 
@@ -22,7 +28,8 @@ CREATE TABLE pers (
 	id SERIAL PRIMARY KEY,
 	nom_colle VARCHAR(280) UNIQUE NOT NULL,
 	poids INTEGER NOT NULL DEFAULT 10,
-	genre GENRE NOT NULL
+	genre GENRE NOT NULL,
+	id_cat INTEGER NOT NULL REFERENCES categorie(id)
 );
 
 -- Nom d'une personne
@@ -100,9 +107,16 @@ CREATE TYPE type_circo AS ENUM (
 CREATE TABLE info (
 	id SERIAL PRIMARY KEY,
 	type VARCHAR(280) NOT NULL,
-	description VARCHAR(280),		-- Pour faciliter la lecture de la base, non
-									-- utilisé par le bot
+	description VARCHAR(280) UNIQUE,	-- Pour faciliter la lecture de la base,
+										-- non utilisé par le bot
 	type_circo TYPE_CIRCO NOT NULL
+);
+
+-- Catégories d'une information
+CREATE TABLE cat_info (
+	id_info INTEGER REFERENCES info(id),
+	id_cat INTEGER REFERENCES categorie(id),
+	PRIMARY KEY (id_info, id_cat)
 );
 
 -- Action d'une information
