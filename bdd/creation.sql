@@ -14,6 +14,22 @@ CREATE TABLE structure (
 	poids INTEGER NOT NULL DEFAULT 10
 );
 
+-- Type de localité
+CREATE TYPE type_localite AS ENUM ('ville', 'pays', 'region');
+
+-- Localité (ville, pays, région)
+CREATE TABLE localite (
+	id SERIAL PRIMARY KEY,
+	nom VARCHAR(280) UNIQUE NOT NULL,
+	nom_en VARCHAR(280),
+	nom_colle VARCHAR(280),
+	poids INTEGER NOT NULL DEFAULT 10,
+	adjm VARCHAR(280),
+	adjf VARCHAR(280),
+	departement VARCHAR(280),
+	type TYPE_LOCALITE NOT NULL
+);
+
 -- Catégorie d'une personne et d'une information
 CREATE TABLE categorie (
 	id SERIAL PRIMARY KEY,
@@ -29,7 +45,8 @@ CREATE TABLE pers (
 	nom_colle VARCHAR(280) UNIQUE NOT NULL,
 	poids INTEGER NOT NULL DEFAULT 10,
 	genre GENRE NOT NULL,
-	id_cat INTEGER NOT NULL REFERENCES categorie(id)
+	id_cat INTEGER NOT NULL REFERENCES categorie(id),
+	id_pays INTEGER REFERENCES localite(id)
 );
 
 -- Nom d'une personne
@@ -38,7 +55,6 @@ CREATE TABLE nom_pers (
 	nom VARCHAR(280) NOT NULL,
 	poids INTEGER NOT NULL DEFAULT 10,
 	id_pers INTEGER NOT NULL REFERENCES pers(id)
-
 );
 
 -- Surnom d'une personne
@@ -49,14 +65,18 @@ CREATE TABLE surnom (
 	id_pers INTEGER NOT NULL REFERENCES pers(id)
 );
 
+CREATE TYPE type_parti AS ENUM ('parti', 'syndicat');
+
 -- Parti politique ou syndicat
 CREATE TABLE parti (
 	id SERIAL PRIMARY KEY,
 	nom VARCHAR(280) NOT NULL,
 	sigle VARCHAR(280) NOT NULL,
+	type TYPE_PARTI NOT NULL DEFAULT 'parti',
 	poids INTEGER NOT NULL DEFAULT 10,
 	adjm VARCHAR(280),
-	adjf VARCHAR(280)
+	adjf VARCHAR(280),
+	id_pays INTEGER REFERENCES localite(id)
 );
 
 -- Média (papier, TV, radio, internet…)
@@ -78,21 +98,6 @@ CREATE TABLE lieu (
 	id SERIAL PRIMARY KEY,
 	lieu VARCHAR(280) NOT NULL,
 	poids INTEGER NOT NULL DEFAULT 10
-);
-
--- Type de localité
-CREATE TYPE type_localite AS ENUM ('ville', 'pays', 'region');
-
--- Localité (ville, pays, région)
-CREATE TABLE localite (
-	id SERIAL PRIMARY KEY,
-	nom VARCHAR(280) NOT NULL,
-	nom_colle VARCHAR(280) NOT NULL,
-	poids INTEGER NOT NULL DEFAULT 10,
-	adjm VARCHAR(280),
-	adjf VARCHAR(280),
-	departement VARCHAR(280),
-	type TYPE_LOCALITE NOT NULL
 );
 
 -- Type d'une circonstance
