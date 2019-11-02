@@ -130,7 +130,7 @@ CREATE TABLE cat_info (
 -- Action d'une information
 CREATE TABLE action (
 	id SERIAL PRIMARY KEY,
-	action VARCHAR(280) NOT NULL,
+	action TEXT NOT NULL,
 	poids INTEGER NOT NULL DEFAULT 10,
 	id_info INTEGER NOT NULL REFERENCES info(id)
 );
