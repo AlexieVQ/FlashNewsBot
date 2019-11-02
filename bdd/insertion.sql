@@ -1219,9 +1219,9 @@ INSERT INTO lieu(lieu, poids) VALUES
 	('à la fête de l’Humanité', 5),
 	('sur les Champs-Élysées', 5),
 	('au salon de l’agriculture', 5),
-	('{ville_lieu=localite(ville)}{ville_lieu.nom(à)}', 20),
-	('{ville_lieu=localite(ville)}{ville_lieu.nom(à)} ({ville_lieu.departement})', 20),
-	('{region=localite(pays,region)}{region.nom(en)}'),
+	('{loc_lieu=localite(ville)}{loc_lieu.nom(à)}', 20),
+	('{loc_lieu=localite(ville)}{loc_lieu.nom(à)} ({loc_lieu.departement})', 20),
+	('{loc_lieu=localite(pays,region)}{loc_lieu.nom(en)}', 20),
 	('au siège {parti.nom(de)}', 10),
 	('au siège {media.nom(de)}', 10);
 
