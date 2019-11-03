@@ -106,7 +106,8 @@ CREATE TYPE type_circo AS ENUM (
 	'specifique',	-- Circonstance spécifique à une information
 	'universel',	-- Circonstance utilisable dans tous les contextes
 	'accuse',		-- Quand le sujet accuse une personne
-	'est_accuse'	-- Quand le sujet est accusé par quelqu'un d'autre
+	'est_accuse',	-- Quand le sujet est accusé par quelqu'un d'autre
+	'accusation'	-- Marche pour les deux types d'accusation
 );
 
 -- Information
