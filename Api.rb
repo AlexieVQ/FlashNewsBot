@@ -1,5 +1,6 @@
 require 'oauth'
 require 'json'
+require_relative 'Bdd.rb'
 
 ##
 # Type d'API.
@@ -23,6 +24,7 @@ class Api
 	# @url_base		=> URL de base de l'API (ex : https://api.twitter.com)
 	# @session		=> Stockage des tokens
 	# @access_token	=> Token d'accès à l'API
+	# @id_bdd		=> ID de l'app dans la base
 	
 	private_class_method :new
 	
@@ -103,9 +105,16 @@ class Api
 		}
 		request_token = OAuth::RequestToken.from_hash(consumer, hash)
 		
-		return @access_token = request_token.get_access_token(
+		@access_token = request_token.get_access_token(
 			{:oauth_verifier => code,
 		     :oauth_token => @session[:token],
 		     :oauth_token_secret => @session[:token_secret]})
+		
+		@id_bdd = $bdd.enregistrer_app(ApiType::TWITTER,
+		                               "twitter.com",
+		                               cle_api,
+		                               cle_secret,
+		                               @session[:token],
+		                               @session[:token_secret])
 	end
 end
