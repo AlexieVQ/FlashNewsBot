@@ -5,6 +5,7 @@
 # Une arroche est caractérisée par sa formulation.
 
 require_relative 'Element.rb'
+require_relative 'String.rb'
 
 class Accroche < Element
 	

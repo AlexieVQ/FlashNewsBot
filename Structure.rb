@@ -4,6 +4,7 @@
 # Une structure est caractérisée par sa structure.
 
 require_relative 'Element.rb'
+require_relative 'String.rb'
 
 class Structure < Element
 	

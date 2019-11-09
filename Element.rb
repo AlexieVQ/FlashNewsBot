@@ -17,4 +17,14 @@ class Element
 		@poids = poids
 	end
 	
+	## Convertie l'élément en chaîne de caractère
+	def to_s
+		raise "L'élément est vide"
+	end
+	
+	## Retourne la valeur demandée
+	def retourner
+		return self.to_s
+	end
+	
 end
