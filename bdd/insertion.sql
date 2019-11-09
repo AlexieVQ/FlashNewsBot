@@ -427,7 +427,23 @@ INSERT INTO pers(nom_colle, genre, id_cat, id_pays, poids) VALUES
 	('NickiMinaj', 'F', (SELECT id FROM categorie WHERE nom = 'culture'), (SELECT id FROM localite WHERE nom_colle = '{rand(USA,America)}'), 10),
 	('Maire{ville_maire.nom_colle(De)}{ignore(F)}', 'F', (SELECT id FROM categorie WHERE nom = 'anonyme'), NULL, 10),
 	('GretaThunberg', 'F', (SELECT id FROM categorie WHERE nom = 'politique'), (SELECT id FROM localite WHERE nom_colle = 'Suède'), 10),
-	('FlashNewsBot', 'F', (SELECT id FROM categorie WHERE nom = 'media'), (SELECT id FROM localite WHERE nom_colle = 'France'), 10);
+	('FlashNewsBot', 'F', (SELECT id FROM categorie WHERE nom = 'media'), (SELECT id FROM localite WHERE nom_colle = 'France'), 10),
+	-- Nouveautés
+	('{rand(,Benjamin)}Griveaux', 'M', (SELECT id FROM categorie WHERE nom = 'politique'), (SELECT id FROM localite WHERE nom_colle = 'France'), 10),
+	('Dril', 'M', (SELECT id FROM categorie WHERE nom = 'internet'), (SELECT id FROM localite WHERE nom_colle = '{rand(USA,America)}'), 20),
+	('Eminem', 'M', (SELECT id FROM categorie WHERE nom = 'culture'), (SELECT id FROM localite WHERE nom_colle = '{rand(USA,America)}'), 5),
+	('{rand(Hatsune,)}Miku', 'F', (SELECT id FROM categorie WHERE nom = 'fiction'), (SELECT id FROM localite WHERE nom_colle = 'Japon'), 20),
+	('ZinebElRhazoui', 'F', (SELECT id FROM categorie WHERE nom = 'media'), (SELECT id FROM localite WHERE nom_colle = 'France'), 10),
+	('ClémentViktorovitch', 'M', (SELECT id FROM categorie WHERE nom = 'media'), (SELECT id FROM localite WHERE nom_colle = 'France'), 10),
+	('MouloudAchour', 'M', (SELECT id FROM categorie WHERE nom = 'TV'), (SELECT id FROM localite WHERE nom_colle = 'France'), 10),
+	('JeanLucReichmann', 'M', (SELECT id FROM categorie WHERE nom = 'TV'), (SELECT id FROM localite WHERE nom_colle = 'France'), 10),
+	('Bolsonaro', 'M', (SELECT id FROM categorie WHERE nom = 'politique'), (SELECT id FROM localite WHERE nom_colle = 'Brésil'), 10),
+	('MarionMarechal{rand(,LePen)}', 'F', (SELECT id FROM categorie WHERE nom = 'politique'), (SELECT id FROM localite WHERE nom_colle = 'France'), 10),
+	('MichelSardou', 'M', (SELECT id FROM categorie WHERE nom = 'culture'), (SELECT id FROM localite WHERE nom_colle = 'France'), 10),
+	('Sardoche', 'M', (SELECT id FROM categorie WHERE nom = 'internet'), (SELECT id FROM localite WHERE nom_colle = 'France'), 10),
+	('{rand(François,)}Bayrou', 'M', (SELECT id FROM categorie WHERE nom = 'politique'), (SELECT id FROM localite WHERE nom_colle = 'France'), 10),
+	('DavidPujadas', 'M', (SELECT id FROM categorie WHERE nom = 'media'), (SELECT id FROM localite WHERE nom_colle = 'France'), 10),
+	('{rand(JeanPierre,)}Elkabbach', 'M', (SELECT id FROM categorie WHERE nom = 'media'), (SELECT id FROM localite WHERE nom_colle = 'France'), 10);
 
 INSERT INTO nom_pers(id_pers, nom) VALUES
 	((SELECT id FROM pers WHERE nom_colle = 'Norman'), 'Norman'),
@@ -769,7 +785,27 @@ INSERT INTO nom_pers(id_pers, nom) VALUES
 	((SELECT id FROM pers WHERE nom_colle = 'Maire{ville_maire.nom_colle(De)}{ignore(F)}'), 'la Maire {ville_maire=localite(ville)}{ville_maire.nom(de)}'),
 	((SELECT id FROM pers WHERE nom_colle = 'Maire{ville_maire.nom_colle(De)}{ignore(F)}'), 'la Maire {ville_maire=localite(ville)}{ville_maire.nom(de)} ({ville_maire.departement})'),
 	((SELECT id FROM pers WHERE nom_colle = 'GretaThunberg'), 'Greta Thunberg'),
-	((SELECT id FROM pers WHERE nom_colle = 'FlashNewsBot'), 'notre rédactrice en chef');
+	((SELECT id FROM pers WHERE nom_colle = 'FlashNewsBot'), 'notre rédactrice en chef'),
+	((SELECT id FROM pers WHERE nom_colle = '{rand(,Benjamin)}Griveaux'), 'Benjamin Griveaux'),
+	((SELECT id FROM pers WHERE nom_colle = '{rand(,Benjamin)}Griveaux'), 'B. #Griveaux'),
+	((SELECT id FROM pers WHERE nom_colle = 'Dril'), 'dril'),
+	((SELECT id FROM pers WHERE nom_colle = 'Dril'), '#dril'),
+	((SELECT id FROM pers WHERE nom_colle = 'Eminem'), 'Eminem'),
+	((SELECT id FROM pers WHERE nom_colle = '{rand(Hatsune,)}Miku'), 'Hatsune Miku'),
+	((SELECT id FROM pers WHERE nom_colle = 'ZinebElRhazoui'), 'Zineb El Rhazoui'),
+	((SELECT id FROM pers WHERE nom_colle = 'ClémentViktorovitch'), 'Clément Viktorovitch'),
+	((SELECT id FROM pers WHERE nom_colle = 'MouloudAchour'), 'Mouloud Achour'),
+	((SELECT id FROM pers WHERE nom_colle = 'JeanLucReichmann'), 'Jean-Luc Reichmann'),
+	((SELECT id FROM pers WHERE nom_colle = 'Bolsonaro'), 'Jair Bolsonaro'),
+	((SELECT id FROM pers WHERE nom_colle = 'Bolsonaro'), 'Bolsonaro'),
+	((SELECT id FROM pers WHERE nom_colle = 'MarionMarechal{rand(,LePen)}'), 'Marion Maréchal'),
+	((SELECT id FROM pers WHERE nom_colle = 'MarionMarechal{rand(,LePen)}'), 'Marion Maréchal-Le Pen'),
+	((SELECT id FROM pers WHERE nom_colle = 'MichelSardou'), 'Michel Sardou'),
+	((SELECT id FROM pers WHERE nom_colle = 'Sardoche'), 'Sardoche'),
+	((SELECT id FROM pers WHERE nom_colle = '{rand(François,)}Bayrou'), 'François Bayrou'),
+	((SELECT id FROM pers WHERE nom_colle = '{rand(François,)}Bayrou'), 'F. #Bayrou'),
+	((SELECT id FROM pers WHERE nom_colle = 'DavidPujadas'), 'David Pujadas'),
+	((SELECT id FROM pers WHERE nom_colle = '{rand(JeanPierre,)}Elkabbach'), 'Jean-Pierre Elkabbach');
 
 
 INSERT INTO surnom(id_pers, surnom) VALUES
@@ -1194,7 +1230,38 @@ INSERT INTO surnom(id_pers, surnom) VALUES
 	((SELECT id FROM pers WHERE nom_colle = 'Maire{ville_maire.nom_colle(De)}{ignore(F)}'), 'la Maire'),
 	((SELECT id FROM pers WHERE nom_colle = 'GretaThunberg'), 'la militante écologiste'),
 	((SELECT id FROM pers WHERE nom_colle = 'GretaThunberg'), 'la jeune militante'),
-	((SELECT id FROM pers WHERE nom_colle = 'FlashNewsBot'), 'la journaliste');
+	((SELECT id FROM pers WHERE nom_colle = 'FlashNewsBot'), 'la journaliste'),
+	((SELECT id FROM pers WHERE nom_colle = '{rand(,Benjamin)}Griveaux'), 'le candidat à la Mairie de Paris'),
+	((SELECT id FROM pers WHERE nom_colle = 'Dril'), 'le journaliste'),
+	((SELECT id FROM pers WHERE nom_colle = 'Dril'), 'le journaliste indépendant'),
+	((SELECT id FROM pers WHERE nom_colle = 'Dril'), 'le philosophe'),
+	((SELECT id FROM pers WHERE nom_colle = 'Dril'), 'le penseur'),
+	((SELECT id FROM pers WHERE nom_colle = 'Dril'), 'le twitto'),
+	((SELECT id FROM pers WHERE nom_colle = 'Dril'), 'le twitto anonyme'),
+	((SELECT id FROM pers WHERE nom_colle = 'Dril'), 'Wint'),
+	((SELECT id FROM pers WHERE nom_colle = 'Eminem'), 'le rappeur'),
+	((SELECT id FROM pers WHERE nom_colle = 'Eminem'), 'le rappeur américain'),
+	((SELECT id FROM pers WHERE nom_colle = '{rand(Hatsune,)}Miku'), 'la chanteuse'),
+	((SELECT id FROM pers WHERE nom_colle = '{rand(Hatsune,)}Miku'), 'la chanteuse virtuelle'),
+	((SELECT id FROM pers WHERE nom_colle = '{rand(Hatsune,)}Miku'), 'la créatrice de Minecraft'),
+	((SELECT id FROM pers WHERE nom_colle = '{rand(Hatsune,)}Miku'), 'Miku'),
+	((SELECT id FROM pers WHERE nom_colle = 'ZinebElRhazoui'), 'la journaliste'),
+	((SELECT id FROM pers WHERE nom_colle = 'ClémentViktorovitch'), 'le professeur de rhétorique'),
+	((SELECT id FROM pers WHERE nom_colle = 'ClémentViktorovitch'), 'le chroniqueur'),
+	((SELECT id FROM pers WHERE nom_colle = 'MouloudAchour'), 'le journaliste'),
+	((SELECT id FROM pers WHERE nom_colle = 'JeanLucReichmann'), 'l’animateur'),
+	((SELECT id FROM pers WHERE nom_colle = 'Bolsonaro'), 'le président brésilien'),
+	((SELECT id FROM pers WHERE nom_colle = 'MarionMarechal{rand(,LePen)}'), 'la femme politique'),
+	((SELECT id FROM pers WHERE nom_colle = 'MarionMarechal{rand(,LePen)}'), 'la nièce de Marine Le Pen'),
+	((SELECT id FROM pers WHERE nom_colle = 'MichelSardou'), 'le chanteur'),
+	((SELECT id FROM pers WHERE nom_colle = 'Sardoche'), 'le streameur'),
+	((SELECT id FROM pers WHERE nom_colle = 'Sardoche'), 'le streameur sanguin'),
+	((SELECT id FROM pers WHERE nom_colle = 'Sardoche'), 'le streameur nihiliste'),
+	((SELECT id FROM pers WHERE nom_colle = '{rand(François,)}Bayrou'), 'l’homme politique'),
+	((SELECT id FROM pers WHERE nom_colle = '{rand(François,)}Bayrou'), 'le maire de Pau'),
+	((SELECT id FROM pers WHERE nom_colle = '{rand(François,)}Bayrou'), 'le président du MoDem'),
+	((SELECT id FROM pers WHERE nom_colle = 'DavidPujadas'), 'le journaliste'),
+	((SELECT id FROM pers WHERE nom_colle = '{rand(JeanPierre,)}Elkabbach'), 'le journaliste');
 
 UPDATE surnom SET poids = 30 WHERE id_pers = (SELECT id FROM pers WHERE nom_colle = '{rand(,Raphaël)}Enthoven') AND surnom = 'le philosophe';
 UPDATE surnom SET poids = 5 WHERE id_pers = (SELECT id FROM pers WHERE nom_colle = 'EdwyPlenel') AND surnom = 'l’homme à la moustache';
@@ -1206,6 +1273,7 @@ UPDATE surnom SET poids = 1 WHERE id_pers = (SELECT id FROM pers WHERE nom_colle
 UPDATE surnom SET poids = 1 WHERE id_pers = (SELECT id FROM pers WHERE nom_colle = 'AnneHidalgo') AND surnom = '« Annie Dingo »';
 UPDATE surnom SET poids = 5 WHERE id_pers = (SELECT id FROM pers WHERE nom_colle = 'AnneHidalgo') AND surnom = '« Annie Dingo » d’après {pers.nom}';
 UPDATE surnom SET poids = 5 WHERE id_pers = (SELECT id FROM pers WHERE nom_colle = 'Beyoncé') AND surnom = '“Queen B”';
+UPDATE surnom SET poids = 100 WHERE id_pers = (SELECT id FROM pers WHERE nom_colle = 'Sardoche') AND surnom = 'le streameur';
 
 INSERT INTO parti(nom, sigle, adjm, adjf, poids, type, id_pays) VALUES
 	('la République En Marche', 'L{rand(a,)}REM', 'macroniste', 'macroniste', 20, 'parti',  (SELECT id FROM localite WHERE nom_colle = 'France')),
@@ -1228,7 +1296,9 @@ INSERT INTO parti(nom, sigle, adjm, adjf, poids, type, id_pays) VALUES
 	('l’Union Chrétienne-Démocrate d’Allemagne', 'CDU', 'chrétien-démocrate', 'chrétienne-démocrate', 1, 'parti',  (SELECT id FROM localite WHERE nom_colle = 'Allemagne')),
 	('la CGT', 'CGT', 'cégétiste', 'cégétiste', 10, 'syndicat',  (SELECT id FROM localite WHERE nom_colle = 'France')),
 	('la CFDT', 'CFDT', 'syndicaliste', 'syndicaliste', 10, 'syndicat',  (SELECT id FROM localite WHERE nom_colle = 'France')),
-	('le Medef', 'Medef', 'représentant patronal', 'représentante patronale', 10, 'syndicat',  (SELECT id FROM localite WHERE nom_colle = 'France'));
+	('le Medef', 'Medef', 'représentant patronal', 'représentante patronale', 10, 'syndicat',  (SELECT id FROM localite WHERE nom_colle = 'France')),
+	-- Nouveautés
+	('Extinction Rebellion', 'XR', 'écologiste', 'écologiste', 10, 'association', (SELECT id FROM localite WHERE nom_colle = 'France'));
 
 INSERT INTO media(nom, poids) VALUES
 	('le Monde', 10),
@@ -1314,7 +1384,10 @@ INSERT INTO lieu(lieu, poids) VALUES
 	('{loc_lieu=localite(ville)}{loc_lieu.nom(à)} ({loc_lieu.departement})', 20),
 	('{loc_lieu=localite(pays,region)}{loc_lieu.nom(en)}', 20),
 	('au siège {parti.nom(de)}', 10),
-	('au siège {media.nom(de)}', 10);
+	('au siège {media.nom(de)}', 10),
+	-- Nouveautés
+	('au Flunch de Clermont-Ferrand', 2),
+	('au Leroy Merlin de Clermont-Ferrand', 2);
 
 INSERT INTO info(description, type, type_circo, hashtag, poids) VALUES
 	('Mort', '{rand(sa mort,son décès)}', 'universel', '#RIP{sujet.nom_colle}', 50),
@@ -1468,8 +1541,14 @@ INSERT INTO info(description, type, type_circo, hashtag, poids) VALUES
 	('A mangé tout le sable de Metz Plage', 'son acte', 'universel', '#Metz', 10),
 	('Fait un don à un parti', 'son don', 'universel', NULL, 10),
 	('Mis en examen', 'sa mise en examen', 'est_accuse', '#Affaire{sujet.nom_colle}', 10),
-	('A été cancelled par objet', 'son call-out', 'est_accuse', NULL, 10),
-	('Call-out objet', 'son call-out', 'accuse', NULL, 10);
+	('A été cancelled par objet', 'son call-out', 'est_accuse', '#{sujet.nom_colle}Is{rand(Cancelled,Over)}{rand(,Party)}', 10),
+	('Call-out objet', 'son call-out', 'accuse', '#{sujet.nom_colle}Is{rand(Cancelled,Over)}{rand(,Party)}', 10),
+	-- Nouveautés
+	('Confondu avec XDDL', 'cette confusion', 'universel', '#XavierDupontDeLigonnès', 10),
+	('Confond objet avec XDDL', 'cette confusion', 'universel', '#XavierDupontDeLigonnès', 10),
+	('Organise une ZAD', 'son organisation', 'universel', '#{lieu_info.nom_colle}', 10),
+	('Lance une cagnotte pour aider objet', 'sa cagnotte', '#Free{objet.nom_colle}', 10),
+	('Aurait slidé dans les DM de objet', 'son acte', NULL, 10);
 
 INSERT INTO cat_info(id_info, id_cat) VALUES
 	((SELECT id FROM info WHERE description = 'Élu président'), (SELECT id FROM categorie WHERE nom = 'politique')),
@@ -1576,7 +1655,8 @@ INSERT INTO cat_info(id_info, id_cat) VALUES
 	((SELECT id FROM info WHERE description = 'Décide de relancer la tecktonik'), (SELECT id FROM categorie WHERE nom = 'internet')),
 	((SELECT id FROM info WHERE description = 'Aurait témoigné que objet est membre des Nine Trey Bloods'), (SELECT id FROM categorie WHERE nom = 'culture')),
 	((SELECT id FROM info WHERE description = 'Aurait conseillé à objet de prendre un peu de camomille'), (SELECT id FROM categorie WHERE nom = 'politique')),
-	((SELECT id FROM info WHERE description = 'Fait un don à un parti'), (SELECT id FROM categorie WHERE nom = 'patronat'));
+	((SELECT id FROM info WHERE description = 'Fait un don à un parti'), (SELECT id FROM categorie WHERE nom = 'patronat')),
+	((SELECT id FROM info WHERE description = 'Lance une cagnotte pour aider objet'), (SELECT id FROM categorie WHERE nom = 'politique'));
 
 INSERT INTO action(id_info, action, poids) VALUES
 	((SELECT id FROM info WHERE description = 'Mort'), 'est mort{gse}', 10),
@@ -1903,7 +1983,18 @@ INSERT INTO action(id_info, action, poids) VALUES
 	((SELECT id FROM info WHERE description = 'Fait un don à un parti'), 'fait un don de {rand(100 €,200 €,1000 €,2000 €,5000 €)} {parti_info=parti}{parti_info.nom(à)}', 10),
 	((SELECT id FROM info WHERE description = 'Mis en examen'), 'mis{gse} en examen', 10),
 	((SELECT id FROM info WHERE description = 'A été cancelled par objet'), 'a été cancelled par {objet=pers}{objet.nom}', 10),
-	((SELECT id FROM info WHERE description = 'Call-out objet'), 'call-out {objet=pers}{objet.nom}', 10);
+	((SELECT id FROM info WHERE description = 'Call-out objet'), 'call-out {objet=pers}{objet.nom}', 10),
+	((SELECT id FROM info WHERE description = 'Confondu avec XDDL'), 'confondu{gse} avec Xavier Dupont de Ligonnès', 10),
+	((SELECT id FROM info WHERE description = 'Confondu avec XDDL'), 'a été confondu{gse} avec Xavier Dupont de Ligonnès', 10),
+	((SELECT id FROM info WHERE description = 'Confond objet avec XDDL'), 'confond {objet=pers}{objet.nom} avec Xavier Dupont de Ligonnès', 10),
+	((SELECT id FROM info WHERE description = 'Organise une ZAD'), 'organise une ZAD {lieu_info=localite(ville,region)}{lieu_info.nom(en)}', 10),
+	((SELECT id FROM info WHERE description = 'Lance une cagnotte pour aider objet'), 'lance une cagnotte pour libérer {objet=pers}{objet.nom}', 10),
+	((SELECT id FROM info WHERE description = 'Lance une cagnotte pour aider objet'), 'lance une cagnotte pour aider {objet=pers}{objet.nom}', 10),
+	((SELECT id FROM info WHERE description = 'Aurait slidé dans les DM de objet'), 'aurait slidé dans les DM {objet=pers}{objet.nom(de)}', 10);
+
+
+
+
 
 INSERT INTO circo(id_info, circo, type, poids) VALUES
 	((SELECT id FROM info WHERE description = 'Mort'), 'à son domicile', 'specifique', 10),
@@ -2104,7 +2195,21 @@ INSERT INTO circo(id_info, circo, type, poids) VALUES
 	(NULL, 'pour diffamition', 'accuse', 10),
 	(NULL, 'pour diffamition et incitation à la haine', 'accuse', 10),
 	(NULL, 'pour l’avoir tué{gse}', 'accuse', 10),
-	(NULL, 'pour avoir griefé sa maison sur Minecraft', 'accuse', 10);
+	(NULL, 'pour avoir griefé sa maison sur Minecraft', 'accuse', 10),
+	-- Nouveautés
+	((SELECT id FROM info WHERE description = 'Confondu avec XDDL'), 'par {pers_circo}{pers_circo.nom}', 'specifique', 10),
+	(NULL, 'pour propos problématiques', 'accusation', 10),
+	((SELECT id FROM info WHERE description = 'Aurait slidé dans les DM de objet'), 'pour {genre(objet,le,la)} draguer', 'specifique', 10),
+	((SELECT id FROM info WHERE description = 'Aurait slidé dans les DM de objet'), 'pour lui envoyer {genre(sujet,une dick pic,des nudes)}', 'specifique', 10),
+	(NULL, 'ironiquement', 'universel', 10),
+	(NULL, 'non-ironiquement', 'universel', 30),
+	(NULL, 'pour avoir chanté “Fuck le 17”', 'accusation', 10),
+	(NULL, 'pour avoir chanté “Fornique la maréchaussée”', 'accusation', 10),
+	(NULL, 'pour avoir dit “Nique la police” au lieu de “Nique le ministre”', 'accusation', 10),
+	(NULL, 'pour racisme anti-blanc', 'accusation', 10),
+	(NULL, 'pour avoir raté le #NoPeeJanuary', 'accusation', 10),
+	((SELECT id FROM info WHERE description = 'Mort'), 'durant le #DestroyDickDecember', 'specifique', 20),
+	((SELECT id FROM info WHERE description = 'Mort'), 'durant le #NoPeeJanuary', 'specifique', 20);
 
 INSERT INTO decla(id_info, decla, poids) VALUES
 	((SELECT id FROM info WHERE description = 'Mort'), 'Je dédie ma fortune {pers_decla=pers}{pers_decla.nom(à)}', 10),
@@ -2213,4 +2318,8 @@ INSERT INTO decla(id_info, decla, poids) VALUES
 	(NULL, 'Je porte plainte pour diffamation et incitation à la haine', 10),
 	(NULL, 'Wallah j’ai rien fait', 10),
 	(NULL, 'Sco pa tu manaa', 5),
-	(NULL, '{objet.nom.maj} surcôté{genre(objet,,e)}', 10);
+	(NULL, '{objet.nom.maj} surcôté{genre(objet,,e)}', 10),
+	-- Nouveauté
+	(NULL, 'OK boomer', 30),
+	(NULL, 'Pour moi c’est Black Mirror.', 10),
+	(NULL, 'Si c’est vrai c’est très grave !!!', 10);

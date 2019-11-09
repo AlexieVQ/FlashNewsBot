@@ -66,7 +66,7 @@ CREATE TABLE surnom (
 	id_pers INTEGER NOT NULL REFERENCES pers(id)
 );
 
-CREATE TYPE type_parti AS ENUM ('parti', 'syndicat');
+CREATE TYPE type_parti AS ENUM ('parti', 'syndicat', 'association');
 
 -- Parti politique ou syndicat
 CREATE TABLE parti (
@@ -150,7 +150,8 @@ CREATE TABLE decla (
 	id SERIAL PRIMARY KEY,
 	decla VARCHAR(280) NOT NULL,
 	poids INTEGER NOT NULL DEFAULT 10,
-	id_info INTEGER REFERENCES info(id)
+	id_info INTEGER REFERENCES info(id),
+	id_pers INTEGER REFERENCES pers(id)
 );
 
 -- Type du réseau social
