@@ -12,6 +12,7 @@ class Element
 	# La classe est une classe abstraite.
 	private_class_method :new
 	
+	## Pour initialiser un élément il faut son poids.
 	def initialize(poids)
 		@poids = poids
 	end

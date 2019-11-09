@@ -7,7 +7,7 @@ INSERT INTO accroche(accroche, poids) VALUES
 	('FLASH NEWS', 10),
 	('DIRECT', 10),
 	('EXCLUSIVITÉ', 8),
-	('ALERTE INFO -', 15),
+	('ALERTE INFO', 15),
 	('SCOOP', 5),
 	('C’est officiel :', 5);
 	
