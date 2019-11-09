@@ -11,8 +11,6 @@ class Accroche < Element
 	
 	# @accroche		=> Formulation de l'accroche
 	
-	private_class_method :new
-	
 	## Création de l'accroche
 	def Accroche.creer(accroche, poids)
 		new(accroche, poids)

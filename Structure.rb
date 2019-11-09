@@ -10,8 +10,6 @@ class Structure < Element
 	
 	# @structure	=> Structure du post
 	
-	private_class_method :new
-	
 	## Création de la structure
 	def Structure.creer(structure, poids)
 		new(structure, poids)
