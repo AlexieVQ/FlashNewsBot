@@ -28,4 +28,9 @@ class Structure < Element
 		return @structure.evaluer
 	end
 	
+	## Convertie la structure en chaîne
+	def to_s
+		return self.structure
+	end
+	
 end

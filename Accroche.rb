@@ -29,4 +29,9 @@ class Accroche < Element
 		return @accroche.evaluer
 	end
 	
+	## Conversion en chaîne de caractères.
+	def to_s
+		return self.accroche
+	end
+	
 end
