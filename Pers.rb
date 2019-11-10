@@ -84,10 +84,10 @@ class Pers < Element
 	##
 	# Retourne un attribut du personnage avec les paramètres demandés.  
 	# Attributs possibles :
-	# - nom
-	# - surnom
-	# - nom_colle
-	# - localite
+	# - "nom"
+	# - "surnom"
+	# - "nom_colle"
+	# - "localite"
 	# Paramètres :
 	# - article pour le nom ou le surnom
 	def retourner(attribut, parametres)
