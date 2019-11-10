@@ -78,32 +78,40 @@ class Commande
 			return genre(parametres[0], parametres[1], parametres[2])
 		when TypeCommande::GSE then
 			return genre("sujet", "", "e")
-		when TypeCommande::GSE then
+		when TypeCommande::H then
 			return rand("", "#")
 		when TypeCommande::ACCROCHE then
-			return $bdd.accroches.elt_alea
+			element = $bdd.accroches.elt_alea
 		when TypeCommande::PERS then
-			return $bdd.pers(parametres[0]).elt_alea
+			element = $bdd.pers(parametres[0]).elt_alea
 		when TypeCommande::DATE then
-			return $bdd.dates.elt_alea
+			element = $bdd.dates.elt_alea
 		when TypeCommande::LIEU then
-			return $bdd.lieux.elt_alea
+			element = $bdd.lieux.elt_alea
 		when TypeCommande::LOCALITE then
 			if ["ville", "pays", "region"].include?(parametres[0]) then
-				return $bdd.localites(parametres).elt_alea
+				element = $bdd.localites(parametres).elt_alea
 			else
-				return $bdd.localites(nil, parametres[0]).elt_alea
+				element = $bdd.localites(nil, parametres[0]).elt_alea
 			end
 		when TypeCommande::PARTI then
-			return $bdd.partis(parametres).elt_alea
+			if ["parti", "syndicat", "association"].include?(parametres[0]) then
+				element = $bdd.partis(parametres).elt_alea
+			else
+				element = $bdd.partis.elt_alea
+			end
 		when TypeCommande::MEDIA then
-			return $bdd.medias.elt_alea
+			element = $bdd.medias.elt_alea
 		when TypeCommande::CIRCO then
-			return $bdd.circos.elt_alea
+			element = $bdd.circos.elt_alea
 		when TypeCommande::DECLA then
-			return $bdd.declas.elt_alea
+			element = $bdd.declas.elt_alea
+		end
+		
+		if attribut && attribut != "" then
+			return element.retourner(attribut, parametres)
 		else
-			return nil
+			return element
 		end
 	end
 	
