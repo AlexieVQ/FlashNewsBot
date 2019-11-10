@@ -16,3 +16,8 @@ DROP TABLE decla CASCADE;
 DROP TABLE application CASCADE;
 DROP TABLE historique CASCADE;
 DROP TABLE historique_pers CASCADE;
+DROP TYPE type_localite CASCADE;
+DROP TYPE genre CASCADE;
+DROP TYPE type_parti CASCADE;
+DROP TYPE type_circo CASCADE;
+DROP TYPE type_app CASCADE;
