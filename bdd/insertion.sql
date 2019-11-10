@@ -1547,8 +1547,8 @@ INSERT INTO info(description, type, type_circo, hashtag, poids) VALUES
 	('Confondu avec XDDL', 'cette confusion', 'universel', '#XavierDupontDeLigonnès', 10),
 	('Confond objet avec XDDL', 'cette confusion', 'universel', '#XavierDupontDeLigonnès', 10),
 	('Organise une ZAD', 'son organisation', 'universel', '#{lieu_info.nom_colle}', 10),
-	('Lance une cagnotte pour aider objet', 'sa cagnotte', '#Free{objet.nom_colle}', 10),
-	('Aurait slidé dans les DM de objet', 'son acte', NULL, 10);
+	('Lance une cagnotte pour aider objet', 'sa cagnotte', 'universel', '#Free{objet.nom_colle}', 10),
+	('Aurait slidé dans les DM de objet', 'son acte', 'universel', NULL, 10);
 
 INSERT INTO cat_info(id_info, id_cat) VALUES
 	((SELECT id FROM info WHERE description = 'Élu président'), (SELECT id FROM categorie WHERE nom = 'politique')),
