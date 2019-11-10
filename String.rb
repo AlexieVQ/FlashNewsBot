@@ -44,6 +44,7 @@ class String
 				$index[nouv_var] = resultat
 			else
 				raise "#{nouv_var} existe déjà dans l'index"
+			end
 		else
 			return resultat.to_s
 		end
