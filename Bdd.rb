@@ -47,7 +47,7 @@ class Bdd
 	                    oauth_token,
 	                    oauth_token_secret)
 		case type
-		when ApiType::TWITTER
+		when ApiType::TWITTER then
 			chaine_type = 'twitter'
 		end
 		
@@ -368,9 +368,9 @@ class Bdd
 		end
 		
 		case type
-		when "specifique" || "universel" || "accusation"
+		when "specifique" || "universel" || "accusation" then
 			regle_type = "type_circo = '#{type}'"
-		when "accuse" || "est_accuse"
+		when "accuse" || "est_accuse" then
 			regle_type = "type_circo IN ('#{type}', 'accusation')"
 		else
 			regle_type = "true"

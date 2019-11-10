@@ -40,7 +40,7 @@ class Media < Element
 	# - Article pour le nom
 	def retourner(attribut, parametres)
 		case attribut
-		when "nom"
+		when "nom" then
 			return self.nom(parametres[0])
 		else
 			return self.to_s

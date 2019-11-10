@@ -20,7 +20,7 @@ class Array
 		nb_rand = rand(somme_poids)
 		tab.each do | elt |
 			nb_rand -= elt.poids == nil ? 1 : elt.poids
-			if nb_rand <= 0 do
+			if nb_rand <= 0 then
 				return elt
 			end
 		end

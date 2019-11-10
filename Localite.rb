@@ -113,19 +113,19 @@ class Localite < Element
 	# - l'article quand on demande le nom
 	def retourner(attribut, parametres)
 		case attribut
-		when "nom"
+		when "nom" then
 			return self.nom(parametres[0])
-		when "nom_en"
+		when "nom_en" then
 			return self.nom_en
-		when "nom_colle"
+		when "nom_colle" then
 			return self.nom_colle
-		when "adjm"
+		when "adjm" then
 			return self.adjm
-		when "adjf"
+		when "adjf" then
 			return self.adjf
-		when "departement"
+		when "departement" then
 			return self.departement
-		when "emoji"
+		when "emoji" then
 			return self.emoji
 		else
 			return self.nom

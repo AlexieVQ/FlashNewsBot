@@ -49,7 +49,7 @@ class Api
 		@session = Hash.new
 		@type = type
 		case type
-		when ApiType::TWITTER
+		when ApiType::TWITTER then
 			@instance = "twitter.com"
 			@url_base = "https://api.twitter.com"
 			auth_initiale_twitter(cle_api, cle_secret)
@@ -61,7 +61,7 @@ class Api
 	
 	def envoyer(texte)
 		case @type
-		when ApiType::TWITTER
+		when ApiType::TWITTER then
 			reponse = @access_token.post(
 				"https://api.twitter.com/1.1/statuses/update.json",
 				{:status => texte}

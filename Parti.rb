@@ -78,17 +78,17 @@ class Parti < Element
 	# - Article pour le nom
 	def retourner(attribut, parametres)
 		case attribut
-		when "nom"
+		when "nom" then
 			return self.nom(parametres[0])
-		when "sigle"
+		when "sigle" then
 			return self.sigle
-		when "adjm"
+		when "adjm" then
 			return self.adjm
-		when "adjf"
+		when "adjf" then
 			return self.adjf
-		when "localite"
+		when "localite" then
 			return @localite
-		when "type"
+		when "type" then
 			return @type
 		else
 			return self.to_s

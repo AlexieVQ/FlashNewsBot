@@ -99,15 +99,15 @@ class Info < Element
 	# - "hashtag"
 	def retourner(attribut, parametres)
 		case attribut
-		when "action"
+		when "action" then
 			return self.action
-		when "circo"
+		when "circo" then
 			return self.circo
-		when "type"
+		when "type" then
 			return self.type
-		when "decla"
+		when "decla" then
 			return self.decla
-		when "hashtag"
+		when "hashtag" then
 			return self.hashtag
 		else
 			return self.to_s

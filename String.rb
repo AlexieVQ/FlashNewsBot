@@ -18,7 +18,7 @@ class String
 	## Évaluer une commande
 	def eval_commande
 		# Nom de la variable à affecter
-		if self.scan(/{\w+=/).length do
+		if self.scan(/{\w+=/).length then
 			nouv_var = self.scan(/{\w+=/)[0].scan(/\w/)[0]
 			# Commande principale
 			com = self.scan(/=\w+/)[0].scan(/\w/)[0]
@@ -27,19 +27,19 @@ class String
 		end
 		
 		# Attribut
-		if self.scan(/\.\w+/) do
+		if self.scan(/\.\w+/) then
 			attribut = self.scan(/\.\w+/)[0].scan(/\w/)[0]
 		end
 		
 		# Paramètres
 		parametres = []
-		if self.scan(/\([^\(\)]*\)/) do
+		if self.scan(/\([^\(\)]*\)/) then
 			parametres = self.scan(/\([^\(\)]*\)/)[0].scan(/[^\(\)\,]+/)
 		end
 		
 		# Demande à l'index
 		resultat = $index[com].retourner(attribut, parametres)
-		if nouv_var do
+		if nouv_var then
 			if $index[nouv_var] == nil do
 				$index[nouv_var] = resultat
 			else

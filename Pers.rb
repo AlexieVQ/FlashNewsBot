@@ -92,13 +92,13 @@ class Pers < Element
 	# - article pour le nom ou le surnom
 	def retourner(attribut, parametres)
 		case attribut
-		when "nom"
+		when "nom" then
 			return self.nom(parametres[0])
-		when "surnom"
+		when "surnom" then
 			return self.surnom(parametres[0])
-		when "nom_colle"
+		when "nom_colle" then
 			return self.nom_colle
-		when "localite"
+		when "localite" then
 			return @localite
 		else
 			return self.to_s
