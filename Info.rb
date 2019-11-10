@@ -59,7 +59,7 @@ class Info < Element
 	
 	## Retourne une circonstance après l'avoir évaluée
 	def circo
-		return @circos.elt_alea.evaluer
+		return @circos.elt_alea().evaluer
 	end
 	
 	## Retourne le type après l'avoir évalué
@@ -69,7 +69,7 @@ class Info < Element
 	
 	## Retourne une déclaration après l'avoir évaluée
 	def decla
-		return @declas.elt_alea.evaluer
+		return @declas.elt_alea().evaluer
 	end
 	
 	## Retourne un hashtag après l'avoir évalué

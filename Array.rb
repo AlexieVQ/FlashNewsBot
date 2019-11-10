@@ -7,21 +7,23 @@
 
 class Array
 	
-	## Retourne un élément du tableau aléatoirement
-	def elt_alea
+	##
+	# Retourne un élément du tableau ou d'un tableau passé en paramètre
+	# aléatoirement.
+	def elt_alea(ajout = [])
 		somme_poids = 0
-		self.each do |elt|
+		tab = self | ajout
+		tab.each do | elt |
 			somme_poids += elt.poids == nil ? 1 : elt.poids
 		end
 		
-		i = 0
 		nb_rand = rand(somme_poids)
-		while nb_rand > 0 do
-			nb_rand -= self[i].poids == nil ? 1 : self[i].poids
-			i += 1
+		tab.each do | elt |
+			nb_rand -= elt.poids == nil ? 1 : elt.poids
+			if nb_rand <= 0 do
+				return elt
+			end
 		end
-		
-		return self[i]
 	end
 	
 end
