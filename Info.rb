@@ -1,6 +1,7 @@
 require_relative 'Element.rb'
 require_relative 'String.rb'
 require_relative 'Array.rb'
+require_relative 'Bdd.rb'
 
 ##
 # Classe représentant une information.
@@ -68,11 +69,11 @@ class Info < Element
 	def circo
 		case type_circo
 		when "accuse" then
-			return @circos.elt_alea($tables['circos_accuse']).evaluer
+			return @circos.elt_alea($bdd.circos(type: "accuse")).evaluer
 		when "est_accuse" then
-			return @circos.elt_alea($tables['circos_est_accuse']).evaluer
+			return @circos.elt_alea($bdd.circos(type: "est_accuse")).evaluer
 		else
-			return @circos.elt_alea([$tables['circos_uni'].elt_alea]).evaluer
+			return @circos.elt_alea([$bdd.circos.elt_alea]).evaluer
 		end
 	end
 	
@@ -84,7 +85,7 @@ class Info < Element
 	## Retourne une déclaration après l'avoir évaluée
 	def decla
 		return @declas.elt_alea($index['sujet'].declas |
-		                        [$tables['declas_uni'].elt_alea]).evaluer
+		                        [$bdd.declas.elt_alea]).evaluer
 	end
 	
 	## Retourne un hashtag après l'avoir évalué
