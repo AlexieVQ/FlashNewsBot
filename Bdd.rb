@@ -371,9 +371,9 @@ class Bdd
 		
 		case type
 		when "specifique" || "universel" || "accusation" then
-			regle_type = "type_circo = '#{type}'"
+			regle_type = "type = '#{type}'"
 		when "accuse" || "est_accuse" then
-			regle_type = "type_circo IN ('#{type}', 'accusation')"
+			regle_type = "type IN ('#{type}', 'accusation')"
 		else
 			regle_type = "true"
 		end
