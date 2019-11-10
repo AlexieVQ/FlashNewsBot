@@ -21,6 +21,6 @@ $index['circo'] = Commande.commande(TypeCommande::CIRCO)
 $index['decla'] = Commande.commande(TypeCommande::DECLA)
 
 $index['info'] = $bdd.infos.elt_alea
-$index['sujet'] = $bdd.pers(categories: $index['info'].categories).elt_alea
+$index['sujet'] = $bdd.pers(nil, $index['info'].categories).elt_alea
 
-puts $bdd.structures.elt_alea.evaluer
+puts $bdd.structures.elt_alea.structure.evaluer

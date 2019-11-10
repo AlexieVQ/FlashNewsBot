@@ -58,7 +58,7 @@ class Bdd
 		
 		res = requete("SELECT id FROM application WHERE domaine =
 		              '#{domaine}';")
-		id = res[0].fetch("id")
+		id = res[0].fetch("id").to_i
 		return id
 	end
 	
@@ -69,9 +69,9 @@ class Bdd
 		res = requete("SELECT * FROM accroche;")
 		tab = []
 		res.each do | tuple |
-			tab.push(Accroche.creer(tuple.fetch("id"),
+			tab.push(Accroche.creer(tuple.fetch("id").to_i,
 			                        tuple.fetch("accroche"),
-			                        tuple.fetch("poids")))
+			                        tuple.fetch("poids").to_i))
 		end
 		return tab
 	end
@@ -83,9 +83,9 @@ class Bdd
 		res = requete("SELECT * FROM structure;")
 		tab = []
 		res.each do | tuple |
-			tab.push(Structure.creer(tuple.fetch("id"),
+			tab.push(Structure.creer(tuple.fetch("id").to_i,
 			                         tuple.fetch("structure"),
-			                         tuple.fetch("poids")))
+			                         tuple.fetch("poids").to_i))
 		end
 		return tab
 	end
@@ -99,7 +99,7 @@ class Bdd
 	# id est la valeur de l'identifiant de la localité recherchée précisément.
 	
 	def localites(type = nil, nom_colle = nil, id = nil)
-		if type && type.length then
+		if type && type.length != 0 then
 			regle_type = "type IN ('#{type.join("', '")}')";
 		else
 			regle_type = "true"
@@ -121,10 +121,10 @@ class Bdd
 		              #{regle_nom} AND #{regle_id};")
 		tab = []
 		res.each do | tuple |
-			tab.push(Localite.creer(tuple.fetch("id"),
+			tab.push(Localite.creer(tuple.fetch("id").to_i,
 			                        tuple.fetch("type"),
 			                        tuple.fetch("nom"),
-			                        tuple.fetch("poids"),
+			                        tuple.fetch("poids").to_i,
 			                        tuple.fetch("nom_en"),
 			                        tuple.fetch("nom_colle"),
 			                        tuple.fetch("adjm"),
@@ -140,7 +140,7 @@ class Bdd
 	
 	def localite(id)
 		if id != nil then
-			return self.localites(id: id)[0]
+			return self.localites(nil, nil, id)[0]
 		else
 			return nil
 		end
@@ -151,7 +151,7 @@ class Bdd
 	
 	def categorie(id)
 		res = requete("SELECT nom FROM categorie WHERE id = #{id};")
-		if res.length then
+		if res.ntuples != 0 then
 			return res[0].fetch("nom")
 		else
 			return nil
@@ -163,7 +163,7 @@ class Bdd
 	
 	def id_cat(categorie)
 		res = requete("SELECT id FROM categorie WHERE nom = '#{categorie}';")
-		if res.length then
+		if res.ntuples != 0 then
 			return res[0].fetch("id")
 		else
 			return nil
@@ -191,7 +191,7 @@ class Bdd
 	# categories est un tableau de catégories (chaînes de caractères) dont les
 	# pondérations des personnages recherchées seront augmentées.
 	
-	def pers(genre = nil, categories = nil)
+	def pers(genre = nil, categories = [])
 		if genre then
 			regle_genre = "genre = '#{genre}'"
 		else
@@ -199,7 +199,7 @@ class Bdd
 		end
 		
 		ids_cat = []
-		if categories then
+		if categories.length != 0 then
 			categories.each do | categorie |
 				ids_cat.push(id_cat(categorie))
 			end
@@ -209,16 +209,16 @@ class Bdd
 		tab = []
 		res.each do | tuple |
 			categorie = self.categorie(tuple.fetch("id_cat"))
-			tab.push(Pers.creer(tuple.fetch("id"),
-			                    self.noms_pers(tuple.fetch("id")),
-			                    self.surnoms(tuple.fetch("id")),
-			                    tuple.fetch("poids") *
+			tab.push(Pers.creer(tuple.fetch("id").to_i,
+			                    self.noms_pers(tuple.fetch("id").to_i),
+			                    self.surnoms(tuple.fetch("id").to_i),
+			                    tuple.fetch("poids").to_i *
 			                    	(categories.include?(categorie) ? 10 : 1),
 			                    tuple.fetch("nom_colle"),
 			                    tuple.fetch("genre"),
-			                    categorie),
+			                    categorie,
 			                    localite(tuple.fetch("id_pays")),
-			                    self.declas(id_pers: tuple.fetch("id")))
+			                    self.declas(nil, tuple.fetch("id"))))
 		end
 		return tab
 	end
@@ -230,9 +230,9 @@ class Bdd
 		res = requete("SELECT * FROM nom_pers WHERE id_pers = #{id_pers};")
 		tab = []
 		res.each do | tuple |
-			tab.push(NomPers.creer(tuple.fetch("id"),
+			tab.push(NomPers.creer(tuple.fetch("id").to_i,
 			                       tuple.fetch("nom"),
-			                       tuple.fetch("poids")))
+			                       tuple.fetch("poids").to_i))
 		end
 		return tab
 	end
@@ -244,9 +244,9 @@ class Bdd
 		res = requete("SELECT * FROM surnom WHERE id_pers = #{id_pers};")
 		tab = []
 		res.each do | tuple |
-			tab.push(Surnom.creer(tuple.fetch("id"),
+			tab.push(Surnom.creer(tuple.fetch("id").to_i,
 			                      tuple.fetch("surnom"),
-			                      tuple.fetch("poids")))
+			                      tuple.fetch("poids").to_i))
 		end
 		return tab
 	end
@@ -257,7 +257,7 @@ class Bdd
 	# tableau seront choisies.
 	
 	def partis(types = [])
-		if types.length then
+		if types.length != 0 then
 			regle_type = "type IN ('#{types.join("', '")}')"
 		else
 			regle_type = "true"
@@ -266,14 +266,14 @@ class Bdd
 		res = requete("SELECT * FROM parti WHERE #{regle_type};")
 		tab = []
 		res.each do | tuple |
-			tab.push(Parti.creer(tuple.fetch("id"),
+			tab.push(Parti.creer(tuple.fetch("id").to_i,
 			                     tuple.fetch("nom"),
 			                     tuple.fetch("sigle"),
 			                     tuple.fetch("type"),
-			                     tuple.fetch("poids"),
+			                     tuple.fetch("poids").to_i,
 			                     tuple.fetch("adjm"),
 			                     tuple.fetch("adjf"),
-			                     localite(tuple.fetch("localite"))))
+			                     localite(tuple.fetch("id_pays"))))
 		end
 		return tab
 	end
@@ -285,9 +285,9 @@ class Bdd
 		res = requete("SELECT * FROM media;")
 		tab = []
 		res.each do | tuple |
-			tab.push(Media.creer(tuple.fetch("id"),
+			tab.push(Media.creer(tuple.fetch("id").to_i,
 			                     tuple.fetch("nom"),
-			                     tuple.fetch("poids")))
+			                     tuple.fetch("poids").to_i))
 		end
 		return tab
 	end
@@ -299,9 +299,9 @@ class Bdd
 		res = requete("SELECT * FROM date;")
 		tab = []
 		res.each do | tuple |
-			tab.push(DateInfo.creer(tuple.fetch("id"),
+			tab.push(DateInfo.creer(tuple.fetch("id").to_i,
 			                        tuple.fetch("date"),
-			                        tuple.fetch("poids")))
+			                        tuple.fetch("poids").to_i))
 		end
 		return tab
 	end
@@ -313,9 +313,9 @@ class Bdd
 		res = requete("SELECT * FROM lieu;")
 		tab = []
 		res.each do | tuple |
-			tab.push(Lieu.creer(tuple.fetch("id"),
+			tab.push(Lieu.creer(tuple.fetch("id").to_i,
 			                    tuple.fetch("lieu"),
-			                    tuple.fetch("poids")))
+			                    tuple.fetch("poids").to_i))
 		end
 		return tab
 	end
@@ -327,14 +327,15 @@ class Bdd
 		res = requete("SELECT * FROM info;")
 		tab = []
 		res.each do | tuple |
-			tab.push(Info.creer(tuple.fetch("id"),
-			                    self.actions(tuple.fetch("id")),
-			                    tuple.fetch("poids"),
-			                    self.circos(tuple.fetch("id")),
-			                    self.declas(tuple.fetch("id")),
+			tab.push(Info.creer(tuple.fetch("id").to_i,
+			                    self.actions(tuple.fetch("id").to_i),
+			                    tuple.fetch("poids").to_i,
+			                    self.circos(tuple.fetch("id").to_i),
+			                    tuple.fetch("type"),
+			                    self.declas(tuple.fetch("id").to_i),
 			                    tuple.fetch("hashtag"),
 			                    tuple.fetch("type_circo"),
-			                    self.cat_info(tuple.fetch("id"))))
+			                    self.cat_info(tuple.fetch("id").to_i)))
 		end
 		return tab
 	end
@@ -346,9 +347,9 @@ class Bdd
 		res = requete("SELECT * FROM action WHERE id_info = #{id_info};")
 		tab = []
 		res.each do | tuple |
-			tab.push(Action.creer(tuple.fetch("id"),
+			tab.push(Action.creer(tuple.fetch("id").to_i,
 			                      tuple.fetch("action"),
-			                      tuple.fetch("poids")))
+			                      tuple.fetch("poids").to_i))
 		end
 		return tab
 	end
@@ -382,9 +383,9 @@ class Bdd
 		              #{regle_type};")
 		tab = []
 		res.each do | tuple |
-			tab.push(Circo.creer(tuple.fetch("id"),
+			tab.push(Circo.creer(tuple.fetch("id").to_i,
 			                     tuple.fetch("circo"),
-			                     tuple.fetch("poids")))
+			                     tuple.fetch("poids").to_i))
 		end
 		return tab
 	end
@@ -410,9 +411,9 @@ class Bdd
 		              #{regle_pers};")
 		tab = []
 		res.each do | tuple |
-			tab.push(Decla.creer(tuple.fetch("id"),
+			tab.push(Decla.creer(tuple.fetch("id").to_i,
 			                     tuple.fetch("decla"),
-			                     tuple.fetch("poids")))
+			                     tuple.fetch("poids").to_i))
 		end
 		return tab
 	end

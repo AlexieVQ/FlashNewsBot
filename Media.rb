@@ -23,7 +23,7 @@ class Media < Element
 	end
 	
 	## Retourne le nom du média, après l'avoir évalué, avec l'article donné
-	def nom(article)
+	def nom(article = nil)
 		return @nom.evaluer.modif_article(article)
 	end
 	

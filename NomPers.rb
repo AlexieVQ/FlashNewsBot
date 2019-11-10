@@ -25,7 +25,7 @@ class NomPers < Element
 	end
 	
 	## Donne le nom de la personne, avec l'article donné
-	def nom(article)
+	def nom(article = nil)
 		return @nom.evaluer.modif_article(article)
 	end
 	

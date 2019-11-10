@@ -65,14 +65,14 @@ class Pers < Element
 	##
 	# Renvoie un nom de la personne aléatoirement, après l'avoir évalué et
 	# modifié son article.
-	def nom(article)
+	def nom(article = nil)
 		return @noms.elt_alea.nom(article)
 	end
 	
 	##
 	# Renvoie un surnom de la personne aléatoirement, après l'avoir évalué et
 	# modifié son article.
-	def surnom(article)
+	def surnom(article = nil)
 		return @surnoms.elt_alea.surnom(article)
 	end
 	

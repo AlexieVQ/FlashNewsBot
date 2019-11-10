@@ -62,18 +62,19 @@ class Info < Element
 	
 	## Retourne une action après l'avoir évaluée.
 	def action
-		return @actions.elt_alea.evaluer
+		return @actions.elt_alea.action.evaluer
 	end
 	
 	## Retourne une circonstance après l'avoir évaluée
 	def circo
 		case type_circo
 		when "accuse" then
-			return @circos.elt_alea($bdd.circos(type: "accuse")).evaluer
+			return @circos.elt_alea($bdd.circos(nil, "accuse")).circo.evaluer
 		when "est_accuse" then
-			return @circos.elt_alea($bdd.circos(type: "est_accuse")).evaluer
+			return @circos.elt_alea($bdd.circos(nil, "est_accuse")).circo
+				.evaluer
 		else
-			return @circos.elt_alea([$bdd.circos.elt_alea]).evaluer
+			return @circos.elt_alea([$bdd.circos.elt_alea]).circo.evaluer
 		end
 	end
 	
@@ -85,7 +86,7 @@ class Info < Element
 	## Retourne une déclaration après l'avoir évaluée
 	def decla
 		return @declas.elt_alea($index['sujet'].declas |
-		                        [$bdd.declas.elt_alea]).evaluer
+		                        [$bdd.declas.elt_alea]).decla.evaluer
 	end
 	
 	## Retourne un hashtag après l'avoir évalué

@@ -1,3 +1,5 @@
+require_relative 'String.rb'
+
 ##
 # Ajout à la classe Array de méthodes pour obtenir un élément du tableau de
 # manière aléatoire.
@@ -14,12 +16,12 @@ class Array
 		somme_poids = 0
 		tab = self | ajout
 		tab.each do | elt |
-			somme_poids += elt.poids == nil ? 1 : elt.poids
+			somme_poids += defined?(elt.poids) ? elt.poids : 1
 		end
 		
 		nb_rand = rand(somme_poids)
 		tab.each do | elt |
-			nb_rand -= elt.poids == nil ? 1 : elt.poids
+			nb_rand -= defined?(elt.poids) ? elt.poids : 1
 			if nb_rand <= 0 then
 				return elt
 			end

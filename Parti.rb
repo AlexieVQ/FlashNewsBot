@@ -41,7 +41,7 @@ class Parti < Element
 	end
 	
 	## Donne le nom du parti, avec l'article donné après l'avoir évalué
-	def nom(article)
+	def nom(article = nil)
 		return @nom.evaluer.modif_article(article)
 	end
 	

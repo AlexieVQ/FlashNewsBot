@@ -25,7 +25,7 @@ class Surnom < Element
 	end
 	
 	## Donne le surnom de la personne, avec l'article donné
-	def surnom(article)
+	def surnom(article = nil)
 		return @surnom.evaluer.modif_article(article)
 	end
 	

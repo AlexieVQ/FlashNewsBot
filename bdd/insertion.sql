@@ -655,7 +655,7 @@ INSERT INTO nom_pers(id_pers, nom) VALUES
 	((SELECT id FROM pers WHERE nom_colle = 'IbraTV'), 'IbraTV'),
 	((SELECT id FROM pers WHERE nom_colle = '{rand(Antoine,)}Griezmann'), 'Antoine Griezmann'),
 	((SELECT id FROM pers WHERE nom_colle = 'Lacrim'), 'Lacrim'),
-	((SELECT id FROM pers WHERE nom_colle = 'Indépendantiste'), 'un indépendantiste {localite(region, pays).adjm}'),
+	((SELECT id FROM pers WHERE nom_colle = 'Indépendantiste'), 'un indépendantiste {localite(region,pays).adjm}'),
 	((SELECT id FROM pers WHERE nom_colle = 'DamienSaez'), 'Damien Saez'),
 	((SELECT id FROM pers WHERE nom_colle = '{rand(Jérôme,)}Cahuzac'), 'Jérôme Cahuzac'),
 	((SELECT id FROM pers WHERE nom_colle = '{rand(François,)}Ruffin'), 'François Ruffin'),

@@ -60,7 +60,7 @@ class Localite < Element
 	end
 	
 	## Donne le nom de la localité, avec l'article donné
-	def nom(article)
+	def nom(article = nil)
 		return @nom.evaluer.modif_article(article)
 	end
 	

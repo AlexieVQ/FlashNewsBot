@@ -1,3 +1,4 @@
+require_relative 'String.rb'
 require_relative 'Array.rb'
 require_relative 'Bdd.rb'
 
@@ -78,16 +79,16 @@ class Commande
 		when TypeCommande::ACCROCHE then
 			return $bdd.accroches.elt_alea
 		when TypeCommande::PERS then
-			return $bdd.pers(genre: parametres[0]).elt_alea
+			return $bdd.pers(parametres[0]).elt_alea
 		when TypeCommande::DATE then
 			return $bdd.dates.elt_alea
 		when TypeCommande::LIEU then
 			return $bdd.lieux.elt_alea
 		when TypeCommande::LOCALITE then
 			if ["ville", "pays", "region"].include?(parametres[0]) then
-				return $bdd.localites(type: parametres).elt_alea
+				return $bdd.localites(parametres).elt_alea
 			else
-				return $bdd.localites(nom_colle: parametres[0]).elt_alea
+				return $bdd.localites(nil, parametres[0]).elt_alea
 			end
 		when TypeCommande::PARTI then
 			return $bdd.partis(parametres).elt_alea
