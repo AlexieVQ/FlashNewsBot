@@ -1815,7 +1815,7 @@ INSERT INTO action(id_info, action, poids) VALUES
 	((SELECT id FROM info WHERE description = 'Récompensé aux Césars'), 'remporte le césar {genre(sujet,{rand(du meilleur acteur,du meilleur film,de la meilleur bande originale,d’honneur,du public)},{rand(de la meilleure actrice,du meilleur film,de la meilleur bande originale,d’honneur,du public)})}', 10),
 	((SELECT id FROM info WHERE description = 'Récompensé aux Oscars'), 'remporte l’oscar {genre(sujet,{rand(du meilleur acteur,du meilleur film,de la meilleur bande originale,d’honneur,du public)},{rand(de la meilleure actrice,du meilleur film,de la meilleur bande originale,d’honneur,du public)})}', 10),
 	((SELECT id FROM info WHERE description = 'Condamné à la chaise électronique'), 'condamné{gse} à la chaise électronique', 10),
-	((SELECT id FROM info WHERE description = 'Lance une start-up avec sujet2'), '{rand(s’associe avec,et)} {sujet2=pers}{sujet2.nom} {rand(pour conquérir le monde,pour lancer {rand(un projet de start-up,une entreprise)} {rand(dans le e-business,de trottinettes électriques)}', 10),
+	((SELECT id FROM info WHERE description = 'Lance une start-up avec sujet2'), '{rand(s’associe avec,et)} {sujet2=pers}{sujet2.nom} {rand(pour conquérir le monde,pour lancer {rand(un projet de start-up,une entreprise)} {rand(dans le e-business,de trottinettes électriques)})}', 10),
 	((SELECT id FROM info WHERE description = 'Retient objet en otage'), 'retient {objet2=pers}{objet2.nom} en otage', 10),
 	((SELECT id FROM info WHERE description = 'Retient objet en otage'), 'prend {objet2=pers}{objet2.nom} en otage', 10),
 	((SELECT id FROM info WHERE description = 'Proclame le UExit'), 'proclame le Brexit', 10),
