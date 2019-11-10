@@ -7,13 +7,6 @@ CREATE TABLE accroche (
 	poids INTEGER NOT NULL DEFAULT 10
 );
 
--- Table contenant les structures de status
-CREATE TABLE structure (
-	id SERIAL PRIMARY KEY,
-	structure VARCHAR(280) NOT NULL,
-	poids INTEGER NOT NULL DEFAULT 10
-);
-
 -- Type de localité
 CREATE TYPE type_localite AS ENUM ('ville', 'pays', 'region');
 

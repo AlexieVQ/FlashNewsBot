@@ -79,7 +79,7 @@ class Commande
 		when TypeCommande::GSE then
 			return genre("sujet", "", "e")
 		when TypeCommande::H then
-			return random("", "#")
+			return random(["", "#"])
 		when TypeCommande::ACCROCHE then
 			element = $bdd.accroches.elt_alea
 		when TypeCommande::PERS then

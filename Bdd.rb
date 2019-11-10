@@ -2,7 +2,6 @@ require 'pg'
 require_relative 'Api.rb'
 require_relative 'Array.rb'
 require_relative 'Accroche.rb'
-require_relative 'Structure.rb'
 require_relative 'Localite.rb'
 require_relative 'Pers.rb'
 require_relative 'NomPers.rb'
@@ -72,20 +71,6 @@ class Bdd
 			tab.push(Accroche.creer(tuple.fetch("id").to_i,
 			                        tuple.fetch("accroche"),
 			                        tuple.fetch("poids").to_i))
-		end
-		return tab
-	end
-	
-	##
-	# Retourne le tableau des structures
-	
-	def structures
-		res = requete("SELECT * FROM structure;")
-		tab = []
-		res.each do | tuple |
-			tab.push(Structure.creer(tuple.fetch("id").to_i,
-			                         tuple.fetch("structure"),
-			                         tuple.fetch("poids").to_i))
 		end
 		return tab
 	end
@@ -370,10 +355,9 @@ class Bdd
 			regle_info = "id_info IS NULL"
 		end
 		
-		case type
-		when "specifique" || "universel" || "accusation" then
-			regle_type = "type = '#{type}'"
-		when "accuse" || "est_accuse" then
+		if type == "specifique" || type == "universel" || type == "accusation"
+			then regle_type = "type = '#{type}'"
+		elsif type == "accuse" || type == "est_accuse" then
 			regle_type = "type IN ('#{type}', 'accusation')"
 		else
 			regle_type = "true"
