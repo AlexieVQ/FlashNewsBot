@@ -91,7 +91,11 @@ class Info < Element
 	
 	## Retourne un hashtag après l'avoir évalué
 	def hashtag
-		return @hashtag.evaluer
+		if @hashtag then
+			return @hashtag.evaluer
+		else
+			return nil
+		end
 	end
 	
 	## Retourne une action après l'avoir évaluée.

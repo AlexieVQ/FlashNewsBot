@@ -66,7 +66,11 @@ class Localite < Element
 	
 	## Donne le nom anglais de la localité
 	def nom_en
-		return @nom_en.evaluer
+		if @nom_en then
+			return @nom_en.evaluer
+		else
+			return @nom.evaluer.modif_article("0")
+		end
 	end
 	
 	## Donne le nom collé de la localité
@@ -86,12 +90,22 @@ class Localite < Element
 	
 	## Donne le département de la localité
 	def departement
-		return @departement.evaluer
+		if @departement =~ /^ \([^\(\)]*\)/ then
+			return @departement.evaluer
+		elsif @departement then
+			return " (#{@departement.evaluer})"
+		else
+			return ""
+		end
 	end
 	
 	## Donne l'emoji de la localité
 	def emoji
-		return @emoji.evaluer
+		if @emoji then
+			return @emoji.evaluer
+		else
+			return ""
+		end
 	end
 	
 	## Conversion en chaîne de caractère
