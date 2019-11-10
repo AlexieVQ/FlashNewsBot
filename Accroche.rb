@@ -16,7 +16,8 @@ class Accroche < Element
 		new(accroche, poids)
 	end
 	
-	## Pour initialiser une accroche, il faut l'accroche (une chaîne de
+	##
+	# Pour initialiser une accroche, il faut l'accroche (une chaîne de
 	# caractères) et son poids.
 	def initialize(accroche, poids)
 		super(poids)

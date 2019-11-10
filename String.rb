@@ -38,7 +38,10 @@ class String
 		# Demande à l'index
 		resultat = $index[com].retourner(attribut, parametres)
 		if nouv_var do
-			$index[nouv_var] = resultat
+			if $index[nouv_var] == nil do
+				$index[nouv_var] = resultat
+			else
+				raise "#{nouv_var} existe déjà dans l'index"
 		else
 			return resultat.to_s
 		end
