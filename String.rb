@@ -55,7 +55,7 @@ class String
 	end
 	
 	def modif_article(article)
-		return self
+		return article + " " + self
 	end
 	
 end

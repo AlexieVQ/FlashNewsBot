@@ -69,7 +69,7 @@ class Commande
 	def retourner(attribut, parametres)
 		case @commande
 		when TypeCommande::RAND then
-			return rand(parametres)
+			return random(parametres)
 		when TypeCommande::MAJ then
 			return parametres[0].capitalize
 		when TypeCommande::CAP then
@@ -79,7 +79,7 @@ class Commande
 		when TypeCommande::GSE then
 			return genre("sujet", "", "e")
 		when TypeCommande::H then
-			return rand("", "#")
+			return random("", "#")
 		when TypeCommande::ACCROCHE then
 			element = $bdd.accroches.elt_alea
 		when TypeCommande::PERS then
@@ -115,12 +115,17 @@ class Commande
 		end
 	end
 	
+	## Retourne une chaîne de caractères sans attribut ni paramètres
+	def to_s
+		return self.retourner(nil, nil).to_s
+	end
+	
 	private
 	
 	##
 	# Prend un tableau de chaînes de caractères en paramètres et retourne une
 	# des chaînes aléatoirement.
-	def rand(chaines)
+	def random(chaines)
 		return chaines.elt_alea
 	end
 	

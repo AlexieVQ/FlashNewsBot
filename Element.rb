@@ -27,7 +27,7 @@ class Element
 	end
 	
 	## Retourne la valeur demandée
-	def retourner
+	def retourner(attribut, parametres)
 		return self.to_s
 	end
 	
