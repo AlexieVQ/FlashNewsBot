@@ -6,7 +6,7 @@ require_relative 'Array.rb'
 # Classe représentant une information.
 #
 # Une information est caractérisée par ses actions, ses circonstances, son type,
-# ses déclarations, son hashtag, son type de circonstance.
+# ses déclarations, son hashtag, son type de circonstance, ses catégories.
 
 class Info < Element
 	
@@ -18,11 +18,14 @@ class Info < Element
 	
 	## Type de circonstance
 	attr :type_circo, false
+	## Catégories
+	attr :categories, false
 	
 	##
 	# Pour créer une information, il faut son identifiant, le tableau de ses
 	# actions, son poids, le tableau de ses circonstances, son type, le tableau
-	# de ses déclarations, son hashtag, son type de circonstance.
+	# de ses déclarations, son hashtag, son type de circonstance et le tableau
+	# de ses catégories.
 	def Info.creer(id,
 	               actions,
 	               poids,
@@ -30,8 +33,10 @@ class Info < Element
 	               type,
 	               declas,
 	               hashtag,
-	               type_circo)
-		new(id, actions, poids, circos, type, declas, hashtag, type_circo)
+	               type_circo,
+	               categories)
+		new(id, actions, poids, circos, type, declas, hashtag, type_circo,
+		    categories)
 	end
 	
 	## Méthode privée
@@ -42,7 +47,8 @@ class Info < Element
 	               type,
 	               declas,
 	               hashtag,
-	               type_circo)
+	               type_circo,
+	               categories)
 		super(id, poids)
 		@actions = actions
 		@circos = circos
@@ -50,6 +56,7 @@ class Info < Element
 		@declas = declas
 		@hashtag = hashtag
 		@type_circo = type_circo
+		@categories = categories
 	end
 	
 	## Retourne une action après l'avoir évaluée.
