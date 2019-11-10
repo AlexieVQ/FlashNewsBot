@@ -329,7 +329,7 @@ class Bdd
 		res.each do | tuple |
 			tab.push(Info.creer(tuple.fetch("id"),
 			                    self.actions(tuple.fetch("id")),
-			                    tuple.fetch("poid"),
+			                    tuple.fetch("poids"),
 			                    self.circos(tuple.fetch("id")),
 			                    self.declas(tuple.fetch("decla")),
 			                    tuple.fetch("hashtag"),
