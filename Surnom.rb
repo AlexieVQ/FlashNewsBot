@@ -12,14 +12,15 @@ class Surnom < Element
 	# @surnom		=> Surnom du personnage
 	
 	##
-	# Pour créer un surnom, il faut sa chaîne de caractères et son poids.
-	def Surnom.creer(surnom, poids)
-		new(surnom, poids)
+	# Pour créer un surnom, il faut son identifiant, sa chaîne de caractères et
+	# son poids.
+	def Surnom.creer(id, surnom, poids)
+		new(id, surnom, poids)
 	end
 	
 	## Méthode privée
-	def initialize(surnom, poids)
-		super(poids)
+	def initialize(id, surnom, poids)
+		super(id, poids)
 		@surnom = surnom
 	end
 	

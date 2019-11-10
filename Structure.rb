@@ -11,15 +11,15 @@ class Structure < Element
 	# @structure	=> Structure du post
 	
 	##
-	# Pour créer une structure, il faut la structure (une chaîne de  caractères)
-	# et son poids.
-	def Structure.creer(structure, poids)
-		new(structure, poids)
+	# Pour créer une structure, il faut son identifiant, la structure (une
+	# chaîne de  caractères) et son poids.
+	def Structure.creer(id, structure, poids)
+		new(id, structure, poids)
 	end
 	
 	## Méthode privée
-	def initialize(structure, poids)
-		super(poids)
+	def initialize(id, structure, poids)
+		super(id, poids)
 		@structure = structure
 	end
 	

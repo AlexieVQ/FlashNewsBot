@@ -23,7 +23,8 @@ class Localite < Element
 	# Pour créer une localite, il faut le type, le nom, le poids et
 	# facultativement le  nom en anglais, le nom collé, les adjectifs masculin
 	# et féminin, le département et l'emoji.
-	def Localite.creer(type,
+	def Localite.creer(id,
+	                   type,
 	                   nom,
 	                   poids,
 	                   nom_en,
@@ -32,11 +33,13 @@ class Localite < Element
 	                   adjf,
 	                   departement,
 	                   emoji)
-		new(type, nom, poids, nom_en, nom_colle, adjm, adjf, departement, emoji)
+		new(id, type, nom, poids, nom_en, nom_colle, adjm, adjf, departement,
+		    emoji)
 	end
 	
 	## Méthode privée
-	def initialize(type,
+	def initialize(id,
+	               type,
 	               nom,
 	               poids,
 	               nom_en,
@@ -45,7 +48,7 @@ class Localite < Element
 	               adjf,
 	               departement,
 	               emoji)
-		super(poids)
+		super(id, poids)
 		@type = type
 		@nom = nom
 		@nom_en = nom_en

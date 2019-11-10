@@ -12,14 +12,15 @@ class NomPers < Element
 	# @nom			=> Nom du personnage
 	
 	##
-	# Pour créer un nom, il faut sa chaîne de caractères et son poids.
-	def NomPers.creer(nom, poids)
-		new(nom, poids)
+	# Pour créer un nom, il faut son identifiant, sa chaîne de caractères et son
+	# poids.
+	def NomPers.creer(id, nom, poids)
+		new(id, nom, poids)
 	end
 	
 	## Méthode privée
-	def initialize(nom, poids)
-		super(poids)
+	def initialize(id, nom, poids)
+		super(id, poids)
 		@nom = nom
 	end
 	

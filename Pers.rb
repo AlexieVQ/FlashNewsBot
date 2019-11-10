@@ -21,16 +21,31 @@ class Pers < Element
 	attr :localite, false
 	
 	##
-	# Pour créer un personnage, il faut un tableau contenant ses noms (classe
-	# NomPers), un tableau contenant ses surnoms (classe Surnom), son poids, son
-	# nom collé, son genre, sa catégorie, sa localité (classe Localite).
-	def Pers.creer(noms, surnoms, poids, nom_colle, genre, categorie, localite)
-		new(noms, surnoms, poids, nom_colle, genre, categorie, localite)
+	# Pour créer un personnage, il faut son identifiant un tableau contenant ses
+	# noms (classe NomPers), un tableau contenant ses surnoms (classe Surnom),
+	# son poids, son nom collé, son genre, sa catégorie, sa localité (classe
+	# Localite).
+	def Pers.creer(id,
+	               noms,
+	               surnoms,
+	               poids,
+	               nom_colle,
+	               genre,
+	               categorie,
+	               localite)
+		new(id, noms, surnoms, poids, nom_colle, genre, categorie, localite)
 	end
 	
 	## Méthode privée
-	def initialize(noms, surnoms, poids, nom_colle, genre, categorie, localite)
-		super(poids)
+	def initialize(id,
+	               noms,
+	               surnoms,
+	               poids,
+	               nom_colle,
+	               genre,
+	               categorie,
+	               localite)
+		super(id, poids)
 		@noms = noms
 		@surnoms = surnoms
 		@nom_colle = nom_colle
