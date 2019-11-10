@@ -216,7 +216,8 @@ class Bdd
 			                    tuple.fetch("nom_colle"),
 			                    tuple.fetch("genre"),
 			                    categorie),
-			                    localite(tuple.fetch("id_pays"))))
+			                    localite(tuple.fetch("id_pays")),
+			                    self.declas(id_pers: tuple.fetch("id")))
 		end
 		return tab
 	end

@@ -6,7 +6,8 @@ require_relative 'Array.rb'
 # Classe représentant un personnage.
 #
 # Un personnage est caractérisé par ses noms, ses surnoms, son nom collé (pour
-# les hashtags), son genre, sa catégorie et sa localité (un objet Localite).
+# les hashtags), son genre, sa catégorie, sa localité (un objet Localite) et ses
+# déclarations.
 
 class Pers < Element
 	
@@ -20,12 +21,14 @@ class Pers < Element
 	attr :categorie, false
 	## Localité du personnage
 	attr :localite, false
+	## Déclarations du personnage
+	attr :declas, false
 	
 	##
 	# Pour créer un personnage, il faut son identifiant un tableau contenant ses
 	# noms (classe NomPers), un tableau contenant ses surnoms (classe Surnom),
 	# son poids, son nom collé, son genre, sa catégorie, sa localité (classe
-	# Localite).
+	# Localite) et un tableau contenant ses déclarations.
 	def Pers.creer(id,
 	               noms,
 	               surnoms,
@@ -33,8 +36,10 @@ class Pers < Element
 	               nom_colle,
 	               genre,
 	               categorie,
-	               localite)
-		new(id, noms, surnoms, poids, nom_colle, genre, categorie, localite)
+	               localite,
+	               declas)
+		new(id, noms, surnoms, poids, nom_colle, genre, categorie, localite,
+		    declas)
 	end
 	
 	## Méthode privée
@@ -45,7 +50,8 @@ class Pers < Element
 	               nom_colle,
 	               genre,
 	               categorie,
-	               localite)
+	               localite,
+	               declas)
 		super(id, poids)
 		@noms = noms
 		@surnoms = surnoms
@@ -53,6 +59,7 @@ class Pers < Element
 		@genre = genre
 		@categorie = categorie
 		@localite = localite
+		@declas = declas
 	end
 	
 	##
