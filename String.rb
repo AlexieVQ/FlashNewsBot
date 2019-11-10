@@ -6,11 +6,13 @@ class String
 	
 	## Évalue les commandes entre {}
 	def evaluer
-		while self.scan(/{[^{}]+}/).length do
-			self.gsub(/{[^{}]+}/) do | commande |
+		res = self
+		while res.scan(/{[^{}]+}/).length do
+			res = res.gsub(/{[^{}]+}/) do | commande |
 				commande.eval_commande
 			end
 		end
+		return res
 	end
 	
 	## Évaluer une commande
