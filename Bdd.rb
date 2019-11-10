@@ -331,7 +331,7 @@ class Bdd
 			                    self.actions(tuple.fetch("id")),
 			                    tuple.fetch("poids"),
 			                    self.circos(tuple.fetch("id")),
-			                    self.declas(tuple.fetch("decla")),
+			                    self.declas(tuple.fetch("id")),
 			                    tuple.fetch("hashtag"),
 			                    tuple.fetch("type_circo"),
 			                    self.cat_info(tuple.fetch("id"))))
