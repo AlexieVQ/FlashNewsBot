@@ -48,6 +48,7 @@ class String
 			else
 				raise "#{nouv_var} existe déjà dans l'index"
 			end
+			return ""
 		else
 			return resultat.to_s
 		end

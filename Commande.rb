@@ -16,6 +16,8 @@ module TypeCommande
 	GENRE = 4
 	## gse <=> genre(sujet,,e)
 	GSE = 5
+	## {h} : affiche aléatoirement un # ou non
+	H = 6
 	## Création des accroches
 	ACCROCHE = 10
 	## Création des personnages
@@ -76,6 +78,8 @@ class Commande
 			return genre(parametres[0], parametres[1], parametres[2])
 		when TypeCommande::GSE then
 			return genre("sujet", "", "e")
+		when TypeCommande::GSE then
+			return rand("", "#")
 		when TypeCommande::ACCROCHE then
 			return $bdd.accroches.elt_alea
 		when TypeCommande::PERS then
