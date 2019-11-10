@@ -1,12 +1,12 @@
+require_relative 'Element.rb'
+require_relative 'String.rb'
+
 ##
 # Classe représentant une localité (ville, région, pays).
 #
 # Une localité est caractérisée par son nom, son nom en anglais, son nom sans
 # espaces, ses adjectifs masculin et féminin, son département, son emoji et son
 # type.
-
-require_relative 'Element.rb'
-require_relative 'String.rb'
 
 class Localite < Element
 	
@@ -47,7 +47,7 @@ class Localite < Element
 	end
 	
 	## Donne le nom de la localité, avec l'article donné
-	def nom(article = "")
+	def nom(article)
 		return @nom.evaluer.modif_article(article)
 	end
 	
@@ -87,6 +87,16 @@ class Localite < Element
 	end
 	
 	## Retourne l'attribut demandé avec paramètres
+	# Les attributs peuvent être :
+	# - nom
+	# - nom_en
+	# - nom_colle
+	# - adjm
+	# - adjf
+	# - departement
+	# - emoji
+	# Les paramètres peuvent être :
+	# - l'article quand on demande le nom
 	def retourner(attribut, parametres)
 		case attribut
 		when "nom"

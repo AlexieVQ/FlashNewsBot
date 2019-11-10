@@ -1,10 +1,10 @@
+require_relative 'Element.rb'
+require_relative 'String.rb'
+
 ##
 # Classe représentant la structure d'un post, héritant de la classe Element.
 #
 # Une structure est caractérisée par sa structure.
-
-require_relative 'Element.rb'
-require_relative 'String.rb'
 
 class Structure < Element
 	

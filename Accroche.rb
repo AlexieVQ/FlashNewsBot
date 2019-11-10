@@ -1,11 +1,11 @@
+require_relative 'Element.rb'
+require_relative 'String.rb'
+
 ##
 # Classe représentant l'accroche d'une information, héritant de la classe
 # Element.
 #
 # Une arroche est caractérisée par sa formulation.
-
-require_relative 'Element.rb'
-require_relative 'String.rb'
 
 class Accroche < Element
 	
