@@ -143,6 +143,7 @@ class Bdd
 			return self.localites(id: id)[0]
 		else
 			return nil
+		end
 	end
 	
 	##
