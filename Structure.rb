@@ -10,19 +10,21 @@ class Structure < Element
 	
 	# @structure	=> Structure du post
 	
-	## Création de la structure
+	##
+	# Pour créer une structure, il faut la structure (une chaîne de  caractères)
+	# et son poids.
 	def Structure.creer(structure, poids)
 		new(structure, poids)
 	end
 	
-	## Pour initialiser une structure, il faut la structure (une chaîne de
-	# caractères) et son poids.
+	## Méthode privée
 	def initialize(structure, poids)
 		super(poids)
 		@structure = structure
 	end
 	
-	## Donne la structure (une chaîne de caractères) juste l'avoir évaluée.
+	##
+	# Donne la structure (une chaîne de caractères) juste après l'avoir évaluée.
 	def structure
 		return @structure.evaluer
 	end

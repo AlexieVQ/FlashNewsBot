@@ -44,9 +44,7 @@ class Api
 		new(type, nom_instance, cle_api, cle_secret)
 	end
 	
-	##
-	# Elle est privée normalement elle
-	
+	## Méthode privée
 	def initialize(type, nom_instance, cle_api, cle_secret)
 		@session = Hash.new
 		@type = type

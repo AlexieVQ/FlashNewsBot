@@ -20,22 +20,32 @@ class Localite < Element
 	# @type			=> Ville, région ou pays
 	
 	##
-	# Pour créer une localite, il faut le type, le nom, et facultativement le
-	# nom en anglais, le nom collé, les adjectifs masculin et féminin, le
-	# département et l'emoji.
+	# Pour créer une localite, il faut le type, le nom, le poids et
+	# facultativement le  nom en anglais, le nom collé, les adjectifs masculin
+	# et féminin, le département et l'emoji.
 	def Localite.creer(type,
 	                   nom,
+	                   poids,
 	                   nom_en,
 	                   nom_colle,
 	                   adjm,
 	                   adjf,
 	                   departement,
 	                   emoji)
-		new(type, nom, nom_en, nom_colle, adjm, adjf, departement, emoji)
+		new(type, nom, poids, nom_en, nom_colle, adjm, adjf, departement, emoji)
 	end
 	
-	## Initialisation
-	def initialize(type, nom, nom_en, nom_colle, adjm, adjf, departement, emoji)
+	## Méthode privée
+	def initialize(type,
+	               nom,
+	               poids,
+	               nom_en,
+	               nom_colle,
+	               adjm,
+	               adjf,
+	               departement,
+	               emoji)
+		super(poids)
 		@type = type
 		@nom = nom
 		@nom_en = nom_en
@@ -86,15 +96,16 @@ class Localite < Element
 		return self.nom
 	end
 	
-	## Retourne l'attribut demandé avec paramètres
+	##
+	# Retourne l'attribut demandé avec paramètres
 	# Les attributs peuvent être :
-	# - nom
-	# - nom_en
-	# - nom_colle
-	# - adjm
-	# - adjf
-	# - departement
-	# - emoji
+	# - "nom"
+	# - "nom_en"
+	# - "nom_colle"
+	# - "adjm"
+	# - "adjf"
+	# - "departement"
+	# - "emoji"
 	# Les paramètres peuvent être :
 	# - l'article quand on demande le nom
 	def retourner(attribut, parametres)

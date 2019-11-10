@@ -11,14 +11,14 @@ class Accroche < Element
 	
 	# @accroche		=> Formulation de l'accroche
 	
-	## Création de l'accroche
+	##
+	# Pour créer une accroche, il faut l'accroche (une chaîne de caractères) et
+	# son poids.
 	def Accroche.creer(accroche, poids)
 		new(accroche, poids)
 	end
 	
-	##
-	# Pour initialiser une accroche, il faut l'accroche (une chaîne de
-	# caractères) et son poids.
+	## Méthode privée
 	def initialize(accroche, poids)
 		super(poids)
 		@accroche = accroche
