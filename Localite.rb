@@ -111,7 +111,7 @@ class Localite < Element
 	# - "emoji"
 	# Les paramètres peuvent être :
 	# - l'article quand on demande le nom
-	def retourner(attribut, parametres)
+	def retourner(attribut = nil, parametres = nil)
 		case attribut
 		when "nom" then
 			return self.nom(parametres[0])
@@ -128,7 +128,7 @@ class Localite < Element
 		when "emoji" then
 			return self.emoji
 		else
-			return self.nom
+			return ""
 		end
 	end
 	

@@ -35,7 +35,7 @@ class NomPers < Element
 	end
 	
 	## Retourne le nom avec les paramètres donnés (article)
-	def retourner(attribut, parametres)
+	def retourner(attribut = nil, parametres = nil)
 		return self.nom(parametres[0])
 	end
 	

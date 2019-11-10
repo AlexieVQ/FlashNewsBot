@@ -107,7 +107,7 @@ class Info < Element
 	# - "type"
 	# - "decla"
 	# - "hashtag"
-	def retourner(attribut, parametres)
+	def retourner(attribut = nil, parametres = nil)
 		case attribut
 		when "action" then
 			return self.action
@@ -120,7 +120,7 @@ class Info < Element
 		when "hashtag" then
 			return self.hashtag
 		else
-			return self.to_s
+			return ""
 		end
 	end
 	

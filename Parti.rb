@@ -76,7 +76,7 @@ class Parti < Element
 	# - "type"
 	# Paramètres possibles :
 	# - Article pour le nom
-	def retourner(attribut, parametres)
+	def retourner(attribut = nil, parametres = nil)
 		case attribut
 		when "nom" then
 			return self.nom(parametres[0])
@@ -91,7 +91,7 @@ class Parti < Element
 		when "type" then
 			return @type
 		else
-			return self.to_s
+			return ""
 		end
 	end
 	

@@ -66,7 +66,7 @@ class Commande
 	##
 	# Retourne le résultat de la commande pour l'attribut et les paramètres
 	# donnés.
-	def retourner(attribut, parametres)
+	def retourner(attribut = nil, parametres = nil)
 		case @commande
 		when TypeCommande::RAND then
 			return random(parametres)
@@ -83,7 +83,11 @@ class Commande
 		when TypeCommande::ACCROCHE then
 			element = $bdd.accroches.elt_alea
 		when TypeCommande::PERS then
-			element = $bdd.pers(parametres[0]).elt_alea
+			if attribut && attribut != "" then
+				element = $bdd.pers.elt_alea
+			else
+				element = $bdd.pers(parametres[0]).elt_alea
+			end
 		when TypeCommande::DATE then
 			element = $bdd.dates.elt_alea
 		when TypeCommande::LIEU then

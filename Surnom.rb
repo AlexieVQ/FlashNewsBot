@@ -35,7 +35,7 @@ class Surnom < Element
 	end
 	
 	## Retourne le surnom avec les paramètres donnés (article)
-	def retourner(attribut, parametres)
+	def retourner(attribut = nil, parametres = nil)
 		return self.surnom(parametres[0])
 	end
 	

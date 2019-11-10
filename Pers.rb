@@ -97,7 +97,7 @@ class Pers < Element
 	# - "localite"
 	# Paramètres :
 	# - article pour le nom ou le surnom
-	def retourner(attribut, parametres)
+	def retourner(attribut = nil, parametres = nil)
 		case attribut
 		when "nom" then
 			return self.nom(parametres[0])
@@ -108,7 +108,7 @@ class Pers < Element
 		when "localite" then
 			return @localite
 		else
-			return self.to_s
+			return ""
 		end
 	end
 	

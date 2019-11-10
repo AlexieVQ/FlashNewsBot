@@ -104,9 +104,9 @@ class Status
 	end
 	
 	##
-	# Génère l'accroche du status
+	# Génère l'accroche du status, qui contient le nom du sujet.
 	def accroche
-		return $index['accroche'].retourner.accroche
+		return $index['accroche'].retourner.accroche + " " + $index['sujet'].nom
 	end
 	
 end
