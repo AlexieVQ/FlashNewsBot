@@ -33,9 +33,4 @@ class DateInfo < Element
 		return self.date
 	end
 	
-	## Retourne la date stokée, après l'avoir évaluée.
-	def retourner
-		return self.date
-	end
-	
 end
