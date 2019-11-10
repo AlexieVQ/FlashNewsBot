@@ -212,7 +212,7 @@ class Bdd
 			                    self.noms_pers(tuple.fetch("id")),
 			                    self.surnoms(tuple.fetch("id")),
 			                    tuple.fetch("poids") *
-			                    (categories.include?(categorie) ? 10 : 1),
+			                    	(categories.include?(categorie) ? 10 : 1),
 			                    tuple.fetch("nom_colle"),
 			                    tuple.fetch("genre"),
 			                    categorie),
