@@ -115,7 +115,7 @@ class String
 			end
 			
 		when "0"
-			return self.gsub(/^(un|une|le|la|l’) /, "")
+			return self.gsub(/^(un |une |le |la |l’)/, "")
 			
 		else
 			return article + " " + self
