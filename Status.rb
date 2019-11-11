@@ -122,7 +122,7 @@ class Status
 				if rand(2) == 1 then
 					chaine += " #" + $index['sujet'].nom_colle
 				else
-					chaine += " " + $index['sujet'].nom_colle
+					chaine += " " + $index['sujet'].nom.capitalize
 				end
 				chaine += " : " + $index['sujet'].surnom
 			else

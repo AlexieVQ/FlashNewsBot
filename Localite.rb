@@ -17,7 +17,9 @@ class Localite < Element
 	# @adjf			=> Adjectif féminin
 	# @departement	=> Département
 	# @emoji		=> Emoji
-	# @type			=> Ville, région ou pays
+	
+	## Ville, région ou pays
+	attr :type, false
 	
 	##
 	# Pour créer une localite, il faut le type, le nom, le poids et
@@ -61,6 +63,7 @@ class Localite < Element
 	
 	## Donne le nom de la localité, avec l'article donné
 	def nom(article = nil)
+		if @type == "ville" && article == "en" then article = "à" end
 		return @nom.evaluer.modif_article(article)
 	end
 	

@@ -11,7 +11,7 @@ class String
 		while res =~ /{[^{}]+}/ do
 			res = res.gsub(/{[^{}]+}/) do | commande |
 				unless rescom = commande.eval_commande then
-					raise "Erreur en essayant d'évaluer #{commande}"
+					raise "Erreur en essayant d'évaluer #{commande} dans #{self}"
 				end
 				rescom
 			end

@@ -6,3 +6,4 @@ $bdd = Bdd.new
 status = Status.creer
 
 puts status
+puts "#{status.texte.length} caractères"
