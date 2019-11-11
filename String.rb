@@ -56,6 +56,14 @@ class String
 		end
 	end
 	
+	##
+	# Modifie l'article en début de chaîne en l'article passé en paramètre.  
+	# Articles supportés :
+	# - "le"
+	# - "de"
+	# - "à"
+	# - "en"
+	# - "0" pour supprimer l'article en début de chaîne
 	def modif_article(article)
 		case article
 			
