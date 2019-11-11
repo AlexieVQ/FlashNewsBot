@@ -41,25 +41,63 @@ class Bdd
 	
 	def enregistrer_app(type,
 	                    domaine,
+	                    username,
 	                    api_key,
 	                    api_secret,
 	                    oauth_token,
-	                    oauth_token_secret)
+	                    oauth_token_secret,
+	                    oauth_verifier)
 		case type
 		when ApiType::TWITTER then
 			chaine_type = 'twitter'
 		end
 		
-		requete("INSERT INTO application(type, domaine, api_key, api_secret,
-		        oauth_token, oauth_token_secret) VALUES ('#{chaine_type}',
-		        '#{domaine}', '#{api_key}', '#{api_secret}', '#{oauth_token}',
-		        '#{oauth_token_secret}');")
+		requete("INSERT INTO application(type, domaine, username, api_key,
+		        api_secret, oauth_token, oauth_token_secret, oauth_verifier)
+		        VALUES ('#{chaine_type}', '#{domaine}', '#{username}',
+		        '#{api_key}', '#{api_secret}', '#{oauth_token}',
+		        '#{oauth_token_secret}', '#{oauth_verifier}');")
 		
 		res = requete("SELECT id FROM application WHERE domaine =
-		              '#{domaine}';")
-		id = res[0].fetch("id").to_i
+		              '#{domaine}' AND username = '#{username}';")
+		if res.ntuples != 0 then
+			id = res[0].fetch("id").to_i
+		else
+			id = nil
+		end
 		return id
 	end
+	
+	##
+	# Mets à jour une application dans la base.
+	
+	def maj_app(id, oauth_token, oauth_token_secret, oauth_verifier)
+		requete("UPDATE application SET oauth_token = '#{oauth_token}',
+		        oauth_token_secret = '#{oauth_token_secret}', oauth_verifier =
+		        '#{oauth_verifier}' WHERE id = #{id};")
+	end
+	
+	##
+	# Pour un domaine et un username donné, inscrit les tokens de l'app dans la
+	# table de hachage.
+	
+	def app(domaine, username, hash)
+		res = requete("SELECT * FROM application WHERE domaine = '#{domaine}'
+		              AND username = '#{username}';")
+		if res.ntuples != 0 then
+			hash[:api_key] = res[0].fetch("api_key")
+			hash[:api_secret] = res[0].fetch("api_secret")
+			hash[:oauth_token] = res[0].fetch("oauth_token")
+			hash[:oauth_token_secret] = res[0].fetch("oauth_token_secret")
+			hash[:oauth_verifier] = res[0].fetch("oauth_verifier")
+			return res[0].fetch("id").to_i
+		else
+			return nil
+		end
+	end
+	
+	##
+	# 
 	
 	##
 	# Retourne le tableau des accroches

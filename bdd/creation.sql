@@ -148,17 +148,20 @@ CREATE TABLE decla (
 );
 
 -- Type du réseau social
-CREATE TYPE type_app AS ENUM ('twitter', 'mastodon');
+CREATE TYPE type_app AS ENUM ('twitter');
 
 -- Application
 CREATE TABLE application (
 	id SERIAL PRIMARY KEY,
 	type TYPE_APP NOT NULL,
-	domaine VARCHAR(64) UNIQUE NOT NULL,
+	domaine VARCHAR(64) NOT NULL,
+	username VARCHAR(64) NOT NULL,
 	api_key VARCHAR(256),
 	api_secret VARCHAR(256),
 	oauth_token VARCHAR(256),
-	oauth_token_secret VARCHAR(256)
+	oauth_token_secret VARCHAR(256),
+	oauth_verifier VARCHAR(256),
+	UNIQUE (domaine, username)
 );
 
 -- Historique des status envoyés, avec leurs statistiques et les éléments
