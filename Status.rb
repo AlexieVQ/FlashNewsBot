@@ -126,8 +126,9 @@ class Status
 				end
 				chaine += " : " + $index['sujet'].surnom
 			else
-				chaine += " " + $index['accroche'].retourner.accroche + " " +
-						$index['sujet'].nom
+				chaine += " " + $index['accroche'].retourner.accroche
+				chaine =~ /:/ ? chaine += " " : chaine += " - "
+				chaine += $index['sujet'].nom
 			end
 		end
 		

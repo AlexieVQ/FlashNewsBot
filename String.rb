@@ -38,17 +38,22 @@ class String
 		# Paramètres
 		parametres = []
 		if self =~ /\([^\(\)]*\)/ then
-			parametres = self.scan(/\([^\(\)]*\)/)[0].scan(/[^\(\)\,]+/)
+			parametres = self.scan(/[\,\(][^\(\)\,]*/)
+			parametres.each do | param |
+				param.gsub!(/^[\,\(]/, "")
+			end
 		end
 		
 		# Demande à l'index
 		if $index[com] == nil then
-			return nil
+			raise "#{com} n'existe pas dans l'index"
 		end
 		resultat = $index[com].retourner(attribut, parametres)
 		if nouv_var then
 			if $index[nouv_var] == nil then
 				$index[nouv_var] = resultat
+			else
+				raise "#{nouv_var} existe déjà dans l'index"
 			end
 			return ""
 		else
@@ -71,51 +76,51 @@ class String
 			return self
 			
 		when "le"
-			if self =~ /^un / then
-				if self =~ /^un [aeiouyéèàêâôûùïî]/ then
-					return self.gsub(/^un /, "l’")
+			if self =~ /^un /i then
+				if self =~ /^un [aeiouyéèàêâôûùïî]/i then
+					return self.gsub(/^un /i, "l’")
 				else
-					return self.gsub(/^un/, "le")
+					return self.gsub(/^un/i, "le")
 				end
-			elsif self =~ /^une / then
-				if self =~ /^une [aeiouyéèàêâôûùïî]/ then
-					return self.gsub(/^une /, "l’")
+			elsif self =~ /^une /i then
+				if self =~ /^une [aeiouyéèàêâôûùïî]/i then
+					return self.gsub(/^une /i, "l’")
 				else
-					return self.gsub(/^une/, "la")
+					return self.gsub(/^une/i, "la")
 				end
 			else
 				return self
 			end
 			
 		when "de"
-			if self =~ /^le [^aeiouyéèàêâôûùïî]/ then
-				return self.gsub(/^le/, "du")
-			elsif self =~ /^[aeiouyéèàêâôûùïî]/ then
+			if self =~ /^le [^aeiouyéèàêâôûùïî]/i then
+				return self.gsub(/^le/i, "du")
+			elsif self =~ /^[aeiouyéèàêâôûùïî]/i then
 				return self.gsub(/^/, "d’")
 			else
 				return self.gsub(/^/, "de ")
 			end
 			
 		when "à"
-			if self =~ /^le / then
-				return self.gsub(/^le/, "au")
+			if self =~ /^le /i then
+				return self.gsub(/^le/i, "au")
 			else
 				return self.gsub(/^/, "à ")
 			end
 			
 		when "en"
-			if self =~ /^le / then
-				return self.gsub(/^le/, "au")
-			elsif self =~ /^la / then
-				return self.gsub(/^la/, "en")
-			elsif self =~ /^l’/ then
-				return self.gsub(/^l’/, "en ")
+			if self =~ /^le /i then
+				return self.gsub(/^le/i, "au")
+			elsif self =~ /^la /i then
+				return self.gsub(/^la/i, "en")
+			elsif self =~ /^l’/i then
+				return self.gsub(/^l’/i, "en ")
 			else
 				return self.gsub(/^/, "en ")
 			end
 			
 		when "0"
-			return self.gsub(/^(un |une |le |la |l’)/, "")
+			return self.gsub(/^(un |une |le |la |l’)/i, "")
 			
 		else
 			return article + " " + self
