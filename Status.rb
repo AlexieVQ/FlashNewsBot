@@ -41,10 +41,10 @@ class Status
 		$index['sujet'] = $bdd.pers(nil, $index['info'].categories).elt_alea
 		
 		@texte = partie_info
+		@texte = accroche + " " + @texte
 		if rand(2) == 1 then
 			@texte += " " + partie_decla
 		end
-		@texte = accroche + " " + @texte
 	end
 	
 	## Renvoie le texte de l'info

@@ -14,6 +14,7 @@ class Pers < Element
 	# @noms			=> Tableau des noms
 	# @surnoms		=> Tableau des surnoms
 	# @nom_colle	=> Nom collé pour hashtag
+	# @surnomme		=> Nombre de fois que le surnom a été donné.
 	
 	## Genre du personnage ('M' ou 'F')
 	attr :genre, false
@@ -60,6 +61,7 @@ class Pers < Element
 		@categorie = categorie
 		@localite = localite
 		@declas = declas
+		@surnomme = 0
 	end
 	
 	##
@@ -71,9 +73,26 @@ class Pers < Element
 	
 	##
 	# Renvoie un surnom de la personne aléatoirement, après l'avoir évalué et
-	# modifié son article.
+	# modifié son article.  
+	# Si un surnom a déjà été donné, renvoie le pronom.
 	def surnom(article = nil)
-		return @surnoms.elt_alea.surnom(article)
+		unless @surnomme > 0 then
+			@surnomme += 1
+			return @surnoms.elt_alea.surnom(article)
+		else
+			case @genre
+			when 'M' then
+				if article =~ /(de|à)/i then return "#{article} lui"
+				else return "il"
+				end
+			when 'F' then
+				if article =~ /de/i then return "d’elle"
+				elsif article =~ /à/i then return "à elle"
+				else return "elle"
+				end
+			else raise "Genre #{@genre} non connu pour #{@nom_colle}"
+			end
+		end
 	end
 	
 	##
