@@ -11,8 +11,9 @@ loop do
 	status = Status.creer
 
 	puts status
-	puts "#{status.texte.length} caractères"
-	api.envoyer(status.texte)
+	if status.texte.length <= api.limite then
+		api.envoyer(status.texte)
+	end
 	
 	sleep(10)
 	

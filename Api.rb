@@ -21,6 +21,8 @@ class Api
 	attr :type, false
 	## Nom de domaine du réseau social (ex : twitter.com, mastodon.social)
 	attr :domane, false
+	## Limite de caractères du réseau social
+	attr :limite, false
 	
 	# @url_base		=> URL de base de l'API (ex : https://api.twitter.com)
 	# @session		=> Stockage des tokens
@@ -51,6 +53,7 @@ class Api
 		when ApiType::TWITTER then
 			@instance = "twitter.com"
 			@url_base = "https://api.twitter.com"
+			@limite = 280
 			auth_twitter(username)
 		end
 	end
