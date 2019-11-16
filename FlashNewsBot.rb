@@ -4,7 +4,7 @@ require_relative 'Api.rb'
 
 $bdd = Bdd.new
 
-#api = Api.connecter("FlashNewsTest")
+api = Api.connecter("FlashNewsTest")
 
 loop do
 
@@ -12,7 +12,7 @@ loop do
 
 	puts status
 	puts "#{status.texte.length} caractères"
-	#api.envoyer(status.texte)
+	api.envoyer(status.texte)
 	
 	sleep(10)
 	

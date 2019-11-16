@@ -158,9 +158,6 @@ CREATE TABLE application (
 	username VARCHAR(64) NOT NULL,
 	api_key VARCHAR(256),
 	api_secret VARCHAR(256),
-	oauth_token VARCHAR(256),
-	oauth_token_secret VARCHAR(256),
-	oauth_verifier VARCHAR(256),
 	UNIQUE (domaine, username)
 );
 
