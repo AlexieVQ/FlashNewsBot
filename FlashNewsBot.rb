@@ -6,8 +6,14 @@ $bdd = Bdd.new
 
 #api = Api.connecter("FlashNewsTest")
 
-status = Status.creer
+loop do
 
-puts status
-puts "#{status.texte.length} caractères"
-#api.envoyer(status.texte)
+	status = Status.creer
+
+	puts status
+	puts "#{status.texte.length} caractères"
+	#api.envoyer(status.texte)
+	
+	sleep(5)
+	
+end
