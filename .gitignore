@@ -54,3 +54,6 @@ build-iPhoneSimulator/
 # Fichiers kate
 *.kate-swp
 
+# Journaux
+*.log
+*.output
