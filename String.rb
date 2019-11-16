@@ -131,7 +131,7 @@ class String
 	# Met la première lettre de la chaîne en majuscule sans toucher aux autres
 	# (contrairement à .capitalize())
 	def majuscule
-		return self.gsub(/^./) {|c| c.upcase}
+		return self.gsub(/^\w/) {|c| c.upcase}
 	end
 	
 end
