@@ -1,9 +1,9 @@
 #!/usr/bin/env ruby
 
 require 'optparse'
-require_relative 'Status.rb'
-require_relative 'Bdd.rb'
-require_relative 'Api.rb'
+require_relative 'classes/Status.rb'
+require_relative 'classes/Bdd.rb'
+require_relative 'classes/Api.rb'
 
 intervalle = 60
 hors_ligne = false
