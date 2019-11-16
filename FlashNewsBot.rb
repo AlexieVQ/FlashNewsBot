@@ -1,3 +1,5 @@
+#!/usr/share/ruby
+
 require_relative 'Status.rb'
 require_relative 'Bdd.rb'
 require_relative 'Api.rb'
