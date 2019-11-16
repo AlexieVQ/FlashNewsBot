@@ -1,6 +1,7 @@
 #!/usr/bin/env ruby
 
 require 'optparse'
+require 'daemons'
 require_relative 'classes/Status.rb'
 require_relative 'classes/Bdd.rb'
 require_relative 'classes/Api.rb'
@@ -9,7 +10,7 @@ intervalle = 60
 hors_ligne = false
 username = ""
 opt_parser = OptionParser.new do |opts|
-	opts.banner = "Utilisation : #{ARGV[0]} [options]"
+	opts.banner = "Utilisation : #{$PROGRAM_NAME} [options]"
 	
 	opts.on("-o", "--off-line",
 	        "Génère des status, sans les poster sur un réseau social") do
@@ -23,7 +24,7 @@ opt_parser = OptionParser.new do |opts|
 	
 	opts.on("-iDUREE", "--intervalle=DUREE",
 	        "Intervalle (en min) entre deux posts (par défaut 60 min)") do |i|
-		intervalle = i.to_i
+		intervalle = i.to_f
 	end
 	
 	opts.on("-h", "--help", "Affiche l'aide") do
@@ -40,8 +41,15 @@ if !hors_ligne && username == "" then
 end
 
 $bdd = Bdd.new
+appname = username == "" ? "FNBOffLine" : username
 
-unless hors_ligne then api = Api.connecter(username) end
+unless hors_ligne then
+	api = Api.connecter(username)
+	Daemons.daemonize({backtrace: true,
+	                   app_name: appname,
+	                   log_output: true})
+	$bdd = Bdd.new
+end
 
 loop do
 
