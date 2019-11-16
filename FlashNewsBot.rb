@@ -14,6 +14,6 @@ loop do
 	puts "#{status.texte.length} caractères"
 	#api.envoyer(status.texte)
 	
-	sleep(5)
+	sleep(10)
 	
 end

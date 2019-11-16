@@ -1,3 +1,5 @@
+require_relative 'IndexErreur.rb'
+
 ##
 # Ajout à la classe String de la méthode évaluer, qui évalue une commande entre
 # {} dans un élément.
@@ -10,10 +12,7 @@ class String
 		rescom = nil
 		while res =~ /{[^{}]+}/ do
 			res = res.gsub(/{[^{}]+}/) do | commande |
-				unless rescom = commande.eval_commande then
-					raise "Erreur en essayant d'évaluer #{commande} dans #{self}"
-				end
-				rescom
+				rescom = commande.eval_commande
 			end
 		end
 		return res
@@ -21,43 +20,46 @@ class String
 	
 	## Évaluer une commande
 	def eval_commande
-		# Nom de la variable à affecter
-		if self =~ /{\w+=/ then
-			nouv_var = self.scan(/{\w+=/)[0].scan(/\w+/)[0]
-			# Commande principale
-			com = self.scan(/=\w+/)[0].scan(/\w+/)[0]
-		else
-			com = self.scan(/{\w+/)[0].scan(/\w+/)[0]
-		end
-		
-		# Attribut
-		if self =~ /\.\w+/ then
-			attribut = self.scan(/\.\w+/)[0].scan(/\w+/)[0]
-		end
-		
-		# Paramètres
-		parametres = []
-		if self =~ /\([^\(\)]*\)/ then
-			parametres = self.scan(/[\,\(][^\(\)\,]*/)
-			parametres.each do | param |
-				param.gsub!(/^[\,\(]/, "")
-			end
-		end
-		
-		# Demande à l'index
-		if $index[com] == nil then
-			raise "#{com} n'existe pas dans l'index"
-		end
-		resultat = $index[com].retourner(attribut, parametres)
-		if nouv_var then
-			if $index[nouv_var] == nil then
-				$index[nouv_var] = resultat
+		begin
+			# Nom de la variable à affecter
+			if self =~ /{\w+=/ then
+				nouv_var = self.scan(/{\w+=/)[0].scan(/\w+/)[0]
+				# Commande principale
+				com = self.scan(/=\w+/)[0].scan(/\w+/)[0]
 			else
-				raise "#{nouv_var} existe déjà dans l'index"
+				com = self.scan(/{\w+/)[0].scan(/\w+/)[0]
 			end
-			return ""
-		else
-			return resultat.to_s
+			
+			# Attribut
+			if self =~ /\.\w+/ then
+				attribut = self.scan(/\.\w+/)[0].scan(/\w+/)[0]
+			end
+			
+			# Paramètres
+			parametres = []
+			if self =~ /\([^\(\)]*\)/ then
+				parametres = self.scan(/[\,\(][^\(\)\,]*/)
+				parametres.each do | param |
+					param.gsub!(/^[\,\(]/, "")
+				end
+			end
+			
+			# Demande à l'index
+			if $index[com] == nil then
+				raise IndexErreur, "#{com} (#{self}) n'existe pas dans l'index"
+			end
+			resultat = $index[com].retourner(attribut, parametres)
+			if nouv_var then
+				if $index[nouv_var] == nil then
+					$index[nouv_var] = resultat
+				else
+					raise IndexErreur, "#{nouv_var} (#{self}) existe déjà " + 
+							"dans l'index (#{$index[nouv_var]})"
+				end
+				return ""
+			else
+				return resultat.to_s
+			end
 		end
 	end
 	
