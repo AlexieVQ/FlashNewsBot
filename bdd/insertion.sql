@@ -149,7 +149,7 @@ INSERT INTO localite(type, nom, nom_en, nom_colle, adjm, adjf, emoji) VALUES
 	('region', 'les Hauts-de-France', 'Hauts-de-France', 'HautsDeFrance', 'des Hauts-de-France', 'des Hauts-de-France', NULL),
 	('region', 'la Picardie', 'Picardy', 'Picardie', 'picard', 'picarde', NULL),
 	('region', 'la Corse', 'Corsica', 'Corse', 'corse', 'corse', NULL),
-	('region', 'le Pays Basque', 'Basque Country', 'Pays Basque', 'basque', 'basque', NULL),
+	('region', 'le PaysBasque', 'Basque Country', 'Pays Basque', 'basque', 'basque', NULL),
 	('region', 'le Québec', 'Quebec', 'Québec', 'québécois', 'québécoise', NULL),
 	('region', 'le Berry', 'Berry', 'Berry', 'berrichon', 'berrichonne', NULL),
 	('region', 'la Sologne', 'Sologne', 'Sologne', 'solognot', 'solognotte', NULL),
