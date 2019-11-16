@@ -8,6 +8,8 @@ $bdd = Bdd.new
 
 api = Api.connecter("FlashNewsTest")
 
+duree = 1 # minutes
+
 loop do
 
 	status = Status.creer
@@ -17,6 +19,6 @@ loop do
 		api.envoyer(status.texte)
 	end
 	
-	sleep(10)
+	sleep(60 * duree)
 	
 end
