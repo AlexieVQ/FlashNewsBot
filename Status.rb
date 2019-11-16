@@ -79,7 +79,7 @@ class Status
 	##
 	# Génère la partie contenant la déclaration du sujet.
 	def partie_decla
-		chaine = $index['sujet'].surnom.capitalize
+		chaine = $index['sujet'].surnom
 		
 		chaine += " " + case rand(3)
 		when 0 then "a déclaré"
@@ -122,7 +122,7 @@ class Status
 				if rand(2) == 1 then
 					chaine += " #" + $index['sujet'].nom_colle
 				else
-					chaine += " " + $index['sujet'].nom.capitalize
+					chaine += " " + $index['sujet'].nom
 				end
 				chaine += " : " + $index['sujet'].surnom
 			else

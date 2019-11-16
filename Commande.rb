@@ -71,7 +71,7 @@ class Commande
 		when TypeCommande::RAND then
 			return random(parametres)
 		when TypeCommande::MAJ then
-			return parametres[0].capitalize
+			return parametres[0]
 		when TypeCommande::CAP then
 			return parametres[0].upcase
 		when TypeCommande::GENRE then
