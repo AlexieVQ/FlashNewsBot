@@ -57,3 +57,4 @@ build-iPhoneSimulator/
 # Journaux
 *.log
 *.output
+*.pid
