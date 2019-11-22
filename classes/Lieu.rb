@@ -11,10 +11,9 @@ class Lieu < Element
 	# @lieu		=> Chaîne de caractères
 	
 	##
-	# Pour créer un lieu, il nous faut son identifiant, sa chaîne de caractères
-	# et son poids.
-	def Lieu.creer(id, lieu, poids)
-		new(id, lieu, poids)
+	# Crée un lieu à partir d'une ligne d'un fichier CSV.
+	def Lieu.importer(ligne)
+		new(ligne['id'].to_i, ligne['lieu'], ligne['poids'].to_i)
 	end
 	
 	## Méthode privée

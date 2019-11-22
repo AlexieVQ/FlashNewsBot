@@ -12,10 +12,9 @@ class Accroche < Element
 	# @accroche		=> Formulation de l'accroche
 	
 	##
-	# Pour créer une accroche, il faut son identifiant, l'accroche (une chaîne
-	# de caractères) et son poids.
-	def Accroche.creer(id, accroche, poids)
-		new(id, accroche, poids)
+	# Crée une accroche à partir d'une ligne d'un fichier CSV.
+	def Accroche.importer(ligne)
+		new(ligne['id'].to_i, ligne['accroche'], ligne['poids'].to_i)
 	end
 	
 	## Méthode privée

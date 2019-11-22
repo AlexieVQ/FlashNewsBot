@@ -10,17 +10,21 @@ class Action < Element
 	
 	# @action		=> Chaîne de caractères
 	
+	## Identifiant de l'information concernée
+	attr :id_info, false
+	
 	##
-	# Pour créer une action, il faut son identifiant, sa chaîne de caractères et
-	# son poids.
-	def Action.creer(id, action, poids)
-		new(id, action, poids)
+	# Crée une action à partir d'une ligne d'un fichier CSV.
+	def Action.importer(ligne)
+		new(ligne['id'].to_i, ligne['action'], ligne['poids'].to_i,
+		    ligne['id_info'].to_i)
 	end
 	
 	## Méthode privée
-	def initialize(id, action, poids)
+	def initialize(id, action, poids, id_info)
 		super(id, poids)
 		@action = action
+		@id_info = id_info
 	end
 	
 	## Retourne l'action (chaîne de caractères) après l'avoir évaluée.

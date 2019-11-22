@@ -10,17 +10,24 @@ class Circo < Element
 	
 	# @circo		=> Chaîne de caractères
 	
+	## Type de circonstance
+	attr :type_circo, false
+	## Identifiant de l'information rattachée
+	attr :id_info, false
+	
 	##
-	# Pour créer une circonstance, il faut son identifiant, sa chaîne de
-	# caractères et son poids.
-	def Circo.creer(id, circo, poids)
-		new(id, circo, poids)
+	# Crée une circonstance à partir d'une ligne d'un fichier CSV.
+	def Circo.importer(ligne)
+		new(ligne['id'].to_i, ligne['circo'], ligne['poids'].to_i,
+		    ligne['type_circo'], ligne['id_info'].to_i)
 	end
 	
 	## Méthode privée
-	def initialize(id, circo, poids)
+	def initialize(id, circo, poids, type_circo, id_info = nil)
 		super(id, poids)
 		@circo = circo
+		@type_circo = type_circo
+		@id_info = id_info
 	end
 	
 	## Retourne la circonstance (chaîne de caractères) après l'avoir évaluée.

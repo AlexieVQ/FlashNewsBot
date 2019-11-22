@@ -22,21 +22,11 @@ class Localite < Element
 	attr :type, false
 	
 	##
-	# Pour créer une localite, il faut le type, le nom, le poids et
-	# facultativement le  nom en anglais, le nom collé, les adjectifs masculin
-	# et féminin, le département et l'emoji.
-	def Localite.creer(id,
-	                   type,
-	                   nom,
-	                   poids,
-	                   nom_en,
-	                   nom_colle,
-	                   adjm,
-	                   adjf,
-	                   departement,
-	                   emoji)
-		new(id, type, nom, poids, nom_en, nom_colle, adjm, adjf, departement,
-		    emoji)
+	# Crée une localité à partir d'une ligne d'un fichier CSV.
+	def Localite.importer(ligne)
+		new(ligne['id'].to_i, ligne['type'], ligne['poids'].to_i,
+		    ligne['nom_en'], ligne['nom_colle'], ligne['adjm'], ligne['adjf'],
+		    ligne['departement'], ligne['emoji'])
 	end
 	
 	## Méthode privée
@@ -79,6 +69,11 @@ class Localite < Element
 	## Donne le nom collé de la localité
 	def nom_colle
 		return @nom_colle.evaluer
+	end
+	
+	## Retourne le nom collé, sans l'évaluer
+	def read_nom_colle
+		return @nom_colle
 	end
 	
 	## Donne l'adjectif masculin de la localité

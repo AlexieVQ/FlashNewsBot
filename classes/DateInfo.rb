@@ -11,10 +11,9 @@ class DateInfo < Element
 	# @date		=> Chaîne de caractères
 	
 	##
-	# Pour créer une date, il nous faut son identifiant, sa chaîne de caractères
-	# et son poids.
-	def DateInfo.creer(id, date, poids)
-		new(id, date, poids)
+	# Crée une date à partir d'une ligne d'un fichier CSV.
+	def Date.importer(ligne)
+		new(ligne['id'].to_i, ligne['date'], ligne['poids'].to_i)
 	end
 	
 	## Méthode privée

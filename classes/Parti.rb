@@ -21,11 +21,11 @@ class Parti < Element
 	attr :localite, false
 	
 	##
-	# Pour créer une organisation politique, il faut son identifiant, son nom,
-	# son sigle, son type, son poids, ses adjectifs masculin et féminin, sa
-	# localité (classe Localite)
-	def Parti.creer(id, nom, sigle, type, poids, adjm, adjf, localite)
-		new(id, nom, sigle, type, poids, adjm, adjf, localite)
+	# Crée une organisation politique à partir d'une ligne d'un fichier CSV.
+	def Parti.importer(ligne)
+		localite = Localite.id(ligne['localite'].to_i)
+		new(ligne['id'].to_i, ligne['nom'], ligne['sigle'], ligne['type'],
+		    ligne['poids'].to_i, ligne['adjm'], ligne['adjf'], localite)
 	end
 	
 	## Méthode privée

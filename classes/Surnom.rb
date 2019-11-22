@@ -11,17 +11,21 @@ class Surnom < Element
 	
 	# @surnom		=> Surnom du personnage
 	
+	## Identifiant du personnage concerné
+	attr :id_pers, false
+	
 	##
-	# Pour créer un surnom, il faut son identifiant, sa chaîne de caractères et
-	# son poids.
-	def Surnom.creer(id, surnom, poids)
-		new(id, surnom, poids)
+	# Crée un surnom à partir d'une ligne d'un fichier CSV.
+	def Surnom.importer(ligne)
+		new(ligne['id'].to_i, ligne['surnom'], ligne['poids'].to_i,
+		    ligne['id_pers'].to_i)
 	end
 	
 	## Méthode privée
-	def initialize(id, surnom, poids)
+	def initialize(id, surnom, poids, id_pers)
 		super(id, poids)
 		@surnom = surnom
+		@id_pers = id_pers
 	end
 	
 	## Donne le surnom de la personne, avec l'article donné

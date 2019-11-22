@@ -11,17 +11,21 @@ class NomPers < Element
 	
 	# @nom			=> Nom du personnage
 	
+	## Identifiant du personnage concernée
+	attr :id_pers, false
+	
 	##
-	# Pour créer un nom, il faut son identifiant, sa chaîne de caractères et son
-	# poids.
-	def NomPers.creer(id, nom, poids)
-		new(id, nom, poids)
+	# Crée un nom à partir d'une ligne d'un fichier CSV.
+	def NomPers.importer(ligne)
+		new(ligne['id'].to_i, ligne['nom'], ligne['poids'].to_i,
+		    ligne['id_pers'].to_i)
 	end
 	
 	## Méthode privée
-	def initialize(id, nom, poids)
+	def initialize(id, nom, poids, id_pers)
 		super(id, poids)
 		@nom = nom
+		@id_pers = id_pers
 	end
 	
 	## Donne le nom de la personne, avec l'article donné

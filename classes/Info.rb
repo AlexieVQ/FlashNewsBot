@@ -23,21 +23,15 @@ class Info < Element
 	attr :categories, false
 	
 	##
-	# Pour créer une information, il faut son identifiant, le tableau de ses
-	# actions, son poids, le tableau de ses circonstances, son type, le tableau
-	# de ses déclarations, son hashtag, son type de circonstance et le tableau
-	# de ses catégories.
-	def Info.creer(id,
-	               actions,
-	               poids,
-	               circos,
-	               type,
-	               declas,
-	               hashtag,
-	               type_circo,
-	               categories)
-		new(id, actions, poids, circos, type, declas, hashtag, type_circo,
-		    categories)
+	# Crée une information à partir d'une ligne d'un fichier CSV.
+	# TODO ajouter catégories
+	def Element.importer(ligne)
+		actions = Action.selectionner { |e| e.id_info == ligne['id'].to_i }
+		circos = Circo.selectionner { |e| e.id_info == ligne['id'].to_i }
+		declas = Decla.selectionner { |e| e.id_info == ligne['id'].to_i }
+		new(ligne['id'].to_i, actions, ligne['poids'].to_i, circos,
+		    ligne['poids'].type, declas, ligne['hashtag'], ligne['type_circo'],
+		    [])
 	end
 	
 	## Méthode privée

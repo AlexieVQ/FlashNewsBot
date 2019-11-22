@@ -11,9 +11,9 @@ class Media < Element
 	# @nom		=> Nom du média
 	
 	##
-	# Pour créer un média, il faut son identifiant, son nom et son poids.
-	def Media.creer(id, nom, poids)
-		new(id, nom, poids)
+	# Crée un média à partir d'une ligne d'un fichier CSV.
+	def Media.importer(ligne)
+		new(ligne['id'].to_i, ligne['nom'], ligne['poids'].to_i)
 	end
 	
 	## Méthode privée
