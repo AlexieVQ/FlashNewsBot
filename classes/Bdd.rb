@@ -1,6 +1,7 @@
 require 'pg'
 require_relative 'Api.rb'
 require_relative 'Array.rb'
+=begin
 require_relative 'Accroche.rb'
 require_relative 'Localite.rb'
 require_relative 'Pers.rb'
@@ -14,6 +15,7 @@ require_relative 'Info.rb'
 require_relative 'Action.rb'
 require_relative 'Circo.rb'
 require_relative 'Decla.rb'
+=end
 
 ##
 # Classe représentant la base de données du bot
