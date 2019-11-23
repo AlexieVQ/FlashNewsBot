@@ -32,7 +32,7 @@ class Info < Element
 	##
 	# Crée une information à partir d'une ligne d'un fichier CSV.
 	# TODO ajouter catégories
-	def Element.importer(ligne)
+	def Info.importer(ligne)
 		actions = Action.id_info(ligne['id'].to_i)
 		circos = Circo.id_info(ligne['id'].to_i)
 		declas = Decla.id_info(ligne['id'].to_i)

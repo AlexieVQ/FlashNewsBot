@@ -2,6 +2,14 @@ require_relative 'Commande.rb'
 require_relative 'Erreurs.rb'
 require_relative 'elements/Info.rb'
 require_relative 'elements/Pers.rb'
+require_relative 'elements/Accroche.rb'
+require_relative 'elements/DateInfo.rb'
+require_relative 'elements/Lieu.rb'
+require_relative 'elements/Localite.rb'
+require_relative 'elements/Parti.rb'
+require_relative 'elements/Media.rb'
+require_relative 'elements/Circo.rb'
+require_relative 'elements/Decla.rb'
 
 ##
 # Classe représentant un status.
@@ -30,15 +38,15 @@ class Status
 			$index['genre'] = Commande.commande(TypeCommande::GENRE)
 			$index['gse'] = Commande.commande(TypeCommande::GSE)
 			$index['h'] = Commande.commande(TypeCommande::H)
-			$index['accroche'] = Commande.commande(TypeCommande::ACCROCHE)
-			$index['pers'] = Commande.commande(TypeCommande::PERS)
-			$index['date'] = Commande.commande(TypeCommande::DATE)
-			$index['lieu'] = Commande.commande(TypeCommande::LIEU)
-			$index['localite'] = Commande.commande(TypeCommande::LOCALITE)
-			$index['parti'] = Commande.commande(TypeCommande::PARTI)
-			$index['media'] = Commande.commande(TypeCommande::MEDIA)
-			$index['circo'] = Commande.commande(TypeCommande::CIRCO)
-			$index['decla'] = Commande.commande(TypeCommande::DECLA)
+			$index['accroche'] = Accroche
+			$index['pers'] = Pers
+			$index['date'] = DateInfo
+			$index['lieu'] = Lieu
+			$index['localite'] = Localite
+			$index['parti'] = Parti
+			$index['media'] = Media
+			$index['circo'] = Circo
+			$index['decla'] = Decla
 			
 			$index['info'] = Info.elt_alea
 			$index['sujet'] = Pers.elt_alea

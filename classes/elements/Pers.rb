@@ -52,6 +52,17 @@ class Pers < Element
 		return selectionner { |e| e.genre == genre }
 	end
 	
+	##
+	# Retourne un élément pour l'attribut et les paramètres donnés.
+	def Pers.retourner(attribut = nil, parametres = nil)
+		if attribut && attribut != "" || parametres[0] == nil then
+			element = elements.elt_alea
+		elsif parametres[0] then
+			element = genre(parametres[0]).elt_alea
+		end
+		return retourner_elt(element, attribut, parametres)
+	end
+	
 	## Méthode privée
 	def initialize(id,
 	               noms,

@@ -46,6 +46,19 @@ class Localite < Element
 		return selectionner { |e| nom_colle == e.read_nom_colle }
 	end
 	
+	##
+	# Retourne un élément pour l'attribut et les paramètres donnés.
+	def Localite.retourner(attribut = nil, parametres = nil)
+		if ["ville", "pays", "region"].include?(parametres[0]) then
+			element = types(parametres).elt_alea
+		elsif parametres && parametres.length != 0 then
+			element = nom_colle(parametres[0]).elt_alea
+		else
+			element = elements.elt_alea
+		end
+		return retourner_elt(element, attribut, parametres)
+	end
+	
 	## Méthode privée
 	def initialize(id,
 	               type,

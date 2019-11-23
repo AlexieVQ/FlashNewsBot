@@ -66,6 +66,24 @@ class Element
 		return elements.elt_alea(ajout)
 	end
 	
+	##
+	# Retourne un élément pour l'attribut et les paramètres donnés.
+	def Element.retourner(attribut = nil, parametres = nil)
+		return retourner_elt(elements.elt_alea, attribut, parametres)
+	end
+	
+	##
+	# Retourne un élément en lui passant l'attribut et les paramètres donnés.
+	def Element.retourner_elt(element, attribut, parametres)
+		if attribut && attribut != "" then
+			return element.retourner(attribut, parametres)
+		else
+			return element
+		end
+	end
+	
+	private_class_method :retourner_elt
+	
 	## Pour initialiser un élément il faut son identifiant et son poids.
 	def initialize(id, poids)
 		@id = id

@@ -1,15 +1,6 @@
 require_relative 'String.rb'
 require_relative 'Array.rb'
 require_relative 'Erreurs.rb'
-require_relative 'elements/Accroche.rb'
-require_relative 'elements/Pers.rb'
-require_relative 'elements/DateInfo.rb'
-require_relative 'elements/Lieu.rb'
-require_relative 'elements/Localite.rb'
-require_relative 'elements/Parti.rb'
-require_relative 'elements/Media.rb'
-require_relative 'elements/Circo.rb'
-require_relative 'elements/Decla.rb'
 
 ##
 # Liste des identifiants des commandes disponibles.
@@ -27,24 +18,6 @@ module TypeCommande
 	GSE = 5
 	## {h} : affiche aléatoirement un # ou non
 	H = 6
-	## Création des accroches
-	ACCROCHE = 10
-	## Création des personnages
-	PERS = 11
-	## Création des dates
-	DATE = 12
-	## Création des lieux
-	LIEU = 13
-	## Création d'une localité
-	LOCALITE = 14
-	## Création d'une organisation politique
-	PARTI = 15
-	## Création d'un média
-	MEDIA = 16
-	## Création d'une circonstance
-	CIRCO = 17
-	## Création d'une déclaration
-	DECLA = 18
 end
 
 ##
@@ -89,44 +62,6 @@ class Commande
 			return genre("sujet", "", "e")
 		when TypeCommande::H then
 			return random(["", "#"])
-		when TypeCommande::ACCROCHE then
-			element = Accroche.elt_alea
-		when TypeCommande::PERS then
-			if attribut && attribut != "" || parametres[0] == nil then
-				element = Pers.elt_alea
-			elsif parametres[0] then
-				element = Pers.genre(parametres[0]).elt_alea
-			end
-		when TypeCommande::DATE then
-			element = DateInfo.elt_alea
-		when TypeCommande::LIEU then
-			element = Lieu.elt_alea
-		when TypeCommande::LOCALITE then
-			if ["ville", "pays", "region"].include?(parametres[0]) then
-				element = Localite.types(parametres).elt_alea
-			elsif parametres && parametres.length != 0 then
-				element = Localite.nom_colle(parametres[0]).elt_alea
-			else
-				element = Localite.elt_alea
-			end
-		when TypeCommande::PARTI then
-			if ["parti", "syndicat", "association"].include?(parametres[0]) then
-				element = Parti.types(parametres).elt_alea
-			else
-				element = Parti.elt_alea
-			end
-		when TypeCommande::MEDIA then
-			element = Media.elt_alea
-		when TypeCommande::CIRCO then
-			element = Circo.elt_alea
-		when TypeCommande::DECLA then
-			element = Decla.elt_alea
-		end
-		
-		if attribut && attribut != "" then
-			return element.retourner(attribut, parametres)
-		else
-			return element
 		end
 	end
 	

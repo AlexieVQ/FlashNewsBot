@@ -40,6 +40,17 @@ class Parti < Element
 		return selectionner { |e| types.include?(e.type) }
 	end
 	
+	##
+	# Retourne un élément pour l'attribut et les paramètres donnés.
+	def Parti.retourner(attribut = nil, parametres = nil)
+		if ["parti", "syndicat", "association"].include?(parametres[0]) then
+			element = Parti.types(parametres).elt_alea
+		else
+			element = Parti.elt_alea
+		end
+		return retourner_elt(element, attribut, parametres)
+	end
+	
 	## Méthode privée
 	def initialize(id, nom, sigle, type, poids, adjm, adjf, localite)
 		super(id, poids)
