@@ -1,7 +1,10 @@
 require_relative 'Element.rb'
-require_relative 'String.rb'
-require_relative 'Array.rb'
-require_relative 'Bdd.rb'
+require_relative 'Action.rb'
+require_relative 'Circo.rb'
+require_relative 'Decla.rb'
+require_relative '../String.rb'
+require_relative '../Array.rb'
+require_relative '../Bdd.rb'
 
 ##
 # Classe représentant une information.

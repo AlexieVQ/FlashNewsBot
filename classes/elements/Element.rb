@@ -1,4 +1,4 @@
-require_relative 'Array.rb'
+require_relative '../Array.rb'
 
 ##
 # Classe représentant un élément d'une information, qui peut être un personnage,

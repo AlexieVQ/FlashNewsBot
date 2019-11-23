@@ -1,6 +1,10 @@
 require_relative 'Element.rb'
-require_relative 'String.rb'
-require_relative 'Array.rb'
+require_relative 'NomPers.rb'
+require_relative 'Surnom.rb'
+require_relative 'Localite.rb'
+require_relative 'Decla.rb'
+require_relative '../String.rb'
+require_relative '../Array.rb'
 
 ##
 # Classe représentant un personnage.

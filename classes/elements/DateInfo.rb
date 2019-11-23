@@ -1,5 +1,5 @@
 require_relative 'Element.rb'
-require_relative 'String.rb'
+require_relative '../String.rb'
 
 ##
 # Classe représentant la date d'une information.
