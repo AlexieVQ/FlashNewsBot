@@ -1,6 +1,14 @@
 require_relative 'String.rb'
 require_relative 'Array.rb'
-require_relative 'Bdd.rb'
+require_relative 'elements/Accroche.rb'
+require_relative 'elements/Pers.rb'
+require_relative 'elements/Date.rb'
+require_relative 'elements/Lieu.rb'
+require_relative 'elements/Localite.rb'
+require_relative 'elements/Parti.rb'
+require_relative 'elements/Media.rb'
+require_relative 'elements/Circo.rb'
+require_relative 'elements/Decla.rb'
 
 ##
 # Liste des identifiants des commandes disponibles.
@@ -81,35 +89,35 @@ class Commande
 		when TypeCommande::H then
 			return random(["", "#"])
 		when TypeCommande::ACCROCHE then
-			element = $bdd.accroches.elt_alea
+			element = Accroche.elt_alea
 		when TypeCommande::PERS then
 			if attribut && attribut != "" then
-				element = $bdd.pers.elt_alea
+				element = Pers.elt_alea
 			else
-				element = $bdd.pers(parametres[0]).elt_alea
+				element = Pers.genre(parametres[0]).elt_alea
 			end
 		when TypeCommande::DATE then
-			element = $bdd.dates.elt_alea
+			element = Date.elt_alea
 		when TypeCommande::LIEU then
-			element = $bdd.lieux.elt_alea
+			element = Lieu.elt_alea
 		when TypeCommande::LOCALITE then
 			if ["ville", "pays", "region"].include?(parametres[0]) then
-				element = $bdd.localites(parametres).elt_alea
+				element = Localite.types(parametres).elt_alea
 			else
-				element = $bdd.localites(nil, parametres[0]).elt_alea
+				element = Localite.nom_colle(parametres[0]).elt_alea
 			end
 		when TypeCommande::PARTI then
 			if ["parti", "syndicat", "association"].include?(parametres[0]) then
-				element = $bdd.partis(parametres).elt_alea
+				element = Parti.types(parametres).elt_alea
 			else
-				element = $bdd.partis.elt_alea
+				element = Parti.elt_alea
 			end
 		when TypeCommande::MEDIA then
-			element = $bdd.medias.elt_alea
+			element = Media.elt_alea
 		when TypeCommande::CIRCO then
-			element = $bdd.circos.elt_alea
+			element = Circo.elt_alea
 		when TypeCommande::DECLA then
-			element = $bdd.declas.elt_alea
+			element = Decla.elt_alea
 		end
 		
 		if attribut && attribut != "" then

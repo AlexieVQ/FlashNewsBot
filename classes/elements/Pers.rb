@@ -44,6 +44,12 @@ class Pers < Element
 		    declas)
 	end
 	
+	##
+	# Retourne les personnages de genre donné.
+	def Personnage.genre(genre)
+		return selectionner { |e| e.genre == genre }
+	end
+	
 	## Méthode privée
 	def initialize(id,
 	               noms,
