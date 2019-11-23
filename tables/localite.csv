@@ -1,0 +1,138 @@
+id;nom;nom_en;nom_colle;poids;adjm;adjf;departement;emoji;type
+1;la France;France;France;10;français;française;;🇫🇷;pays
+2;l’Allemagne;Germany;Allemagne;10;allemand;allemande;;🇩🇪;pays
+3;les États-Unis{rand(, d’Amérique)};{rand(USA,America)};{rand(USA,America)};10;américain;américaine;;🇺🇸;pays
+4;le Royaume-Uni;United Kingdom;UK;10;britannique;britannique;;🇬🇧;pays
+5;l’Espagne;Spain;Espagne;10;espagnol;espagnole;;🇪🇸;pays
+6;le Portugal;Portugal;Portugal;10;portugais;portugaise;;🇵🇹;pays
+7;l’Italie;Italy;Italie;10;italien;italienne;;🇮🇹;pays
+8;la Belgique;Belgium;Belgique;10;belge;belge;;🇧🇪;pays
+9;le Canada;Canada;Canada;10;canadien;canadienne;;🇨🇦;pays
+10;la {rand(Chine,RPC)};China;Chine;10;chinois;chinoise;;🇨🇳;pays
+11;le Japon;Japan;Japon;10;japonais;japonaise;;🇯🇵;pays
+12;la Corée du Nord;North Korea;DPRK;10;nord-coréen;nord-coréenne;;🇰🇵;pays
+13;la Corée du Sud;{rand(South ,)}Korea;Corée;10;{rand(sud-,)}coréen;{rand(sud-,)}coréenne;;🇰🇷;pays
+14;la Russie;Russia;Russie;10;russe;russe;;🇷🇺;pays
+15;le Brésil;Brazil;Brésil;10;brésilien;brésilienne;;🇧🇷;pays
+16;le Vénézuéla;Venezuela;Venezuela;10;vénézuélien;vénézuélienne;;🇻🇪;pays
+17;le Mexique;Mexico;Mexique;10;mexicain;mexicaine;;🇲🇽;pays
+18;l’Autriche;Austria;Autriche;10;autrichien;autrichienne;;🇦🇹;pays
+19;la Suisse;Switzerland;Suisse;10;suisse;suisse;;🇨🇭;pays
+20;l’Inde;India;Inde;10;indien;indien;;🇮🇳;pays
+21;l’Algérie;Algeria;Algérie;10;algérien;algérienne;;🇩🇿;pays
+22;le Maroc;Morocco;Maroc;10;marocain;marocaine;;🇲🇦;pays
+23;Israël;Israel;Israël;10;israélien;israélienne;;🇮🇱;pays
+24;la Palestine;Palestine;Palestine;10;palestinien;palestinienne;;🇵🇸;pays
+25;la Syrie;Syria;Syrie;10;syrien;syrienne;;🇸🇾;pays
+26;l’Arabie Saoudite;Saudi Arabia;ArabieSaoudite;10;saoudien;saoudienne;;🇸🇦;pays
+27;le Qatar;Qatar;Qatar;10;qatari;qatarie;;🇶🇦;pays
+28;le Vatican;Vatican City;Vatican;10;vatican;vaticane;;🇻🇦;pays
+29;Monaco;Monaco;Monaco;10;monégasque;monégasque;;🇲🇨;pays
+30;l’Irlande;Ireland;Irlande;10;irlandais;irlandaise;;🇮🇪;pays
+31;{rand(le,la Présipauté de)} Groland;{rand(Presipality of ,)}Groland;Groland;10;grolandais;grolandaise;;🏺;pays
+32;le Royaume Champignon;Mushroom Kingdom;RoyaumeChampignon;10;champignonnais;champignonnaise;;🍄;pays
+33;le{rand( Grand Duché de,)} Luxembourg;{rand(Grand Duchy of ,)}Luxembourg;Luxembourg;10;luxembourgeois;luxembourgeoise;;🇱🇺;pays
+34;l’Ukraine;Ukraine;Ukraine;10;ukrainien;ukrainienne;;🇺🇦;pays
+35;la Biélorussie;Belarus;Biélorussie;10;biélorusse;biélorusse;;🇧🇾;pays
+36;la Pologne;Poland;Pologne;10;polonais;polonaise;;🇵🇱;pays
+37;l’Australie;Australia;Australie;10;australien;australienne;;🇦🇺;pays
+38;le Danemark;Denmark;Danemark;10;danois;danoise;;🇩🇰;pays
+39;la Norvège;Norway;Norvège;10;norvégien;norvégienne;;🇳🇴;pays
+40;la Suède;Sweden;Suède;10;suédois;suédoise;;🇸🇪;pays
+41;la Finlande;Finland;Finlande;10;finlandais;finlandaise;;🇫🇮;pays
+42;l’Islande;Iceland;Islande;10;islandais;islandaise;;🇮🇸;pays
+43;la Turquie;Turkey;Turquie;10;turc;turque;;🇹🇷;pays
+44;la Grèce;Greece;Grèce;10;grec;grecque;;🇬🇷;pays
+45;la Serbie;Serbia;Serbie;10;serbe;serbe;;🇷🇸;pays
+46;la Croatie;Croatia;Croatie;10;croate;croate;;🇭🇷;pays
+47;la Bosnie{rand(,-Herzégovine)};Bosnia;Bosnie;10;bosnien;bosnienne;;🇧🇦;pays
+48;la Tunisie;Tunisia;Tunisie;10;tunisien;tunisienne;;🇹🇳;pays
+49;la Libye;Libya;Libye;10;libyen;libyenne;;🇱🇾;pays
+50;l’Égype;Egypt;Égypte;10;égyptien;égyptienne;;🇪🇬;pays
+51;le Mali;Mali;Mali;10;malien;malienne;;🇲🇱;pays
+52;le Nigeria;Nigeria;Nigeria;10;nigérien;nigérienne;;🇳🇬;pays
+53;l’Éthiopie;Ethiopia;Éthiopie;10;éthiopien;éthiopienne;;🇪🇹;pays
+54;la République Démocratique du Congo;DR Congo;RDC;10;congolais;congolaise;;🇨🇩;pays
+55;l’Iran;Iran;Iran;10;iranien;iranienne;;🇮🇷;pays
+56;l’Irak;Iraq;Irak;10;irakien;irakienne;;🇮🇶;pays
+57;Paris;;Paris;10;parisien;parisienne;75;;ville
+58;Marseille;;Marseille;10;marseillais;marseillaise;13;;ville
+59;Lyon;;Lyon;10;lyonnais;lyonnaise;69;;ville
+60;Bordeaux;;Bordeaux;10;bordelais;bordelaise;33;;ville
+61;Nantes;;Nantes;10;nantais;nantaise;44;;ville
+62;Lille;;Lille;10;lillois;lilloise;59;;ville
+63;Roubaix;;Roubaix;10;roubaisien;roubaisienne;59;;ville
+64;Melun;;Melun;10;melunais;melunaise;77;;ville
+65;Metz;;Metz;10;messin;messine;57;;ville
+66;le Mans;;LeMans;10;manceau;mancelle;72;;ville
+67;Nice;;Nice;10;niçois;niçoise;06;;ville
+68;Angers;;Angers;10;angevin;angevine;49;;ville
+69;Rennes;;Rennes;10;rennais;rennaise;35;;ville
+70;Amiens;;Amiens;10;amiénois;amiénoise;80;;ville
+71;Orléans;;Orléans;10;orléanais;orléanaise;45;;ville
+72;Tours;;Tours;10;tourangeau;tourangelle;37;;ville
+73;Poitiers;;Poitiers;10;poitevin;poitevine;86;;ville
+74;la Rochelle;;LaRochelle;10;rochelais;rochelaise;17;;ville
+75;Brest;;Brest;10;brestois;brestoise;29;;ville
+76;le Havre;;LeHavre;10;havrais;havraise;76;;ville
+77;Calais;;Calais;10;calaisien;calaisienne;62;;ville
+78;Reims;;Reims;10;rémois;rémoise;51;;ville
+79;Strasbourg;;Strasbourg;10;strasbourgeois;strasbourgeoise;67;;ville
+80;Dijon;;Dijon;10;dijonnais;dijonnaise;21;;ville
+81;Clermont-Ferrand;;ClermontFerrand;10;clermontois;clermontoise;63;;ville
+82;Toulouse;;Toulouse;10;toulousain;toulousaine;31;;ville
+83;Sarcelles;;Sarcelles;10;sarcellois;sarcelloise;95;;ville
+84;Saint-Denis;;SaintDenis;10;dyonisien;dyonisienne;93;;ville
+85;Évry;;Évry;10;évryen;évryenne;91;;ville
+86;Versailles;;Versailles;10;versaillais;versaillaise;78;;ville
+87;Aulnay-sous-Bois;;Aulnay{rand(,SousBois)};10;aulnaysien;aulnaysienne;93;;ville
+88;Corbeil-Essonnes;;Corbeil{rand(,Essonnes)};10;corbeil-essonnois;corbeil-essonnoise;91;;ville
+89;Chartres;;Chartres;10;chartrain;chartraine;28;;ville
+90;Rambouillet;;Rambouillet;10;rambolitain;rambolitaine;78;;ville
+91;Pau;;Pau;10;palois;paloise;64;;ville
+92;Carcassonne;;Carcassonne;10;carcassonnais;carcassonnaise;11;;ville
+93;Perpignan;;Perpignan;10;perpignanais;perpignanaise;66;;ville
+94;Annecy;;Annecy;10;annécien;annécienne;74;;ville
+95;Avignon;;Avignon;10;avignonnais;avignonnaise;84;;ville
+96;Rouen;;Rouen;10;rouennais;rouennaise;76;;ville
+97;Caen;;Caen;10;caennais;caennaise;14;;ville
+98;Limoges;;Limoges;10;limougeaud;limougeaude;87;;ville
+99;Laval;;Laval;10;lavallois;lavalloise;53;;ville
+100;Alençon;;Alençon;10;alençonnais;alençonnaise;61;;ville
+101;Barcelone;Barcelona;Barcelone;10;barcelonais;barcelonaise;;;ville
+102;Berlin;Berlin;Berlin;10;berlinois;berlinoise;;;ville
+103;Londres;London;Londres;10;londonien;londonienne;;;ville
+104;Pékin;Beijing;Pékin;10;pékinois;pékinoise;;;ville
+105;New York;New York City;NYC;10;new yorkais;new yorkaise;;;ville
+106;Bruxelles;Brussels;Bruxelles;10;bruxellois;bruxelloise;;;ville
+107;Rome;Rome;Rome;10;romain;romaine;;;ville
+108;Moscou;Moscow;Moscou;10;moscovite;moscovite;;;ville
+109;la Bretagne;Brittany;{rand(Bretagne,Breizh,BZH)};10;breton;bretonne;;;region
+110;la Normandie;Normandy;Normandie;10;normand;normande;;;region
+111;le Nord-Pas-De-Calais;Nord-Pas-De-Calais;{rand(NordPasDeCalais,NPDC)};10;nord-pas-de-calaisien;nord-pas-de-calaisienne;;;region
+112;les Hauts-de-France;Hauts-de-France;HautsDeFrance;10;des Hauts-de-France;des Hauts-de-France;;;region
+113;la Picardie;Picardy;Picardie;10;picard;picarde;;;region
+114;la Corse;Corsica;Corse;10;corse;corse;;;region
+115;le Pays Basque;Basque Country;Pays Basque;10;basque;basque;;;region
+116;le Québec;Quebec;Québec;10;québécois;québécoise;;;region
+117;le Berry;Berry;Berry;10;berrichon;berrichonne;;;region
+118;la Sologne;Sologne;Sologne;10;solognot;solognotte;;;region
+119;les Pays de la Loire;Pays de la Loire;PaysDeLaLoire;10;ligérien;ligérienne;;;region
+120;le Limousin;Limousin;Limousin;10;limousin;limousine;;;region
+121;l’Auvergne;Auvergne;Auvergne;10;auvergnat;auvergnate;;;region
+122;l’Île-de-France;Île-de-France;{rand(ÎleDeFrance,IDF)};10;francilien;francilienne;;;region
+123;l’Alsace;Alsace;Alsace;10;alsacien;alsacienne;;;region
+124;la Lorraine;Lorraine;Lorraine;10;lorrain;lorraine;;;region
+125;le Béarn;Béarn;Béarn;10;béarnais;béarnaise;;;region
+126;l’Occitanie;Occitania;Occitanie;10;occitan;occitane;;;region
+127;la Catalogne;Catalonia;Catalogne;10;catalan;catalane;;;region
+128;l’Angleterre;England;Angleterre;10;anglais;anglaise;;🏴󠁧󠁢󠁥󠁮󠁧󠁿;region
+129;l’Écosse;Scotland;Écosse;10;écossais;écossaise;;🏴󠁧󠁢󠁳󠁣󠁴󠁿;region
+130;le Pays de Galles;Wales;PaysDeGalles;10;gallois;galloise;;🏴󠁧󠁢󠁷󠁬󠁳󠁿;region
+131;l’Irlande du Nord;Northern Ireland;IrlandeDuNord;10;nord-irlandais;nord-irlandaise;;;region
+132;l’Europe;Europe;Europe;10;européen;européenne;;;region
+133;l’Union Européenne;European Union;{rand(UnionEuropéenne,UE)};10;européen;européenne;;🇪🇺;region
+134;l’Ardèche;Ardèche;Ardèche;10;ardéchois;ardéchoise;;;region
+135;le Larzac;Larzac;Larzac;10;du Larzac;du Larzac;;;region
+136;la Mayenne;Mayenne;Mayenne;10;mayennais;mayennaise;;;region
+137;la Vendée;Vendée;Vendée;10;vendéen;vendéenne;;;region

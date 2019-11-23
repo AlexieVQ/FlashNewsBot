@@ -1,0 +1,213 @@
+id;circo;poids;type;id_info
+1;à son domicile;10;specifique;1
+2;dans un accident d’avion;10;specifique;1
+3;la fin dune grande aventure putain {sujet.nom} tetais comme {genre(sujet,un frere,une soeur)} adieu salope;10;specifique;1
+4;d’une intoxication au monoxyde de dihydrogène;10;specifique;1
+5;avec 97 % des voies;10;specifique;3
+6;face {pers_circo=pers}{pers_circo.nom(à)};10;specifique;3
+7;après une bataille électorale acharnée;10;specifique;3
+8;par {pers_circo=pers}{pers_circo.nom};10;specifique;5
+9;alors qu’{genre(sujet,il,elle)} s’apprêtait à donner des informations compromettantes sur {pers_circo=pers}{pers_circo.nom};10;specifique;5
+10;en featuring avec {pers_circo=pers}{pers_circo.nom};10;specifique;16
+11;suite au défis qui lui a été lancé;10;specifique;17
+12;et ce malgré son âge ({rand(50,60,65,69,70,75,80,90,95,100,140)} ans cette année) et bien que le MMA ne soit pas sa spécialité;10;specifique;17
+13;suite au défis qui lui a été lancé;10;specifique;18
+14;et ce malgré son âge ({rand(50,60,65,69,70,75,80,90,95,100,140)} ans cette année) et bien que le sabre ne soit pas sa spécialité;10;specifique;18
+15;suite au défis qui lui a été lancé;10;specifique;19
+16;et ce malgré son âge ({rand(50,60,65,69,70,75,80,90,95,100,140)} ans cette année) et bien que le shifumi ne soit pas sa spécialité;10;specifique;19
+17;avec la mention très bien;10;specifique;24
+18;dans le ciel;10;specifique;25
+19;d’après des témoins anonymes;10;specifique;29
+20;d’après {pers_circo=pers}{pers_circo.nom};10;specifique;29
+21;avec {pers_circo=pers}{pers_circo.nom};10;specifique;30
+22;et sort un premier morceau en featuring avec {pers_circo=pers}{pers_circo.nom};10;specifique;33
+23;et jouera dans le premier film {pers_circo=pers}{pers_circo.nom(de)};10;specifique;34
+24;et crée un nouveau mouvement avec {pers_circo=pers}{pers_circo.nom(de)};10;specifique;35
+25;pour ouvrir son propre kebab;10;specifique;36
+26;pour ouvrir son propre kebab;10;specifique;36
+27;pour ouvrir son propre kebab;10;specifique;37
+28;pour ouvrir son propre kebab;10;specifique;38
+29;pour ouvrir son propre kebab;10;specifique;39
+30;sur son compte Instagram;10;specifique;41
+31;sur Instagram;10;specifique;41
+32;d’après un sondage IPSOS;10;specifique;43
+33;d’après un sondage Twitter;10;specifique;43
+34;sur YouTube;10;specifique;48
+35;sur Twitter;10;specifique;48
+36;sur les réseaux sociaux;10;specifique;48
+37;pépère;5;specifique;55
+38;fièrement;10;specifique;55
+39;en place publique;10;specifique;58
+40;suite à son implication dans l’affaire Bygmalion;10;specifique;60
+41;dans le cadre des soupçons sur ses comptes de campagne;10;specifique;60
+42;dans le cadre de l’affaire des comptes de campagne #de3##nom3#;10;specifique;60
+43;dans le cadre de l’affaire des faux tweets d’Alain Juppé;10;specifique;60
+44;pour avoir appelé Emmanuel Macron “Manu”;10;specifique;60
+45;dans le cadre de l’affaire Benalla;10;specifique;60
+46;dans le cadre de l’affaire {pers_circo=pers}{pers_circo.nom(0)};10;specifique;60
+47;dans le cadre de l’#Affaire{pers_circo=pers}{pers_circo.nom_colle};100;specifique;60
+48;en fursuit;10;specifique;62
+49;lors de sa perquisition;10;specifique;69
+50;et demande une rançon de {rand(10000 dollars,10000 euros,dix mille dollars,dix mille euros,300 euros,2 kebabs,50 kebabs,dix mille milliards)};10;specifique;79
+51;alors qu’il était en couple avec {pers_circo=pers}{pers_circo.nom};10;specifique;87
+52;avec un cure-dent;10;specifique;92
+53;en en faisant son repas;10;specifique;92
+54;par {pers_circo=pers}{pers_circo.nom};10;specifique;95
+55;par {pers_circo=pers}{pers_circo.nom};10;specifique;103
+56;par {pers_circo=pers}{pers_circo.nom};10;specifique;104
+57;pour rejoindre {parti_circo=parti}{parti_circo.nom};10;specifique;110
+58;suite à son départ de {parti_circo=parti}{parti_circo.nom};10;specifique;112
+59;en marge de la manifestation des gilets jaunes;10;specifique;120
+60;en marge de la manifestation {parti_circo=parti}{parti_circo.nom};10;specifique;120
+61;en marge de la manifestation des gilets jaunes;10;specifique;121
+62;en marge de la manifestation {parti_circo=parti}{parti_circo.nom};10;specifique;121
+63;en marge de la manifestation des gilets jaunes;10;specifique;122
+64;en marge de la manifestation {parti_circo=parti}{parti_circo.nom};10;specifique;122
+65;pour une sortie prévue avant {rand(2020,2022,2025,2030,2050)};10;specifique;123
+66;aux côtés de Mimie Mathy;10;specifique;124
+67;aux côtés {pers_circo=pers}{pers_circo.nom(de)};10;specifique;124
+68;aux côtés de Mimie Mathy et {pers_circo=pers}{pers_circo.nom(de)};10;specifique;124
+69;en marge de la manifestation des gilets jaunes;10;specifique;127
+70;en marge de la manifestation {parti_circo=parti}{parti_circo.nom};10;specifique;127
+71;contre l’avis de son groupe;10;specifique;128
+72;contre l’avis {parti_circo=parti}{parti_circo.nom(de)};10;specifique;128
+73;malgré son absentéisme;10;specifique;128
+74;record détenu jusque là par {pers_circo=pers}{pers_circo.nom};10;specifique;129
+75;record détenu jusque là par {pers_circo=pers}{pers_circo.nom} qui était venu{genre(pers_circo,,e)} une fois;10;specifique;129
+76;record détenu jusque là par {pers_circo=pers}{pers_circo.nom} qui été venu{genre(pers_circo,,e)} une fois par erreur;10;specifique;129
+77;avec {pers_circo=pers}{pers_circo.nom};10;specifique;135
+78;avec {pers_circo=pers}{pers_circo.nom} et {pers_circo2=pers}{pers_circo2.nom};10;specifique;135
+79;avec {pers_circo=pers}{pers_circo.nom}, {pers_circo2=pers}{pers_circo2.nom} et {pers_circo3=pers}{pers_circo3.nom};10;specifique;135
+80;par {pers_circo=pers}{pers_circo.nom};10;specifique;136
+81;sur le stand {pers_circo=pers}{pers_circo.nom(de)};10;specifique;138
+82;en dépassant {pers_circo=pers}{pers_circo.nom};10;specifique;140
+83;d’un petit garçon;10;specifique;142
+84;d’une petite fille;10;specifique;142
+85;à 30 € les 25 cl;10;specifique;143
+86;à 40 € les 20 cl;10;specifique;143
+87;à 50 € les 15 cl;10;specifique;143
+88;au profit du Z-Event;5;specifique;143
+89;au profit du #ZEvent;5;specifique;143
+90;au profit de l’Institut Pasteur;10;specifique;143
+91;en présence {homar.nom(de)};10;specifique;144
+92;en présence {homar.nom(de)} et {homar2.nom(de)};10;specifique;144
+93;où du homard géant était servi;10;specifique;144
+94;en allant à la boulangerie;1;universel;
+95;en achetant du pain;1;universel;
+96;en payant ses impôts;2;universel;
+97;en sortant de prison pour fraude fiscale;2;universel;
+98;malgré ses soupçons de fraude fiscale;5;universel;
+99;malgré sa poursuite judiciaire pour fraude fiscale;3;universel;
+100;malgré sa poursuite judiciaire pour homicide;5;universel;
+101;étant donné son décès;2;universel;
+102;étant donné son assassinat par {pers_circo=pers}{pers_circo.nom};3;universel;
+103;en dabant;3;universel;
+104;en tapant un dab;2;universel;
+105;en T-posant;3;universel;
+106;en quittant le pays;5;universel;
+107;en mangeant un kebab;2;universel;
+108;en mangeant un grec;1;universel;
+109;avec la complicité {pers_circo=pers}{pers_circo.nom(de)};10;universel;
+110;en accusant {pers_circo=pers}{pers_circo.nom};2;universel;
+111;en poursuivant {pers_circo=pers}{pers_circo.nom};5;universel;
+112;en portant un t-shirt “I ❤️ Péju”;1;universel;
+113;en portant un t-shirt “I ❤️ {pers_circo=pers}{pers_circo.nom}”;1;universel;
+114;sans aucune honte;3;universel;
+115;sans avoir honte;2;universel;
+116;en accord avec ses principe;5;universel;
+117;bien que cela soit contraire à ses principes;10;universel;
+118;pour avoir déclaré que le pipi est stocké dans les couilles;1;universel;
+119;sur demande {pers_circo=pers}{pers_circo.nom(de)};10;universel;
+120;malgré la mort {pers_circo=pers}{pers_circo.nom(de)};10;universel;
+121;malgré le décès {pers_circo=pers}{pers_circo.nom(de)};10;universel;
+122;conformément à la Constitution de la Ve République;5;universel;
+123;dans le cadre de l’affaire {pers_circo=pers}{pers_circo.nom(0)};10;universel;
+124;dans le cadre de l’#Affaire{pers_circo=pers}{pers_circo.nom_colle};10;universel;
+125;dans le plus grand secret;10;universel;
+126;dans le plus grand des calmes;2;universel;
+127;malgré son absence;10;universel;
+128;malgré les restrictions budgétaires;5;universel;
+129;étant donné les restrictions budgétaires;5;universel;
+130;d’après nos propres sources;10;universel;
+131;en accord avec {pers_circo=pers}{pers_circo.nom};10;universel;
+132;en désaccord avec {pers_circo=pers}{pers_circo.nom};10;universel;
+133;avec {pers_circo=pers}{pers_circo.nom};10;universel;
+134;d’après {pers_circo=pers}{pers_circo.nom};10;universel;
+135;d’après {media_circo=media}{media_circo.nom};50;universel;
+136;pour avoir proclamé l’indépendance {loc_circo=localite(region)}{loc_circo.nom(de)};10;universel;
+137;en portant un t-shirt “Free {loc_circo=localite(ville,pays,region)}{loc_circo.nom_en}”;5;universel;
+138;en portant un t-shirt “Free {loc_circo=localite(ville)}{loc_circo.nom_en}{loc_circo.departement}”;5;universel;
+139;en portant un t-shirt “{pers_circo=pers}{pers_circo.nom(0)} démission”;2;universel;
+140;en portant un t-shirt “Libérez {pers_circo=pers}{pers_circo.nom}”;2;universel;
+141;en portant un t-shirt “Free {pers_circo=pers}{maj({pers_circo.nom(0)})}”;2;universel;
+142;en portant un gilet jaune;5;universel;
+143;d’après un document confidentiel que nous avons en notre possession;10;universel;
+144;en brandissant une pancarte “Retour au calme”;3;universel;
+145;en direct à la télévision;10;universel;
+146;en portant une casquette “Make {loc_circo=localite(pays,region)}{maj({loc_circo.nom_en})} Great Again”;10;universel;
+147;pour avoir forcé {pers_circo=pers}{pers_circo.nom} à danser le “ndombolo” {lieu};10;accuse;
+148;pour avoir raté son Ramadan;10;est_accuse;
+149;pour fraude fiscale;10;accusation;
+150;suite à son implication dans l’affaire Bygmalion;2;accusation;
+151;dans le cadre des soupçons sur ses comptes de campagne;10;accusation;
+152;dans le cadre de l’affaire des comptes de campagne {pers_circo=pers}{pers_circo.nom(de)};10;accusation;
+153;dans le cadre de l’affaire des faux tweets d’Alain Juppé;3;accusation;
+154;pour avoir appelé Emmanuel Macron “Manu”;5;accusation;
+155;pour actes de sabotage sur serveur Minecraft;10;accusation;
+156;pour avoir saboté la maison {pers_circo=pers}{pers_circo.nom(de)} sur Minecraft;10;accusation;
+157;pour avoir dit des gros mots;10;accusation;
+158;pour avoir juré sur un serveur Minecraft chrétien;10;accusation;
+159;pour avoir juré sur Roblox;5;accusation;
+160;pour avoir dit des gros mots sur Roblox;5;accusation;
+161;dans le cadre de l’affaire Benalla;10;accusation;
+162;dans le cadre de l’#Affaire{pers_circo=pers}{pers_circo.nom_colle};50;accusation;
+163;pour homicide sur {pers_circo=pers}{pers_circo.nom};10;accusation;
+164;pour avoir tagué {pers_circo=pers}“Je suis un{genre(pers_circo,,e)} enculé{genre(pers_circo,,e)}” sur la maison {pers_circo.nom(de)};10;est_accuse;
+165;pour avoir tagué “Je suis un{gse} enculé{gse}” sur sa maison;10;accuse;
+166;pour avoir raté le #NoNutNovember;10;accusation;
+167;pour avoir raconté n’importe quoi sur Twitter;10;accusation;
+168;pour avoir dit le N-word;10;accusation;
+169;pour avoir brandit sur gilet jaune;10;accusation;
+170;pour avoir manifesté son soutien envers les gilets jaunes;5;accusation;
+171;pour avoir soutenu publiquement les gilets jaunes;5;accusation;
+172;pour avoir monté une arnaque sur internet;5;accusation;
+173;pour possession de sérum physiologique;5;accusation;
+174;pour laideur;5;accusation;
+175;pour mocheté;5;accusation;
+176;pour avoir partagé des fake news;10;accusation;
+177;pour homicide involontaire;5;accusation;
+178;pour homicide plus ou moins volontaire;10;accusation;
+179;pour homicide volontaire;5;accusation;
+180;car problématique;10;accusation;
+181;pour avoir cassé des trucs;5;accusation;
+182;pour avoir mangé tout le sable de Metz Plage;10;accusation;
+183;dans le cadre de l’affaire Metz Plage;10;accusation;
+184;car suspecté{genre(objet,,e)} d’être un bot;10;accuse;
+185;car suspecté{gse} d’être un bot;10;est_accuse;
+186;pour l’avoir traité{gse} de “fil{genre(sujet,s,le)} de pute”;10;accuse;
+187;pour avoir traité {pers_circo=pers}{pers_circo.nom} de “fil{genre(pers_circo,s,le)} de pute”;10;accuse;
+188;{genre(objet,pour avoir montré son pénis,pour avoir montré ses tétons sur Instagram)};10;accuse;
+189;{genre(sujet,pour avoir montré son pénis,pour avoir montré ses tétons sur Instagram)};10;est_accuse;
+190;pour avoir été flashé{genre(objet,,e)} à 90 km/h en trottinette électrique;10;accuse;
+191;pour avoir été flashé{gse} à 90 km/h en trottinette électrique;10;est_accuse;
+192;pour ne pas avoir activé la cloche sur sa chaîne YouTube;10;accuse;
+193;pour plagiat;10;accuse;
+194;pour plagiat sur {pers_circo=pers}{pers_circo.nom};10;est_accuse;
+195;pour l’avoir forcé{genre(objet,,e)} à danser le “ndombolo” {lieu};10;accuse;
+196;pour diffamition;10;accuse;
+197;pour diffamition et incitation à la haine;10;accuse;
+198;pour l’avoir tué{gse};10;accuse;
+199;pour avoir griefé sa maison sur Minecraft;10;accuse;
+200;par {pers_circo}{pers_circo.nom};10;specifique;154
+201;pour propos problématiques;10;accusation;
+202;pour {genre(objet,le,la)} draguer;10;specifique;158
+203;pour lui envoyer {genre(sujet,une dick pic,des nudes)};10;specifique;158
+204;ironiquement;10;universel;
+205;non-ironiquement;30;universel;
+206;pour avoir chanté “Fuck le 17”;10;accusation;
+207;pour avoir chanté “Fornique la maréchaussée”;10;accusation;
+208;pour avoir dit “Nique la police” au lieu de “Nique le ministre”;10;accusation;
+209;pour racisme anti-blanc;10;accusation;
+210;pour avoir raté le #NoPeeJanuary;10;accusation;
+211;durant le #DestroyDickDecember;20;specifique;1
+212;durant le #NoPeeJanuary;20;specifique;1

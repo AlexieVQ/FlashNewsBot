@@ -1,0 +1,333 @@
+id;action;poids;id_info
+1;est mort{gse};10;1
+2;retrouvé{gse} mort{gse};10;1
+3;mort noyer;5;1
+4;est mort{genre(sujet, puceau,e)};10;1
+5;a fraudé le fisc;10;2
+6;a fraudé les impôts;10;2
+7;a commis de la fraude fiscale;10;2
+8;est élu{gse} Président{gse} de la République{rand(, française)};10;3
+9;est élu{gse} à la tête de l’État;10;3
+10;devient l{genre(sujet,e,a)} nouve{genre(sujet,au,lle)} Président{gse} de la République{rand(, française)};10;3
+11;est élu{gse} Président{gse} {loc_info=localite(pays)}{loc_info.nom(de)};10;3
+12;devient l{genre(sujet,e,a)} nouve{genre(sujet,au,lle)} Président{gse} {loc_info=localite(pays)}{loc_info.nom(de)};10;3
+13;placé{gse} en garde à vue;10;4
+14;est arrêté{gse};10;4
+15;condamné{gse} à {rand(10,20,30,50)} ans de prison dont {rand(2,5,8,10)} avec surcis;10;4
+16;est activement recherché{gse} par Interpol;10;4
+17;a été tué{gse};10;5
+18;s’est fait{gse} planter;5;5
+19;a été confirmé{gse} dans Smash;10;6
+20;sera inclus{gse} dans Super Smash Bros{rand(, Ultimate)};10;6
+21;a assassiné {objet=pers}{objet.nom};10;7
+22;a donné des coups de sabre {objet=pers}{objet.nom(à)};1;7
+23;a planté {objet=pers}{objet.nom};5;7
+24;a planté un mec;10;8
+25;a lâché une bombe nucléaire sur {loc_info=localisation}{loc_info.nom};10;9
+26;a lâché une bombe nucléaire sur {loc_info=localisation(ville)}{loc_info.nom}{loc_info.departement};3;9
+27;a payé ses impôts;10;10
+28;a remis la légion d’honneur {objet=pers}{objet.nom(à)};10;11
+29;a été décoré{gse} de la légion d’honneur par {objet=pers}{objet.nom};10;12
+30;est nommé{gse} Premi{genre(sujet,er,ère)} Ministre par {objet=pers}{objet.nom};10;13
+31;nomme {objet=pers}{objet.nom} à la tête du gouvernement;10;14
+32;a décidé de dissoudre l’Assemblée Nationale;10;15
+33;sort un nouvel album;2;16
+34;annonce un album;2;16
+35;{rand(sort un nouvel,annonce un)} album de {rand(rap,metal,punk,R’n’B,reggaeton,dancehall,raï,disco,jazz,K-pop,variété,trap,funk,synthwave,zumba,pop)};20;16
+36;annonce un album de {rand(rap,metal,punk,R’n’B,reggaeton,dancehall,raï,disco,jazz)} conscient;5;16
+37;annonce un album de {rand(K-pop,variété,trap,funk,synthwave,zumba,pop)} consciente;5;16
+38;annonce un album de {rand(rap,metal,punk,R’n’B,reggaeton,dancehall,raï,disco,jazz)} {loc_info=localite(pays,region)}{loc_info.adjm};10;16
+39;annonce un album de {rand(K-pop,variété,trap,funk,synthwave,zumba,pop)} {loc_info=localite(pays,region)}{loc_info.adjf};10;16
+40;annonce un album de {rand(rap,metal,punk,R’n’B,reggaeton,dancehall,raï,disco,jazz)} {parti_info=parti}{parti.adjm};10;16
+41;annonce un album de {rand(K-pop,variété,trap,funk,synthwave,zumba,pop)} {parti_info=parti}{parti.adjf};10;16
+42;accepte de défier en duel {objet=pers}{objet.nom};10;17
+43;accepte de défier en duel de MMA {objet=pers}{objet.nom};10;17
+44;accepte d’affronter {objet=pers}{objet.nom};10;17
+45;accepte de défier en duel de sabre {objet=pers}{objet.nom};10;18
+46;accepte de défier en duel de shifumi {objet=pers}{objet.nom};10;19
+47;devient premi{genre(sujet,er,ère)} secrétaire du bureau politique du Parti Communiste Français et guidera la République vers son destin socialiste;10;20
+48;se porte candidat{gse} à l’élection présidentielle{objet=pers}{loc_info=localite(France)};10;21
+49;est candidat{gse} à l’élection présidentielle{objet=pers}{loc_info=localite(France)};10;21
+50;se porte candidat{gse} à la succession {objet=pers}{objet.nom(de)} à là tête du pays{loc_info=localite(France)};10;21
+51;se porte candidat{gse} à l’élection présidentielle {loc_info=localite(pays)}{loc_info.nom(de)}{objet=pers};10;21
+52;est candidat{gse} à l’élection présidentielle {loc_info=localite(pays)}{loc_info.nom(de)}{objet=pers};10;21
+53;se porte candidat{gse} à la succession {objet=pers}{objet.nom(de)} à là tête {loc_info=localite(pays)}{loc_info.nom(de)};10;21
+54;a signé un accord de dénucléarisation avec {loc_info=localite(pays)}{loc_info.nom};10;22
+55;a engagé un processus de dénucléarisation avec {loc_info=localite(pays)}{loc_info.nom};10;22
+56;est sacré{gse} {rand(Roy,Reine)} de France et de Navarre;10;23
+57;est sacré{gse} {rand(Roy,Reine)} de France;10;23
+58;est sacré{gse} {rand(Empereur,Impératrice)} {loc_info=localite(pays,region)}{loc_info.nom(de)};10;23
+59;est sacré{gse} {rand(Roy,Reine)} {loc_info=localite(pays,region)}{loc_info.nom(de)};10;23
+60;a obtenu son brevet des collèges;10;24
+61;a cru apercevoir un OVNI;10;25
+62;a aperçu un OVNI;10;25
+63;jouera dans le prochain film {objet=pers}{objet.nom(de)};10;26
+64;poursuit {objet=pers}{objet.nom} en justice;10;27
+65;attaque {objet=pers}{objet.nom} en justice;10;27
+66;a dabé;10;28
+67;aurait été aperçu{gse} sur la surface de Mars;10;29
+68;aurait été aperçu{gse};10;29
+69;aurait été aperçu{gse} de manière fantomatique;10;29
+70;a été aperçu{gse} en train de prendre de la drogue;10;30
+71;a été aperçu{gse} en train de prendre du cannabis;10;30
+72;a été aperçu{gse} en train de se rouler un gros splif;10;30
+73;a été aperçu{gse} en train de se rouler un gros joint;10;30
+74;a été aperçu{gse} en fursuit;10;31
+75;a été aperçu{gse} en combinaison furry;10;31
+76;a cassé sa télévision;10;32
+77;se lance dans le porno;2;34
+78;se lance dans la pornographie;2;34
+79;se lance dans le X;2;34
+80;met un terme à sa carrière dans le X;2;34
+81;met un terme à sa carrière dans le porno;2;34
+82;se lance dans la musique;10;33
+83;se lance dans la chanson;10;33
+84;se lance dans le cinéma;10;34
+85;se lance dans la politique;10;35
+86;met un terme à sa carrière dans la musique;10;36
+87;met un terme à sa carrière dans la chanson;10;36
+88;met un terme à sa carrière dans le cinéma;10;37
+89;met un terme à sa carrière dans la pornographie;5;37
+90;met un terme à sa carrière dans la politique;10;38
+91;met un terme à sa carrière sur YouTube;10;39
+92;devient secrétaire général{gse} de la CGT;10;40
+93;s’est pris{gse} en selfie avec {objet=pers}{objet.nom};10;41
+94;en photo avec {objet=pers}{objet.nom};10;41
+95;a fait son coming out sapiosexuel{genre(sujet,,le)};10;42
+96;a fait son coming out asexuel{genre(sujet,,le)};2;42
+97;a fait son coming out game{genre(sujet,r,use)};10;42
+98;est élu{gse} personnalité préférée des français;10;43
+99;a décidé de dissoudre l’Assemblée Nationale;10;44
+100;rachète Facebook;10;45
+101;rachète Amazon;10;45
+102;annonce sa démission;10;46
+103;démissionne de ses fonctions;10;46
+104;est destitué{gse} de ses fonctions;10;47
+105;provoque {objet=pers}{objet.nom};10;48
+106;clashe  {objet=pers}{objet.nom};10;48
+107;provoque {objet=pers}{objet.nom} en duel;10;48
+108;provoque {objet=pers}{objet.nom} en duel de MMA;10;48
+109;provoque {objet=pers}{objet.nom} en duel de sabre;2;48
+110;a accès aux codes nucléaires;10;49
+111;aurait eu accès aux codes de la bombe atomique;10;49
+112;représentera la France à l’Eurovision;10;50
+113;représentera la France au Concours Eurovision de la Chanson;10;50
+114;représentera {loc_info=localite(pays)}{loc_info.nom} à l’Eurovision;10;50
+115;représentera {loc_info=localite(pays)}{loc_info.nom} au concours Eurovision de la Chanson;10;50
+116;se bat avec {objet=pers}{objet.nom};10;51
+117;{rand(est ,)}pressenti{gse} pour {rand(être,devenir)} Ministre {rand(de l’Écologie,de la Culture,de l’Intérieur,de l’Économie,de l’Égalité femmes-hommes,des Finances,des Affaires étrangères,de l’Information)};10;52
+118;{rand(est ,)}nommé{gse} Ministre {rand(de l’Écologie,de la Culture,de l’Intérieur,de l’Économie,de l’Égalité femmes-hommes,des Finances,des Affaires étrangères,de l’Information)}{rand(, par {objet=pers}{objet.nom})};10;53
+119;annonce un nouvel iPhone;10;54
+120;annonce l’iPhone {rand(11S,11S Pro,11S Pro Plus,11 Pro Plus Max,11S Pro Max,11 Pro Plus Menu Maxi Best-of)};10;54
+121;avoue avoir tué {objet=pers}{objet.nom};10;55
+122;avoue être à l’origine du meurtre de {objet=pers}{objet.nom};10;55
+123;avoue être responsable du meurtre {objet=pers}{objet.nom};10;55
+124;déclare avoir tué {objet=pers}{objet.nom};10;55
+125;publie un message de soutien envers {objet=pers}{objet.nom};10;56
+126;soutient publiquement {objet=pers}{objet.nom};10;56
+127;change de look;10;57
+128;arbore un nouveau look;10;57
+129;avec un nouveau look sur Instagram;10;57
+130;exécuté{gse};10;58
+131;sera exécuté{gse};10;58
+132;auditionné{gse} par la commission d’enquête du Sénat;10;59
+133;auditionné{gse} par la commission d’enquête de l’Assemblée;10;59
+134;devient l’avocat{gse} {objet=pers}{objet.nom(de)};10;60
+135;sera l’avocat{gse} {objet=pers}{objet.nom(de)};10;60
+136;abandonne la défense {objet=pers}{objet.nom(de)};10;61
+137;abandonne la défense {objet=pers}{objet.nom(de)};10;62
+138;rend hommage {objet=pers}{objet.nom(à)} qui nous a quittés;10;63
+139;porte plainte;10;64
+140;porte plainte contre {objet=pers}{objet.nom};10;64
+141;porte plainte contre X;10;64
+142;bat {objet=pers}{objet.nom} aux élections {rand(présidentielles,législatives,municipales,de délégués de classe,européennes)};10;65
+143;brandit une pancarte “Bon débarras” {objet=pers}{rand(lors du départ {objet.nom(de)} de l’Assemblée,pendant l’enterrement {objet.nom(de)})};10;66
+144;cible d’une perquisition;10;67
+145;cible d’une perquisition du FBI;10;67
+146;cible d’une perquisition à son domicile;10;67
+147;cible d’une perquisition {objet=pers}{objet.nom(de)};10;67
+148;candidat{gse} à la mairie {loc_info=localite(ville)}{loc_info.nom(de)};10;68
+149;se porte candidat{gse} à la mairie {loc_info=localite(ville)}{loc_info.nom(de)};10;68
+150;se porte candidat{gse} à la mairie {loc_info=localite(ville)}{loc_info.nom(de)}{loc_info.departement};10;68
+151;: {rand(1.5,3,6,8,10,100,150)} kg de {rand(drogue,drogue,drogue,canabis,LSD,quinoa)} retrouvés à son domicile;10;69
+152;publie la sextape {objet=pers}{objet.nom(de)};10;70
+153;publie des photos intimes {objet=pers}{objet.nom(de)};10;70
+154;soupçonné{gse} d’être un bot;10;71
+155;révèle une importante affaire de fraude fiscale impliquant {objet=pers}{objet.nom};10;72
+156;révèle une importante affaire de fraude fiscale impliquant {objet=pers}{objet.nom} et {objet2=pers}{objet2.nom};10;72
+157;révèle une importante affaire de fraude fiscale impliquant {objet=pers}{objet.nom}, {objet2=pers}{objet2.nom} et {objet3=pers}{objet3.nom};10;72
+158;perd les élections municipales {loc_info=localite(ville)}{loc_info.nom(de)};10;73
+159;perd les élections municipales {loc_info=localite(ville)}{loc_info.nom(de)}{loc_info.departement};10;73
+160;perd les élections municipales {loc_info=localite(ville)}{loc_info.nom(de)} face {objet=pers}{objet.nom(à)};10;73
+161;déclare la guerre {loc_info=localite(pays,region)}{loc_info.nom(à)};10;74
+162;remporte le césar {genre(sujet,{rand(du meilleur acteur,du meilleur film,de la meilleur bande originale,d’honneur,du public)},{rand(de la meilleure actrice,du meilleur film,de la meilleur bande originale,d’honneur,du public)})};10;75
+163;remporte l’oscar {genre(sujet,{rand(du meilleur acteur,du meilleur film,de la meilleur bande originale,d’honneur,du public)},{rand(de la meilleure actrice,du meilleur film,de la meilleur bande originale,d’honneur,du public)})};10;76
+164;condamné{gse} à la chaise électronique;10;77
+165;{rand(s’associe avec,et)} {sujet2=pers}{sujet2.nom} {rand(pour conquérir le monde,pour lancer {rand(un projet de start-up,une entreprise)} {rand(dans le e-business,de trottinettes électriques)})};10;78
+166;retient {objet2=pers}{objet2.nom} en otage;10;79
+167;prend {objet2=pers}{objet2.nom} en otage;10;79
+168;proclame le Brexit;10;80
+169;proclame le Frexit;10;80
+170;proclame le Breizhxit;10;80
+171;et {sujet2=pers}{sujet2.nom} divorcent;10;81
+172;quitte {sujet2=pers}{sujet2.nom};10;81
+173;proclame l’indépendance {loc_info=localite(region)}{loc_info.nom(de)};10;82
+174;déclare l’indépendance {loc_info=localite(region)}{loc_info.nom(de)};10;82
+175;jouera en Équipe de France;10;83
+176;lance sa chaîne YouTube;10;84
+177;se lance sur YouTube;10;84
+178;lance sa chaîne YouTube {rand(de tutoriels beauté,de lifestyle,de vlogs,de podcasts,gaming,de vulgarisation scientifique,de vulgarisation biologique,de gaming)};30;84
+179;à l’affiche du festival Coachella;10;85
+180;à l’affiche de la fête de l’Humanité;10;85
+181;brandit une pancarte “Free {loc_info=localite}{loc_info.nom_en}”;30;86
+182;brandit une pancarte “Free {loc_info=localite(ville)}{loc_info.nom_en}{loc_info.departement}”;3;86
+183;brandit une pancarte “{objet=pers}{maj({objet.nom(0)})} démission”;10;86
+184;brandit une pancarte “Libérez {objet=pers}{maj({objet.nom(0)})};10;86
+185;brandit une pancarte “Free {objet=pers}{maj({objet.nom(0))};10;86
+186;avoue avoir eu une relation extraconjugale avec {objet=pers}{objet.nom};10;87
+187;aurait eu une relation extraconjugale avec {objet=pers}{objet.nom};10;87
+188;aurait eu une relation avec {objet=pers}{objet.nom};10;87
+189;avoue avoir eu une relation avec {objet=pers}{objet.nom};10;87
+190;devient vegan;10;88
+191;annonce qu’{genre(sujet,il,elle)} devient vegan;10;88
+192;se convertit au veganisme;10;88
+193;a fait plus de 100 millions de morts;10;89
+194;déclare vouloir “mettre le zbeul” sur les Champs-Élysées;10;90
+195;déclare vouloir “mettre le zbeul” {lieu};10;90
+196;appelle à manifester {lieu} {date} pour déstituer {objet=pers}{objet.nom};10;91
+197;appelle à manifester {lieu} {date} contre l’article 13;10;91
+198;accuse {objet=pers}{objet.nom} d’avoir tué {objet2=pers}{objet2.nom};10;92
+199;épouse {objet=pers}{objet.nom};10;93
+200;accuse {objet=pers}{objet.nom} et {objet2=pers}{objet2.nom} d’être une seule et même personne;10;94
+201;accuse {objet=pers}{objet.nom} d’être {objet2=pers}{objet2.nom};10;94
+202;accuse {objet=pers}{objet.nom} et {objet2=pers}{objet2.nom} d’être la même personne;10;94
+203;accusé{gse} d’être {objet=pers}{objet.nom};10;95
+204;devient général{gse} de l’armée {loc_info=localite(pays,region)}{loc_info.nom(de)};10;96
+205;ira sur Mars en 2020;10;97
+206;enverra {objet=pers}{objet.nom} sur Mars en 2020;10;97
+207;lancera la première mission humaine sur Mars en 2020;10;97
+208;décide d’annexer {loc_info=localite(pays,region)}{loc_info.nom};10;98
+209;accuse {media_info=media}{media_info.nom} de fake news;10;99
+210;bloque {objet=pers}{objet.nom} sur Twitter;10;100
+211;bloque {objet=pers}{objet.nom} sur Facebook;10;100
+212;s’auto-proclame {genre(sujet,Roi,Reine)} {loc_info=localite(ville,pays,region)}{loc_info.nom(de)};10;101
+213;s’auto-proclame {genre(sujet,Roi,Reine)} {loc_info=localite(ville)}{loc_info.nom(de)}{loc_info.departement};3;101
+214;soutient {objet=pers}{objet.nom} aux présidentielles;10;102
+215;suspecté{gse} d’être décédé et d’avoir été remplacé{gse} par un sosie;10;103
+216;suspecté{gse} d’être décédé et d’avoir été remplacé{gse} par {objet=pers}{objet.nom};10;103
+217;accusé{gse} d’être un{gse} illuminati;10;104
+218;accusé{gse} d’être un{gse} reptilien{genre(sujet,,ne)};10;104
+219;accusé{gse} d’être {genre(sujet,un ,)}franc-maçon;10;104
+220;se lance sur Tik Tok;10;105
+221;crée un compte Tik Tok;10;105
+222;se lance sur #TikTok;10;105
+223;crée un compte #TikTok;10;105
+224;condamné{gse} au goulag;10;106
+225;condamné{gse} au goulp;10;106
+226;condamné{gse} à la pendaison;5;106
+227;se présente à sa propre succession pour la {rand(3e,4e,5e,6e,7e,8e,9e,10e,15e,20e)} fois à la tête {loc_info=localite(pays)}{loc_info.nom(de)};10;107
+228;est élu{gse} Miss France;10;108
+229;élu{gse} Miss France;10;108
+230;est élu{gse} Miss {loc_info=localite(pays,region)}{loc_info.nom(0)};10;109
+231;élu{gse} Miss {loc_info=localite(pays,region)}{loc_info.nom(0)};10;109
+232;quitte {parti_info=parti}{parti_info.nom};10;110
+233;décide de quitter {parti_info=parti}{parti_info.nom};10;110
+234;prend la tête {parti_info=parti}{parti_info.nom(de)};10;111
+235;accède à la présidence {parti_info=parti}{parti_info.nom(de)};10;111
+236;devient président{gse} {parti_info=parti}{parti_info.nom(de)};10;111
+237;rejoint {parti_info=parti}{parti_info.nom};10;112
+238;décide de rejoindre {parti_info=parti}{parti_info.nom};10;112
+239;interdit l’hétérosexualité;10;113
+240;décide d’interdire l’hétérosexualité;10;113
+241;interdit l’hétérosexualité sur la voie publique;10;113
+242;a cru apercevoir le bigfoot;10;114
+243;aurait aperçu le bigfoot;10;114
+244;a cru apercevoir le yéti;10;115
+245;aurait aperçu le yéti;10;115
+246;aurait aperçu le pisse-cul;10;115
+247;jouera le rôle d’Olivier Minne dans le biopic de ce dernier;10;116
+248;organisera le combat entre {objet=pers}{objet.nom} et {objet2=pers}{objet2.nom};10;117
+249;a été diagnostiqué{gse} chelou;10;118
+250;a fait 6.36 % aux élections présidentielles;10;119
+251;a eu le malheur de découvrir sa Porsche en cendres;10;120
+252;a découvert sa Porsche en cendres;10;120
+253;a eu le malheur de découvrir sa cathédrale en cendres;10;121
+254;a découvert sa cathédrale en cendres;10;121
+255;a eu le malheur de découvrir son restaurant en cendres;10;122
+256;a découvert son restaurant en cendres;10;122
+257;annonce What The Cut #38;10;123
+258;rejoint la troupe des Enfoirés;10;124
+259;annule son concert à la dernière minute;10;125
+260;annule son concert après 2h d’attente;10;125
+261;annule son concert après 45 min d’attente;10;125
+262;se convertit au druidisme;10;126
+263;se convertit au techno-druidisme;10;126
+264;se convertit au chamanisme;10;126
+265;se convertit au turbo-chamanisme;10;126
+266;se convertit au paganisme;10;126
+267;se convertit au néo-paganisme;10;126
+268;se convertit à la sorcellerie;10;126
+269;saccage l’Arc de Triomphe;10;127
+270;saccage le Fouquet’s;10;127
+271;saccage la Société Générale;10;127
+272;saccage la Tour Eiffel;10;127
+273;saccage Notre-Dame de Paris;10;127
+274;annonce qu’{genre(sujet,il,elle)} votera {rand(la Directive Copyright,la loi anti-casseurs)};10;128
+275;annonce qu’{genre(sujet,il,elle)} votera contre {rand(la Directive Copyright,la loi anti-casseurs)};10;128
+276;annonce qu’{genre(sujet,il,elle)} votera la loi anti-{objet=pers}{objet.nom(0)};5;128
+277;annonce qu’{genre(sujet,il,elle)} votera contre la loi anti-{objet=pers}{objet.nom(0)};5;128
+278;annonce qu’{genre(sujet,il,elle)} votera la Loi {objet=pers}{objet.nom(0)};5;128
+279;annonce qu’{genre(sujet,il,elle)} votera contre la Loi {objet=pers}{objet.nom(0)};5;128
+280;annonce qu’{genre(sujet,il,elle)} votera la #Loi{objet=pers}{objet.nom_colle};5;128
+281;annonce qu’{genre(sujet,il,elle)} votera contre la #Loi{objet=pers}{objet.nom_colle};5;128
+282;bat le record d’absentéisme à l’Assemblée Nationale avec 0 jour de présence;10;129
+283;présentera la version {loc_info=sujet.localite}{loc_info.adjf} de RuPaul’s Drag Race;10;130
+284;participera à la version {loc_info=sujet.localite}{loc_info.adjf} de RuPaul’s Drag Race;10;130
+285;participera à RuPaul’s Drag Race;10;130
+286;présentera la version {loc_info=localite(region)}{loc_info.adjf} de RuPaul’s Drag Race;5;130
+287;participera à la version {loc_info=localite(region)}{loc_info.adjf} de RuPaul’s Drag Race;5;130
+288;sort un livre;10;131
+289;sort une fanfiction;10;131
+290;sort une fanfiction {objet=pers}{objet.nom} x {objet2=pers}{objet2.nom};10;131
+291;sort une fanfiction “Mariée de force à un gilet jaune”;10;131
+292;sort une fanfiction “Mariée de force {objet=pers}{objet.nom(à)}”;10;131
+293;accusé{gse} de plagiat sur {objet=pers}{objet.nom};10;132
+294;accusé{gse} de plagiat par {objet=pers}{objet.nom};10;132
+295;donne {rand(100M d’euros,200M d’euros,100M d’euros,200M d’euros,500 000 euros,3 euros,2 euros,20 centimes)} pour réparer Notre-Dame de Paris;10;133
+296;donne {rand(50 euros,100 euros,200 euros,500 euros,1000 euros,100M d’euros)} lors du Z-Event;10;134
+297;décide de reformer les VoxMakers;10;135
+298;soupçonné{gse} d’être {h}CopyComic;10;136
+299;accuse {objet=pers}{objet.nom} d’être CopyComic;10;137
+300;soupçonne {objet=pers}{objet.nom} d’être CopyComic;10;137
+301;annonce sa présence à la Japan Expo;10;138
+302;sera présent{gse} à la Japan Expo;10;138
+303;à l’affiche de la Japan Expo;10;138
+304;décide d’annuler le baccalauréat;10;139
+305;décide d’annuler le brevet des collèges;10;139
+306;devient l{genre(sujet,e,a)} premi{genre(sujet,er,ère)} youtubeu{genre(sujet,r,se)} au monde;10;140
+307;devient l{genre(sujet,e,a)} youtubeu{genre(sujet,r,se)} numéro 1;10;140
+308;devient l{genre(sujet,e,a)} premi{genre(sujet,er,ère)} youtubeu{genre(sujet,r,se)} {loc_info=localite(pays)}{loc_info.nom(de)};10;140
+309;transféré{gse} {rand({rand(du PSG,de l’OM,de l’OL,de l’AS Monaco,du Stade rennais,des Girondins,de Saint-Étienne,du FC Nantes,du FC Barcelone,du Barça,de l’Atlético de Madrid,du Real Madrid,du Bayern Munich,de Manchester City,de Manchester United,de Liverpool,de la Juventus,des Herbiers,du Red Star,de l’En Avant Guingamp,du FC Lorient,du Stade rennais,de l’ASM,du FC Visiteur,du Borussia Dortmund)} ,)}{rand(au PSG,à l’OM,à l’OL,à l’AS Monaco,au Stade rennais,aux Girondins,à Saint-Étienne,au FC Nantes,au FC Barcelone,au Barça,à l’Atlético de Madrid,au Real Madrid,au Bayern Munich,à Manchester City,à Manchester United,à Liverpool,à la Juventus,aux Herbiers,au Red Star,à l’En Avant Guingamp,au FC Lorient,au Stade rennais,à l’ASM,au FC Visiteur,au Borussia Dortmund)};10;141
+310;devient {genre(sujet,p,m)}ère;10;142
+311;devient {genre(sujet,papa,maman)};10;142
+312;et {sujet2=pers}{sujet2.nom} deviennent parents;10;142
+313;met en vente de l’eau de son bain;10;143
+314;accusé{gse} d’avoir organisé des dîners privés aux frais de l’État{homar=pers}{homar2=pers};10;144
+315;porté{gse} disparu{gse};10;145
+316;décide de relancer la tecktonik;10;146
+317;décide de lancer la Tecktonik 2;10;146
+318;a témoigné {objet=pers}{objet.nom(que)} est membre du gang des Nine Trey Bloods;10;147
+319;aurait conseillé {objet=pers}{objet.nom(à)} de prendre un peu de camomille;10;148
+320;a mangé tout le sable de Metz Plage;10;149
+321;aurait mangé tout le sable de Metz Plage;10;149
+322;fait un don de {rand(100 €,200 €,1000 €,2000 €,5000 €)} {parti_info=parti}{parti_info.nom(à)};10;150
+323;mis{gse} en examen;10;151
+324;a été cancelled par {objet=pers}{objet.nom};10;152
+325;call-out {objet=pers}{objet.nom};10;153
+326;confondu{gse} avec Xavier Dupont de Ligonnès;10;154
+327;a été confondu{gse} avec Xavier Dupont de Ligonnès;10;154
+328;confond {objet=pers}{objet.nom} avec Xavier Dupont de Ligonnès;10;155
+329;organise une ZAD {lieu_info=localite(ville,region)}{lieu_info.nom(en)};10;156
+330;lance une cagnotte pour libérer {objet=pers}{objet.nom};10;157
+331;lance une cagnotte pour aider {objet=pers}{objet.nom};10;157
+332;aurait slidé dans les DM {objet=pers}{objet.nom(de)};10;158
