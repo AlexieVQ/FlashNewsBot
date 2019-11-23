@@ -32,6 +32,18 @@ class Localite < Element
 		    ligne['departement'], ligne['emoji'])
 	end
 	
+	##
+	# Retourne le tableau des localités de types donnés.
+	def Localite.types(types)
+		return selectionner { |e| types === e.type }
+	end
+	
+	##
+	# Retourne la localité de nom collé donné.
+	def Localite.nom_colle(nom_colle)
+		return selectionner { |e| nom_colle === e.read_nom_colle }
+	end
+	
 	## Méthode privée
 	def initialize(id,
 	               type,
