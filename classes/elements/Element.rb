@@ -53,11 +53,7 @@ class Element
 	# Retourne un tableau avec les éléments qui satisfont la condition passée
 	# dans le bloc.
 	def Element.selectionner(&condition)
-		return @@elements.inject(Array.new) do |tab, element|
-			if condition.call(element) then
-				tab << element
-			end
-		end
+		return @@elements.filter(condition)
 	end
 	
 	##
