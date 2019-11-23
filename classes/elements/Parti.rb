@@ -32,6 +32,12 @@ class Parti < Element
 		    ligne['poids'].to_i, ligne['adjm'], ligne['adjf'], localite)
 	end
 	
+	##
+	# Retourne les partis de types donnés.
+	def Parti.types(types)
+		return selectionner { |e| types === e.type }
+	end
+	
 	## Méthode privée
 	def initialize(id, nom, sigle, type, poids, adjm, adjf, localite)
 		super(id, poids)

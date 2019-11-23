@@ -24,6 +24,12 @@ class NomPers < Element
 		    ligne['id_pers'].to_i)
 	end
 	
+	##
+	# Retourne les noms d'un personnage.
+	def NomPers.id_pers(id_pers)
+		return selectionner { |e| e.id_pers == id_pers }
+	end
+	
 	## Méthode privée
 	def initialize(id, nom, poids, id_pers)
 		super(id, poids)

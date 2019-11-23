@@ -19,17 +19,22 @@ class Decla < Element
 	attr :id_pers, false
 	
 	##
-	# Pour créer une déclaration, il faut son identifiant, sa chaîne de
-	# caractères et son poids.
-	def Decla.creer(id, decla, poids)
-		new(id, decla, poids)
-	end
-	
-	##
 	# Crée une déclaration à partir d'une ligne d'un fichier CSV.
 	def Decla.importer(ligne)
 		new(ligne['id'].to_i, ligne['decla'], ligne['poids'].to_i,
 		    ligne['id_info'].to_i, ligne['id_pers'].to_i)
+	end
+	
+	##
+	# Retourne les déclarations d'une information.
+	def Decla.id_info(id_info)
+		return selectionner { |e| e.id_info == id_info }
+	end
+	
+	##
+	# Retourne les déclarations d'un personnage.
+	def Decla.id_pers(id_pers)
+		return selectionner { |e| e.id_pers == id_pers }
 	end
 	
 	## Méthode privée

@@ -24,6 +24,12 @@ class Surnom < Element
 		    ligne['id_pers'].to_i)
 	end
 	
+	##
+	# Retourne les surnoms d'une personne donnée
+	def Surnom.id_pers(id_pers)
+		return selectionner { |e| e.id_pers == id_pers }
+	end
+	
 	## Méthode privée
 	def initialize(id, surnom, poids, id_pers)
 		super(id, poids)

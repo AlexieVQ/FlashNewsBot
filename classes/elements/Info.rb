@@ -31,9 +31,9 @@ class Info < Element
 	# Crée une information à partir d'une ligne d'un fichier CSV.
 	# TODO ajouter catégories
 	def Element.importer(ligne)
-		actions = Action.selectionner { |e| e.id_info == ligne['id'].to_i }
-		circos = Circo.selectionner { |e| e.id_info == ligne['id'].to_i }
-		declas = Decla.selectionner { |e| e.id_info == ligne['id'].to_i }
+		actions = Action.id_info(ligne['id'].to_i)
+		circos = Circo.id_info(ligne['id'].to_i)
+		declas = Decla.id_info(ligne['id'].to_i)
 		new(ligne['id'].to_i, actions, ligne['poids'].to_i, circos,
 		    ligne['poids'].type, declas, ligne['hashtag'], ligne['type_circo'],
 		    [])

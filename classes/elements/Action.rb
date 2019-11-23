@@ -23,6 +23,12 @@ class Action < Element
 		    ligne['id_info'].to_i)
 	end
 	
+	##
+	# Renvoie les accroches d'une info.
+	def Action.id_info(id_info)
+		return selectionner { |e| e.id_info == id_info }
+	end
+	
 	## Méthode privée
 	def initialize(id, action, poids, id_info)
 		super(id, poids)

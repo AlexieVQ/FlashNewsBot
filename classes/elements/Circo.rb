@@ -47,6 +47,13 @@ class Circo < Element
 	# Retourne le tableau des circonstances où le sujet accuse l'objet
 	def Circo.accuse
 		return selectionner { |e| e.type_circo === ["accusation", "accuse"] }
+	end
+	
+	##
+	# Retourne les circonstances d'une information.
+	def Circo.id_info(id_info)
+		return selectionner { |e| e.id_info == id_info }
+	end
 	
 	## Méthode privée
 	def initialize(id, circo, poids, type_circo, id_info = nil)

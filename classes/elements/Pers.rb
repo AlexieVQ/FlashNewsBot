@@ -35,10 +35,10 @@ class Pers < Element
 	##
 	# Crée un personnage à partir d'une ligne d'un fichier CSV.
 	def Personnage.importer(ligne)
-		noms = Nom.selectionner { |e| e.id_pers == ligne['id'].to_i }
-		surnoms = Surnom.selectionner { |e| e.id_pers == ligne['id'].to_i }
+		noms = Nom.id_pers(ligne['id'].to_i)
+		surnoms = Surnom.id_pers(ligne['id'].to_i)
 		localite = Localite.id(ligne['localite'].to_i)
-		declas = Decla.selectionner { |e| e.id_pers == ligne['id'].to_i }
+		declas = Decla.id_pers(ligne['id'].to_i)
 		new(ligne['id'].to_i, noms, surnoms, ligne['poids'].to_i,
 		    ligne['nom_colle'], ligne['genre'], ligne['categorie'], localite,
 		    declas)
