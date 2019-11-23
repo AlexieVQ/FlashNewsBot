@@ -19,13 +19,15 @@ class Info < Element
 	# @declas		=> Tableau de déclarations
 	# @hashtag		=> Hashtag
 	
-	## Nom du fichier CSV correspondant
-	@@nom_fichier = "infos.csv"
-	
 	## Type de circonstance
 	attr :type_circo, false
 	## Catégories
 	attr :categories, false
+	
+	## Nom du fichier CSV correspondant
+	def Info.nom_fichier
+		return "infos.csv"
+	end
 	
 	##
 	# Crée une information à partir d'une ligne d'un fichier CSV.
@@ -35,7 +37,7 @@ class Info < Element
 		circos = Circo.id_info(ligne['id'].to_i)
 		declas = Decla.id_info(ligne['id'].to_i)
 		new(ligne['id'].to_i, actions, ligne['poids'].to_i, circos,
-		    ligne['poids'].type, declas, ligne['hashtag'], ligne['type_circo'],
+		    ligne['type'], declas, ligne['hashtag'], ligne['type_circo'],
 		    [])
 	end
 	

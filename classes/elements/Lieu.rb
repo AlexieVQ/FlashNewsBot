@@ -11,7 +11,9 @@ class Lieu < Element
 	# @lieu		=> Chaîne de caractères
 	
 	## Nom du fichier CSV correspondant
-	@@nom_fichier = "lieux.csv"
+	def Lieu.nom_fichier
+		return "lieux.csv"
+	end
 	
 	##
 	# Crée un lieu à partir d'une ligne d'un fichier CSV.

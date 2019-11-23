@@ -1,3 +1,4 @@
+require 'csv'
 require_relative '../Array.rb'
 
 ##
@@ -9,22 +10,20 @@ require_relative '../Array.rb'
 
 class Element
 	
+	# @elements		=> Éléments de la classe
+	
 	## Chemin du dossier contenant les fichiers CSV
-	@@chemin = "../../tables/"
-	
-	## Nom du fichier CSV correspondant
-	@@nom_fichier
-	
-	## Liste des éléments
-	@@elements = import_table
+	@@chemin = "tables/"
 	
 	## Identifiant d'un élément
 	attr :id, false
 	## Poids d'un élément, accessible en lecture.
 	attr :poids, false
 	
-	private_class_method :import_table
-	private_class_method :importer
+	## Nom du fichier CSV correspondant
+	def Element.nom_fichier
+		raise "La classe Element n'a pas de fichier"
+	end
 	
 	##
 	# Crée un élément à partir d'une ligne d'un fichier CSV.
@@ -35,29 +34,27 @@ class Element
 	##
 	# Importe la table des éléments depuis un fichier CSV décrit dans la
 	# variable de classe chemin.
-	def Element.import_table
-		@@elements = []
-		CSV.read(@@chemin + @@nom_fichier,
-		         {:col_sep => ';', :headers => true}).each do |ligne|
-			@@elements << importer(ligne)
-		end
-	end
-	
-	##
-	# Accès aux éléments de la classe.
 	def Element.elements
-		return @@elements
+		unless defined?(@elements) then
+			@elements = []
+			CSV.read(@@chemin + nom_fichier,
+					{:col_sep => ';', :headers => true}).each do |ligne|
+				@elements << importer(ligne)
+			end
+		end
+		return @elements
 	end
 	
 	##
 	# Retourne un tableau avec les éléments qui satisfont la condition passée
 	# dans le bloc.
 	def Element.selectionner(&condition)
-		return @@elements.filter(condition)
+		return elements.select { |e| condition.call(e) }
 	end
 	
 	##
-	# Retourne l'élément d'identifiant donné.
+	# Retourne l'élément d'identifiant donné. Initialise la table au premier
+	# appel.
 	def Element.id(id)
 		res = selectionner { |e| e.id == id }
 		return res[0]
@@ -66,7 +63,7 @@ class Element
 	##
 	# Retourne un élément de la classe aléatoirement.
 	def Element.elt_alea(ajout = [])
-		return @@elements.elt_alea(ajout)
+		return elements.elt_alea(ajout)
 	end
 	
 	## Pour initialiser un élément il faut son identifiant et son poids.

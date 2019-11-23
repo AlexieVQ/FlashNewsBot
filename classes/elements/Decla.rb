@@ -10,13 +10,15 @@ class Decla < Element
 	
 	# @decla		=> Chaîne de caractères
 	
-	## Nom du fichier CSV correspondant
-	@@nom_fichier = "declas.csv"
-	
 	## Identifiant de l'information rattachée
 	attr :id_info, false
 	## Identifiant de la personne rattachée
 	attr :id_pers, false
+	
+	## Nom du fichier CSV correspondant
+	def Decla.nom_fichier
+		return "declas.csv"
+	end
 	
 	##
 	# Crée une déclaration à partir d'une ligne d'un fichier CSV.

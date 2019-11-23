@@ -11,11 +11,13 @@ class DateInfo < Element
 	# @date		=> Chaîne de caractères
 	
 	## Nom du fichier CSV correspondant
-	@@nom_fichier = "dates.csv"
+	def DateInfo.nom_fichier
+		return "dates.csv"
+	end
 	
 	##
 	# Crée une date à partir d'une ligne d'un fichier CSV.
-	def Date.importer(ligne)
+	def DateInfo.importer(ligne)
 		new(ligne['id'].to_i, ligne['date'], ligne['poids'].to_i)
 	end
 	

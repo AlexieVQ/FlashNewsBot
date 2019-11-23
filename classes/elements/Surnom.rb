@@ -11,11 +11,13 @@ class Surnom < Element
 	
 	# @surnom		=> Surnom du personnage
 	
-	## Nom du fichier CSV correspondant
-	@@nom_fichier = "surnoms.csv"
-	
 	## Identifiant du personnage concerné
 	attr :id_pers, false
+	
+	## Nom du fichier CSV correspondant
+	def Surnom.nom_fichier
+		return "surnoms.csv"
+	end
 	
 	##
 	# Crée un surnom à partir d'une ligne d'un fichier CSV.

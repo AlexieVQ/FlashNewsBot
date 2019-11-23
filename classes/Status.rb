@@ -1,5 +1,5 @@
 require_relative 'Commande.rb'
-require_relative 'IndexErreur.rb'
+require_relative 'Erreurs.rb'
 require_relative 'elements/Info.rb'
 require_relative 'elements/Pers.rb'
 
@@ -39,7 +39,7 @@ class Status
 			$index['media'] = Commande.commande(TypeCommande::MEDIA)
 			$index['circo'] = Commande.commande(TypeCommande::CIRCO)
 			$index['decla'] = Commande.commande(TypeCommande::DECLA)
-
+			
 			$index['info'] = Info.elt_alea
 			$index['sujet'] = Pers.elt_alea
 			

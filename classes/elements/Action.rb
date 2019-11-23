@@ -11,7 +11,9 @@ class Action < Element
 	# @action		=> Chaîne de caractères
 	
 	## Nom du fichier CSV correspondant
-	@@nom_fichier = "actions.csv"
+	def Action.nom_fichier
+		return "actions.csv"
+	end
 	
 	## Identifiant de l'information concernée
 	attr :id_info, false

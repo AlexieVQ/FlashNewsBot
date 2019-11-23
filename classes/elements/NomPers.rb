@@ -11,11 +11,13 @@ class NomPers < Element
 	
 	# @nom			=> Nom du personnage
 	
-	## Nom du fichier CSV correspondant
-	@@nom_fichier = "noms_pers.csv"
-	
 	## Identifiant du personnage concernée
 	attr :id_pers, false
+	
+	## Nom du fichier CSV correspondant
+	def NomPers.nom_fichier
+		return "noms_pers.csv"
+	end
 	
 	##
 	# Crée un nom à partir d'une ligne d'un fichier CSV.

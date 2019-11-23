@@ -11,7 +11,9 @@ class Media < Element
 	# @nom		=> Nom du média
 	
 	## Nom du fichier CSV correspondant
-	@@nom_fichier = "medias.csv"
+	def Media.nom_fichier
+		return "medias.csv"
+	end
 	
 	##
 	# Crée un média à partir d'une ligne d'un fichier CSV.

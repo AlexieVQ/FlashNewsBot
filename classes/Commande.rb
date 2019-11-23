@@ -1,8 +1,9 @@
 require_relative 'String.rb'
 require_relative 'Array.rb'
+require_relative 'Erreurs.rb'
 require_relative 'elements/Accroche.rb'
 require_relative 'elements/Pers.rb'
-require_relative 'elements/Date.rb'
+require_relative 'elements/DateInfo.rb'
 require_relative 'elements/Lieu.rb'
 require_relative 'elements/Localite.rb'
 require_relative 'elements/Parti.rb'
@@ -91,20 +92,22 @@ class Commande
 		when TypeCommande::ACCROCHE then
 			element = Accroche.elt_alea
 		when TypeCommande::PERS then
-			if attribut && attribut != "" then
+			if attribut && attribut != "" || parametres[0] == nil then
 				element = Pers.elt_alea
-			else
+			elsif parametres[0] then
 				element = Pers.genre(parametres[0]).elt_alea
 			end
 		when TypeCommande::DATE then
-			element = Date.elt_alea
+			element = DateInfo.elt_alea
 		when TypeCommande::LIEU then
 			element = Lieu.elt_alea
 		when TypeCommande::LOCALITE then
 			if ["ville", "pays", "region"].include?(parametres[0]) then
 				element = Localite.types(parametres).elt_alea
-			else
+			elsif parametres && parametres.length != 0 then
 				element = Localite.nom_colle(parametres[0]).elt_alea
+			else
+				element = Localite.elt_alea
 			end
 		when TypeCommande::PARTI then
 			if ["parti", "syndicat", "association"].include?(parametres[0]) then
@@ -145,6 +148,9 @@ class Commande
 	# Prend le nom d'un personnage dans l'index, une chaîne au masculin et une
 	# au féminin et renvoie celle correspondant au genre du personnage.
 	def genre(nom_pers, chaine_m, chaine_f)
+		unless $index[nom_pers] then
+			raise IndexErreur, "#{nom_pers} absent de l'index"
+		end
 		if $index[nom_pers].genre == 'M' then
 			return chaine_m
 		elsif $index[nom_pers].genre == 'F' then

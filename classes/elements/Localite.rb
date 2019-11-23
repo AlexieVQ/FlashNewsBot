@@ -18,16 +18,18 @@ class Localite < Element
 	# @departement	=> Département
 	# @emoji		=> Emoji
 	
-	## Nom du fichier CSV correspondant
-	@@nom_fichier = "localites.csv"
-	
 	## Ville, région ou pays
 	attr :type, false
+	
+	## Nom du fichier CSV correspondant
+	def Localite.nom_fichier
+		return "localites.csv"
+	end
 	
 	##
 	# Crée une localité à partir d'une ligne d'un fichier CSV.
 	def Localite.importer(ligne)
-		new(ligne['id'].to_i, ligne['type'], ligne['poids'].to_i,
+		new(ligne['id'].to_i, ligne['type'], ligne['nom'], ligne['poids'].to_i,
 		    ligne['nom_en'], ligne['nom_colle'], ligne['adjm'], ligne['adjf'],
 		    ligne['departement'], ligne['emoji'])
 	end
@@ -35,13 +37,13 @@ class Localite < Element
 	##
 	# Retourne le tableau des localités de types donnés.
 	def Localite.types(types)
-		return selectionner { |e| types === e.type }
+		return selectionner { |e| types.include?(e.type) }
 	end
 	
 	##
 	# Retourne la localité de nom collé donné.
 	def Localite.nom_colle(nom_colle)
-		return selectionner { |e| nom_colle === e.read_nom_colle }
+		return selectionner { |e| nom_colle == e.read_nom_colle }
 	end
 	
 	## Méthode privée

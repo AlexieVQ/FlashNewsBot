@@ -11,7 +11,9 @@ class Circo < Element
 	# @circo		=> Chaîne de caractères
 	
 	## Nom du fichier CSV correspondant
-	@@nom_fichier = "circos.csv"
+	def Circo.nom_fichier
+		return "circos.csv"
+	end
 	
 	## Type de circonstance
 	attr :type_circo, false
@@ -22,7 +24,7 @@ class Circo < Element
 	# Crée une circonstance à partir d'une ligne d'un fichier CSV.
 	def Circo.importer(ligne)
 		new(ligne['id'].to_i, ligne['circo'], ligne['poids'].to_i,
-		    ligne['type_circo'], ligne['id_info'].to_i)
+		    ligne['type'], ligne['id_info'].to_i)
 	end
 	
 	##
@@ -40,13 +42,17 @@ class Circo < Element
 	##
 	# Retourne le tableau des circonstances où le sujet est accusé.
 	def Circo.est_accuse
-		return selectionner { |e| e.type_circo === ["accusation", "est_accuse"]}
+		return selectionner do |e|
+			["accusation", "est_accuse"].include?(e.type_circo)
+		end
 	end
 	
 	##
 	# Retourne le tableau des circonstances où le sujet accuse l'objet
 	def Circo.accuse
-		return selectionner { |e| e.type_circo === ["accusation", "accuse"] }
+		return selectionner do |e|
+			 ["accusation", "accuse"].include?(e.type_circo)
+		end
 	end
 	
 	##

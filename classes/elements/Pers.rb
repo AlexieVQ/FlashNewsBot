@@ -20,9 +20,6 @@ class Pers < Element
 	# @nom_colle	=> Nom collé pour hashtag
 	# @surnomme		=> Nombre de fois que le surnom a été donné.
 	
-	## Nom du fichier CSV correspondant
-	@@nom_fichier = "pers.csv"
-	
 	## Genre du personnage ('M' ou 'F')
 	attr :genre, false
 	## Catégorie du personnage
@@ -32,10 +29,15 @@ class Pers < Element
 	## Déclarations du personnage
 	attr :declas, false
 	
+	## Nom du fichier CSV correspondant
+	def Pers.nom_fichier
+		return "pers.csv"
+	end
+	
 	##
 	# Crée un personnage à partir d'une ligne d'un fichier CSV.
-	def Personnage.importer(ligne)
-		noms = Nom.id_pers(ligne['id'].to_i)
+	def Pers.importer(ligne)
+		noms = NomPers.id_pers(ligne['id'].to_i)
 		surnoms = Surnom.id_pers(ligne['id'].to_i)
 		localite = Localite.id(ligne['localite'].to_i)
 		declas = Decla.id_pers(ligne['id'].to_i)
@@ -46,7 +48,7 @@ class Pers < Element
 	
 	##
 	# Retourne les personnages de genre donné.
-	def Personnage.genre(genre)
+	def Pers.genre(genre)
 		return selectionner { |e| e.genre == genre }
 	end
 	

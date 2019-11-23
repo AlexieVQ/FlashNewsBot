@@ -12,7 +12,9 @@ class Accroche < Element
 	# @accroche		=> Formulation de l'accroche
 	
 	## Nom du fichier CSV correspondant
-	@@nom_fichier = "accroches.csv"
+	def Accroche.nom_fichier
+		return "accroches.csv"
+	end
 	
 	##
 	# Crée une accroche à partir d'une ligne d'un fichier CSV.

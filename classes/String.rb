@@ -1,4 +1,4 @@
-require_relative 'IndexErreur.rb'
+require_relative 'Erreurs.rb'
 
 ##
 # Ajout à la classe String de la méthode évaluer, qui évalue une commande entre

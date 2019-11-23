@@ -16,13 +16,15 @@ class Parti < Element
 	# @adjm		=> Adjectif masculin
 	# @adjf		=> Adjectif féminin
 	
-	## Nom du fichier CSV correspondant
-	@@nom_fichier = "partis.csv"
-	
 	## Type ('parti', 'syndicat', 'association')
 	attr :type, false
 	## Localité
 	attr :localite, false
+	
+	## Nom du fichier CSV correspondant
+	def Parti.nom_fichier
+		return "partis.csv"
+	end
 	
 	##
 	# Crée une organisation politique à partir d'une ligne d'un fichier CSV.
@@ -35,7 +37,7 @@ class Parti < Element
 	##
 	# Retourne les partis de types donnés.
 	def Parti.types(types)
-		return selectionner { |e| types === e.type }
+		return selectionner { |e| types.include?(e.type) }
 	end
 	
 	## Méthode privée
