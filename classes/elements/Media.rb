@@ -10,6 +10,9 @@ class Media < Element
 	
 	# @nom		=> Nom du média
 	
+	## Nom du fichier CSV correspondant
+	@@nom_fichier = "medias.csv"
+	
 	##
 	# Crée un média à partir d'une ligne d'un fichier CSV.
 	def Media.importer(ligne)

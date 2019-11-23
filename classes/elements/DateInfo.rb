@@ -10,6 +10,9 @@ class DateInfo < Element
 	
 	# @date		=> Chaîne de caractères
 	
+	## Nom du fichier CSV correspondant
+	@@nom_fichier = "dates.csv"
+	
 	##
 	# Crée une date à partir d'une ligne d'un fichier CSV.
 	def Date.importer(ligne)

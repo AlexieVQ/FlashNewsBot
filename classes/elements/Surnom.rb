@@ -11,6 +11,9 @@ class Surnom < Element
 	
 	# @surnom		=> Surnom du personnage
 	
+	## Nom du fichier CSV correspondant
+	@@nom_fichier = "surnoms.csv"
+	
 	## Identifiant du personnage concerné
 	attr :id_pers, false
 	

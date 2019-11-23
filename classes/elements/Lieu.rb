@@ -10,6 +10,9 @@ class Lieu < Element
 	
 	# @lieu		=> Chaîne de caractères
 	
+	## Nom du fichier CSV correspondant
+	@@nom_fichier = "lieux.csv"
+	
 	##
 	# Crée un lieu à partir d'une ligne d'un fichier CSV.
 	def Lieu.importer(ligne)

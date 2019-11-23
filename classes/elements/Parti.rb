@@ -15,6 +15,9 @@ class Parti < Element
 	# @adjm		=> Adjectif masculin
 	# @adjf		=> Adjectif féminin
 	
+	## Nom du fichier CSV correspondant
+	@@nom_fichier = "partis.csv"
+	
 	## Type ('parti', 'syndicat', 'association')
 	attr :type, false
 	## Localité

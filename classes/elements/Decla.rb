@@ -10,6 +10,9 @@ class Decla < Element
 	
 	# @decla		=> Chaîne de caractères
 	
+	## Nom du fichier CSV correspondant
+	@@nom_fichier = "declas.csv"
+	
 	## Identifiant de l'information rattachée
 	attr :id_info, false
 	## Identifiant de la personne rattachée

@@ -10,6 +10,9 @@ class Circo < Element
 	
 	# @circo		=> Chaîne de caractères
 	
+	## Nom du fichier CSV correspondant
+	@@nom_fichier = "circos.csv"
+	
 	## Type de circonstance
 	attr :type_circo, false
 	## Identifiant de l'information rattachée

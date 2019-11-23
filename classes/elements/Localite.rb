@@ -18,6 +18,9 @@ class Localite < Element
 	# @departement	=> Département
 	# @emoji		=> Emoji
 	
+	## Nom du fichier CSV correspondant
+	@@nom_fichier = "localites.csv"
+	
 	## Ville, région ou pays
 	attr :type, false
 	

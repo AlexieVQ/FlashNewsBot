@@ -16,6 +16,9 @@ class Pers < Element
 	# @nom_colle	=> Nom collé pour hashtag
 	# @surnomme		=> Nombre de fois que le surnom a été donné.
 	
+	## Nom du fichier CSV correspondant
+	@@nom_fichier = "pers.csv"
+	
 	## Genre du personnage ('M' ou 'F')
 	attr :genre, false
 	## Catégorie du personnage

@@ -9,8 +9,11 @@ require_relative 'Array.rb'
 
 class Element
 	
-	## Chemin du fichier CSV correspondant
-	@@chemin
+	## Chemin du dossier contenant les fichiers CSV
+	@@chemin = "../../tables/"
+	
+	## Nom du fichier CSV correspondant
+	@@nom_fichier
 	
 	## Liste des éléments
 	@@elements = import_table
@@ -34,7 +37,8 @@ class Element
 	# variable de classe chemin.
 	def Element.import_table
 		@@elements = []
-		CSV.read(@@chemin, {:col_sep => ';', :headers => true}).each do |ligne|
+		CSV.read(@@chemin + @@nom_fichier,
+		         {:col_sep => ';', :headers => true}).each do |ligne|
 			@@elements << importer(ligne)
 		end
 	end

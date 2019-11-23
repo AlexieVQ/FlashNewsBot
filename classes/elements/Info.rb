@@ -17,6 +17,9 @@ class Info < Element
 	# @declas		=> Tableau de déclarations
 	# @hashtag		=> Hashtag
 	
+	## Nom du fichier CSV correspondant
+	@@nom_fichier = "infos.csv"
+	
 	## Type de circonstance
 	attr :type_circo, false
 	## Catégories
