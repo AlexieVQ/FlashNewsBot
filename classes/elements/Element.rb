@@ -12,13 +12,15 @@ class Element
 	
 	# @elements		=> Éléments de la classe
 	
-	## Chemin du dossier contenant les fichiers CSV
-	@@chemin = "tables/"
-	
 	## Identifiant d'un élément
 	attr :id, false
 	## Poids d'un élément, accessible en lecture.
 	attr :poids, false
+	
+	## Chemin du dossier contenant les fichiers CSV
+	def Element.chemin
+		return $dir + "/tables/"
+	end
 	
 	## Nom du fichier CSV correspondant
 	def Element.nom_fichier
@@ -37,7 +39,7 @@ class Element
 	def Element.elements
 		unless defined?(@elements) then
 			@elements = []
-			CSV.read(@@chemin + nom_fichier,
+			CSV.read(chemin + nom_fichier,
 					{:col_sep => ';', :headers => true}).each do |ligne|
 				@elements << importer(ligne)
 			end

@@ -42,6 +42,7 @@ end
 
 $bdd = Bdd.new
 appname = username == "" ? "FNBOffLine" : username
+$dir = Dir.pwd
 
 unless hors_ligne then
 	api = Api.connecter(username)
