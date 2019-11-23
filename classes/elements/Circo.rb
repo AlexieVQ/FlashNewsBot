@@ -25,6 +25,29 @@ class Circo < Element
 		    ligne['type_circo'], ligne['id_info'].to_i)
 	end
 	
+	##
+	# Retourne le tableau des circonstances universelles.
+	def Circo.universels
+		return selectionner { |e| e.type_circo == "universel" }
+	end
+	
+	##
+	# Retourne une circonstance universelle.
+	def Circo.universel
+		return universels.elt_alea
+	end
+	
+	##
+	# Retourne le tableau des circonstances où le sujet est accusé.
+	def Circo.est_accuse
+		return selectionner { |e| e.type_circo === ["accusation", "est_accuse"]}
+	end
+	
+	##
+	# Retourne le tableau des circonstances où le sujet accuse l'objet
+	def Circo.accuse
+		return selectionner { |e| e.type_circo === ["accusation", "accuse"] }
+	
 	## Méthode privée
 	def initialize(id, circo, poids, type_circo, id_info = nil)
 		super(id, poids)
