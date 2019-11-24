@@ -162,3 +162,6 @@ id;type;description;type_circo;hashtag;poids
 161;son suicide;S'est suicidé d'une balle dans la nuque;universel;#RIP{sujet.nom_colle};10
 162;sa suspicion;Suspecte objet d'être dril;universel;#dril;10
 163;cette rumeur;Suspecté d'être dril;universel;#dril;10
+164;cette information;Rejoint l'équipe de Pascal Praud;universel;#HeureDesPros;10
+165;cette information;Rejoint l'équipe des Grandes Gueules;universel;#{rand(GGRMC,GrandesGueules)};10
+166;cette information;Rejoint l'équipe des Grosses Têtes;universel;#GrossesTêtes;10

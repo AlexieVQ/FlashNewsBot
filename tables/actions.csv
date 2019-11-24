@@ -337,3 +337,6 @@ id;action;poids;id_info
 336;s’est suicidé{gse} d’une balle dans la nuque;10;161
 337;suspecte {objet=pers}{objet.nom} d’être {rand(,@,le twitto @,derrière le compte Twitter @)}dril;10;162
 338;suspecté{gse} d’être {rand(,@,le twitto @,derrière le compte Twitter @)}dril;10;163
+339;rejoint l’équipe de Pascal Praud;10;164
+340;rejoint l’équipe des Grandes Gueules;10;165
+341;rejoint l’équipe des Grosses Têtes;10;166
