@@ -18,6 +18,8 @@ module TypeCommande
 	GSE = 5
 	## {h} : affiche aléatoirement un # ou non
 	H = 6
+	## randn(1,52) : renvoie un nombre aléatoirement entre 1 et 52 inclus
+	RANDN = 7
 end
 
 ##
@@ -62,6 +64,8 @@ class Commande
 			return genre("sujet", "", "e")
 		when TypeCommande::H then
 			return random(["", "#"])
+		when TypeCommande::RANDN then
+			return randn(parametres[0].to_i, parametres[1].to_i)
 		end
 	end
 	
@@ -77,6 +81,12 @@ class Commande
 	# des chaînes aléatoirement.
 	def random(chaines)
 		return chaines.elt_alea
+	end
+	
+	##
+	# Retourne un nombre aléatoire entre n1 et n2 inclus.
+	def randn(n1, n2)
+		return (n1..n2).to_a.sample.to_s
 	end
 	
 	##
