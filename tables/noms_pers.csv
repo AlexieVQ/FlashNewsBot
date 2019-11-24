@@ -359,3 +359,19 @@ id;nom;poids;id_pers
 358;F. #Bayrou;10;259
 359;David Pujadas;10;260
 360;Jean-Pierre Elkabbach;10;261
+361;Roméo Elvis;10;262
+362;Angèle;10;263
+363;Lomepal;10;264
+365;le frère {adelphe=pers}{adelphe.nom(de)};10;266
+366;la sœur {adelphe=pers}{adelphe.nom(de)};10;267
+367;un {nationnalite=localite}{maj({nationnalite.adjm})};10;268
+368;une {nationnalite=localite}{maj({nationnalite.adjf})};10;269
+369;Henri Dès;10;270
+370;Flat Eric;10;271
+371;Louis de Bourbon;10;272
+372;Louis d’Orléans;10;273
+373;Jean-Christophe Napoléon;10;274
+374;Edgar Morin;10;275
+375;MHD;10;276
+376;Ademo;10;277
+377;N.O.S;10;278

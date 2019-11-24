@@ -211,3 +211,11 @@ id;circo;poids;type;id_info
 210;pour avoir raté le #NoPeeJanuary;10;accusation;
 211;durant le #DestroyDickDecember;20;specifique;1
 212;durant le #NoPeeJanuary;20;specifique;1
+213;pour avoir été horny on main;10;accusation;
+214;pour avoir été horny sur {genre(sujet,lui,elle)};10;accuse;
+215;pour avoir été horny sur {genre(objet,lui,elle)};10;est_accuse;
+216;pour avoir été horny sur {pers_circo=pers}{pers_circo.nom};10;accusation;
+217;en direct à la télévision;10;specifique;159
+218;sur le plateau {pers_circo=pers}{pers_circo.nom(de)};10;specifique;159
+219;avec {pers_circo=pers}{pers_circo.nom}, {pers_circo2=pers}{pers_circo2.nom} et {pers_circo3=pers}{pers_circo3.nom} en jurés;10;specifique;160
+220;par {pers_circo=pers}{pers_circo.nom};10;specifique;163

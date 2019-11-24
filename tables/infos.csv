@@ -157,3 +157,8 @@ id;type;description;type_circo;hashtag;poids
 156;son organisation;Organise une ZAD;universel;#{lieu_info.nom_colle};10
 157;sa cagnotte;Lance une cagnotte pour aider objet;universel;#Free{objet.nom_colle};10
 158;son acte;Aurait slidé dans les DM de objet;universel;;10
+159;sa déclaration;Appelle à tirer à balles réelles sur objet;universel;;10
+160;sa décision;Décide de relancer ONDAR;universel;#{rand(ONDAR,France2)};10
+161;son suicide;S'est suicidé d'une balle dans la nuque;universel;#RIP{sujet.nom_colle};10
+162;sa suspicion;Suspecte objet d'être dril;universel;#dril;10
+163;cette rumeur;Suspecté d'être dril;universel;#dril;10

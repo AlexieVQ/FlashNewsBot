@@ -331,3 +331,9 @@ id;action;poids;id_info
 330;lance une cagnotte pour libérer {objet=pers}{objet.nom};10;157
 331;lance une cagnotte pour aider {objet=pers}{objet.nom};10;157
 332;aurait slidé dans les DM {objet=pers}{objet.nom(de)};10;158
+333;appelle à tirer à balles réelles sur {objet=pers}{objet.nom};10;159
+334;décide de relancer On Ne Demande Qu’À En Rire;10;160
+335;a fait son coming out emo;10;42
+336;s’est suicidé{gse} d’une balle dans la nuque;10;161
+337;suspecte {objet=pers}{objet.nom} d’être {rand(,@,le twitto @,derrière le compte Twitter @)}dril;10;162
+338;suspecté{gse} d’être {rand(,@,le twitto @,derrière le compte Twitter @)}dril;10;163
