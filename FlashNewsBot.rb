@@ -56,7 +56,7 @@ loop do
 
 	status = Status.creer
 
-	puts status
+	puts "[#{Time.now}] #{status}"
 	unless hors_ligne then
 		if status.texte.length <= api.limite then
 			api.envoyer(status.texte)
