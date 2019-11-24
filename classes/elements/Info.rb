@@ -68,7 +68,7 @@ class Info < Element
 	
 	## Retourne une circonstance après l'avoir évaluée
 	def circo
-		case type_circo
+		case @type_circo
 		when "accuse" then
 			return @circos.elt_alea(Circo.accuse).circo.evaluer
 		when "est_accuse" then

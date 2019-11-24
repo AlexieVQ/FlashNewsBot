@@ -71,7 +71,7 @@ class Element
 	##
 	# Retourne un élément pour l'attribut et les paramètres donnés.
 	def Element.retourner(attribut = nil, parametres = nil)
-		return retourner_elt(elements.elt_alea, attribut, parametres)
+		return retourner_elt(elt_alea, attribut, parametres)
 	end
 	
 	##

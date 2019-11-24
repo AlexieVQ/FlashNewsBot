@@ -39,6 +39,13 @@ class Decla < Element
 		return selectionner { |e| e.id_pers == id_pers }
 	end
 	
+	##
+	# Retourne une déclaration universelle aléatoirement.
+	def Decla.elt_alea(ajout = [])
+		tab = selectionner { |e| e.id_info == 0 && e.id_pers == 0 }
+		return tab.elt_alea(ajout)
+	end
+	
 	## Méthode privée
 	def initialize(id, decla, poids, id_info = nil, id_pers = nil)
 		super(id, poids)
