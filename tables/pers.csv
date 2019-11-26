@@ -277,3 +277,7 @@ id;nom_colle;poids;genre;id_cat;id_pays
 277;Ademo;10;M;5;1
 278;NOS;10;M;5;1
 279;AlgorithmeYouTube;10;M;8;
+280;CatherineBarma;5;F;10;1
+281;JuanBranco;20;M;2;1
+282;ÉlisabethLévy;10;F;9;1
+283;{rand(BHL,BernardHenriLévy)};10;M;9;1

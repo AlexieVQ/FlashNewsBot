@@ -340,3 +340,6 @@ id;action;poids;id_info
 339;rejoint l’équipe de Pascal Praud;10;164
 340;rejoint l’équipe des Grandes Gueules;10;165
 341;rejoint l’équipe des Grosses Têtes;10;166
+342;décide de nous c{rand(*,a)}sser les {h}couilles avec le voile;10;167
+343;décide de nous casser encore les couilles avec le voile;10;167
+344;décide d’encore nous casser les couilles avec le {h}voile;10;167
