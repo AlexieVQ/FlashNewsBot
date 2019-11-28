@@ -166,3 +166,4 @@ id;type;description;type_circo;hashtag;poids
 165;cette information;Rejoint l'équipe des Grandes Gueules;universel;#{rand(GGRMC,GrandesGueules)};10
 166;cette information;Rejoint l'équipe des Grosses Têtes;universel;#GrossesTêtes;10
 167;cette polémique;Décide de nous casser les couilles avec le voile;universel;#{rand(Voile,VoileIslamique,Hijab)};10
+168;son émission;Animera une émission de débats;universel;NULL;10
