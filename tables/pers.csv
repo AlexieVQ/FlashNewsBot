@@ -272,7 +272,7 @@ id;nom_colle;poids;genre;id_cat;id_pays
 272;LouisDeBourbon;10;M;2;1
 273;LouisDOrléans;10;M;2;1
 274;JeanChristopheNapoléon;10;M;2;1
-275;EdgarMorin;10;M;5;1
+275;EdgarMorin;10;M;9;1
 276;MHD;10;M;5;1
 277;Ademo;10;M;5;1
 278;NOS;10;M;5;1
@@ -285,3 +285,7 @@ id;nom_colle;poids;genre;id_cat;id_pays
 285;Bigflo;10;M;5;1
 286;Oli;10;M;5;1
 287;JeanMichelJarre;5;M;5;1
+288;Madonna;10;F;5;3
+289;Lula;10;M;2;15
+290;TimothéeChalamet;10;M;5;1
+291;LéaSalamé;5;F;9;1

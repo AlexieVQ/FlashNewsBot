@@ -345,3 +345,9 @@ id;action;poids;id_info
 344;décide d’encore nous casser les couilles avec le {h}voile;10;167
 345;animera une émission de débats sur #BFMTV;10;168
 346;animera une émission de débats sur #CNEWS;10;168
+347;remporte le Grammy du meilleur album;10;169
+348;remporte le Grammy {genre(sujet,du,de la)} meilleur{gse} artiste;10;169
+349;remporte la Victoire du meilleur album;10;170
+350;remporte la Victoire {genre(sujet,du,de la)} meilleur{gse} artiste;10;170
+351;remporte une Victoire de la Musique dans la catégorie musique urbaine;10;170
+352;décide de reconstruire le mur de Berlin;10;171

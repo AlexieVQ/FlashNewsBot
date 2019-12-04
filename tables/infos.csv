@@ -166,4 +166,7 @@ id;type;description;type_circo;hashtag;poids
 165;cette information;Rejoint l'équipe des Grandes Gueules;universel;#{rand(GGRMC,GrandesGueules)};10
 166;cette information;Rejoint l'équipe des Grosses Têtes;universel;#GrossesTêtes;10
 167;cette polémique;Décide de nous casser les couilles avec le voile;universel;#{rand(Voile,VoileIslamique,Hijab)};10
-168;son émission;Animera une émission de débats;universel;NULL;10
+168;son émission;Animera une émission de débats;universel;;10
+169;sa récompense;Gagne un Grammy;universel;#GRAMMYs;5
+170;sa récompense;Gagne une Victoire de la Musique;universel;#Victoires{rand(,DeLaMusique)};5
+171;sa décision;Décide de reconstruire le mur de Berlin;universel;;10
