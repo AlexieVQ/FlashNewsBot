@@ -32,6 +32,13 @@ class NomPers < Element
 		return selectionner { |e| e.id_pers == id_pers }
 	end
 	
+	##
+	# Cette méthode ne peut être utilisée et lèvera une exception.
+	def NomPers.elt_alea(ajout = [])
+		raise "La méthode elt_alea ne peut pas être utilisée pour la classe " +
+			self.to_s
+	end
+	
 	## Méthode privée
 	def initialize(id, nom, poids, id_pers)
 		super(id, poids)

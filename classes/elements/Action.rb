@@ -31,6 +31,13 @@ class Action < Element
 		return selectionner { |e| e.id_info == id_info }
 	end
 	
+	##
+	# Cette méthode ne peut être utilisée et lèvera une exception.
+	def Action.elt_alea(ajout = [])
+		raise "La méthode elt_alea ne peut pas être utilisée pour la classe " +
+			self.to_s
+	end
+	
 	## Méthode privée
 	def initialize(id, action, poids, id_info)
 		super(id, poids)
