@@ -263,8 +263,8 @@ id;nom_colle;poids;genre;id_cat;id_pays
 262;RoméoElvis;10;M;5;8
 263;Angèle;10;F;5;8
 264;Lomepal;10;M;5;1
-266;LeFrère{maj({adelphe.nom_colle(de)})};10;M;6;
-267;LaSoeur{maj({adelphe.nom_colle(de)})};10;F;6;
+266;LeFrèreDe{adelphe.nom_colle};10;M;6;
+267;LaSoeurDe{adelphe.nom_colle};10;F;6;
 268;{ignore(frère)}{nationalite.nom_colle};10;M;6;
 269;{ignore(soeur)}{nationalite.nom_colle};10;F;6;
 270;HenriDès;10;M;5;19
