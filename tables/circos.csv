@@ -229,3 +229,21 @@ id;circo;poids;type;id_info
 228;avec {pers_circo=pers}{pers_circo.nom(de)}, {pers_circo2=pers}{pers_circo2.nom} et {pers_circo3=pers}{pers_circo3.nom};10;specifique;168
 229;par nostalgie;10;specifique;171
 230;pour se protéger du capitalisme;10;specifique;171
+231;sur Twitter;10;specifique;174
+232;sur Instagram;10;specifique;174
+233;sur Snapchat;10;specifique;174
+234;destinée {pers_circo=pers}{pers_circo.nom(à)};10;specifique;174
+235;sous la pression de l’armée;10;specifique;46
+236;sous la pression {pers_circo=pers}{pers_circo.nom(de)};10;specifique;46
+237;pour avoir fait un fanart;10;accusation;
+238;pour avoir fait un fanart de Tintin;10;accusation;
+239;pour avoir fait un fanart {pers_circo=pers}{pers_circo.nom(de)};10;accusation;
+240;pour avoir payé {pers_circo=pers}{pers_circo.nom} en visibilité;10;accusation;
+241;pour l’avoir payé{gse} en visibilité;10;accuse;
+242;pour l’avoir payé{genre(objet,,e)} en visibilité;10;est_accuse;
+243;contre la #Loi{pers_circo=pers}{pers_circo.nom_colle};10;specifique;177
+244;contre la loi {pers_circo=pers}{pers_circo.nom};10;specifique;177
+245;avec {pers_circo=pers}{pers_circo.nom(de)};10;specifique;178 
+246;avec {pers_circo=pers}{pers_circo.nom(de)} et {pers_circo2=pers}{pers_circo2.nom};10;specifique;178 
+247;avec {pers_circo=pers}{pers_circo.nom(de)}, {pers_circo2=pers}{pers_circo2.nom} et {pers_circo3=pers}{pers_circo3.nom};10;specifique;178 
+248;sous forme d’une “discussion entre potes” d’après l’intéressé{gse};30;specifique;178

@@ -123,3 +123,7 @@ id;decla;poids;id_info;id_pers
 124;Mmmh ouais;10;;277
 125;Ouais ouais ouais ouais;10;;277
 126;J’ai pas compris;10;;280
+127;Relire {pers_decla=pers}{pers_decla.nom};10;;
+128;{maj({sujet.nom})} déguisé{gse} en hamburger sur NRJ;10;172;
+129;TAISEZ-VOUS;10;;303
+130;Je ne trouve pas de mot pour dire mon dégoût devant le caractère abject de cette accusation.;10;;22

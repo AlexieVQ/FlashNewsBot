@@ -351,3 +351,19 @@ id;action;poids;id_info
 350;remporte la Victoire {genre(sujet,du,de la)} meilleur{gse} artiste;10;170
 351;remporte une Victoire de la Musique dans la catégorie musique urbaine;10;170
 352;décide de reconstruire le mur de Berlin;10;171
+353;a fait son coming out {genre(sujet,sorcier,sorcière)};10;42
+354;déguisé{gse} en hamburger sur NRJ;10;172
+355;est {genre(sujet,le,la)} cousin{gse} {objet=pers}{objet.nom(de)};10;173
+356;a accidentellement posté {genre(sujet,une dickpic,une nude)};10;174
+357;a accidentellement posté {genre(sujet,une photo de son pénis,une photo intime)};10;174
+358;annonce qu’{genre(sujet,il,elle)} quitte Trash;10;175
+359;annonce qu’{genre(sujet,il,elle)} quitte le collectif Trash;10;175
+360;annonce qu’{genre(sujet,il,elle)} quitte le collectif de youtubeurs Trash;10;175
+361;est impliqué{gse} dans l’affaire {objet=pers}{objet.nom};10;176
+362;impliqué{gse} dans l’affaire {objet=pers}{objet.nom};10;176
+363;appelle à la grève générale;10;177
+364;appelle à la grève;10;177
+365;se lance dans le podcast;10;178
+366;banni{gse} de la Mutinerie à Paris;10;179
+367;banni{gse} de la Mutinerie, bar à Paris;10;179
+368;banni{gse} du bar La Mutinerie à Paris;5;179

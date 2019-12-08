@@ -138,7 +138,7 @@ id;type;description;type_circo;hashtag;poids
 137;son accusation;Accuse objet d'être CopyComic;universel;;10
 138;sa présence;Sera présent à la Japan Expo;universel;;10
 139;sa décision;Décide d'annuler le baccalauréat;universel;;10
-140;son ascension;Devient le premier YouTubeur;universel;#YouTube;10
+140;son ascension;Devient le premier YouTubeur;universel;#{sujet.nom_colle}First;10
 141;son transfert;Transféré;universel;#Mercato;10
 142;l’heureuse nouvelle;Devient père;universel;;10
 143;son produit;Met en vente l'eau de son bain;universel;;10
@@ -170,3 +170,11 @@ id;type;description;type_circo;hashtag;poids
 169;sa récompense;Gagne un Grammy;universel;#GRAMMYs;5
 170;sa récompense;Gagne une Victoire de la Musique;universel;#Victoires{rand(,DeLaMusique)};5
 171;sa décision;Décide de reconstruire le mur de Berlin;universel;;10
+172;son déguisement;Déguisé en hamburger sur NRJ;universel;#{sujet.nom_colle}Déguisé{gse}EnHamburgerSurNRJ;10
+173;leur lien de parenté;Est le cousin d'objet;universel;;10
+174;cette photo;A accidentellement posté une dickpic;universel;;10
+175;sa décision;Quitte Trash;universel;#YouTube;10
+176;son implication;Impliqué dans l’affaire objet;est_accuse;#Affaire{objet.nom_colle};10
+177;son appel;Appelle à la grève générale;universel;#GrèveGénérale;10
+178;son annonce;Se lance dans le podcast;universel;;10
+179;son ban;Banni de la Mutinerie;est_accuse;;10
