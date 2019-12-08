@@ -2,28 +2,17 @@ id;lieu;poids
 1;à Paris (7e);5
 2;à bord de sa Lamborghini;1
 3;sur une place publique;5
-4;au kebab du coin;2
-5;dans l’hémicycle;1
-6;depuis son bureau de député{gse};1
 7;en Seine-Saint-Denis;10
 8;à la Maison Blanche;2
-9;sur la surface de Mars;1
 10;dans le bureau du Président;3
 11;dans le bureau {pers.nom(de)};10
 12;dans son bureau{objet};10
 13;à son domicile;10
 14;au domicile {pers.nom(de)};10
-15;dans un manoir hanté;1
-16;dans les catacombes;1
-17;à Barbès;2
 18;à Châtelet{rand(,-les-Halles)};5
-19;à l’aéroport d’Orly;2
-20;dans le hall de l’aéroport d’Orly;5
-21;à la messe;2
+21;à la messe;1
 22;dans son jardin;5
-23;à la fête de l’Humanité;5
 24;sur les Champs-Élysées;5
-25;au salon de l’agriculture;5
 26;{loc_lieu=localite(ville)}{loc_lieu.nom(à)};20
 27;{loc_lieu=localite(ville)}{loc_lieu.nom(à)}{loc_lieu.departement};20
 28;{loc_lieu=localite(pays,region)}{loc_lieu.nom(en)};20
