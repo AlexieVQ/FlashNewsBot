@@ -23,6 +23,8 @@ class Info < Element
 	attr :type_circo, false
 	## Catégories
 	attr :categories, false
+	## Structure personnalisée pour cette information
+	attr :structure, false
 	
 	## Nom du fichier CSV correspondant
 	def Info.nom_fichier
@@ -38,7 +40,8 @@ class Info < Element
 		declas = Decla.id_info(ligne['id'].to_i)
 		new(ligne['id'].to_i, actions, ligne['poids'].to_i, circos,
 		    ligne['type'], declas, ligne['hashtag'], ligne['type_circo'],
-		    [])
+		    ligne['categories'] ? ligne['categories'].split(',') : [],
+		    ligne['structure'])
 	end
 	
 	## Méthode privée
@@ -50,7 +53,8 @@ class Info < Element
 	               declas,
 	               hashtag,
 	               type_circo,
-	               categories)
+	               categories,
+	               structure)
 		super(id, poids)
 		@actions = actions
 		@circos = circos
@@ -59,6 +63,7 @@ class Info < Element
 		@hashtag = hashtag
 		@type_circo = type_circo
 		@categories = categories
+		@structure = structure
 	end
 	
 	## Retourne une action après l'avoir évaluée.

@@ -1,151 +1,151 @@
-id;type;description;type_circo;hashtag;poids
-1;{rand(sa mort,son décès)};Mort;universel;#RIP{sujet.nom_colle};50
-2;sa fraude;Fraude fiscale;universel;;10
-3;{rand(son élection,sa victoire)};Élu président;universel;#Présidentielles;10
-4;son arrestation;Arrêté;est_accuse;;20
-5;son assassinat;Assassiné;universel;#RIP{sujet.nom_colle};50
-6;sa confirmation;Confirmé dans Smash;universel;#{rand(SuperSmashBros,{sujet.nom_colle}DansSmash)};30
-7;son acte;A assassiné objet;universel;#RIP{objet.nom_colle};30
-8;son acte;A assassiné un anonyme;universel;;10
-13;sa nomination;Est nommé à la tête du gouvernement;universel;;5
-14;sa nomination;Nomme objet à la tête du gouvernement;universel;;5
-15;sa décision;Dissout l'Assemblée Nationale;universel;;10
-16;son ablum;Annonce un album;universel;;10
-21;sa candidature;Est candidat à l’élection présidentielle;universel;;10
-25;sa découverte;A cru apercevoir un OVNI;universel;#Paranormal;10
-26;son rôle;Jouera dans le prochain film d'objet;universel;;10
-27;sa poursuite judiciaire;Poursuit objet en justice;accuse;;50
-29;son apparition;Aurait été aperçu;universel;#Paranormal;1
-30;sa consommation;A été aperçu en train de prendre de la drogue;universel;;5
-31;cette découverte;A été aperçu en fursuit;universel;;10
-33;son choix;Se lance dans la musique;universel;;10
-34;son choix;Se lance dans le cinéma;universel;;10
-35;son choix;Se lance dans la politique;universel;;10
-36;son choix;Met un terme à sa carrière dans la musique;universel;;10
-37;son choix;Met un terme à sa carrière dans le cinéma;universel;;10
-38;son choix;Met un terme à sa carrière dans la politique;universel;;10
-39;son choix;Met un terme à sa carrière sur YouTube;universel;;10
-40;son accession;Devient secrétaire général de la CGT;universel;#CGT;10
-42;son coming out;A fait son coming out;universel;;10
-43;son élection;Élu personnalité préférée des Français;universel;;10
-44;sa décision;A décidé de dissoudre l'Assemblée Nationale;universel;;5
-45;son rachat;Rachète une entreprise;universel;;10
-46;sa démission;Démissionne;est_accuse;#{sujet.nom_colle}Démission;10
-47;sa destitution;Est destitué;est_accuse;#{sujet.nom_colle}Destitution;10
-48;sa provocation;Provoque objet;universel;#{sujet.nom_colle}VS{objet.nom_colle};10
-50;sa prestation;Participera à l'Eurovision;universel;#Eurovision;5
-51;cette violente altercation;Se bat avec objet;accuse;#{sujet.nom_colle}VS{objet.nom_colle};10
-52;cette rumeur;Pressenti pour être Ministre;universel;;10
-53;sa nomination;Nommé Ministre;universel;;10
-55;son aveu;Avoue avoir tué objet;universel;#RIP{objet.nom_colle};10
-56;{rand(son soutien,son message)};Soutient objet;universel;;5
-58;son exécution;Exécuté;est_accuse;;10
-59;son audition;Auditionné;est_accuse;;10
-60;sa fonction;Devient l'avocat de objet;universel;;10
-61;sa démission;Abandonne la défense de objet;universel;;5
-64;sa plainte;Porte plainte contre objet;accuse;;10
-65;sa victoire;Remporte une élection;universel;;10
-67;sa perquisition;Cible d'une perquisition;est_accuse;#Perquisition{sujet.nom_colle};10
-68;sa candidature;Candidat à la mairie;universel;#{rand(Municipales,{loc_info.nom_colle},Municipales{loc_info.nom_colle})};10
-69;cette découverte;Drogue retrouvée à son domicile;universel;;10
-70;sa publication;Publie la sextape de objet;universel;;10
-71;ces soupçons;Soupçonné d'être un bot;universel;;5
-72;ses révélations;Révèle une affaire de fraude fiscale;universel;;10
-73;sa défaite;Perd les élections municipales;universel;#{rand(Municipales,{loc_info.nom_colle},Municipales{loc_info.nom_colle})};10
-74;sa décision;Déclare la guerre;universel;;10
-75;sa victoire;Récompensé aux Césars;universel;#Césars;5
-76;sa victoire;Récompensé aux Oscars;universel;#AcademyAwards;5
-78;leur projet;Lance une start-up avec sujet2;universel;;10
-79;sa prise d’otage;Retient objet en otage;universel;;10
-80;sa décision;Proclame le UExit;universel;;10
-81;leur divorce;Divorce de sujet2;universel;;10
-82;sa déclaration;Proclame l'indépendance;universel;#Free{loc_info.nom_colle};1
-83;sa sélection;Jouera en Équipe de France;universel;#{sujet.nom_colle}En{rand(EDF,EquipeDeFrance)};2
-84;sa chaîne{rand(, YouTube)};Se lance sur YouTube;universel;;10
-85;sa prestation;À l'affiche d'un festival;universel;;5
-87;sa relation;Avoue avoir eu une relation extraconjugale avec objet;universel;;5
-88;son choix;Devient vegan;universel;#Veganisme;10
-89;son bilan;A fait plus de 100 millions de morts;universel;;1
-90;sa déclaration;"Déclare vouloir ""mettre le zbeul""";universel;;8
-91;son appel;Appelle à manifester;universel;;10
-92;son accusation;Accuse objet d'avoir tué objet2;universel;;5
-93;leur mariage;Épouse objet;universel;;5
-94;son accusation;Accuse objet et objet2 d'être la même personne;universel;;1
-95;cette rumeur;Accusé d'être objet;universel;;1
-96;sa fonction;Devient général;universel;;1
-99;son accusation;Accuse un média de fake news;universel;;5
-100;sa décision;Bloque objet sur les réseaux;accuse;#{sujet.nom_colle}VS{objet.nom_colle};10
-102;son soutien;Soutient objet aux présidentielles;universel;#Présidentielles;10
-103;cette théorie;Suspecté d'être décédé et d'avoir été remplacé;universel;;1
-105;sa nouvelle activité;Se lance sur Tik Tok;universel;;1
-106;sa condamnation;Condamné au goulag;est_accuse;;10
-107;sa candidature;Se présente à sa propre succession;universel;;1
-108;son élection;Élu Miss France;universel;#MissFrance;5
-109;son élection;Élu Miss Loc;universel;#Miss{loc_info.nom_colle};5
-110;son départ;Quitte un parti;universel;;10
-111;son accession;Prend la tête d'un parti;universel;;10
-112;sa décision;Rejoint un parti;universel;;10
-113;sa décision;Interdit l'hétérosexualité;universel;;2
-114;sa découverte;A cru apercevoir le bigfoot;universel;;5
-115;sa découverte;A cru apercevoir le Yeti;universel;;5
-116;son rôle;Jouera le rôle d'Olivier Minne dans le biopic de ce dernier;universel;;2
-118;son diagnostique;A été diagnostiqué chelou;universel;;5
-119;son résultat;A fait 6,36 % aux élections présidentielles;universel;#Présidentielles;5
-120;sa découverte;A eu le malheur de découvrir sa Porsche en cendres;universel;;5
-121;sa découverte;A eu le malheur de découvrir sa cathédrale en cendres;universel;;2
-122;sa découverte;A eu le malheur de découvrir son restaurant en cendres;universel;;5
-123;son annonce;Annonce What The Cut 38;universel;#YouTube;5
-124;son arrivée;Rejoint la troupe des Enfoirés;universel;#RestosDuCoeur;5
-126;sa conversion;Se convertit;universel;;10
-127;son acte;Saccage un lieu;universel;;5
-128;sa décision;Annonce qu'il votera une loi;universel;;5
-129;sa performance;Bat le record d'absentéisme;universel;#AssembléeNationale;5
-130;sa participation;Présentera RPDR;universel;#RuPaulsDragRace;10
-131;son ouvrage;Sort un livre;universel;;10
-132;cette accusation;Accusé de plagiat sur objet;universel;;10
-134;son don;Donne au Z-Event;universel;#ZEvent;10
-135;sa décision;Décide de reformer les VoxMakers;universel;#YouTube;5
-136;cette rumeur;Soupçonné d'être CopyComic;universel;;5
-137;son accusation;Accuse objet d'être CopyComic;universel;;5
-138;sa présence;Sera présent à la Japan Expo;universel;;10
-139;sa décision;Décide d'annuler le baccalauréat;universel;;10
-140;son ascension;Devient le premier YouTubeur;universel;#{sujet.nom_colle}First;10
-141;son transfert;Transféré;universel;#Mercato;10
-142;l’heureuse nouvelle;Devient père;universel;;10
-143;son produit;Met en vente l'eau de son bain;universel;;5
-144;cette accusation;Accusé d'avoir organisé des dîners privés;universel;#Affaire{sujet.nom_colle};5
-145;sa disparition;Porté disparu;universel;#AlerteEnlèvement;10
-146;sa décision;Décide de relancer la tecktonik;universel;;10
-147;son témoignage;Aurait témoigné que objet est membre des Nine Trey Bloods;universel;;5
-148;son conseil;Aurait conseillé à objet de prendre un peu de camomille;universel;;2
-149;son acte;A mangé tout le sable de Metz Plage;universel;#Metz;10
-150;son don;Fait un don à un parti;universel;;10
-151;sa mise en examen;Mis en examen;est_accuse;#Affaire{sujet.nom_colle};10
-152;son call-out;A été cancelled par objet;est_accuse;#{sujet.nom_colle}Is{rand(Cancelled,Over)}{rand(,Party)};10
-153;son call-out;Call-out objet;accuse;#{objet.nom_colle}Is{rand(Cancelled,Over)}{rand(,Party)};10
-154;cette confusion;Confondu avec XDDL;universel;#XavierDupontDeLigonnès;5
-155;cette confusion;Confond objet avec XDDL;universel;#XavierDupontDeLigonnès;5
-156;son organisation;Organise une ZAD;universel;#{lieu_info.nom_colle};10
-157;sa cagnotte;Lance une cagnotte pour aider objet;universel;#Free{objet.nom_colle};10
-158;son acte;Aurait slidé dans les DM de objet;universel;;10
-159;sa déclaration;Appelle à tirer à balles réelles sur objet;universel;;10
-160;sa décision;Décide de relancer ONDAR;universel;#{rand(ONDAR,France2)};10
-161;son suicide;S'est suicidé d'une balle dans la nuque;universel;#RIP{sujet.nom_colle};10
-162;sa suspicion;Suspecte objet d'être dril;universel;#dril;10
-163;cette rumeur;Suspecté d'être dril;universel;#dril;10
-164;cette information;Rejoint l'équipe de Pascal Praud;universel;#HeureDesPros;10
-165;cette information;Rejoint l'équipe des Grandes Gueules;universel;#{rand(GGRMC,GrandesGueules)};10
-166;cette information;Rejoint l'équipe des Grosses Têtes;universel;#GrossesTêtes;10
-167;cette polémique;Décide de nous casser les couilles avec le voile;universel;#{rand(Voile,VoileIslamique,Hijab)};10
-168;son émission;Animera une émission de débats;universel;;10
-169;sa récompense;Gagne un Grammy;universel;#GRAMMYs;5
-170;sa récompense;Gagne une Victoire de la Musique;universel;#Victoires{rand(,DeLaMusique)};5
-171;sa décision;Décide de reconstruire le mur de Berlin;universel;;10
-172;son déguisement;Déguisé en hamburger sur NRJ;universel;#{sujet.nom_colle}Déguisé{gse}EnHamburgerSurNRJ;10
-173;leur lien de parenté;Est le cousin d'objet;universel;;10
-174;cette photo;A accidentellement posté une dickpic;universel;;10
-175;sa décision;Quitte Trash;universel;#YouTube;10
-176;son implication;Impliqué dans l’affaire objet;est_accuse;#Affaire{objet.nom_colle};10
-177;son appel;Appelle à la grève générale;universel;#GrèveGénérale;10
-178;son annonce;Se lance dans le podcast;universel;;10
-179;son ban;Banni de la Mutinerie;est_accuse;;10
+id;type;description;type_circo;hashtag;poids;categories;structure
+1;{rand(sa mort,son décès)};Mort;universel;#RIP{sujet.nom_colle};50;;
+2;sa fraude;Fraude fiscale;universel;;10;;
+3;{rand(son élection,sa victoire)};Élu président;universel;#Présidentielles;10;politique;
+4;son arrestation;Arrêté;est_accuse;;20;;
+5;son assassinat;Assassiné;universel;#RIP{sujet.nom_colle};50;;
+6;sa confirmation;Confirmé dans Smash;universel;#{rand(SuperSmashBros,{sujet.nom_colle}DansSmash)};30;fiction;
+7;son acte;A assassiné objet;universel;#RIP{objet.nom_colle};30;;
+8;son acte;A assassiné un anonyme;universel;;10;;
+13;sa nomination;Est nommé à la tête du gouvernement;universel;;5;politique;
+14;sa nomination;Nomme objet à la tête du gouvernement;universel;;5;politique;
+15;sa décision;Dissout l'Assemblée Nationale;universel;;10;politique;
+16;son ablum;Annonce un album;universel;;10;culture;
+21;sa candidature;Est candidat à l’élection présidentielle;universel;;10;politique;
+25;sa découverte;A cru apercevoir un OVNI;universel;#Paranormal;10;;
+26;son rôle;Jouera dans le prochain film d'objet;universel;;10;culture;
+27;sa poursuite judiciaire;Poursuit objet en justice;accuse;;50;;
+29;son apparition;Aurait été aperçu;universel;#Paranormal;1;;
+30;sa consommation;A été aperçu en train de prendre de la drogue;universel;;5;;
+31;cette découverte;A été aperçu en fursuit;universel;;10;;
+33;son choix;Se lance dans la musique;universel;;10;politique;
+34;son choix;Se lance dans le cinéma;universel;;10;politique;
+35;son choix;Se lance dans la politique;universel;;10;;
+36;son choix;Met un terme à sa carrière dans la musique;universel;;10;culture;
+37;son choix;Met un terme à sa carrière dans le cinéma;universel;;10;culture;
+38;son choix;Met un terme à sa carrière dans la politique;universel;;10;politique;
+39;son choix;Met un terme à sa carrière sur YouTube;universel;;10;internet;
+40;son accession;Devient secrétaire général de la CGT;universel;#CGT;10;politique;
+42;son coming out;A fait son coming out;universel;;10;;
+43;son élection;Élu personnalité préférée des Français;universel;;10;;
+44;sa décision;A décidé de dissoudre l'Assemblée Nationale;universel;;5;politique;
+45;son rachat;Rachète une entreprise;universel;;10;patronat;
+46;sa démission;Démissionne;est_accuse;#{sujet.nom_colle}Démission;10;politique;
+47;sa destitution;Est destitué;est_accuse;#{sujet.nom_colle}Destitution;10;politique;
+48;sa provocation;Provoque objet;universel;#{sujet.nom_colle}VS{objet.nom_colle};10;culture;
+50;sa prestation;Participera à l'Eurovision;universel;#Eurovision;5;culture;
+51;cette violente altercation;Se bat avec objet;accuse;#{sujet.nom_colle}VS{objet.nom_colle};10;;
+52;cette rumeur;Pressenti pour être Ministre;universel;;10;politique;
+53;sa nomination;Nommé Ministre;universel;;10;politique;
+55;son aveu;Avoue avoir tué objet;universel;#RIP{objet.nom_colle};10;;
+56;{rand(son soutien,son message)};Soutient objet;universel;;5;politique;
+58;son exécution;Exécuté;est_accuse;;10;;
+59;son audition;Auditionné;est_accuse;;10;politique;
+60;sa fonction;Devient l'avocat de objet;universel;;10;;
+61;sa démission;Abandonne la défense de objet;universel;;5;;
+64;sa plainte;Porte plainte contre objet;accuse;;10;;
+65;sa victoire;Remporte une élection;universel;;10;politique;
+67;sa perquisition;Cible d'une perquisition;est_accuse;#Perquisition{sujet.nom_colle};10;;
+68;sa candidature;Candidat à la mairie;universel;#{rand(Municipales,{loc_info.nom_colle},Municipales{loc_info.nom_colle})};10;politique;
+69;cette découverte;Drogue retrouvée à son domicile;universel;;10;;
+70;sa publication;Publie la sextape de objet;universel;;10;;
+71;ces soupçons;Soupçonné d'être un bot;universel;;5;;
+72;ses révélations;Révèle une affaire de fraude fiscale;universel;;10;;
+73;sa défaite;Perd les élections municipales;universel;#{rand(Municipales,{loc_info.nom_colle},Municipales{loc_info.nom_colle})};10;politique;
+74;sa décision;Déclare la guerre;universel;;10;politique;
+75;sa victoire;Récompensé aux Césars;universel;#Césars;5;culture;
+76;sa victoire;Récompensé aux Oscars;universel;#AcademyAwards;5;culture;
+78;leur projet;Lance une start-up avec sujet2;universel;;10;;
+79;sa prise d’otage;Retient objet en otage;universel;;10;;
+80;sa décision;Proclame le UExit;universel;;10;politique;
+81;leur divorce;Divorce de sujet2;universel;;10;;
+82;sa déclaration;Proclame l'indépendance;universel;#Free{loc_info.nom_colle};1;politique;
+83;sa sélection;Jouera en Équipe de France;universel;#{sujet.nom_colle}En{rand(EDF,EquipeDeFrance)};2;sport;
+84;sa chaîne{rand(, YouTube)};Se lance sur YouTube;universel;;10;politique,culture,media,autre;
+85;sa prestation;À l'affiche d'un festival;universel;;5;culture;
+87;sa relation;Avoue avoir eu une relation extraconjugale avec objet;universel;;5;;
+88;son choix;Devient vegan;universel;#Veganisme;10;;
+89;son bilan;A fait plus de 100 millions de morts;universel;;1;politique;
+90;sa déclaration;"Déclare vouloir ""mettre le zbeul""";universel;;8;politique;
+91;son appel;Appelle à manifester;universel;;10;politique;
+92;son accusation;Accuse objet d'avoir tué objet2;universel;;5;;
+93;leur mariage;Épouse objet;universel;;5;;
+94;son accusation;Accuse objet et objet2 d'être la même personne;universel;;1;;
+95;cette rumeur;Accusé d'être objet;universel;;1;;
+96;sa fonction;Devient général;universel;;1;politique;
+99;son accusation;Accuse un média de fake news;universel;;5;politique;
+100;sa décision;Bloque objet sur les réseaux;accuse;#{sujet.nom_colle}VS{objet.nom_colle};10;;
+102;son soutien;Soutient objet aux présidentielles;universel;#Présidentielles;10;politique;
+103;cette théorie;Suspecté d'être décédé et d'avoir été remplacé;universel;;1;;
+105;sa nouvelle activité;Se lance sur Tik Tok;universel;;1;;
+106;sa condamnation;Condamné au goulag;est_accuse;;10;;
+107;sa candidature;Se présente à sa propre succession;universel;;1;politique;
+108;son élection;Élu Miss France;universel;#MissFrance;5;;
+109;son élection;Élu Miss Loc;universel;#Miss{loc_info.nom_colle};5;;
+110;son départ;Quitte un parti;universel;;10;politique;
+111;son accession;Prend la tête d'un parti;universel;;10;politique;
+112;sa décision;Rejoint un parti;universel;;10;politique;
+113;sa décision;Interdit l'hétérosexualité;universel;;2;politique;
+114;sa découverte;A cru apercevoir le bigfoot;universel;;5;;
+115;sa découverte;A cru apercevoir le Yeti;universel;;5;;
+116;son rôle;Jouera le rôle d'Olivier Minne dans le biopic de ce dernier;universel;;2;culture,internet;
+118;son diagnostique;A été diagnostiqué chelou;universel;;5;;
+119;son résultat;A fait 6,36 % aux élections présidentielles;universel;#Présidentielles;5;politique;
+120;sa découverte;A eu le malheur de découvrir sa Porsche en cendres;universel;;5;politique,media,patronat,culture,internet;
+121;sa découverte;A eu le malheur de découvrir sa cathédrale en cendres;universel;;2;;
+122;sa découverte;A eu le malheur de découvrir son restaurant en cendres;universel;;5;;
+123;son annonce;Annonce What The Cut 38;universel;#YouTube;5;internet;
+124;son arrivée;Rejoint la troupe des Enfoirés;universel;#RestosDuCoeur;5;culture;
+126;sa conversion;Se convertit;universel;;10;;
+127;son acte;Saccage un lieu;universel;;5;;
+128;sa décision;Annonce qu'il votera une loi;universel;;5;politique;
+129;sa performance;Bat le record d'absentéisme;universel;#AssembléeNationale;5;politique;
+130;sa participation;Présentera RPDR;universel;#RuPaulsDragRace;10;TV,culture;
+131;son ouvrage;Sort un livre;universel;;10;media;
+132;cette accusation;Accusé de plagiat sur objet;universel;;10;culture;
+134;son don;Donne au Z-Event;universel;#ZEvent;10;internet;
+135;sa décision;Décide de reformer les VoxMakers;universel;#YouTube;5;internet;
+136;cette rumeur;Soupçonné d'être CopyComic;universel;;5;culture,internet;
+137;son accusation;Accuse objet d'être CopyComic;universel;;5;culture,internet;
+138;sa présence;Sera présent à la Japan Expo;universel;;10;internet;
+139;sa décision;Décide d'annuler le baccalauréat;universel;;10;politique;
+140;son ascension;Devient le premier YouTubeur;universel;#{sujet.nom_colle}First;10;internet;
+141;son transfert;Transféré;universel;#Mercato;10;sport;
+142;l’heureuse nouvelle;Devient père;universel;;10;;
+143;son produit;Met en vente l'eau de son bain;universel;;5;internet;
+144;cette accusation;Accusé d'avoir organisé des dîners privés;universel;#Affaire{sujet.nom_colle};5;politique;
+145;sa disparition;Porté disparu;universel;#AlerteEnlèvement;10;;
+146;sa décision;Décide de relancer la tecktonik;universel;;10;culture,internet;
+147;son témoignage;Aurait témoigné que objet est membre des Nine Trey Bloods;universel;;5;culture;
+148;son conseil;Aurait conseillé à objet de prendre un peu de camomille;universel;;2;politique;
+149;son acte;A mangé tout le sable de Metz Plage;universel;#Metz;10;;
+150;son don;Fait un don à un parti;universel;;10;patronat;
+151;sa mise en examen;Mis en examen;est_accuse;#Affaire{sujet.nom_colle};10;;
+152;son call-out;A été cancelled par objet;est_accuse;#{sujet.nom_colle}Is{rand(Cancelled,Over)}{rand(,Party)};10;;
+153;son call-out;Call-out objet;accuse;#{objet.nom_colle}Is{rand(Cancelled,Over)}{rand(,Party)};10;;
+154;cette confusion;Confondu avec XDDL;universel;#XavierDupontDeLigonnès;5;;
+155;cette confusion;Confond objet avec XDDL;universel;#XavierDupontDeLigonnès;5;;
+156;son organisation;Organise une ZAD;universel;#{lieu_info.nom_colle};10;;
+157;sa cagnotte;Lance une cagnotte pour aider objet;universel;#Free{objet.nom_colle};10;politique;
+158;son acte;Aurait slidé dans les DM de objet;universel;;10;;
+159;sa déclaration;Appelle à tirer à balles réelles sur objet;universel;;10;media;
+160;sa décision;Décide de relancer ONDAR;universel;#{rand(ONDAR,France2)};10;TV,culture;
+161;son suicide;S'est suicidé d'une balle dans la nuque;universel;#RIP{sujet.nom_colle};10;;
+162;sa suspicion;Suspecte objet d'être dril;universel;#dril;10;internet;
+163;cette rumeur;Suspecté d'être dril;universel;#dril;10;internet;
+164;cette information;Rejoint l'équipe de Pascal Praud;universel;#HeureDesPros;10;media;
+165;cette information;Rejoint l'équipe des Grandes Gueules;universel;#{rand(GGRMC,GrandesGueules)};10;media;
+166;cette information;Rejoint l'équipe des Grosses Têtes;universel;#GrossesTêtes;10;TV,culture;
+167;cette polémique;Décide de nous casser les couilles avec le voile;universel;#{rand(Voile,VoileIslamique,Hijab)};10;politique,media;
+168;son émission;Animera une émission de débats;universel;;10;TV,media;
+169;sa récompense;Gagne un Grammy;universel;#GRAMMYs;5;culture;
+170;sa récompense;Gagne une Victoire de la Musique;universel;#Victoires{rand(,DeLaMusique)};5;culture;
+171;sa décision;Décide de reconstruire le mur de Berlin;universel;;10;;
+172;son déguisement;Déguisé en hamburger sur NRJ;universel;#{sujet.nom_colle}Déguisé{gse}EnHamburgerSurNRJ;10;TV,media;
+173;leur lien de parenté;Est le cousin d'objet;universel;;10;;
+174;cette photo;A accidentellement posté une dickpic;universel;;10;;
+175;sa décision;Quitte Trash;universel;#YouTube;10;internet;
+176;son implication;Impliqué dans l’affaire objet;est_accuse;#Affaire{objet.nom_colle};10;;
+177;son appel;Appelle à la grève générale;universel;#GrèveGénérale;10;politique;
+178;son annonce;Se lance dans le podcast;universel;;10;internet;
+179;son ban;Banni de la Mutinerie;est_accuse;;10;;
