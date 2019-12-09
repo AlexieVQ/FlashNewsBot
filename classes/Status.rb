@@ -55,7 +55,7 @@ class Status
 				$index['sujet'] = Pers.elt_alea
 				
 				@texte = partie_info
-				@texte = accroche + " " + @texte
+				@texte = Accroche.retourner(nil, [@texte, "sujet"])
 				if rand(2) == 1 then
 					@texte += " " + partie_decla
 				end
@@ -120,38 +120,6 @@ class Status
 		
 		chaine += " “" + $index['info'].decla + "”"
 		return chaine + "."
-	end
-	
-	##
-	# Génère l'accroche du status, qui contient le nom du sujet.
-	def accroche
-		chaine = rand(2) == 1 ? "⚡" : "🔴"
-		
-		if $index['loc_info'] && $index['loc_info'].emoji != "" then
-			chaine += $index['loc_info'].emoji
-		elsif $index['sujet'].localite && $index['sujet'].localite.nom_colle !=
-				"France" then
-			chaine += $index['sujet'].localite.emoji
-		end
-		
-		if $index['info'].hashtag then
-			chaine += " " + $index['info'].hashtag + " : " + $index['sujet'].nom
-		else
-			if rand(4) == 1 then
-				if rand(2) == 1 then
-					chaine += " #" + $index['sujet'].nom_colle
-				else
-					chaine += " " + $index['sujet'].nom.majuscule
-				end
-				chaine += " : " + $index['sujet'].surnom
-			else
-				chaine += " " + $index['accroche'].retourner.accroche
-				chaine =~ /:/ ? chaine += " " : chaine += " - "
-				chaine += $index['sujet'].nom
-			end
-		end
-		
-		return chaine
 	end
 	
 end

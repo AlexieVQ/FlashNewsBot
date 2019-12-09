@@ -149,3 +149,4 @@ id;type;description;type_circo;hashtag;poids;categories;structure
 177;son appel;Appelle à la grève générale;universel;#GrèveGénérale;10;politique;
 178;son annonce;Se lance dans le podcast;universel;;10;internet;
 179;son ban;Banni de la Mutinerie;est_accuse;;10;;
+180;cette fuite;La bite de sujet fuite;universel;;10;;{accroche({info.action}{rand(, {date})}{rand(, {lieu})}{rand(, info.circo)})}.
