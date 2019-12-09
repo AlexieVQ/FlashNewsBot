@@ -49,8 +49,8 @@ class Accroche < Element
 					end
 					accroche += " : " + $index[parametres[1]].surnom
 				else
-					accroche += " " + elt_alea
-					accroche =~ /:/ ? chaine += " " : chaine += " - "
+					accroche += " " + elt_alea.accroche
+					accroche =~ /:/ ? accroche += " " : accroche += " - "
 					if parametres[1] then
 						accroche += $index[parametres[1]].nom.majuscule
 					else
