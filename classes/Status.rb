@@ -49,12 +49,16 @@ class Status
 			$index['decla'] = Decla
 			
 			$index['info'] = Info.elt_alea
-			$index['sujet'] = Pers.elt_alea
-			
-			@texte = partie_info
-			@texte = accroche + " " + @texte
-			if rand(2) == 1 then
-				@texte += " " + partie_decla
+			if $index['info'].structure && $index['info'].structure != "" then
+				@texte = $index['info'].structure.evaluer
+			else
+				$index['sujet'] = Pers.elt_alea
+				
+				@texte = partie_info
+				@texte = accroche + " " + @texte
+				if rand(2) == 1 then
+					@texte += " " + partie_decla
+				end
 			end
 		rescue IndexErreur => e
 			puts "#{e.message} : réessai"
