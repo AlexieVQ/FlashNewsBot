@@ -1,4 +1,4 @@
-require_relative 'Commande.rb'
+require_relative 'Expression.rb'
 require_relative 'Erreurs.rb'
 require_relative 'elements/Info.rb'
 require_relative 'elements/Pers.rb'
@@ -32,12 +32,12 @@ class Status
 		begin
 			$index = Hash.new
 
-			$index['rand'] = Commande.commande(TypeCommande::RAND)
-			$index['maj'] = Commande.commande(TypeCommande::MAJ)
-			$index['cap'] = Commande.commande(TypeCommande::CAP)
-			$index['genre'] = Commande.commande(TypeCommande::GENRE)
-			$index['gse'] = Commande.commande(TypeCommande::GSE)
-			$index['h'] = Commande.commande(TypeCommande::H)
+			$index['rand'] = Expression.new(Expression.method(:rand))
+			$index['maj'] = Expression.new(Expression.method(:maj))
+			$index['cap'] = Expression.new(Expression.method(:cap))
+			$index['genre'] = Expression.new(Expression.method(:genre))
+			$index['gse'] = Expression.new(Expression.method(:gse))
+			$index['h'] = Expression.new(Expression.method(:h))
 			$index['accroche'] = Accroche
 			$index['pers'] = Pers
 			$index['date'] = DateInfo
