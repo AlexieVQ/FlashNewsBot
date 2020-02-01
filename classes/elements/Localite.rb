@@ -2,31 +2,23 @@ require_relative 'Element.rb'
 require_relative '../String.rb'
 
 ##
-# Classe représentant une localité (ville, région, pays).
+# Element représentant une ville, un pays ou une région.
 #
-# Une localité est caractérisée par son nom, son nom en anglais, son nom sans
-# espaces, ses adjectifs masculin et féminin, son département, son emoji et son
-# type.
+# Les localités sont définies dans +localites.csv+.
 
 class Localite < Element
 	
-	# @nom			=> Nom de la localité
-	# @nom_en		=> Nom en anglais
-	# @nom_colle	=> Nom sans espaces, ponctuation... pour hashtag
-	# @adjm			=> Adjectif masculin
-	# @adjf			=> Adjectif féminin
-	# @departement	=> Département
-	# @emoji		=> Emoji
+	########################
+	# CONSTANTES DE CLASSE #
+	########################
 	
-	## Ville, région ou pays
-	attr :type, false
+	## <tt>"localites.csv"</tt> (String)
+	FICHIER = "localites.csv"
 	
-	## Nom du fichier CSV correspondant
-	def Localite.nom_fichier
-		return "localites.csv"
-	end
+	######################
+	# MÉTHODES DE CLASSE #
+	######################
 	
-	##
 	# Crée une localité à partir d'une ligne d'un fichier CSV.
 	def Localite.importer(ligne)
 		new(ligne['id'].to_i, ligne['type'], ligne['nom'], ligne['poids'].to_i,
@@ -35,19 +27,33 @@ class Localite < Element
 	end
 	
 	##
-	# Retourne le tableau des localités de types donnés.
+	# Retourne un Array de Localite de types donnés.
+	#
+	# Paramètres :
+	# [+types+] Array des types demandés (String, voir Localite#type)
 	def Localite.types(types)
 		return selectionner { |e| types.include?(e.type) }
 	end
 	
 	##
-	# Retourne la localité de nom collé donné.
+	# Retourne la Localite de nom collé donné.
+	#
+	# Paramètres :
+	# [+nom_colle+] Nom, sans espaces, de la localité (String, non évalué avec
+	#               String#evaluer)
 	def Localite.nom_colle(nom_colle)
 		return selectionner { |e| nom_colle == e.read_nom_colle }
 	end
 	
 	##
-	# Retourne un élément pour l'attribut et les paramètres donnés.
+	# Retourne un String représentant la localité demandée.
+	#
+	# Le tableau +parametres+ peut contenir :
+	# * les types des localités demandées (voir Localite#type),
+	# * ou le nom collé de la localité demandée (appel de Localite::nom_colle).
+	# Si +parametres+ est vide, retourne une localité au hasard.
+	#
+	# +attribut+ est ignoré.
 	def Localite.retourner(attribut = nil, parametres = nil)
 		if ["ville", "pays", "region"].include?(parametres[0]) then
 			element = types(parametres).elt_alea
@@ -59,7 +65,54 @@ class Localite < Element
 		return retourner_elt(element, attribut, parametres)
 	end
 	
-	## Méthode privée
+	private_class_method :new
+	private_class_method :importer
+	
+	#############
+	# ATTRIBUTS #
+	#############
+	
+	##
+	# Type de la localité (String) :
+	# * <tt>"ville"</tt>
+	# * <tt>"pays"</tt>
+	# * <tt>"region"</tt>
+	attr_reader :type
+	
+	########################
+	# VARIABLES D'INSTANCE #
+	########################
+	
+	# @nom			=> Nom de la localité (String)
+	# @nom_en		=> Nom en anglais (String)
+	# @nom_colle	=> Nom sans espaces, ponctuation... pour hashtag (String)
+	# @adjm			=> Adjectif masculin (String)
+	# @adjf			=> Adjectif féminin (String)
+	# @departement	=> Département (String)
+	# @emoji		=> Emoji (String)
+	
+	################
+	# CONSTRUCTEUR #
+	################
+	
+	##
+	# Crée une Localite d'identifiant, de type, de nom, de poids, de nom en
+	# anglais, de nom sans espaces, d'adjectifs, de département et d'emojis
+	# donnés.
+	#
+	# *Attention* : une Localite ne peut être instanciée hors de sa classe.
+	#
+	# Paramètres :
+	# [+id+]            Identifiant de la localité (Integer, voir Element#id)
+	# [+type+]          Type de localité (String, voir Localite#type)
+	# [+nom+]           Nom de la localité, en français (String)
+	# [+poids+]         Poids de la localité (Integer, voir Element#poids)
+	# [+nom_en+]        Nom de la localité, en anglais (String ou +nil+)
+	# [+nom_colle+]     Nom de la localité, sans espace (String)
+	# [+adjm+]          Adjectif masculin lié à la localité (String)
+	# [+adjf+]          Adjectif féminin lié à la localité (String)
+	# [+departement+]   Département de la localité (String ou +nil+)
+	# [+emoji+]         Drapeau de la localité en emoji (String ou +nil+)
 	def initialize(id,
 	               type,
 	               nom,
@@ -81,13 +134,30 @@ class Localite < Element
 		@emoji = emoji
 	end
 	
-	## Donne le nom de la localité, avec l'article donné
+	#######################
+	# MÉTHODES D'INSTANCE #
+	#######################
+	
+	##
+	# Retourne le nom de la localité (String) avec l'article donné après l'avoir
+	# évalué (voir String#evaluer).
+	#
+	# Paramètres :
+	# [+article+]   Article à mettre au début du nom (String, voir
+	#               String#modif_article)
 	def nom(article = nil)
 		if @type == "ville" && article == "en" then article = "à" end
 		return @nom.evaluer.modif_article(article)
 	end
 	
-	## Donne le nom anglais de la localité
+	alias :to_s :nom
+	
+	##
+	# Retourne le nom de la localité en anglais (String) après l'avoir évalué
+	# (voir String#evaluer).
+	#
+	# Si la localité n'a pas de nom en anglais, retourne le nom en français sans
+	# article.
 	def nom_en
 		if @nom_en then
 			return @nom_en.evaluer
@@ -96,27 +166,43 @@ class Localite < Element
 		end
 	end
 	
-	## Donne le nom collé de la localité
+	##
+	# Retourne le nom sans espace de la localité (String), pouvant être intégré
+	# dans un hashtag, après l'avoir évalué (voir String#evaluer).
 	def nom_colle
 		return @nom_colle.evaluer
 	end
 	
-	## Retourne le nom collé, sans l'évaluer
+	##
+	# Retourne le nom collé sans l'évaluer (String).
 	def read_nom_colle
 		return @nom_colle
 	end
 	
-	## Donne l'adjectif masculin de la localité
+	##
+	# Retourne l'adjectif masculin de la localité (String), après l'avoir évalué
+	# (voir String#evaluer).
 	def adjm
 		return @adjm.evaluer
 	end
 	
-	## Donne l'adjectif féminin de la localité
+	##
+	# Retourne l'adjectif féminin de la localité (String), après l'avoir évalué
+	# (voir String#evaluer).
 	def adjf
 		return @adjf.evaluer
 	end
 	
-	## Donne le département de la localité
+	##
+	# Retourne le département de la localité (String), entre parenthèses
+	# précédées d'une espace. Par exemple, <tt>" (72)"</tt>. Si la localité n'a
+	# pas de département, renvoie une chaîne vide.
+	#
+	# Le département est pensé pour être intégré de cette manière :
+	#	La ville {v=localite(ville)}{v.nom(de)}{v.departement}.
+	# Afin de produire ces résultats :
+	#	La ville de Paris (75).
+	#	La ville de Shanghai.
 	def departement
 		if @departement =~ /^ \([^\(\)]*\)/ then
 			return @departement.evaluer
@@ -127,7 +213,9 @@ class Localite < Element
 		end
 	end
 	
-	## Donne l'emoji de la localité
+	##
+	# Retourne l'emoji de la localité (String), après l'avoir évalué (voir
+	# String#evaluer). Si la localité n'a pas d'émoji, retourne une chaîne vide.
 	def emoji
 		if @emoji then
 			return @emoji.evaluer
@@ -136,23 +224,20 @@ class Localite < Element
 		end
 	end
 	
-	## Conversion en chaîne de caractère
-	def to_s
-		return self.nom
-	end
-	
 	##
-	# Retourne l'attribut demandé avec paramètres
-	# Les attributs peuvent être :
-	# - "nom"
-	# - "nom_en"
-	# - "nom_colle"
-	# - "adjm"
-	# - "adjf"
-	# - "departement"
-	# - "emoji"
-	# Les paramètres peuvent être :
-	# - l'article quand on demande le nom
+	# Retourne un String en fonction de la valeur d'+attribut+ (String) :
+	# [<tt>"nom"</tt>]          Résultat de Localite#nom
+	# [<tt>"nom_en"</tt>]       Résultat de Localite#nom_en
+	# [<tt>"nom_colle"</tt>]    Résultat de Localite#nom_colle
+	# [<tt>"adjm"</tt>]         Résultat de Localite#adjm
+	# [<tt>"adjf"</tt>]         Résultat de Localite#adjf
+	# [<tt>"departement"</tt>]  Résultat de Localite#departement
+	# [<tt>"emoji"</tt>]        Résultat de Localite#emoji
+	#
+	# Lorsque l'attribut est <tt>"nom"</tt>, <tt>parametre[0]</tt> doit contenir
+	# l'article demandé (String, voir String#modif_article).
+	#
+	# Si aucun attribut n'est donné, renvoie une chaîne vide.
 	def retourner(attribut = nil, parametres = nil)
 		case attribut
 		when "nom" then

@@ -2,24 +2,23 @@ require_relative 'Element.rb'
 require_relative '../String.rb'
 
 ##
-# Classe représentant le surnom d'un personnage.
+# Element représentant le surnom d'un Pers.
 #
-# Un surnom est caractérisé par sa chaîne de caractère et son poids. Il peut
-# retourner sa chaîne de caractères après l'avoir évaluée.
+# Les surnoms sont définis dans la table +surnoms.csv+.
 
 class Surnom < Element
 	
-	# @surnom		=> Surnom du personnage
+	########################
+	# CONSTANTES DE CLASSE #
+	########################
 	
-	## Identifiant du personnage concerné
-	attr :id_pers, false
+	## <tt>"surnoms.csv"</tt> (String)
+	FICHIER = "surnoms.csv"
 	
-	## Nom du fichier CSV correspondant
-	def Surnom.nom_fichier
-		return "surnoms.csv"
-	end
+	######################
+	# MÉTHODES DE CLASSE #
+	######################
 	
-	##
 	# Crée un surnom à partir d'une ligne d'un fichier CSV.
 	def Surnom.importer(ligne)
 		new(ligne['id'].to_i, ligne['surnom'], ligne['poids'].to_i,
@@ -27,36 +26,81 @@ class Surnom < Element
 	end
 	
 	##
-	# Retourne les surnoms d'une personne donnée
+	# Retourne un Array contenant les surnoms du Pers d'identifiant donné.
+	#
+	# Paramètres :
+	# [+id_pers+]   Identifiant du Pers (Integer, voir NomPers#id_info)
 	def Surnom.id_pers(id_pers)
 		return selectionner { |e| e.id_pers == id_pers }
 	end
 	
 	##
-	# Cette méthode ne peut être utilisée et lèvera une exception.
+	# Lève une *RuntimeError* car il est impossible de choisir un surnom
+	# aléatoirement sans connaître le Pers auquel il appartient.
 	def Surnom.elt_alea(ajout = [])
 		raise "La méthode elt_alea ne peut pas être utilisée pour la classe " +
 			self.to_s
 	end
 	
-	## Méthode privée
+	private_class_method :new
+	private_class_method :importer
+	
+	#############
+	# ATTRIBUTS #
+	#############
+	
+	##
+	# Identifiant du personnage concerné (Integer)
+	attr_reader :id_pers
+	
+	########################
+	# VARIABLES D'INSTANCE #
+	########################
+	
+	# @surnom		=> Surnom du personnage (String)
+	
+	################
+	# CONSTRUCTEUR #
+	################
+	
+	##
+	# Crée un Surnom d'identifiant, de valeur et de poids donnés, lié au Pers
+	# d'identifiant donné.
+	#
+	# *Attention* : un Surnom ne peut être instancié hors de sa classe.
+	#
+	# Paramètres :
+	# [+id+]            Identifiant du nom (Integer, voir Element#id)
+	# [+surnom+]        String contenant le surnom, tel que défini dans la table
+	# [+poids+]         Poids du nom (Integer, voir Element#poids)
+	# [+id_pers+]       Identifiant du Pers lié au surnom (Integer, voir
+	#                   Surnom#id_pers)
 	def initialize(id, surnom, poids, id_pers)
 		super(id, poids)
 		@surnom = surnom
 		@id_pers = id_pers
 	end
 	
-	## Donne le surnom de la personne, avec l'article donné
+	######################
+	# MÉTHODES DE CLASSE #
+	######################
+	
+	##
+	# Retourne le surnom du personnage (String) avec l'article donné juste après
+	# l'avoir évaluée (voir String#evaluer).
+	#
+	# Paramètres :
+	# [+article+]   Article à mettre au début du surnom (String, voir
+	#               String#modif_article)
 	def surnom(article = nil)
 		return @surnom.evaluer.modif_article(article)
 	end
 	
-	## Conversion en chaîne de caractères
-	def to_s
-		return self.surnom
-	end
+	alias :to_s :surnom
 	
-	## Retourne le surnom avec les paramètres donnés (article)
+	##
+	# Retourne le résultat de Surnom#nom avec l'article contenu dans
+	# <tt>parametres[0]</tt>.
 	def retourner(attribut = nil, parametres = nil)
 		return self.surnom(parametres[0])
 	end

@@ -2,23 +2,24 @@ require_relative 'Element.rb'
 require_relative '../String.rb'
 
 ##
-# Classe représentant l'action d'une information.
+# Element représentant l'action d'une Info (verbe et objet de l'information,
+# "est arrêté", "a été tué" ...).
 #
-# Une action est caractérisée par sa chaîne de caractères.
+# Les actions sont définies dans la table +actions.csv+.
 
 class Action < Element
 	
-	# @action		=> Chaîne de caractères
+	########################
+	# CONSTANTES DE CLASSE #
+	########################
 	
-	## Nom du fichier CSV correspondant
-	def Action.nom_fichier
-		return "actions.csv"
-	end
+	## <tt>"actions.csv"</tt> (String)
+	FICHIER = "actions.csv"
 	
-	## Identifiant de l'information concernée
-	attr :id_info, false
+	######################
+	# MÉTHODES DE CLASSE #
+	######################
 	
-	##
 	# Crée une action à partir d'une ligne d'un fichier CSV.
 	def Action.importer(ligne)
 		new(ligne['id'].to_i, ligne['action'], ligne['poids'].to_i,
@@ -26,33 +27,73 @@ class Action < Element
 	end
 	
 	##
-	# Renvoie les accroches d'une info.
+	# Retourne un Array contenant les accroches de l'Info d'identifiant donné.
+	#
+	# Paramètres :
+	# [+id_info+]    Identifiant de l'Info (Integer, voir Action#id_info)
 	def Action.id_info(id_info)
 		return selectionner { |e| e.id_info == id_info }
 	end
 	
 	##
-	# Cette méthode ne peut être utilisée et lèvera une exception.
+	# Lève une *RuntimeError* car il est impossible de choisir une accroche
+	# aléatoirement sans connaître l'Info à laquelle elle appartient.
 	def Action.elt_alea(ajout = [])
 		raise "La méthode elt_alea ne peut pas être utilisée pour la classe " +
 			self.to_s
 	end
 	
-	## Méthode privée
+	private_class_method :new
+	private_class_method :importer
+	
+	#############
+	# ATTRIBUTS #
+	#############
+	
+	##
+	# Identifiant de l'information concernée (Integer)
+	attr_reader :id_info
+	
+	########################
+	# VARIABLES D'INSTANCE #
+	########################
+	
+	# @action		=> Formulation de l'action (String)
+	
+	################
+	# CONSTRUCTEUR #
+	################
+	
+	##
+	# Crée une Action d'identifiant, de valeur et de poids donnés, liée à
+	# l'Info d'identifiant donné.
+	#
+	# *Attention* : une Action ne peut être instanciée hors de sa classe.
+	#
+	# Paramètres :
+	# [+id+]            Identifiant de l'action (Integer, voir Element#id)
+	# [+action+]        String contenant l'action, telle que définie dans la
+	#                   table
+	# [+poids+]         Poids de l'action (Integer, voir Element#poids)
+	# [+id_info+]       Identifiant de l'Info liée à l'action (Integer, voir
+	#                   Action#id_info)
 	def initialize(id, action, poids, id_info)
 		super(id, poids)
 		@action = action
 		@id_info = id_info
 	end
 	
-	## Retourne l'action (chaîne de caractères) après l'avoir évaluée.
+	######################
+	# MÉTHODES DE CLASSE #
+	######################
+	
+	##
+	# Retourne l'action (String) juste après l'avoir évaluée (voir
+	# String#evaluer).
 	def action
 		return @action.evaluer
 	end
 	
-	## Retourne l'action (chaîne de caractères) après l'avoir évaluée.
-	def to_s
-		return self.action
-	end
+	alias :to_s :action
 	
 end

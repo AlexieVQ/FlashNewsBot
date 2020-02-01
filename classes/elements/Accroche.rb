@@ -2,34 +2,43 @@ require_relative 'Element.rb'
 require_relative '../String.rb'
 
 ##
-# Classe représentant l'accroche d'une information, héritant de la classe
-# Element.
+# Element placé au début d'un status ("BREAKING NEWS", "ALERTE INFO", "C'est
+# officiel" ...).
 #
-# Une arroche est caractérisée par sa formulation.
+# Les accroches sont définies dans la table +accroches.csv+.
 
 class Accroche < Element
 	
-	# @accroche		=> Formulation de l'accroche
+	########################
+	# CONSTANTES DE CLASSE #
+	########################
 	
-	## Nom du fichier CSV correspondant
-	def Accroche.nom_fichier
-		return "accroches.csv"
-	end
+	## <tt>"accroches.csv"</tt> (String)
+	FICHIER = "accroches.csv"
 	
-	##
-	# Crée une accroche à partir d'une ligne d'un fichier CSV.
+	######################
+	# MÉTHODES DE CLASSE #
+	######################
+	
+	# Crée une Accroche à partir d'une ligne d'un fichier CSV.
 	def Accroche.importer(ligne)
 		new(ligne['id'].to_i, ligne['accroche'], ligne['poids'].to_i)
 	end
 	
 	##
-	# Retourne une expression d'accroche aléatoire, ou ajoute une accroche à la
-	# chaîne présente dans parametres[0] en tenant compte du personnage dans
-	# parametres[1].
+	# Si <tt>parametres[0]</tt> contient un String, ajoute une accroche complète
+	# au début de cette chaîne, comprenant emoji, mot d'accroche ou hashtag, et 
+	# nom du personnage, si son mot-clef l'identifiant dans l'index est présent
+	# dans <tt>parametres[1]</tt>.
+	#
+	# Sinon, retourne un mot d'accroche ("BREAKING NEWS", "FLASH INFO" ...)
+	# aléatoirement.
 	def Accroche.retourner(attribut = nil, parametres = [])
 		if parametres[0] then
 			accroche = rand(2) == 1 ? "⚡" : "🔴"
 			
+			# Ajout d'un emoji régional correspondant à la localité ou au
+			# personnage dans parametres[1]
 			if $index['loc_info'] && $index['loc_info'].emoji != "" then
 				accroche += $index['loc_info'].emoji
 			elsif parametres[1] && $index[parametres[1]].localite &&
@@ -37,10 +46,15 @@ class Accroche < Element
 				accroche += $index[parametres[1]].localite.emoji
 			end
 			
+			# Si l'info a un hashtag, ajoute le hashtag puis le nom du
+			# personnage dans parametres[1], et arrête la construction de la
+			# chaîne.
 			if parametres[1] && $index['info'].hashtag then
 				accroche += " " + $index['info'].hashtag + " : " +
 						$index[parametres[1]].nom
 			else
+				# Ajout du nom du personnage sous forme de hashtag ou non, puis
+				# de son surnom.
 				if parametres[1] && rand(4) == 1 then
 					if rand(2) == 1 then
 						accroche += " #" + $index[parametres[1]].nom_colle
@@ -48,6 +62,7 @@ class Accroche < Element
 						accroche += " " + $index[parametres[1]].nom.majuscule
 					end
 					accroche += " : " + $index[parametres[1]].surnom
+				# Ajout d'un mot d'arroche, puis du nom du personnage, si donné.
 				else
 					accroche += " " + elt_alea.accroche
 					accroche =~ /:/ ? accroche += " " : accroche += " - "
@@ -64,20 +79,44 @@ class Accroche < Element
 		end
 	end
 	
-	## Méthode privée
+	private_class_method :new
+	private_class_method :importer
+	
+	########################
+	# VARIABLES D'INSTANCE #
+	########################
+	
+	# @accroche		=> Formulation de l'accroche (String)
+	
+	################
+	# CONSTRUCTEUR #
+	################
+	
+	##
+	# Crée une Accroche d'identifiant, de valeur et de poids donnés.
+	#
+	# *Attention* : une Accroche ne peut être instanciée hors de sa classe.
+	#
+	# Paramètres :
+	# [+id+]        Identifiant de l'accroche (Integer, voir Element#id)
+	# [+accroche+]  String contenant l'accroche, telle que définie dans la table
+	# [+poids+]     Poids de l'accroche (Integer, voir Element#poids)
 	def initialize(id, accroche, poids)
 		super(id, poids)
 		@accroche = accroche
 	end
 	
-	## Donne l'accroche (une chaîne de caractères) juste après l'avoir évaluée.
+	#######################
+	# MÉTHODES D'INSTANCE #
+	#######################
+	
+	##
+	# Retourne l'accroche (String) juste après l'avoir évaluée (voir
+	# String#evaluer).
 	def accroche
 		return @accroche.evaluer
 	end
 	
-	## Conversion en chaîne de caractères.
-	def to_s
-		return self.accroche
-	end
+	alias :to_s :accroche
 	
 end

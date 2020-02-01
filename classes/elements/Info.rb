@@ -6,32 +6,25 @@ require_relative '../String.rb'
 require_relative '../Array.rb'
 
 ##
-# Classe représentant une information.
+# Élément représentant une information, comprenant ses Action, ses Circo, son
+# type ("son assassinat", "sa déclaration"...), ses Decla, son hashtag, la
+# structure du status à rédiger.
 #
-# Une information est caractérisée par ses actions, ses circonstances, son type,
-# ses déclarations, son hashtag, son type de circonstance, ses catégories.
+# Les informations sont définies dans la table +infos.csv+.
 
 class Info < Element
 	
-	# @actions		=> Tableau d'actions
-	# @circos		=> Tableau de circonstances
-	# @type			=> Type (ex : "son assassinat", "sa déclaration", ...)
-	# @declas		=> Tableau de déclarations
-	# @hashtag		=> Hashtag
+	########################
+	# CONSTANTES DE CLASSE #
+	########################
 	
-	## Type de circonstance
-	attr :type_circo, false
-	## Catégories
-	attr :categories, false
-	## Structure personnalisée pour cette information
-	attr :structure, false
+	## <tt>"infos.csv"</tt> (String)
+	FICHIER = "infos.csv"
 	
-	## Nom du fichier CSV correspondant
-	def Info.nom_fichier
-		return "infos.csv"
-	end
+	######################
+	# MÉTHODES DE CLASSE #
+	######################
 	
-	##
 	# Crée une information à partir d'une ligne d'un fichier CSV.
 	def Info.importer(ligne)
 		actions = Action.id_info(ligne['id'].to_i)
@@ -43,7 +36,60 @@ class Info < Element
 		    ligne['structure'])
 	end
 	
-	## Méthode privée
+	private_class_method :new
+	private_class_method :importer
+	
+	#############
+	# ATTRIBUTS #
+	#############
+	
+	##
+	# Type de circonstance (String, voir Circo#type_circo)
+	attr_reader :type_circo
+	
+	##
+	# Catégories (Array de String)
+	attr_reader :categories
+	
+	##
+	# Structure personnalisée pour cette information (String)
+	attr_reader :structure
+	
+	########################
+	# VARIABLES D'INSTANCE #
+	########################
+	
+	# @actions		=> Array d'Action
+	# @circos		=> Array de Circo
+	# @type			=> Type (ex : "son assassinat", "sa déclaration", ...) 
+	# 				   (String)
+	# @declas		=> Array de Decla
+	# @hashtag		=> Hashtag (String)
+	
+	################
+	# CONSTRUCTEUR #
+	################
+	
+	##
+	# Crée une Info d'identifiant, de valeur, d'Action, de poids, de type, de
+	# Decla, de hashtag, de type de circonstance et de catégories données.
+	#
+	# *Attention* : une Info ne peut être instanciée hors de sa classe.
+	#
+	# Paramètres :
+	# [+id+]            Identifiant de l'information (Integer, voir Element#id)
+	# [+actions+]       Array d'Action liées à l'information
+	# [+poids+]         Poids de l'information (Integer, voir Element#poids)
+	# [+circos+]        Array de Circo liées à l'information
+	# [+type+]          Type de l'information ("son assassinat", "sa
+	#                   déclaration"...)
+	# [+declas+]        Array de Decla liées à l'information
+	# [+hashtag+]       Hashtag de l'information (String, ou +nil+)
+	# [+type_circo+]    Type de la circonstance (String, voir Circo#type_circo)
+	# [+categories+]    Catégories de l'information (Array de String, voir
+	#                   Info#categories)
+	# [+structure+]     Structure personnalisée du status (String, voir
+	#                   Info#structure)
 	def initialize(id,
 	               actions,
 	               poids,
@@ -65,12 +111,22 @@ class Info < Element
 		@structure = structure
 	end
 	
-	## Retourne une action après l'avoir évaluée.
+	#######################
+	# MÉTHODES D'INSTANCE #
+	#######################
+	
+	##
+	# Retourne une action (String) de l'information aléatoirement après l'avoir
+	# évaluée (voir String#evaluer).
 	def action
 		return @actions.elt_alea.action.evaluer
 	end
 	
-	## Retourne une circonstance après l'avoir évaluée
+	alias :to_s :action
+	
+	##
+	# Retourne une circonstance (String) de l'information aléatoirement (ou une
+	# circonstance universelle) après l'avoir évaluée (voir String#evaluer).
 	def circo
 		case @type_circo
 		when "accuse" then
@@ -82,18 +138,24 @@ class Info < Element
 		end
 	end
 	
-	## Retourne le type après l'avoir évalué
+	##
+	# Retourne le type (String, "son assassinat", "sa déclaration"...) de
+	# l'information après l'avoir évalué (voir String#evaluer).
 	def type
 		return @type.evaluer
 	end
 	
-	## Retourne une déclaration après l'avoir évaluée
+	##
+	# Retourne une déclaration (String) de l'information aléatoirement (ou une
+	# déclaration universelle) après l'avoir évaluée (voir String#evaluer).
 	def decla
 		return @declas.elt_alea($index['sujet'].declas | [Decla.elt_alea])
 			.decla.evaluer
 	end
 	
-	## Retourne un hashtag après l'avoir évalué
+	##
+	# Retourne le hashtag (String) de l'information après l'avoir évalué (voir
+	# String#evaluer), ou +nil+ si l'information n'a pas de hashtag.
 	def hashtag
 		if @hashtag then
 			return @hashtag.evaluer
@@ -102,19 +164,15 @@ class Info < Element
 		end
 	end
 	
-	## Retourne une action après l'avoir évaluée.
-	def to_s
-		return self.action
-	end
-	
 	##
-	# Retourne l'attribut avec les paramètres demandés.  
-	# Attributs possibles :
-	# - "action"
-	# - "circo"
-	# - "type"
-	# - "decla"
-	# - "hashtag"
+	# Retourne un String en fonction de la valeur d'+attribut+ (String) :
+	# [<tt>"action"</tt>]   Résultat de Info#action
+	# [<tt>"circo"</tt>]    Résultat de Info#circo
+	# [<tt>"type"</tt>]     Résultat de Info#type
+	# [<tt>"decla"</tt>]    Résultat de Info#decla
+	# [<tt>"hashtag"</tt>]  Résultat de Info#hashtag
+	#
+	# +parametres+ ignoré.
 	def retourner(attribut = nil, parametres = nil)
 		case attribut
 		when "action" then

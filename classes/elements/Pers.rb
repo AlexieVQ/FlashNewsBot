@@ -7,34 +7,24 @@ require_relative '../String.rb'
 require_relative '../Array.rb'
 
 ##
-# Classe représentant un personnage.
+# Element représentant un personnage, comprenant ses NomPers, ses Surnom, son
+# genre, son nom sans espaces, sa catégorie, sa localité, ses Decla.
 #
-# Un personnage est caractérisé par ses noms, ses surnoms, son nom collé (pour
-# les hashtags), son genre, sa catégorie, sa localité (un objet Localite) et ses
-# déclarations.
+# Les personnages sont définis dans la table +pers.csv+.
 
 class Pers < Element
 	
-	# @noms			=> Tableau des noms
-	# @surnoms		=> Tableau des surnoms
-	# @nom_colle	=> Nom collé pour hashtag
-	# @surnomme		=> Nombre de fois que le surnom a été donné.
+	########################
+	# CONSTANTES DE CLASSE #
+	########################
 	
-	## Genre du personnage ('M' ou 'F')
-	attr :genre, false
-	## Catégorie du personnage
-	attr :categorie, false
-	## Localité du personnage
-	attr :localite, false
-	## Déclarations du personnage
-	attr :declas, false
+	## <tt>"pers.csv"</tt> (String)
+	FICHIER = "pers.csv"
 	
-	## Nom du fichier CSV correspondant
-	def Pers.nom_fichier
-		return "pers.csv"
-	end
+	######################
+	# MÉTHODES DE CLASSE #
+	######################
 	
-	##
 	# Crée un personnage à partir d'une ligne d'un fichier CSV.
 	def Pers.importer(ligne)
 		noms = NomPers.id_pers(ligne['id'].to_i)
@@ -47,13 +37,20 @@ class Pers < Element
 	end
 	
 	##
-	# Retourne les personnages de genre donné.
+	# Retourne un Array de Pers de genre donné.
+	#
+	# Paramètres :
+	# [+genre+] Genre des personnages (String, voir Pers#genre)
 	def Pers.genre(genre)
 		return selectionner { |e| e.genre == genre }
 	end
 	
 	##
-	# Retourne un élément pour l'attribut et les paramètres donnés.
+	# Retourne un String représentant la localité demandée.
+	#
+	# Si un attribut est donné, un personnage est choisi aléatoirement et
+	# l'attribut est utilisé par Pers#retourner. Sinon, retourne un personnage
+	# de genre contenu dans <tt>parametres[0]</tt> (voir Pers#genre).
 	def Pers.retourner(attribut = nil, parametres = nil)
 		if attribut && attribut != "" || parametres[0] == nil then
 			element = elements.elt_alea
@@ -63,7 +60,58 @@ class Pers < Element
 		return retourner_elt(element, attribut, parametres)
 	end
 	
-	## Méthode privée
+	private_class_method :new
+	private_class_method :importer
+	
+	#############
+	# ATTRIBUTS #
+	#############
+	
+	##
+	# Genre du personnage (String) : <tt>"M"</tt> ou <tt>"F"</tt>.
+	attr_reader :genre
+	
+	##
+	# Catégorie du personnage (String)
+	attr_reader :categorie
+	
+	##
+	# Localité du personnage (Localite ou +nil+)
+	attr_reader :localite
+	
+	##
+	# Déclarations du personnage (Array de Decla)
+	attr_reader :declas
+	
+	########################
+	# VARIABLES D'INSTANCE #
+	########################
+	
+	# @noms			=> Tableau des noms (Array de String)
+	# @surnoms		=> Tableau des surnoms (Array de String)
+	# @nom_colle	=> Nom collé pour hashtag (String) 
+	# @surnomme		=> Nombre de fois que le surnom a été donné. (Integer)
+	
+	################
+	# CONSTRUCTEUR #
+	################
+	
+	##
+	# Crée un Pers d'identifiant, de noms, de surnoms, de poids, de nom sans
+	# espaces, de genre, de catégorie, de localité et de déclarations données.
+	#
+	# *Attention* : un Pers ne peut être instancié hors de sa classe.
+	#
+	# Paramètres :
+	# [+id+]            Identifiant du personnage (Integer, voir Element#id)
+	# [+noms+]          Noms du personnage (Array de NomPers)
+	# [+surnoms+]       Surnoms du personnage (Array de Surnom)
+	# [+poids+]         Poids du personnage (Integer, voir Element#poids)
+	# [+nom_colle+]     Nom du personnage, sans espace (String)
+	# [+genre+]         Genre du personnage (String, voir Pers#genre)
+	# [+categorie+]     Catégorie du personnage (String, voir Pers#categorie)
+	# [+localite+]      Localité du personnage (Localite)
+	# [+declas+]        Déclarations du personnage (Array de Decla)
 	def initialize(id,
 	               noms,
 	               surnoms,
@@ -84,17 +132,33 @@ class Pers < Element
 		@surnomme = 0
 	end
 	
+	#######################
+	# MÉTHODES D'INSTANCE #
+	#######################
+	
 	##
-	# Renvoie un nom de la personne aléatoirement, après l'avoir évalué et
-	# modifié son article.
+	# Retourne le nom du personnage (String) avec l'article donné après l'avoir
+	# évalué (voir String#evaluer).
+	#
+	# Paramètres :
+	# [+article+]   Article à mettre au début du nom (String, voir
+	#               String#modif_article)
 	def nom(article = nil)
 		return @noms.elt_alea.nom(article)
 	end
 	
+	alias :to_s :nom
+	
 	##
-	# Renvoie un surnom de la personne aléatoirement, après l'avoir évalué et
-	# modifié son article.  
-	# Si un surnom a déjà été donné, renvoie le pronom.
+	# Retourne le surnom du personnage (String) avec l'article donné après
+	# l'avoir évalué (voir String#evaluer).
+	#
+	# Si le surnom a déjà été donné, retourne le pronom (correspondant à
+	# l'article donné).
+	#
+	# Paramètres :
+	# [+article+]   Article à mettre au début du surnom (String, voir
+	#               String#modif_article)
 	def surnom(article = nil)
 		unless @surnomme > 0 then
 			@surnomme += 1
@@ -116,26 +180,23 @@ class Pers < Element
 	end
 	
 	##
-	# Renvoie le nom collé de la personne après l'avoir évalué.
+	# Retourne le nom sans espace du personnage (String), pouvant être intégré
+	# dans un hashtag, après l'avoir évalué (voir String#evaluer).
 	def nom_colle
 		return @nom_colle.evaluer
 	end
 	
 	##
-	# Convertie le personnage en chaîne de caractère (son nom)
-	def to_s
-		return self.nom
-	end
-	
-	##
-	# Retourne un attribut du personnage avec les paramètres demandés.  
-	# Attributs possibles :
-	# - "nom"
-	# - "surnom"
-	# - "nom_colle"
-	# - "localite"
-	# Paramètres :
-	# - article pour le nom ou le surnom
+	# Retourne un String en fonction de la valeur d'+attribut+ (String) :
+	# [<tt>"nom"</tt>]          Résultat de Pers#nom
+	# [<tt>"surnom"</tt>]       Résultat de Pers#surnom
+	# [<tt>"nom_colle"</tt>]    Résultat de Pers#nom_colle
+	# [<tt>"localite"</tt>]     Résultat de Pers#localite
+	#
+	# Lorsque l'attribut est <tt>"nom"</tt>, <tt>parametre[0]</tt> doit contenir
+	# l'article demandé (String, voir String#modif_article).
+	#
+	# Si aucun attribut n'est donné, renvoie une chaîne vide.
 	def retourner(attribut = nil, parametres = nil)
 		case attribut
 		when "nom" then
