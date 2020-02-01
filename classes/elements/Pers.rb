@@ -160,7 +160,7 @@ class Pers < Element
 	# [+article+]   Article à mettre au début du surnom (String, voir
 	#               String#modif_article)
 	def surnom(article = nil)
-		unless @surnomme > 0 then
+		unless(@surnomme > 0) then
 			@surnomme += 1
 			return @surnoms.elt_alea.surnom(article)
 		else

@@ -157,7 +157,7 @@ class Info < Element
 	# Retourne le hashtag (String) de l'information après l'avoir évalué (voir
 	# String#evaluer), ou +nil+ si l'information n'a pas de hashtag.
 	def hashtag
-		if @hashtag then
+		if(@hashtag) then
 			return @hashtag.evaluer
 		else
 			return nil

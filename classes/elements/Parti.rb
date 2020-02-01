@@ -44,7 +44,7 @@ class Parti < Element
 	#
 	# +attribut+ est ignoré.
 	def Parti.retourner(attribut = nil, parametres = nil)
-		if ["parti", "syndicat", "association"].include?(parametres[0]) then
+		if(["parti", "syndicat", "association"].include?(parametres[0])) then
 			element = Parti.types(parametres).elt_alea
 		else
 			element = Parti.elt_alea

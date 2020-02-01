@@ -34,29 +34,29 @@ class Accroche < Element
 	# Sinon, retourne un mot d'accroche ("BREAKING NEWS", "FLASH INFO" ...)
 	# aléatoirement.
 	def Accroche.retourner(attribut = nil, parametres = [])
-		if parametres[0] then
+		if(parametres[0]) then
 			accroche = rand(2) == 1 ? "⚡" : "🔴"
 			
 			# Ajout d'un emoji régional correspondant à la localité ou au
 			# personnage dans parametres[1]
-			if $index['loc_info'] && $index['loc_info'].emoji != "" then
+			if($index['loc_info'] && $index['loc_info'].emoji != "") then
 				accroche += $index['loc_info'].emoji
-			elsif parametres[1] && $index[parametres[1]].localite &&
-					$index[parametres[1]].localite.nom_colle != "France" then
+			elsif(parametres[1] && $index[parametres[1]].localite &&
+				  $index[parametres[1]].localite.nom_colle != "France") then
 				accroche += $index[parametres[1]].localite.emoji
 			end
 			
 			# Si l'info a un hashtag, ajoute le hashtag puis le nom du
 			# personnage dans parametres[1], et arrête la construction de la
 			# chaîne.
-			if parametres[1] && $index['info'].hashtag then
+			if(parametres[1] && $index['info'].hashtag) then
 				accroche += " " + $index['info'].hashtag + " : " +
 						$index[parametres[1]].nom
 			else
 				# Ajout du nom du personnage sous forme de hashtag ou non, puis
 				# de son surnom.
-				if parametres[1] && rand(4) == 1 then
-					if rand(2) == 1 then
+				if(parametres[1] && rand(4) == 1) then
+					if(rand(2) == 1) then
 						accroche += " #" + $index[parametres[1]].nom_colle
 					else
 						accroche += " " + $index[parametres[1]].nom.majuscule
@@ -66,7 +66,7 @@ class Accroche < Element
 				else
 					accroche += " " + elt_alea.accroche
 					accroche =~ /:/ ? accroche += " " : accroche += " - "
-					if parametres[1] then
+					if(parametres[1]) then
 						accroche += $index[parametres[1]].nom.majuscule
 					else
 						return accroche + " " + parametres[0].majuscule

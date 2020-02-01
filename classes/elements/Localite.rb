@@ -55,9 +55,9 @@ class Localite < Element
 	#
 	# +attribut+ est ignoré.
 	def Localite.retourner(attribut = nil, parametres = nil)
-		if ["ville", "pays", "region"].include?(parametres[0]) then
+		if(["ville", "pays", "region"].include?(parametres[0])) then
 			element = types(parametres).elt_alea
-		elsif parametres && parametres.length != 0 then
+		elsif(parametres && parametres.length != 0) then
 			element = nom_colle(parametres[0]).elt_alea
 		else
 			element = elements.elt_alea
@@ -146,7 +146,7 @@ class Localite < Element
 	# [+article+]   Article à mettre au début du nom (String, voir
 	#               String#modif_article)
 	def nom(article = nil)
-		if @type == "ville" && article == "en" then article = "à" end
+		if(@type == "ville" && article == "en") then article = "à" end
 		return @nom.evaluer.modif_article(article)
 	end
 	
@@ -159,7 +159,7 @@ class Localite < Element
 	# Si la localité n'a pas de nom en anglais, retourne le nom en français sans
 	# article.
 	def nom_en
-		if @nom_en then
+		if(@nom_en) then
 			return @nom_en.evaluer
 		else
 			return @nom.evaluer.modif_article("0")
@@ -204,9 +204,9 @@ class Localite < Element
 	#	La ville de Paris (75).
 	#	La ville de Shanghai.
 	def departement
-		if @departement =~ /^ \([^\(\)]*\)/ then
+		if(@departement =~ /^ \([^\(\)]*\)/) then
 			return @departement.evaluer
-		elsif @departement then
+		elsif(@departement) then
 			return " (#{@departement.evaluer})"
 		else
 			return ""
@@ -217,7 +217,7 @@ class Localite < Element
 	# Retourne l'emoji de la localité (String), après l'avoir évalué (voir
 	# String#evaluer). Si la localité n'a pas d'émoji, retourne une chaîne vide.
 	def emoji
-		if @emoji then
+		if(@emoji) then
 			return @emoji.evaluer
 		else
 			return ""

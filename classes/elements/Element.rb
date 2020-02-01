@@ -57,11 +57,6 @@ class Element
 		return self::FICHIER
 	end
 	
-	# Crée un élément à partir d'une ligne d'un fichier CSV.
-	def Element.importer(ligne)
-		raise "La classe Element ne peut être importée"
-	end
-	
 	##
 	# Retourne un Array contenant tous les éléments de la classe.
 	#
@@ -70,7 +65,7 @@ class Element
 	#
 	# Lève une *RuntimeError* si appelée sur la classe Element.
 	def Element.elements
-		unless defined?(@elements) then
+		unless(defined?(@elements)) then
 			@elements = []
 			CSV.read(chemin + nom_fichier,
 					{:col_sep => ';', :headers => true}).each do |ligne|
@@ -136,7 +131,7 @@ class Element
 	
 	# Retourne un élément en lui passant l'attribut et les paramètres donnés.
 	def Element.retourner_elt(element, attribut, parametres)
-		if attribut && attribut != "" then
+		if(attribut && attribut != "") then
 			return element.retourner(attribut, parametres)
 		else
 			return element
@@ -145,7 +140,6 @@ class Element
 	
 	private_class_method :retourner_elt
 	private_class_method :new
-	private_class_method :importer
 	
 	#############
 	# ATTRIBUTS #
