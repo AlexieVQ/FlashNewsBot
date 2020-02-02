@@ -32,12 +32,12 @@ class Status
 		begin
 			$index = Hash.new
 
-			$index['rand'] = Expression.new(Expression.method(:rand))
-			$index['maj'] = Expression.new(Expression.method(:maj))
-			$index['cap'] = Expression.new(Expression.method(:cap))
-			$index['genre'] = Expression.new(Expression.method(:genre))
-			$index['gse'] = Expression.new(Expression.method(:gse))
-			$index['h'] = Expression.new(Expression.method(:h))
+			$index['rand'] = Expression.new(:rand)
+			$index['maj'] = Expression.new(:maj)
+			$index['cap'] = Expression.new(:cap)
+			$index['genre'] = Expression.new(:genre)
+			$index['gse'] = Expression.new(:gse)
+			$index['h'] = Expression.new(:h)
 			$index['accroche'] = Accroche
 			$index['pers'] = Pers
 			$index['date'] = DateInfo
