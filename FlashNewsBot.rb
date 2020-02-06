@@ -1,10 +1,7 @@
 #!/usr/bin/env ruby
 
 require 'optparse'
-require 'daemons'
-require_relative 'classes/Status.rb'
-require_relative 'classes/Bdd.rb'
-require_relative 'classes/Api.rb'
+require_relative 'classes/Bot.rb'
 
 intervalle = 60
 hors_ligne = false
@@ -40,29 +37,4 @@ if !hors_ligne && username == "" then
 	exit
 end
 
-$bdd = Bdd.new
-appname = username == "" ? "FNBOffLine" : username
-$dir = Dir.pwd
-
-unless hors_ligne then
-	api = Api.connecter(username)
-	Daemons.daemonize({backtrace: true,
-	                   app_name: appname,
-	                   log_output: true})
-	$bdd = Bdd.new
-end
-
-loop do
-
-	status = Status.creer
-
-	puts "[#{Time.now}] #{status}"
-	unless hors_ligne then
-		if status.texte.length <= api.limite then
-			api.envoyer(status.texte)
-		end
-	end
-	
-	sleep(60 * intervalle)
-	
-end
+Bot.exec(hors_ligne, username, intervalle)

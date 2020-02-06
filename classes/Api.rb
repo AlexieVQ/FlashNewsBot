@@ -1,6 +1,7 @@
 require 'net/http'
 require 'oauth'
 require 'json'
+require_relative 'Bot.rb'
 require_relative 'Bdd.rb'
 
 ##
@@ -83,7 +84,7 @@ class Api
 	# auth_initiale_twitter.
 	
 	def auth_twitter(username)
-		unless @id_bdd = $bdd.app("twitter.com", username, @session) then
+		unless @id_bdd = Bot.bdd.app("twitter.com", username, @session) then
 			print "Clé d'API : "
 			@session[:api_key] = gets.chomp
 			print "Clé secrète d'API : "
@@ -120,7 +121,7 @@ class Api
 				"https://api.twitter.com/1.1/account/settings.json"
 			)
 			username = JSON.parse(reponse.body)["screen_name"]
-			@id_bdd = $bdd.enregistrer_app(ApiType::TWITTER,
+			@id_bdd = Bot.bdd.enregistrer_app(ApiType::TWITTER,
 			                               "twitter.com",
 			                               username,
 			                               @session[:api_key],

@@ -1,3 +1,4 @@
+require_relative 'Bot.rb'
 require_relative 'Erreurs.rb'
 
 ##
@@ -178,16 +179,16 @@ class String
 			end
 			
 			# Demande à l'index
-			if $index[com] == nil then
+			if Bot.index[com] == nil then
 				raise IndexErreur, "#{com} (#{self}) n'existe pas dans l'index"
 			end
-			resultat = $index[com].retourner(attribut, parametres)
+			resultat = Bot.index[com].retourner(attribut, parametres)
 			if nouv_var then
-				if $index[nouv_var] == nil then
-					$index[nouv_var] = resultat
+				if Bot.index[nouv_var] == nil then
+					Bot.index[nouv_var] = resultat
 				else
 					raise IndexErreur, "#{nouv_var} (#{self}) existe déjà " + 
-							"dans l'index (#{$index[nouv_var]})"
+							"dans l'index (#{Bot.index[nouv_var]})"
 				end
 				return ""
 			else

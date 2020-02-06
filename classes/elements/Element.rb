@@ -1,4 +1,5 @@
 require 'csv'
+require_relative '../Bot.rb'
 require_relative '../Array.rb'
 
 ##
@@ -41,7 +42,7 @@ class Element
 	# Exemple de retour :
 	#	"/home/foo/FlashNewsBot/tables/"
 	def Element.chemin
-		return $dir + "/tables/"
+		return Bot.dir + "/tables/"
 	end
 	
 	##

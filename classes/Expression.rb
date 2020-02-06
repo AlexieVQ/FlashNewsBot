@@ -1,3 +1,4 @@
+require_relative 'Bot.rb'
 require_relative 'String.rb'
 require_relative 'Array.rb'
 require_relative 'Erreurs.rb'
@@ -91,12 +92,12 @@ class Expression
 		nom_pers = parametres[0]
 		chaine_m = parametres[1]
 		chaine_f = parametres[2]
-		unless($index[nom_pers]) then
+		unless(Bot.index[nom_pers]) then
 			raise IndexErreur, "#{nom_pers} absent de l'index"
 		end
-		if($index[nom_pers].genre == 'M') then
+		if(Bot.index[nom_pers].genre == 'M') then
 			return chaine_m
-		elsif($index[nom_pers].genre == 'F') then
+		elsif(Bot.index[nom_pers].genre == 'F') then
 			return chaine_f
 		else
 			return nil

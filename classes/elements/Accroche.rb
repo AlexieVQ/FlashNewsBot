@@ -1,3 +1,4 @@
+require_relative '../Bot.rb'
 require_relative 'Element.rb'
 require_relative '../String.rb'
 
@@ -39,35 +40,35 @@ class Accroche < Element
 			
 			# Ajout d'un emoji régional correspondant à la localité ou au
 			# personnage dans parametres[1]
-			if($index['loc_info'] && $index['loc_info'].emoji != "") then
-				accroche += $index['loc_info'].emoji
-			elsif(parametres[1] && $index[parametres[1]].localite &&
-				  $index[parametres[1]].localite.nom_colle != "France") then
-				accroche += $index[parametres[1]].localite.emoji
+			if(Bot.index['loc_info'] && Bot.index['loc_info'].emoji != "") then
+				accroche += Bot.index['loc_info'].emoji
+			elsif(parametres[1] && Bot.index[parametres[1]].localite &&
+				  Bot.index[parametres[1]].localite.nom_colle != "France") then
+				accroche += Bot.index[parametres[1]].localite.emoji
 			end
 			
 			# Si l'info a un hashtag, ajoute le hashtag puis le nom du
 			# personnage dans parametres[1], et arrête la construction de la
 			# chaîne.
-			if(parametres[1] && $index['info'].hashtag) then
-				accroche += " " + $index['info'].hashtag + " : " +
-						$index[parametres[1]].nom
+			if(parametres[1] && Bot.index['info'].hashtag) then
+				accroche += " " + Bot.index['info'].hashtag + " : " +
+						Bot.index[parametres[1]].nom
 			else
 				# Ajout du nom du personnage sous forme de hashtag ou non, puis
 				# de son surnom.
 				if(parametres[1] && rand(4) == 1) then
 					if(rand(2) == 1) then
-						accroche += " #" + $index[parametres[1]].nom_colle
+						accroche += " #" + Bot.index[parametres[1]].nom_colle
 					else
-						accroche += " " + $index[parametres[1]].nom.majuscule
+						accroche += " " + Bot.index[parametres[1]].nom.majuscule
 					end
-					accroche += " : " + $index[parametres[1]].surnom
+					accroche += " : " + Bot.index[parametres[1]].surnom
 				# Ajout d'un mot d'arroche, puis du nom du personnage, si donné.
 				else
 					accroche += " " + elt_alea.accroche
 					accroche =~ /:/ ? accroche += " " : accroche += " - "
 					if(parametres[1]) then
-						accroche += $index[parametres[1]].nom.majuscule
+						accroche += Bot.index[parametres[1]].nom.majuscule
 					else
 						return accroche + " " + parametres[0].majuscule
 					end

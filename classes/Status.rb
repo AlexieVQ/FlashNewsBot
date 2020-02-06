@@ -1,15 +1,6 @@
+require_relative 'Bot.rb'
 require_relative 'Expression.rb'
 require_relative 'Erreurs.rb'
-require_relative 'elements/Info.rb'
-require_relative 'elements/Pers.rb'
-require_relative 'elements/Accroche.rb'
-require_relative 'elements/DateInfo.rb'
-require_relative 'elements/Lieu.rb'
-require_relative 'elements/Localite.rb'
-require_relative 'elements/Parti.rb'
-require_relative 'elements/Media.rb'
-require_relative 'elements/Circo.rb'
-require_relative 'elements/Decla.rb'
 
 ##
 # Classe représentant un status.
@@ -30,29 +21,11 @@ class Status
 	## Initialisation aléatoire du status
 	def initialize
 		begin
-			$index = Hash.new
-
-			$index['rand'] = Expression.new(:rand)
-			$index['maj'] = Expression.new(:maj)
-			$index['cap'] = Expression.new(:cap)
-			$index['genre'] = Expression.new(:genre)
-			$index['gse'] = Expression.new(:gse)
-			$index['h'] = Expression.new(:h)
-			$index['accroche'] = Accroche
-			$index['pers'] = Pers
-			$index['date'] = DateInfo
-			$index['lieu'] = Lieu
-			$index['localite'] = Localite
-			$index['parti'] = Parti
-			$index['media'] = Media
-			$index['circo'] = Circo
-			$index['decla'] = Decla
-			
-			$index['info'] = Info.elt_alea
-			if $index['info'].structure && $index['info'].structure != "" then
-				@texte = $index['info'].structure.evaluer
+			Bot.index['info'] = Info.elt_alea
+			if Bot.index['info'].structure && Bot.index['info'].structure != "" then
+				@texte = Bot.index['info'].structure.evaluer
 			else
-				$index['sujet'] = Pers.elt_alea
+				Bot.index['sujet'] = Pers.elt_alea
 				
 				@texte = partie_info
 				@texte = Accroche.retourner(nil, [@texte, "sujet"])
@@ -78,18 +51,18 @@ class Status
 	# éventuellement sa circonstance, son lieu...  
 	# Le sujet n'est pas nommé.
 	def partie_info
-		chaine = $index['info'].action
+		chaine = Bot.index['info'].action
 		
 		if rand(2) == 1 then
-			chaine += " " + $index['date'].retourner.date
+			chaine += " " + Bot.index['date'].retourner.date
 		end
 		
 		if rand(2) == 1 then
-			chaine += " " + $index['lieu'].retourner.lieu
+			chaine += " " + Bot.index['lieu'].retourner.lieu
 		end
 		
 		if rand(2) == 1 then
-			chaine += " " + $index['info'].circo
+			chaine += " " + Bot.index['info'].circo
 		end
 		
 		return chaine + "."
@@ -98,7 +71,7 @@ class Status
 	##
 	# Génère la partie contenant la déclaration du sujet.
 	def partie_decla
-		chaine = $index['sujet'].surnom.majuscule
+		chaine = Bot.index['sujet'].surnom.majuscule
 		
 		chaine += " " + case rand(3)
 		when 0 then "a déclaré"
@@ -107,18 +80,18 @@ class Status
 		end
 		
 		if rand(2) == 1 then
-			chaine += " " + $index['date'].retourner.date
+			chaine += " " + Bot.index['date'].retourner.date
 		end
 		
 		if rand(2) == 1 then
-			chaine += " " + $index['media'].retourner.nom("à")
+			chaine += " " + Bot.index['media'].retourner.nom("à")
 		end
 		
 		if rand(2) == 1 then
-			chaine += " " + $index['circo'].retourner.circo
+			chaine += " " + Bot.index['circo'].retourner.circo
 		end
 		
-		chaine += " “" + $index['info'].decla + "”"
+		chaine += " “" + Bot.index['info'].decla + "”"
 		return chaine + "."
 	end
 	

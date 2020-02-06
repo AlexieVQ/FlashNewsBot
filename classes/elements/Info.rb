@@ -1,3 +1,4 @@
+require_relative '../Bot.rb'
 require_relative 'Element.rb'
 require_relative 'Action.rb'
 require_relative 'Circo.rb'
@@ -149,7 +150,7 @@ class Info < Element
 	# Retourne une déclaration (String) de l'information aléatoirement (ou une
 	# déclaration universelle) après l'avoir évaluée (voir String#evaluer).
 	def decla
-		return @declas.elt_alea($index['sujet'].declas | [Decla.elt_alea])
+		return @declas.elt_alea(Bot.index['sujet'].declas | [Decla.elt_alea])
 			.decla.evaluer
 	end
 	
