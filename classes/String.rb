@@ -31,7 +31,7 @@ class String
 	def evaluer
 		res = self
 		rescom = nil
-		while res =~ /{[^{}]+}/ do
+		while(res =~ /{[^{}]+}/) do
 			res = res.gsub(/{[^{}]+}/) do | commande |
 				rescom = commande.eval_expression
 			end
@@ -71,17 +71,17 @@ class String
 		# article défini
 		when "le"
 			# masculin
-			if self =~ /^un /i then
+			if(self =~ /^un /i) then
 				# nom commençant par une voyelle
-				if self =~ /^un [aeiouyéèàêâôûùïî]/i then
+				if(self =~ /^un [aeiouyéèàêâôûùïî]/i) then
 					return self.gsub(/^un /i, "l’")
 				else # nom commençant par une consonne
 					return self.gsub(/^un/i, "le")
 				end
 			# féminin
-			elsif self =~ /^une /i then
+			elsif(self =~ /^une /i) then
 				# nom commençant par une voyelle
-				if self =~ /^une [aeiouyéèàêâôûùïî]/i then
+				if(self =~ /^une [aeiouyéèàêâôûùïî]/i) then
 					return self.gsub(/^une /i, "l’")
 				else # nom commençant par une consonne
 					return self.gsub(/^une/i, "la")
@@ -94,10 +94,10 @@ class String
 		# Préposition "de"
 		when "de"
 			# Contraction avec "le"
-			if self =~ /^le [^aeiouyéèàêâôûùïî]/i then
+			if(self =~ /^le [^aeiouyéèàêâôûùïî]/i) then
 				return self.gsub(/^le/i, "du")
 			# Devant une voyelle
-			elsif self =~ /^[aeiouyéèàêâôûùïî]/i then
+			elsif(self =~ /^[aeiouyéèàêâôûùïî]/i) then
 				return self.gsub(/^/, "d’")
 			# Ajout du "de" sans modifications
 			else
@@ -107,7 +107,7 @@ class String
 		# Préposition "à"
 		when "à"
 			# Contraction avec "le"
-			if self =~ /^le /i then
+			if(self =~ /^le /i) then
 				return self.gsub(/^le/i, "au")
 			# Ajout du "à" sans modification
 			else
@@ -117,13 +117,13 @@ class String
 		# Préposition "en"
 		when "en"
 			# Contraction avec "le"
-			if self =~ /^le /i then
+			if(self =~ /^le /i) then
 				return self.gsub(/^le/i, "au")
 			# Contraction avec "la"
-			elsif self =~ /^la /i then
+			elsif(self =~ /^la /i) then
 				return self.gsub(/^la/i, "en")
 			# Contraction avec "l'"
-			elsif self =~ /^l’/i then
+			elsif(self =~ /^l’/i) then
 				return self.gsub(/^l’/i, "en ")
 			# Ajout du "en" sans modification
 			else
@@ -156,7 +156,7 @@ class String
 	def eval_expression
 		begin
 			# Nom de la variable à affecter
-			if self =~ /{\w+=/ then
+			if(self =~ /{\w+=/) then
 				nouv_var = self.scan(/{\w+=/)[0].scan(/\w+/)[0]
 				# Commande principale
 				com = self.scan(/=\w+/)[0].scan(/\w+/)[0]
@@ -165,13 +165,13 @@ class String
 			end
 			
 			# Attribut
-			if self =~ /\.\w+/ then
+			if(self =~ /\.\w+/) then
 				attribut = self.scan(/\.\w+/)[0].scan(/\w+/)[0]
 			end
 			
 			# Paramètres
 			parametres = []
-			if self =~ /\([^\(\)]*\)/ then
+			if(self =~ /\([^\(\)]*\)/) then
 				parametres = self.scan(/[\,\(][^\(\)\,]*/)
 				parametres.each do | param |
 					param.gsub!(/^[\,\(]/, "")
@@ -179,12 +179,12 @@ class String
 			end
 			
 			# Demande à l'index
-			if Bot.index[com] == nil then
+			if(Bot.index[com] == nil) then
 				raise IndexErreur, "#{com} (#{self}) n'existe pas dans l'index"
 			end
 			resultat = Bot.index[com].retourner(attribut, parametres)
-			if nouv_var then
-				if Bot.index[nouv_var] == nil then
+			if(nouv_var) then
+				if(Bot.index[nouv_var] == nil) then
 					Bot.index[nouv_var] = resultat
 				else
 					raise IndexErreur, "#{nouv_var} (#{self}) existe déjà " + 
