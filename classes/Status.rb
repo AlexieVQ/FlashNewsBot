@@ -66,15 +66,15 @@ class Status
 	def partie_info
 		chaine = Bot.index['info'].action
 		
-		if rand(2) == 1 then
+		if(rand(2) == 1) then
 			chaine += " " + Bot.index['date'].retourner.date
 		end
 		
-		if rand(2) == 1 then
+		if(rand(2) == 1) then
 			chaine += " " + Bot.index['lieu'].retourner.lieu
 		end
 		
-		if rand(2) == 1 then
+		if(rand(2) == 1) then
 			chaine += " " + Bot.index['info'].circo
 		end
 		
@@ -91,15 +91,15 @@ class Status
 		when 2 then "aurait dit"
 		end
 		
-		if rand(2) == 1 then
+		if(rand(2) == 1) then
 			chaine += " " + Bot.index['date'].retourner.date
 		end
 		
-		if rand(2) == 1 then
+		if(rand(2) == 1) then
 			chaine += " " + Bot.index['media'].retourner.nom("à")
 		end
 		
-		if rand(2) == 1 then
+		if(rand(2) == 1) then
 			chaine += " " + Bot.index['circo'].retourner.circo
 		end
 		
