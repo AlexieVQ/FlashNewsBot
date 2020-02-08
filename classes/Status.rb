@@ -3,33 +3,50 @@ require_relative 'Expression.rb'
 require_relative 'Erreurs.rb'
 
 ##
-# Classe représentant un status.
-#
-# Un status est caractérisé par son texte.  
-# Il peut être créé et envoyé.
+# Un status à envoyer au réseau social. Il se construit aléatoirement à la
+# création.
 
 class Status
 	
-	## Texte du status
-	attr :texte, false
+	#############
+	# ATTRIBUTS #
+	#############
 	
-	## Création du status
-	def Status.creer
-		new()
-	end
+	##
+	# Texte du status (String)
+	attr_reader :texte
 	
-	## Initialisation aléatoire du status
+	################
+	# CONSTRUCTEUR #
+	################
+	
+	##
+	# Crée un nouveau status de manière aléatoire.
+	#
+	# L'index est d'abord réinitialisé (voir Bot::index_reset). 
 	def initialize
 		begin
+			Bot.index_reset
+			
+			# Choix de l'information principale du status
 			Bot.index['info'] = Info.elt_alea
-			if Bot.index['info'].structure && Bot.index['info'].structure != "" then
+			
+			# Cas où l'information a une structure personnalisée : on évalue la
+			# structure
+			if(Bot.index['info'].structure && Bot.index['info'].structure != "")
+			then
 				@texte = Bot.index['info'].structure.evaluer
 			else
+				# Choix du personnage sujet de l'information
 				Bot.index['sujet'] = Pers.elt_alea
 				
+				# Génération de la partie information
 				@texte = partie_info
+				# Ajout de l'accroche
 				@texte = Accroche.retourner(nil, [@texte, "sujet"])
-				if rand(2) == 1 then
+				# Ajout de la deuxième partie du status, où le sujet prend la
+				# parole
+				if(rand(2) == 1) then
 					@texte += " " + partie_decla
 				end
 			end
@@ -39,14 +56,10 @@ class Status
 		end
 	end
 	
-	## Renvoie le texte de l'info
-	def to_s
-		return self.texte
-	end
+	alias :to_s :texte
 	
 	private
 	
-	##
 	# Génère la partie principale contenant l'action de l'information et
 	# éventuellement sa circonstance, son lieu...  
 	# Le sujet n'est pas nommé.
@@ -68,7 +81,6 @@ class Status
 		return chaine + "."
 	end
 	
-	##
 	# Génère la partie contenant la déclaration du sujet.
 	def partie_decla
 		chaine = Bot.index['sujet'].surnom.majuscule

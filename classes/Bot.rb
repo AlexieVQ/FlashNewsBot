@@ -60,9 +60,7 @@ class Bot
 
 		loop do
 			
-			index_reset
-
-			status = Status.creer
+			status = Status.new
 
 			puts "[#{Time.now}] #{status}"
 			unless(offline) then
@@ -102,8 +100,13 @@ class Bot
 		return @@index
 	end
 	
-	private
-	
+	##
+	# (Ré)initialise l'index (voir Bot::index) en définissant les commandes
+	# +rand+, +maj+, +cap+, +genre+, +gse+, +h+ (voir Expression) et les classes
+	# d'éléments +accroche+ (voir Accroche), +pers+ (voir Pers), +date+ (voir
+	# DateInfo), +lieu+ (voir Lieu), +localite+ (voir Localite), +parti+ (voir
+	# Parti), +media+ (voir Media), +circo+ (voir Circo) et +decla+ (voir
+	# Decla).
 	def Bot.index_reset
 		@@index = Hash.new
 		
