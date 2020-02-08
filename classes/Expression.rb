@@ -9,7 +9,7 @@ require_relative 'Erreurs.rb'
 # définies entre accolades.
 #
 # Les expressions permettent par exemple d'invoquer un nouvel Element dans
-# l'infomation comme un nouveau personnage (<tt>{p=pers}{p.nom}</tt> crée un
+# l'information comme un nouveau personnage (<tt>{p=pers}{p.nom}</tt> crée un
 # personnage +p+ et affiche son nom), un lieu, une déclaration...
 #
 # D'autres expressions plus simples permettent par exemple de choisir
