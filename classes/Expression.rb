@@ -58,7 +58,7 @@ class Expression
 	# Met l'ensemble de la chaîne <tt>parametres[0]</tt> en majuscules.
 	#
 	# Exemple :
-	#	{maj(Breaking news)}
+	#	{cap(Breaking news)}
 	# produit le résultat suivant :
 	#	BREAKING NEWS
 	#
