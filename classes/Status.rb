@@ -23,7 +23,15 @@ class Status
 	##
 	# Crée un nouveau status de manière aléatoire.
 	#
-	# L'index est d'abord réinitialisé (voir Bot::index_reset). 
+	# L'index est d'abord réinitialisé (voir Bot::index_reset). Une information
+	# est stockée dans son entrée +info+. Si l'information a une structure
+	# personnalisée (voir Info#structure), celle-ci est évaluée. Sinon un
+	# personnage sujet de l'information est stocké dans +sujet+. L'action de
+	# l'information (voir Info#action) est évaluée, avec possible ajout d'une
+	# DateInfo et d'un Lieu. Ensuite une Accroche est ajouté en début de status,
+	# puis une deuxième partie où le sujet réagit à l'information est
+	# aléatoirement ajoutée, ou non. Cette partie incorpore Info#decla,
+	# Pers#declas ou une déclaration universelle.
 	def initialize
 		begin
 			Bot.index_reset
@@ -55,6 +63,10 @@ class Status
 			retry
 		end
 	end
+	
+	############
+	# MÉTHODES #
+	############
 	
 	alias :to_s :texte
 	
