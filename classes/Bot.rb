@@ -1,7 +1,7 @@
 require 'daemons'
 require_relative 'Status.rb'
 require_relative 'Bdd.rb'
-require_relative 'Api.rb'
+require_relative 'TwitterApi.rb'
 require_relative 'elements/Info.rb'
 require_relative 'elements/Pers.rb'
 require_relative 'elements/Accroche.rb'
@@ -51,7 +51,7 @@ class Bot
 		@@dir = Dir.pwd
 		
 		unless(offline) then
-			api = Api.connecter(username)
+			api = TwitterApi.connecter(username)
 			Daemons.daemonize({backtrace: true,
 							   app_name: appname,
 							   log_output: true})
@@ -65,7 +65,7 @@ class Bot
 			puts "[#{Time.now}] #{status}"
 			unless(offline) then
 				if(status.texte.length <= api.limite) then
-					api.envoyer(status.texte)
+					api.envoyer(status)
 				end
 			end
 			
@@ -128,4 +128,6 @@ class Bot
 		
 		return @@index
 	end
+	
+	private_class_method :new
 end
