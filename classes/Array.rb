@@ -1,5 +1,4 @@
 require_relative 'String.rb'
-require_relative 'Erreurs.rb'
 
 ##
 # Ajout à la classe Array d'une méthode pour obtenir un élément du tableau de
