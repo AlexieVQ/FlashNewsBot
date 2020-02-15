@@ -58,7 +58,7 @@ class CompteTwitter < Compte
 	# s'authentifie auprès de Twitter.
 	#
 	# *Attention* : la classe ne peut être instanciée hors de la classe
-	# CompteTwitter. Utiliser CompteTwitter::connexion.
+	# CompteTwitter. Utiliser CompteTwitter::connecter.
 	#
 	# Paramètres :
 	# [+id+]            Identifiant du compte dans la base de données (Integer)
@@ -117,13 +117,10 @@ class CompteTwitter < Compte
 		end
 	end
 	
+	##
+	# Limite de caractères d'un status (Integer)
 	def limite
 		return 280
-	end
-	
-	private
-	
-	def premiere_auth
 	end
 	
 end
