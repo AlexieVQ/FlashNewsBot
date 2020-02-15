@@ -22,7 +22,7 @@ CREATE TABLE statuses (
 	id BIGINT NOT NULL,
 	compte_id INTEGER NOT NULL REFERENCES comptes(id),
 	PRIMARY KEY (id, compte_id),
-	date TIMESTAMPTZ NOT NULL,
+	created_at TIMESTAMPTZ NOT NULL,
 	id_info INTEGER NOT NULL,
 	partages INTEGER,
 	likes INTEGER,
@@ -31,7 +31,7 @@ CREATE TABLE statuses (
 );
 
 -- Historique des personnages envoyés dans les status
-CREATE TABLE historique_pers (
+CREATE TABLE pers (
 	status_id INTEGER NOT NULL,
 	compte_id INTEGER NOT NULL,
 	id_pers INTEGER NOT NULL,

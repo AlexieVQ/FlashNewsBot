@@ -1,5 +1,6 @@
 require_relative 'Bot.rb'
 require_relative 'Expression.rb'
+require_relative 'elements/Pers.rb'
 
 ##
 # Un status à envoyer au réseau social. Il se construit aléatoirement à la
@@ -68,6 +69,23 @@ class Status
 	############
 	
 	alias :to_s :texte
+	
+	##
+	# Information principale du status (Info)
+	def info
+		return Bot.index['info']
+	end
+	
+	##
+	# Array de Pers présentes dans le status
+	def pers
+		return Bot.index.reduce([]) do |liste, pers|
+			if(pers.kind_of? Pers) then
+				liste << pers
+			end
+			liste
+		end
+	end
 	
 	private
 	

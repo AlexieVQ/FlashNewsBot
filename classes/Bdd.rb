@@ -1,4 +1,5 @@
 require 'pg'
+require 'date'
 require_relative 'Compte.rb'
 require_relative 'Array.rb'
 
@@ -69,11 +70,37 @@ class Bdd
 	# [+username+]      Nom d'utilisateur du compte (String)
 	def compte_twitter(username)
 		begin
-			return requete("SELECT * FROM comptes_twitter WHERE username = " +
+			res = requete("SELECT * FROM comptes_twitter WHERE username = " +
 			               "'#{username}';")[0]
+			return {
+				id: res['compte_id'],
+				username: res['username'],
+				api_key: res['api_key'],
+				api_secret: res['api_secret']
+			}
 		rescue IndexError
 			return nil
 		end
+	end
+	
+	##
+	# Enregistre le status d'id donné dans la base de données.
+	#
+	# Paramètres :
+	# [+id+]            Identifiant du status par l'API Twitter (Integer)
+	# [+compte+]        Compte ayant posté le status
+	# [+created_at+]    \Date de création du status (String)
+	# [+info+]          Info utilisée dans le status
+	# [+pers+]          Personnages utilisées dans le status (Array de Pers)
+	def insert_status(id, compte, created_at, info, pers)
+		requete("INSERT INTO statuses(id, compte_id, created_at, id_info) " +
+		        "VALUES (#{id}, #{compte.id}, '#{DateTime.parse(created_at)}',"+
+		        " #{info.id});")
+		pers.each do |perso|
+			requete("INSERT INTO pers(status_id, compte_id, id_pers) VALUES " +
+			        "(#{id}, #{compte.id}, #{perso.id});")
+		end
+		return self
 	end
 	
 	private

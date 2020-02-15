@@ -26,8 +26,8 @@ class CompteTwitter < Compte
 	# [+username+]  Nom d'utilisateur (String)
 	def CompteTwitter.connecter(username)
 		if(compte = Bot.bdd.compte_twitter(username)) then
-			return new(compte["id"], username, compte["api_key"],
-			           compte["api_secret"])
+			return new(compte[:id], username, compte[:api_key],
+			           compte[:api_secret])
 		else
 			print "Clé d'API : "
 			api_key = gets.chomp
@@ -39,11 +39,18 @@ class CompteTwitter < Compte
 		
 	end
 	
+	#############
+	# ATTRIBUTS #
+	#############
+	
+	##
+	# Identifiant du compte dans la base de données (Integer)
+	attr_reader :id
+	
 	#######################
 	# VARIABLES DE CLASSE #
 	#######################
 	
-	# @id			=> ID du compte dans la base (Integer)
 	# @username		=> Nom d'utilisateur du compte Twitter (String)
 	# @api_key		=> Clé de l'API Twitter (String)
 	# @api_secret	=> Clé secrète de l'API Twitter (String)
@@ -103,7 +110,8 @@ class CompteTwitter < Compte
 	############
 	
 	##
-	# Envoie le status sur le compte Twitter.
+	# Envoie le status sur le compte Twitter et le stocke dans la base de
+	# données (Retourne son id, Integer).
 	#
 	# Paramètres :
 	# [+status+]    Status
@@ -112,9 +120,14 @@ class CompteTwitter < Compte
 			"https://api.twitter.com/1.1/statuses/update.json",
 			{:status => status.texte})
 		
-		unless(reponse == Net::HTTPSuccess) then
-			reponse.value
-		end
+# 		if(reponse == Net::HTTPSuccess) then
+			tweet = JSON.parse(reponse.body)
+			Bot.bdd.insert_status(tweet["id"].to_i, self, tweet["created_at"],
+			                      status.info, status.pers)
+			return tweet["id"].to_i
+# 		else
+# 			reponse.value
+# 		end
 	end
 	
 	##

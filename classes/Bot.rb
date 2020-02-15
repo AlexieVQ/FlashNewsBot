@@ -116,6 +116,7 @@ class Bot
 		@@index['genre'] = Expression.new(:genre)
 		@@index['gse'] = Expression.new(:gse)
 		@@index['h'] = Expression.new(:h)
+		@@index['randn'] = Expression.new(:randn)
 		@@index['accroche'] = Accroche
 		@@index['pers'] = Pers
 		@@index['date'] = DateInfo
