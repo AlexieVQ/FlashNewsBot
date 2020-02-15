@@ -1,6 +1,5 @@
 require_relative 'Bot.rb'
 require_relative 'Expression.rb'
-require_relative 'Erreurs.rb'
 
 ##
 # Un status à envoyer au réseau social. Il se construit aléatoirement à la
@@ -58,7 +57,7 @@ class Status
 					@texte += " " + partie_decla
 				end
 			end
-		rescue IndexErreur => e
+		rescue IndexError => e
 			puts "#{e.message} : réessai"
 			retry
 		end

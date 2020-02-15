@@ -1,7 +1,6 @@
 require_relative 'Bot.rb'
 require_relative 'String.rb'
 require_relative 'Array.rb'
-require_relative 'Erreurs.rb'
 
 ##
 # Les expressions sont présentes dans les chaînes de caractères contenues dans
@@ -87,13 +86,13 @@ class Expression
 	#                   [<tt>parametres[1]</tt>]    Chaîne masculine
 	#                   [<tt>parametres[2]</tt>]    Chaîne féminine
 	#
-	# Si le personnage n'est pas présent dans l'index, lève une *IndexErreur*.
+	# Si le personnage n'est pas présent dans l'index, lève une *IndexError*.
 	def Expression.genre(attribut, parametres)
 		nom_pers = parametres[0]
 		chaine_m = parametres[1]
 		chaine_f = parametres[2]
 		unless(Bot.index[nom_pers]) then
-			raise IndexErreur, "#{nom_pers} absent de l'index"
+			raise IndexError, "#{nom_pers} absent de l'index"
 		end
 		if(Bot.index[nom_pers].genre == 'M') then
 			return chaine_m

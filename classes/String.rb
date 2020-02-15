@@ -1,5 +1,4 @@
 require_relative 'Bot.rb'
-require_relative 'Erreurs.rb'
 
 ##
 # Ajout à la classe String de méthodes pour évaluer les expressions et modifier
@@ -17,16 +16,16 @@ class String
 	#   paramètres (exemple : <tt>{objet=pers}</tt> enregistre à la clé
 	#   +_objet_+ de l'index un nouveau personnage).  
 	#   L'expression est simplement supprimée de la chaîne. Si un élément est
-	#   déjà présent à la clé donnée, une IndexErreur est levée.
+	#   déjà présent à la clé donnée, une IndexError est levée.
 	# * Les requêtes sur les éléments : <tt>{cle.attribut(param1,param2)}</tt>
 	#   demande à l'élément à la clé +cle+ de l'index de retourner sa valeur
 	#   +attribut+ avec la liste des paramètres donnés, et écrit le résultat à
 	#   la place de l'expression. Appelle la méthode +retourner+ de l'élément.
 	#   Exemple : <tt>{loc_lieu.nom(à)}</tt> écrit le nom de la localité
 	#   enregistrée à la clé +_loc_lieu_+ avec la préposition <em>à</em>.  
-	#   Lève une IndexErreur si la clé n'existe pas dans l'index.
+	#   Lève une IndexError si la clé n'existe pas dans l'index.
 	# * Les tests : <tt>{cle}</tt> teste si +cle+ existe dans l'index et lève
-	#   une IndexErreur si elle n'existe pas. L'expression est simplement
+	#   une IndexError si elle n'existe pas. L'expression est simplement
 	#   supprimée de la chaîne.
 	def evaluer
 		res = self
@@ -180,14 +179,14 @@ class String
 			
 			# Demande à l'index
 			if(Bot.index[com] == nil) then
-				raise IndexErreur, "#{com} (#{self}) n'existe pas dans l'index"
+				raise IndexError, "#{com} (#{self}) n'existe pas dans l'index"
 			end
 			resultat = Bot.index[com].retourner(attribut, parametres)
 			if(nouv_var) then
 				if(Bot.index[nouv_var] == nil) then
 					Bot.index[nouv_var] = resultat
 				else
-					raise IndexErreur, "#{nouv_var} (#{self}) existe déjà " + 
+					raise IndexError, "#{nouv_var} (#{self}) existe déjà " + 
 							"dans l'index (#{Bot.index[nouv_var]})"
 				end
 				return ""
