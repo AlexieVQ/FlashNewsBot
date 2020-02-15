@@ -2,7 +2,10 @@
 
 -- Table des Api
 CREATE TABLE apis (
-	id SERIAL PRIMARY KEY
+	id SERIAL PRIMARY KEY,
+	username VARCHAR(64) NOT NULL,
+	domaine VARCHAR(64) NOT NULL,
+	UNIQUE (username, domaine)
 );
 
 -- Table des TwitterApi (spécialisation des Api)

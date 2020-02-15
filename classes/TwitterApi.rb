@@ -24,8 +24,11 @@ class TwitterApi < Api
 	# VARIABLES DE CLASSE #
 	#######################
 	
+	# @id			=> ID de l'app dans la base (Integer)
+	# @username		=> Nom d'utilisateur du compte Twitter (String)
+	# @api_key		=> Clé de l'API Twitter (String)
+	# @api_secret	=> Clé secrète de l'API Twitter (String)
 	# @access_token	=> Token d'accès à l'API (OAuth::AccessToken)
-	# @id_bdd		=> ID de l'app dans la base (Integer)
 	
 	################
 	# CONSTRUCTEUR #
@@ -42,8 +45,51 @@ class TwitterApi < Api
 	# Paramètres :
 	# [+username+]  Nom d'utilisateur (String)
 	def initialize(username)
-		super(username)
-		@limite = 280
+		if(twitter_api = Bot.bdd.twitter_api(username)) then
+			@id = twitter_api[:id]
+			@api_key = twitter_api[:api_key]
+			@api_secret = twitter_api[:api_secret]
+		else
+			print "Clé d'API : "
+			@api_key = gets.chomp
+			print "Clé secrète d'API : "
+			@api_secret = gets.chomp
+		end
+		consumer = OAuth::Consumer.new(@api_key,
+		                               @api_secret,
+		                               {:site => "https://api.twitter.com",
+		                               :scheme => :header})
+		request_token = consumer.get_request_token(:oauth_callback => 'oob')
+		oauth_token = request_token.token
+		oauth_token_secret = request_token.secret
+		url = request_token.authorize_url(:oauth_callback => 'oob')
+		
+		# Demande à l'utilisateur d'ouvrir l'URL, d'autoriser l'application et
+		# d'écrire le code obtenu dans le terminal
+		
+		puts "Ouvrez " + url + " dans votre navigateur et autorisez " +
+			"l'application."
+		print "Code obtenu : "
+		oauth_verifier = gets.chomp
+		hash = {
+			oauth_token: oauth_token,
+			oauth_token_secret: oauth_token_secret
+		}
+		request_token = OAuth::RequestToken.from_hash(consumer, hash)
+		@access_token = request_token.get_access_token(
+			{:oauth_verifier => oauth_verifier,
+		     :oauth_token => oauth_token,
+		     :oauth_token_secret => oauth_token_secret}
+		)
+		unless(@id) then
+			reponse = @access_token.get(
+				"https://api.twitter.com/1.1/account/settings.json")
+			unless(reponse == Net::HTTPSuccess) then
+				reponse.value
+			end
+			username = JSON.parse(reponse.body)["screen_name"]
+			@id_bdd = Bot.bdd.new_twitter_api(username, @api_key, @api_secret)
+		end
 	end
 	
 	############
@@ -70,53 +116,13 @@ class TwitterApi < Api
 		end
 	end
 	
+	def limite
+		return 280
+	end
+	
 	private
 	
-	# Authentifie l'application auprès de Twitter pour l'username donné.
-	def auth(username)
-		session = Hash.new
-		unless(@id_bdd = Bot.bdd.app("twitter.com", username, session)) then
-			print "Clé d'API : "
-			session[:api_key] = gets.chomp
-			print "Clé secrète d'API : "
-			session[:api_secret] = gets.chomp
-		end
-		consumer = OAuth::Consumer.new(session[:api_key],
-		                               session[:api_secret],
-		                               {:site => "https://api.twitter.com",
-		                               :scheme => :header})
-		request_token = consumer.get_request_token(:oauth_callback => 'oob')
-		session[:oauth_token] = request_token.token
-		session[:oauth_token_secret] = request_token.secret
-		url = request_token.authorize_url(:oauth_callback => 'oob')
-		
-		# Demande à l'utilisateur d'ouvrir l'URL, d'autoriser l'application et
-		# d'écrire le code obtenu dans le terminal
-		
-		puts "Ouvrez " + url + " dans votre navigateur et autorisez " +
-			"l'application."
-		print "Code obtenu : "
-		session[:oauth_verifier] = gets.chomp
-		hash = {
-			oauth_token: session[:oauth_token],
-			oauth_token_secret: session[:oauth_token_secret]
-		}
-		request_token = OAuth::RequestToken.from_hash(consumer, hash)
-		@access_token = request_token.get_access_token(
-			{:oauth_verifier => session[:oauth_verifier],
-		     :oauth_token => session[:oauth_token],
-		     :oauth_token_secret => session[:oauth_token_secret]}
-		)
-		unless(@id_bdd) then
-			reponse = @access_token.get(
-				"https://api.twitter.com/1.1/account/settings.json")
-			username = JSON.parse(reponse.body)["screen_name"]
-			@id_bdd = Bot.bdd.enregistrer_app(ApiType::TWITTER,
-			                               "twitter.com",
-			                               username,
-			                               session[:api_key],
-			                               session[:api_secret])
-		end
+	def premiere_auth
 	end
 	
 end

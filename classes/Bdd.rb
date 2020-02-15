@@ -1,84 +1,85 @@
 require 'pg'
 require_relative 'Api.rb'
 require_relative 'Array.rb'
-=begin
-require_relative 'Accroche.rb'
-require_relative 'Localite.rb'
-require_relative 'Pers.rb'
-require_relative 'NomPers.rb'
-require_relative 'Surnom.rb'
-require_relative 'Parti.rb'
-require_relative 'Media.rb'
-require_relative 'DateInfo.rb'
-require_relative 'Lieu.rb'
-require_relative 'Info.rb'
-require_relative 'Action.rb'
-require_relative 'Circo.rb'
-require_relative 'Decla.rb'
-=end
 
 ##
-# Classe représentant la base de données du bot
-#
-# La base de données doit être préalablement créée dans PostgreSQL, de nom
-# "FlashNewsBot", à l'aide des scripts présents dans le répertoire bdd.
+# Classe permettant d'accéder à la base de donnée (PostgreSQL) du bot.
 
 class Bdd
 	
-	# @conn		=> Connexion à la BDD
+	########################
+	# VARIABLES D'INSTANCE #
+	########################
 	
-	def initialize
-		@conn = PG.connect(dbname: "FlashNewsBot")
-	end
+	# @conn		=> Connexion à la BDD (PG::Connexion)
 	
-	##
-	# Effectue une requête SQL dans la base et renvoie le résultat.
-	
-	def requete(requete)
-		return @conn.exec(requete)
-	end
+	################
+	# CONSTRUCTEUR #
+	################
 	
 	##
-	# Enregistre une application dans la base.
+	# Crée un nouvel accès à la BDD de nom donné (<tt>"FlashNewsBot"</tt> par
+	# défaut). Un serveur PostgreSQL doit être installé sur la machine sur
+	# laquelle est exécuté le script et la table de nom donné doit être créée et
+	# initialisé à l'aide du script SQL inclus dans les sources du projet.
+	#
+	# Paramètres :
+	# [+dbname+]    Nom de la base de données (String, par défaut
+	#               <tt>"FlashNewsBot"</tt>)
+	def initialize(dbname = "FlashNewsBot")
+		@conn = PG.connect(dbname: dbname)
+	end
 	
-	def enregistrer_app(type,
-	                    domaine,
-	                    username,
-	                    api_key,
-	                    api_secret)
-		case type
-		when ApiType::TWITTER then
-			chaine_type = 'twitter'
-		end
-		
-		requete("INSERT INTO application(type, domaine, username, api_key,
-		        api_secret) VALUES ('#{chaine_type}', '#{domaine}',
-		        '#{username}', '#{api_key}', '#{api_secret}');")
-		
-		res = requete("SELECT id FROM application WHERE domaine =
-		              '#{domaine}' AND username = '#{username}';")
-		if res.ntuples != 0 then
-			id = res[0].fetch("id").to_i
-		else
-			id = nil
-		end
+	#######################
+	# MÉTHODES D'INSTANCE #
+	#######################
+	
+	##
+	# Enregistre le compte Twitter de +username+ donné dans la base de données.
+	#
+	# Retourne l'<tt>id</tt> du compte dans la base de données (Integer).
+	#
+	# Paramètres :
+	# [+username+]      Nom d'utilisateur du compte Twitter (String)
+	# [+api_key+]       Clé de l'API Twitter (String)
+	# [+api_secret+]    Clé secrète de l'API Twitter (String)
+	def new_twitter_api(username, api_key, api_secret)
+		requete("INSERT INTO apis(domaine, username) VALUES ('twitter.com', " +
+		        "'#{username}');")
+		id = requete("SELECT id FROM apis WHERE domaine = 'twitter.com' AND " +
+		             "username = '#{username}';")[0]["id"].to_i
+		requete("INSERT INTO twitter_apis(api_id, username, api_key, " +
+		        "api_secret) VALUES (#{id}, '#{username}', '#{api_key}', " + "'#{api_secret}');")
 		return id
 	end
 	
 	##
-	# Pour un domaine et un username donné, inscrit les tokens de l'app dans la
-	# table de hachage.
-	
-	def app(domaine, username, hash)
-		res = requete("SELECT * FROM application WHERE domaine = '#{domaine}'
-		              AND username = '#{username}';")
-		if res.ntuples != 0 then
-			hash[:api_key] = res[0].fetch("api_key")
-			hash[:api_secret] = res[0].fetch("api_secret")
-			return res[0].fetch("id").to_i
-		else
+	# Retourne un Hash contenant les informations du compte Twitter recherchée
+	# dans la table +twitter_apis+ :
+	# [+id+]            Identifiant de l'application dans la base de données
+	#                   (Integer)
+	# [+username+]      Nom d'utilisateur (String)
+	# [+api_key+]       Clé de l'API (String)
+	# [+api_secret+]    Clé secrète de l'API (String)
+	#
+	# Retourne +nil+ si l'application n'existe pas dans la table.
+	#
+	# Paramètres :
+	# [+username+]      Nom d'utilisateur du compte (String)
+	def twitter_api(username)
+		begin
+			return requete("SELECT * FROM twitter_apis WHERE username = " +
+			               "'#{username}';")[0]
+		rescue IndexError
 			return nil
 		end
+	end
+	
+	private
+	
+	# Effectue une requête SQL dans la base et renvoie le résultat (PG::Result).
+	def requete(requete)
+		return @conn.exec(requete)
 	end
 	
 end

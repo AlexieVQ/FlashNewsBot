@@ -2,15 +2,6 @@
 # API du réseau social (superclasse pour TwitterApi). Classe abstraite.
 
 class Api
-
-	
-	#############
-	# ATTRIBUTS #
-	#############
-	
-	##
-	# Limite de caractères du réseau social (Integer)
-	attr_reader :limite
 	
 	################
 	# CONSTRUCTEUR #
