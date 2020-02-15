@@ -15,9 +15,28 @@ class CompteTwitter < Compte
 	######################
 	
 	##
-	# Voir CompteTwitter::new
+	# Crée un nouvel accès à l'API pour le compte d'<tt>username</tt> donné. Si
+	# le compte n'existe pas dans la base de données, les clés de l'API sont
+	# demandées dans la console. Puis il est demandé d'ouvrir le lien donné sur
+	# un navigateur, de s'authentifier sur Twitter et de copier dans la console
+	# le code obtenu. Si le compte existe déjà dans la base de données, seule
+	# l'authentification est demandée.
+	#
+	# Paramètres :
+	# [+username+]  Nom d'utilisateur (String)
 	def CompteTwitter.connecter(username)
-		new(username)
+		if(compte = Bot.bdd.compte_twitter(username)) then
+			return new(compte["id"], username, compte["api_key"],
+			           compte["api_secret"])
+		else
+			print "Clé d'API : "
+			api_key = gets.chomp
+			print "Clé secrète d'API : "
+			api_secret = gets.chomp
+			id = new_compte_twitter(username, api_key, api_secret)
+			return new(id, username, api_key, api_secret)
+		end
+		
 	end
 	
 	#######################
@@ -35,26 +54,22 @@ class CompteTwitter < Compte
 	################
 	
 	##
-	# Crée un nouvel accès à l'API pour le compte d'<tt>username</tt> donné. Si
-	# le compte n'existe pas dans la base de données, les clés de l'API sont
-	# demandées dans la console. Puis il est demandé d'ouvrir le lien donné sur
-	# un navigateur, de s'authentifier sur Twitter et de copier dans la console
-	# le code obtenu. Si le compte existe déjà dans la base de données, seule
-	# l'authentification est demandée.
+	# Crée un nouvel accès au compte Twitter d'<tt>username</tt> donné et
+	# s'authentifie auprès de Twitter.
+	#
+	# *Attention* : la classe ne peut être instanciée hors de la classe
+	# CompteTwitter. Utiliser CompteTwitter::connexion.
 	#
 	# Paramètres :
-	# [+username+]  Nom d'utilisateur (String)
-	def initialize(username)
-		if(compte_twitter = Bot.bdd.compte_twitter(username)) then
-			@id = compte_twitter[:id]
-			@api_key = compte_twitter[:api_key]
-			@api_secret = compte_twitter[:api_secret]
-		else
-			print "Clé d'API : "
-			@api_key = gets.chomp
-			print "Clé secrète d'API : "
-			@api_secret = gets.chomp
-		end
+	# [+id+]            Identifiant du compte dans la base de données (Integer)
+	# [+username+]      Nom d'utilisateur (String)
+	# [+api_key+]       Clé d’API Twitter (String)
+	# [+api_secret+]    Clé secrète d'API Twitter (String)
+	def initialize(id, username, api_key, api_secret)
+		@id = id
+		@username = username
+		@api_key = api_key
+		@api_secret = api_secret
 		consumer = OAuth::Consumer.new(@api_key,
 		                               @api_secret,
 		                               {:site => "https://api.twitter.com",
@@ -81,15 +96,6 @@ class CompteTwitter < Compte
 		     :oauth_token => oauth_token,
 		     :oauth_token_secret => oauth_token_secret}
 		)
-		unless(@id) then
-			reponse = @access_token.get(
-				"https://api.twitter.com/1.1/account/settings.json")
-			unless(reponse == Net::HTTPSuccess) then
-				reponse.value
-			end
-			username = JSON.parse(reponse.body)["screen_name"]
-			@id_bdd = Bot.bdd.new_compte_twitter(username, @api_key, @api_secret)
-		end
 	end
 	
 	############
