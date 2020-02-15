@@ -1,5 +1,5 @@
 require 'pg'
-require_relative 'Api.rb'
+require_relative 'Compte.rb'
 require_relative 'Array.rb'
 
 ##
@@ -43,19 +43,20 @@ class Bdd
 	# [+username+]      Nom d'utilisateur du compte Twitter (String)
 	# [+api_key+]       Clé de l'API Twitter (String)
 	# [+api_secret+]    Clé secrète de l'API Twitter (String)
-	def new_twitter_api(username, api_key, api_secret)
-		requete("INSERT INTO apis(domaine, username) VALUES ('twitter.com', " +
-		        "'#{username}');")
-		id = requete("SELECT id FROM apis WHERE domaine = 'twitter.com' AND " +
-		             "username = '#{username}';")[0]["id"].to_i
-		requete("INSERT INTO twitter_apis(api_id, username, api_key, " +
-		        "api_secret) VALUES (#{id}, '#{username}', '#{api_key}', " + "'#{api_secret}');")
+	def new_compte_twitter(username, api_key, api_secret)
+		requete("INSERT INTO comptes(domaine, username) VALUES ('twitter.com',"+
+		        " '#{username}');")
+		id = requete("SELECT id FROM comptes WHERE domaine = 'twitter.com' " +
+		             "AND username = '#{username}';")[0]["id"].to_i
+		requete("INSERT INTO comptes_twitter(compte_id, username, api_key, " +
+		        "api_secret) VALUES (#{id}, '#{username}', '#{api_key}', " +
+		        "'#{api_secret}');")
 		return id
 	end
 	
 	##
-	# Retourne un Hash contenant les informations du compte Twitter recherchée
-	# dans la table +twitter_apis+ :
+	# Retourne un Hash contenant les informations du compte Twitter recherché
+	# dans la table +comptes_twitter+ :
 	# [+id+]            Identifiant de l'application dans la base de données
 	#                   (Integer)
 	# [+username+]      Nom d'utilisateur (String)
@@ -66,9 +67,9 @@ class Bdd
 	#
 	# Paramètres :
 	# [+username+]      Nom d'utilisateur du compte (String)
-	def twitter_api(username)
+	def compte_twitter(username)
 		begin
-			return requete("SELECT * FROM twitter_apis WHERE username = " +
+			return requete("SELECT * FROM comptes_twitter WHERE username = " +
 			               "'#{username}';")[0]
 		rescue IndexError
 			return nil

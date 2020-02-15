@@ -1,7 +1,7 @@
 require 'daemons'
 require_relative 'Status.rb'
 require_relative 'Bdd.rb'
-require_relative 'TwitterApi.rb'
+require_relative 'CompteTwitter.rb'
 require_relative 'elements/Info.rb'
 require_relative 'elements/Pers.rb'
 require_relative 'elements/Accroche.rb'
@@ -51,7 +51,7 @@ class Bot
 		@@dir = Dir.pwd
 		
 		unless(offline) then
-			api = TwitterApi.connecter(username)
+			api = CompteTwitter.connecter(username)
 			Daemons.daemonize({backtrace: true,
 							   app_name: appname,
 							   log_output: true})

@@ -1,16 +1,16 @@
 -- Commandes de création de la base de données
 
--- Table des Api
-CREATE TABLE apis (
+-- Table des Compte
+CREATE TABLE comptes (
 	id SERIAL PRIMARY KEY,
 	username VARCHAR(64) NOT NULL,
 	domaine VARCHAR(64) NOT NULL,
 	UNIQUE (username, domaine)
 );
 
--- Table des TwitterApi (spécialisation des Api)
-CREATE TABLE twitter_apis (
-	api_id INTEGER PRIMARY KEY REFERENCES apis(id),
+-- Table des CompteTwitter (spécialisation des Compte)
+CREATE TABLE comptes_twitter (
+	compte_id INTEGER PRIMARY KEY REFERENCES comptes(id),
 	username VARCHAR(64) NOT NULL,
 	api_key VARCHAR(64),
 	api_secret VARCHAR(64)
@@ -20,8 +20,8 @@ CREATE TABLE twitter_apis (
 -- utilisés
 CREATE TABLE statuses (
 	id BIGINT NOT NULL,
-	api_id INTEGER NOT NULL REFERENCES apis(id),
-	PRIMARY KEY (id, api_id),
+	compte_id INTEGER NOT NULL REFERENCES comptes(id),
+	PRIMARY KEY (id, compte_id),
 	date TIMESTAMPTZ NOT NULL,
 	id_info INTEGER NOT NULL,
 	partages INTEGER,
@@ -33,8 +33,8 @@ CREATE TABLE statuses (
 -- Historique des personnages envoyés dans les status
 CREATE TABLE historique_pers (
 	status_id INTEGER NOT NULL,
-	api_id INTEGER NOT NULL,
+	compte_id INTEGER NOT NULL,
 	id_pers INTEGER NOT NULL,
-	FOREIGN KEY (status_id, api_id) REFERENCES statuses(id, api_id),
-	PRIMARY KEY (status_id, api_id, id_pers)
+	FOREIGN KEY (status_id, compte_id) REFERENCES statuses(id, compte_id),
+	PRIMARY KEY (status_id, compte_id, id_pers)
 );

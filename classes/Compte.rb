@@ -1,7 +1,7 @@
 ##
-# API du réseau social (superclasse pour TwitterApi). Classe abstraite.
+# Compte sur lequel poster (superclasse pour CompteTwitter). Classe abstraite.
 
-class Api
+class Compte
 	
 	################
 	# CONSTRUCTEUR #
@@ -11,7 +11,7 @@ class Api
 	# Crée un nouvel accès à l'API pour le compte d'<tt>username</tt> donné. Si
 	# le compte n'existe pas dans la base de données, il est créé et initialisé.
 	#
-	# *Attention* : la classe Api ne peut être instanciée.
+	# *Attention* : la classe Compte ne peut être instanciée.
 	#
 	# Paramètres :
 	# [+username+]  Nom d'utilisateur (String)

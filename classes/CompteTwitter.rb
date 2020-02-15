@@ -1,22 +1,22 @@
 require 'net/http'
 require 'oauth'
 require 'json'
-require_relative 'Api.rb'
+require_relative 'Compte.rb'
 require_relative 'Bot.rb'
 require_relative 'Bdd.rb'
 
 ##
-# API Twitter.
+# Compte Twitter.
 
-class TwitterApi < Api
+class CompteTwitter < Compte
 	
 	######################
 	# MÉTHODES DE CLASSE #
 	######################
 	
 	##
-	# Voir TwitterApi::new
-	def TwitterApi.connecter(username)
+	# Voir CompteTwitter::new
+	def CompteTwitter.connecter(username)
 		new(username)
 	end
 	
@@ -24,7 +24,7 @@ class TwitterApi < Api
 	# VARIABLES DE CLASSE #
 	#######################
 	
-	# @id			=> ID de l'app dans la base (Integer)
+	# @id			=> ID du compte dans la base (Integer)
 	# @username		=> Nom d'utilisateur du compte Twitter (String)
 	# @api_key		=> Clé de l'API Twitter (String)
 	# @api_secret	=> Clé secrète de l'API Twitter (String)
@@ -45,10 +45,10 @@ class TwitterApi < Api
 	# Paramètres :
 	# [+username+]  Nom d'utilisateur (String)
 	def initialize(username)
-		if(twitter_api = Bot.bdd.twitter_api(username)) then
-			@id = twitter_api[:id]
-			@api_key = twitter_api[:api_key]
-			@api_secret = twitter_api[:api_secret]
+		if(compte_twitter = Bot.bdd.compte_twitter(username)) then
+			@id = compte_twitter[:id]
+			@api_key = compte_twitter[:api_key]
+			@api_secret = compte_twitter[:api_secret]
 		else
 			print "Clé d'API : "
 			@api_key = gets.chomp
@@ -88,7 +88,7 @@ class TwitterApi < Api
 				reponse.value
 			end
 			username = JSON.parse(reponse.body)["screen_name"]
-			@id_bdd = Bot.bdd.new_twitter_api(username, @api_key, @api_secret)
+			@id_bdd = Bot.bdd.new_compte_twitter(username, @api_key, @api_secret)
 		end
 	end
 	
@@ -97,15 +97,10 @@ class TwitterApi < Api
 	############
 	
 	##
-	# Crée un nouvel accès à l'API pour le compte d'<tt>username</tt> donné. Si
-	# le compte n'existe pas dans la base de données, les clés de l'API sont
-	# demandées dans la console. Puis il est demandé d'ouvrir le lien donné sur
-	# un navigateur, de s'authentifier sur Twitter et de copier dans la console
-	# le code obtenu. Si le compte existe déjà dans la base de données, seule
-	# l'authentification est demandée.
+	# Envoie le status sur le compte Twitter.
 	#
 	# Paramètres :
-	# [+username+]  Nom d'utilisateur (String)
+	# [+status+]    Status
 	def envoyer(status)
 		reponse = @access_token.post(
 			"https://api.twitter.com/1.1/statuses/update.json",
