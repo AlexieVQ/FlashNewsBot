@@ -38,21 +38,18 @@ class Bdd
 	##
 	# Enregistre le compte Twitter de +username+ donné dans la base de données.
 	#
-	# Retourne l'<tt>id</tt> du compte dans la base de données (Integer).
-	#
 	# Paramètres :
+	# [+id+]            Identifiant du compte Twitter par l'API (Integer)
 	# [+username+]      Nom d'utilisateur du compte Twitter (String)
 	# [+api_key+]       Clé de l'API Twitter (String)
 	# [+api_secret+]    Clé secrète de l'API Twitter (String)
-	def new_compte_twitter(username, api_key, api_secret)
-		requete("INSERT INTO comptes(domaine, username) VALUES ('twitter.com',"+
-		        " '#{username}');")
-		id = requete("SELECT id FROM comptes WHERE domaine = 'twitter.com' " +
-		             "AND username = '#{username}';")[0]["id"].to_i
-		requete("INSERT INTO comptes_twitter(compte_id, username, api_key, " +
-		        "api_secret) VALUES (#{id}, '#{username}', '#{api_key}', " +
+	def new_compte_twitter(id, username, api_key, api_secret)
+		requete("INSERT INTO comptes(id, domaine, username) VALUES " +
+		        "(#{id}, 'twitter.com', '#{username}');")
+		requete("INSERT INTO comptes_twitter(compte_id, domaine, api_key, " +
+		        "api_secret) VALUES (#{id}, 'twitter.com', '#{api_key}', " +
 		        "'#{api_secret}');")
-		return id
+		return self
 	end
 	
 	##
@@ -70,13 +67,16 @@ class Bdd
 	# [+username+]      Nom d'utilisateur du compte (String)
 	def compte_twitter(username)
 		begin
-			res = requete("SELECT * FROM comptes_twitter WHERE username = " +
-			               "'#{username}';")[0]
+			res0 = requete("SELECT * FROM comptes WHERE username = " +
+			               "'#{username}' AND domaine = 'twitter.com';"
+			              )[0]
+			res1 = requete("SELECT * FROM comptes_twitter WHERE compte_id = " +
+			               "#{res0['id']} AND domaine = 'twitter.com';")[0]
 			return {
-				id: res['compte_id'],
-				username: res['username'],
-				api_key: res['api_key'],
-				api_secret: res['api_secret']
+				id: res0['id'],
+				username: res0['username'],
+				api_key: res1['api_key'],
+				api_secret: res1['api_secret']
 			}
 		rescue IndexError
 			return nil
@@ -87,19 +87,39 @@ class Bdd
 	# Enregistre le status d'id donné dans la base de données.
 	#
 	# Paramètres :
-	# [+id+]            Identifiant du status par l'API Twitter (Integer)
+	# [+id+]            Identifiant du status par l'API du réseau social
+	#                   (Integer)
 	# [+compte+]        Compte ayant posté le status
 	# [+created_at+]    \Date de création du status (String)
 	# [+info+]          Info utilisée dans le status
 	# [+pers+]          Personnages utilisées dans le status (Array de Pers)
 	def insert_status(id, compte, created_at, info, pers)
-		requete("INSERT INTO statuses(id, compte_id, created_at, id_info) " +
-		        "VALUES (#{id}, #{compte.id}, '#{DateTime.parse(created_at)}',"+
-		        " #{info.id});")
+		requete("INSERT INTO statuses(id, compte_id, domaine, created_at, " +
+		        "id_info) VALUES (#{id}, #{compte.id}, '#{compte.domaine}', " +
+		        "'#{DateTime.parse(created_at)}', #{info.id});")
 		pers.each do |perso|
-			requete("INSERT INTO pers(status_id, compte_id, id_pers) VALUES " +
-			        "(#{id}, #{compte.id}, #{perso.id});")
+			requete("INSERT INTO pers(status_id, compte_id, domaine, id_pers) "+
+			        "VALUES (#{id}, #{compte.id}, '#{compte.domaine}', " +
+			        "#{perso.id});")
 		end
+		return self
+	end
+	
+	##
+	# Met à jour les informations du status d'id donné dans la base de données.
+	#
+	# Paramètres :
+	# [+id+]        Identifiant du status par l'API du réseau social (Integer)
+	# [+compte+]    Compte ayant posté le status
+	# [+partages+]  Nombre de partages du status (Integer)
+	# [+likes+]     Nombre de likes du status (Integer)
+	# [+reponses+]  Nombre de réponses du status (Integer)
+	# [+citations+] Nombre de citations du status (Integer)
+	def update_status(id, compte, partages, likes, reponses, citations = 0)
+		requete("UPDATE statuses SET likes = #{likes}, partages = " +
+		        "#{partages}, reponses = #{reponses}, citations = " +
+		        "#{citations} WHERE id = #{id} AND compte_id = #{compte.id} " +
+		        "AND domaine = '#{compte.domaine}';")
 		return self
 	end
 	

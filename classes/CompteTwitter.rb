@@ -26,15 +26,14 @@ class CompteTwitter < Compte
 	# [+username+]  Nom d'utilisateur (String)
 	def CompteTwitter.connecter(username)
 		if(compte = Bot.bdd.compte_twitter(username)) then
-			return new(compte[:id], username, compte[:api_key],
-			           compte[:api_secret])
+			return new(username, compte[:api_key], compte[:api_secret],
+			           compte[:id])
 		else
 			print "Clé d'API : "
 			api_key = gets.chomp
 			print "Clé secrète d'API : "
 			api_secret = gets.chomp
-			id = new_compte_twitter(username, api_key, api_secret)
-			return new(id, username, api_key, api_secret)
+			return new(username, api_key, api_secret)
 		end
 		
 	end
@@ -68,12 +67,13 @@ class CompteTwitter < Compte
 	# CompteTwitter. Utiliser CompteTwitter::connecter.
 	#
 	# Paramètres :
-	# [+id+]            Identifiant du compte dans la base de données (Integer)
 	# [+username+]      Nom d'utilisateur (String)
 	# [+api_key+]       Clé d’API Twitter (String)
 	# [+api_secret+]    Clé secrète d'API Twitter (String)
-	def initialize(id, username, api_key, api_secret)
-		@id = id
+	# [+id+]            Identifiant du compte Twitter par l'API (Integer). +nil+
+	#                   si le compte Twitter n'est pas présent dans la base de
+	#                   données.
+	def initialize(username, api_key, api_secret, id = nil)
 		@username = username
 		@api_key = api_key
 		@api_secret = api_secret
@@ -103,6 +103,19 @@ class CompteTwitter < Compte
 		     :oauth_token => oauth_token,
 		     :oauth_token_secret => oauth_token_secret}
 		)
+		if(id) then
+			@id = id
+		else
+			reponse = @access_token.get("https://api.twitter.com/1.1/users/" +
+			                            "show.json?screen_name=#{username}")
+			unless(reponse == Net::HTTPSuccess) then
+				reponse.value
+			end
+			unless(@id = JSON.parse(reponse.body)['id']) then
+				raise "Mauvais nom d'utilisateur : \"#{username}\""
+			end
+			Bot.bdd.new_compte_twitter(@id, username, @api_key, @api_secret)
+		end
 	end
 	
 	############
@@ -131,9 +144,24 @@ class CompteTwitter < Compte
 	end
 	
 	##
+	# Met à jour les statistiques des status envoyés les 5 derniers jours dans
+	# la base de données.
+# 	def update_statuses
+# 		count = ((60 / Bot.intervalle) * 24 * 5).to_i # Nombre de status envoyés
+# 		                                              # en 5 jours
+# 		reponse = @access_token.get()
+# 	end
+	
+	##
 	# Limite de caractères d'un status (Integer)
 	def limite
 		return 280
+	end
+	
+	##
+	# <tt>"twitter.com"</tt> (String)
+	def domaine
+		return "twitter.com"
 	end
 	
 end
