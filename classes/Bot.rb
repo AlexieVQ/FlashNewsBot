@@ -44,9 +44,11 @@ class Bot
 	#                   ligne (+false+, status envoyés au compte Twitter donné)
 	# [+username+]      Nom d'utilisateur du compte Twitter (String, ignoré si
 	#                   +offline+ est à +true+)
-	# [+intervalle+]    Intervalle, en minutes, entre chaque status (Float)
+	# [+intervalle+]    Intervalle, en minutes, entre chaque status (Integer ou
+	#                   Float)
 	def Bot.exec(offline, username, intervalle)
 		@@bdd = Bdd.new
+		@@intervalle = intervalle
 		appname = username == "" ? "FNBOffline" : username
 		@@dir = Dir.pwd
 		
@@ -69,7 +71,7 @@ class Bot
 				end
 			end
 			
-			sleep(60 * intervalle)
+			sleep(60 * @@intervalle)
 			
 		end
 	end
@@ -82,9 +84,15 @@ class Bot
 	end
 	
 	##
-	# Base de données
+	# Base de données (Bdd)
 	def Bot.bdd
 		return @@bdd
+	end
+	
+	##
+	# Intervalle (minutes) entre chaque status (Integer ou Float)
+	def Bot.intervalle
+		return @@intervalle
 	end
 	
 	##
