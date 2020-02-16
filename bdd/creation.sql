@@ -32,7 +32,7 @@ CREATE TABLE statuses (
 
 -- Historique des personnages envoyés dans les status
 CREATE TABLE pers (
-	status_id INTEGER NOT NULL,
+	status_id BIGINT NOT NULL,
 	compte_id INTEGER NOT NULL,
 	id_pers INTEGER NOT NULL,
 	FOREIGN KEY (status_id, compte_id) REFERENCES statuses(id, compte_id),

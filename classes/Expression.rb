@@ -184,10 +184,14 @@ class Expression
 	# Paramètres :
 	# [+attribut+]      String
 	# [+parametres+]    Array de String
-	def retourner(attribut = nil, parametres = nil)
+	def retourner(attribut, parametres)
 		return @commande.call(attribut, parametres)
 	end
 	
-	alias :to_s :retourner
+	##
+	# Retourne le nom de la méthode utilisée (String).
+	def to_s
+		return @commande.to_s
+	end
 	
 end

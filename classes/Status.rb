@@ -16,6 +16,14 @@ class Status
 	# Texte du status (String)
 	attr_reader :texte
 	
+	##
+	# Information principale du status (Info)
+	attr_reader :info
+	
+	##
+	# Array de Pers présentes dans le status
+	attr_reader :pers
+	
 	################
 	# CONSTRUCTEUR #
 	################
@@ -58,6 +66,13 @@ class Status
 					@texte += " " + partie_decla
 				end
 			end
+			@info = Bot.index['info']
+			@pers = Bot.index.reduce([]) do |liste, tuple|
+				if(tuple[1].kind_of? Pers) then
+					liste << tuple[1]
+				end
+				liste
+			end
 		rescue IndexError => e
 			puts "#{e.message} : réessai"
 			retry
@@ -69,23 +84,6 @@ class Status
 	############
 	
 	alias :to_s :texte
-	
-	##
-	# Information principale du status (Info)
-	def info
-		return Bot.index['info']
-	end
-	
-	##
-	# Array de Pers présentes dans le status
-	def pers
-		return Bot.index.reduce([]) do |liste, pers|
-			if(pers.kind_of? Pers) then
-				liste << pers
-			end
-			liste
-		end
-	end
 	
 	private
 	
