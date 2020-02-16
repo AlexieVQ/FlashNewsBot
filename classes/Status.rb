@@ -101,7 +101,9 @@ class Status
 			chaine += " " + Bot.index['lieu'].retourner.lieu
 		end
 		
-		if(rand(2) == 1) then
+		if(["accuse", "est_accuse",
+		   "accusation"].include?(Bot.index['info'].type_circo) ||
+		   rand(2) == 1) then
 			chaine += " " + Bot.index['info'].circo
 		end
 		

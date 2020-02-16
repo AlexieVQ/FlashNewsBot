@@ -119,7 +119,7 @@ class Circo < Element
 	# Type de circonstance (String). Valeurs possibles :
 	# [<tt>"specifique"</tt>]    S'applique à l'Info liée.
 	# [<tt>"universel"</tt>]     Circonstances universelles.
-	# [<tt>"accusation"</tt>]    Le sujet accuse l'objet.
+	# [<tt>"accuse"</tt>]    Le sujet accuse l'objet.
 	# [<tt>"est_accuse"</tt>]    Le sujet est accusé par l'objet.
 	# [<tt>"accusation"</tt>]    Regroupe <tt>"accuse"</tt> et
 	#                            <tt>"est_accuse"</tt>.
