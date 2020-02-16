@@ -46,7 +46,8 @@ class Media < Element
 	# [+id+]        Identifiant du média (Integer, voir Element#id)
 	# [+nom+]       String contenant le nom du média, tel que défini dans la
 	#               table
-	# [+poids+]     Poids du média (Integer, voir Element#poids)
+	# [+poids+]     Poids défini dans la table (Integer, voir
+	#               Element#poids_statique)
 	def initialize(id, nom, poids)
 		super(id, poids)
 		@nom = nom

@@ -150,7 +150,8 @@ class Circo < Element
 	#                   Element#id)
 	# [+circo+]         String contenant la circonstance, telle que définie dans
 	#                   la table
-	# [+poids+]         Poids de la circonstance (Integer, voir Element#poids)
+	# [+poids+]         Poids défini dans la table (Integer, voir
+	#                   Element#poids_statique)
 	# [+type_circo+]    Type de la circonstance (String, voir Circo#type_circo)
 	# [+id_info+]       Identifiant de l'Info liée à la circonstance (Integer,
 	#                   voir Circo#id_info ; ou +nil+ par défaut)

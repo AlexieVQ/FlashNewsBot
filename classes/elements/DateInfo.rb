@@ -45,7 +45,8 @@ class DateInfo < Element
 	# Paramètres :
 	# [+id+]        Identifiant de la date (Integer, voir Element#id)
 	# [+date+]      String contenant la date, telle que définie dans la table
-	# [+poids+]     Poids de la date (Integer, voir Element#poids)
+	# [+poids+]     Poids défini dans la table (Integer, voir
+	#               Element#poids_statique)
 	def initialize(id, date, poids)
 		super(id, poids)
 		@date = date

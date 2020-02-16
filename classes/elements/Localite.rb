@@ -106,7 +106,8 @@ class Localite < Element
 	# [+id+]            Identifiant de la localité (Integer, voir Element#id)
 	# [+type+]          Type de localité (String, voir Localite#type)
 	# [+nom+]           Nom de la localité, en français (String)
-	# [+poids+]         Poids de la localité (Integer, voir Element#poids)
+	# [+poids+]         Poids défini dans la table (Integer, voir
+	#                   Element#poids_statique)
 	# [+nom_en+]        Nom de la localité, en anglais (String ou +nil+)
 	# [+nom_colle+]     Nom de la localité, sans espace (String)
 	# [+adjm+]          Adjectif masculin lié à la localité (String)

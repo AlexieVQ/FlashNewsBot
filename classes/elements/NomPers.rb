@@ -72,7 +72,8 @@ class NomPers < Element
 	# Paramètres :
 	# [+id+]            Identifiant du nom (Integer, voir Element#id)
 	# [+nom+]           String contenant le nom, tel que défini dans la table
-	# [+poids+]         Poids du nom (Integer, voir Element#poids)
+	# [+poids+]         Poids défini dans la table (Integer, voir
+	#                   Element#poids_statique)
 	# [+id_pers+]       Identifiant du Pers lié au nom (Integer, voir
 	#                   NomPers#id_pers)
 	def initialize(id, nom, poids, id_pers)

@@ -71,12 +71,12 @@ class Action < Element
 	# *Attention* : une Action ne peut être instanciée hors de sa classe.
 	#
 	# Paramètres :
-	# [+id+]            Identifiant de l'action (Integer, voir Element#id)
-	# [+action+]        String contenant l'action, telle que définie dans la
-	#                   table
-	# [+poids+]         Poids de l'action (Integer, voir Element#poids)
-	# [+id_info+]       Identifiant de l'Info liée à l'action (Integer, voir
-	#                   Action#id_info)
+	# [+id+]        Identifiant de l'action (Integer, voir Element#id)
+	# [+action+]    String contenant l'action, telle que définie dans la table
+	# [+poids+]     Poids défini dans la table (Integer, voir
+	#               Element#poids_statique)
+	# [+id_info+]   Identifiant de l'Info liée à l'action (Integer, voir
+	#               Action#id_info)
 	def initialize(id, action, poids, id_info)
 		super(id, poids)
 		@action = action

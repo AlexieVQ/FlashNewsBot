@@ -106,7 +106,8 @@ class Pers < Element
 	# [+id+]            Identifiant du personnage (Integer, voir Element#id)
 	# [+noms+]          Noms du personnage (Array de NomPers)
 	# [+surnoms+]       Surnoms du personnage (Array de Surnom)
-	# [+poids+]         Poids du personnage (Integer, voir Element#poids)
+	# [+poids+]         Poids défini dans la table (Integer, voir
+	#                   Element#poids_statique)
 	# [+nom_colle+]     Nom du personnage, sans espace (String)
 	# [+genre+]         Genre du personnage (String, voir Pers#genre)
 	# [+categorie+]     Catégorie du personnage (String, voir Pers#categorie)

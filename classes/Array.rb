@@ -23,12 +23,12 @@ class Array
 			raise "Tableau vide"
 		end
 		tab.each do |elt|
-			somme_poids += defined?(elt.poids) ? elt.poids : 1
+			somme_poids += elt.respond_to?(:poids) ? elt.poids : 1
 		end
 		
 		nb_rand = rand(somme_poids)
 		tab.each do |elt|
-			nb_rand -= defined?(elt.poids) ? elt.poids : 1
+			nb_rand -= elt.respond_to?(:poids) ? elt.poids : 1
 			if(nb_rand <= 0) then
 				return elt
 			end

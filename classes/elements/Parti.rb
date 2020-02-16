@@ -95,7 +95,8 @@ class Parti < Element
 	# [+sigle+]         Sigle de l'organisation, intégrable dans un hashtag
 	#                   (String)
 	# [+type+]          Type d'organisation (String, voir Parti#type)
-	# [+poids+]         Poids de l'organisation (Integer, voir Element#poids)
+	# [+poids+]         Poids défini dans la table (Integer, voir
+	#                   Element#poids_statique)
 	# [+adjm+]          Adjectif masculin lié à l'organisation (String)
 	# [+adjf+]          Adjectif féminin lié à l'organisation (String)
 	# [+localite+]      Localité de l'organisation (Localite, voir

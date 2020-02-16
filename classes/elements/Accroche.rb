@@ -101,7 +101,8 @@ class Accroche < Element
 	# Paramètres :
 	# [+id+]        Identifiant de l'accroche (Integer, voir Element#id)
 	# [+accroche+]  String contenant l'accroche, telle que définie dans la table
-	# [+poids+]     Poids de l'accroche (Integer, voir Element#poids)
+	# [+poids+]     Poids défini dans la table (Integer, voir
+	#               Element#poids_statique)
 	def initialize(id, accroche, poids)
 		super(id, poids)
 		@accroche = accroche

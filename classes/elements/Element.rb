@@ -152,10 +152,11 @@ class Element
 	# Chaque élément à un identifiant unique à sa classe, mais pas à l'ensemble
 	# des éléments.
 	attr_reader :id
+	
 	##
-	# Poids d'un élément (Integer). Utilisé pour pondérer les choix aléatoires
-	# d'éléments (voir Array#elt_alea).
-	attr_reader :poids
+	# Poids d'un élément (Integer) tel que décrit dans la table. Utilisé pour
+	# calculer dans le calcul du poids en fonction du contexte (Element#poids).
+	attr_reader :poids_statique
 	
 	################
 	# CONSTRUCTEUR #
@@ -168,10 +169,11 @@ class Element
 	#
 	# Paramètres :
 	# [+id+]    Identifiant de l'élément, voir Element#id (Integer)
-	# [+poids+] Poids de l'élément, voir Element#poids (Integer)
+	# [+poids+] Poids de l'élément tel que défini dans la table, voir
+	#           Element#poids_statique (Integer)
 	def initialize(id, poids)
 		@id = id
-		@poids = poids
+		@poids_statique = poids
 	end
 	
 	#######################
@@ -200,6 +202,16 @@ class Element
 	#                   +_de_+ dans l'exemple (+nil+ par défaut)
 	def retourner(attribut = nil, parametres = nil)
 		return self.to_s
+	end
+	
+	##
+	# Calcule le poids de l'élément dans les choix aléatoires (Array#elt_alea)
+	# en fonction du contexte (Integer).
+	#
+	# Par défaut retourne le poids défini dans la table (voir
+	# Element#poids_statique).
+	def poids
+		return @poids_statique
 	end
 	
 end

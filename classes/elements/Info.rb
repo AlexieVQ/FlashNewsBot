@@ -80,7 +80,8 @@ class Info < Element
 	# Paramètres :
 	# [+id+]            Identifiant de l'information (Integer, voir Element#id)
 	# [+actions+]       Array d'Action liées à l'information
-	# [+poids+]         Poids de l'information (Integer, voir Element#poids)
+	# [+poids+]         Poids défini dans la table (Integer, voir
+	#                   Element#poids_statique)
 	# [+circos+]        Array de Circo liées à l'information
 	# [+type+]          Type de l'information ("son assassinat", "sa
 	#                   déclaration"...)

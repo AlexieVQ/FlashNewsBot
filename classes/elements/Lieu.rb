@@ -46,7 +46,8 @@ class Lieu < Element
 	# Paramètres :
 	# [+id+]        Identifiant du lieu (Integer, voir Element#id)
 	# [+lieu+]      String contenant le lieu, tel que défini dans la table
-	# [+poids+]     Poids du lieu (Integer, voir Element#poids)
+	# [+poids+]     Poids défini dans la table (Integer, voir
+	#               Element#poids_statique)
 	def initialize(id, lieu, poids)
 		super(id, poids)
 		@lieu = lieu

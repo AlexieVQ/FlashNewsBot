@@ -72,7 +72,8 @@ class Surnom < Element
 	# Paramètres :
 	# [+id+]            Identifiant du nom (Integer, voir Element#id)
 	# [+surnom+]        String contenant le surnom, tel que défini dans la table
-	# [+poids+]         Poids du nom (Integer, voir Element#poids)
+	# [+poids+]         Poids défini dans la table (Integer, voir
+	#                   Element#poids_statique)
 	# [+id_pers+]       Identifiant du Pers lié au surnom (Integer, voir
 	#                   Surnom#id_pers)
 	def initialize(id, surnom, poids, id_pers)
