@@ -38,19 +38,10 @@ class CompteTwitter < Compte
 		
 	end
 	
-	#############
-	# ATTRIBUTS #
-	#############
-	
-	##
-	# Identifiant du compte dans la base de données (Integer)
-	attr_reader :id
-	
 	#######################
 	# VARIABLES DE CLASSE #
 	#######################
 	
-	# @username		=> Nom d'utilisateur du compte Twitter (String)
 	# @api_key		=> Clé de l'API Twitter (String)
 	# @api_secret	=> Clé secrète de l'API Twitter (String)
 	# @access_token	=> Token d'accès à l'API (OAuth::AccessToken)
@@ -133,24 +124,37 @@ class CompteTwitter < Compte
 			"https://api.twitter.com/1.1/statuses/update.json",
 			{:status => status.texte})
 		
-# 		if(reponse == Net::HTTPSuccess) then
-			tweet = JSON.parse(reponse.body)
-			Bot.bdd.insert_status(tweet["id"].to_i, self, tweet["created_at"],
-			                      status.info, status.pers)
-			return tweet["id"].to_i
-# 		else
-# 			reponse.value
-# 		end
+		unless(reponse == Net::HTTPSuccess) then
+			reponse.value
+		end
+		tweet = JSON.parse(reponse.body)
+		Bot.bdd.insert_status(tweet["id"].to_i, self, tweet["created_at"],
+								status.info, status.pers)
+		return tweet["id"].to_i
 	end
 	
 	##
 	# Met à jour les statistiques des status envoyés les 5 derniers jours dans
 	# la base de données.
-# 	def update_statuses
-# 		count = ((60 / Bot.intervalle) * 24 * 5).to_i # Nombre de status envoyés
-# 		                                              # en 5 jours
-# 		reponse = @access_token.get()
-# 	end
+	def update_statuses
+		count = ((60 / Bot.intervalle) * 24 * 5).to_i # Nombre de status envoyés
+		                                              # en 5 jours
+		count = 3200 if(count > 3200)
+		reponse = @access_token.get("https://api.twitter.com/1.1/statuses/" +
+		                            "user_timeline.json?" +
+		                            "screen_name=#{@username}&" +
+		                            "count=#{count}&include_rts=false&" +
+		                            "exclude_replies=true")
+		unless(reponse == Net::HTTPSuccess) then
+			reponse.value
+		end
+		tweets = JSON.parse(reponse.body)
+		tweets.each do |tweet|
+			Bot.bdd.update_status(tweet['id'], self, tweet['retweet_count'],
+			                      tweet['favorite_count'])
+		end
+		return self
+	end
 	
 	##
 	# Limite de caractères d'un status (Integer)

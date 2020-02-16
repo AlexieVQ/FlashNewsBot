@@ -113,13 +113,13 @@ class Bdd
 	# [+compte+]    Compte ayant posté le status
 	# [+partages+]  Nombre de partages du status (Integer)
 	# [+likes+]     Nombre de likes du status (Integer)
-	# [+reponses+]  Nombre de réponses du status (Integer)
-	# [+citations+] Nombre de citations du status (Integer)
-	def update_status(id, compte, partages, likes, reponses, citations = 0)
-		requete("UPDATE statuses SET likes = #{likes}, partages = " +
-		        "#{partages}, reponses = #{reponses}, citations = " +
-		        "#{citations} WHERE id = #{id} AND compte_id = #{compte.id} " +
-		        "AND domaine = '#{compte.domaine}';")
+	# [+reponses+]  Nombre de réponses du status (Integer, +nil+ si
+	#               indisponible)
+	def update_status(id, compte, partages, likes, reponses = nil)
+		requete("UPDATE statuses SET likes = #{likes}, partages = #{partages}" +
+		        (reponses ? ", reponses = #{reponses} " : " ") +
+		        "WHERE id = #{id} AND compte_id = #{compte.id} AND domaine = " +
+		        "'#{compte.domaine}';")
 		return self
 	end
 	

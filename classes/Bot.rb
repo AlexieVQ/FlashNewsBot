@@ -53,7 +53,7 @@ class Bot
 		@@dir = Dir.pwd
 		
 		unless(offline) then
-			api = CompteTwitter.connecter(username)
+			compte = CompteTwitter.connecter(username)
 			Daemons.daemonize({backtrace: true,
 							   app_name: appname,
 							   log_output: true})
@@ -66,10 +66,12 @@ class Bot
 
 			puts "[#{Time.now}] #{status}"
 			unless(offline) then
-				if(status.texte.length <= api.limite) then
-					api.envoyer(status)
+				if(status.texte.length <= compte.limite) then
+					compte.envoyer(status)
 				end
 			end
+			
+			compte.update_statuses
 			
 			sleep(60 * @@intervalle)
 			

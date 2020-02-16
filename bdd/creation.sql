@@ -31,8 +31,7 @@ CREATE TABLE statuses (
 	id_info INTEGER NOT NULL,
 	partages INTEGER,
 	likes INTEGER,
-	reponses INTEGER,
-	citations INTEGER
+	reponses INTEGER
 );
 
 -- Historique des personnages envoyés dans les status
