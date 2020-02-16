@@ -64,14 +64,15 @@ class Bot
 			
 			status = Status.new
 
-			puts "[#{Time.now}] #{status}"
+			puts "[#{Time.now}] #{status} " +
+			     "(#{status.info.categories.join(", ")})"
 			unless(offline) then
 				if(status.texte.length <= compte.limite) then
 					compte.envoyer(status)
 				end
 			end
 			
-			compte.update_statuses
+			compte.update_statuses if(compte)
 			
 			sleep(60 * @@intervalle)
 			
@@ -127,6 +128,7 @@ class Bot
 		@@index['gse'] = Expression.new(:gse)
 		@@index['h'] = Expression.new(:h)
 		@@index['randn'] = Expression.new(:randn)
+		@@index['loc_principale'] = Expression.new(:loc_principale)
 		@@index['accroche'] = Accroche
 		@@index['pers'] = Pers
 		@@index['date'] = DateInfo

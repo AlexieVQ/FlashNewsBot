@@ -208,10 +208,23 @@ class Element
 	# Calcule le poids de l'élément dans les choix aléatoires (Array#elt_alea)
 	# en fonction du contexte (Integer).
 	#
-	# Par défaut retourne le poids défini dans la table (voir
-	# Element#poids_statique).
+	# Critères qui influencent le poids de l'élément dans les choix aléatoires :
+	# * L'élément est déjà présent dans le status (poids à +1+)
 	def poids
-		return @poids_statique
+		return self.deja_present? ? 1 : @poids_statique
+	end
+	
+	##
+	# Teste si l'élément est déjà présent dans le status (présence dans l'index,
+	# voir Bot::index).
+	def deja_present?
+		return Bot.index.any? { |tuple| tuple[1] == self }
+	end
+	
+	##
+	# Teste si deux éléments sont les mêmes.
+	def ==(elt)
+		return self.class == elt.class && self.id == elt.id
 	end
 	
 end

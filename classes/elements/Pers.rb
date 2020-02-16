@@ -3,6 +3,7 @@ require_relative 'NomPers.rb'
 require_relative 'Surnom.rb'
 require_relative 'Localite.rb'
 require_relative 'Decla.rb'
+require_relative '../Bot.rb'
 require_relative '../String.rb'
 require_relative '../Array.rb'
 
@@ -211,6 +212,45 @@ class Pers < Element
 		else
 			return ""
 		end
+	end
+	
+	##
+	# Calcule le poids du personnage dans les choix aléatoires (Array#elt_alea)
+	# en fonction du contexte (Integer).
+	#
+	# Critères qui influencent le poids du personnage dans les choix
+	# aléatoires :
+	# * Le personnage est dans une des catégories de l'information (le poids est
+	#   multiplié par 50)
+	# * Le personnage est dans la même catégorie que le sujet (le poids est
+	#   multiplié par 20)
+	# * Le personnage est de la même localité que la localité principale du
+	#   status (+loc_principale+) (le poids est multiplié par 50)
+	def poids
+		poids = super
+		
+		if(Bot.index['info']) then
+			# Catégories de l'information
+			if(Bot.index['info'].categories.length > 0) then
+				if(Bot.index['info'].categories.include?(@categorie)) then
+					poids *= 50
+				end
+				
+			# Sinon catégorie du sujet
+			elsif(Bot.index['sujet']) then
+				if(Bot.index['sujet'].categorie == @categorie)
+					poids *= 20
+				end
+			end
+		end
+		
+		# Localité de l'information
+		if(Bot.index['loc_principale'] && @localite) then
+			if(Bot.index['loc_principale'] == @localite) then
+				poids *= 50
+			end
+		end
+		return poids
 	end
 	
 end

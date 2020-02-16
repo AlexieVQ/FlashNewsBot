@@ -40,8 +40,10 @@ class Accroche < Element
 			
 			# Ajout d'un emoji régional correspondant à la localité ou au
 			# personnage dans parametres[1]
-			if(Bot.index['loc_info'] && Bot.index['loc_info'].emoji != "") then
-				accroche += Bot.index['loc_info'].emoji
+			if(Bot.index['loc_principale'].retourner(nil, nil) &&
+			   Bot.index['loc_principale'].retourner(nil, nil).nom_colle !=
+			   "France") then
+				accroche += Bot.index['loc_principale'].retourner(nil,nil).emoji
 			elsif(parametres[1] && Bot.index[parametres[1]].localite &&
 				  Bot.index[parametres[1]].localite.nom_colle != "France") then
 				accroche += Bot.index[parametres[1]].localite.emoji

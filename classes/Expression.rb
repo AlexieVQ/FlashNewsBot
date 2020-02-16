@@ -153,6 +153,24 @@ class Expression
 		return (parametres[0].to_i..parametres[1].to_i).to_a.sample.to_s
 	end
 	
+	##
+	# Retourne la localité principale (Localite) de l'information, c'est-à-dire
+	# +loc_info+ si elle est définie, sinon celle du sujet ou du lieu.
+	#
+	# Paramètres :
+	# [+attribut+]      Ignoré
+	# [+parametres+]    Ignoré
+	def Expression.loc_principale(attribut, parametres)
+		if(Bot.index['loc_info']) then
+			return Bot.index['loc_info']
+		elsif(Bot.index['sujet'] && Bot.index['sujet'].localite) then
+			return Box.index['sujet'].localite
+		elsif(Bot.index['loc_lieu']) then
+			return Bot.index['loc_lieu']
+		end
+		return nil
+	end
+	
 	#######################
 	# VARIABLE D'INSTANCE #
 	#######################

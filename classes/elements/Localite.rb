@@ -260,4 +260,22 @@ class Localite < Element
 		end
 	end
 	
+	##
+	# Calcule le poids de la localité dans les choix aléatoires (Array#elt_alea)
+	# en fonction du contexte (Integer).
+	#
+	# Critères qui influencent le poids de la localité dans les choix
+	# aléatoires :
+	# * La localité est celle du sujet de l'information (choix multiplié par
+	#   100)
+	def poids
+		poids = super
+		
+		if(Bot.index['sujet'] && Bot.index['sujet'].localite &&
+		   Bot.index['sujet'].localite == self) then
+			poids *= 100
+		end
+		return poids
+	end
+	
 end
