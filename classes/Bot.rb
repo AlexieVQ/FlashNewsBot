@@ -25,6 +25,7 @@ class Bot
 	# @@bdd		=> Base de données
 	# @@dir		=> Chemin du dossier contenant FlashNewsBot.rb (String)
 	# @@index	=> Index (Hash)
+	# @@compte	=> Compte utilisé
 	
 	######################
 	# MÉTHODES DE CLASSE #
@@ -51,9 +52,10 @@ class Bot
 		@@intervalle = intervalle
 		appname = username == "" ? "FNBOffline" : username
 		@@dir = Dir.pwd
+		@@compte = nil
 		
 		unless(offline) then
-			compte = CompteTwitter.connecter(username)
+			@@compte = CompteTwitter.connecter(username)
 			Daemons.daemonize({backtrace: true,
 							   app_name: appname,
 							   log_output: true})
@@ -67,12 +69,12 @@ class Bot
 			puts "[#{Time.now}] #{status} " +
 			     "(#{status.info.categories.join(", ")})"
 			unless(offline) then
-				if(status.texte.length <= compte.limite) then
-					compte.envoyer(status)
+				if(status.texte.length <= @@compte.limite) then
+					@@compte.envoyer(status)
 				end
 			end
 			
-			compte.update_statuses if(compte)
+			@@compte.update_statuses if(@@compte)
 			
 			sleep(60 * @@intervalle)
 			
@@ -90,6 +92,19 @@ class Bot
 	# Base de données (Bdd)
 	def Bot.bdd
 		return @@bdd
+	end
+	
+	##
+	# Compte utilisé par le bot (+nil+ si hors-ligne)
+	def Bot.compte
+		return @@compte
+	end
+	
+	##
+	# Teste si le bot est hors-ligne (+true+), ou poste des status sur un compte
+	# (+false+).
+	def Bot.hors_ligne?
+		return @@compte == nil
 	end
 	
 	##
