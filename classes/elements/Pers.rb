@@ -220,6 +220,8 @@ class Pers < Element
 	#
 	# Critères qui influencent le poids du personnage dans les choix
 	# aléatoires :
+	# * Le personnage a déjà été posté dans les dernières 24 heures (le poids
+	#   est à +1+ et les autres critères sont ignorés)
 	# * Le personnage est dans une des catégories de l'information (le poids est
 	#   multiplié par 50)
 	# * Le personnage est dans la même catégorie que le sujet (le poids est
@@ -227,6 +229,12 @@ class Pers < Element
 	# * Le personnage est de la même localité que la localité principale du
 	#   status (+loc_principale+) (le poids est multiplié par 50)
 	def poids
+		# Personnage déjà posté dans les dernières 24 heures
+		if(Bot.compte && Bot.bdd.pers_recemment_poste(self, Bot.compte) > 0)
+		then
+			return 1
+		end
+		
 		poids = super
 		
 		if(Bot.index['info']) then

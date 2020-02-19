@@ -192,4 +192,24 @@ class Info < Element
 		end
 	end
 	
+	##
+	# Calcule le poids de l'information dans les choix aléatoires 
+	# (Array#elt_alea) en fonction du contexte (Integer).
+	#
+	# Critères qui influencent le poids de l'information dans les choix
+	# aléatoires :
+	# * L'information a déjà été postée dans les dernières 24 heures (le poids
+	#   est à +1+ et les autres critères sont ignorés)
+	def poids
+		# Information déjà postée dans les dernières 24 heures
+		if(Bot.compte && Bot.bdd.info_recemment_poste(self, Bot.compte) > 0)
+		then
+			return 1
+		end
+		
+		poids = super
+		
+		return poids
+	end
+	
 end
