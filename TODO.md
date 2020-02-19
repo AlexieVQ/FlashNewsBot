@@ -2,7 +2,6 @@
 
 ## Twitter
 
-- [x] Instancier BDD que si en ligne
 - [ ] Images
 - [ ] Analyse des tendances
 
