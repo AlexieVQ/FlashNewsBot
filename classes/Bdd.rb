@@ -123,6 +123,39 @@ class Bdd
 		return self
 	end
 	
+	##
+	# Retourne le nombre de fois (Integer) que l'information donnée a été postée
+	# sur le compte donné dans les dernières heures.
+	#
+	# Paramètres :
+	# [+info+]          Info à rechercher
+	# [+compte+]        Compte sur lequel rechercher
+	# [+intervalle+]    Nombre d'heures sur lesquelles chercher (Integer)
+	def info_recemment_poste(info, compte, intervalle = 24)
+		return requete("SELECT * FROM statuses WHERE id_info = #{info.id} " +
+		               "AND compte_id = #{compte.id} AND domaine = " +
+		               "'#{compte.domaine}' AND created_at > date 'now' - " +
+		               "interval '#{intervalle} hours';").ntuples
+	end
+	
+	##
+	# Retourne le nombre de fois (Integer) que le personnage donné a été posté
+	# sur le compte donné dans les dernières heures.
+	#
+	# Paramètres :
+	# [+pers+]          Pers à rechercher
+	# [+compte+]        Compte sur lequel rechercher
+	# [+intervalle+]    Nombre d'heures sur lesquelles chercher (Integer)
+	def pers_recemment_poste(pers, compte, intervalle = 24)
+		return requete("SELECT * FROM statuses JOIN pers ON (statuses.id = " +
+		               "pers.status_id AND statuses.compte_id = " +
+		               "pers.compte_id AND statuses.domaine = pers.domaine) " +
+		               "WHERE id_pers = #{pers.id} AND statuses.compte_id = " +
+		               "#{compte.id} AND statuses.domaine = " +
+		               "'#{compte.domaine}' AND created_at > date 'now' - " +
+		               "interval '#{intervalle} hours';").ntuples
+	end
+	
 	private
 	
 	# Effectue une requête SQL dans la base et renvoie le résultat (PG::Result).
