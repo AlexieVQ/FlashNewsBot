@@ -50,14 +50,13 @@ class Bot
 	def Bot.exec(offline, username, intervalle)
 		@@bdd = Bdd.new
 		@@intervalle = intervalle
-		appname = username == "" ? "FNBOffline" : username
 		@@dir = Dir.pwd
 		@@compte = nil
 		
 		unless(offline) then
 			@@compte = CompteTwitter.connecter(username)
 			Daemons.daemonize({backtrace: true,
-							   app_name: appname,
+							   app_name: username + "." + @@compte.domaine,
 							   log_output: true})
 			@@bdd = Bdd.new
 		end
