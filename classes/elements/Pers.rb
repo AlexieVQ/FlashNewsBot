@@ -223,11 +223,11 @@ class Pers < Element
 	# * Le personnage a déjà été posté dans les dernières 24 heures (le poids
 	#   est à +1+ et les autres critères sont ignorés)
 	# * Le personnage est dans une des catégories de l'information (le poids est
-	#   multiplié par 50)
-	# * Le personnage est dans la même catégorie que le sujet (le poids est
 	#   multiplié par 20)
+	# * Le personnage est dans la même catégorie que le sujet (le poids est
+	#   multiplié par 10)
 	# * Le personnage est de la même localité que la localité principale du
-	#   status (+loc_principale+) (le poids est multiplié par 50)
+	#   status (+loc_principale+) (le poids est multiplié par 20)
 	def poids
 		# Personnage déjà posté dans les dernières 24 heures
 		if(Bot.compte && Bot.bdd.pers_recemment_poste(self, Bot.compte) > 0)
@@ -241,13 +241,13 @@ class Pers < Element
 			# Catégories de l'information
 			if(Bot.index['info'].categories.length > 0) then
 				if(Bot.index['info'].categories.include?(@categorie)) then
-					poids *= 50
+					poids *= 20
 				end
 				
 			# Sinon catégorie du sujet
 			elsif(Bot.index['sujet']) then
 				if(Bot.index['sujet'].categorie == @categorie)
-					poids *= 20
+					poids *= 10
 				end
 			end
 		end
@@ -255,7 +255,7 @@ class Pers < Element
 		# Localité de l'information
 		if(Bot.index['loc_principale'] && @localite) then
 			if(Bot.index['loc_principale'] == @localite) then
-				poids *= 50
+				poids *= 20
 			end
 		end
 		return poids
