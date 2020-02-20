@@ -1,7 +1,5 @@
 require 'pg'
 require 'date'
-require_relative 'Compte.rb'
-require_relative 'Array.rb'
 
 ##
 # Classe permettant d'accéder à la base de donnée (PostgreSQL) du bot.
@@ -154,6 +152,74 @@ class Bdd
 		               "#{compte.id} AND statuses.domaine = " +
 		               "'#{compte.domaine}' AND created_at > date 'now' - " +
 		               "interval '#{intervalle} hours';").ntuples
+	end
+	
+	##
+	# Retourne le nombre moyen d'interactions générées par status par
+	# l'information donnée (Integer).
+	#
+	# Paramètres :
+	# [+info+]      Info à rechercher
+	# [+compte+]    Compte sur lequel chercher
+	def interactions_info(info, compte)
+		likes = requete("SELECT sum(likes) FROM statuses WHERE compte_id =
+		                #{compte.id} AND domaine = '#{compte.domaine}' AND
+		                id_info = #{info.id};")[0]['sum'].to_i
+		partages = requete("SELECT sum(partages) FROM statuses WHERE compte_id =
+		                   #{compte.id} AND domaine = '#{compte.domaine}' AND
+		                   id_info = #{info.id};")[0]['sum'].to_i
+		reponses = requete("SELECT sum(reponses) FROM statuses WHERE compte_id =
+		                   #{compte.id} AND domaine = '#{compte.domaine}' AND
+		                   id_info = #{info.id};")[0]['sum'].to_i
+		status = requete("SELECT count(id) FROM statuses WHERE compte_id =
+		                 #{compte.id} AND domaine = '#{compte.domaine}' AND
+		                 id_info = #{info.id};")[0]['count'].to_i
+		begin
+			return ((likes + partages + reponses) / status).to_i
+		rescue ZeroDivisionError
+			return 0
+		end
+	end
+	
+	##
+	# Retourne le nombre moyen d'interactions générées par status par
+	# le personnage donné (Integer).
+	#
+	# Paramètres :
+	# [+pers+]      Pers à rechercher
+	# [+compte+]    Compte sur lequel chercher
+	def interactions_pers(pers, compte)
+		likes = requete("SELECT sum(likes) FROM statuses JOIN pers ON
+		                (statuses.compte_id = pers.compte_id AND
+		                statuses.domaine = pers.domaine AND statuses.id =
+		                pers.status_id) WHERE statuses.compte_id = #{compte.id}
+		                AND statuses.domaine = '#{compte.domaine}' AND id_pers =
+		                #{pers.id};")[0]['sum'].to_i
+		partages = requete("SELECT sum(partages) FROM statuses JOIN pers ON
+		                   (statuses.compte_id = pers.compte_id AND
+		                   statuses.domaine = pers.domaine AND statuses.id =
+		                   pers.status_id) WHERE statuses.compte_id =
+		                   #{compte.id} AND statuses.domaine =
+		                   '#{compte.domaine}' AND id_pers = #{pers.id};"
+		                  )[0]['sum'].to_i
+		reponses = requete("SELECT sum(reponses) FROM statuses JOIN pers ON
+		                   (statuses.compte_id = pers.compte_id AND
+		                   statuses.domaine = pers.domaine AND statuses.id =
+		                   pers.status_id) WHERE statuses.compte_id =
+		                   #{compte.id} AND statuses.domaine =
+		                   '#{compte.domaine}' AND id_pers = #{pers.id};"
+		                  )[0]['sum'].to_i
+		status = requete("SELECT count(statuses.id) FROM statuses JOIN pers ON
+		                 (statuses.compte_id = pers.compte_id AND
+		                 statuses.domaine = pers.domaine AND statuses.id =
+		                 pers.status_id) WHERE statuses.compte_id = #{compte.id}
+		                 AND statuses.domaine = '#{compte.domaine}' AND id_pers
+		                 = #{pers.id};")[0]['count'].to_i
+		begin
+			return ((likes + partages + reponses) / status).to_i
+		rescue ZeroDivisionError
+			return 0
+		end
 	end
 	
 	private

@@ -228,6 +228,8 @@ class Pers < Element
 	#   multiplié par 10)
 	# * Le personnage est de la même localité que la localité principale du
 	#   status (+loc_principale+) (le poids est multiplié par 20)
+	# * Le nombre moyen d'interactions (likes, partages, réponses) par status
+	#   comprenant le personnage est ajouté au poids
 	def poids
 		# Personnage déjà posté dans les dernières 24 heures
 		if(Bot.compte && Bot.bdd.pers_recemment_poste(self, Bot.compte) > 0)
@@ -258,6 +260,12 @@ class Pers < Element
 				poids *= 20
 			end
 		end
+		
+		# Nombre moyen d'interactions générées
+		if(Bot.compte) then
+			poids += Bot.bdd.interactions_info(self, Bot.compte)
+		end
+		
 		return poids
 	end
 	

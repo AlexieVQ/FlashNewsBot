@@ -200,6 +200,8 @@ class Info < Element
 	# aléatoires :
 	# * L'information a déjà été postée dans les dernières 24 heures (le poids
 	#   est à +1+ et les autres critères sont ignorés)
+	# * Le nombre moyen d'interactions (likes, partages, réponses) par status
+	#   comprenant l'information est ajouté au poids
 	def poids
 		# Information déjà postée dans les dernières 24 heures
 		if(Bot.compte && Bot.bdd.info_recemment_poste(self, Bot.compte) > 0)
@@ -208,6 +210,11 @@ class Info < Element
 		end
 		
 		poids = super
+		
+		# Nombre moyen d'interactions générées
+		if(Bot.compte) then
+			poids += Bot.bdd.interactions_pers(self, Bot.compte)
+		end
 		
 		return poids
 	end
