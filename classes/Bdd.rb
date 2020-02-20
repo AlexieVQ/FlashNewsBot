@@ -42,11 +42,11 @@ class Bdd
 	# [+api_key+]       Clé de l'API Twitter (String)
 	# [+api_secret+]    Clé secrète de l'API Twitter (String)
 	def new_compte_twitter(id, username, api_key, api_secret)
-		requete("INSERT INTO comptes(id, domaine, username) VALUES " +
-		        "(#{id}, 'twitter.com', '#{username}');")
-		requete("INSERT INTO comptes_twitter(compte_id, domaine, api_key, " +
-		        "api_secret) VALUES (#{id}, 'twitter.com', '#{api_key}', " +
-		        "'#{api_secret}');")
+		requete("INSERT INTO comptes(id, domaine, username) VALUES (#{id},
+		        'twitter.com', '#{username}');")
+		requete("INSERT INTO comptes_twitter(compte_id, domaine, api_key,
+		        api_secret) VALUES (#{id}, 'twitter.com', '#{api_key}', 
+		        '#{api_secret}');")
 		return self
 	end
 	
@@ -65,11 +65,10 @@ class Bdd
 	# [+username+]      Nom d'utilisateur du compte (String)
 	def compte_twitter(username)
 		begin
-			res0 = requete("SELECT * FROM comptes WHERE username = " +
-			               "'#{username}' AND domaine = 'twitter.com';"
-			              )[0]
-			res1 = requete("SELECT * FROM comptes_twitter WHERE compte_id = " +
-			               "#{res0['id']} AND domaine = 'twitter.com';")[0]
+			res0 = requete("SELECT * FROM comptes WHERE username = '#{username}'
+			               AND domaine = 'twitter.com';")[0]
+			res1 = requete("SELECT * FROM comptes_twitter WHERE compte_id =
+			               #{res0['id']} AND domaine = 'twitter.com';")[0]
 			return {
 				id: res0['id'],
 				username: res0['username'],
@@ -92,13 +91,13 @@ class Bdd
 	# [+info+]          Info utilisée dans le status
 	# [+pers+]          Personnages utilisées dans le status (Array de Pers)
 	def insert_status(id, compte, created_at, info, pers)
-		requete("INSERT INTO statuses(id, compte_id, domaine, created_at, " +
-		        "id_info) VALUES (#{id}, #{compte.id}, '#{compte.domaine}', " +
-		        "'#{DateTime.parse(created_at)}', #{info.id});")
+		requete("INSERT INTO statuses(id, compte_id, domaine, created_at,
+		        id_info) VALUES (#{id}, #{compte.id}, '#{compte.domaine}',
+		        '#{DateTime.parse(created_at)}', #{info.id});")
 		pers.each do |perso|
-			requete("INSERT INTO pers(status_id, compte_id, domaine, id_pers) "+
-			        "VALUES (#{id}, #{compte.id}, '#{compte.domaine}', " +
-			        "#{perso.id});")
+			requete("INSERT INTO pers(status_id, compte_id, domaine, id_pers)
+			        VALUES (#{id}, #{compte.id}, '#{compte.domaine}',
+			        #{perso.id});")
 		end
 		return self
 	end
@@ -114,10 +113,10 @@ class Bdd
 	# [+reponses+]  Nombre de réponses du status (Integer, +nil+ si
 	#               indisponible)
 	def update_status(id, compte, partages, likes, reponses = nil)
-		requete("UPDATE statuses SET likes = #{likes}, partages = #{partages}" +
-		        (reponses ? ", reponses = #{reponses} " : " ") +
-		        "WHERE id = #{id} AND compte_id = #{compte.id} AND domaine = " +
-		        "'#{compte.domaine}';")
+		requete("UPDATE statuses SET likes = #{likes}, partages = #{partages}
+		        #{(reponses ? ", reponses = #{reponses}" : "")} WHERE id = #{id}
+		        AND compte_id = #{compte.id} AND domaine = 
+		        '#{compte.domaine}';")
 		return self
 	end
 	
@@ -130,10 +129,10 @@ class Bdd
 	# [+compte+]        Compte sur lequel rechercher
 	# [+intervalle+]    Nombre d'heures sur lesquelles chercher (Integer)
 	def info_recemment_poste(info, compte, intervalle = 24)
-		return requete("SELECT * FROM statuses WHERE id_info = #{info.id} " +
-		               "AND compte_id = #{compte.id} AND domaine = " +
-		               "'#{compte.domaine}' AND created_at > date 'now' - " +
-		               "interval '#{intervalle} hours';").ntuples
+		return requete("SELECT * FROM statuses WHERE id_info = #{info.id} AND
+		               compte_id = #{compte.id} AND domaine =
+		               '#{compte.domaine}' AND created_at > date 'now' - 
+		               interval '#{intervalle} hours';").ntuples
 	end
 	
 	##
@@ -145,13 +144,12 @@ class Bdd
 	# [+compte+]        Compte sur lequel rechercher
 	# [+intervalle+]    Nombre d'heures sur lesquelles chercher (Integer)
 	def pers_recemment_poste(pers, compte, intervalle = 24)
-		return requete("SELECT * FROM statuses JOIN pers ON (statuses.id = " +
-		               "pers.status_id AND statuses.compte_id = " +
-		               "pers.compte_id AND statuses.domaine = pers.domaine) " +
-		               "WHERE id_pers = #{pers.id} AND statuses.compte_id = " +
-		               "#{compte.id} AND statuses.domaine = " +
-		               "'#{compte.domaine}' AND created_at > date 'now' - " +
-		               "interval '#{intervalle} hours';").ntuples
+		return requete("SELECT * FROM statuses JOIN pers ON (statuses.id =
+		               pers.status_id AND statuses.compte_id = pers.compte_id
+		               AND statuses.domaine = pers.domaine) WHERE id_pers =
+		               #{pers.id} AND statuses.compte_id = #{compte.id} AND
+		               statuses.domaine = '#{compte.domaine}' AND created_at >
+		               date 'now' - interval '#{intervalle} hours';").ntuples
 	end
 	
 	##
