@@ -1,4 +1,6 @@
-## TODO
+# TODO
+
+## Twitter
 
 - [x] Compte accessible depuis la classe `Bot` (reader `Bot.compte`)
 - [x] Pondération diminuée si l'élément a déjà été posté dans la journée
@@ -8,3 +10,8 @@
       l'élément ?)
 - [ ] Images
 - [ ] Analyse des tendances
+
+## Mastodon
+
+- [ ] Gestion des content warnings
+- [ ] Gestion de l'API Mastodon
