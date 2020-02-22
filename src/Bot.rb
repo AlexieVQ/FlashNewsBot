@@ -22,7 +22,7 @@ class Bot
 	# VARIABLES DE CLASSE #
 	#######################
 	
-	# @@bdd		=> Base de données
+	# @@bdd		=> Base de données (Bdd)
 	# @@dir		=> Chemin du dossier contenant FlashNewsBot.rb (String)
 	# @@index	=> Index (Hash)
 	# @@compte	=> Compte utilisé
@@ -48,17 +48,18 @@ class Bot
 	# [+intervalle+]    Intervalle, en minutes, entre chaque status (Integer ou
 	#                   Float)
 	def Bot.exec(offline, username, intervalle)
-		@@bdd = Bdd.new
+		@@bdd = nil
 		@@intervalle = intervalle
 		@@dir = Dir.pwd
 		@@compte = nil
 		
 		unless(offline) then
+			@@bdd = Bdd.new # Doit être connectée pour enregistrer le compte
 			@@compte = CompteTwitter.connecter(username)
 			Daemons.daemonize({backtrace: true,
 							   app_name: username + "." + @@compte.domaine,
 							   log_output: true})
-			@@bdd = Bdd.new
+			@@bdd = Bdd.new # Doit être reconnectée après la démonisation
 		end
 
 		loop do
@@ -88,7 +89,7 @@ class Bot
 	end
 	
 	##
-	# Base de données (Bdd)
+	# Base de données (Bdd, +nil+ si hors-ligne)
 	def Bot.bdd
 		return @@bdd
 	end

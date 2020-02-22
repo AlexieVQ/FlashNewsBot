@@ -8,7 +8,7 @@
 - [x] Pondération influencée par les statistiques du compte (ajout au poids de
       l'élément la moyenne du nombre d'interactions par status générés par
       l'élément ?)
-- [ ] Instancier BDD que si en ligne
+- [x] Instancier BDD que si en ligne
 - [ ] Images
 - [ ] Analyse des tendances
 

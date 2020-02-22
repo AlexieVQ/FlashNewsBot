@@ -3,14 +3,13 @@
 Réécriture du [FlashNewsBot](https://twitter.com/FlashNewsBot "Twitter") en
 Ruby.
 
-## Exécution :
+## Exécution
 
-- Avoir un serveur PostgreSQL installé sur la machine, créer une base de données
-  _FlashNewsBot_ et initialiser cette base à l'aide du script
-  `bdd_init.sql`.
-- Pour une exécution hors-ligne, entrer `./FlashNewsBot.rb -o`.
+### Pour une utilisation hors-ligne
 
-## Gems requises :
+- Exécuter `./FlashNewsBot.rb -o`.
+
+## Gems requises
 
 - [csv](https://github.com/ruby/csv)
 - [pg](https://github.com/ged/ruby-pg)
