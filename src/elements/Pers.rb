@@ -3,6 +3,7 @@ require_relative 'NomPers.rb'
 require_relative 'Surnom.rb'
 require_relative 'Localite.rb'
 require_relative 'Decla.rb'
+require_relative 'Image.rb'
 require_relative '../Bot.rb'
 require_relative '../String.rb'
 require_relative '../Array.rb'
@@ -32,9 +33,10 @@ class Pers < Element
 		surnoms = Surnom.id_pers(ligne['id'].to_i)
 		localite = Localite.id(ligne['localite'].to_i)
 		declas = Decla.id_pers(ligne['id'].to_i)
+		images = Image.id_pers(ligne['id'].to_i)
 		new(ligne['id'].to_i, noms, surnoms, ligne['poids'].to_i,
 		    ligne['nom_colle'], ligne['genre'], ligne['categorie'], localite,
-		    declas)
+		    declas, images)
 	end
 	
 	##
@@ -84,6 +86,10 @@ class Pers < Element
 	# Déclarations du personnage (Array de Decla)
 	attr_reader :declas
 	
+	##
+	# Images du personnage (Array d'Image)
+	attr_reader :images
+	
 	########################
 	# VARIABLES D'INSTANCE #
 	########################
@@ -114,6 +120,7 @@ class Pers < Element
 	# [+categorie+]     Catégorie du personnage (String, voir Pers#categorie)
 	# [+localite+]      Localité du personnage (Localite)
 	# [+declas+]        Déclarations du personnage (Array de Decla)
+	# [+images]         Images du personnage (Array d'Image)
 	def initialize(id,
 	               noms,
 	               surnoms,
@@ -122,7 +129,8 @@ class Pers < Element
 	               genre,
 	               categorie,
 	               localite,
-	               declas)
+	               declas,
+	               images)
 		super(id, poids)
 		@noms = noms
 		@surnoms = surnoms
@@ -131,6 +139,7 @@ class Pers < Element
 		@categorie = categorie
 		@localite = localite
 		@declas = declas
+		@images = images
 		@surnomme = 0
 	end
 	
