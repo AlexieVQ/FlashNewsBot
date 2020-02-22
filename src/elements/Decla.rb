@@ -89,7 +89,7 @@ class Decla < Element
 	#
 	# Paramètres :
 	# [+id+]            Identifiant de la déclaration (Integer, voir Element#id)
-	# [+action+]        String contenant la déclaration, telle que définie dans
+	# [+decla+]         String contenant la déclaration, telle que définie dans
 	#                   la table
 	# [+poids+]         Poids défini dans la table (Integer, voir
 	#                   Element#poids_statique)
