@@ -1,7 +1,7 @@
 #!/usr/bin/env ruby
 
 require 'optparse'
-require_relative 'classes/Bot.rb'
+require_relative 'src/Bot.rb'
 
 intervalle = 60
 hors_ligne = false
