@@ -7,7 +7,7 @@ Ruby.
 
 - Avoir un serveur PostgreSQL installé sur la machine, créer une base de données
   _FlashNewsBot_ et initialiser cette base à l'aide du script
-  `bdd/creation.sql`.
+  `bdd_init.sql`.
 - Pour une exécution hors-ligne, entrer `./FlashNewsBot.rb -o`.
 
 ## Gems requises :
