@@ -99,8 +99,8 @@ class Status
 	############
 	
 	##
-	# Représente le status sous la forme <tt>_Texte du status_ [_Description de
-	# de l'image_ _URL de l'image]</tt>.
+	# Représente le status sous la forme <tt><em>Texte du status</em>
+	# [<em>Description de de l'image</em> <em>URL de l'image</em>]</tt>.
 	def to_s
 		return @images.reduce("#{@texte}") do |chaine, image|
 			chaine + " " + image
