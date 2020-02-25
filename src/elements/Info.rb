@@ -31,10 +31,11 @@ class Info < Element
 		actions = Action.id_info(ligne['id'].to_i)
 		circos = Circo.id_info(ligne['id'].to_i)
 		declas = Decla.id_info(ligne['id'].to_i)
+		images = Image.id_info(ligne['id'].to_i)
 		new(ligne['id'].to_i, actions, ligne['poids'].to_i, circos,
 		    ligne['type'], declas, ligne['hashtag'], ligne['type_circo'],
 		    ligne['categories'] ? ligne['categories'].split(',') : [],
-		    ligne['structure'])
+		    ligne['structure'], images)
 	end
 	
 	private_class_method :new
@@ -55,6 +56,10 @@ class Info < Element
 	##
 	# Structure personnalisée pour cette information (String)
 	attr_reader :structure
+	
+	##
+	# Images liées à l'information (Array d'Image)
+	attr_reader :images
 	
 	########################
 	# VARIABLES D'INSTANCE #
@@ -92,6 +97,7 @@ class Info < Element
 	#                   Info#categories)
 	# [+structure+]     Structure personnalisée du status (String, voir
 	#                   Info#structure)
+	# [+images+]        Images liées à l'information (Array d'Images)
 	def initialize(id,
 	               actions,
 	               poids,
@@ -101,7 +107,8 @@ class Info < Element
 	               hashtag,
 	               type_circo,
 	               categories,
-	               structure)
+	               structure,
+	               images)
 		super(id, poids)
 		@actions = actions
 		@circos = circos
@@ -111,6 +118,7 @@ class Info < Element
 		@type_circo = type_circo
 		@categories = categories
 		@structure = structure
+		@images = images
 	end
 	
 	#######################
