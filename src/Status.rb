@@ -24,6 +24,10 @@ class Status
 	# Array de Pers présentes dans le status
 	attr_reader :pers
 	
+	##
+	# Images du status (Array d'Images)
+	attr_reader :images
+	
 	################
 	# CONSTRUCTEUR #
 	################
@@ -73,6 +77,17 @@ class Status
 				end
 				liste
 			end
+			
+			@images = []
+			if(Bot.index['sujet'] && Bot.index['sujet'].image) then
+				@images << Bot.index['sujet'].image
+			end
+			if(Bot.index['info'].image) then
+				@images << Bot.index['info'].image
+			elsif(Bot.index['objet'] && Bot.index['objet'].image) then
+				@images << Bot.index['objet'].image
+			end
+			
 		rescue IndexError => e
 			puts "#{e.message} : réessai"
 			retry
@@ -83,7 +98,14 @@ class Status
 	# MÉTHODES #
 	############
 	
-	alias :to_s :texte
+	##
+	# Représente le status sous la forme <tt>_Texte du status_ [_Description de
+	# de l'image_ _URL de l'image]</tt>.
+	def to_s
+		return @images.reduce("#{@texte}") do |chaine, image|
+			chaine + " " + image
+		end
+	end
 	
 	private
 	

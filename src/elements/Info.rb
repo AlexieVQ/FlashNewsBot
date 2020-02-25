@@ -57,10 +57,6 @@ class Info < Element
 	# Structure personnalisée pour cette information (String)
 	attr_reader :structure
 	
-	##
-	# Images liées à l'information (Array d'Image)
-	attr_reader :images
-	
 	########################
 	# VARIABLES D'INSTANCE #
 	########################
@@ -71,6 +67,7 @@ class Info < Element
 	# 				   (String)
 	# @declas		=> Array de Decla
 	# @hashtag		=> Hashtag (String)
+	# @images		=> Array d'Image
 	
 	################
 	# CONSTRUCTEUR #
@@ -170,6 +167,17 @@ class Info < Element
 		if(@hashtag) then
 			return @hashtag.evaluer
 		else
+			return nil
+		end
+	end
+	
+	##
+	# Retourne une Image liée à l'information aléatoirement. Retourne +nil+ si
+	# aucune image n'est liée à l'information.
+	def image
+		begin
+			return @images.elt_alea
+		rescue RuntimeError
 			return nil
 		end
 	end

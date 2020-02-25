@@ -86,10 +86,6 @@ class Pers < Element
 	# Déclarations du personnage (Array de Decla)
 	attr_reader :declas
 	
-	##
-	# Images du personnage (Array d'Image)
-	attr_reader :images
-	
 	########################
 	# VARIABLES D'INSTANCE #
 	########################
@@ -98,6 +94,7 @@ class Pers < Element
 	# @surnoms		=> Tableau des surnoms (Array de String)
 	# @nom_colle	=> Nom collé pour hashtag (String) 
 	# @surnomme		=> Nombre de fois que le surnom a été donné. (Integer)
+	# @images		=> Array d'Image
 	
 	################
 	# CONSTRUCTEUR #
@@ -220,6 +217,17 @@ class Pers < Element
 			return @localite
 		else
 			return ""
+		end
+	end
+	
+	##
+	# Retourne une Image du personnage aléatoirement. Retourne +nil+ si aucune
+	# image n'est liée au personnage.
+	def image
+		begin
+			return @images.elt_alea
+		rescue RuntimeError
+			return nil
 		end
 	end
 	
