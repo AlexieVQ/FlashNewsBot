@@ -64,13 +64,19 @@ class Element
 	# Lorsqu'appelée pour la première fois, construit importe les éléments
 	# depuis leur fichier .csv (voir Element#nom_fichier).
 	#
-	# Lève une *RuntimeError* si appelée sur la classe Element.
+	# Lève une *RuntimeError* si appelée sur la classe Element, ou si plusieurs
+	# éléments possèdent le même +id+ dans une table.
 	def Element.elements
 		unless(defined?(@elements)) then
 			@elements = []
 			CSV.read(chemin + nom_fichier,
 					{:col_sep => ';', :headers => true}).each do |ligne|
-				@elements << importer(ligne)
+				element = importer(ligne)
+				if(@elements.any? { |e| e.id == element.id }) then
+					raise "L'id #{element.id} est attribué plusieurs fois " +
+					      "dans la table #{self::FICHIER}"
+				end
+				@elements << element
 			end
 		end
 		return @elements

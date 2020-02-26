@@ -87,6 +87,7 @@ id;surnom;poids;id_pers
 86;le directeur de la rédaction de l’Express;10;44
 87;le chroniqueur;10;45
 88;le chroniqueur;10;46
+89;le philosophe;30;47
 90;le “philosophe”;10;47
 91;le « philosophe »;10;47
 92;le « philosophe mes couilles » d’après {pers.nom};10;47
@@ -410,6 +411,7 @@ id;surnom;poids;id_pers
 412;l’animatrice;10;240
 413;la présidente de la Région Île-de-France;10;241
 414;la chanteuse;10;242
+415;“Queen B”;5;242
 416;la chanteuse;10;243
 417;la rappeuse;10;243
 418;Madame la Maire;10;244
@@ -447,16 +449,6 @@ id;surnom;poids;id_pers
 451;le président du MoDem;10;259
 452;le journaliste;10;260
 453;le journaliste;10;261
-89;le philosophe;30;47
-202;l’homme à la moustache;5;106
-335;le manager;5;191
-415;“Queen B”;5;242
-446;le streameur;100;258
-447;le rappeur;10;262
-448;le rappeur belge;10;262
-449;la chanteuse;10;263
-450;le rappeur;10;264
-453;l’homme;10;266
 454;la femme;10;267
 455;l’homme;10;268
 456;la femme;10;269
@@ -500,37 +492,6 @@ id;surnom;poids;id_pers
 494;l’ancien président brésilien;10;289
 495;l’acteur;10;290
 496;l’acteur franco-américain;5;290
-467;l’acteur révélé dans “Call Me By Your Name”;5;290
-468;la journaliste;10;291
-469;l’animateur;10;292
-470;le rappeur;10;293
-471;l’influenceur;10;293
-472;l’humoriste;10;294
-473;Jean-Christophe Le Texier;1;294
-474;le cousin de Mister V;1;294
-475;le youtubeur;10;295
-476;le vidéaste;10;295
-477;le vidéaste passionné de BMX;5;295
-478;Ina Mihalache;5;234
-479;l’homme politique;10;296
-480;le politologue;10;297
-481;le rappeur;10;298
-482;le rappeur conscient;2;298
-483;la moitié de Daft Punk;10;299
-484;le musicien;10;299
-484;la moitié de Daft Punk;10;300
-485;le musicien;10;300
-486;le rappeur;10;301
-487;le journaliste;10;302
-488;le journaliste jeux vidéos;10;302
-489;le journaliste indépendant;10;302
-490;le philosophe;10;303
-491;l’essayiste;10;303
-492;“Annie Dingo” d’après {pers.nom};5;224
-493;le jeune jedi;10,304
-494;le rappeur;10;305
-495;le youtubeur;10;306
-496;le vidéaste;10;306
 497;le youtubeur;10;307
 498;le vidéaste;10;307
 499;la chanteuse;10;308
@@ -539,3 +500,42 @@ id;surnom;poids;id_pers
 502;le vidéaste;10;309
 503;l’influenceur fitness;10;309
 504;le propagandiste;5;309
+505;l’homme à la moustache;5;106
+506;le manager;5;191
+507;le streameur;100;258
+508;le rappeur;10;262
+509;le rappeur belge;10;262
+510;la chanteuse;10;263
+511;le rappeur;10;264
+512;l’homme;10;266
+513;l’acteur révélé dans “Call Me By Your Name”;5;290
+514;la journaliste;10;291
+515;l’animateur;10;292
+516;le rappeur;10;293
+517;l’influenceur;10;293
+518;l’humoriste;10;294
+519;Jean-Christophe Le Texier;1;294
+520;le cousin de Mister V;1;294
+521;le youtubeur;10;295
+522;le vidéaste;10;295
+523;le vidéaste passionné de BMX;5;295
+524;Ina Mihalache;5;234
+525;l’homme politique;10;296
+526;le politologue;10;297
+527;le rappeur;10;298
+528;le rappeur conscient;2;298
+529;la moitié de Daft Punk;10;299
+530;le musicien;10;299
+531;la moitié de Daft Punk;10;300
+532;le musicien;10;300
+533;le rappeur;10;301
+534;le journaliste;10;302
+535;le journaliste jeux vidéos;10;302
+536;le journaliste indépendant;10;302
+537;le philosophe;10;303
+538;l’essayiste;10;303
+539;“Annie Dingo” d’après {pers.nom};5;224
+540;le jeune jedi;10,304
+541;le rappeur;10;305
+542;le youtubeur;10;306
+543;le vidéaste;10;306
