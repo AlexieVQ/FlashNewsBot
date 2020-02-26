@@ -103,7 +103,7 @@ class Status
 	# [<em>Description de de l'image</em> <em>URL de l'image</em>]</tt>.
 	def to_s
 		return @images.reduce("#{@texte}") do |chaine, image|
-			chaine + " " + image
+			chaine + " " + image.to_s
 		end
 	end
 	
