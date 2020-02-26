@@ -2,7 +2,7 @@
 
 ## Twitter
 
-- [ ] Vérifier l'unicité des éléments dans leur table
+- [x] Vérifier l'unicité des éléments dans leur table
 - [ ] Images
 - [ ] Analyse des tendances
 
