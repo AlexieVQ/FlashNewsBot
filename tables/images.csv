@@ -10,7 +10,6 @@ id;description;url;format;poids;id_pers;id_info
 9;Jean-Luc Mélenchon;https://img.aws.la-croix.com/2019/12/09/1201065399/Jean-Luc-Melenchon-15-novembre-Marseille-Je-condamne-rebellion-encouragement-rebellion-Je-seraiun-rebelle-officiel-declare-3-decembre-quotidien-20-minutes_0_729_486.jpg;jpg;10;6;
 10;Donald Trump;https://thenypost.files.wordpress.com/2018/07/180710-donald-trump-feature-image.jpg?quality=90&strip=all&w=1200;jpg;10;7;
 11;Donald Trump;https://media.salon.com/2015/08/donald_trump18-580x385.jpg;jpg;10;7;
-11;Emmanuel Macron;https://s3.reutersmedia.net/resources/r/?m=02&d=20170713&t=2&i=1192895417&w=&fh=545px&fw=&ll=&pl=&sq=&r=LYNXMPED6C1P5;jpg;10;2;
 12;Kim Jong-Un;https://upload.wikimedia.org/wikipedia/commons/7/76/Kim_and_Trump_standing_next_to_each_other_%28cropped%29.jpg;jpg;10;8;
 13;Morsay;https://www.newzikstreet.com/wp-content/uploads/2016/10/morsay-e1477597835619.png;png;10;9;
 14;Professeur Morsay;https://media.senscritique.com/media/000008640559/source_big/Les_analyses_du_professeur_Morsay.jpg;jpg;2;9;
@@ -34,3 +33,12 @@ id;description;url;format;poids;id_pers;id_info
 32;Mark Zuckerberg;https://amp.businessinsider.com/images/5b9198c50ce5f597208b4e1a-750-563.jpg;jpg;10;26;
 33;François Hollande;https://upload.wikimedia.org/wikipedia/commons/thumb/9/9c/Fran%C3%A7ois_Hollande_-_2017_%2827869823159%29_%28cropped%29.jpg/1200px-Fran%C3%A7ois_Hollande_-_2017_%2827869823159%29_%28cropped%29.jpg;jpg;10;29;
 34;Luigi;https://nayeftoys.com/wp-content/uploads/2015/12/71HSNwwzhIL._SL1500_.jpg;jpg;10;30;
+35;Wario;http://vignette4.wikia.nocookie.net/wario/images/c/cb/Wario2.jpg/revision/latest?cb=20110920232757;webp;10;31;
+36;Herobrine;http://vignette2.wikia.nocookie.net/an-eggs-guide-to-minecraft/images/3/3c/Herobrine_in_Grasslands.png/revision/latest?cb=20130708191856;webp;10;32;
+37;Emmanuel Macron;https://s3.reutersmedia.net/resources/r/?m=02&d=20170713&t=2&i=1192895417&w=&fh=545px&fw=&ll=&pl=&sq=&r=LYNXMPED6C1P5;jpg;10;2;
+38;Link;https://www.nautiljon.com/images/jeuxvideo_persos/00/91/link_2819.jpg;jpg;10;33;
+39;Barack Obama;https://upload.wikimedia.org/wikipedia/commons/thumb/e/e9/Official_portrait_of_Barack_Obama.jpg/1200px-Official_portrait_of_Barack_Obama.jpg;jpg;10;34;
+40;Barack Obama;https://upload.wikimedia.org/wikipedia/commons/thumb/8/8d/President_Barack_Obama.jpg/1200px-President_Barack_Obama.jpg;jpg;10;34;
+41;Waluigi;https://nintendowire.com/wp-content/uploads/2016/07/Waluigi.jpg;jpg;10;35;
+42;Rilès;https://lastfm.freetls.fastly.net/i/u/ar0/ac7c015ecdc552cde5edfc8c967a542d.jpg;jpg;10;36;
+43;Zinédine Zidane;http://a.espncdn.com/combiner/i/?img=/photo/2016/1205/r159891_1296x729_16-9.jpg&site=espnfc;jpg;10;37;
