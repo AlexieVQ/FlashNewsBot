@@ -61,3 +61,6 @@ build-iPhoneSimulator/
 
 # Fichiers LibreOffice
 .~lock.*#
+
+# Images téléchargées
+/ressources/dl/
