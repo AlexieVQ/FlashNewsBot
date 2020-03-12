@@ -32,7 +32,7 @@ class Localite < Element
 	# Paramètres :
 	# [+types+] Array des types demandés (String, voir Localite#type)
 	def Localite.types(types)
-		return selectionner { |e| types.include?(e.type) }
+		return self.select { |e| types.include?(e.type) }
 	end
 	
 	##
@@ -42,7 +42,7 @@ class Localite < Element
 	# [+nom_colle+] Nom, sans espaces, de la localité (String, non évalué avec
 	#               String#evaluer)
 	def Localite.nom_colle(nom_colle)
-		return selectionner { |e| nom_colle == e.read_nom_colle }
+		return self.select { |e| nom_colle == e.read_nom_colle }
 	end
 	
 	##

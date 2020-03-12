@@ -34,7 +34,7 @@ class Decla < Element
 	# Paramètres :
 	# [+id_info+]    Identifiant de l'Info (Integer, voir Decla#id_info)
 	def Decla.id_info(id_info)
-		return selectionner { |e| e.id_info == id_info }
+		return self.select { |e| e.id_info == id_info }
 	end
 	
 	##
@@ -44,7 +44,7 @@ class Decla < Element
 	# Paramètres :
 	# [+id_info+]    Identifiant du personnage (Integer, voir Decla#id_pers)
 	def Decla.id_pers(id_pers)
-		return selectionner { |e| e.id_pers == id_pers }
+		return self.select { |e| e.id_pers == id_pers }
 	end
 	
 	##
@@ -53,7 +53,7 @@ class Decla < Element
 	# Paramètres :
 	# [+ajout+] Éléments à ajouter dans la recherche (Array, vide par défaut)
 	def Decla.elt_alea(ajout = [])
-		tab = selectionner { |e| e.id_info == 0 && e.id_pers == 0 }
+		tab = self.select { |e| e.id_info == 0 && e.id_pers == 0 }
 		return tab.elt_alea(ajout)
 	end
 	

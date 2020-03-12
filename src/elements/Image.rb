@@ -34,7 +34,7 @@ class Image < Element
 	# Paramètres :
 	# [+id_info+]    Identifiant de l'Info (Integer, voir Image#id_info)
 	def Image.id_info(id_info)
-		return selectionner { |e| e.id_info == id_info }
+		return self.select { |e| e.id_info == id_info }
 	end
 	
 	##
@@ -43,7 +43,7 @@ class Image < Element
 	# Paramètres :
 	# [+id_info+]    Identifiant du personnage (Integer, voir Image#id_pers)
 	def Image.id_pers(id_pers)
-		return selectionner { |e| e.id_pers == id_pers }
+		return self.select { |e| e.id_pers == id_pers }
 	end
 	
 	##

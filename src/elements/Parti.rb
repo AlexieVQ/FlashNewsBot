@@ -33,7 +33,7 @@ class Parti < Element
 	# Paramètres :
 	# [+types+] Array des types demandés (String, voir Parti#type)
 	def Parti.types(types)
-		return selectionner { |e| types.include?(e.type) }
+		return self.select { |e| types.include?(e.type) }
 	end
 	
 	##

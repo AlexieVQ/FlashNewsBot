@@ -31,7 +31,7 @@ class Surnom < Element
 	# Paramètres :
 	# [+id_pers+]   Identifiant du Pers (Integer, voir NomPers#id_info)
 	def Surnom.id_pers(id_pers)
-		return selectionner { |e| e.id_pers == id_pers }
+		return self.select { |e| e.id_pers == id_pers }
 	end
 	
 	##

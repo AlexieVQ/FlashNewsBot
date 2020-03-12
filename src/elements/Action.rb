@@ -32,7 +32,7 @@ class Action < Element
 	# Paramètres :
 	# [+id_info+]    Identifiant de l'Info (Integer, voir Action#id_info)
 	def Action.id_info(id_info)
-		return selectionner { |e| e.id_info == id_info }
+		return self.select { |e| e.id_info == id_info }
 	end
 	
 	##

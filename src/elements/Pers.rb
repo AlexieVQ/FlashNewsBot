@@ -45,7 +45,7 @@ class Pers < Element
 	# Paramètres :
 	# [+genre+] Genre des personnages (String, voir Pers#genre)
 	def Pers.genre(genre)
-		return selectionner { |e| e.genre == genre }
+		return self.select { |e| e.genre == genre }
 	end
 	
 	##

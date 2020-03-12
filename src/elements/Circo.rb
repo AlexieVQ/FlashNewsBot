@@ -31,7 +31,7 @@ class Circo < Element
 	##
 	# Retourne un Array contenant les Circo universelles.
 	def Circo.universels
-		return selectionner { |e| e.type_circo == "universel" }
+		return self.select { |e| e.type_circo == "universel" }
 	end
 	
 	##
@@ -43,17 +43,17 @@ class Circo < Element
 	##
 	# Retourne un Array de Circo où le sujet est accusé.
 	def Circo.est_accuse
-		return selectionner do |e|
-			["accusation", "est_accuse"].include?(e.type_circo)
-		end
+		return self.select { |e|
+			["accusation", "est_accuse"].include? e.type_circo
+		}
 	end
 	
 	##
 	# Retourne un Array de Circo où le sujet accuse l'objet.
 	def Circo.accuse
-		return selectionner do |e|
-			 ["accusation", "accuse"].include?(e.type_circo)
-		end
+		return self.select { |e|
+			 ["accusation", "accuse"].include? e.type_circo
+		}
 	end
 	
 	##
@@ -86,7 +86,7 @@ class Circo < Element
 	# Paramètres :
 	# [+id_info+]   Identifiant de l'Info (Integer, voir Circo#id_info)
 	def Circo.id_info(id_info)
-		return selectionner { |e| e.id_info == id_info }
+		return self.select { |e| e.id_info == id_info }
 	end
 	
 	##

@@ -22,8 +22,17 @@ require_relative '../Array.rb'
 # * Localite (ville, pays ou région)
 # * Media (presse écrite, télévisée ou en ligne)
 # * Parti (parti politique ou organisation syndicale)
+#
+# Une classe dérivée de celle-ci contient tous ses élements selon le pattern
+# <em>Active Record</em>, toutes les méthodes du module Enumerable peuvent être
+# appelées sur la classe (cette implémentation d'<em>Active Record</em> est
+# indépendante de celle de <em>Ruby on Rails</em>).
 
 class Element
+	
+	class << self
+		include Enumerable
+	end
 	
 	#######################
 	# VARIABLES DE CLASSE #
@@ -83,12 +92,9 @@ class Element
 	end
 	
 	##
-	# Retourne un Array contenant les éléments de la classe pour lesquels le
-	# bloc +condition+ renvoie +true+.
-	#
-	# Lève une *RuntimeError* si appelée sur la classe Element.
-	def Element.selectionner(&condition)
-		return elements.select { |e| condition.call(e) }
+	# Exécute le bloc donné sur chaque élément de la table.
+	def Element.each
+		elements.each { |element| yield element }
 	end
 	
 	##
@@ -99,7 +105,7 @@ class Element
 	#
 	# Lève une *RuntimeError* si appelée sur la classe Element.
 	def Element.id(id)
-		res = selectionner { |e| e.id == id }
+		res = self.select { |e| e.id == id }
 		return res[0]
 	end
 	
@@ -146,6 +152,7 @@ class Element
 	end
 	
 	private_class_method :retourner_elt
+	private_class_method :elements
 	private_class_method :new
 	
 	#############
