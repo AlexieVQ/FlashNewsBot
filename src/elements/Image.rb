@@ -132,18 +132,23 @@ class Image < Element
 	# Element#id en nom de fichier et son format en extension (exemple :
 	# <tt>assets/cache/45.jpg</tt>).
 	#
-	# Si l'image existe déjà, elle est écrasée.
+	# Retourne le chemin du fichier (String).
 	#
-	# Retourne +self+.
-	def telecharger
+	# Paramètres :
+	# [+ecraser+]   +true+ si le fichier doit être écrasé s'il a déjà été
+	#               téléchargé, +false+ sinon.
+	def telecharger(ecraser = false)
+		if(!ecraser && self.telecharge?) then
+			return self.chemin
+		end
 		File.open(self.chemin, "wb") { |fichier|
 			open(@url, "rb") { |distant| fichier.write(distant.read) }
 		}
-		return self
+		return self.chemin
 	end
 	
 	##
-	# Teste si le fichier existe dans le répertoire <tt>assets/cache</tt>.
+	# Teste si le fichier existe dans le répertoire <tt>assets/cache/</tt>.
 	def telecharge?
 		return File.exist? self.chemin
 	end
