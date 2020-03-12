@@ -207,7 +207,15 @@ class CompteTwitter < Compte
 		unless(reponse == Net::HTTPSuccess) then
 			reponse.value
 		end
-		return JSON.parse(reponse.body)['media_id'].to_i
+		id = JSON.parse(reponse.body)['media_id'].to_i
+		reponse_alt = @access_token.post(
+			"https://upload.twitter.com/1.1/media/metadata/create.json",
+			JSON.generate({media_id: id, alt_text: {text: image.description}}),
+			{'Content-Type' => 'application/json; charset=UTF-8'})
+		unless(reponse_alt == Net::HTTPSuccess) then
+			reponse_alt.value
+		end
+		return id
 	end
 	
 end

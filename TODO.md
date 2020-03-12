@@ -6,7 +6,7 @@
 - [ ] Images
 	- [x] Tester la taille des images
 	- [x] Envoyer les images sur Twitter
-	- [ ] Description des images
+	- [x] Description des images
 	- [ ] CW des images
 	- [ ] Associer des images aux personnages
 	- [ ] Associer des images aux informations
