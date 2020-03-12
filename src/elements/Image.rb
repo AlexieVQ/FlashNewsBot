@@ -1,3 +1,5 @@
+require 'open-uri'
+require_relative '../Bot.rb'
 require_relative 'Element.rb'
 
 ##
@@ -117,6 +119,33 @@ class Image < Element
 	# Retourne un String de la forme <tt>[_Description_ _url_]</tt>.
 	def to_s
 		return "[#{@description} #{@url}]"
+	end
+	
+	##
+	# Retourne le chemin du fichier, qu'il existe ou non (String).
+	def chemin
+		return "#{Bot.dir}/assets/cache/#{@id}.#{@format}"
+	end
+	
+	##
+	# Télécharge l'image dans le dossier <tt>assets/cache/</tt> avec son
+	# Element#id en nom de fichier et son format en extension (exemple :
+	# <tt>assets/cache/45.jpg</tt>).
+	#
+	# Si l'image existe déjà, elle est écrasée.
+	#
+	# Retourne +self+.
+	def telecharger
+		File.open(self.chemin, "wb") { |fichier|
+			open(@url, "rb") { |distant| fichier.write(distant.read) }
+		}
+		return self
+	end
+	
+	##
+	# Teste si le fichier existe dans le répertoire <tt>assets/cache</tt>.
+	def telecharge?
+		return File.exist? self.chemin
 	end
 	
 end
