@@ -4,7 +4,7 @@ require_relative 'Action.rb'
 require_relative 'Circo.rb'
 require_relative 'Decla.rb'
 require_relative '../String.rb'
-require_relative '../Array.rb'
+require_relative '../Enumerable.rb'
 
 ##
 # Élément représentant une information, comprenant ses Action, ses Circo, son

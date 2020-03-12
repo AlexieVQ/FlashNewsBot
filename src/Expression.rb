@@ -1,6 +1,6 @@
 require_relative 'Bot.rb'
 require_relative 'String.rb'
-require_relative 'Array.rb'
+require_relative 'Enumerable.rb'
 
 ##
 # Les expressions sont présentes dans les chaînes de caractères contenues dans

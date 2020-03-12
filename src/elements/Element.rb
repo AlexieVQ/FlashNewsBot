@@ -1,6 +1,6 @@
 require 'csv'
 require_relative '../Bot.rb'
-require_relative '../Array.rb'
+require_relative '../Enumerable.rb'
 
 ##
 # Superclasse abstraite représentant un élément d'une information.

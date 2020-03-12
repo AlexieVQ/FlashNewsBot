@@ -1,6 +1,6 @@
 require_relative 'Element.rb'
 require_relative '../String.rb'
-require_relative '../Array.rb'
+require_relative '../Enumerable.rb'
 
 ##
 # Element représentant une circonstance, liée à une information, universelle

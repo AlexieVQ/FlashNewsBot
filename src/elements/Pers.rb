@@ -6,7 +6,7 @@ require_relative 'Decla.rb'
 require_relative 'Image.rb'
 require_relative '../Bot.rb'
 require_relative '../String.rb'
-require_relative '../Array.rb'
+require_relative '../Enumerable.rb'
 
 ##
 # Element représentant un personnage, comprenant ses NomPers, ses Surnom, son
