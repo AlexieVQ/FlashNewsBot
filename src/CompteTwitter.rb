@@ -1,9 +1,11 @@
 require 'net/http'
 require 'oauth'
 require 'json'
+require 'base64'
 require_relative 'Compte.rb'
 require_relative 'Bot.rb'
 require_relative 'Bdd.rb'
+require_relative 'ImageVolumineuseError.rb'
 
 ##
 # Compte Twitter.
@@ -120,16 +122,25 @@ class CompteTwitter < Compte
 	# Paramètres :
 	# [+status+]    Status
 	def envoyer(status)
+		media_ids = status.images.reduce([]) { |tab, image|
+			begin
+				tab << self.envoyer_image(image)
+			rescue ImageVolumineuseError => e
+				e.full_message(true, :top)
+			ensure
+				tab
+			end
+		}
 		reponse = @access_token.post(
 			"https://api.twitter.com/1.1/statuses/update.json",
-			{:status => status.texte})
+			{status: status.texte, media_ids: media_ids.join(',')})
 		
 		unless(reponse == Net::HTTPSuccess) then
 			reponse.value
 		end
 		tweet = JSON.parse(reponse.body)
 		Bot.bdd.insert_status(tweet["id"].to_i, self, tweet["created_at"],
-								status.info, status.pers)
+							  status.info, status.pers)
 		return tweet["id"].to_i
 	end
 	
@@ -163,9 +174,37 @@ class CompteTwitter < Compte
 	end
 	
 	##
+	# Taille maximale d'une image (octets, Integer)
+	def taille_image
+		return 5000000
+	end
+	
+	##
 	# <tt>"twitter.com"</tt> (String)
 	def domaine
 		return "twitter.com"
+	end
+	
+	private
+	
+	##
+	# Envoie l'image donnée sur Twitter et retourne son +media_id+ (String).
+	#
+	# Paramètres :
+	# [+image+] Image à envoyer
+	#
+	# Lève une ImageVolumineuseError si l'image est trop volumineuse pour
+	# Twitter.
+	def envoyer_image(image)
+		fichier = image.fichier
+		if(fichier.size >= self.taille_image) then
+			raise ImageVolumineuseError, "Image d'id #{image.id} trop " +
+					"volumineuse pour Twitter (#{fichier.size} octets)"
+		end
+		reponse = @access_token.post("https://upload.twitter.com/1.1/media/" + 
+		                             "upload.json?media_category=TWEET_IMAGE",
+		                             {media_data: Base64.encode64(fichier)})
+		return reponse['media_id'].to_i
 	end
 	
 end

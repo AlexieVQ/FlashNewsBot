@@ -4,8 +4,10 @@
 
 - [x] Vérifier l'unicité des éléments dans leur table
 - [ ] Images
-	- [ ] Tester la taille des images
-	- [ ] Envoyer les images sur Twitter
+	- [x] Tester la taille des images
+	- [x] Envoyer les images sur Twitter
+	- [ ] Description des images
+	- [ ] CW des images
 	- [ ] Associer des images aux personnages
 	- [ ] Associer des images aux informations
 - [ ] Analyse des tendances

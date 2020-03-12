@@ -153,4 +153,10 @@ class Image < Element
 		return File.exist? self.chemin
 	end
 	
+	##
+	# Retourne le fichier de l'image, après l'avoir téléchargé si besoin (File).
+	def fichier
+		return File.open(self.telecharger(false), "rb")
+	end
+	
 end

@@ -25,7 +25,7 @@ module Enumerable
 		
 		nb_rand = rand(somme)
 		tab.each { |elt|
-			nb_rand -= (elt.respond_to? :poids) ? elt.poids : 1
+			nb_rand -= elt.respond_to?(:poids) ? elt.poids : 1
 			if(nb_rand <= 0) then
 				return elt
 			end
@@ -42,7 +42,7 @@ module Enumerable
 	#           défaut)
 	def somme_poids(ajout = [])
 		return (self.to_a + ajout).reduce(0) { |somme, elt|
-			somme + ((elt.respond_to? :poids) ? elt.poids : 1)
+			somme + (elt.respond_to?(:poids) ? elt.poids : 1)
 		}
 	end
 	
@@ -57,8 +57,8 @@ module Enumerable
 	#           défaut)
 	def somme_poids_statiques(ajout = [])
 		return (self.to_a + ajout).reduce(0) { |somme, elt|
-			somme + ((elt.respond_to? :poids_statique) ? elt.poids_statique :
-			         ((elt.respond_to? :poids) ? elt.poids : 1))
+			somme + (elt.respond_to?(:poids_statique) ? elt.poids_statique :
+			         (elt.respond_to?(:poids) ? elt.poids : 1))
 		}
 	end
 	
