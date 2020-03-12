@@ -124,7 +124,7 @@ class CompteTwitter < Compte
 	def envoyer(status)
 		media_ids = status.images.reduce([]) { |tab, image|
 			begin
-				tab << self.envoyer_image(image)
+				tab << envoyer_image(image)
 			rescue ImageVolumineuseError => e
 				e.full_message(true, :top)
 			ensure
