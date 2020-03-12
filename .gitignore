@@ -63,4 +63,4 @@ build-iPhoneSimulator/
 .~lock.*#
 
 # Images téléchargées
-/ressources/dl/
+/assets/cache/
