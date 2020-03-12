@@ -127,9 +127,8 @@ class CompteTwitter < Compte
 				tab << envoyer_image(image)
 			rescue ImageVolumineuseError => e
 				e.full_message(true, :top)
-			ensure
-				tab
 			end
+			tab
 		}
 		reponse = @access_token.post(
 			"https://api.twitter.com/1.1/statuses/update.json",
@@ -201,10 +200,14 @@ class CompteTwitter < Compte
 			raise ImageVolumineuseError, "Image d'id #{image.id} trop " +
 					"volumineuse pour Twitter (#{fichier.size} octets)"
 		end
-		reponse = @access_token.post("https://upload.twitter.com/1.1/media/" + 
-		                             "upload.json?media_category=TWEET_IMAGE",
-		                             {media_data: Base64.encode64(fichier)})
-		return reponse['media_id'].to_i
+		reponse = @access_token.post(
+			"https://upload.twitter.com/1.1/media/upload.json?" +
+			"media_category=TWEET_IMAGE",
+		    {media_data: Base64.encode64(fichier.read)})
+		unless(reponse == Net::HTTPSuccess) then
+			reponse.value
+		end
+		return JSON.parse(reponse.body)['media_id'].to_i
 	end
 	
 end
