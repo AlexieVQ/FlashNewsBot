@@ -110,17 +110,6 @@ class Element
 	end
 	
 	##
-	# Retourne un élément de la classe aléatoirement.
-	#
-	# Paramètres :
-	# [+ajout+] Éléments à ajouter dans la recherche (Array, vide par défaut)
-	#
-	# Lève une *RuntimeError* si appelée sur la classe Element.
-	def Element.elt_alea(ajout = [])
-		return elements.elt_alea(ajout)
-	end
-	
-	##
 	# Retourne un String pour l'attribut et les paramètres donnés. Comportement
 	# différent selon la classe.
 	#
