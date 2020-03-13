@@ -33,3 +33,15 @@ DETAIL:  Key (status_id, compte_id, domaine, id_pers)=(1238264552208424961, 1037
 	from /home/alexie/Developpement/FlashNewsBot/src/Bot.rb:65:in `exec'
 	from ./FlashNewsBot.rb:40:in `<main>'
 ```
+- [ ] Énumération vide :
+```
+/home/alexie/Developpement/FlashNewsBot/src/Enumerable.rb:22:in `elt_alea': Énumération vide (RuntimeError)
+	from /home/alexie/Developpement/FlashNewsBot/src/elements/Pers.rb:173:in `surnom'
+	from /home/alexie/Developpement/FlashNewsBot/src/Status.rb:137:in `partie_decla'
+	from /home/alexie/Developpement/FlashNewsBot/src/Status.rb:70:in `initialize'
+	from /home/alexie/Developpement/FlashNewsBot/src/Bot.rb:67:in `new'
+	from /home/alexie/Developpement/FlashNewsBot/src/Bot.rb:67:in `block in exec'
+	from /home/alexie/Developpement/FlashNewsBot/src/Bot.rb:65:in `loop'
+	from /home/alexie/Developpement/FlashNewsBot/src/Bot.rb:65:in `exec'
+	from ./FlashNewsBot.rb:40:in `<main>'
+```
