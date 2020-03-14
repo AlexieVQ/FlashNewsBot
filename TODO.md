@@ -11,6 +11,7 @@
 	- [ ] Image _Flash Info_
 	- [ ] Associer des images aux personnages
 	- [ ] Associer des images aux informations
+	- [ ] Envoie des images de manière aléatoire
 - [ ] Analyse des tendances
 
 ## Mastodon
