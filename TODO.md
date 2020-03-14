@@ -13,6 +13,9 @@
 	- [ ] Associer des images aux informations
 	- [ ] Envoie des images de manière aléatoire
 - [ ] Analyse des tendances
+	- [ ] Recevoir les tendances
+	- [ ] Chercher des bouts de chaîne dans une autre
+	- [ ] Influencer les pondérations
 - [ ] CW de certains personnages
 - [ ] Sauvetage de toutes les erreurs au niveau du bot
 
