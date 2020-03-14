@@ -1,5 +1,6 @@
 require_relative 'Bot.rb'
 require_relative 'Expression.rb'
+require_relative 'ImageStatique.rb'
 require_relative 'elements/Pers.rb'
 
 ##
@@ -86,6 +87,9 @@ class Status
 				@images << Bot.index['info'].image
 			elsif(Bot.index['objet'] && Bot.index['objet'].image) then
 				@images << Bot.index['objet'].image
+			end
+			if(@images.length == 0) then
+				@images << ImageStatique.elt_alea
 			end
 			
 		rescue IndexError => e

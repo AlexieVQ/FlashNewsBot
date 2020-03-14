@@ -192,15 +192,15 @@ class CompteTwitter < Compte
 	# Envoie l'image donnée sur Twitter et retourne son +media_id+ (String).
 	#
 	# Paramètres :
-	# [+image+] Image à envoyer
+	# [+image+] Image ou ImageStatique à envoyer
 	#
 	# Lève une ImageVolumineuseError si l'image est trop volumineuse pour
 	# Twitter.
 	def envoyer_image(image)
 		fichier = image.fichier
 		if(fichier.size >= self.taille_image) then
-			raise ImageVolumineuseError, "Image d'id #{image.id} trop " +
-					"volumineuse pour Twitter (#{fichier.size} octets)"
+			raise ImageVolumineuseError, "Image #{image.id} trop volumineuse " +
+				"pour Twitter (#{fichier.size} octets)"
 		end
 		reponse = @access_token.post(
 			"https://upload.twitter.com/1.1/media/upload.json?" +
