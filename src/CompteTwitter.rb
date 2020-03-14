@@ -132,7 +132,9 @@ class CompteTwitter < Compte
 		}
 		reponse = @access_token.post(
 			"https://api.twitter.com/1.1/statuses/update.json",
-			{status: status.texte, media_ids: media_ids.join(',')})
+			{status: status.texte,
+			 media_ids: media_ids.join(','),
+			 possibly_sensitive: status.cw?})
 		
 		unless(reponse == Net::HTTPSuccess) then
 			reponse.value

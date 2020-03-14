@@ -71,9 +71,9 @@ class Status
 				end
 			end
 			@info = Bot.index['info']
-			@pers = Bot.index.reduce([]) do |liste, tuple|
-				if(tuple[1].kind_of? Pers) then
-					liste << tuple[1]
+			@pers = Bot.index.values.reduce([]) do |liste, element|
+				if(element.kind_of? Pers) then
+					liste << element
 				end
 				liste
 			end
