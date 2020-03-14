@@ -13,6 +13,7 @@
 	- [ ] Associer des images aux informations
 	- [ ] Envoie des images de manière aléatoire
 - [ ] Analyse des tendances
+- [ ] CW de certains personnages
 
 ## Mastodon
 
