@@ -14,6 +14,7 @@
 	- [ ] Envoie des images de manière aléatoire
 - [ ] Analyse des tendances
 - [ ] CW de certains personnages
+- [ ] Sauvetage de toutes les erreurs au niveau du bot
 
 ## Mastodon
 
