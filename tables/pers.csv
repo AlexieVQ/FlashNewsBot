@@ -75,7 +75,7 @@ id;nom_colle;poids;genre;categorie;id_pays;cw
 74;{rand(XavierDupontDeLigonnès,XDDL)};10;M;autre;1;
 75;Bowser;10;M;fiction;32;
 76;TomNook;10;M;fiction;;
-77;JeanMarieLePen;5;M;politique;1;
+77;JeanMarieLePen;5;M;politique;1;Jean-Marie Le Pen
 78;{rand(Manuel,)}Valls;10;M;politique;1;
 79;{rand(Cyril,)}Hanouna;10;M;TV;1;
 80;LilPump;10;M;culture;3;
