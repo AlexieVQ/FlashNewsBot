@@ -8,6 +8,7 @@
 	- [x] Envoyer les images sur Twitter
 	- [x] Description des images
 	- [ ] CW des images
+	- [ ] Image _Flash Info_
 	- [ ] Associer des images aux personnages
 	- [ ] Associer des images aux informations
 - [ ] Analyse des tendances
