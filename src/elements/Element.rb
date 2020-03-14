@@ -129,7 +129,7 @@ class Element
 	
 	# Retourne un élément en lui passant l'attribut et les paramètres donnés.
 	def Element.retourner_elt(element, attribut, parametres)
-		if(attribut && attribut != "") then
+		unless(attribut.to_s.empty?) then
 			return element.retourner(attribut, parametres)
 		else
 			return element
