@@ -1,6 +1,8 @@
 require 'open-uri'
 require_relative '../Bot.rb'
 require_relative 'Element.rb'
+require_relative 'Info.rb'
+require_relative 'Pers.rb'
 
 ##
 # Element contenant le lien vers une image. L'image peut être liée à un Pers ou
@@ -114,6 +116,40 @@ class Image < Element
 	#######################
 	# MÉTHODES D'INSTANCE #
 	#######################
+	
+	##
+	# Retourne l'Info associée à l'image, ou +nil+ si aucune n'est liée.
+	def info
+		return @id_info ? Info.id(@id_info) : nil
+	end
+	
+	##
+	# Retourne le Pers associé à l'image, ou +nil+ si aucun n'est lié.
+	def pers
+		return @id_pers ? Pers.id(@id_pers) : nil
+	end
+	
+	##
+	# Retourne un avertissement de contenu pour l'image (String, vide ou +nil+
+	# si aucun avertissement).
+	def cw
+		if(!@cw.to_s.empty?) then
+			return super
+		elsif(self.info) then
+			return self.info.cw
+		elsif(self.pers) then
+			return self.pers.cw
+		else
+			return nil
+		end
+	end
+	
+	##
+	# Teste si l'image a un avertissement de contenu (voir Image#cw).
+	def cw?
+		return !@cw.to_s.empty? || self.info && self.info.cw? ||
+			self.pers && self.pers.cw?
+	end
 	
 	##
 	# Retourne un String de la forme <tt>[_Description_ _url_]</tt>.

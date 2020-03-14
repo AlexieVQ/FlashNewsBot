@@ -1,4 +1,5 @@
 require_relative 'Element.rb'
+require_relative 'Pers.rb'
 require_relative '../String.rb'
 
 ##
@@ -98,6 +99,12 @@ class NomPers < Element
 	end
 	
 	alias :to_s :nom
+	
+	##
+	# Retourne le Pers nommé.
+	def pers
+		return Pers.id(@id_pers)
+	end
 	
 	##
 	# Retourne le résultat de NomPers#nom avec l'article contenu dans

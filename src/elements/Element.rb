@@ -38,7 +38,8 @@ class Element
 	# VARIABLES DE CLASSE #
 	#######################
 	
-	# @elements		=> Array contenant les éléments de la classe
+	# @elements		=> Hash contenant les éléments de la classe en valeurs et
+	#				   leurs ids en clefs.
 	
 	######################
 	# MÉTHODES DE CLASSE #
@@ -67,46 +68,41 @@ class Element
 		return self::FICHIER
 	end
 	
-	##
-	# Retourne un Array contenant tous les éléments de la classe.
-	#
-	# Lorsqu'appelée pour la première fois, construit importe les éléments
-	# depuis leur fichier .csv (voir Element#nom_fichier).
-	#
-	# Lève une *RuntimeError* si appelée sur la classe Element, ou si plusieurs
-	# éléments possèdent le même +id+ dans une table.
-	def Element.elements
-		unless(defined?(@elements)) then
-			@elements = []
+	# Charge les éléments de la classe.
+	def Element.init
+		if(@elements.nil?) then
+			@elements = Hash.new
 			CSV.read(chemin + nom_fichier,
-					{:col_sep => ';', :headers => true}).each do |ligne|
+					{:col_sep => ';', :headers => true}).each { |ligne|
 				element = importer(ligne)
-				if(@elements.any? { |e| e.id == element.id }) then
+				if(@elements[element.id]) then
 					raise "L'id #{element.id} est attribué plusieurs fois " +
 					      "dans la table #{self::FICHIER}"
 				end
-				@elements << element
-			end
+				@elements[element.id] = element
+			}
 		end
-		return @elements
+		return self
 	end
 	
 	##
 	# Exécute le bloc donné sur chaque élément de la table.
 	def Element.each
-		elements.each { |element| yield element }
+		init()
+		@elements.values.each { |element| yield element }
 	end
 	
 	##
-	# Retourne l'élément d'identifiant donné.
+	# Retourne l'élément d'identifiant donné, ou +nil+ si l'élément n'existe
+	# pas.
 	#
 	# Paramètres :
 	# [+id+]    Identifiant de l'élément (Integer, voir Element#id)
 	#
 	# Lève une *RuntimeError* si appelée sur la classe Element.
 	def Element.id(id)
-		res = self.select { |e| e.id == id }
-		return res[0]
+		init()
+		return @elements[id]
 	end
 	
 	##
@@ -141,7 +137,7 @@ class Element
 	end
 	
 	private_class_method :retourner_elt
-	private_class_method :elements
+	private_class_method :init
 	private_class_method :new
 	
 	#############
@@ -160,6 +156,11 @@ class Element
 	# calculer dans le calcul du poids en fonction du contexte (Element#poids).
 	attr_reader :poids_statique
 	
+	##
+	# Avertissement de contenu pour l'élément donné (String, vide ou +nil+ si
+	# aucun avertissement)
+	attr_reader :cw
+	
 	################
 	# CONSTRUCTEUR #
 	################
@@ -173,9 +174,11 @@ class Element
 	# [+id+]    Identifiant de l'élément, voir Element#id (Integer)
 	# [+poids+] Poids de l'élément tel que défini dans la table, voir
 	#           Element#poids_statique (Integer)
-	def initialize(id, poids)
+	# [+cw+]    Avertissement de contenu, voir Element#cw (String)
+	def initialize(id, poids, cw = nil)
 		@id = id
 		@poids_statique = poids
+		@cw = cw
 	end
 	
 	#######################
@@ -220,7 +223,13 @@ class Element
 	# Teste si l'élément est déjà présent dans le status (présence dans l'index,
 	# voir Bot::index).
 	def deja_present?
-		return Bot.index.any? { |tuple| tuple[1] == self }
+		return Bot.index.values.any? { |element| element == self }
+	end
+	
+	##
+	# Teste si l'élément a un avertissement de contenu (voir Element#cw).
+	def cw?
+		return !@cw.to_s.empty?
 	end
 	
 	##

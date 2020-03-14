@@ -1,4 +1,5 @@
 require_relative 'Element.rb'
+require_relative 'Pers.rb'
 require_relative '../String.rb'
 
 ##
@@ -98,6 +99,12 @@ class Surnom < Element
 	end
 	
 	alias :to_s :surnom
+	
+	##
+	# Retourne le Pers surnommé.
+	def pers
+		return Pers.id(@id_pers)
+	end
 	
 	##
 	# Retourne le résultat de Surnom#nom avec l'article contenu dans

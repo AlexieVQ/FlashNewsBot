@@ -1,4 +1,5 @@
 require_relative 'Element.rb'
+require_relative 'Info.rb'
 require_relative '../String.rb'
 
 ##
@@ -92,6 +93,12 @@ class Action < Element
 	# String#evaluer).
 	def action
 		return @action.evaluer
+	end
+	
+	##
+	# Retourne l'Info correspondante.
+	def info
+		return Info.id(@id_info)
 	end
 	
 	alias :to_s :action

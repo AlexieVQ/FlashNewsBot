@@ -1,4 +1,5 @@
 require_relative 'Element.rb'
+require_relative 'Info.rb'
 require_relative '../String.rb'
 require_relative '../Enumerable.rb'
 
@@ -171,6 +172,12 @@ class Circo < Element
 	# String#evaluer).
 	def circo
 		return @circo.evaluer
+	end
+	
+	##
+	# Retourne l'Info correspondante, ou +nil+ si aucune n'est liée.
+	def info
+		return @id_info ? Info.id(@id_info) : nil
 	end
 	
 	alias :to_s :circo

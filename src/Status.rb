@@ -99,12 +99,39 @@ class Status
 	############
 	
 	##
-	# Représente le status sous la forme <tt><em>Texte du status</em>
-	# [<em>Description de de l'image</em> <em>URL de l'image</em>]</tt>.
+	# Représente le status sous la forme <tt>[<em>Avertissements</em>]<em>Texte
+	# du status</em> [<em>Description de de l'image</em> <em>URL de
+	# l'image</em>]</tt>.
 	def to_s
-		return @images.reduce("#{@texte}") do |chaine, image|
+		chaine = self.cw? ? "[#{self.cw_string}] #{@texte}" : "#{@texte}"
+		return @images.reduce(chaine) do |chaine, image|
 			chaine + " " + image.to_s
 		end
+	end
+	
+	##
+	# Retourne les avertissements de contenu pour le status (Array de String,
+	# vide si aucun avertissement).
+	def cw
+		return Bot.index.values.reduce([]) { |tab, element|
+			if(element.respond_to?(:cw) && element.cw?) then
+				tab << element.cw
+			end
+			tab
+		}
+	end
+	
+	##
+	# Retourne un avertissement de contenu pour le status (String, vide ou
+	# +nil+, concaténation des résultats de Status#cw).
+	def cw_string
+		return self.cw.join(", ")
+	end
+	
+	##
+	# Teste si status a un avertissement de contenu (voir Status#cw).
+	def cw?
+		return self.cw.length > 0
 	end
 	
 	private

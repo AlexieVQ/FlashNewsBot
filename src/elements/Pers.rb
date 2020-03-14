@@ -55,9 +55,9 @@ class Pers < Element
 	# l'attribut est utilisé par Pers#retourner. Sinon, retourne un personnage
 	# de genre contenu dans <tt>parametres[0]</tt> (voir Pers#genre).
 	def Pers.retourner(attribut = nil, parametres = nil)
-		if attribut && attribut != "" || parametres[0] == nil then
-			element = elements.elt_alea
-		elsif parametres[0] then
+		if(attribut && attribut != "" || parametres[0] == nil) then
+			element = self.elt_alea
+		elsif(parametres[0]) then
 			element = genre(parametres[0]).elt_alea
 		end
 		return retourner_elt(element, attribut, parametres)

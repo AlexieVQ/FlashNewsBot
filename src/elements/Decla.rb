@@ -1,4 +1,6 @@
 require_relative 'Element.rb'
+require_relative 'Info.rb'
+require_relative 'Pers.rb'
 require_relative '../String.rb'
 
 ##
@@ -113,6 +115,18 @@ class Decla < Element
 	# String#evaluer).
 	def decla
 		return @decla.evaluer
+	end
+	
+	##
+	# Retourne l'Info associée à la déclaration, ou +nil+ si aucune n'est liée.
+	def info
+		return @id_info ? Info.id(@id_info) : nil
+	end
+	
+	##
+	# Retourne le Pers associé à la déclaration, ou +nil+ si aucun n'est lié.
+	def pers
+		return @id_pers ? Pers.id(@id_pers) : nil
 	end
 	
 	alias :to_s :decla
