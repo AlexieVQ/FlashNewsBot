@@ -7,7 +7,7 @@
 	- [x] Tester la taille des images
 	- [x] Envoyer les images sur Twitter
 	- [x] Description des images
-	- [ ] CW des images
+	- [x] CW des images
 	- [ ] Image _Flash Info_
 	- [ ] Associer des images aux personnages
 	- [ ] Associer des images aux informations
@@ -16,7 +16,7 @@
 
 ## Mastodon
 
-- [ ] Gestion des content warnings
+- [x] Gestion des content warnings
 - [ ] Gestion de l'API Mastodon
 
 ## Erreurs
