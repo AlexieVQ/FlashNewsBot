@@ -36,7 +36,7 @@ class Pers < Element
 		images = Image.id_pers(ligne['id'].to_i)
 		new(ligne['id'].to_i, noms, surnoms, ligne['poids'].to_i,
 		    ligne['nom_colle'], ligne['genre'], ligne['categorie'], localite,
-		    declas, images)
+		    declas, images, ligne['cw'])
 	end
 	
 	##
@@ -118,6 +118,8 @@ class Pers < Element
 	# [+localite+]      Localité du personnage (Localite)
 	# [+declas+]        Déclarations du personnage (Array de Decla)
 	# [+images]         Images du personnage (Array d'Image)
+	# [+cw+]            Avertissement de contenu du personnage (String, voir
+	#                   Element#cw)
 	def initialize(id,
 	               noms,
 	               surnoms,
@@ -127,8 +129,9 @@ class Pers < Element
 	               categorie,
 	               localite,
 	               declas,
-	               images)
-		super(id, poids)
+	               images,
+	               cw)
+		super(id, poids, cw)
 		@noms = noms
 		@surnoms = surnoms
 		@nom_colle = nom_colle
