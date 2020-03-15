@@ -47,6 +47,9 @@ class CompteTwitter < Compte
 	# @api_key		=> Clé de l'API Twitter (String)
 	# @api_secret	=> Clé secrète de l'API Twitter (String)
 	# @access_token	=> Token d'accès à l'API (OAuth::AccessToken)
+	# @tendances	=> Tendances (Array de String)
+	# @tendances_ts	=> Moment auquel les tendances ont été téléchargées (Time)
+	# @id_pays		=> Id du pays pour les tendances (Integer)
 	
 	################
 	# CONSTRUCTEUR #
@@ -186,6 +189,41 @@ class CompteTwitter < Compte
 		return "twitter.com"
 	end
 	
+	##
+	# Retourne les tendances française (Array de String).
+	#
+	# Met à jour les tendances toutes les heures.
+	def tendances
+		if(@tendances.nil? || (Time.now - 3600) > @tendances_ts) then
+			if(@id_pays.nil?) then
+				reponse_pays = @access_token.get(
+					"https://api.twitter.com/1.1/trends/available.json")
+				unless(reponse_pays == Net::HTTPSuccess) then
+					reponse_pays.value
+				end
+				liste_pays = JSON.parse(reponse_pays.body)
+				@id_pays = liste_pays.reduce { |id, pays|
+					if(pays['countryCode'] == "FR") then
+						id = pays['woeid']
+					end
+					id
+				}
+				if(@id_pays.nil?) then
+					raise "WOEID de la France non trouvé pour le compte #{self}"
+				end
+			end
+			
+			reponse_tendances = @access_token.get(
+				"https://api.twitter.com/1.1/trends/place.json?id=#{@id_pays}")
+			unless(reponse_tendances == Net::HTTPSuccess) then
+				reponse_tendances.value
+			end
+			@tendances = JSON.parse(
+				reponse_tendances.body)[0]['trends'].map { |td| td['name'] }
+		end
+		return @tendances
+	end
+	
 	private
 	
 	##
@@ -219,5 +257,4 @@ class CompteTwitter < Compte
 		end
 		return id
 	end
-	
 end

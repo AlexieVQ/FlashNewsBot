@@ -60,7 +60,7 @@ class Localite < Element
 		elsif(parametres && parametres.length != 0) then
 			element = nom_colle(parametres[0]).elt_alea
 		else
-			element = elements.elt_alea
+			element = self.elt_alea
 		end
 		return retourner_elt(element, attribut, parametres)
 	end
