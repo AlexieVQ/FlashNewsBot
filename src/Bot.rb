@@ -49,6 +49,7 @@ class Bot
 		@@intervalle = intervalle
 		@@dir = Dir.pwd
 		@@compte = nil
+		self.index_reset
 		
 		unless(offline) then
 			@@bdd = Bdd.new # Doit être connectée pour enregistrer le compte
