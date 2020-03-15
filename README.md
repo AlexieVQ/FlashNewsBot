@@ -16,3 +16,4 @@ Ruby.
 - [oauth](https://rubygems.org/gems/oauth)
 - [json](https://flori.github.io/json/)
 - [daemons](https://github.com/thuehlinger/daemons)
+- [i18m](https://github.com/ruby-i18n/i18n)

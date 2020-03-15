@@ -1,3 +1,4 @@
+require 'i18n'
 require_relative 'Bot.rb'
 
 ##
@@ -194,6 +195,32 @@ class String
 				return resultat.to_s
 			end
 		end
+	end
+	
+	##
+	# Divise la chaîne en mots alphabétiques (tous les autres caractères sont
+	# ignorés) et cherche les mots présents dans la chaîne donnée en paramètre.
+	# La comparaison est insensible à la case et à l'accentuation.
+	#
+	# Si un tableau de chaînes est donné en paramètre, l'opération est effectuée
+	# pour chaque chaîne du tableau.
+	#
+	# Retourne un Array de String comprenant les mots trouvés.
+	#
+	# Paramètre :
+	# [+str_ou_ary+]    String ou Array de String dans lesquels chercher
+	def chercher(str_ou_ary)
+		if(str_ou_ary.kind_of? Array) then
+			return str_ou_ary.reduce([]) { |tab, str| tab + self.chercher(str) }
+		end
+		
+		return I18n.transliterate(self).downcase.split(/[a-z]+/).reduce(
+			[]) { |tab, mot|
+			if(I18n.transliterate(str_ou_ary).downcase.include? mot) then
+				tab << mot
+			end
+			tab
+		}
 	end
 	
 end
