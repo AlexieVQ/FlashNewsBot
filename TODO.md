@@ -13,7 +13,8 @@
 	- [ ] Associer des images aux informations
 	- [ ] Envoie des images de manière aléatoire
 - [ ] Analyse des tendances
-	- [ ] Recevoir les tendances
+	- [x] Recevoir les tendances
+	- [ ] Programme de test
 	- [ ] Chercher des bouts de chaîne dans une autre
 	- [ ] Influencer les pondérations
 - [ ] CW de certains personnages
