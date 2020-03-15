@@ -32,6 +32,31 @@ class Bot
 	######################
 	
 	##
+	# Initialise les attributs de la classe, sans lancer l'exécution du bot.
+	#
+	# Méthode automatiquement appelée par Bot::exec.
+	#
+	# Paramètres :
+	# [+offline+]       Indique si le bot doit être exécuté hors-ligne (+true+,
+	#                   status générés écrits sur la sortie standard) ou en
+	#                   ligne (+false+, status envoyés au compte Twitter donné)
+	# [+username+]      Nom d'utilisateur du compte Twitter (String, ignoré si
+	#                   +offline+ est à +true+)
+	# [+intervalle+]    Intervalle, en minutes, entre chaque status (Integer ou
+	#                   Float)
+	def Bot.init(offline, username, intervalle)
+		@@bdd = nil
+		@@intervalle = intervalle
+		@@dir = Dir.pwd
+		@@compte = nil
+		
+		unless(offline) then
+			@@bdd = Bdd.new # Doit être connectée pour enregistrer le compte
+			@@compte = CompteTwitter.connecter(username)
+		end
+	end
+	
+	##
 	# Lance l'exécution du bot.
 	#
 	# Le bot est d'abord initialisé, puis il est démonisé. Si +offline+ est à
@@ -48,14 +73,8 @@ class Bot
 	# [+intervalle+]    Intervalle, en minutes, entre chaque status (Integer ou
 	#                   Float)
 	def Bot.exec(offline, username, intervalle)
-		@@bdd = nil
-		@@intervalle = intervalle
-		@@dir = Dir.pwd
-		@@compte = nil
-		
+		self.init(offline, username, intervalle)
 		unless(offline) then
-			@@bdd = Bdd.new # Doit être connectée pour enregistrer le compte
-			@@compte = CompteTwitter.connecter(username)
 			Daemons.daemonize({backtrace: true,
 							   app_name: username + "." + @@compte.domaine,
 							   log_output: true})

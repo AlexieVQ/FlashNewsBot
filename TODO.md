@@ -14,7 +14,7 @@
 	- [ ] Envoie des images de manière aléatoire
 - [ ] Analyse des tendances
 	- [x] Recevoir les tendances
-	- [ ] Programme de test
+	- [x] Programme de test
 	- [ ] Chercher des bouts de chaîne dans une autre
 	- [ ] Influencer les pondérations
 - [ ] CW de certains personnages
