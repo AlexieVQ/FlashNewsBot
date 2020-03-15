@@ -17,7 +17,8 @@ class TestTendances
 	# [+username+]      Nom d'utilisateur du compte Twitter (String)
 	def TestTendances.exec(username)
 		Bot.init(false, username, 60)
-		Bot.compte.tendances.each { |tendance| puts tendance }
+		puts Bot.compte.tendances
+		puts "## RÉSULTATS ##"
 		puts "Le Coronavirus est irresponsable et joue à Habbo après avoir voté".chercher(Bot.compte.tendances)
 	end
 	

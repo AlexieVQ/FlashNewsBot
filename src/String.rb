@@ -160,18 +160,23 @@ class String
 	#
 	# Paramètre :
 	# [+str_ou_ary+]    String ou Array de String dans lesquels chercher
-	def chercher(str_ou_ary)
+	# [+taille_min+]    Nombre minimum de caractères d'un mot pour être pris en
+	#                   compte (Integer)
+	def chercher(str_ou_ary, taille_min = 4)
 		if(str_ou_ary.kind_of? Array) then
-			return str_ou_ary.reduce([]) { |tab, str| tab + self.chercher(str) }
+			return str_ou_ary.reduce([]) { |tab, str|
+				tab + self.chercher(str, taille_min)
+			}.uniq
 		end
-		
-		return I18n.transliterate(self).downcase.split(/[a-z]+/).reduce(
+		I18n.config.available_locales = :en
+		return I18n.transliterate(self).downcase.scan(/[a-z]+/).reduce(
 			[]) { |tab, mot|
-			if(I18n.transliterate(str_ou_ary).downcase.include? mot) then
+			if(mot.length >= taille_min &&
+				I18n.transliterate(str_ou_ary).downcase.include?(mot)) then
 				tab << mot
 			end
 			tab
-		}
+		}.uniq
 	end
 	
 	protected
