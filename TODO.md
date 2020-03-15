@@ -15,7 +15,7 @@
 - [ ] Analyse des tendances
 	- [x] Recevoir les tendances
 	- [x] Programme de test
-	- [ ] Chercher des bouts de chaîne dans une autre
+	- [x] Chercher des bouts de chaîne dans une autre
 	- [ ] Influencer les pondérations
 - [ ] CW de certains personnages
 - [ ] Sauvetage de toutes les erreurs au niveau du bot

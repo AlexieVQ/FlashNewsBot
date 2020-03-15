@@ -2,39 +2,54 @@
 
 require 'optparse'
 require_relative 'src/Bot.rb'
+require_relative 'src/TestTendances.rb'
 
 intervalle = 60
 hors_ligne = false
 username = ""
-opt_parser = OptionParser.new do |opts|
+tendances = false
+opt_parser = OptionParser.new { |opts|
 	opts.banner = "Utilisation : #{$PROGRAM_NAME} [options]"
 	
 	opts.on("-o", "--off-line",
-	        "Génère des status, sans les poster sur un réseau social") do
+	        "Génère des status, sans les poster sur un réseau social") {
 		hors_ligne = true
-	end
+    }
+	
+	opts.on("-t", "--tendances", "Analyse les tendances") {
+		tendances = true
+	}
 	
 	opts.on("-uUSERNAME", "--username=USERNAME",
-	        "Nom d'utilisateur sur le réseau social") do |u|
+	        "Nom d'utilisateur sur le réseau social") { |u|
 		username = u
-	end
+	}
 	
 	opts.on("-iDUREE", "--intervalle=DUREE",
-	        "Intervalle (en min) entre deux posts (par défaut 60 min)") do |i|
+	        "Intervalle (en min) entre deux posts (par défaut 60 min)") { |i|
 		intervalle = i.to_f
-	end
+	}
 	
-	opts.on("-h", "--help", "Affiche l'aide") do
+	opts.on("-h", "--help", "Affiche l'aide") {
 		puts opts
 		exit
-	end
+	}
 	
-end.parse!
+}.parse!
 
-if !hors_ligne && username == "" then
-	puts "Vous devez préciser un nom d'utilisateur, ou utiliser -o (-h ou" +
-			" --help pour l'aide)"
+if(!hors_ligne && username.empty?) then
+	$stderr.puts("Vous devez préciser un nom d'utilisateur, ou utiliser -o " +
+				 "(-h ou --help pour l'aide)")
 	exit
 end
 
-Bot.exec(hors_ligne, username, intervalle)
+if(tendances && username.empty?) then
+	$stderr.puts("Vous devez préciser un nom d'utilisateur")
+	exit
+end
+
+if(tendances) then
+	TestTendances.exec(username)
+else
+	Bot.exec(hors_ligne, username, intervalle)
+end

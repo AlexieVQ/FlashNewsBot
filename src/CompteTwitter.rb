@@ -220,6 +220,7 @@ class CompteTwitter < Compte
 			end
 			@tendances = JSON.parse(
 				reponse_tendances.body)[0]['trends'].map { |td| td['name'] }
+			@tendances_ts = Time.now
 		end
 		return @tendances
 	end
