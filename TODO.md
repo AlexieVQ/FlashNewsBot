@@ -18,8 +18,8 @@
 	- [x] Chercher des bouts de chaîne dans une autre
 	- [x] Influencer les pondérations
 - [ ] CW de certains personnages
-- [ ] Sauvetage de toutes les erreurs au niveau du bot
-
+- [ ] Mode débuggage
+	- [ ] Sauvetage de toutes les erreurs au niveau du bot en mode production
 ## Mastodon
 
 - [x] Gestion des content warnings
