@@ -419,7 +419,7 @@ id;surnom;poids;id_pers
 420;la militante écologiste;10;245
 421;la jeune militante;10;245
 422;la journaliste;10;246
-423;le candidat à la Mairie de Paris;10;247
+423;l’ancien candidat à la Mairie de Paris;10;247
 424;le journaliste;10;248
 425;le journaliste indépendant;10;248
 426;le philosophe;10;248
@@ -539,3 +539,34 @@ id;surnom;poids;id_pers
 541;le rappeur;10;305
 542;le youtubeur;10;306
 543;le vidéaste;10;306
+544;le youtubeur;10;310
+545;le vidéaste;10;310
+546;le youtubeur angevin;10;310
+547;l’homme politique;10;311
+548;le rappeur;10;312
+549;l’acteur;10;313
+550;le comédien;10;313
+551;l’acteur américain;10;31
+552;le réalisateur;10;314
+553;le réalisateur coréen;10;314
+554;le réalisateur à la Palme d’Or;10;314
+555;l’oie;10;315
+556;l’oie chaotique;5;315
+557;l’animale chaotique;5;315
+558;le comédien;10;316
+559;le médecin;10;317
+560;le médecin préféré des Français;5;317
+561;le médecin du PAF;5;317
+562;le candidat à l’investiture démocrate;10;318
+563;le candidat à la primaire démocrate;10;318
+564;l’ancienne candidate à la primaire démocrate;10;319
+565;l’ancien candidat à la primaire démocrate;10;320
+566;la Représentante américaine;10;321
+567;la chanteuse;10;322
+568;la chanteuse américaine;10;322
+569;le chanteur;10;323
+570;le comédien;10;323
+571;l’humoriste;10;324
+572;le journaliste;10;325
+573;la femme politique;10;326
+574;l’homme politique en parfaite santé;5;318

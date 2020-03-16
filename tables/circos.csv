@@ -219,3 +219,5 @@ id;circo;poids;type;id_info
 248;sous forme d’une “discussion entre potes” d’après l’intéressé{gse};30;specifique;178
 249;sur Twitter;10;specifique;180
 250;sur Snapchat;10;specifique;180
+251;en déclarant la guerre {loc_circo=localite(pays)}{loc_circo.nom(à)};10;specifique;182
+252;sur #LeLIVE;specifique;160

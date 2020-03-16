@@ -369,3 +369,10 @@ id;action;poids;id_info
 368;banni{gse} du bar La Mutinerie à Paris;5;179
 369;{sujet=pers}une photo {genre(sujet,du pénis,dénudée)} {sujet.nom(de)} fuite;10;180
 370;{sujet=pers}{genre(sujet,le pénis,des photos intimes)} {sujet.nom(de)} fuite{genre(sujet,,nt)};5;180
+371;rejoint la {h}RedBox;10;181
+372;annonce qu’{genre(sujet,il,elle)} rejoint la {h}RedBox;10;181
+373;provoque la 3ème Guerre Mondiale;10;182
+374;banni{gse} de Twitch;10;183
+375;rejoint #LeLIVE;10;184
+376;testé{gse} positi{genre(sujet,f,ve)} au {rand(Coronavirus,COVID-19)};10;185
+377;mis{gse} en quarantaine à cause du {rand(Coronavirus,COVID-19)};10;186

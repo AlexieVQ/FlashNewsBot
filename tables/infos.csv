@@ -150,3 +150,9 @@ id;type;description;type_circo;hashtag;poids;categories;structure
 178;son annonce;Se lance dans le podcast;universel;;10;internet;
 179;son ban;Banni de la Mutinerie;est_accuse;;10;;
 180;cette fuite;La bite de sujet fuite;universel;;10;;{accroche({info.action}{rand(, {date})}{rand(, {lieu})}{rand(, info.circo)})}.
+181;son arrivée;Rejoint la RedBox;universel;#YouTube;10;internet;
+182;sa provocation;Provoque la WW3;universel;#WW3;10;politique;
+183;son ban;Banni de Twitch;est_accuse;#Twitch;10;internet;
+184;son arrivée;Rejoint LeLIVE;universel;#Webedia;10;internet,TV;
+185;son état de santé;Testé positif au Coronavirus;#{rand(Coronavirus,COVID19,COVIDー19)};20;;
+186;sa mise en quarantaine;Mis en quarantaine à cause du Coronavirus;#{rand(Coronavirus,COVID19,COVIDー19)};10;;

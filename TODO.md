@@ -54,3 +54,7 @@ DETAIL:  Key (status_id, compte_id, domaine, id_pers)=(1238264552208424961, 1037
 	from /home/alexie/Developpement/FlashNewsBot/src/Bot.rb:65:in `exec'
 	from ./FlashNewsBot.rb:40:in `<main>'
 ```
+- [ ] _de le_ :
+> FLASH NEWS - Antoine Griezmann décide de rejoindre la République En Marche
+> dans le métro suite à son départ de le parti Travailliste. Le footballer a
+> déclaré hier dans le cadre de l’affaire Yann Moix “C’était pour déconner”.
