@@ -218,6 +218,8 @@ class Info < Element
 	#   est à +1+ et les autres critères sont ignorés)
 	# * Le nombre moyen d'interactions (likes, partages, réponses) par status
 	#   comprenant l'information est ajouté au poids
+	# * L'information contient des mots en tendance (nombre de caractères
+	#   trouvés multiplié par 10)
 	def poids
 		# Information déjà postée dans les dernières 24 heures
 		if(Bot.compte && Bot.bdd.info_recemment_poste(self, Bot.compte) > 0)
@@ -230,6 +232,13 @@ class Info < Element
 		# Nombre moyen d'interactions générées
 		if(Bot.compte) then
 			poids += Bot.bdd.interactions_pers(self, Bot.compte)
+		end
+		
+		# Analyse des tendances
+		if(Bot.compte) then
+			poids += self.chercher(Bot.compte.tendances).reduce(0) { |s, mot|
+				s + mot.length * 10
+			}
 		end
 		
 		return poids

@@ -250,6 +250,8 @@ class Pers < Element
 	#   status (+loc_principale+) (le poids est multiplié par 20)
 	# * Le nombre moyen d'interactions (likes, partages, réponses) par status
 	#   comprenant le personnage est ajouté au poids
+	# * Le personnage est en tendance (nombre de caractères trouvés multiplié
+	#   par 10)
 	def poids
 		# Personnage déjà posté dans les dernières 24 heures
 		if(Bot.compte && Bot.bdd.pers_recemment_poste(self, Bot.compte) > 0)
@@ -284,6 +286,13 @@ class Pers < Element
 		# Nombre moyen d'interactions générées
 		if(Bot.compte) then
 			poids += Bot.bdd.interactions_info(self, Bot.compte)
+		end
+		
+		# Analyse des tendances
+		if(Bot.compte) then
+			poids += self.chercher(Bot.compte.tendances).reduce(0) { |s, mot|
+				s + mot.length * 10
+			}
 		end
 		
 		return poids
