@@ -289,4 +289,17 @@ class Pers < Element
 		return poids
 	end
 	
+	##
+	# Méthode String#chercher sur le nom.
+	#
+	# Paramètre :
+	# [+str_ou_ary+]    String ou Array de String dans lesquels chercher
+	# [+taille_min+]    Nombre minimum de caractères d'un mot pour être pris en
+	#                   compte (Integer)
+	def chercher(str_ou_ary, taille_min = 4)
+		return @noms.reduce([]) { |tab, nom|
+			tab + nom.chercher(str_ou_ary, taille_min)
+		}.uniq
+	end
+	
 end

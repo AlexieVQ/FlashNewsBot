@@ -101,6 +101,17 @@ class NomPers < Element
 	alias :to_s :nom
 	
 	##
+	# Méthode String#chercher sur le nom.
+	#
+	# Paramètre :
+	# [+str_ou_ary+]    String ou Array de String dans lesquels chercher
+	# [+taille_min+]    Nombre minimum de caractères d'un mot pour être pris en
+	#                   compte (Integer)
+	def chercher(str_ou_ary, taille_min = 4)
+		return @nom.chercher(str_ou_ary, taille_min)
+	end
+	
+	##
 	# Retourne le Pers nommé.
 	def pers
 		return Pers.id(@id_pers)

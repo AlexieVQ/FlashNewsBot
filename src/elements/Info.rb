@@ -235,4 +235,18 @@ class Info < Element
 		return poids
 	end
 	
+	##
+	# Méthode String#chercher sur l'information.
+	#
+	# Paramètre :
+	# [+str_ou_ary+]    String ou Array de String dans lesquels chercher
+	# [+taille_min+]    Nombre minimum de caractères d'un mot pour être pris en
+	#                   compte (Integer)
+	def chercher(str_ou_ary, taille_min = 4)
+		return (@actions.reduce([]) { |tab, action|
+			tab + action.chercher(str_ou_ary, taille_min)
+		} + (@hashtag.nil? ? [] : @hashtag.chercher(str_ou_ary,
+		                                            taille_min))).uniq
+	end
+	
 end

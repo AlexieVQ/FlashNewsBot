@@ -158,6 +158,8 @@ class String
 	#
 	# Retourne un Array de String comprenant les mots trouvés.
 	#
+	# Les noms d'entrées de l'index sont ignorés.
+	#
 	# Paramètre :
 	# [+str_ou_ary+]    String ou Array de String dans lesquels chercher
 	# [+taille_min+]    Nombre minimum de caractères d'un mot pour être pris en
@@ -171,7 +173,7 @@ class String
 		I18n.config.available_locales = :en
 		return I18n.transliterate(self).downcase.scan(/[a-z]+/).reduce(
 			[]) { |tab, mot|
-			if(mot.length >= taille_min &&
+			if(mot.length >= taille_min && !Bot.index.keys.include?(mot) &&
 				I18n.transliterate(str_ou_ary).downcase.include?(mot)) then
 				tab << mot
 			end
