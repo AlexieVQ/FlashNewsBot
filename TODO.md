@@ -12,11 +12,11 @@
 	- [ ] Associer des images aux personnages
 	- [ ] Associer des images aux informations
 	- [ ] Envoie des images de manière aléatoire
-- [ ] Analyse des tendances
+- [x] Analyse des tendances
 	- [x] Recevoir les tendances
 	- [x] Programme de test
 	- [x] Chercher des bouts de chaîne dans une autre
-	- [ ] Influencer les pondérations
+	- [x] Influencer les pondérations
 - [ ] CW de certains personnages
 - [ ] Sauvetage de toutes les erreurs au niveau du bot
 

@@ -34,6 +34,18 @@ class TestTendances
 				puts "#{info.id} : #{t.join(", ")}"
 			end
 		}
+		puts "## CLASSEMENT PERS ##"
+		Pers.sort {
+			|a, b| a.poids <=> b.poids
+		}.reverse.each_with_index { |pers, i|
+			puts "#{i + 1} : #{pers.id} (#{pers.poids})"
+		}
+		puts "## CLASSEMENT INFOS ##"
+		Info.sort {
+			|a, b| a.poids <=> b.poids
+		}.reverse.each_with_index { |info, i|
+			puts "#{i + 1} : #{info.id} (#{info.poids})"
+		}
 	end
 	
 end
