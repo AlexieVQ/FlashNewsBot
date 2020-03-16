@@ -20,6 +20,7 @@
 - [ ] CW de certains personnages
 - [ ] Mode débuggage
 	- [ ] Sauvetage de toutes les erreurs au niveau du bot en mode production
+
 ## Mastodon
 
 - [x] Gestion des content warnings
