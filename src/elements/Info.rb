@@ -30,10 +30,13 @@ class Info < Element
 	def Info.importer(ligne)
 		actions = Action.id_info(ligne['id'].to_i)
 		circos = Circo.id_info(ligne['id'].to_i)
-		declas = Decla.id_info(ligne['id'].to_i)
+		declas_sujet = Decla.id_info_sujet(ligne['id'].to_i)
+		declas_objet = Decla.id_info_objet(ligne['id'].to_i)
+		declas_autre = Decla.id_info_autre(ligne['id'].to_i)
 		images = Image.id_info(ligne['id'].to_i)
 		new(ligne['id'].to_i, actions, ligne['poids'].to_i, circos,
-		    ligne['type'], declas, ligne['hashtag'], ligne['type_circo'],
+		    ligne['type'], declas_sujet, declas_objet, declas_autre,
+		    ligne['hashtag'], ligne['type_circo'],
 		    ligne['categories'] ? ligne['categories'].split(',') : [],
 		    ligne['structure'], images)
 	end
@@ -65,7 +68,9 @@ class Info < Element
 	# @circos		=> Array de Circo
 	# @type			=> Type (ex : "son assassinat", "sa déclaration", ...) 
 	# 				   (String)
-	# @declas		=> Array de Decla
+	# @declas_sujet	=> Array de Decla dont le déclarant est sujet de l'info
+	# @declas_objet	=> Array de Decla dont le déclarant est objet de l'info
+	# @declas_autre	=> Array de Decla dont le déclarent est extérieur à l'info
 	# @hashtag		=> Hashtag (String)
 	# @images		=> Array d'Image
 	
@@ -87,7 +92,9 @@ class Info < Element
 	# [+circos+]        Array de Circo liées à l'information
 	# [+type+]          Type de l'information ("son assassinat", "sa
 	#                   déclaration"...)
-	# [+declas+]        Array de Decla liées à l'information
+	# [+declas_sujet+]  Array de Decla dont le déclarant est sujet de l'info
+	# [+declas_objet+]  Array de Decla dont le déclarant est objet de l'info
+	# [+declas_autre+]  Array de Decla dont le déclarant est extérieur à l'info
 	# [+hashtag+]       Hashtag de l'information (String, ou +nil+)
 	# [+type_circo+]    Type de la circonstance (String, voir Circo#type_circo)
 	# [+categories+]    Catégories de l'information (Array de String, voir
@@ -100,7 +107,9 @@ class Info < Element
 	               poids,
 	               circos,
 	               type,
-	               declas,
+	               declas_sujet,
+	               declas_objet,
+	               declas_autre,
 	               hashtag,
 	               type_circo,
 	               categories,
@@ -110,7 +119,9 @@ class Info < Element
 		@actions = actions
 		@circos = circos
 		@type = type
-		@declas = declas
+		@declas_sujet = declas_sujet
+		@declas_objet = declas_objet
+		@declas_autre = declas_autre
 		@hashtag = hashtag
 		@type_circo = type_circo
 		@categories = categories
@@ -153,11 +164,49 @@ class Info < Element
 	end
 	
 	##
-	# Retourne une déclaration (String) de l'information aléatoirement (ou une
-	# déclaration universelle) après l'avoir évaluée (voir String#evaluer).
-	def decla
-		return @declas.elt_alea(Bot.index['sujet'].declas | [Decla.elt_alea])
-			.decla.evaluer
+	# Retourne une déclaration (String) de l'information aléatoirement dont le
+	# déclarant est le sujet de l'information (ou une déclaration universelle)
+	# après l'avoir évaluée (voir String#evaluer).
+	def decla_sujet
+		return @declas_sujet.elt_alea(Bot.index['sujet'].declas |
+		                              [Decla.elt_alea]).decla.evaluer
+	end
+	
+	##
+	# Teste si des déclarations dont l'objet est le déclarant peuvent être
+	# retournées.
+	def decla_objet?
+		return @declas_objet.length > 0 ||
+				Bot.index['objet'] && Bot.index['objet'].declas.length > 0
+	end
+	
+	##
+	# Retourne une déclaration (String) de l'information aléatoirement dont le
+	# déclarant est l'objet de l'information après l'avoir évaluée (voir
+	# String#evaluer).
+	def decla_objet
+		return @declas_objet.elt_alea(Bot.index['objet'] ?
+				Bot.index['objet'].declas : []).decla.evaluer
+	end
+	
+	##
+	# Teste si des déclarations d'un personnage tierce peuvent être retournées.
+	#
+	# Paramètres :
+	# [+pers+]  Personnage tierce
+	def decla_autre?(pers = nil)
+		return @declas_autre.length > 0 || pers && pers.declas.length > 0
+	end
+	
+	##
+	# Retourne une déclaration (String) de l'information aléatoirement dont le
+	# déclarant est extérieur à l'information après l'avoir évaluée (voir
+	# String#evaluer).
+	#
+	# Paramètres :
+	# [+pers+]  Personnage tierce
+	def decla_autre(pers = nil)
+		return @declas_objet.elt_alea(pers ? pers.declas : []).decla.evaluer
 	end
 	
 	##

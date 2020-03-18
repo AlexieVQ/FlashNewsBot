@@ -1,122 +1,122 @@
-id;decla;poids;id_info;id_pers
-1;Je dédie ma fortune {pers_decla=pers}{pers_decla.nom(à)};10;1;
-2;Yes je suis dead;5;1;
-3;J’ai gagné !;5;3;
-4;Je nomme {pers_decla=pers}{pers_decla.nom} Premi{genre(pers_decla,er,ère)} Ministre;10;3;
-5;Yes je suis dead;10;5;
-6;Adieu salope;10;7;
-7;Yes {genre(objet,le mec,la meuf)} est dead;10;7;
-8;Adieu salope;10;8;
-9;Yes {genre(objet,le mec,la meuf)} est dead;10;8;
-10;Désolé j’ai pas fait exprès;10;9;
-11;Il y aura du lourd dans les featurings;10;16;
-12;{pers_decla=pers}{pers_decla.nom} sera présent{genre(pers_decla,,e)};10;16;
-13;Le projet il est prêt il arrive;10;16;
-14;J’accepte d’affronter {objet.nom} en combat libre et ce malgré mon âge ({rand(50,60,65,69,70,75,80,90,95,100,140)} ans cette année) et bien que le MMA ne soit pas ma spécialité.;10;17;
-15;J’accepte d’affronter {objet.nom} en combat libre et ce malgré mon âge ({rand(50,60,65,69,70,75,80,90,95,100,140)} ans cette année) et bien que le sabre ne soit pas ma spécialité.;10;18;
-16;J’accepte d’affronter {objet.nom} en combat libre et ce malgré mon âge ({rand(50,60,65,69,70,75,80,90,95,100,140)} ans cette année) et bien que le pierre-feuille-ciseau ne soit pas ma spécialité.;10;19;
-17;{maj({objet.nom})} a endetté {loc_info.nom};10;21;
-18;Je vais péter la gueule à cet OVNI;10;25;
-19;Tu vas me le payer cher;10;27;
-20;Bon shit sa mère;10;30;
-21;Casse la gorge;10;30;
-22;Tu clashes dès que quelqu’un met une vidéo en ligne;10;48;
-23;J’hallucine tu oses dire {sujet.nom} l{genre(sujet,e,a)} mongolien{genre(sujet,,ne)} ?;10;48;
-24;J’hallucine tu oses dire {sujet.nom} l{genre(sujet,e,a)} mongolien{genre(sujet,,ne)} ? OK très bien, rappelle-moi ton prénom {objet.nom};10;48;
-25;Désolé je savais pas que c’était interdit;10;55;
-26;Adieu salope;10;55;
-27;Yes {genre(objet,le mec,la meuf)} est dead;10;55;
-28;Adieu salope;10;66;
-29;Wallah wallah wallah village de merde;10;73;
-30;C’est fini entre nous;10;81;
-31;Moi et {sujet2.nom} c’est fini entre nous;10;81;
-32;{maj({sujet2.nom})} me trompe j’en suis sûr;10;81;
-33;Je le sens je le sais je {genre(sujet2,le,la)} suis {genre(sujet2,il,elle)} se fout de moi;30;81;
-34;Oui bah {pers_decla=pers}{pers_decla.nom} a fait pire déjà;10;89;
-35;{maj({objet.nom})} est {genre(objet,l’homme,la femme)} de ma vie;10;93;
-36;Les a-t-on déjà vu{genre(objet,,{genre(objet2,,e)})}s tou{genre(objet,,{genre(objet2,,te)})}s les deux dans une même pièce ?;10;94;
-37;Les a-t-on déjà vu{genre(objet,,{genre(objet2,,e)})}s tou{genre(objet,,{genre(objet2,,te)})}s les deux dans une même pièce ? Bah non wallah donc j’ai raison.;10;94;
-38;C’est l{genre(objet,e,a)} candidat{genre(objet,,e)} de la vraie droite, celle de l’économie réelle, pas celle du capital;10;102;
-39;C’est toujours mieux {pers_decla=pers}{pers_decla.nom(que)};10;119;
-40;Ouais bah c’est toujours mieux {pers_decla=pers}{pers_decla.nom(que)};10;119;
-41;Oh non… J’avais économisé dur pour pouvoir me la payer…;10;120;
-42;Oh non… J’avais économisé dur pour pouvoir me la payer…;10;121;
-43;Oh non… J’avais économisé dur pour pouvoir me le payer…;10;122;
-44;Ces dîners avec {homar.nom} étaient à caractère professionnel;10;144;
-45;Ces dîners avec {homar.nom} et {homar2.nom} étaient à caractère professionnel;10;144;
-46;Et alors ça vous dérange ?;10;;
-47;Non.;5;;
-48;C’est faux. Ce sont des calomnies.;10;;
-49;C’est de la diffamation;10;;
-50;Tout cela est de sa{objet} faute;10;;
-51;Ça arrive;10;;
-52;On s’y fait;10;;
-53;Putain.;3;;
-55;On vit dans une société;5;;
-56;jbaise ta mère fils de pute ton père ta grand mère ta femme;10;;9
-57;jvais vous baiser vos mères la pute tout simplement;1;;
-58;J’ai pas fait exprès. Désolé.;5;;
-59;Nofake;5;;
-61;Merde;5;;
-62;Ok mec;5;;
-63;J’ai dû en moudre pour arriver là.;3;;
-64;{objet.nom} a baisé {genre(sujet,ma femme,mon mec)};1;;
-68;Le pipi est stocké dans les couilles;1;;
-69;NUL {objet.nom} NUL NUL NUL;1;;
-70;Ah non j’ai rien dit;10;;
-71;Ah non j’ai rien fait;10;;
-72;Miskine;5;;
-74;Ma femme m’a quitté{gse};1;;
-75;J’ai eu à le faire à eux;10;;
-76;ACAB;5;;
-77;ACAB sauf {pers_decla=pers}{pers_decla.nom};5;;
-78;Fuck le 17;5;;
-79;On m’appelle l’OVNI;1;;
-82;R.I.P {objet.nom};10;;
-83;#RIP{objet.nom_colle};10;;
-84;Fuck {objet.nom};10;;
-85;C’était pour déconner;5;;
-86;Mais c’était pour déconner !;5;;
-89;Contexte ?;10;;
-90;Source ?;10;;
-91;Je ne trouve pas de mot pour dire mon dégoût devant le caractère abject de cette accusation.;10;;
-92;Tu veux du pain ?;1;;
-94;{genre(sujet,Ma femme,Mon mec)} me trompe avec {objet.nom};10;;
-96;Nique {loc_info.nom} !;20;;
-97;{maj({loc_info.nom})} on t’encule !;10;;
-98;{maj({loc_info.nom})}{loc_info.departement} on t’encule !;10;;
-99;Trop choquer et déçu;10;;
-100;{objet}Devinez sa filière;10;;
-101;Ça nous est tous déjà arrivé;10;;
-102;Ma personne est sacrée;5;;
-103;Ma personne est sacrée je suis {sujet.surnom(0)};5;;
-104;Je porte plainte pour diffamation et incitation à la haine;10;;
-105;Wallah j’ai rien fait;10;;
-106;Sco pa tu manaa;5;;
-107;{maj({objet.nom})} surcôté{genre(objet,,e)};10;;
-108;OK boomer;30;;
-109;Pour moi c’est Black Mirror.;10;;
-110;Si c’est vrai c’est très grave !!!;10;;
-111;no;10;163;
-112;Faux;10;;1
-113;Faux !;10;;1
-116;Drrrraaaaa Cortex 91 les pyramides;10;;10
-117;Drrrraaaaa;10;;10
-118;Pourquoi ?;10;;12
-119;Ma bite !;10;;13
-120;C’est ma bite !;10;;13
-121;Non mais c’est fou ça !;10;;90
-122;no;10;;248
-123;wrbwrbwrbwrb;10;;271
-124;Mmmh ouais;10;;277
-125;Ouais ouais ouais ouais;10;;277
-126;J’ai pas compris;10;;280
-127;Relire {pers_decla=pers}{pers_decla.nom};10;;
-128;{maj({sujet.nom})} déguisé{gse} en hamburger sur NRJ;10;172;
-129;TAISEZ-VOUS;10;;303
-130;Je ne trouve pas de mot pour dire mon dégoût devant le caractère abject de cette accusation.;10;;22
-131;What The Cut #38 sera la production la plus chère de l’histoire du cinéma français;10;123;
-132;C’est pas piqué des hannetons !;1;;310
-133;Bomboclaat;10;;
-134;Bye Bitch;5;5;
-135;Bye Bitch 💅;5;5;
+id;decla;poids;id_info_sujet;id_info_objet;id_info_autre;id_pers
+1;Je dédie ma fortune {pers_decla=pers}{pers_decla.nom(à)};10;1;;;
+2;Yes je suis dead;5;1;;;
+3;J’ai gagné !;5;3;;;
+4;Je nomme {pers_decla=pers}{pers_decla.nom} Premi{genre(pers_decla,er,ère)} Ministre;10;3;;;
+5;Yes je suis dead;10;5;;;
+6;Adieu salope;10;7;;;
+7;Yes {genre(objet,le mec,la meuf)} est dead;10;7;;;
+8;Adieu salope;10;8;;;
+9;Yes {genre(objet,le mec,la meuf)} est dead;10;8;;;
+10;Désolé j’ai pas fait exprès;10;9;;;
+11;Il y aura du lourd dans les featurings;10;16;;;
+12;{pers_decla=pers}{pers_decla.nom} sera présent{genre(pers_decla,,e)};10;16;;;
+13;Le projet il est prêt il arrive;10;16;;;
+14;J’accepte d’affronter {objet.nom} en combat libre et ce malgré mon âge ({rand(50,60,65,69,70,75,80,90,95,100,140)} ans cette année) et bien que le MMA ne soit pas ma spécialité.;10;17;;;
+15;J’accepte d’affronter {objet.nom} en combat libre et ce malgré mon âge ({rand(50,60,65,69,70,75,80,90,95,100,140)} ans cette année) et bien que le sabre ne soit pas ma spécialité.;10;18;;;
+16;J’accepte d’affronter {objet.nom} en combat libre et ce malgré mon âge ({rand(50,60,65,69,70,75,80,90,95,100,140)} ans cette année) et bien que le pierre-feuille-ciseau ne soit pas ma spécialité.;10;19;;;
+17;{maj({objet.nom})} a endetté {loc_info.nom};10;21;;;
+18;Je vais péter la gueule à cet OVNI;10;25;;;
+19;Tu vas me le payer cher;10;27;;;
+20;Bon shit sa mère;10;30;;;
+21;Casse la gorge;10;30;;;
+22;Tu clashes dès que quelqu’un met une vidéo en ligne;10;48;;;
+23;J’hallucine tu oses dire {sujet.nom} l{genre(sujet,e,a)} mongolien{genre(sujet,,ne)} ?;10;48;;;
+24;J’hallucine tu oses dire {sujet.nom} l{genre(sujet,e,a)} mongolien{genre(sujet,,ne)} ? OK très bien, rappelle-moi ton prénom {objet.nom};10;48;;;
+25;Désolé je savais pas que c’était interdit;10;55;;;
+26;Adieu salope;10;55;;;
+27;Yes {genre(objet,le mec,la meuf)} est dead;10;55;;;
+28;Adieu salope;10;66;;;
+29;Wallah wallah wallah village de merde;10;73;;;
+30;C’est fini entre nous;10;81;;;
+31;Moi et {sujet2.nom} c’est fini entre nous;10;81;;;
+32;{maj({sujet2.nom})} me trompe j’en suis sûr;10;81;;;
+33;Je le sens je le sais je {genre(sujet2,le,la)} suis {genre(sujet2,il,elle)} se fout de moi;30;81;;;
+34;Oui bah {pers_decla=pers}{pers_decla.nom} a fait pire déjà;10;89;;;
+35;{maj({objet.nom})} est {genre(objet,l’homme,la femme)} de ma vie;10;93;;;
+36;Les a-t-on déjà vu{genre(objet,,{genre(objet2,,e)})}s tou{genre(objet,,{genre(objet2,,te)})}s les deux dans une même pièce ?;10;94;;;
+37;Les a-t-on déjà vu{genre(objet,,{genre(objet2,,e)})}s tou{genre(objet,,{genre(objet2,,te)})}s les deux dans une même pièce ? Bah non wallah donc j’ai raison.;10;94;;;
+38;C’est l{genre(objet,e,a)} candidat{genre(objet,,e)} de la vraie droite, celle de l’économie réelle, pas celle du capital;10;102;;;
+39;C’est toujours mieux {pers_decla=pers}{pers_decla.nom(que)};10;119;;;
+40;Ouais bah c’est toujours mieux {pers_decla=pers}{pers_decla.nom(que)};10;119;;;
+41;Oh non… J’avais économisé dur pour pouvoir me la payer…;10;120;;;
+42;Oh non… J’avais économisé dur pour pouvoir me la payer…;10;121;;;
+43;Oh non… J’avais économisé dur pour pouvoir me le payer…;10;122;;;
+44;Ces dîners avec {homar.nom} étaient à caractère professionnel;10;144;;;
+45;Ces dîners avec {homar.nom} et {homar2.nom} étaient à caractère professionnel;10;144;;;
+46;Et alors ça vous dérange ?;10;;;;
+47;Non.;5;;;;
+48;C’est faux. Ce sont des calomnies.;10;;;;
+49;C’est de la diffamation;10;;;;
+50;Tout cela est de sa{objet} faute;10;;;;
+51;Ça arrive;10;;;;
+52;On s’y fait;10;;;;
+53;Putain.;3;;;;
+55;On vit dans une société;5;;;;
+56;jbaise ta mère fils de pute ton père ta grand mère ta femme;10;;;;9
+57;jvais vous baiser vos mères la pute tout simplement;1;;;;
+58;J’ai pas fait exprès. Désolé.;5;;;;
+59;Nofake;5;;;;
+61;Merde;5;;;;
+62;Ok mec;5;;;;
+63;J’ai dû en moudre pour arriver là.;3;;;;
+64;{objet.nom} a baisé {genre(sujet,ma femme,mon mec)};1;;;;
+68;Le pipi est stocké dans les couilles;1;;;;
+69;NUL {objet.nom} NUL NUL NUL;1;;;;
+70;Ah non j’ai rien dit;10;;;;
+71;Ah non j’ai rien fait;10;;;;
+72;Miskine;5;;;;
+74;Ma femme m’a quitté{gse};1;;;;
+75;J’ai eu à le faire à eux;10;;;;
+76;ACAB;5;;;;
+77;ACAB sauf {pers_decla=pers}{pers_decla.nom};5;;;;
+78;Fuck le 17;5;;;;
+79;On m’appelle l’OVNI;1;;;;
+82;R.I.P {objet.nom};10;;;;
+83;#RIP{objet.nom_colle};10;;;;
+84;Fuck {objet.nom};10;;;;
+85;C’était pour déconner;5;;;;
+86;Mais c’était pour déconner !;5;;;;
+89;Contexte ?;10;;;;
+90;Source ?;10;;;;
+91;Je ne trouve pas de mot pour dire mon dégoût devant le caractère abject de cette accusation.;10;;;;
+92;Tu veux du pain ?;1;;;;
+94;{genre(sujet,Ma femme,Mon mec)} me trompe avec {objet.nom};10;;;;
+96;Nique {loc_info.nom} !;20;;;;
+97;{maj({loc_info.nom})} on t’encule !;10;;;;
+98;{maj({loc_info.nom})}{loc_info.departement} on t’encule !;10;;;;
+99;Trop choquer et déçu;10;;;;
+100;{objet}Devinez sa filière;10;;;;
+101;Ça nous est tous déjà arrivé;10;;;;
+102;Ma personne est sacrée;5;;;;
+103;Ma personne est sacrée je suis {sujet.surnom(0)};5;;;;
+104;Je porte plainte pour diffamation et incitation à la haine;10;;;;
+105;Wallah j’ai rien fait;10;;;;
+106;Sco pa tu manaa;5;;;;
+107;{maj({objet.nom})} surcôté{genre(objet,,e)};10;;;;
+108;OK boomer;30;;;;
+109;Pour moi c’est Black Mirror.;10;;;;
+110;Si c’est vrai c’est très grave !!!;10;;;;
+111;no;10;163;;;
+112;Faux;10;;;;1
+113;Faux !;10;;;;1
+116;Drrrraaaaa Cortex 91 les pyramides;10;;;;10
+117;Drrrraaaaa;10;;;;10
+118;Pourquoi ?;10;;;;12
+119;Ma bite !;10;;;;13
+120;C’est ma bite !;10;;;;13
+121;Non mais c’est fou ça !;10;;;;90
+122;no;10;;;;248
+123;wrbwrbwrbwrb;10;;;;271
+124;Mmmh ouais;10;;;;277
+125;Ouais ouais ouais ouais;10;;;;277
+126;J’ai pas compris;10;;;;280
+127;Relire {pers_decla=pers}{pers_decla.nom};10;;;;
+128;{maj({sujet.nom})} déguisé{gse} en hamburger sur NRJ;10;172;;;
+129;TAISEZ-VOUS;10;;;;303
+130;Je ne trouve pas de mot pour dire mon dégoût devant le caractère abject de cette accusation.;10;;;;22
+131;What The Cut #38 sera la production la plus chère de l’histoire du cinéma français;10;123;;;
+132;C’est pas piqué des hannetons !;1;;;;310
+133;Bomboclaat;10;;;;
+134;Bye Bitch;5;5;;;
+135;Bye Bitch 💅;5;5;;;

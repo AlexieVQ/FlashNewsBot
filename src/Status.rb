@@ -2,6 +2,9 @@ require_relative 'Bot.rb'
 require_relative 'Expression.rb'
 require_relative 'ImageStatique.rb'
 require_relative 'elements/Pers.rb'
+require_relative 'elements/DateInfo.rb'
+require_relative 'elements/Lieu.rb'
+require_relative 'elements/Media.rb'
 
 ##
 # Un status à envoyer au réseau social. Il se construit aléatoirement à la
@@ -87,6 +90,8 @@ class Status
 				@images << Bot.index['info'].image
 			elsif(Bot.index['objet'] && Bot.index['objet'].image) then
 				@images << Bot.index['objet'].image
+			elsif(Bot.index['declarant'] && Bot.index['declarant'].image) then
+				@images << Bot.index['declarant'].image
 			end
 			if(@images.length == 0) then
 				@images << ImageStatique.elt_alea
@@ -147,11 +152,11 @@ class Status
 		chaine = Bot.index['info'].action
 		
 		if(rand(2) == 1) then
-			chaine += " " + Bot.index['date'].retourner.date
+			chaine += " " + DateInfo.elt_alea.date
 		end
 		
 		if(rand(2) == 1) then
-			chaine += " " + Bot.index['lieu'].retourner.lieu
+			chaine += " " + Lieu.elt_alea.lieu
 		end
 		
 		if(["accuse", "est_accuse",
@@ -163,9 +168,25 @@ class Status
 		return chaine + "."
 	end
 	
-	# Génère la partie contenant la déclaration du sujet.
+	# Génère la partie contenant la déclaration du sujet, de l'objet ou d'un
+	# personnage tierce, stocké dans +declarant+.
 	def partie_decla
-		chaine = Bot.index['sujet'].surnom.majuscule
+		declarant = Pers.elt_alea
+		decla_type = :sujet
+		if(Bot.index['objet'] && Bot.index['info'].decla_objet? && rand(2) == 1)
+		then
+			decla_type = :objet
+		elsif(Bot.index['info'].decla_autre?(declarant) && rand(2) == 1) then
+			decla_type = :autre
+			Bot.index['declarant'] = declarant
+		end
+			
+		chaine = ""
+		case decla_type
+		when :sujet then chaine = Bot.index['sujet'].surnom.majuscule
+		when :objet then chaine = Bot.index['objet'].surnom.majuscule
+		when :autre then chaine = declarant.nom.majuscule
+		end
 		
 		chaine += " " + case rand(3)
 		when 0 then "a déclaré"
@@ -174,18 +195,19 @@ class Status
 		end
 		
 		if(rand(2) == 1) then
-			chaine += " " + Bot.index['date'].retourner.date
+			chaine += " " + DateInfo.elt_alea.date
 		end
 		
 		if(rand(2) == 1) then
-			chaine += " " + Bot.index['media'].retourner.nom("à")
+			chaine += " " + Media.elt_alea.nom("à")
 		end
 		
-		if(rand(2) == 1) then
-			chaine += " " + Bot.index['circo'].retourner.circo
+		case decla_type
+		when :sujet then chaine += " “" + Bot.index['info'].decla_sujet + "”"
+		when :objet then chaine += " “" + Bot.index['info'].decla_objet + "”"
+		when :autre then chaine += " “" +
+			Bot.index['info'].decla_autre(declarant) + "”"
 		end
-		
-		chaine += " “" + Bot.index['info'].decla + "”"
 		return chaine + "."
 	end
 	

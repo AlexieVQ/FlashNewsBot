@@ -26,17 +26,38 @@ class Decla < Element
 	# Crée une déclaration à partir d'une ligne d'un fichier CSV.
 	def Decla.importer(ligne)
 		new(ligne['id'].to_i, ligne['decla'], ligne['poids'].to_i,
-		    ligne['id_info'].to_i, ligne['id_pers'].to_i)
+		    ligne['id_info_sujet'].to_i, ligne['id_info_objet'].to_i,
+		    ligne['id_info_autre'].to_i, ligne['id_pers'].to_i)
 	end
 	
 	##
 	# Retourne un Array contenant les déclarations de l'Info d'identifiant
-	# donné.
+	# donné pouvant être dite par le sujet de l'information.
+	#
+	# Paramètres :
+	# [+id_info+]    Identifiant de l'Info (Integer, voir Decla#id_info_sujet)
+	def Decla.id_info_sujet(id_info)
+		return self.select { |e| e.id_info_sujet == id_info }
+	end
+	
+	##
+	# Retourne un Array contenant les déclarations de l'Info d'identifiant
+	# donné pouvant être dite par l'objet de l'information.
+	#
+	# Paramètres :
+	# [+id_info+]    Identifiant de l'Info (Integer, voir Decla#id_info_objet)
+	def Decla.id_info_objet(id_info)
+		return self.select { |e| e.id_info_objet == id_info }
+	end
+	
+	##
+	# Retourne un Array contenant les déclarations de l'Info d'identifiant
+	# donné pouvant être dite par un personnage tierce.
 	#
 	# Paramètres :
 	# [+id_info+]    Identifiant de l'Info (Integer, voir Decla#id_info)
-	def Decla.id_info(id_info)
-		return self.select { |e| e.id_info == id_info }
+	def Decla.id_info_autre(id_info)
+		return self.select { |e| e.id_info_autre == id_info }
 	end
 	
 	##
@@ -55,7 +76,10 @@ class Decla < Element
 	# Paramètres :
 	# [+ajout+] Éléments à ajouter dans la recherche (Array, vide par défaut)
 	def Decla.elt_alea(ajout = [])
-		tab = self.select { |e| e.id_info == 0 && e.id_pers == 0 }
+		tab = self.select { |e|
+			e.id_info_sujet == 0 && e.id_info_objet == 0 &&
+				e.id_info_autre == 0 && e.id_pers == 0
+		}
 		return tab.elt_alea(ajout)
 	end
 	
@@ -67,8 +91,20 @@ class Decla < Element
 	#############
 	
 	##
-	# Identifiant de l'information rattachée (Integer, ou +nil+)
-	attr_reader :id_info
+	# Identifiant de l'information rattachée dont le déclarant est sujet
+	# (Integer, ou +nil+)
+	attr_reader :id_info_sujet
+	
+	##
+	# Identifiant de l'information rattachée dont le déclarant est objet
+	# (Integer, ou +nil+)
+	attr_reader :id_info_objet
+	
+	##
+	# Identifiant de l'information rattachée dont le déclarant est un personnage
+	# tierce (Integer, ou +nil+)
+	attr_reader :id_info_autre
+	
 	##
 	# Identifiant du personnage rattachée (Integer, ou +nil+)
 	attr_reader :id_pers
@@ -95,14 +131,29 @@ class Decla < Element
 	#                   la table
 	# [+poids+]         Poids défini dans la table (Integer, voir
 	#                   Element#poids_statique)
-	# [+id_info+]       Identifiant de l'Info liée à la déclaration (Integer,
-	#                   voir Decla#id_info ; ou +nil+ par défaut)
+	# [+id_info_sujet+] Identifiant de l'Info liée à la déclaration dont le
+	#                   déclarant est le sujet (Integer, voir
+	#                   Decla#id_info_sujet ; ou +nil+ par défaut)
+	# [+id_info_objet+] Identifiant de l'Info liée à la déclaration dont le
+	#                   déclarant est objet(Integer, voir Decla#id_info_objet ;
+	#                   ou +nil+ par défaut)
+	# [+id_info_autre+] Identifiant de l'Info liée à la déclaration dont le
+	#                   déclarant est tierce (Integer, voir
+	#                   Decla#id_info_autre ; ou +nil+ par défaut)
 	# [+id_pers+]       Identifiant du Pers lié à la déclaration (Integer, voir
 	#                   Decla#id_pers ; ou +nil+ par défaut)
-	def initialize(id, decla, poids, id_info = nil, id_pers = nil)
+	def initialize(id,
+	               decla,
+	               poids,
+	               id_info_sujet = nil,
+	               id_info_objet = nil,
+	               id_info_autre = nil,
+	               id_pers = nil)
 		super(id, poids)
 		@decla = decla
-		@id_info = id_info
+		@id_info_sujet = id_info_sujet
+		@id_info_objet = id_info_objet
+		@id_info_autre = id_info_autre
 		@id_pers = id_pers
 	end
 	
@@ -118,9 +169,24 @@ class Decla < Element
 	end
 	
 	##
-	# Retourne l'Info associée à la déclaration, ou +nil+ si aucune n'est liée.
-	def info
-		return @id_info ? Info.id(@id_info) : nil
+	# Retourne l'Info associée à la déclaration dont le déclarant est sujet, ou
+	# +nil+ si aucune n'est liée.
+	def info_sujet
+		return @id_info_sujet ? Info.id(@id_info_sujet) : nil
+	end
+	
+	##
+	# Retourne l'Info associée à la déclaration dont le déclarant est objet, ou
+	# +nil+ si aucune n'est liée.
+	def info_objet
+		return @id_info_objet ? Info.id(@id_info_objet) : nil
+	end
+	
+	##
+	# Retourne l'Info associée à la déclaration dont le déclarant est tierce, ou
+	# +nil+ si aucune n'est liée.
+	def info_autre
+		return @id_info_autre ? Info.id(@id_info_autre) : nil
 	end
 	
 	##
