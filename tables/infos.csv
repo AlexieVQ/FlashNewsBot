@@ -142,7 +142,6 @@ id;type;description;type_circo;hashtag;poids;categories;structure
 170;sa récompense;Gagne une Victoire de la Musique;universel;#Victoires{rand(,DeLaMusique)};5;culture;
 171;sa décision;Décide de reconstruire le mur de Berlin;universel;;10;;
 172;son déguisement;Déguisé en hamburger sur NRJ;universel;#{sujet.nom_colle}Déguisé{gse}EnHamburgerSurNRJ;10;TV,media;
-173;leur lien de parenté;Est le cousin d'objet;universel;;10;;
 174;cette photo;A accidentellement posté une dickpic;universel;;10;;
 175;sa décision;Quitte Trash;universel;#YouTube;10;internet;
 176;son implication;Impliqué dans l’affaire objet;est_accuse;#Affaire{objet.nom_colle};10;;

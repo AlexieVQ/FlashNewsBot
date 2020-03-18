@@ -353,7 +353,6 @@ id;action;poids;id_info
 352;décide de reconstruire le mur de Berlin;10;171
 353;a fait son coming out {genre(sujet,sorcier,sorcière)};10;42
 354;déguisé{gse} en hamburger sur NRJ;10;172
-355;est {genre(sujet,le,la)} cousin{gse} {objet=pers}{objet.nom(de)};10;173
 356;a accidentellement posté {genre(sujet,une dickpic,une nude)};10;174
 357;a accidentellement posté {genre(sujet,une photo de son pénis,une photo intime)};10;174
 358;annonce qu’{genre(sujet,il,elle)} quitte Trash;10;175

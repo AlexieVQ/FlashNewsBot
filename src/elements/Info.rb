@@ -206,7 +206,7 @@ class Info < Element
 	# Paramètres :
 	# [+pers+]  Personnage tierce
 	def decla_autre(pers = nil)
-		return @declas_objet.elt_alea(pers ? pers.declas : []).decla.evaluer
+		return @declas_autre.elt_alea(pers ? pers.declas : []).decla.evaluer
 	end
 	
 	##

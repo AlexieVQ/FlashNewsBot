@@ -188,10 +188,11 @@ class Status
 		when :autre then chaine = declarant.nom.majuscule
 		end
 		
-		chaine += " " + case rand(3)
+		chaine += " " + case rand(4)
 		when 0 then "a déclaré"
 		when 1 then "aurait déclaré"
 		when 2 then "aurait dit"
+		when 3 then "a réagi"
 		end
 		
 		if(rand(2) == 1) then
@@ -200,6 +201,12 @@ class Status
 		
 		if(rand(2) == 1) then
 			chaine += " " + Media.elt_alea.nom("à")
+		end
+		
+		case rand(6)
+		when 0 then chaine += " à ce sujet"
+		when 1 then chaine += " au sujet de " + Bot.index['info'].type
+		when 2 then chaine += " à propos de " + Bot.index['info'].type
 		end
 		
 		case decla_type
