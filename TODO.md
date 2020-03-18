@@ -18,6 +18,7 @@
 	- [x] Chercher des bouts de chaîne dans une autre
 	- [x] Influencer les pondérations
 - [ ] CW de certains personnages
+- [ ] Déclarations d'autres personnes
 - [ ] Mode débuggage
 	- [ ] Sauvetage de toutes les erreurs au niveau du bot en mode production
 

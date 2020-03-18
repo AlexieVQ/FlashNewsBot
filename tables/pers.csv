@@ -324,3 +324,12 @@ id;nom_colle;poids;genre;categorie;localite;cw
 324;FlorenceForesti;10;F;culture;1;
 325;JeanMichelAphatie;10;M;media;1;
 326;{rand(,Nadine)}Morano;10;F;politique;1;
+327;Titeuf;10;M;fiction;1;
+328;PèreDeTiteuf;10;M;fiction;1;
+329;KidPaddle;10;M;fiction;8;
+330;PèreDeKidPaddle;10;M;fiction;8;
+331;Coronavirus;10;M;non_humain;;
+332;{rand(KKSlider,KékéLaglisse,Kéké)};10;M;fiction;;
+333;SolidSnake;10;M;fiction;3;
+334;DidierRaoult;10;M;;1;
+335;DJSnake;10;M;culture;1;

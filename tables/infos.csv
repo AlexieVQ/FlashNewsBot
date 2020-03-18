@@ -1,9 +1,9 @@
 id;type;description;type_circo;hashtag;poids;categories;structure
-1;{rand(sa mort,son décès)};Mort;universel;#RIP{sujet.nom_colle};50;;
+1;{rand(sa mort,son décès)};Mort;universel;#RIP{sujet.nom_colle};20;;
 2;sa fraude;Fraude fiscale;universel;;10;;
 3;{rand(son élection,sa victoire)};Élu président;universel;#Présidentielles;10;politique;
 4;son arrestation;Arrêté;est_accuse;;20;;
-5;son assassinat;Assassiné;universel;#RIP{sujet.nom_colle};50;;
+5;son assassinat;Assassiné;universel;#{sujet.nom_colle}Assassinat;20;;
 6;sa confirmation;Confirmé dans Smash;universel;#{rand(SuperSmashBros,{sujet.nom_colle}DansSmash)};30;fiction;
 7;son acte;A assassiné objet;universel;#RIP{objet.nom_colle};30;;
 8;son acte;A assassiné un anonyme;universel;;10;;
@@ -156,3 +156,6 @@ id;type;description;type_circo;hashtag;poids;categories;structure
 184;son arrivée;Rejoint LeLIVE;universel;#Webedia;10;internet,TV;
 185;son état de santé;Testé positif au Coronavirus;universel;#{rand(Coronavirus,COVID19,COVIDー19)};20;;
 186;sa mise en quarantaine;Mis en quarantaine à cause du Coronavirus;universel;#{rand(Coronavirus,COVID19,COVIDー19)};10;;
+187;sa déclaration de guerre;Déclare la guerre à objet;accuse;;10;politique;
+188;son annonce;Annonce le COVID-20;universel;#Coronavirus;10;;
+189;sa découverte;A trouvé le vaccin contre le COVID-19;#{rand(Coronavirus,COVID19,COVIDー19)};10;;

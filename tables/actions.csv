@@ -376,3 +376,9 @@ id;action;poids;id_info
 375;rejoint #LeLIVE;10;184
 376;testé{gse} positi{genre(sujet,f,ve)} au {rand(Coronavirus,COVID-19)};10;185
 377;mis{gse} en quarantaine à cause du {rand(Coronavirus,COVID-19)};10;186
+378;déclare la guerre {objet=pers}{objet.nom(à)};10;187
+379;annonce le COVID-20;10;188
+380;a trouvé le vaccin contre le {h}Coronavirus;10;189
+381;annonce avoir trouvé le vaccin contre le {h}Coronavirus;10;189
+382;a trouvé le vaccin contre le COVID-19;10;189
+383;annonce avoir trouvé le vaccin contre le COVID-19;189
