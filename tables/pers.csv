@@ -1,4 +1,4 @@
-id;nom_colle;poids;genre;categorie;id_pays;cw
+id;nom_colle;poids;genre;categorie;localite;cw
 1;Norman;10;M;internet;1;
 2;{rand(,Emmanuel)}Macron;10;M;politique;1;
 3;Yoshi;10;M;fiction;32;

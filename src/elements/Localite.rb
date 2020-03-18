@@ -65,6 +65,31 @@ class Localite < Element
 		return retourner_elt(element, attribut, parametres)
 	end
 	
+	##
+	# Retourne la France.
+	def Localite.FRANCE
+		return Localite.find { |loc| loc.nom_colle == "France" }
+	end
+	
+	##
+	# Retourne la liste des localités présentes dans l'index (Array de
+	# Localite).
+	#
+	# Paramètres :
+	# [+sous_niveaux+]  Faut-il chercher les dans les attributs +localite+ des
+	#                   éléments ?
+	def Localite.dans_index(sous_niveaux = true)
+		return Bot.index.values.reduce([]) { |localites, element|
+			if(element.kind_of? Localite) then
+				localites << element
+			elsif(sous_niveaux && element.respond_to?(:localite) &&
+				element.localite) then
+				localites << element.localite
+			end
+			localites
+		}.uniq
+	end
+	
 	private_class_method :new
 	private_class_method :importer
 	

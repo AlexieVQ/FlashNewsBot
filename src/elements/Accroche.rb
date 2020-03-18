@@ -1,5 +1,6 @@
 require_relative '../Bot.rb'
 require_relative 'Element.rb'
+require_relative 'Localite.rb'
 require_relative '../String.rb'
 
 ##
@@ -38,16 +39,11 @@ class Accroche < Element
 		if(parametres[0]) then
 			accroche = rand(2) == 1 ? "⚡" : "🔴"
 			
-			# Ajout d'un emoji régional correspondant à la localité ou au
-			# personnage dans parametres[1]
-			if(Bot.index['loc_principale'].retourner(nil, nil) &&
-			   Bot.index['loc_principale'].retourner(nil, nil).nom_colle !=
-			   "France") then
-				accroche += Bot.index['loc_principale'].retourner(nil,nil).emoji
-			elsif(parametres[1] && Bot.index[parametres[1]].localite &&
-				  Bot.index[parametres[1]].localite.nom_colle != "France") then
-				accroche += Bot.index[parametres[1]].localite.emoji
-			end
+			# Ajout d'emojis régionaux
+			accroche += Localite.dans_index.reject { |localite|
+				localite == Localite.FRANCE &&
+					!Localite.dans_index(false).member?(Localite.FRANCE)
+			}.map { |localite| localite.emoji }.join
 			
 			# Si l'info a un hashtag, ajoute le hashtag puis le nom du
 			# personnage dans parametres[1], et arrête la construction de la

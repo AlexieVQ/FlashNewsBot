@@ -246,8 +246,8 @@ class Pers < Element
 	#   multiplié par 20)
 	# * Le personnage est dans la même catégorie que le sujet (le poids est
 	#   multiplié par 10)
-	# * Le personnage est de la même localité que la localité principale du
-	#   status (+loc_principale+) (le poids est multiplié par 20)
+	# * Le personnage est d'une localité déjà présente dans l'index (le poids
+	#   est multiplié par 20)
 	# * Le nombre moyen d'interactions (likes, partages, réponses) par status
 	#   comprenant le personnage est ajouté au poids
 	# * Le personnage est en tendance (nombre de caractères trouvés multiplié
@@ -277,10 +277,8 @@ class Pers < Element
 		end
 		
 		# Localité de l'information
-		if(Bot.index['loc_principale'] && @localite) then
-			if(Bot.index['loc_principale'] == @localite) then
-				poids *= 20
-			end
+		if(Localite.dans_index.member? @localite) then
+			poids *= 20
 		end
 		
 		# Nombre moyen d'interactions générées
