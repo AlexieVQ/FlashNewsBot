@@ -292,7 +292,7 @@ id;nom_colle;poids;genre;categorie;localite;cw
 292;Cauet;10;M;media;1;
 293;SwaggMan;10;M;culture;1;
 294;Tex;10;M;culture;1;
-295;VodK{rand(,Prod)};10;F;internet;1;
+295;VodK{rand(,Prod)};10;M;internet;1;
 296;Philippot;10;M;politique;1;
 297;LaurentBouvet;10;M;media;1;
 298;Alkpote;10;M;culture;1;
@@ -309,7 +309,7 @@ id;nom_colle;poids;genre;categorie;localite;cw
 309;TiboInShape;10;M;internet;1;
 310;Amixem;10;M;internet;1;
 311;{rand(JeanPaul,)}Delevoye;10;M;politique;10;
-312;KobaLaD;10;M;culture;10;
+312;KobaLaD;10;M;culture;1;
 313;JoaquinPhoenix;10;M;culture;3;
 314;BongJoonHo;10;M;culture;13;
 315;UntitledGoose;10;F;fiction;;
@@ -331,5 +331,14 @@ id;nom_colle;poids;genre;categorie;localite;cw
 331;Coronavirus;10;M;non_humain;;
 332;{rand(KKSlider,KékéLaglisse,Kéké)};10;M;fiction;;
 333;SolidSnake;10;M;fiction;3;
-334;DidierRaoult;10;M;;1;
+334;DidierRaoult;2;M;;1;
 335;DJSnake;10;M;culture;1;
+336;BobLeponge;10;M;ficiton;;
+337;Patrick{rand(Star,ÉtoileDeMer)};10;M;fiction;;
+338;CarloTentacule;10;M;fiction;;
+339;CapitaineKrabs;10;M;fiction;;
+340;Nagui;10;M;TV;1;
+341;OlivierMinne;10;M;TV;1;
+342;AlexVizorek;5;M;media;8;
+343;CharlineVanhoenacker;5;F;media;8;
+344;GuillaumeMeurice;10;M;media;1;
