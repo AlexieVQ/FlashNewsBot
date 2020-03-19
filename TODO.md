@@ -19,8 +19,8 @@
 	- [x] Influencer les pondérations
 - [ ] CW de certains personnages
 - [x] Déclarations d'autres personnes
-- [ ] Mode débuggage
-	- [ ] Sauvetage de toutes les erreurs au niveau du bot en mode production
+- [x] Mode débuggage
+	- [x] Sauvetage de toutes les erreurs au niveau du bot en mode production
 - [ ] Afficher élément concerné par erreur réseau
 
 ## Mastodon

@@ -8,6 +8,7 @@ intervalle = 60
 hors_ligne = false
 username = ""
 tendances = false
+debug = false
 opt_parser = OptionParser.new { |opts|
 	opts.banner = "Utilisation : #{$PROGRAM_NAME} [options]"
 	
@@ -18,6 +19,10 @@ opt_parser = OptionParser.new { |opts|
 	
 	opts.on("-t", "--tendances", "Analyse les tendances") {
 		tendances = true
+	}
+	
+	opts.on("-d", "--debug", "Mode débuggage") {
+		debug = true
 	}
 	
 	opts.on("-uUSERNAME", "--username=USERNAME",
@@ -51,5 +56,5 @@ end
 if(tendances) then
 	TestTendances.exec(username)
 else
-	Bot.exec(hors_ligne, username, intervalle)
+	Bot.exec(hors_ligne, username, intervalle, debug)
 end

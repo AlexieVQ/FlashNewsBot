@@ -18,7 +18,7 @@ class TestTendances
 	# Paramètres :
 	# [+username+]      Nom d'utilisateur du compte Twitter (String)
 	def TestTendances.exec(username)
-		Bot.init(false, username, 60)
+		Bot.init(false, username, 60, true)
 		puts Bot.compte.tendances
 		puts "## PERS ##"
 		Pers.each { |pers|

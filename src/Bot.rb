@@ -26,6 +26,7 @@ class Bot
 	# @@dir		=> Chemin du dossier contenant FlashNewsBot.rb (String)
 	# @@index	=> Index (Hash)
 	# @@compte	=> Compte utilisé
+	# @@debug	=> Mode débuggage (booléen, utilisé en mode offline)
 	
 	######################
 	# MÉTHODES DE CLASSE #
@@ -44,11 +45,14 @@ class Bot
 	#                   +offline+ est à +true+)
 	# [+intervalle+]    Intervalle, en minutes, entre chaque status (Integer ou
 	#                   Float)
-	def Bot.init(offline, username, intervalle)
+	# [+debug+]         Utilisation du mode débuggage (booléen, utilisé en mode
+	#                   offline)
+	def Bot.init(offline, username, intervalle, debug)
 		@@bdd = nil
 		@@intervalle = intervalle
 		@@dir = Dir.pwd
 		@@compte = nil
+		@@debug = offline || debug
 		self.index_reset
 		
 		unless(offline) then
@@ -73,8 +77,10 @@ class Bot
 	#                   +offline+ est à +true+)
 	# [+intervalle+]    Intervalle, en minutes, entre chaque status (Integer ou
 	#                   Float)
-	def Bot.exec(offline, username, intervalle)
-		self.init(offline, username, intervalle)
+	# [+debug+]         Utilisation du mode débuggage (booléen, utilisé en mode
+	#                   offline)
+	def Bot.exec(offline, username, intervalle, debug)
+		self.init(offline, username, intervalle, debug)
 		unless(offline) then
 			Daemons.daemonize({backtrace: true,
 							   app_name: username + "." + @@compte.domaine,
@@ -82,23 +88,38 @@ class Bot
 			@@bdd = Bdd.new # Doit être reconnectée après la démonisation
 		end
 
-		loop do
+		loop {
+			tentative = 0
+			begin
 			
-			status = Status.new
+				status = Status.new
 
-			puts "[#{Time.now}] #{status} " +
-			     "(#{status.info.categories.join(", ")})"
-			unless(offline) then
-				if(status.texte.length <= @@compte.limite) then
-					@@compte.envoyer(status)
+				puts "[#{Time.now}] #{status} " +
+					 "(#{status.info.categories.join(", ")})" if(self.debug?)
+				unless(offline) then
+					if(status.texte.length <= @@compte.limite) then
+						@@compte.envoyer(status)
+					end
 				end
+		
+			rescue => e
+				e.full_message(true, :top)
+				if(!self.debug? && tentative < 5) then
+					tentative += 1
+					retry
+				end
+				exit(false) if(self.debug?)
 			end
-			
-			@@compte.update_statuses if(@@compte)
-			
+				
+			begin
+				@@compte.update_statuses if(@@compte)
+			rescue => e
+				e.full_message(true, top)
+				exit(false) if(self.debug?)
+			end
 			sleep(60 * @@intervalle)
 			
-		end
+		}
 	end
 	
 	##
@@ -125,6 +146,12 @@ class Bot
 	# (+false+).
 	def Bot.hors_ligne?
 		return @@compte == nil
+	end
+	
+	##
+	# Teste si le bot est en mode débuggage.
+	def Bot.debug?
+		return @@compte.nil? || @@debug
 	end
 	
 	##
