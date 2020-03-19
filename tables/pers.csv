@@ -82,7 +82,6 @@ id;nom_colle;poids;genre;categorie;localite;cw
 81;KanyeWest;10;M;culture;3;
 82;BillGates;10;M;patronat;3;
 83;BernardArnault;10;M;patronat;1;
-84;{rand(Jacques,)}Chirac;10;M;politique;1;
 85;Giscard;10;M;politique;1;
 86;{rand(Christophe,)}Castaner;10;M;politique;1;
 87;AlainChabat;10;M;culture;1;
@@ -96,7 +95,6 @@ id;nom_colle;poids;genre;categorie;localite;cw
 95;KevAdams;10;M;culture;1;
 96;LeProcureur;10;M;anonyme;1;
 97;{rand(JoueurDuGrenier,JDG)};10;M;internet;1;
-98;DavidLafarge;10;M;internet;1;
 99;CédricVillani;10;M;politique;1;
 100;Gouvernement;10;M;politique;1;
 101;{rand(François,)}Asselineau;10;M;politique;1;
