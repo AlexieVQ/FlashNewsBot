@@ -21,7 +21,7 @@
 - [x] Déclarations d'autres personnes
 - [x] Mode débuggage
 	- [x] Sauvetage de toutes les erreurs au niveau du bot en mode production
-- [ ] Afficher élément concerné par erreur réseau
+- [x] Afficher élément concerné par erreur réseau
 
 ## Mastodon
 

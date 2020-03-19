@@ -140,6 +140,7 @@ class CompteTwitter < Compte
 			 possibly_sensitive: status.cw?})
 		
 		unless(reponse == Net::HTTPSuccess) then
+			$stderr.puts status
 			reponse.value
 		end
 		tweet = JSON.parse(reponse.body)
@@ -246,6 +247,7 @@ class CompteTwitter < Compte
 			"media_category=TWEET_IMAGE",
 		    {media_data: Base64.encode64(fichier.read)})
 		unless(reponse == Net::HTTPSuccess) then
+			$stderr.puts image
 			reponse.value
 		end
 		id = JSON.parse(reponse.body)['media_id'].to_i
@@ -254,6 +256,7 @@ class CompteTwitter < Compte
 			JSON.generate({media_id: id, alt_text: {text: image.description}}),
 			{'Content-Type' => 'application/json; charset=UTF-8'})
 		unless(reponse_alt == Net::HTTPSuccess) then
+			$stderr.puts image
 			reponse_alt.value
 		end
 		return id
