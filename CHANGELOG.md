@@ -1,0 +1,98 @@
+# Release Twitter
+
+## Personnages
+- 13 Block
+- Ademo
+- Alain Finkielkraut
+- Alexandria Ocasio-Cortez
+- Alex Vizorek
+- Alkpote
+- Amixem
+- Angèle
+- Baby Yoda
+- Benjamin Griveaux
+- Bernard-Henri Lévy
+- Bigflo
+- Billie Eilish
+- Bob l’Éponge
+- Bong Joon-Ho
+- Capitaine Krabs
+- Carlito
+- Carlo Tentacule
+- Catherine Barma
+- Cauet
+- Charline Vanhoenacker
+- Clément Viktorovitch
+- David Pujadas
+- Didier Raoult
+- DJ Snake
+- dril
+- Edgar Morin
+- Élisabeth Lévy
+- Elizabeth Warren
+- Eminem
+- Flat Eric
+- Florence Foresti
+- Florian Philippot
+- Fraçois Bayrou
+- Guillaume Meurice
+- Guy-Manuel de Homem-Christo
+- Hatsune Miku
+- Henri Dès
+- Jair Bolsonaro
+- Jean-Christophe Napoléon
+- Jean-Luc Reichmann
+- Jean-Michel Aphatie
+- Jean-Michel Jarre
+- Jean-Paul Delevoye
+- Jean-Pierre Elkabbach
+- Joaquin Phoenix
+- Joe Biden
+- Juan Branco
+- Julien Chièze
+- Kéké Laglisse
+- Kevin Razy
+- Kid Paddle
+- Koba LaD
+- L’algorithme YouTube
+- _La sœur de_
+- Laurent Bouvet
+- Léa Salamé
+- Le Coronavirus
+- _Le frère de_
+- Le père de Kid Paddle
+- Le père de Titeuf
+- Le troisième frère de PNL
+- Lomepal
+- Louis de Bourbon
+- Louis d’Orléans
+- Lula da Silva
+- Madonna
+- Marion Maréchal
+- McFly
+- MHD
+- Michel Cymes
+- Michel Sardou
+- Mouloud Achour
+- Mylène Farmer
+- Nadine Morano
+- Nagui
+- N.O.S
+- Oli
+- Olivier Minne
+- Orelsan
+- Patrick Étoile de Mer
+- Pete Buttigieg
+- Philippe Katerine
+- Roméo Elvis
+- Sardoche
+- Solid Snake
+- Swagg Man
+- Tex
+- Thomas Bangalter
+- Timothée Chalamet
+- Titeuf
+- Un·e _gentilé_
+- Untitled Goose
+- VodK
+- Zineb El Rhazoui
