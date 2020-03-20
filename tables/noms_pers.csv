@@ -173,8 +173,8 @@ id;nom;poids;id_pers
 172;l’administrateur de la page Gilets Jaunes {loc_gj=localite(ville,region)}{loc_gj.nom(de)};10;119
 173;l’administrateur de la page Gilets Jaunes {loc_gj=localite(ville)}{loc_gj.nom(de)}{loc_gj.departement};10;119
 174;Bernie Sanders;10;120
-175;Jean-Pierre Pernault;10;121
-176;J.-P. #Pernault;10;121
+175;Jean-Pierre Pernaut;10;121
+176;J.-P. #Pernaut;10;121
 177;FlorianOnAir;10;122
 178;Tibo InShape;10;123
 179;Alain Soral;10;124

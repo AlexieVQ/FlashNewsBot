@@ -110,18 +110,18 @@ id;nom_colle;poids;genre;categorie;localite;cw
 111;{rand(Florian,)}Thauvin;10;M;sport;1;
 112;{rand(Blaise,)}Matuidi;10;M;sport;1;
 113;BillDuBigdil;5;M;fiction;1;
-114;PabloIglesias;5;M;politique;5;
+114;PabloIglesias;1;M;politique;5;
 115;GiletJaune;10;M;anonyme;1;
 116;Thanos;10;M;fiction;;
 117;InventeurDuDab;10;M;anonyme;;
 118;{inventeur_dab.nom_colle};10;M;autre;;
 119;AdministrateurDeLaPageGiletsJaunes;10;M;anonyme;;
 120;Bernie{rand(,Sanders)};10;M;politique;3;
-121;JeanPierrePernault;10;M;TV;1;
-122;FlorianOnAir;5;M;internet;1;
+121;JeanPierrePernaut;10;M;TV;1;
+122;FlorianOnAir;1;M;internet;1;
 123;TiboInShape;10;M;internet;1;
-124;AlainSoral;5;M;politique;1;
-125;Dieudonné;5;M;culture;1;
+124;AlainSoral;5;M;politique;1;Alain Soral
+125;Dieudonné;5;M;culture;1;Dieudonné
 126;PhilippePoutou;10;M;politique;1;
 127;OlivierBesancenot;10;M;politique;1;
 128;KarimDebbache;10;M;internet;1;
@@ -327,9 +327,9 @@ id;nom_colle;poids;genre;categorie;localite;cw
 329;KidPaddle;10;M;fiction;8;
 330;PèreDeKidPaddle;10;M;fiction;8;
 331;Coronavirus;10;M;non_humain;;
-332;{rand(KKSlider,KékéLaglisse,Kéké)};10;M;fiction;;
+332;{rand(KKSlider,KékéLaglisse,Kéké)};10;M;culture;;
 333;SolidSnake;10;M;fiction;3;
-334;DidierRaoult;2;M;;1;
+334;DidierRaoult;2;M;autre;1;
 335;DJSnake;10;M;culture;1;
 336;BobLeponge;10;M;ficiton;;
 337;Patrick{rand(Star,ÉtoileDeMer)};10;M;fiction;;
