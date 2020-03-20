@@ -12,6 +12,7 @@
 	- [ ] Associer des images aux personnages
 	- [ ] Associer des images aux informations
 	- [ ] Envoie des images de manière aléatoire
+	- [ ] Compresser l'image statique
 - [x] Analyse des tendances
 	- [x] Recevoir les tendances
 	- [x] Programme de test
@@ -22,6 +23,8 @@
 - [x] Mode débuggage
 	- [x] Sauvetage de toutes les erreurs au niveau du bot en mode production
 - [x] Afficher élément concerné par erreur réseau
+- [ ] Revenir sur le comptage du surnommage (reset le compteur à chaque status,
+      donner le pronom manuellement ?)
 
 ## Mastodon
 
