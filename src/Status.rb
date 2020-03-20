@@ -50,6 +50,11 @@ class Status
 	# Pers#declas ou une déclaration universelle.
 	def initialize
 		begin
+			Bot.sujet_surnomme = false
+			@texte = ""
+			@info = nil
+			@pers = []
+			@images = []
 			Bot.index_reset
 			
 			# Choix de l'information principale du status
@@ -183,7 +188,13 @@ class Status
 			
 		chaine = ""
 		case decla_type
-		when :sujet then chaine = Bot.index['sujet'].surnom.majuscule
+		when :sujet then
+			if(Bot.sujet_surnomme?) then
+				chaine = Bot.index['sujet'].pronom.majuscule
+			else
+				chaine = Bot.index['sujet'].surnom.majuscule
+				Bot.sujet_surnomme = true
+			end
 		when :objet then chaine = Bot.index['objet'].surnom.majuscule
 		when :autre then chaine = declarant.nom.majuscule
 		end

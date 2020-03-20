@@ -22,11 +22,13 @@ class Bot
 	# VARIABLES DE CLASSE #
 	#######################
 	
-	# @@bdd		=> Base de données (Bdd)
-	# @@dir		=> Chemin du dossier contenant FlashNewsBot.rb (String)
-	# @@index	=> Index (Hash)
-	# @@compte	=> Compte utilisé
-	# @@debug	=> Mode débuggage (booléen, utilisé en mode offline)
+	# @@bdd				=> Base de données (Bdd)
+	# @@dir				=> Chemin du dossier contenant FlashNewsBot.rb (String)
+	# @@index			=> Index (Hash)
+	# @@compte			=> Compte utilisé
+	# @@debug			=> Mode débuggage (booléen, utilisé en mode offline)
+	# @@sujet_surnomme	=> Si le sujet a été surnommé dans le status, ou non
+	#					   (booléen)
 	
 	######################
 	# MÉTHODES DE CLASSE #
@@ -158,6 +160,18 @@ class Bot
 	# Intervalle (minutes) entre chaque status (Integer ou Float)
 	def Bot.intervalle
 		return @@intervalle
+	end
+	
+	##
+	# Teste si le sujet a été surnommé dans le status, ou non (booléen).
+	def Bot.sujet_surnomme?
+		return @@sujet_surnomme
+	end
+	
+	##
+	# Définit si le sujet a été surnommé dans le status, ou non (booléen).
+	def Bot.sujet_surnomme=(bool)
+		return @@sujet_surnomme = bool
 	end
 	
 	##

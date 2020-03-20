@@ -23,7 +23,7 @@
 - [x] Mode débuggage
 	- [x] Sauvetage de toutes les erreurs au niveau du bot en mode production
 - [x] Afficher élément concerné par erreur réseau
-- [ ] Revenir sur le comptage du surnommage (reset le compteur à chaque status,
+- [x] Revenir sur le comptage du surnommage (reset le compteur à chaque status,
       donner le pronom manuellement ?)
 
 ## Mastodon

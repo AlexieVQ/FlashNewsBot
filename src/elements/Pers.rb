@@ -91,7 +91,6 @@ class Pers < Element
 	########################
 	
 	# @noms			=> Tableau des noms (Array de String)
-	# @surnoms		=> Tableau des surnoms (Array de String)
 	# @nom_colle	=> Nom collé pour hashtag (String) 
 	# @surnomme		=> Nombre de fois que le surnom a été donné. (Integer)
 	# @images		=> Array d'Image
@@ -140,7 +139,6 @@ class Pers < Element
 		@localite = localite
 		@declas = declas
 		@images = images
-		@surnomme = 0
 	end
 	
 	#######################
@@ -164,29 +162,31 @@ class Pers < Element
 	# Retourne le surnom du personnage (String) avec l'article donné après
 	# l'avoir évalué (voir String#evaluer).
 	#
-	# Si le surnom a déjà été donné, retourne le pronom (correspondant à
-	# l'article donné).
-	#
 	# Paramètres :
 	# [+article+]   Article à mettre au début du surnom (String, voir
 	#               String#modif_article)
 	def surnom(article = nil)
-		unless(@surnomme > 0) then
-			@surnomme += 1
-			return @surnoms.elt_alea.surnom(article)
-		else
-			case @genre
-			when 'M' then
-				if article =~ /(de|à)/i then return "#{article} lui"
-				else return "il"
-				end
-			when 'F' then
-				if article =~ /de/i then return "d’elle"
-				elsif article =~ /à/i then return "à elle"
-				else return "elle"
-				end
-			else raise "Genre #{@genre} non connu pour #{@nom_colle}"
+		return @surnoms.elt_alea.surnom(article)
+	end
+	
+	##
+	# Retourne le pronom du personnage en fonction de l'article retourné, ou
+	# _il_ ou _elle_ par défaut.
+	#
+	# Paramètres :
+	# [+article+]   Article à transformer (String)
+	def pronom(article = nil)
+		case @genre
+		when 'M' then
+			if article =~ /(de|à)/i then return "#{article} lui"
+			else return "il"
 			end
+		when 'F' then
+			if article =~ /de/i then return "d’elle"
+			elsif article =~ /à/i then return "à elle"
+			else return "elle"
+			end
+		else raise "Genre #{@genre} non connu pour #{@nom_colle}"
 		end
 	end
 	

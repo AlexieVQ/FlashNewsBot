@@ -60,7 +60,17 @@ class Accroche < Element
 					else
 						accroche += " " + Bot.index[parametres[1]].nom.majuscule
 					end
-					accroche += " : " + Bot.index[parametres[1]].surnom
+					accroche += " : "
+					if(parametres[1] == 'sujet') then
+						if(Bot.sujet_surnomme?) then
+							accroche += Bot.index['sujet'].pronom
+						else
+							accroche += Bot.index['sujet'].surnom
+							Bot.sujet_surnomme = true
+						end
+					else
+						accroche += Bot.index[parametres[1]].surnom
+					end
 				# Ajout d'un mot d'arroche, puis du nom du personnage, si donné.
 				else
 					accroche += " " + elt_alea.accroche
