@@ -12,7 +12,7 @@
 	- [ ] Associer des images aux personnages
 	- [ ] Associer des images aux informations
 	- [ ] Envoie des images de manière aléatoire
-	- [ ] Compresser l'image statique
+	- [x] Compresser l'image statique
 - [x] Analyse des tendances
 	- [x] Recevoir les tendances
 	- [x] Programme de test
