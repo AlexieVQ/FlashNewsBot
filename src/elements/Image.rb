@@ -177,9 +177,18 @@ class Image < Element
 		if(!ecraser && self.telecharge?) then
 			return self.chemin
 		end
-		File.open(self.chemin, "wb") { |fichier|
-			open(@url, "rb") { |distant| fichier.write(distant.read) }
-		}
+		begin
+			File.open(self.chemin, "wb") { |fichier|
+				open(@url, "rb") { |distant| fichier.write(distant.read) }
+			}
+		rescue OpenURI::HTTPError => e
+			$stderr.puts(@url)
+			e.full_message
+			if(Bot.debug?) then
+				exit(false)
+			end
+			return nil
+		end
 		return self.chemin
 	end
 	
