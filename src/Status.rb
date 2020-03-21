@@ -103,7 +103,7 @@ class Status
 			end
 			
 		rescue IndexError => e
-			puts "#{e.message} : réessai"
+			puts "#{e.message} : réessai" if(Bot.debug?)
 			retry
 		end
 	end
