@@ -1,6 +1,6 @@
-# Release Twitter
+## Release Twitter
 
-## Personnages
+### Personnages
 - 13 Block
 - Ademo
 - Alain Finkielkraut
@@ -96,3 +96,13 @@
 - Untitled Goose
 - VodK
 - Zineb El Rhazoui
+
+### Fonctionnalités
+
+- Pondération des choix
+- Influence des tendances
+- Influence des interactions générées sur Twitter
+- Influence du contexte (catégorisation des personnages et informations)
+- Hashtags
+- Émojis régionaux
+- N'importe qui peut réagir à une information
