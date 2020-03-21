@@ -1,36 +1,5 @@
 # TODO
 
-## Twitter
-
-- [x] Vérifier l'unicité des éléments dans leur table
-- [ ] Images
-	- [x] Tester la taille des images
-	- [x] Envoyer les images sur Twitter
-	- [x] Description des images
-	- [x] CW des images
-	- [x] Image _Flash Info_
-	- [ ] Associer des images aux personnages
-	- [ ] Associer des images aux informations
-	- [ ] Envoie des images de manière aléatoire
-	- [x] Compresser l'image statique
-- [x] Analyse des tendances
-	- [x] Recevoir les tendances
-	- [x] Programme de test
-	- [x] Chercher des bouts de chaîne dans une autre
-	- [x] Influencer les pondérations
-- [ ] CW de certains personnages
-- [x] Déclarations d'autres personnes
-- [x] Mode débuggage
-	- [x] Sauvetage de toutes les erreurs au niveau du bot en mode production
-- [x] Afficher élément concerné par erreur réseau
-- [x] Revenir sur le comptage du surnommage (reset le compteur à chaque status,
-      donner le pronom manuellement ?)
-
-## Mastodon
-
-- [x] Gestion des content warnings
-- [ ] Gestion de l'API Mastodon
-
 ## Erreurs
 
 - [ ] Problème insertion de données existantes :
