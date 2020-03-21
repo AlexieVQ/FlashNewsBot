@@ -113,7 +113,7 @@ id;nom;nom_en;nom_colle;poids;adjm;adjf;departement;emoji;type
 112;les Hauts-de-France;Hauts-de-France;HautsDeFrance;10;des Hauts-de-France;des Hauts-de-France;;;region
 113;la Picardie;Picardy;Picardie;10;picard;picarde;;;region
 114;la Corse;Corsica;Corse;10;corse;corse;;;region
-115;le Pays Basque;Basque Country;Pays Basque;10;basque;basque;;;region
+115;le Pays Basque;Basque Country;PaysBasque;10;basque;basque;;;region
 116;le Québec;Quebec;Québec;10;québécois;québécoise;;;region
 117;le Berry;Berry;Berry;10;berrichon;berrichonne;;;region
 118;la Sologne;Sologne;Sologne;10;solognot;solognotte;;;region

@@ -176,8 +176,9 @@ class Info < Element
 	# Teste si des déclarations dont l'objet est le déclarant peuvent être
 	# retournées.
 	def decla_objet?
-		return @declas_objet.length > 0 ||
-				Bot.index['objet'] && Bot.index['objet'].declas.length > 0
+# 		return @declas_objet.length > 0 ||
+# 				Bot.index['objet'] && Bot.index['objet'].declas.length > 0
+		return true
 	end
 	
 	##
@@ -185,8 +186,8 @@ class Info < Element
 	# déclarant est l'objet de l'information après l'avoir évaluée (voir
 	# String#evaluer).
 	def decla_objet
-		return @declas_objet.elt_alea(Bot.index['objet'] ?
-				Bot.index['objet'].declas : []).decla.evaluer
+		return @declas_objet.elt_alea((Bot.index['objet'] ?
+				Bot.index['objet'].declas : []) | [Decla.elt_alea]).decla.evaluer
 	end
 	
 	##
@@ -195,7 +196,8 @@ class Info < Element
 	# Paramètres :
 	# [+pers+]  Personnage tierce
 	def decla_autre?(pers = nil)
-		return @declas_autre.length > 0 || pers && pers.declas.length > 0
+# 		return @declas_autre.length > 0 || pers && pers.declas.length > 0
+		return true
 	end
 	
 	##
@@ -206,7 +208,7 @@ class Info < Element
 	# Paramètres :
 	# [+pers+]  Personnage tierce
 	def decla_autre(pers = nil)
-		return @declas_autre.elt_alea(pers ? pers.declas : []).decla.evaluer
+		return @declas_autre.elt_alea((pers ? pers.declas : []) | [Decla.elt_alea]).decla.evaluer
 	end
 	
 	##

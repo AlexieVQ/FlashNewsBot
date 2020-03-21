@@ -217,7 +217,13 @@ class Status
 		case rand(6)
 		when 0 then chaine += " à ce sujet"
 		when 1 then chaine += " au sujet de " + Bot.index['info'].type
-		when 2 then chaine += " à propos de " + Bot.index['info'].type
+		when 2 then
+			chaine += " à propos "
+			if(decla_type == :sujet || !Bot.index['sujet']) then
+				chaine += " de " + Bot.index['info'].type
+			else
+				chaine += Bot.index['sujet'].surnom("de")
+			end
 		end
 		
 		case decla_type
