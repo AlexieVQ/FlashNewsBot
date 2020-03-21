@@ -177,6 +177,9 @@ class Image < Element
 		if(!ecraser && self.telecharge?) then
 			return self.chemin
 		end
+		unless(Dir.exist? "#{Bot.dir}/assets/cache") then
+			Dir.mkdir("#{Bot.dir}/assets/cache")
+		end
 		begin
 			File.open(self.chemin, "wb") { |fichier|
 				open(@url, "rb") { |distant| fichier.write(distant.read) }
