@@ -73,7 +73,6 @@ id;decla;poids;id_info_sujet;id_info_objet;id_info_autre;id_pers
 98;{maj({loc_info.nom})}{loc_info.departement} on t’encule !;10;;;;
 99;Trop choquer et déçu;10;;;;
 100;{objet}Devinez sa filière;10;;;;
-100;{declarant}Devinez sa filière;10;;;;
 101;Ça nous est tous déjà arrivé;10;;;;
 102;Ma personne est sacrée;5;;;;
 104;Je porte plainte pour diffamation et incitation à la haine;10;;;;
@@ -110,3 +109,4 @@ id;decla;poids;id_info_sujet;id_info_objet;id_info_autre;id_pers
 139;Bye Sis 💋💅;5;7;;;
 140;F;10;;;1;
 141;{genre(sujet,Il,Elle)} doit bien se marrer là-haut avec Coluche et Desproges;10;;;1;
+142;{declarant}Devinez sa filière;10;;;;

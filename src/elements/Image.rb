@@ -186,7 +186,7 @@ class Image < Element
 			}
 		rescue OpenURI::HTTPError => e
 			$stderr.puts(@url)
-			e.full_message
+			$stderr.puts(e.full_message)
 			if(Bot.debug?) then
 				exit(false)
 			end

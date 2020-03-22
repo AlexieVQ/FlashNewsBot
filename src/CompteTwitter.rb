@@ -129,7 +129,7 @@ class CompteTwitter < Compte
 			begin
 				tab << envoyer_image(image)
 			rescue ImageVolumineuseError => e
-				e.full_message(true, :top)
+				$stderr.puts(e.full_message)
 			end
 			tab
 		}
