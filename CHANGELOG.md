@@ -74,7 +74,6 @@
 - Michel Cymes
 - Michel Sardou
 - Mouloud Achour
-- Mylène Farmer
 - Nadine Morano
 - Nagui
 - N.O.S

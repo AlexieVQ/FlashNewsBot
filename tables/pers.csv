@@ -291,7 +291,7 @@ id;nom_colle;poids;genre;categorie;localite;cw
 293;SwaggMan;10;M;culture;1;
 294;Tex;10;M;culture;1;
 295;VodK{rand(,Prod)};10;M;internet;1;
-296;Philippot;10;M;politique;1;
+296;Philippot;10;M;politique;1;Florian Philippot
 297;LaurentBouvet;10;M;media;1;
 298;Alkpote;10;M;culture;1;
 299;{rand(ThomasBangalter,DaftPunk)};5;M;culture;1;
@@ -303,7 +303,6 @@ id;nom_colle;poids;genre;categorie;localite;cw
 305;Orelsan;10;M;culture;1;
 306;McFly;10;M;internet;1;
 307;Carlito;10;M;internet;1;
-308;MylèneFarmer;5;F;culture;1;
 310;Amixem;10;M;internet;1;
 311;{rand(JeanPaul,)}Delevoye;10;M;politique;1;
 312;KobaLaD;10;M;culture;1;
