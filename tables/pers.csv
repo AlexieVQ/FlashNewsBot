@@ -246,13 +246,13 @@ id;nom_colle;poids;genre;categorie;localite;cw
 247;{rand(,Benjamin)}Griveaux;10;M;politique;1;
 248;Dril;20;M;internet;3;
 249;Eminem;5;M;culture;3;
-250;{rand(Hatsune,)}Miku;20;F;fiction;11;
-251;ZinebElRhazoui;10;F;media;1;
+250;{rand(Hatsune,)}Miku;20;F;culture;11;
+251;ZinebElRhazoui;10;F;media;1;Zineb El Rhazoui
 252;ClémentViktorovitch;10;M;media;1;
 253;MouloudAchour;10;M;TV;1;
 254;JeanLucReichmann;10;M;TV;1;
-255;Bolsonaro;10;M;politique;15;
-256;MarionMarechal{rand(,LePen)};10;F;politique;1;
+255;Bolsonaro;10;M;politique;15;Bolsonaro
+256;MarionMarechal{rand(,LePen)};10;F;politique;1;Mario Maréchal
 257;MichelSardou;10;M;culture;1;
 258;Sardoche;10;M;internet;1;
 259;{rand(François,)}Bayrou;10;M;politique;1;
@@ -267,9 +267,9 @@ id;nom_colle;poids;genre;categorie;localite;cw
 269;{ignore(soeur)}{nationalite.nom_colle};10;F;anonyme;;
 270;HenriDès;10;M;culture;19;
 271;FlatEric;10;M;fiction;1;
-272;LouisDeBourbon;10;M;politique;1;
-273;LouisDOrléans;10;M;politique;1;
-274;JeanChristopheNapoléon;10;M;politique;1;
+272;LouisDeBourbon;2;M;politique;1;
+273;JeanDOrléans;2;M;politique;1;
+274;JeanChristopheNapoléon;2;M;politique;1;
 275;EdgarMorin;10;M;media;1;
 276;MHD;10;M;culture;1;
 277;Ademo;10;M;culture;1;
@@ -277,7 +277,7 @@ id;nom_colle;poids;genre;categorie;localite;cw
 279;AlgorithmeYouTube;10;M;non_humain;;
 280;CatherineBarma;5;F;TV;1;
 281;JuanBranco;20;M;politique;1;
-282;ÉlisabethLévy;10;F;media;1;
+282;ÉlisabethLévy;10;F;media;1;Élisabeth Lévy
 283;{rand(BHL,BernardHenriLévy)};10;M;media;1;
 284;3eFrereDe{rand(,s)}PNL;10;M;culture;1;
 285;Bigflo;10;M;culture;1;
@@ -305,7 +305,7 @@ id;nom_colle;poids;genre;categorie;localite;cw
 307;Carlito;10;M;internet;1;
 308;MylèneFarmer;5;F;culture;1;
 310;Amixem;10;M;internet;1;
-311;{rand(JeanPaul,)}Delevoye;10;M;politique;10;
+311;{rand(JeanPaul,)}Delevoye;10;M;politique;1;
 312;KobaLaD;10;M;culture;1;
 313;JoaquinPhoenix;10;M;culture;3;
 314;BongJoonHo;10;M;culture;13;
