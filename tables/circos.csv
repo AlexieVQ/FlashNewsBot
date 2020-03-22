@@ -130,7 +130,7 @@ id;circo;poids;type;id_info
 159;pour avoir juré sur Roblox;5;accusation;
 160;pour avoir dit des gros mots sur Roblox;5;accusation;
 161;dans le cadre de l’affaire Benalla;10;accusation;
-162;dans le cadre de l’#Affaire{pers_circo=pers}{pers_circo.nom_colle};50;accusation;
+162;dans le cadre de l’#Affaire{pers_circo=pers}{pers_circo.nom_colle};10;accusation;
 163;pour homicide sur {pers_circo=pers}{pers_circo.nom};10;accusation;
 164;pour avoir tagué {pers_circo=pers}“Je suis un{genre(pers_circo,,e)} enculé{genre(pers_circo,,e)}” sur la maison {pers_circo.nom(de)};10;est_accuse;
 165;pour avoir tagué “Je suis un{gse} enculé{gse}” sur sa maison;10;accuse;
@@ -222,3 +222,4 @@ id;circo;poids;type;id_info
 251;en déclarant la guerre {loc_circo=localite(pays)}{loc_circo.nom(à)};10;specifique;182
 252;sur #LeLIVE;10;specifique;160
 253;pour ne pas avoir respecté les règles de confinement;10;accusation;
+254;pour avoir fait une black face;10;accusation;

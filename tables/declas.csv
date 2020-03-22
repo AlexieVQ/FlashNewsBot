@@ -110,3 +110,10 @@ id;decla;poids;id_info_sujet;id_info_objet;id_info_autre;id_pers
 140;F;10;;;1;
 141;{genre(sujet,Il,Elle)} doit bien se marrer là-haut avec Coluche et Desproges;10;;;1;
 142;{declarant}Devinez sa filière;10;;;;
+143;Pourquoi personne n’en parle ?;10;;;;
+144;Je ne fais RIEN;10;;;;345
+145;Je ne dirai RIEN;10;;;;345
+146;RIEN;5;;;;345
+147;J’{genre(objet,le,la)} hais;10;;;;257
+148;Je dois retourner jouer à Animal Crossing: New Leaf sur ma Nintendo 3DS;10;;;;184
+149;Laisse poce bl{rand(o,eu)};10;;;;148

@@ -3,12 +3,14 @@
 ### Personnages
 - 13 Block
 - Ademo
+- Agnès Buzyn
 - Alain Finkielkraut
 - Alexandria Ocasio-Cortez
 - Alex Vizorek
 - Alkpote
 - Amixem
 - Angèle
+- Anthony Fantano
 - Baby Yoda
 - Benjamin Griveaux
 - Bernard-Henri Lévy
@@ -23,7 +25,9 @@
 - Cauet
 - Charline Vanhoenacker
 - Clément Viktorovitch
+- CopyComic
 - David Pujadas
+- Didier Lallement
 - Didier Raoult
 - DJ Snake
 - dril
@@ -76,6 +80,7 @@
 - Mouloud Achour
 - Nadine Morano
 - Nagui
+- Niska
 - N.O.S
 - Oli
 - Olivier Minne
@@ -83,7 +88,10 @@
 - Patrick Étoile de Mer
 - Pete Buttigieg
 - Philippe Katerine
+- Rachida Dati
 - Roméo Elvis
+- Rufus Katégorik
+- RuPaul
 - Sardoche
 - Solid Snake
 - Swagg Man
@@ -91,6 +99,7 @@
 - Thomas Bangalter
 - Timothée Chalamet
 - Titeuf
+- Tom Holland
 - Un·e _gentilé_
 - Untitled Goose
 - VodK
