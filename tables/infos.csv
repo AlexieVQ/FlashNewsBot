@@ -28,7 +28,6 @@ id;type;description;type_circo;hashtag;poids;categories;structure
 40;son accession;Devient secrétaire général de la CGT;universel;#CGT;10;politique;
 42;son coming out;A fait son coming out;universel;;10;;
 43;son élection;Élu personnalité préférée des Français;universel;;10;;
-44;sa décision;A décidé de dissoudre l'Assemblée Nationale;universel;;5;politique;
 45;son rachat;Rachète une entreprise;universel;;10;patronat;
 46;sa démission;Démissionne;est_accuse;#{sujet.nom_colle}Démission;10;politique;
 47;sa destitution;Est destitué;est_accuse;#{sujet.nom_colle}Destitution;10;politique;
@@ -131,7 +130,7 @@ id;type;description;type_circo;hashtag;poids;categories;structure
 159;sa déclaration;Appelle à tirer à balles réelles sur objet;universel;;10;media;
 160;sa décision;Décide de relancer ONDAR;universel;#{rand(ONDAR,France2)};10;TV,culture;
 161;son suicide;S'est suicidé d'une balle dans la nuque;universel;#RIP{sujet.nom_colle};10;;
-162;sa suspicion;Suspecte objet d'être dril;universel;#dril;10;internet;
+162;sa suspicion;Suspecte objet d'être dril;universel;#dril;1;internet;
 163;cette rumeur;Suspecté d'être dril;universel;#dril;10;internet;
 164;cette information;Rejoint l'équipe de Pascal Praud;universel;#HeureDesPros;10;media;
 165;cette information;Rejoint l'équipe des Grandes Gueules;universel;#{rand(GGRMC,GrandesGueules)};10;media;
