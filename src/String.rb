@@ -113,6 +113,9 @@ class String
 			# Contraction avec "le"
 			if(self =~ /^le /i) then
 				return self.gsub(/^le/i, "au")
+			# Contraction avec "les"
+			elsif(self =~ /^les /i) then
+				return self.gsub(/^le/i, "aux")
 			# Ajout du "à" sans modification
 			else
 				return self.gsub(/^/, "à ")
@@ -123,6 +126,9 @@ class String
 			# Contraction avec "le"
 			if(self =~ /^le /i) then
 				return self.gsub(/^le/i, "au")
+			# Contraction avec "les"
+			elsif(self =~ /^les /i) then
+				return self.gsub(/^le/i, "aux")
 			# Contraction avec "la"
 			elsif(self =~ /^la /i) then
 				return self.gsub(/^la/i, "en")

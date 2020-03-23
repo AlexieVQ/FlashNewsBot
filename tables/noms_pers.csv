@@ -441,7 +441,7 @@ id;nom;poids;id_pers
 442;Kéké Laglisse;10;332
 443;K.K. Slider;5;332
 444;Solid Snake;10;333
-445;Didier Raoult;10;334
+445;Didier Raoult;5;334
 446;DJ Snake;10;335
 447;Bob l’Éponge;10;336
 448;Patrick Étoile de Mer;10;337
@@ -465,3 +465,4 @@ id;nom;poids;id_pers
 466;CopyComic;10;353
 467;Jean-Michel Blanquer;10;354
 468;Fred Musa;10;355
+469;le Professeur Raoult;10;334

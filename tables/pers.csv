@@ -327,7 +327,7 @@ id;nom_colle;poids;genre;categorie;localite;cw
 331;Coronavirus;10;M;non_humain;;
 332;{rand(KKSlider,KékéLaglisse,Kéké)};10;M;culture;;
 333;SolidSnake;10;M;fiction;3;
-334;DidierRaoult;2;M;autre;1;
+334;{rand(Didier,Professeur)}Raoult;2;M;autre;1;
 335;DJSnake;10;M;culture;1;
 336;BobLeponge;10;M;ficiton;;
 337;Patrick{rand(Star,ÉtoileDeMer)};10;M;fiction;;
