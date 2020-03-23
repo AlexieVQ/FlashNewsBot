@@ -172,7 +172,9 @@ class Localite < Element
 	# [+article+]   Article à mettre au début du nom (String, voir
 	#               String#modif_article)
 	def nom(article = nil)
-		if(@type == "ville" && article == "en") then article = "à" end
+		article = "à" if(@type == "ville" && article == "en")
+		article = "de 0" if(article == "de" &&
+		                    ["ville", "region"].include?(@type))
 		return @nom.evaluer.modif_article(article)
 	end
 	

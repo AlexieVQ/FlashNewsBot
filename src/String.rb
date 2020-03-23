@@ -56,6 +56,7 @@ class String
 	# [<tt>"de"</tt>]   Préposition, contractée avec _le_, _les_ ou une
 	#                   éventuelle voyelle en début de chaîne, ou ajoutée telle
 	#                   quelle.
+	# [<tt>"de 0"</tt>] _de la_ est remplacé par _de_.
 	# [<tt>"à"</tt>]    Préposition, contractée avec _le_ ou ajoutée telle
 	#                   quelle.
 	# [<tt>"en"</tt>]   Préposition, contractée avec _le_, remplaçant _la_ ou
@@ -63,6 +64,11 @@ class String
 	# [Autre valeur]    Ajout de la valeur passée en paramètre au début de la
 	#                   chaîne, suivie d'une espace.
 	def modif_article(article)
+		de0 = false
+		if(article == "de 0") then
+			article = "de"
+			de0 = true
+		end
 		case article
 			
 		# aucune modification de la chaîne
@@ -97,6 +103,9 @@ class String
 			# Contraction avec "le"
 			if(self =~ /^le [^aeiouyéèàêâôûùïî]/i) then
 				return self.gsub(/^le/i, "du")
+			# Contraction avec "la" si "de 0" en paramètre
+			elsif(de0 && self =~ /^la [^aeiouyéèàêâôûùïî]/i) then
+				return self.gsub(/^la/i, "de")
 			# Contraction avec "les"
 			elsif(self =~ /^les /i) then
 				return self.gsub(/^les/i, "des")
