@@ -92,6 +92,7 @@
 - Philippe Katerine
 - Rachida Dati
 - Roméo Elvis
+- Roselyne Bachelot
 - Rufus Katégorik
 - RuPaul
 - Sardoche
@@ -104,6 +105,7 @@
 - Tom Holland
 - Un·e _gentilé_
 - Untitled Goose
+- Virginia Youtubeuse
 - VodK
 - Zineb El Rhazoui
 
