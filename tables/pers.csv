@@ -347,3 +347,5 @@ id;nom_colle;poids;genre;categorie;localite;cw
 351;AgnèsBuzyn;10;F;politique;1;
 352;RuPaul;10;M;TV;3;
 353;CopyComic;10;M;internet;1;
+354;{rand(JeanMichel,)}Blanquer;10;M;politique;1;
+355;FredMusa;10;M;TV;1;

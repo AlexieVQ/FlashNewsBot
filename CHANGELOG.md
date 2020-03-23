@@ -39,6 +39,7 @@
 - Florence Foresti
 - Florian Philippot
 - Fraçois Bayrou
+- Fred Musa
 - Guillaume Meurice
 - Guy-Manuel de Homem-Christo
 - Hatsune Miku
@@ -47,6 +48,7 @@
 - Jean-Christophe Napoléon
 - Jean-Luc Reichmann
 - Jean-Michel Aphatie
+- Jean-Michel Blanquer
 - Jean-Michel Jarre
 - Jean-Paul Delevoye
 - Jean-Pierre Elkabbach
