@@ -78,7 +78,7 @@ class Accroche < Element
 					if(parametres[1]) then
 						accroche += Bot.index[parametres[1]].nom.majuscule
 					else
-						return accroche + " " + parametres[0].majuscule
+						return accroche + parametres[0].majuscule
 					end
 				end
 			end
