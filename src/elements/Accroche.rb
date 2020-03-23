@@ -49,7 +49,7 @@ class Accroche < Element
 			# personnage dans parametres[1], et arrête la construction de la
 			# chaîne.
 			if(parametres[1] && Bot.index['info'].hashtag) then
-				accroche += " " + Bot.index['info'].hashtag + " — " +
+				accroche += " " + Bot.index['info'].hashtag + " — " +
 						Bot.index[parametres[1]].nom.majuscule
 			else
 				# Ajout du nom du personnage sous forme de hashtag ou non, puis
