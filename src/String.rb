@@ -49,7 +49,7 @@ class String
 	# Les valeurs d'<tt>article</tt> prises en charge sont :
 	# [+nil+]           Aucune modification de la chaîne.
 	# [<tt>"0"</tt>]    Supprime l'éventuel article (_le_, _la_, _l’_, _un_,
-	#                   _une_) en début de chaîne.
+	#                   _une_, _les_) en début de chaîne.
 	# [<tt>"le"</tt>]   Article défini, remplacé par _le_, _la_, _l’_ ou ignoré
 	#                   selon l'article indéfini (_un_, _une_) déjà présent en
 	#                   début de la chaîne.
@@ -142,7 +142,7 @@ class String
 			
 		# Suppression de l'article en début de chaîne
 		when "0"
-			return self.gsub(/^(un |une |le |la |l’)/i, "")
+			return self.gsub(/^(un |une |le |la |l’|les )/i, "")
 			
 		# Ajout de l'article donné au début de la chaîne
 		else
