@@ -55,84 +55,84 @@ id;nom;nom_en;nom_colle;poids;adjm;adjf;departement;emoji;type
 54;la République Démocratique du Congo;DR Congo;RDC;10;congolais;congolaise;;🇨🇩;pays
 55;l’Iran;Iran;Iran;10;iranien;iranienne;;🇮🇷;pays
 56;l’Irak;Iraq;Irak;10;irakien;irakienne;;🇮🇶;pays
-57;Paris;;Paris;10;parisien;parisienne;75;;ville
-58;Marseille;;Marseille;10;marseillais;marseillaise;13;;ville
-59;Lyon;;Lyon;10;lyonnais;lyonnaise;69;;ville
-60;Bordeaux;;Bordeaux;10;bordelais;bordelaise;33;;ville
-61;Nantes;;Nantes;10;nantais;nantaise;44;;ville
-62;Lille;;Lille;10;lillois;lilloise;59;;ville
-63;Roubaix;;Roubaix;10;roubaisien;roubaisienne;59;;ville
-64;Melun;;Melun;10;melunais;melunaise;77;;ville
-65;Metz;;Metz;10;messin;messine;57;;ville
-66;le Mans;;LeMans;10;manceau;mancelle;72;;ville
-67;Nice;;Nice;10;niçois;niçoise;06;;ville
-68;Angers;;Angers;10;angevin;angevine;49;;ville
-69;Rennes;;Rennes;10;rennais;rennaise;35;;ville
-70;Amiens;;Amiens;10;amiénois;amiénoise;80;;ville
-71;Orléans;;Orléans;10;orléanais;orléanaise;45;;ville
-72;Tours;;Tours;10;tourangeau;tourangelle;37;;ville
-73;Poitiers;;Poitiers;10;poitevin;poitevine;86;;ville
-74;la Rochelle;;LaRochelle;10;rochelais;rochelaise;17;;ville
-75;Brest;;Brest;10;brestois;brestoise;29;;ville
-76;le Havre;;LeHavre;10;havrais;havraise;76;;ville
-77;Calais;;Calais;10;calaisien;calaisienne;62;;ville
-78;Reims;;Reims;10;rémois;rémoise;51;;ville
-79;Strasbourg;;Strasbourg;10;strasbourgeois;strasbourgeoise;67;;ville
-80;Dijon;;Dijon;10;dijonnais;dijonnaise;21;;ville
-81;Clermont-Ferrand;;ClermontFerrand;10;clermontois;clermontoise;63;;ville
-82;Toulouse;;Toulouse;10;toulousain;toulousaine;31;;ville
-83;Sarcelles;;Sarcelles;10;sarcellois;sarcelloise;95;;ville
-84;Saint-Denis;;SaintDenis;10;dyonisien;dyonisienne;93;;ville
-85;Évry;;Évry;10;évryen;évryenne;91;;ville
-86;Versailles;;Versailles;10;versaillais;versaillaise;78;;ville
-87;Aulnay-sous-Bois;;Aulnay{rand(,SousBois)};10;aulnaysien;aulnaysienne;93;;ville
-88;Corbeil-Essonnes;;Corbeil{rand(,Essonnes)};10;corbeil-essonnois;corbeil-essonnoise;91;;ville
-89;Chartres;;Chartres;10;chartrain;chartraine;28;;ville
-90;Rambouillet;;Rambouillet;10;rambolitain;rambolitaine;78;;ville
-91;Pau;;Pau;10;palois;paloise;64;;ville
-92;Carcassonne;;Carcassonne;10;carcassonnais;carcassonnaise;11;;ville
-93;Perpignan;;Perpignan;10;perpignanais;perpignanaise;66;;ville
-94;Annecy;;Annecy;10;annécien;annécienne;74;;ville
-95;Avignon;;Avignon;10;avignonnais;avignonnaise;84;;ville
-96;Rouen;;Rouen;10;rouennais;rouennaise;76;;ville
-97;Caen;;Caen;10;caennais;caennaise;14;;ville
-98;Limoges;;Limoges;10;limougeaud;limougeaude;87;;ville
-99;Laval;;Laval;10;lavallois;lavalloise;53;;ville
-100;Alençon;;Alençon;10;alençonnais;alençonnaise;61;;ville
-101;Barcelone;Barcelona;Barcelone;10;barcelonais;barcelonaise;;;ville
-102;Berlin;Berlin;Berlin;10;berlinois;berlinoise;;;ville
-103;Londres;London;Londres;10;londonien;londonienne;;;ville
-104;Pékin;Beijing;Pékin;10;pékinois;pékinoise;;;ville
-105;New York;New York City;NYC;10;new yorkais;new yorkaise;;;ville
-106;Bruxelles;Brussels;Bruxelles;10;bruxellois;bruxelloise;;;ville
-107;Rome;Rome;Rome;10;romain;romaine;;;ville
-108;Moscou;Moscow;Moscou;10;moscovite;moscovite;;;ville
-109;la Bretagne;Brittany;{rand(Bretagne,Breizh,BZH)};10;breton;bretonne;;;region
-110;la Normandie;Normandy;Normandie;10;normand;normande;;;region
-111;le Nord-Pas-De-Calais;Nord-Pas-De-Calais;{rand(NordPasDeCalais,NPDC)};10;nord-pas-de-calaisien;nord-pas-de-calaisienne;;;region
-112;les Hauts-de-France;Hauts-de-France;HautsDeFrance;10;des Hauts-de-France;des Hauts-de-France;;;region
-113;la Picardie;Picardy;Picardie;10;picard;picarde;;;region
-114;la Corse;Corsica;Corse;10;corse;corse;;;region
-115;le Pays Basque;Basque Country;PaysBasque;10;basque;basque;;;region
-116;le Québec;Quebec;Québec;10;québécois;québécoise;;;region
-117;le Berry;Berry;Berry;10;berrichon;berrichonne;;;region
-118;la Sologne;Sologne;Sologne;10;solognot;solognotte;;;region
-119;les Pays de la Loire;Pays de la Loire;PaysDeLaLoire;10;ligérien;ligérienne;;;region
-120;le Limousin;Limousin;Limousin;10;limousin;limousine;;;region
-121;l’Auvergne;Auvergne;Auvergne;10;auvergnat;auvergnate;;;region
-122;l’Île-de-France;Île-de-France;{rand(ÎleDeFrance,IDF)};10;francilien;francilienne;;;region
-123;l’Alsace;Alsace;Alsace;10;alsacien;alsacienne;;;region
-124;la Lorraine;Lorraine;Lorraine;10;lorrain;lorraine;;;region
-125;le Béarn;Béarn;Béarn;10;béarnais;béarnaise;;;region
-126;l’Occitanie;Occitania;Occitanie;10;occitan;occitane;;;region
-127;la Catalogne;Catalonia;Catalogne;10;catalan;catalane;;;region
+57;Paris;;Paris;10;parisien;parisienne;75;🇫🇷;ville
+58;Marseille;;Marseille;10;marseillais;marseillaise;13;🇫🇷;ville
+59;Lyon;;Lyon;10;lyonnais;lyonnaise;69;🇫🇷;ville
+60;Bordeaux;;Bordeaux;10;bordelais;bordelaise;33;🇫🇷;ville
+61;Nantes;;Nantes;10;nantais;nantaise;44;🇫🇷;ville
+62;Lille;;Lille;10;lillois;lilloise;59;🇫🇷;ville
+63;Roubaix;;Roubaix;10;roubaisien;roubaisienne;59;🇫🇷;ville
+64;Melun;;Melun;10;melunais;melunaise;77;🇫🇷;ville
+65;Metz;;Metz;10;messin;messine;57;🇫🇷;ville
+66;le Mans;;LeMans;10;manceau;mancelle;72;🇫🇷;ville
+67;Nice;;Nice;10;niçois;niçoise;06;🇫🇷;ville
+68;Angers;;Angers;10;angevin;angevine;49;🇫🇷;ville
+69;Rennes;;Rennes;10;rennais;rennaise;35;🇫🇷;ville
+70;Amiens;;Amiens;10;amiénois;amiénoise;80;🇫🇷;ville
+71;Orléans;;Orléans;10;orléanais;orléanaise;45;🇫🇷;ville
+72;Tours;;Tours;10;tourangeau;tourangelle;37;🇫🇷;ville
+73;Poitiers;;Poitiers;10;poitevin;poitevine;86;🇫🇷;ville
+74;la Rochelle;;LaRochelle;10;rochelais;rochelaise;17;🇫🇷;ville
+75;Brest;;Brest;10;brestois;brestoise;29;🇫🇷;ville
+76;le Havre;;LeHavre;10;havrais;havraise;76;🇫🇷;ville
+77;Calais;;Calais;10;calaisien;calaisienne;62;🇫🇷;ville
+78;Reims;;Reims;10;rémois;rémoise;51;🇫🇷;ville
+79;Strasbourg;;Strasbourg;10;strasbourgeois;strasbourgeoise;67;🇫🇷;ville
+80;Dijon;;Dijon;10;dijonnais;dijonnaise;21;🇫🇷;ville
+81;Clermont-Ferrand;;ClermontFerrand;10;clermontois;clermontoise;63;🇫🇷;ville
+82;Toulouse;;Toulouse;10;toulousain;toulousaine;31;🇫🇷;ville
+83;Sarcelles;;Sarcelles;10;sarcellois;sarcelloise;95;🇫🇷;ville
+84;Saint-Denis;;SaintDenis;10;dyonisien;dyonisienne;93;🇫🇷;ville
+85;Évry;;Évry;10;évryen;évryenne;91;🇫🇷;ville
+86;Versailles;;Versailles;10;versaillais;versaillaise;78;🇫🇷;ville
+87;Aulnay-sous-Bois;;Aulnay{rand(,SousBois)};10;aulnaysien;aulnaysienne;93;🇫🇷;ville
+88;Corbeil-Essonnes;;Corbeil{rand(,Essonnes)};10;corbeil-essonnois;corbeil-essonnoise;91;🇫🇷;ville
+89;Chartres;;Chartres;10;chartrain;chartraine;28;🇫🇷;ville
+90;Rambouillet;;Rambouillet;10;rambolitain;rambolitaine;78;🇫🇷;ville
+91;Pau;;Pau;10;palois;paloise;64;🇫🇷;ville
+92;Carcassonne;;Carcassonne;10;carcassonnais;carcassonnaise;11;🇫🇷;ville
+93;Perpignan;;Perpignan;10;perpignanais;perpignanaise;66;🇫🇷;ville
+94;Annecy;;Annecy;10;annécien;annécienne;74;🇫🇷;ville
+95;Avignon;;Avignon;10;avignonnais;avignonnaise;84;🇫🇷;ville
+96;Rouen;;Rouen;10;rouennais;rouennaise;76;🇫🇷;ville
+97;Caen;;Caen;10;caennais;caennaise;14;🇫🇷;ville
+98;Limoges;;Limoges;10;limougeaud;limougeaude;87;🇫🇷;ville
+99;Laval;;Laval;10;lavallois;lavalloise;53;🇫🇷;ville
+100;Alençon;;Alençon;10;alençonnais;alençonnaise;61;🇫🇷;ville
+101;Barcelone;Barcelona;Barcelone;10;barcelonais;barcelonaise;;🇪🇸;ville
+102;Berlin;Berlin;Berlin;10;berlinois;berlinoise;;🇩🇪;ville
+103;Londres;London;Londres;10;londonien;londonienne;;🇬🇧;ville
+104;Pékin;Beijing;Pékin;10;pékinois;pékinoise;;🇨🇳;ville
+105;New York;New York City;NYC;10;new yorkais;new yorkaise;;🇺🇸;ville
+106;Bruxelles;Brussels;Bruxelles;10;bruxellois;bruxelloise;;🇧🇪;ville
+107;Rome;Rome;Rome;10;romain;romaine;;🇮🇹;ville
+108;Moscou;Moscow;Moscou;10;moscovite;moscovite;;🇷🇺;ville
+109;la Bretagne;Brittany;{rand(Bretagne,Breizh,BZH)};10;breton;bretonne;;🇫🇷;region
+110;la Normandie;Normandy;Normandie;10;normand;normande;;🇫🇷;region
+111;le Nord-Pas-De-Calais;Nord-Pas-De-Calais;{rand(NordPasDeCalais,NPDC)};10;nord-pas-de-calaisien;nord-pas-de-calaisienne;;🇫🇷;region
+112;les Hauts-de-France;Hauts-de-France;HautsDeFrance;10;des Hauts-de-France;des Hauts-de-France;;🇫🇷;region
+113;la Picardie;Picardy;Picardie;10;picard;picarde;;🇫🇷;region
+114;la Corse;Corsica;Corse;10;corse;corse;;🇫🇷;region
+115;le Pays Basque;Basque Country;PaysBasque;10;basque;basque;;🇫🇷;region
+116;le Québec;Quebec;Québec;10;québécois;québécoise;;🇨🇦;region
+117;le Berry;Berry;Berry;10;berrichon;berrichonne;;🇫🇷;region
+118;la Sologne;Sologne;Sologne;10;solognot;solognotte;;🇫🇷;region
+119;les Pays de la Loire;Pays de la Loire;PaysDeLaLoire;10;ligérien;ligérienne;;🇫🇷;region
+120;le Limousin;Limousin;Limousin;10;limousin;limousine;;🇫🇷;region
+121;l’Auvergne;Auvergne;Auvergne;10;auvergnat;auvergnate;;🇫🇷;region
+122;l’Île-de-France;Île-de-France;{rand(ÎleDeFrance,IDF)};10;francilien;francilienne;;🇫🇷;region
+123;l’Alsace;Alsace;Alsace;10;alsacien;alsacienne;;🇫🇷;region
+124;la Lorraine;Lorraine;Lorraine;10;lorrain;lorraine;;🇫🇷;region
+125;le Béarn;Béarn;Béarn;10;béarnais;béarnaise;;🇫🇷;region
+126;l’Occitanie;Occitania;Occitanie;10;occitan;occitane;;🇫🇷;region
+127;la Catalogne;Catalonia;Catalogne;10;catalan;catalane;;🇪🇸;region
 128;l’Angleterre;England;Angleterre;10;anglais;anglaise;;🏴󠁧󠁢󠁥󠁮󠁧󠁿;region
 129;l’Écosse;Scotland;Écosse;10;écossais;écossaise;;🏴󠁧󠁢󠁳󠁣󠁴󠁿;region
 130;le Pays de Galles;Wales;PaysDeGalles;10;gallois;galloise;;🏴󠁧󠁢󠁷󠁬󠁳󠁿;region
-131;l’Irlande du Nord;Northern Ireland;IrlandeDuNord;10;nord-irlandais;nord-irlandaise;;;region
-132;l’Europe;Europe;Europe;10;européen;européenne;;;region
+131;l’Irlande du Nord;Northern Ireland;IrlandeDuNord;10;nord-irlandais;nord-irlandaise;;🇬🇧;region
+132;l’Europe;Europe;Europe;10;européen;européenne;;🇪🇺;region
 133;l’Union Européenne;European Union;{rand(UnionEuropéenne,UE)};10;européen;européenne;;🇪🇺;region
-134;l’Ardèche;Ardèche;Ardèche;10;ardéchois;ardéchoise;;;region
-135;le Larzac;Larzac;Larzac;10;du Larzac;du Larzac;;;region
-136;la Mayenne;Mayenne;Mayenne;10;mayennais;mayennaise;;;region
-137;la Vendée;Vendée;Vendée;10;vendéen;vendéenne;;;region
+134;l’Ardèche;Ardèche;Ardèche;10;ardéchois;ardéchoise;;🇫🇷;region
+135;le Larzac;Larzac;Larzac;10;du Larzac;du Larzac;;🇫🇷;region
+136;la Mayenne;Mayenne;Mayenne;10;mayennais;mayennaise;;🇫🇷;region
+137;la Vendée;Vendée;Vendée;10;vendéen;vendéenne;;🇫🇷;region

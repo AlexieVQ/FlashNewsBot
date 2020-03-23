@@ -53,8 +53,9 @@ class String
 	# [<tt>"le"</tt>]   Article défini, remplacé par _le_, _la_, _l’_ ou ignoré
 	#                   selon l'article indéfini (_un_, _une_) déjà présent en
 	#                   début de la chaîne.
-	# [<tt>"de"</tt>]   Préposition, contractée avec _le_ ou une éventuelle
-	#                   voyelle en début de chaîne, ou ajoutée telle quelle.
+	# [<tt>"de"</tt>]   Préposition, contractée avec _le_, _les_ ou une
+	#                   éventuelle voyelle en début de chaîne, ou ajoutée telle
+	#                   quelle.
 	# [<tt>"à"</tt>]    Préposition, contractée avec _le_ ou ajoutée telle
 	#                   quelle.
 	# [<tt>"en"</tt>]   Préposition, contractée avec _le_, remplaçant _la_ ou
@@ -96,6 +97,9 @@ class String
 			# Contraction avec "le"
 			if(self =~ /^le [^aeiouyéèàêâôûùïî]/i) then
 				return self.gsub(/^le/i, "du")
+			# Contraction avec "les"
+			elsif(self =~ /^les /i) then
+				return self.gsub(/^les/i, "des")
 			# Devant une voyelle
 			elsif(self =~ /^[aeiouyéèàêâôûùïî]/i) then
 				return self.gsub(/^/, "d’")

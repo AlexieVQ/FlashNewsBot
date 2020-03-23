@@ -73,9 +73,9 @@ class Status
 				@texte = partie_info
 				# Ajout de l'accroche
 				@texte = Accroche.retourner(nil, [@texte, "sujet"])
-				# Ajout de la deuxième partie du status, où le sujet prend la
-				# parole
-				if(rand(2) == 1) then
+				# Ajout de la deuxième partie du status, où un personnage prend
+				# la parole
+				if(rand(4) == 1) then
 					@texte += " " + partie_decla
 				end
 			end
@@ -95,6 +95,8 @@ class Status
 				@images << Bot.index['info'].image
 			elsif(Bot.index['objet'] && Bot.index['objet'].image) then
 				@images << Bot.index['objet'].image
+			elsif(Bot.index['pers_circo'] && Bot.index['pers_circo'].image) then
+				@images << Bot.index['pers_circo'].image
 			elsif(Bot.index['declarant'] && Bot.index['declarant'].image) then
 				@images << Bot.index['declarant'].image
 			end
@@ -156,17 +158,17 @@ class Status
 	def partie_info
 		chaine = Bot.index['info'].action
 		
-		if(rand(2) == 1) then
+		if(rand(4) == 1) then
 			chaine += " " + DateInfo.elt_alea.date
 		end
 		
-		if(rand(2) == 1) then
+		if(rand(4) == 1) then
 			chaine += " " + Lieu.elt_alea.lieu
 		end
 		
 		if(["accuse", "est_accuse",
 		   "accusation"].include?(Bot.index['info'].type_circo) ||
-		   rand(2) == 1) then
+		   rand(4) == 1) then
 			chaine += " " + Bot.index['info'].circo
 		end
 		
@@ -206,11 +208,11 @@ class Status
 		when 3 then "a réagi"
 		end
 		
-		if(rand(2) == 1) then
+		if(rand(4) == 1) then
 			chaine += " " + DateInfo.elt_alea.date
 		end
 		
-		if(rand(2) == 1) then
+		if(rand(4) == 1) then
 			chaine += " " + Media.elt_alea.nom("à")
 		end
 		
@@ -220,7 +222,7 @@ class Status
 		when 2 then
 			chaine += " à propos "
 			if(decla_type == :sujet || !Bot.index['sujet']) then
-				chaine += " de " + Bot.index['info'].type
+				chaine += "de " + Bot.index['info'].type
 			else
 				chaine += Bot.index['sujet'].surnom("de")
 			end

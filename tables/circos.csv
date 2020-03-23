@@ -111,7 +111,7 @@ id;circo;poids;type;id_info
 132;en désaccord avec {pers_circo=pers}{pers_circo.nom};10;universel;
 133;avec {pers_circo=pers}{pers_circo.nom};10;universel;
 134;d’après {pers_circo=pers}{pers_circo.nom};10;universel;
-135;d’après {media_circo=media}{media_circo.nom};50;universel;
+135;d’après {media_circo=media}{media_circo.nom};10;universel;
 142;en portant un gilet jaune;1;universel;
 143;d’après un document confidentiel que nous avons en notre possession;10;universel;
 145;en direct à la télévision;10;universel;
@@ -173,7 +173,7 @@ id;circo;poids;type;id_info
 202;pour {genre(objet,le,la)} draguer;10;specifique;158
 203;pour lui envoyer {genre(sujet,une dick pic,des nudes)};10;specifique;158
 204;ironiquement;10;universel;
-205;non-ironiquement;30;universel;
+205;non-ironiquement;10;universel;
 206;pour avoir chanté “Fuck le 17”;10;accusation;
 207;pour avoir chanté “Fornique la maréchaussée”;10;accusation;
 208;pour avoir dit “Nique la police” au lieu de “Nique le ministre”;10;accusation;

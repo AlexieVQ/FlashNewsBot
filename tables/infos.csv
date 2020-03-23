@@ -146,7 +146,7 @@ id;type;description;type_circo;hashtag;poids;categories;structure
 176;son implication;Impliqué dans l’affaire objet;est_accuse;#Affaire{objet.nom_colle};10;;
 177;son appel;Appelle à la grève générale;universel;#GrèveGénérale;10;politique;
 178;son annonce;Se lance dans le podcast;universel;;10;internet;
-179;son ban;Banni de la Mutinerie;est_accuse;;10;;
+179;son ban;Banni de la Mutinerie;est_accuse;;3;;
 180;cette fuite;La bite de sujet fuite;universel;;10;;{accroche({info.action}{rand(, {date})}{rand(, {lieu})}{rand(, info.circo)})}.
 181;son arrivée;Rejoint la RedBox;universel;#YouTube;10;internet;
 182;sa provocation;Provoque la WW3;universel;#WW3;10;politique;

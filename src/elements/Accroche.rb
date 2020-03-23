@@ -49,8 +49,8 @@ class Accroche < Element
 			# personnage dans parametres[1], et arrête la construction de la
 			# chaîne.
 			if(parametres[1] && Bot.index['info'].hashtag) then
-				accroche += " " + Bot.index['info'].hashtag + " - " +
-						Bot.index[parametres[1]].nom
+				accroche += " " + Bot.index['info'].hashtag + " — " +
+						Bot.index[parametres[1]].nom.majuscule
 			else
 				# Ajout du nom du personnage sous forme de hashtag ou non, puis
 				# de son surnom.
@@ -74,7 +74,7 @@ class Accroche < Element
 				# Ajout d'un mot d'arroche, puis du nom du personnage, si donné.
 				else
 					accroche += " " + elt_alea.accroche
-					accroche =~ /:/ ? accroche += " " : accroche += " - "
+					accroche =~ /:/ ? accroche += " " : accroche += " — "
 					if(parametres[1]) then
 						accroche += Bot.index[parametres[1]].nom.majuscule
 					else

@@ -342,7 +342,7 @@ id;action;poids;id_info
 341;rejoint l’équipe des Grosses Têtes;10;166
 342;décide de nous c{rand(*,a)}sser les {h}couilles avec le voile;10;167
 343;décide de nous casser encore les couilles avec le voile;10;167
-344;décide d’encore nous casser les couilles avec le {h}voile;10;167
+344;décide de nous casser encore les couilles avec le {h}voile;10;167
 345;animera une émission de débats sur #BFMTV;10;168
 346;animera une émission de débats sur #CNEWS;10;168
 347;remporte le Grammy du meilleur album;10;169
@@ -363,8 +363,8 @@ id;action;poids;id_info
 363;appelle à la grève générale;10;177
 364;appelle à la grève;10;177
 365;se lance dans le podcast;10;178
-366;banni{gse} de la Mutinerie à Paris;10;179
-367;banni{gse} de la Mutinerie, bar à Paris;10;179
+366;banni{gse} de la Mutinerie;10;179
+367;banni{gse} de la Mutinerie à Paris;10;179
 368;banni{gse} du bar La Mutinerie à Paris;5;179
 369;{sujet=pers}une photo {genre(sujet,du pénis,dénudée)} {sujet.nom(de)} fuite;10;180
 370;{sujet=pers}{genre(sujet,le pénis,des photos intimes)} {sujet.nom(de)} fuite{genre(sujet,,nt)};5;180
