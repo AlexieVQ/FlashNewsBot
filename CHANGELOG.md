@@ -97,6 +97,7 @@
 - Rufus Katégorik
 - RuPaul
 - Sardoche
+- Sibeth Ndiaye
 - Solid Snake
 - Swagg Man
 - Tex
