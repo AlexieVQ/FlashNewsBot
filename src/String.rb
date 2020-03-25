@@ -106,6 +106,9 @@ class String
 			# Contraction avec "la" si "de 0" en paramètre
 			elsif(de0 && self =~ /^la [^aeiouyéèàêâôûùïî]/i) then
 				return self.gsub(/^la/i, "de")
+			# Contraction avec "l’" si "de 0" en paramètre
+			elsif(de0 && self =~ /^l’/i) then
+				return self.gsub(/^l’/i, "d’")
 			# Contraction avec "les"
 			elsif(self =~ /^les /i) then
 				return self.gsub(/^les/i, "des")
