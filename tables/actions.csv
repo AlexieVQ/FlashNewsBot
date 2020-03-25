@@ -10,7 +10,7 @@ id;action;poids;id_info
 9;est élu{gse} à la tête de l’État;10;3
 10;devient l{genre(sujet,e,a)} nouve{genre(sujet,au,lle)} Président{gse} de la République{rand(, française)};10;3
 11;est élu{gse} Président{gse} {loc_info=localite(pays)}{loc_info.nom(de)};10;3
-12;devient l{genre(sujet,e,a)} nouve{genre(sujet,au,lle)} Président{gse} {loc_info=localite(pays)}{loc_info.nom(de)};10;3
+12;devient l{genre(sujet,e,a)} nouve{genre(sujet,au,lle)} Président{gse} {loc_info=localite(pays)}{loc_info.nom(de 0)};10;3
 13;placé{gse} en garde à vue;10;4
 14;est arrêté{gse};10;4
 15;condamné{gse} à {rand(10,20,30,50)} ans de prison dont {rand(2,5,8,10)} avec surcis;10;4
@@ -49,15 +49,15 @@ id;action;poids;id_info
 48;se porte candidat{gse} à l’élection présidentielle{objet=pers}{loc_info=localite(France)};10;21
 49;est candidat{gse} à l’élection présidentielle{objet=pers}{loc_info=localite(France)};10;21
 50;se porte candidat{gse} à la succession {objet=pers}{objet.nom(de)} à là tête du pays{loc_info=localite(France)};10;21
-51;se porte candidat{gse} à l’élection présidentielle {loc_info=localite(pays)}{loc_info.nom(de)}{objet=pers};10;21
-52;est candidat{gse} à l’élection présidentielle {loc_info=localite(pays)}{loc_info.nom(de)}{objet=pers};10;21
+51;se porte candidat{gse} à l’élection présidentielle {loc_info=localite(pays)}{loc_info.nom(de)};10;21
+52;est candidat{gse} à l’élection présidentielle {loc_info=localite(pays)}{loc_info.nom(de)};10;21
 53;se porte candidat{gse} à la succession {objet=pers}{objet.nom(de)} à là tête {loc_info=localite(pays)}{loc_info.nom(de)};10;21
 54;a signé un accord de dénucléarisation avec {loc_info=localite(pays)}{loc_info.nom};10;22
 55;a engagé un processus de dénucléarisation avec {loc_info=localite(pays)}{loc_info.nom};10;22
 56;est sacré{gse} {rand(Roy,Reine)} de France et de Navarre;10;23
 57;est sacré{gse} {rand(Roy,Reine)} de France;10;23
-58;est sacré{gse} {rand(Empereur,Impératrice)} {loc_info=localite(pays,region)}{loc_info.nom(de)};10;23
-59;est sacré{gse} {rand(Roy,Reine)} {loc_info=localite(pays,region)}{loc_info.nom(de)};10;23
+58;est sacré{gse} {rand(Empereur,Impératrice)} {loc_info=localite(pays,region)}{loc_info.nom(de 0)};10;23
+59;est sacré{gse} {rand(Roy,Reine)} {loc_info=localite(pays,region)}{loc_info.nom(de 0)};10;23
 60;a obtenu son brevet des collèges;10;24
 61;a cru apercevoir un OVNI;10;25
 62;a aperçu un OVNI;10;25
@@ -202,7 +202,7 @@ id;action;poids;id_info
 201;accuse {objet=pers}{objet.nom} d’être {objet2=pers}{objet2.nom};10;94
 202;accuse {objet=pers}{objet.nom} et {objet2=pers}{objet2.nom} d’être la même personne;10;94
 203;accusé{gse} d’être {objet=pers}{objet.nom};10;95
-204;devient général{gse} de l’armée {loc_info=localite(pays,region)}{loc_info.nom(de)};10;96
+204;devient général{gse} de l’armée {loc_info=localite(pays,region)}{loc_info.nom(de 0)};10;96
 205;ira sur Mars en 2020;10;97
 206;enverra {objet=pers}{objet.nom} sur Mars en 2020;10;97
 207;lancera la première mission humaine sur Mars en 2020;10;97
@@ -210,8 +210,8 @@ id;action;poids;id_info
 209;accuse {media_info=media}{media_info.nom} de fake news;10;99
 210;bloque {objet=pers}{objet.nom} sur Twitter;10;100
 211;bloque {objet=pers}{objet.nom} sur Facebook;10;100
-212;s’auto-proclame {genre(sujet,Roi,Reine)} {loc_info=localite(ville,pays,region)}{loc_info.nom(de)};10;101
-213;s’auto-proclame {genre(sujet,Roi,Reine)} {loc_info=localite(ville)}{loc_info.nom(de)}{loc_info.departement};3;101
+212;s’auto-proclame {genre(sujet,Roi,Reine)} {loc_info=localite(ville,pays,region)}{loc_info.nom(de 0)};10;101
+213;s’auto-proclame {genre(sujet,Roi,Reine)} {loc_info=localite(ville)}{loc_info.nom(de 0)}{loc_info.departement};3;101
 214;soutient {objet=pers}{objet.nom} aux présidentielles;10;102
 215;suspecté{gse} d’être décédé et d’avoir été remplacé{gse} par un sosie;10;103
 216;suspecté{gse} d’être décédé et d’avoir été remplacé{gse} par {objet=pers}{objet.nom};10;103
@@ -306,7 +306,7 @@ id;action;poids;id_info
 305;décide d’annuler le brevet des collèges;10;139
 306;devient l{genre(sujet,e,a)} premi{genre(sujet,er,ère)} youtubeu{genre(sujet,r,se)} au monde;10;140
 307;devient l{genre(sujet,e,a)} youtubeu{genre(sujet,r,se)} numéro 1;10;140
-308;devient l{genre(sujet,e,a)} premi{genre(sujet,er,ère)} youtubeu{genre(sujet,r,se)} {loc_info=localite(pays)}{loc_info.nom(de)};10;140
+308;devient l{genre(sujet,e,a)} premi{genre(sujet,er,ère)} youtubeu{genre(sujet,r,se)} {loc_info=localite(pays)}{loc_info.nom(de 0)};10;140
 309;transféré{gse} {rand({rand(du PSG,de l’OM,de l’OL,de l’AS Monaco,du Stade rennais,des Girondins,de Saint-Étienne,du FC Nantes,du FC Barcelone,du Barça,de l’Atlético de Madrid,du Real Madrid,du Bayern Munich,de Manchester City,de Manchester United,de Liverpool,de la Juventus,des Herbiers,du Red Star,de l’En Avant Guingamp,du FC Lorient,du Stade rennais,de l’ASM,du FC Visiteur,du Borussia Dortmund)} ,)}{rand(au PSG,à l’OM,à l’OL,à l’AS Monaco,au Stade rennais,aux Girondins,à Saint-Étienne,au FC Nantes,au FC Barcelone,au Barça,à l’Atlético de Madrid,au Real Madrid,au Bayern Munich,à Manchester City,à Manchester United,à Liverpool,à la Juventus,aux Herbiers,au Red Star,à l’En Avant Guingamp,au FC Lorient,au Stade rennais,à l’ASM,au FC Visiteur,au Borussia Dortmund)};10;141
 310;devient {genre(sujet,p,m)}ère;10;142
 311;devient {genre(sujet,papa,maman)};10;142

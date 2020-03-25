@@ -173,8 +173,6 @@ class Localite < Element
 	#               String#modif_article)
 	def nom(article = nil)
 		article = "à" if(@type == "ville" && article == "en")
-		article = "de 0" if(article == "de" &&
-		                    ["pays", "region"].include?(@type))
 		return @nom.evaluer.modif_article(article)
 	end
 	
