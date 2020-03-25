@@ -49,7 +49,8 @@ class Bot
 	#                   Float)
 	# [+debug+]         Utilisation du mode débuggage (booléen, utilisé en mode
 	#                   offline)
-	def Bot.init(offline, username, intervalle, debug)
+	# [+password+]      Mot de passe de la base de données (String)
+	def Bot.init(offline, username, intervalle, debug, password)
 		@@bdd = nil
 		@@intervalle = intervalle
 		@@dir = Dir.pwd
@@ -58,7 +59,8 @@ class Bot
 		self.index_reset
 		
 		unless(offline) then
-			@@bdd = Bdd.new # Doit être connectée pour enregistrer le compte
+			@@bdd = Bdd.new(password) # Doit être connectée pour enregistrer le 
+									  # compte
 			@@compte = CompteTwitter.connecter(username)
 		end
 	end
@@ -81,13 +83,15 @@ class Bot
 	#                   Float)
 	# [+debug+]         Utilisation du mode débuggage (booléen, utilisé en mode
 	#                   offline)
-	def Bot.exec(offline, username, intervalle, debug)
-		self.init(offline, username, intervalle, debug)
+	# [+password+]      Mot de passe de la base de données (String)
+	def Bot.exec(offline, username, intervalle, debug, password)
+		self.init(offline, username, intervalle, debug, password)
 		unless(offline) then
 			Daemons.daemonize({backtrace: true,
 							   app_name: username + "." + @@compte.domaine,
 							   log_output: true})
-			@@bdd = Bdd.new # Doit être reconnectée après la démonisation
+			@@bdd = Bdd.new(password) # Doit être reconnectée après la
+									  # démonisation
 		end
 
 		loop {

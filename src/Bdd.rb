@@ -23,10 +23,11 @@ class Bdd
 	# initialisé à l'aide du script SQL inclus dans les sources du projet.
 	#
 	# Paramètres :
+	# [+password+]      Mot de passe de la base de données (String)
 	# [+dbname+]    Nom de la base de données (String, par défaut
 	#               <tt>"FlashNewsBot"</tt>)
-	def initialize(dbname = "FlashNewsBot")
-		@conn = PG.connect(dbname: dbname)
+	def initialize(password, dbname = "FlashNewsBot")
+		@conn = PG.connect(dbname: dbname, password: password)
 	end
 	
 	#######################

@@ -9,6 +9,7 @@ hors_ligne = false
 username = ""
 tendances = false
 debug = false
+password = ""
 opt_parser = OptionParser.new { |opts|
 	opts.banner = "Utilisation : #{$PROGRAM_NAME} [options]"
 	
@@ -35,6 +36,12 @@ opt_parser = OptionParser.new { |opts|
 		intervalle = i.to_f
 	}
 	
+	opts.on("-pPASSWORD", "--password=PASSWORD",
+			"Mot de passe de la base de donnée (mode en ligne uniquement)"
+		   ) { |pw|
+		password = pw
+	}
+	
 	opts.on("-h", "--help", "Affiche l'aide") {
 		puts opts
 		exit
@@ -54,7 +61,7 @@ if(tendances && username.empty?) then
 end
 
 if(tendances) then
-	TestTendances.exec(username)
+	TestTendances.exec(username, password)
 else
-	Bot.exec(hors_ligne, username, intervalle, debug)
+	Bot.exec(hors_ligne, username, intervalle, debug, password)
 end
