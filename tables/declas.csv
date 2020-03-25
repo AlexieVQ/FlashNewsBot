@@ -123,3 +123,4 @@ id;decla;poids;id_info_sujet;id_info_objet;id_info_autre;id_pers
 153;C’est faux;5;;;;
 154;Ce sont des fake news;5;;;;
 155;Ces fake news sont fausses;5;;;;
+156;{pers_decla=pers}{maj({pers_decla.nom})} avait raison;10;;;;

@@ -18,6 +18,7 @@
 - Billie Eilish
 - Bob l’Éponge
 - Bong Joon-Ho
+- Britney Spears
 - Capitaine Krabs
 - Carlito
 - Carlo Tentacule
