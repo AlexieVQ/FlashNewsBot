@@ -88,19 +88,24 @@ class Status
 			end
 			
 			@images = []
-			if(Bot.index['sujet'] && Bot.index['sujet'].image) then
-				@images << Bot.index['sujet'].image
-			end
-			if(Bot.index['info'].image) then
-				@images << Bot.index['info'].image
-			elsif(Bot.index['objet'] && Bot.index['objet'].image) then
-				@images << Bot.index['objet'].image
-			elsif(Bot.index['pers_circo'] && Bot.index['pers_circo'].image) then
-				@images << Bot.index['pers_circo'].image
-			elsif(Bot.index['declarant'] && Bot.index['declarant'].image) then
-				@images << Bot.index['declarant'].image
-			end
-			if(@images.length == 0) then
+			case rand(4)
+			when 1 then
+				if(Bot.index['sujet'] && Bot.index['sujet'].image) then
+					@images << Bot.index['sujet'].image
+				end
+				if(Bot.index['info'].image) then
+					@images << Bot.index['info'].image
+				elsif(rand(2) == 1 && Bot.index['objet'] &&
+				      Bot.index['objet'].image) then
+					@images << Bot.index['objet'].image
+				elsif(rand(4) == 1 && Bot.index['pers_circo'] &&
+				      Bot.index['pers_circo'].image) then
+					@images << Bot.index['pers_circo'].image
+				elsif(rand(4) == 1 && Bot.index['declarant'] &&
+				      Bot.index['declarant'].image) then
+					@images << Bot.index['declarant'].image
+				end
+			when 2 then
 				@images << ImageStatique.elt_alea
 			end
 			
