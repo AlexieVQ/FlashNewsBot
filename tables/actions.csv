@@ -46,8 +46,8 @@ id;action;poids;id_info
 45;accepte de défier en duel de sabre {objet=pers}{objet.nom};10;18
 46;accepte de défier en duel de shifumi {objet=pers}{objet.nom};10;19
 47;devient premi{genre(sujet,er,ère)} secrétaire du bureau politique du Parti Communiste Français et guidera la République vers son destin socialiste;10;20
-48;se porte candidat{gse} à l’élection présidentielle{objet=pers}{loc_info=localite(France)};10;21
-49;est candidat{gse} à l’élection présidentielle{objet=pers}{loc_info=localite(France)};10;21
+48;se porte candidat{gse} à l’élection présidentielle{loc_info=localite(France)};10;21
+49;est candidat{gse} à l’élection présidentielle{loc_info=localite(France)};10;21
 50;se porte candidat{gse} à la succession {objet=pers}{objet.nom(de)} à là tête du pays{loc_info=localite(France)};10;21
 51;se porte candidat{gse} à l’élection présidentielle {loc_info=localite(pays)}{loc_info.nom(de)};10;21
 52;est candidat{gse} à l’élection présidentielle {loc_info=localite(pays)}{loc_info.nom(de)};10;21
@@ -382,3 +382,5 @@ id;action;poids;id_info
 382;a trouvé le vaccin contre le COVID-19;10;189
 383;annonce avoir trouvé le vaccin contre le COVID-19;10;189
 384;emprisonné{gse};10;190
+385;est candidat{gse} {parti_info=parti}{genre(sujet,{parti_info.adjm},{parti_info.adjf})} à l’élection présidentielle{loc_info=localite(France)};10;21
+386;candidat{gse} {parti_info=parti}{genre(sujet,{parti_info.adjm},{parti_info.adjf})} à la mairie {loc_info=localite(ville)}{loc_info.nom(de)};10;68

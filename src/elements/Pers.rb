@@ -276,7 +276,7 @@ class Pers < Element
 			end
 		end
 		
-		# Localité de l'information
+		# Localité
 		if(Localite.dans_index.member? @localite) then
 			poids *= 20
 		end

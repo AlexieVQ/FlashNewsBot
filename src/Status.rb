@@ -88,8 +88,8 @@ class Status
 			end
 			
 			@images = []
-			case rand(4)
-			when 1 then
+			r = rand(8)
+			if(r >= 6 ) then
 				if(Bot.index['sujet'] && Bot.index['sujet'].image) then
 					@images << Bot.index['sujet'].image
 				end
@@ -105,7 +105,7 @@ class Status
 				      Bot.index['declarant'].image) then
 					@images << Bot.index['declarant'].image
 				end
-			when 2 then
+			elsif(r == 1) then
 				@images << ImageStatique.elt_alea
 			end
 			

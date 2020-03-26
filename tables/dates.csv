@@ -10,5 +10,5 @@ id;date;poids
 13;lors de son contrôle fiscal;1
 14;lors des universités d’été {parti.nom(de)};5
 15;il y a de cela 5 ans;1
-16;durant l’Acte {randn(1,52)} des Gilets Jaunes;5
-17;durant l’#Acte{randn(1,52)} des Gilets Jaunes;5
+16;durant l’Acte {randn(1,52)} des Gilets Jaunes;2
+17;durant l’#Acte{randn(1,52)} des Gilets Jaunes;2

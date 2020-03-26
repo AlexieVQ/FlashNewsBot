@@ -99,6 +99,7 @@
 - Sardoche
 - Sibeth Ndiaye
 - Solid Snake
+- Sonic le Hérisson
 - Swagg Man
 - Tex
 - Thomas Bangalter

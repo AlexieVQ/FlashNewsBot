@@ -1,6 +1,7 @@
 require_relative 'Element.rb'
 require_relative 'Localite.rb'
 require_relative '../String.rb'
+require_relative '../Bot.rb'
 
 ##
 # Element représentant un parti politique ou une organisation syndicale.
@@ -148,6 +149,25 @@ class Parti < Element
 	# évalué (voir String#evaluer).
 	def adjf
 		return @adjf.evaluer
+	end
+	
+	##
+	# Calcule le poids de l'organisation politique dans les choix aléatoires
+	# (Array#elt_alea) en fonction du contexte (Integer).
+	#
+	# Critères qui influencent le poids de l'organisation politique dans les
+	# choix aléatoires :
+	# * L'organisation est d'une localité déjà présente dans l'index (le poids
+	#   est multiplié par 20)
+	def poids
+		poids = super
+		
+		# Localité
+		if(Localite.dans_index.member? @localite) then
+			poids *= 20
+		end
+		
+		return poids
 	end
 	
 	##
