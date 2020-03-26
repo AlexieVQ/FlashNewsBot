@@ -55,6 +55,7 @@ class Status
 			@info = nil
 			@pers = []
 			@images = []
+			decla = false
 			Bot.index_reset
 			
 			# Choix de l'information principale du status
@@ -77,6 +78,7 @@ class Status
 				# la parole
 				if(rand(4) == 1) then
 					@texte += " " + partie_decla
+					decla = true
 				end
 			end
 			@info = Bot.index['info']
@@ -105,7 +107,7 @@ class Status
 				      Bot.index['declarant'].image) then
 					@images << Bot.index['declarant'].image
 				end
-			elsif(r == 1) then
+			elsif(!decla && r == 1) then
 				@images << ImageStatique.elt_alea
 			end
 			
