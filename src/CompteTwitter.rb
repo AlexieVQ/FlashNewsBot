@@ -137,7 +137,7 @@ class CompteTwitter < Compte
 			"https://api.twitter.com/1.1/statuses/update.json",
 			{status: status.texte,
 			 media_ids: media_ids.join(','),
-			 possibly_sensitive: status.cw?})
+			 possibly_sensitive: false})
 		
 		unless(reponse == Net::HTTPSuccess) then
 			reponse.value
