@@ -113,7 +113,7 @@ class String
 			elsif(self =~ /^les /i) then
 				return self.gsub(/^les/i, "des")
 			# Devant une voyelle
-			elsif(self =~ /^[aeiouyéèàêâôûùïî]/i) then
+			elsif(self =~ /^[aeiouyéèàêâôûùïîÉÈÀÊÂÔÛÙÏÎ]/i) then
 				return self.gsub(/^/, "d’")
 			# Ajout du "de" sans modifications
 			else
