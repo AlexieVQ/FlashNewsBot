@@ -22,7 +22,13 @@ class ImageStatique
 	########################
 	
 	## Fichiers à utiliser (Array de Hash)
-	FICHIERS = [{nom: "flash_info.jpg", description: "Flash Info"}]
+	FICHIERS = [
+		{nom: "flash_info.jpg", description: "Flash Info"},
+		{nom: "breaking_news_2.jpg", description: "Breaking News"},
+		{nom: "breaking_news_3.jpg", description: "Breaking News"},
+		{nom: "flash_info_nyc.jpg", description: "Flash Info"},
+		{nom: "flash_special_1.jpg", description: "Flash Spécial"}
+	]
 	
 	######################
 	# MÉTHODES DE CLASSE #
