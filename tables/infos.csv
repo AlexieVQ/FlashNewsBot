@@ -36,7 +36,7 @@ id;type;description;type_circo;hashtag;poids;categories;structure
 51;cette violente altercation;Se bat avec objet;accuse;#{sujet.nom_colle}VS{objet.nom_colle};10;;
 52;cette rumeur;Pressenti pour être Ministre;universel;;10;politique;
 53;sa nomination;Nommé Ministre;universel;;10;politique;
-55;son aveu;Avoue avoir tué objet;universel;#RIP{objet.nom_colle};10;;
+55;son aveu;Avoue avoir tué objet;universel;;10;;
 56;{rand(son soutien,son message)};Soutient objet;universel;;5;politique;
 58;son exécution;Exécuté;est_accuse;;10;;
 59;son audition;Auditionné;est_accuse;;10;politique;
