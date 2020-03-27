@@ -109,7 +109,11 @@ class Bot
 				end
 		
 			rescue => e
-				$stderr.puts(e.full_message)
+				if(e.respond_to? :full_message) then
+					$stderr.puts(e.full_message)
+				else
+					$stderr.puts(e)
+				end
 				if(!self.debug? && tentative < 5) then
 					tentative += 1
 					retry
@@ -120,7 +124,11 @@ class Bot
 			begin
 				@@compte.update_statuses if(@@compte)
 			rescue => e
-				$stderr.puts(e.full_message)
+				if(e.respond_to? :full_message) then
+					$stderr.puts(e.full_message)
+				else
+					$stderr.puts(e)
+				end
 				exit(false) if(self.debug?)
 			end
 			sleep(60 * @@intervalle)
