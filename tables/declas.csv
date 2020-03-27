@@ -125,3 +125,4 @@ id;decla;poids;id_info_sujet;id_info_objet;id_info_autre;id_pers
 155;Ces fake news sont fausses;5;;;;
 156;{pers_decla=pers}{maj({pers_decla.nom})} avait raison;10;;;;
 157;Anyway stan {pers_decla=pers}{pers_decla.nom};10;;;;
+158;Oh Bosetti !;10;;;;89
