@@ -57,6 +57,7 @@
 - Henri Dès
 - Jair Bolsonaro
 - Jean-Christophe Napoléon
+- Jean d’Orléans
 - Jean-Luc Reichmann
 - Jean-Michel Aphatie
 - Jean-Michel Blanquer
@@ -82,7 +83,6 @@
 - Le troisième frère de PNL
 - Lomepal
 - Louis de Bourbon
-- Louis d’Orléans
 - Lula da Silva
 - Madonna
 - Marion Maréchal
