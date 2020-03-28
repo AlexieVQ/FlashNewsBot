@@ -164,10 +164,11 @@ class CompteTwitter < Compte
 			reponse.value
 		end
 		tweets = JSON.parse(reponse.body)
-		tweets.each do |tweet|
-			Bot.bdd.update_status(tweet['id'], self, tweet['retweet_count'],
-			                      tweet['favorite_count'])
-		end
+		tweets.each { |tweet|
+			Bot.bdd.update_status(tweet['id'].to_i, self,
+			                      tweet['retweet_count'].to_i,
+			                      tweet['favorite_count'].to_i)
+		}
 		return self
 	end
 	
