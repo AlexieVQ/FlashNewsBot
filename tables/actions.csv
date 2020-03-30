@@ -384,3 +384,4 @@ id;action;poids;id_info
 384;emprisonné{gse};10;190
 385;est candidat{gse} {parti_info=parti}{genre(sujet,{parti_info.adjm},{parti_info.adjf})} à l’élection présidentielle{loc_info=localite(France)};10;21
 386;candidat{gse} {parti_info=parti}{genre(sujet,{parti_info.adjm},{parti_info.adjf})} à la mairie {loc_info=localite(ville)}{loc_info.nom(de)};10;68
+367;expulse {objet=pers}{objet.nom} de son village;10;191
