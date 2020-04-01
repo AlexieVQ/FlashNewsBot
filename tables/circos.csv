@@ -225,3 +225,6 @@ id;circo;poids;type;id_info
 254;pour avoir fait une black face;10;accusation;
 255;pour avoir porté un t-shirt ahegao;10;accusation;
 256;pour avoir acheté du Coca-Cola pendant le confinement;10;accusation;
+257;a rapporté {pers_circo=pers}{pers_circo.nom} {media_circo=media}{media_circo.nom(à)};5;universel;
+258;a rapporté {pers_circo=pers}{pers_circo.nom} {date} {media_circo=media}{media_circo.nom(à)};5;universel;
+259;d’une overdose de chloroquine;10;specifique;1
