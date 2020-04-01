@@ -1,4 +1,30 @@
-## Release Twitter
+## 1er avril 2020
+
+### Personnages
+
+- Élisabec
+- Jocelyn Armel
+- Miroslav Bulldosex
+- Mr. Resetti
+
+### Information
+
+- Expulse _objet_ de son village
+
+### Actions
+
+- Chloroquine retrouvée à son domicile
+- (Mort) d’une overdose de chloroquine
+
+### Circonstances
+
+- A rapporté _quelqu’un_ à _média_
+
+### Correction
+
+- Articles pluriels pour _à_ et _en_
+
+## Release Twitter (2020-03-28)
 
 ### Fonctionnalités
 
