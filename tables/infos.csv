@@ -159,3 +159,5 @@ id;type;description;type_circo;hashtag;poids;categories;structure
 189;sa découverte;A trouvé le vaccin contre le COVID-19;universel;#{rand(Coronavirus,COVID19,COVIDー19)};10;;
 190;son emprisonnement;Emprisonné;est_accuse;#{sujet.nom_colle}EnPrison;10;;
 191;sa décision;Expulse objet de son village;accuse;#AnimalCrossing;10;fiction;
+192;sa nouvelle activité;Se lance sur Twitch;universel;#Twitch;10;internet,sport,culture;
+193;sa nouvelle activité;Se lance sur OnlyFans;universel;#OnlyFans;10;;

@@ -286,7 +286,7 @@ id;surnom;poids;id_pers
 286;l’ancien candidat à l’élection présidentielle;10;167
 287;l’ancien Ministre;10;167
 288;le militant;10;168
-289;le chef des Travaillistes;10;169
+289;le Travailliste;10;169
 290;l’agent des forces de l’ordre;10;170
 291;le comédien;10;171
 292;le philosophe;10;172
@@ -645,3 +645,19 @@ id;surnom;poids;id_pers
 649;la guichetière à la retraite;10;363
 650;le scientifique;10;364
 651;le scientifique dissident;10;364
+652;le journaliste;10;365
+653;le présentateur de l’Info du Vrai sur Canal+;10;365
+654;le gilet jaune;10;366
+655;le syndicaliste;10;366
+656;le militant Les Républicains;10;366
+657;le sportif;10;367
+658;l’oiseau;10;367
+659;le businessman;10;368
+660;le businesscat;5;368
+661;le Ministre de la Santé;10;369
+662;le lapin;10;370
+663;le lapin non-costumé;10;370
+664;la Ministre de l’Enseignement Supérieur et de la Recherche;10;371
+665;le député;10;372
+666;l’essayiste;10;373
+667;l’essayiste;10;374

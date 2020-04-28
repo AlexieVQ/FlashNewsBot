@@ -43,7 +43,7 @@ class Accroche < Element
 			accroche += Localite.dans_index.reject { |localite|
 				localite == Localite.FRANCE &&
 					!Localite.dans_index(false).member?(Localite.FRANCE)
-			}.map { |localite| localite.emoji }.join
+			}.map { |localite| localite.emoji }.uniq.join
 			
 			# Si l'info a un hashtag, ajoute le hashtag puis le nom du
 			# personnage dans parametres[1], et arrête la construction de la

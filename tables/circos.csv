@@ -190,7 +190,7 @@ id;circo;poids;type;id_info
 219;avec {pers_circo=pers}{pers_circo.nom}, {pers_circo2=pers}{pers_circo2.nom} et {pers_circo3=pers}{pers_circo3.nom} en jurés;10;specifique;160
 220;par {pers_circo=pers}{pers_circo.nom};10;specifique;163
 221;sur le plateau de Pascal Praud;10;specifique;159
-222;aux côtés de Laurent Ruquier, Arielle Dombasle et Pierre Bénichou;10;specifique;166
+222;aux côtés de Laurent Ruquier, Arielle Dombasle et Olivier de Kersauson;10;specifique;166
 223;aux cotés {pers_circo=pers}{pers_circo.nom(de)}, {pers_circo2=pers}{pers_circo2.nom} et {pers_circo3=pers}{pers_circo3.nom};10;specifique;166
 224;pour avoir planté un mec;10;accusation;
 225;pour l’avoir planté{gse};10;est_accuse;
@@ -228,3 +228,7 @@ id;circo;poids;type;id_info
 257;a rapporté {pers_circo=pers}{pers_circo.nom} {media_circo=media}{media_circo.nom(à)};5;universel;
 258;a rapporté {pers_circo=pers}{pers_circo.nom} {date} {media_circo=media}{media_circo.nom(à)};5;universel;
 259;d’une overdose de chloroquine;10;specifique;1
+260;{objet}pour avoir critiqué sa moustache;10;accusation;
+261;{objet}pour avoir critiqué la taille de son front;10;accusation;
+262;pour s’être fait{gse} passer pour {pers_circo=pers}{pers_circo.nom} sur Twitter;5;est_accuse;
+263;{objet}pour s’être fait{genre(objet,,e)} passer pour {pers_circo=pers}{pers_circo.nom} sur Twitter;5;accuse;

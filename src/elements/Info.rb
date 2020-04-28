@@ -196,8 +196,7 @@ class Info < Element
 	# Paramètres :
 	# [+pers+]  Personnage tierce
 	def decla_autre?(pers = nil)
-# 		return @declas_autre.length > 0 || pers && pers.declas.length > 0
-		return true
+ 		return @declas_autre.length > 0
 	end
 	
 	##
@@ -208,7 +207,7 @@ class Info < Element
 	# Paramètres :
 	# [+pers+]  Personnage tierce
 	def decla_autre(pers = nil)
-		return @declas_autre.elt_alea((pers ? pers.declas : []) | [Decla.elt_alea]).decla.evaluer
+		return @declas_autre.elt_alea.decla.evaluer
 	end
 	
 	##

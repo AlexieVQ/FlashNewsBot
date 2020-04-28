@@ -1,3 +1,43 @@
+## 1er mai 2020
+
+### Changements
+
+- Déclarations d’un personnage tierce si et seulement si une déclaration pour
+  personnage tierce a été définie dans l’information.
+- Pierre Bénichou remplacé par Olivier de Kersauson dans les sociétaires des
+  Grosses Têtes.
+- Jeremy Corbyn n’est plus chef des Travaillistes.
+  
+### Personnages
+
+- Albin d’Animal Crossing
+- Frédérique Vidal
+- Joachim Son-Forget
+- Michel Onfray
+- Natacha Polony
+- Olivier Véran
+- Pec d’Animal Crossing
+- Raymond d’Animal Crossing
+- xEnz0Du25x
+- Yves Calvi
+
+### Informations
+
+- Se lance sur OnlyFans
+- Se lance sur Twitch
+
+### Circonstances
+
+- Pour avoir critiqué la taille de son front
+- Pour avoir critiqué sa moustache
+- Pour s’être fait passer pour _quelqu’un_ sur Twitter
+
+### Corrections
+
+- Pour l’information 53, la personne nommant le sujet n’est définie que si elle
+  apparaît dans le status.
+- Un même emoji ne peut pas apparaître plusieurs fois.
+
 ## 1er avril 2020
 
 ### Personnages

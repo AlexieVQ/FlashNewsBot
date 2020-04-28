@@ -116,7 +116,7 @@ id;action;poids;id_info
 115;représentera {loc_info=localite(pays)}{loc_info.nom} au concours Eurovision de la Chanson;10;50
 116;se bat avec {objet=pers}{objet.nom};10;51
 117;{rand(est ,)}pressenti{gse} pour {rand(être,devenir)} Ministre {rand(de l’Écologie,de la Culture,de l’Intérieur,de l’Économie,de l’Égalité femmes-hommes,des Finances,des Affaires étrangères,de l’Information)};10;52
-118;{rand(est ,)}nommé{gse} Ministre {rand(de l’Écologie,de la Culture,de l’Intérieur,de l’Économie,de l’Égalité femmes-hommes,des Finances,des Affaires étrangères,de l’Information)}{rand(, par {objet=pers}{objet.nom})};10;53
+118;{rand(est ,)}nommé{gse} Ministre {rand(de l’Écologie,de la Culture,de l’Intérieur,de l’Économie,de l’Égalité femmes-hommes,des Finances,des Affaires étrangères,de l’Information)};10;53
 119;annonce un nouvel iPhone;10;54
 120;annonce l’iPhone {rand(11S,11S Pro,11S Pro Plus,11 Pro Plus Max,11S Pro Max,11 Pro Plus Menu Maxi Best-of)};10;54
 121;avoue avoir tué {objet=pers}{objet.nom};10;55
@@ -385,3 +385,7 @@ id;action;poids;id_info
 385;est candidat{gse} {parti_info=parti}{genre(sujet,{parti_info.adjm},{parti_info.adjf})} à l’élection présidentielle{loc_info=localite(France)};10;21
 386;candidat{gse} {parti_info=parti}{genre(sujet,{parti_info.adjm},{parti_info.adjf})} à la mairie {loc_info=localite(ville)}{loc_info.nom(de)};10;68
 387;expulse {objet=pers}{objet.nom} de son village;10;191
+388;{rand(est ,)}nommé{gse} Ministre {rand(de l’Écologie,de la Culture,de l’Intérieur,de l’Économie,de l’Égalité femmes-hommes,des Finances,des Affaires étrangères,de l’Information)} par {objet=pers}{objet.nom};10;53
+389;se lance sur Twitch;10;192
+390;se lance sur OnlyFans;10;193
+391;crée un compte OnlyFans;10;193
