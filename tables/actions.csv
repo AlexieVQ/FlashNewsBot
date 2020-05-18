@@ -13,7 +13,7 @@ id;action;poids;id_info
 12;devient l{genre(sujet,e,a)} nouve{genre(sujet,au,lle)} Président{gse} {loc_info=localite(pays)}{loc_info.nom(de 0)};10;3
 13;placé{gse} en garde à vue;10;4
 14;est arrêté{gse};10;4
-15;condamné{gse} à {rand(10,20,30,50)} ans de prison dont {rand(2,5,8,10)} avec surcis;10;4
+15;condamné{gse} à {rand(10,20,30,50)} ans de prison dont {rand(2,5,8,10)} avec sursis;10;4
 16;est activement recherché{gse} par Interpol;10;4
 17;a été tué{gse};10;5
 18;s’est fait{gse} planter;5;5
