@@ -93,8 +93,12 @@ class Bot
 			@@bdd = Bdd.new(password) # Doit être reconnectée après la
 									  # démonisation
 		end
+		
+		mini_inter = 5 * 60 # Intervalle de vérification des commentaires
 
 		loop {
+			restant = intervalle * 60 # Temps d'attente restant en secondes
+			marque = Time.now.to_i # secondes
 			tentative = 0
 			begin
 			
@@ -121,7 +125,7 @@ class Bot
 				exit(false) if(self.debug?)
 			end
 				
-			begin
+			begin # Mise à jour des status
 				@@compte.update_statuses if(@@compte)
 			rescue => e
 				if(e.respond_to? :full_message) then
@@ -131,7 +135,13 @@ class Bot
 				end
 				exit(false) if(self.debug?)
 			end
-			sleep(60 * @@intervalle)
+		
+			while(restant > 0) do
+				puts("Il reste #{restant / 60} minutes d'intervalle")
+				sleep(restant > mini_inter ? mini_inter : restant)
+				restant -= Time.now.to_i - marque
+				marque = Time.now.to_i
+			end
 			
 		}
 	end
