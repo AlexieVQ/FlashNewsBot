@@ -195,7 +195,14 @@ class CompteTwitter < Compte
 									   self)) then
 				rep = yield(mention['text'])
 				unless(rep.to_s.empty?) then
-					puts rep
+					puts rep if(Bot.debug?)
+					reponse = @access_token.post(
+						"https://api.twitter.com/1.1/statuses/update.json",
+						{status: "@#{mention['user']['screen_name']} #{rep}",
+						in_reply_to_status_id: mention['id']})
+					unless(reponse == Net::HTTPSuccess) then
+						reponse.value
+					end
 				end
 			end
 		}
