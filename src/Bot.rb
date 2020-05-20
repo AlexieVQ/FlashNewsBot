@@ -137,7 +137,9 @@ class Bot
 			end
 		
 			while(restant > 0) do
-				puts("Il reste #{restant / 60} minutes d'intervalle")
+				if(@@compte) then
+					@@compte.repondre { |mention| "Réponse à #{mention}" }
+				end
 				sleep(restant > mini_inter ? mini_inter : restant)
 				restant -= Time.now.to_i - marque
 				marque = Time.now.to_i

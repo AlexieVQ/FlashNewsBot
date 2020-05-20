@@ -173,6 +173,36 @@ class CompteTwitter < Compte
 	end
 	
 	##
+	# Pour chaque mention non lue, envoie la réponse données.
+	#
+	# Exemple d'utilisation :
+	#	compte.repondre { |mention| # String contenant le texte du statut
+	#		"Voici ma réponse au statut #{mention}"
+	#	}
+	#
+	# Seule les mentions répondant à un statut du compte sont listées.
+	# Si la fonction renvoie +nil+ ou une chaîne vide, ne répond pas au statut.
+	def repondre
+		reponse = @access_token.get("https://api.twitter.com/1.1/statuses/" +
+									"mentions_timeline.json")
+		unless(reponse == Net::HTTPSuccess) then
+			reponse.value
+		end
+		mentions = JSON.parse(reponse.body)
+		mentions.each { |mention|
+			if(!Bot.bdd.lue?(mention['id'], self) &&
+				Bot.bdd.status_existe?(mention['in_reply_to_status_id'].to_i,
+									   self)) then
+				rep = yield(mention['texte'])
+				unless(rep.to_s.empty?) then
+					puts rep
+				end
+			end
+		}
+		return self
+	end
+	
+	##
 	# Limite de caractères d'un status (Integer)
 	def limite
 		return 280

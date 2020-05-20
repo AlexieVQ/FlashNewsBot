@@ -221,6 +221,37 @@ class Bdd
 		end
 	end
 	
+	##
+	# Teste si le statut d'+id+ donné est répertorié dans la base de données.
+	#
+	# Paramètres :
+	# [+id+]		Identifiant du statut (Integer)
+	# [+compte+]	Compte du bot
+	def status_existe?(id, compte)
+		return requete("SELECT * FROM statuses WHERE id = #{id} AND " +
+		               "compte_id = #{compte.id} AND domaine = " +
+		               "'#{compte.domaine}';").ntuples > 0
+	end
+	
+	##
+	# Teste si la mention d'+id+ donné à été lue. Sinon l'ajoute aux mentions
+	# lues.
+	#
+	# Paramètres :
+	# [+id+]		Identifiant de la mention (Integer)
+	# [+compte+]	Compte du bot
+	def lue?(id, compte)
+		if(requete("SELECT * FROM mentions WHERE id = #{id} AND compte_id = " +
+		           "#{compte.id} AND " +
+		           "domaine = '#{compte.domaine}';").ntuples == 0) then
+			requete("INSERT INTO mentions(id, compte_id, domaine) VALUES " +
+			        "(#{id}, #{compte.id}, #{compte.domaine})")
+			return false
+		else
+			return true
+		end
+	end
+	
 	private
 	
 	# Effectue une requête SQL dans la base et renvoie le résultat (PG::Result).
