@@ -48,7 +48,7 @@ CREATE TABLE mentions (
 	FOREIGN KEY (status_id, compte_id, domaine) REFERENCES statuses(id,
 																	compte_id,
 																	domaine),
-	analysed BOOLEAN DEFAULT false,
+	lue BOOLEAN DEFAULT false,
 	repondu BOOLEAN DEFAULT false
 );
 
