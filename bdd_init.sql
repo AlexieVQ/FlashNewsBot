@@ -34,22 +34,13 @@ CREATE TABLE statuses (
 	reponses INTEGER
 );
 
--- Historique des mentions ressues
+-- Historique des mentions reçues
 CREATE TABLE mentions (
 	id BIGINT NOT NULL,
 	compte_id BIGINT NOT NULL,
 	domaine VARCHAR(64) NOT NULL,
 	FOREIGN KEY (compte_id, domaine) REFERENCES comptes(id, domaine),
-	PRIMARY KEY (id, compte_id, domaine),
-	created_at TIMESTAMPTZ NOT NULL,
-	texte VARCHAR(280) NOT NULL,
-	auteur BIGINT NOT NULL,
-	status_id BIGINT NOT NULL, -- Status du bot auquel la mention répond
-	FOREIGN KEY (status_id, compte_id, domaine) REFERENCES statuses(id,
-																	compte_id,
-																	domaine),
-	lue BOOLEAN DEFAULT false,
-	repondu BOOLEAN DEFAULT false
+	PRIMARY KEY (id, compte_id, domaine)
 );
 
 -- Historique des personnages envoyés dans les status
