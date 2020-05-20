@@ -193,7 +193,7 @@ class CompteTwitter < Compte
 			if(!Bot.bdd.lue?(mention['id'], self) &&
 				Bot.bdd.status_existe?(mention['in_reply_to_status_id'].to_i,
 									   self)) then
-				rep = yield(mention['texte'])
+				rep = yield(mention['text'])
 				unless(rep.to_s.empty?) then
 					puts rep
 				end
