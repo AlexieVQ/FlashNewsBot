@@ -245,7 +245,7 @@ class Bdd
 		           "#{compte.id} AND " +
 		           "domaine = '#{compte.domaine}';").ntuples == 0) then
 			requete("INSERT INTO mentions(id, compte_id, domaine) VALUES " +
-			        "(#{id}, #{compte.id}, #{compte.domaine})")
+			        "(#{id}, #{compte.id}, '#{compte.domaine}')")
 			return false
 		else
 			return true
