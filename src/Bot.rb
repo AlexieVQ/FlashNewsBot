@@ -140,7 +140,8 @@ class Bot
 			while(restant > 0) do
 				if(@@compte) then
 					@@compte.repondre { |mention|
-						Reponse.repondre(mention).reponse
+						reponse = Reponse.repondre(mention)
+						reponse.defined? ? reponse.reponse : nil
 					}
 				end
 				sleep(restant > mini_inter ? mini_inter : restant)
