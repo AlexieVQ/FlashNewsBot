@@ -12,6 +12,7 @@ require_relative 'elements/Parti.rb'
 require_relative 'elements/Media.rb'
 require_relative 'elements/Circo.rb'
 require_relative 'elements/Decla.rb'
+require_relative 'elements/Reponse.rb'
 
 ##
 # Classe contenant le programme principal du bot.
@@ -138,7 +139,9 @@ class Bot
 		
 			while(restant > 0) do
 				if(@@compte) then
-					@@compte.repondre { |mention| "Réponse à #{mention}" }
+					@@compte.repondre { |mention|
+						Reponse.repondre(mention).reponse
+					}
 				end
 				sleep(restant > mini_inter ? mini_inter : restant)
 				restant -= Time.now.to_i - marque
