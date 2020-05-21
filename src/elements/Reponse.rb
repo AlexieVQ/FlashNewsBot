@@ -38,7 +38,7 @@ class Reponse < Element
 			return self.select { |reponse|
 				reponse.mots_clefs.any? { |mot_clef| mention.include? mot_clef }
 			}.elt_alea
-		rescue IndexError
+		rescue RuntimeError
 			return nil
 		end
 	end
