@@ -45,7 +45,7 @@ opt_parser = OptionParser.new { |opts|
                               
 	opts.on("-rTAUX", "--reponses=TAUX",
             "Taux de mentions traitées (de 0 à 100 inclus, 0 par défaut)") { |t|
-		taux = t
+		taux = t.to_i
 	}
 	
 	opts.on("-h", "--help", "Affiche l'aide") {
