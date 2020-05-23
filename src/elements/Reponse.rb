@@ -36,7 +36,9 @@ class Reponse < Element
 	def Reponse.repondre(mention)
 		begin
 			return self.select { |reponse|
-				reponse.mots_clefs.any? { |mot_clef| mention.include? mot_clef }
+				reponse.mots_clefs.any? { |mot_clef|
+					mention.downcase.include? mot_clef
+				}
 			}.elt_alea
 		rescue RuntimeError
 			return nil
