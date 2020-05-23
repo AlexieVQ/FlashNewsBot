@@ -30,6 +30,8 @@ class Bot
 	# @@debug			=> Mode débuggage (booléen, utilisé en mode offline)
 	# @@sujet_surnomme	=> Si le sujet a été surnommé dans le status, ou non
 	#					   (booléen)
+	# @@taux			=> Taux de mentions traitées (Integer, de 0 à 100
+	#					   inclus)
 	
 	######################
 	# MÉTHODES DE CLASSE #
@@ -51,12 +53,14 @@ class Bot
 	# [+debug+]         Utilisation du mode débuggage (booléen, utilisé en mode
 	#                   offline)
 	# [+password+]      Mot de passe de la base de données (String)
-	def Bot.init(offline, username, intervalle, debug, password)
+	# [+taux+]          Taux de mentions traitées (Integer, de 0 à 100 inclus)
+	def Bot.init(offline, username, intervalle, debug, password, taux)
 		@@bdd = nil
 		@@intervalle = intervalle
 		@@dir = Dir.pwd
 		@@compte = nil
 		@@debug = offline || debug
+		@@taux = taux
 		self.index_reset
 		
 		unless(offline) then
@@ -85,8 +89,9 @@ class Bot
 	# [+debug+]         Utilisation du mode débuggage (booléen, utilisé en mode
 	#                   offline)
 	# [+password+]      Mot de passe de la base de données (String)
-	def Bot.exec(offline, username, intervalle, debug, password)
-		self.init(offline, username, intervalle, debug, password)
+	# [+taux+]          Taux de mentions traitées (Integer, de 0 à 100 inclus)
+	def Bot.exec(offline, username, intervalle, debug, password, taux)
+		self.init(offline, username, intervalle, debug, password, taux)
 		unless(offline) then
 			Daemons.daemonize({backtrace: true,
 							   app_name: username + "." + @@compte.domaine,
@@ -138,11 +143,20 @@ class Bot
 			end
 		
 			while(restant > 0) do
-				if(@@compte) then
-					@@compte.repondre { |mention|
-						reponse = Reponse.repondre(mention)
-						reponse ? reponse.reponse : nil
-					}
+				if(@@compte) then # Traitement des mentions
+					begin
+						@@compte.repondre(@@taux) { |mention|
+							reponse = Reponse.repondre(mention)
+							reponse ? reponse.reponse : nil
+						}
+					rescue => e
+						if(e.respond_to? :full_message) then
+							$stderr.puts(e.full_message)
+						else
+							$stderr.puts(e)
+						end
+						exit(false) if(self.debug?)
+					end
 				end
 				sleep(restant > mini_inter ? mini_inter : restant)
 				restant -= Time.now.to_i - marque

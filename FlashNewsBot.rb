@@ -10,6 +10,7 @@ username = ""
 tendances = false
 debug = false
 password = ""
+taux = 0
 opt_parser = OptionParser.new { |opts|
 	opts.banner = "Utilisation : #{$PROGRAM_NAME} [options]"
 	
@@ -41,6 +42,11 @@ opt_parser = OptionParser.new { |opts|
 		   ) { |pw|
 		password = pw
 	}
+                              
+	opts.on("-rTAUX", "--reponses=TAUX",
+            "Taux de mentions traitées (de 0 à 100 inclus, 0 par défaut)") { |t|
+		taux = t
+	}
 	
 	opts.on("-h", "--help", "Affiche l'aide") {
 		puts opts
@@ -63,5 +69,5 @@ end
 if(tendances) then
 	TestTendances.exec(username, password)
 else
-	Bot.exec(hors_ligne, username, intervalle, debug, password)
+	Bot.exec(hors_ligne, username, intervalle, debug, password, taux)
 end
