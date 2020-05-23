@@ -182,7 +182,10 @@ class CompteTwitter < Compte
 	#
 	# Seule les mentions répondant à un statut du compte sont listées.
 	# Si la fonction renvoie +nil+ ou une chaîne vide, ne répond pas au statut.
-	def repondre
+	#
+	# Paramètres :
+	# [+taux+]  Taux de mentions à traiter (Integer de 0 à 100 inclus)
+	def repondre(taux = 100)
 		reponse = @access_token.get("https://api.twitter.com/1.1/statuses/" +
 									"mentions_timeline.json")
 		unless(reponse == Net::HTTPSuccess) then
@@ -192,7 +195,7 @@ class CompteTwitter < Compte
 		mentions.each { |mention|
 			if(!Bot.bdd.lue?(mention['id'], self) &&
 				Bot.bdd.status_existe?(mention['in_reply_to_status_id'].to_i,
-									   self)) then
+				self) && rand(100) < taux) then
 				rep = yield(mention['text'])
 				unless(rep.to_s.empty?) then
 					puts rep if(Bot.debug?)
