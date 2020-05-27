@@ -32,8 +32,14 @@ class Action < Element
 	#
 	# Paramètres :
 	# [+id_info+]    Identifiant de l'Info (Integer, voir Action#id_info)
+	#
+	# Lève une *RuntimeError* si aucune action n'est trouvée.
 	def Action.id_info(id_info)
-		return self.select { |e| e.id_info == id_info }
+		actions = self.select { |e| e.id_info == id_info }
+		if(actions.length == 0) then
+			raise "Aucune action trouvée pour l'information d'id #{id_info}"
+		end
+		return actions
 	end
 	
 	##

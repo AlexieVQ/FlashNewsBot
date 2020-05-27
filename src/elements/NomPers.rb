@@ -31,8 +31,14 @@ class NomPers < Element
 	#
 	# Paramètres :
 	# [+id_pers+]   Identifiant du Pers (Integer, voir NomPers#id_info)
+	#
+	# Lève une *RuntimeError* si aucun nom n'est trouvé.
 	def NomPers.id_pers(id_pers)
-		return self.select { |e| e.id_pers == id_pers }
+		noms = self.select { |e| e.id_pers == id_pers }
+		if(noms.length == 0) then
+			raise "Aucun nom trouvé pour le personnage d'id #{id_pers}"
+		end
+		return noms
 	end
 	
 	##

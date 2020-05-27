@@ -31,8 +31,14 @@ class Surnom < Element
 	#
 	# Paramètres :
 	# [+id_pers+]   Identifiant du Pers (Integer, voir NomPers#id_info)
+	#
+	# Lève une *RuntimeError* si aucun surnom n'est trouvé.
 	def Surnom.id_pers(id_pers)
-		return self.select { |e| e.id_pers == id_pers }
+		surnoms = self.select { |e| e.id_pers == id_pers }
+		if(surnoms.length == 0) then
+			raise "Aucun surnom trouvé pour le personnage d'id #{id_pers}"
+		end
+		return surnoms
 	end
 	
 	##
