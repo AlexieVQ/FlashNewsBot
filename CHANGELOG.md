@@ -1,3 +1,15 @@
+## 1er juin 2020
+
+### Changements
+
+- Ajout des réponses aux mentions.
+
+### Corrections
+
+- Correction du surnom de Bébé Yoda.
+- Vérification de l'existence des noms, surnoms et actions pour les personnages
+  et informations
+
 ## 1er mai 2020
 
 ### Changements
