@@ -214,7 +214,7 @@ id;surnom;poids;id_pers
 214;le manifestant;10;115
 215;le Titan;10;116
 216;l’homme;10;117
-217;{inventeur_dab.su.nom};10;118
+217;{inventeur_dab.surnom};10;118
 218;l’homme;10;119
 219;le candidat à la primaire démocrate;10;120
 220;le journaliste;10;121
@@ -661,3 +661,7 @@ id;surnom;poids;id_pers
 665;le député;10;372
 666;l’essayiste;10;373
 667;l’essayiste;10;374
+668;le youtubeur;10;375
+669;le vidéaste;10;375
+670;le critique musical;10;375
+671;le marchant d’art;10;376

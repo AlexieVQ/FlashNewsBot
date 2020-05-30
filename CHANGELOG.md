@@ -4,9 +4,15 @@
 
 - Ajout des réponses aux mentions.
 
+### Personnages
+
+- LinksTheSun
+- Rounard
+
 ### Corrections
 
 - Correction du surnom de Bébé Yoda.
+- Surnom de l’inventeur du dab.
 - Vérification de l'existence des noms, surnoms et actions pour les personnages
   et informations
 
