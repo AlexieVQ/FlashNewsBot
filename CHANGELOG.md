@@ -6,8 +6,16 @@
 
 ### Personnages
 
+- Grimes
+- Laetitia Avia
 - LinksTheSun
 - Rounard
+- X Æ A-12
+
+### Informations
+
+- Pris à parti dans la rue
+- _Sujet_ X _objet_, c’est fait !
 
 ### Corrections
 

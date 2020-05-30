@@ -193,7 +193,7 @@ id;circo;poids;type;id_info
 222;aux côtés de Laurent Ruquier, Arielle Dombasle et Olivier de Kersauson;10;specifique;166
 223;aux cotés {pers_circo=pers}{pers_circo.nom(de)}, {pers_circo2=pers}{pers_circo2.nom} et {pers_circo3=pers}{pers_circo3.nom};10;specifique;166
 224;pour avoir planté un mec;10;accusation;
-225;pour l’avoir planté{gse};10;est_accuse;
+225;{objet}pour l’avoir planté{gse};10;est_accuse;
 226;pour l’avoir planté{genre(objet,,e)};10;accuse;
 227;pour avoir planté {pers_circo=pers}{pers_circo.nom};10;accusation;
 228;avec {pers_circo=pers}{pers_circo.nom(de)}, {pers_circo2=pers}{pers_circo2.nom} et {pers_circo3=pers}{pers_circo3.nom};10;specifique;168

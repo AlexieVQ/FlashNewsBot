@@ -389,3 +389,5 @@ id;action;poids;id_info
 389;se lance sur Twitch;10;192
 390;se lance sur OnlyFans;10;193
 391;crée un compte OnlyFans;10;193
+392;pris{gse} à parti dans la rue par {objet=pers}{objet.nom};10;194
+393;{sujet=pers}{maj({sujet.nom})} X {objet=pers}{maj({objet.nom})}, c’est fait !;10;195

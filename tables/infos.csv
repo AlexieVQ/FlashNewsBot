@@ -147,7 +147,7 @@ id;type;description;type_circo;hashtag;poids;categories;structure
 177;son appel;Appelle à la grève générale;universel;#GrèveGénérale;10;politique;
 178;son annonce;Se lance dans le podcast;universel;;10;internet;
 179;son ban;Banni de la Mutinerie;est_accuse;;3;;
-180;cette fuite;La bite de sujet fuite;universel;;10;;{accroche({info.action}{rand(, {date})}{rand(, {lieu})}{rand(, info.circo)})}.
+180;cette fuite;La bite de sujet fuite;universel;;10;;{accroche({info.action}{rand(, {date})}{rand(, {lieu})}{rand(, {info.circo})})}.
 181;son arrivée;Rejoint la RedBox;universel;#YouTube;10;internet;
 182;sa provocation;Provoque la WW3;universel;#WW3;10;politique;
 183;son ban;Banni de Twitch;est_accuse;#Twitch;10;internet;
@@ -161,3 +161,5 @@ id;type;description;type_circo;hashtag;poids;categories;structure
 191;sa décision;Expulse objet de son village;accuse;#AnimalCrossing;10;fiction;
 192;sa nouvelle activité;Se lance sur Twitch;universel;#Twitch;10;internet,sport,culture;
 193;sa nouvelle activité;Se lance sur OnlyFans;universel;#OnlyFans;10;;
+194;son interpellation;Pris à parti par objet dans la rue;est_accuse;;10;;
+195;leur collaboration;Sujet X objet, c'est fait !;universel;;10;culture;{info.action}
