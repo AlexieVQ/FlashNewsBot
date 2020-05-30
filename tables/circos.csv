@@ -196,7 +196,7 @@ id;circo;poids;type;id_info
 225;{objet}pour l’avoir planté{gse};10;est_accuse;
 226;pour l’avoir planté{genre(objet,,e)};10;accuse;
 227;pour avoir planté {pers_circo=pers}{pers_circo.nom};10;accusation;
-228;avec {pers_circo=pers}{pers_circo.nom(de)}, {pers_circo2=pers}{pers_circo2.nom} et {pers_circo3=pers}{pers_circo3.nom};10;specifique;168
+228;avec {pers_circo=pers}{pers_circo.nom}, {pers_circo2=pers}{pers_circo2.nom} et {pers_circo3=pers}{pers_circo3.nom};10;specifique;168
 229;par nostalgie;10;specifique;171
 230;pour se protéger du capitalisme;10;specifique;171
 231;sur Twitter;10;specifique;174
@@ -213,7 +213,7 @@ id;circo;poids;type;id_info
 242;pour l’avoir payé{genre(objet,,e)} en visibilité;10;est_accuse;
 243;contre la #Loi{pers_circo=pers}{pers_circo.nom_colle};10;specifique;177
 244;contre la loi {pers_circo=pers}{pers_circo.nom};10;specifique;177
-245;avec {pers_circo=pers}{pers_circo.nom(de)};10;specifique;178 
+245;avec {pers_circo=pers}{pers_circo.nom};10;specifique;178 
 246;avec {pers_circo=pers}{pers_circo.nom(de)} et {pers_circo2=pers}{pers_circo2.nom};10;specifique;178 
 247;avec {pers_circo=pers}{pers_circo.nom(de)}, {pers_circo2=pers}{pers_circo2.nom} et {pers_circo3=pers}{pers_circo3.nom};10;specifique;178 
 248;sous forme d’une “discussion entre potes” d’après l’intéressé{gse};30;specifique;178
@@ -232,3 +232,23 @@ id;circo;poids;type;id_info
 261;{objet}pour avoir critiqué la taille de son front;10;accusation;
 262;pour s’être fait{gse} passer pour {pers_circo=pers}{pers_circo.nom} sur Twitter;5;est_accuse;
 263;{objet}pour s’être fait{genre(objet,,e)} passer pour {pers_circo=pers}{pers_circo.nom} sur Twitter;5;accuse;
+264;{objet}pour lui avoir implanté une puce 5G{rand(, sans son consentement)};10;accusation;
+265;d’une overdose de Xanogen et Nitro XL;10;specifique;1
+266;en auto-médication;10;specifique;196
+267;sur conseil de son médecin;10;specifique;196
+268;à titre préventif;10;specifique;196
+269;en auto-médication;10;specifique;197
+270;sur conseil de son médecin;10;specifique;197
+271;à titre préventif;10;specifique;197
+272;avec {pers_circo=pers}{pers_circo.nom};10;specifique;198
+273;avec {pers_circo=pers}{pers_circo.nom} et {pers_circo2=pers}{pers_circo2.nom};10;specifique;198
+274;avec {pers_circo=pers}{pers_circo.nom}, {pers_circo2=pers}{pers_circo2.nom} et {pers_circo3=pers}{pers_circo3.nom};10;specifique;198
+275;au MET Gala;10;specifique;199
+276;aux Oscars;10;specifique;199
+277;aux Césars;10;specifique;199
+278;à Cannes;10;specifique;199
+279;pour avoir time travel sur Animal Crossing;10;accusation;
+280;{objet}pour l’avoir séquestré{genre(objet,,e)};5;est_accuse;
+281;{objet}pour l’avoir séquestré{gse};5;accuse;
+282;pour avoir séquestré {pers_circo=pers}{pers_circo.nom};5;accusation;
+283;sur C8;10;specifique;201

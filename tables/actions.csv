@@ -149,7 +149,7 @@ id;action;poids;id_info
 148;candidat{gse} à la mairie {loc_info=localite(ville)}{loc_info.nom(de)};10;68
 149;se porte candidat{gse} à la mairie {loc_info=localite(ville)}{loc_info.nom(de)};10;68
 150;se porte candidat{gse} à la mairie {loc_info=localite(ville)}{loc_info.nom(de)}{loc_info.departement};10;68
-151;: {rand(1.5,3,6,8,10,100,150)} kg de {rand(drogue,drogue,drogue,canabis,LSD,quinoa,chloroquine)} retrouvés à son domicile;10;69
+151;: {rand(1.5,3,6,8,10,100,150)} kg de {rand(drogue,drogue,drogue,canabis,LSD,quinoa,chloroquine,navets)} retrouvés à son domicile;10;69
 152;publie la sextape {objet=pers}{objet.nom(de)};10;70
 153;publie des photos intimes {objet=pers}{objet.nom(de)};10;70
 154;soupçonné{gse} d’être un bot;10;71
@@ -391,3 +391,11 @@ id;action;poids;id_info
 391;crée un compte OnlyFans;10;193
 392;pris{gse} à parti dans la rue par {objet=pers}{objet.nom};10;194
 393;{sujet=pers}{maj({sujet.nom})} X {objet=pers}{maj({objet.nom})}, c’est fait !;10;195
+394;s’administre de la chloroquine;10;196
+395;s’administre du Xanogen et du Nitro XL;10;197
+396;décide de reformer la CoopTeam;10;198
+397;chute des escaliers;10;199
+398;tombe dans les escaliers;10;199
+399;est tombé des escaliers;10;199
+400;saccage les antennes 5G;10;200
+401;rejoint l’équipe de Touche Pas à Mon Poste;10;201

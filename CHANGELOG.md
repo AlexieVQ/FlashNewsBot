@@ -2,20 +2,40 @@
 
 ### Changements
 
+- Ajout des navets comme drogue.
 - Ajout des réponses aux mentions.
 
 ### Personnages
 
 - Grimes
+- James Charles
+- Jason Derulo
+- Jeffree Star
 - Laetitia Avia
 - LinksTheSun
+- René Malleville
 - Rounard
+- Siphano
 - X Æ A-12
+- ZeratoR
 
 ### Informations
 
+- Chute des escaliers
+- Décide de reformer la CoopTeam
 - Pris à parti dans la rue
+- Rejoint l’équipe de TPMP
+- Saccage des antennes 5G
+- S’administre de la chloroquine
+- S’administre du Xanogen et du Nitro XL
 - _Sujet_ X _objet_, c’est fait !
+
+### Circonstances
+
+- (Mort) d’une overdose de Xanogen et Nitro XL
+- Pour avoir séquestré _quelqu’un_
+- Pour avoir time travel sur Animal Crossing
+- Pour lui avoir implanté une puce 5G
 
 ### Corrections
 
