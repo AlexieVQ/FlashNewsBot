@@ -196,7 +196,7 @@ class CompteTwitter < Compte
 			if(!Bot.bdd.lue?(mention['id'], self) &&
 				Bot.bdd.status_existe?(mention['in_reply_to_status_id'].to_i,
 				self) && rand(100) < taux) then
-				rep = yield(mention['text'])
+				rep = yield(mention['text'].gsub(/@\w*/, ""))
 				unless(rep.to_s.empty?) then
 					puts rep if(Bot.debug?)
 					reponse = @access_token.post(
