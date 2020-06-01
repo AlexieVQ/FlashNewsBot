@@ -40,6 +40,8 @@
 ### Corrections
 
 - Correction du surnom de Bébé Yoda.
+- Personnages apparaissant plusieurs fois dans le même statut insérés qu’une
+  seule fois dans la base de données.
 - Surnom de l’inventeur du dab.
 - Vérification de l'existence des noms, surnoms et actions pour les personnages
   et informations

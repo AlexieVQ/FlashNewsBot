@@ -95,11 +95,11 @@ class Bdd
 		requete("INSERT INTO statuses(id, compte_id, domaine, created_at,
 		        id_info) VALUES (#{id}, #{compte.id}, '#{compte.domaine}',
 		        '#{DateTime.parse(created_at)}', #{info.id});")
-		pers.each do |perso|
+		pers.uniq.each { |perso|
 			requete("INSERT INTO pers(status_id, compte_id, domaine, id_pers)
 			        VALUES (#{id}, #{compte.id}, '#{compte.domaine}',
 			        #{perso.id});")
-		end
+		}
 		return self
 	end
 	
