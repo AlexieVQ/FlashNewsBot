@@ -3,6 +3,7 @@
 ### Changements
 
 - “Porno” remplacé par “X”
+- Références au Live retirées
 
 ### Personnages
 
@@ -18,6 +19,10 @@
 
 - Brive-la-Gaillarde
 - Lozère
+
+### Corrections
+
+- … avoue être responsable du meurtre _de_
 
 ## 1er juin 2020
 
