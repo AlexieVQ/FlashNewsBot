@@ -4,6 +4,10 @@
 
 - “Porno” remplacé par “X”
 
+### Localités
+
+- Brive-la-Gaillarde
+
 ## 1er juin 2020
 
 ### Changements
