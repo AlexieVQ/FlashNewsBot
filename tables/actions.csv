@@ -75,11 +75,8 @@ id;action;poids;id_info
 74;a été aperçu{gse} en fursuit;10;31
 75;a été aperçu{gse} en combinaison furry;10;31
 76;a cassé sa télévision;10;32
-77;se lance dans le porno;2;34
-78;se lance dans la pornographie;2;34
 79;se lance dans le X;2;34
 80;met un terme à sa carrière dans le X;2;34
-81;met un terme à sa carrière dans le porno;2;34
 82;se lance dans la musique;10;33
 83;se lance dans la chanson;10;33
 84;se lance dans le cinéma;10;34
@@ -87,7 +84,7 @@ id;action;poids;id_info
 86;met un terme à sa carrière dans la musique;10;36
 87;met un terme à sa carrière dans la chanson;10;36
 88;met un terme à sa carrière dans le cinéma;10;37
-89;met un terme à sa carrière dans la pornographie;5;37
+89;met un terme à sa carrière dans le X;5;37
 90;met un terme à sa carrière dans la politique;10;38
 91;met un terme à sa carrière sur YouTube;10;39
 92;devient secrétaire général{gse} de la CGT;10;40

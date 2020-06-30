@@ -1,3 +1,9 @@
+## 1er juillet 2020
+
+### Changements
+
+- “Porno” remplacé par “X”
+
 ## 1er juin 2020
 
 ### Changements
