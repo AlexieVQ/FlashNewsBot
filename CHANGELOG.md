@@ -9,6 +9,11 @@
 - Le Dalaï-Lama
 - Une femme
 
+### Circonstances
+
+- À cause de ses convictions
+- Pour avoir volé des courges à Nigloland
+
 ### Localités
 
 - Brive-la-Gaillarde

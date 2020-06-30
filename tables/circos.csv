@@ -252,3 +252,6 @@ id;circo;poids;type;id_info
 281;{objet}pour l’avoir séquestré{gse};5;accuse;
 282;pour avoir séquestré {pers_circo=pers}{pers_circo.nom};5;accusation;
 283;sur C8;10;specifique;201
+284;pour avoir volé des courges à Nigloland;10;accusation;
+285;pour ses convictions;5;accusation;
+286;à cause de ses convictions;5;accusation;

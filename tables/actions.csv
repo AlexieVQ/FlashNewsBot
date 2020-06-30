@@ -117,8 +117,8 @@ id;action;poids;id_info
 119;annonce un nouvel iPhone;10;54
 120;annonce l’iPhone {rand(11S,11S Pro,11S Pro Plus,11 Pro Plus Max,11S Pro Max,11 Pro Plus Menu Maxi Best-of)};10;54
 121;avoue avoir tué {objet=pers}{objet.nom};10;55
-122;avoue être à l’origine du meurtre de {objet=pers}{objet.nom};10;55
-123;avoue être responsable du meurtre {objet=pers}{objet.nom};10;55
+122;avoue être à l’origine du meurtre {objet=pers}{objet.nom(de)};10;55
+123;avoue être responsable du meurtre {objet=pers}{objet.nom(de)};10;55
 124;déclare avoir tué {objet=pers}{objet.nom};10;55
 125;publie un message de soutien envers {objet=pers}{objet.nom};10;56
 126;soutient publiquement {objet=pers}{objet.nom};10;56
