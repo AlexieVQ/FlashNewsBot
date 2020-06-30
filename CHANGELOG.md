@@ -4,9 +4,15 @@
 
 - “Porno” remplacé par “X”
 
+### Personnages
+
+- Le Dalaï-Lama
+- Une femme
+
 ### Localités
 
 - Brive-la-Gaillarde
+- Lozère
 
 ## 1er juin 2020
 
