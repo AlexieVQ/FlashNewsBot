@@ -22,8 +22,13 @@
 - Jésus (sa place dans la catégorie _fiction_ est liée à son statut de
   personnage biblique et n’est pas une prise de position)
 
+### Circonstances
+
+- Pour avoir touché ses pierres
+
 ### Corrections
 
+- “En accord avec ses principe**s**”
 - Genrage de la circonstance à propos du “ndombolo”
 - Le sujet porte plainte systématiquement contre quelqu’un (ou X)
 
