@@ -4,6 +4,7 @@
 
 - Agnès Buzyn n’est plus candidate à la Mairie de Paris
 - Rachida Dati n’est plus candidate à la Mairie de Paris
+- Référence à LeLive supprimée
 
 #### Remaniement
 
@@ -15,6 +16,7 @@
 
 ### Personnages
 
+- Bruno Le Maire
 - Gérald Darmanin
 - Jean Castex
 - Jésus (sa place dans la catégorie _fiction_ est liée à son statut de
