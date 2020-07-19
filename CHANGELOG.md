@@ -1,5 +1,9 @@
 ## Mi-juillet 2020
 
+### Personnages
+
+- Jean Castex
+
 ### Corrections
 
 - Genrage de la circonstance à propos du “ndombolo”
