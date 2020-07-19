@@ -134,7 +134,6 @@ id;action;poids;id_info
 136;abandonne la défense {objet=pers}{objet.nom(de)};10;61
 137;abandonne la défense {objet=pers}{objet.nom(de)};10;62
 138;rend hommage {objet=pers}{objet.nom(à)} qui nous a quittés;10;63
-139;porte plainte;10;64
 140;porte plainte contre {objet=pers}{objet.nom};10;64
 141;porte plainte contre X;10;64
 142;bat {objet=pers}{objet.nom} aux élections {rand(présidentielles,législatives,municipales,de délégués de classe,européennes)};10;65

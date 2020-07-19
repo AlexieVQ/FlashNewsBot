@@ -3,6 +3,7 @@
 ### Corrections
 
 - Genrage de la circonstance à propos du “ndombolo”
+- Le sujet porte plainte systématiquement contre quelqu’un (ou X)
 
 ## 1er juillet 2020
 
