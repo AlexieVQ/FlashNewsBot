@@ -1,3 +1,9 @@
+## Mi-juillet 2020
+
+### Corrections
+
+- Genrage de la circonstance à propos du “ndombolo”
+
 ## 1er juillet 2020
 
 ### Changements
