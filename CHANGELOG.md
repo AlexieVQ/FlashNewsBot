@@ -15,7 +15,10 @@
 
 ### Personnages
 
+- Gérald Darmanin
 - Jean Castex
+- Jésus (sa place dans la catégorie _fiction_ est liée à son statut de
+  personnage biblique et n’est pas une prise de position)
 
 ### Corrections
 
