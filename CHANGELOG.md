@@ -24,6 +24,8 @@
 
 ### Circonstances
 
+- Pour avoir lancé une malédiction sur la Lune
+- Pour sorcellerie
 - Pour avoir touché ses pierres
 
 ### Corrections
