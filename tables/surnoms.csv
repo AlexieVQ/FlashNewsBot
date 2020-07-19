@@ -91,8 +91,8 @@ id;surnom;poids;id_pers
 90;le “philosophe”;10;47
 91;le « philosophe »;10;47
 92;le « philosophe mes couilles » d’après {pers.nom};10;47
-93;le Premier Ministre;10;48
-94;le chef du gouvernement;10;48
+93;l’ancien Premier Ministre;10;48
+94;le maire du Havre;10;48
 95;le syndicaliste;10;49
 96;le secrétaire général de la CGT;10;49
 98;le consultant sportif;10;50
@@ -171,7 +171,7 @@ id;surnom;poids;id_pers
 170;l’ancien Président de la République;10;84
 171;l’ancien Président;10;85
 172;l’ancien Président de la République;10;85
-173;le Ministre de l’Intérieur;10;86
+173;l’ancien Ministre de l’Intérieur;10;86
 174;le comédien;10;87
 175;le comédien;10;88
 176;le king;10;89
@@ -365,7 +365,7 @@ id;surnom;poids;id_pers
 369;l’animatrice;10;213
 370;la député;10;214
 371;la député En Marche;10;214
-372;la Ministre de la Justice;10;215
+372;l’ancienne Ministre de la Justice;10;215
 373;la Garde des Sceaux;10;215
 374;la Présidente d’honneur du Parti Chrétien Démocrate;10;216
 375;l’humoriste;10;217
@@ -619,9 +619,8 @@ id;surnom;poids;id_pers
 623;le critique musical;10;349
 624;le chauve;1;349
 625;la femme politique;10;350
-626;la candidate à la mairie de Paris;10;350
+626;l’ex-candidate à la mairie de Paris;10;350
 627;l’ex-Ministre de la Santé;10;351
-628;la candidate à la mairie de Paris;10;351
 629;la drag queen;10;352
 630;la drag queen américaine;10;352
 631;“Mama Ru”;10;352
@@ -686,3 +685,6 @@ id;surnom;poids;id_pers
 690;le chef bouddhiste;10;387
 691;le chef spirituel;10;387
 692;le Premier Ministre;10;388
+693;la Ministre de la Culture;30;356
+694;le Ministre de la Justice;20;182
+695;le Garde des Sceaux;20;182

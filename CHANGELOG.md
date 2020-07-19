@@ -1,5 +1,18 @@
 ## Mi-juillet 2020
 
+### Changements
+
+- Agnès Buzyn n’est plus candidate à la Mairie de Paris
+- Rachida Dati n’est plus candidate à la Mairie de Paris
+
+#### Remaniement
+
+- Christophe Castaner ancien Ministre de l’Intérieur
+- Édouard Philippe ancien Premier Ministre
+- Éric Dupont-Moretti Garde des Sceaux
+- Nicolle Belloubet supprimée
+- Roselyne Bachelot Ministre de la Culture
+
 ### Personnages
 
 - Jean Castex
