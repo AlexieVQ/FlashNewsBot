@@ -1,4 +1,4 @@
-## Mi-juillet 2020
+## 1er août 2020
 
 ### Changements
 
@@ -26,12 +26,15 @@
 
 ### Circonstances
 
+- Pour actes christianophobes
 - Pour avoir lancé une malédiction sur la Lune
-- Pour sorcellerie
 - Pour avoir touché ses pierres
+- Pour lui avoir lancé une malédiction
+- Pour sorcellerie
 
 ### Corrections
 
+- Alain Juppé ancien maire de Bordeau**x**
 - “En accord avec ses principe**s**”
 - Genrage de la circonstance à propos du “ndombolo”
 - Le sujet porte plainte systématiquement contre quelqu’un (ou X)
