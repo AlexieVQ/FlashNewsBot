@@ -14,6 +14,10 @@
 - Nicolle Belloubet supprimée
 - Roselyne Bachelot Ministre de la Culture
 
+### Actions
+
+- Se convertit à la wicca
+
 ### Personnages
 
 - Bruno Le Maire
