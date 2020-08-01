@@ -396,3 +396,8 @@ id;action;poids;id_info
 400;saccage les antennes 5G;10;200
 401;rejoint l’équipe de Touche Pas à Mon Poste;10;201
 402;se convertit à la wicca;10;126
+403;décide d’interdire TikTok;10;202
+404;décide de bannir TikTok {loc_info=localite(pays,region)}{loc_info.nom(en)};10;202
+405;en couple avec {objet=pers}{objet.nom};10;203
+406;dévoile son couple avec {objet=pers}{objet.nom};10;203
+407;dévoile sa relation avec {objet=pers}{objet.nom};10;203

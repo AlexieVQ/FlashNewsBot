@@ -14,6 +14,11 @@
 - Nicolle Belloubet supprimée
 - Roselyne Bachelot Ministre de la Culture
 
+### Informations
+
+- Décide de bannir TikTok
+- En couple avec _quelqu’un_
+
 ### Actions
 
 - Se convertit à la wicca
