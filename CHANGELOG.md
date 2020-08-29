@@ -4,6 +4,10 @@
 
 - Philippe de Villiers
 
+### Lieux
+
+- Puy du Fou
+
 ## 1er août 2020
 
 ### Changements
