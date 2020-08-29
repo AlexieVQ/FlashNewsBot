@@ -13,6 +13,7 @@
 ### Personnages
 
 - Cisla
+- Logan Paul
 - Philippe de Villiers
 
 ### Circonstances
