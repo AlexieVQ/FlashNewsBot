@@ -15,6 +15,10 @@
 - Cisla
 - Philippe de Villiers
 
+### Circonstances
+
+- Pour ne pas avoir porté le masque
+
 ### Lieux
 
 - Puy du Fou
