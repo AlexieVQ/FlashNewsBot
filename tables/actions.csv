@@ -191,7 +191,7 @@ id;action;poids;id_info
 194;déclare vouloir “mettre le zbeul” sur les Champs-Élysées;10;90
 195;déclare vouloir “mettre le zbeul” {lieu};10;90
 196;appelle à manifester {lieu} {date} pour déstituer {objet=pers}{objet.nom};10;91
-197;appelle à manifester {lieu} {date} contre l’article 13;10;91
+197;appelle à manifester {lieu} {date} contre le port du masque obligatoire;10;91
 198;accuse {objet=pers}{objet.nom} d’avoir tué {objet2=pers}{objet2.nom};10;92
 199;épouse {objet=pers}{objet.nom};10;93
 200;accuse {objet=pers}{objet.nom} et {objet2=pers}{objet2.nom} d’être une seule et même personne;10;94

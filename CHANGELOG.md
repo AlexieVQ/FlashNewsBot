@@ -1,5 +1,10 @@
 ## 1er septembre 2020
 
+### Changements
+
+- Manifestation contre l’article 13 remplacée par manifestation contre le port
+  du masque obligatoire
+
 ### Informations
 
 - Annonce le _pays_ 2
