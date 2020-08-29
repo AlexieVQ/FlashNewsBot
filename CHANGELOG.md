@@ -2,6 +2,7 @@
 
 ### Informations
 
+- Annonce le _pays_ 2
 - Annonce l’URSS 2
 
 ### Personnages
