@@ -401,3 +401,6 @@ id;action;poids;id_info
 405;en couple avec {objet=pers}{objet.nom};10;203
 406;dévoile son couple avec {objet=pers}{objet.nom};10;203
 407;dévoile sa relation avec {objet=pers}{objet.nom};10;203
+408;annonce la refondation de l’URSS;10;204
+409;annonce le retour de l’URSS;10;204
+410;annonce l’URSS 2;20;204

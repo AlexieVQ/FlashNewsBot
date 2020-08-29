@@ -1,7 +1,12 @@
 ## 1er septembre 2020
 
+### Informations
+
+- Annonce l’URSS 2
+
 ### Personnages
 
+- Cisla
 - Philippe de Villiers
 
 ### Lieux
