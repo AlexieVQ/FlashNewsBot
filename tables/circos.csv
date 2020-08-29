@@ -22,7 +22,7 @@ id;circo;poids;type;id_info
 21;avec {pers_circo=pers}{pers_circo.nom};10;specifique;30
 22;et sort un premier morceau en featuring avec {pers_circo=pers}{pers_circo.nom};10;specifique;33
 23;et jouera dans le premier film {pers_circo=pers}{pers_circo.nom(de)};10;specifique;34
-24;et crée un nouveau mouvement avec {pers_circo=pers}{pers_circo.nom(de)};10;specifique;35
+24;et crée un nouveau mouvement avec {pers_circo=pers}{pers_circo.nom};10;specifique;35
 25;pour ouvrir son propre kebab;10;specifique;36
 26;pour ouvrir son propre kebab;10;specifique;36
 27;pour ouvrir son propre kebab;10;specifique;37
@@ -214,8 +214,8 @@ id;circo;poids;type;id_info
 243;contre la #Loi{pers_circo=pers}{pers_circo.nom_colle};10;specifique;177
 244;contre la loi {pers_circo=pers}{pers_circo.nom};10;specifique;177
 245;avec {pers_circo=pers}{pers_circo.nom};10;specifique;178 
-246;avec {pers_circo=pers}{pers_circo.nom(de)} et {pers_circo2=pers}{pers_circo2.nom};10;specifique;178 
-247;avec {pers_circo=pers}{pers_circo.nom(de)}, {pers_circo2=pers}{pers_circo2.nom} et {pers_circo3=pers}{pers_circo3.nom};10;specifique;178 
+246;avec {pers_circo=pers}{pers_circo.nom et {pers_circo2=pers}{pers_circo2.nom};10;specifique;178 
+247;avec {pers_circo=pers}{pers_circo.nom}, {pers_circo2=pers}{pers_circo2.nom} et {pers_circo3=pers}{pers_circo3.nom};10;specifique;178 
 248;sous forme d’une “discussion entre potes” d’après l’intéressé{gse};30;specifique;178
 249;sur Twitter;10;specifique;180
 250;sur Snapchat;10;specifique;180

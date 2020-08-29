@@ -13,6 +13,7 @@
 ### Personnages
 
 - Cisla
+- Linus Sebastian
 - Logan Paul
 - Philippe de Villiers
 
@@ -23,6 +24,10 @@
 ### Lieux
 
 - Puy du Fou
+
+### Corrections
+
+- “de” supprimé après “avec”
 
 ## 1er août 2020
 
