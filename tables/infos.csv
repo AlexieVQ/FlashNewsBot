@@ -173,3 +173,4 @@ id;type;description;type_circo;hashtag;poids;categories;structure
 204;son annonce;Annonce l’URSS 2;universel;;10;politique;
 205;son annonce;Annonce le pays 2;universel;;10;politique;
 206;son auto-médication;S’administre des hormones;universel;;5;;
+207;son bannissement;Banni du tchat de quelqu’un;est_accuse;#Twitch;5;internet;

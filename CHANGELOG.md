@@ -2,6 +2,7 @@
 
 ### Informations
 
+- Banni du tchat de _quelqu’un_
 - S’administre des hormones
 
 ## 1er septembre 2020
