@@ -5,6 +5,10 @@
 - Banni du tchat de _quelqu’un_
 - S’administre des hormones
 
+### Personnages
+
+- Freeze Corleone
+
 ### Circonstances
 
 - Pour avoir critiqué la taille de son front
