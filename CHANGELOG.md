@@ -26,6 +26,10 @@
 - Pour avoir mutilé des chevaux
 - Pour lui avoir transmis le COVID-19
 
+### Lieux
+
+- Zozan Kebab
+
 ### Localités
 
 - URSS
