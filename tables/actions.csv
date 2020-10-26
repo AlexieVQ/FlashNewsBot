@@ -406,5 +406,5 @@ id;action;poids;id_info
 410;annonce l’URSS 2;20;204
 411;annonce {loc_info=localite(pays)}{loc_info.nom(le)} 2;10;205
 412;s’administre de {rand(l’estradiol,la testostérone)};10;206
-413;banni du tchat de Bigflo;10;207
-414;banni du tchat {objet=pers}{objet.nom(de)};10;207
+413;banni{gse} du tchat de Bigflo;10;207
+414;banni{gse} du tchat {objet=pers}{objet.nom(de)};10;207
