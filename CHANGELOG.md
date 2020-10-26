@@ -19,6 +19,7 @@
 - Freeze Corleone
 - MisterMV
 - Nicolas Bedos
+- Vald
 
 ### Circonstances
 
