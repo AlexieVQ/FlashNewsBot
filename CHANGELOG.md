@@ -16,6 +16,10 @@
 - Pour avoir critiqué la taille de son front
 - Pour avoir mutilé des chevaux
 
+### Localités
+
+- URSS
+
 ## 1er septembre 2020
 
 ### Changements
