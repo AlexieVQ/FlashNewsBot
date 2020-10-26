@@ -27,6 +27,7 @@
 ### Localités
 
 - URSS
+- Saint-Dizier
 
 ## 1er septembre 2020
 
