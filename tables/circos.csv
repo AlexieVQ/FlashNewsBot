@@ -264,4 +264,6 @@ id;circo;poids;type;id_info
 294;pour ne pas avoir porté le masque;10;accusation;
 295;en auto-médication;10;specifique;206
 296;sur conseil de son médecin;10;specifique;206
-297;{objet}pour avoir critiqué la taille de son front;10;accusation;207
+297;{objet}pour avoir critiqué la taille de son front;10;accusation;
+298;par {pers_circo=pers}{pers.nom};10;specifique;208
+299;sur Twitter;10;specifique;208

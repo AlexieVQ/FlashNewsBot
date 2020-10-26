@@ -408,3 +408,5 @@ id;action;poids;id_info
 412;s’administre de {rand(l’estradiol,la testostérone)};10;206
 413;banni{gse} du tchat de Bigflo;10;207
 414;banni{gse} du tchat {objet=pers}{objet.nom(de)};10;207
+415;accusé{gse} de mutiler des chevaux;10;208
+416;accusé{gse} d’être à l’origine des mutilations de chevaux;10;208
