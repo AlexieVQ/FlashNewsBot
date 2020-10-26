@@ -3,6 +3,7 @@
 ### Changements
 
 - Image du gouvernement remplacée par celle du gouvernement Castex
+- Institut Pasteur remplacé par Amnesty International
 
 ### Informations
 
