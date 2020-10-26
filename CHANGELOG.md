@@ -12,7 +12,9 @@
 
 ### Circonstances
 
+- Dans l’affaire des chevaux mutilés
 - Pour avoir critiqué la taille de son front
+- Pour avoir mutilé des chevaux
 
 ## 1er septembre 2020
 
