@@ -13,6 +13,7 @@
 ### Personnages
 
 - Freeze Corleone
+- Nicolas Bedos
 
 ### Circonstances
 
