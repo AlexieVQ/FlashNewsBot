@@ -22,6 +22,7 @@
 - Dans l’affaire des chevaux mutilés
 - Pour avoir critiqué la taille de son front
 - Pour avoir mutilé des chevaux
+- Pour lui avoir transmis le COVID-19
 
 ### Localités
 
