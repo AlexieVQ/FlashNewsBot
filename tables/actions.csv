@@ -405,3 +405,4 @@ id;action;poids;id_info
 409;annonce le retour de l’URSS;10;204
 410;annonce l’URSS 2;20;204
 411;annonce {loc_info=localite(pays)}{loc_info.nom(le)} 2;10;205
+412;s’administre de {rand(l’estradiol,la testostérone)};10;206

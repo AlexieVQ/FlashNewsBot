@@ -1,3 +1,9 @@
+## Octobre 2020
+
+### Informations
+
+- S’administre des hormones
+
 ## 1er septembre 2020
 
 ### Changements
