@@ -175,3 +175,5 @@ id;type;description;type_circo;hashtag;poids;categories;structure
 206;son auto-médication;S’administre des hormones;universel;;5;;
 207;son bannissement;Banni du tchat de quelqu’un;est_accuse;#Twitch;5;internet;
 208;son accusation;Accusé de mutiler des chevaux;universel;#ChevauxMutilés;10;;
+209;son accusation;Accuse quelqu’un de lui avoir transmis le COVID-19;universel;#COVID19;10;;
+210;son accusation;Accusé d’avoir transmis le COVID-19 à quelqu’un;universel;#COVID19;10;;

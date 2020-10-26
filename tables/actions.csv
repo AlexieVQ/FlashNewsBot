@@ -410,3 +410,5 @@ id;action;poids;id_info
 414;banni{gse} du tchat {objet=pers}{objet.nom(de)};10;207
 415;accusé{gse} de mutiler des chevaux;10;208
 416;accusé{gse} d’être à l’origine des mutilations de chevaux;10;208
+417;accuse {objet=pers}{objet.nom} de lui avoir transmis le COVID-19;10;209
+418;accuse{gse} d’avoir transmis le COVID-19 {objet=pers}{objet.nom(à)};10;210

@@ -6,6 +6,8 @@
 
 ### Informations
 
+- Accuse _quelqu’un_ de lui avoir transmis le COVID-19
+- Accusé d’avoir transmis le COVID-19 à _quelqu’un_
 - Accusé de mutiler des chevaux
 - Banni du tchat de _quelqu’un_
 - S’administre des hormones
