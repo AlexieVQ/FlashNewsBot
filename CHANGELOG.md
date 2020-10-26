@@ -5,6 +5,10 @@
 - Banni du tchat de _quelqu’un_
 - S’administre des hormones
 
+### Circonstances
+
+- Pour avoir critiqué la taille de son front
+
 ## 1er septembre 2020
 
 ### Changements
