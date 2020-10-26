@@ -1,5 +1,9 @@
 ## Octobre 2020
 
+### Changements
+
+- Image du gouvernement remplacée par celle du gouvernement Castex
+
 ### Informations
 
 - Accusé de mutiler des chevaux
