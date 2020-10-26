@@ -11,6 +11,7 @@
 - Accusé de mutiler des chevaux
 - Banni du tchat de _quelqu’un_
 - S’administre des hormones
+- Victime de la cancel culture
 
 ### Personnages
 
