@@ -64,3 +64,6 @@ build-iPhoneSimulator/
 
 # Images téléchargées
 /assets/cache/
+
+# Fichiers de configuration locaux
+.markdownlint.json
