@@ -14,8 +14,7 @@ id;surnom;poids;id_pers
 13;l’homme politique;10;6
 14;le député;10;6
 15;le député insoumi;10;6
-16;le Président;10;7
-17;le Président américain;10;7
+17;l’ancien Président américain;10;7
 18;le leader;10;8
 19;le dictateur;10;8
 20;le leader nord-coréen;10;8
@@ -216,7 +215,7 @@ id;surnom;poids;id_pers
 216;l’homme;10;117
 217;{inventeur_dab.surnom};10;118
 218;l’homme;10;119
-219;le candidat à la primaire démocrate;10;120
+219;l’ancien candidat à la primaire démocrate;10;120
 220;le journaliste;10;121
 221;le présentateur du journal de 13H;10;121
 222;le vidéaste;10;122
@@ -557,8 +556,7 @@ id;surnom;poids;id_pers
 559;le médecin;10;317
 560;le médecin préféré des Français;5;317
 561;le médecin du PAF;5;317
-562;le candidat à l’investiture démocrate;10;318
-563;le candidat à la primaire démocrate;10;318
+562;le Président américain;10;318
 564;l’ancienne candidate à la primaire démocrate;10;319
 565;l’ancien candidat à la primaire démocrate;10;320
 566;la Représentante américaine;10;321
@@ -569,7 +567,6 @@ id;surnom;poids;id_pers
 571;l’humoriste;10;324
 572;le journaliste;10;325
 573;la femme politique;10;326
-574;l’homme politique en parfaite santé;5;318
 575;le jeune garçon;10;327
 578;le héros de bande dessinée;10;327
 579;le père de famille;10;328

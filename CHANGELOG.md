@@ -1,3 +1,13 @@
+# Changements
+
+## Février 2021
+
+### Changements
+
+- Bernie Sanders est ancien candidat à la primaire démocrate
+- Joe Biden est président des États-Unis
+- Suppression de Valéry Giscard d’Estaing
+
 ## 28 octobre 2020
 
 ### Changements
@@ -271,6 +281,7 @@
 - N'importe qui peut réagir à une information
 
 ### Personnages
+
 - 13 Block
 - Ademo
 - Agnès Buzyn
