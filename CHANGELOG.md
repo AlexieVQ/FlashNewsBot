@@ -1,5 +1,9 @@
 # Changements
 
+## 22 septembre 2020
+
+- René Malleville retiré de la liste des personnages
+
 ## 23 janvier 2021
 
 ### Changements
