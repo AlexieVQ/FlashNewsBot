@@ -67,3 +67,4 @@ build-iPhoneSimulator/
 
 # Fichiers de configuration locaux
 .markdownlint.json
+/.vscode/
