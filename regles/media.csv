@@ -1,2 +1,2 @@
-id,nom,pascal_case,weight,genre,nombre,type,lieu
-1,le Monde,LeMonde,10,M,S,papier,1
+id,value,nom,pascal_case,weight,genre,nombre,type,lieu
+1,Le Monde,le Monde,LeMonde,10,M,S,papier,1
