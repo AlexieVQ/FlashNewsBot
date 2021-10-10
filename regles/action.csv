@@ -1,0 +1,5 @@
+id,value,weight,info
+1,"{ sujet.etre /* TODO */ } mort{ sujet.gnes /* TODO */ }",10,1
+2,"{ sujet.avoir /* TODO */ } été retrouvé{ sujet.gnes } mort{ sujet.gnes }",10,1
+3,"mort{ sujet.gnes } noyer",5,1
+4,"{ sujet.etre } mort{ sujet.gnes } puce{ sujet.gn(au,lle,aux,lles) /* TODO */ }",1,1

@@ -1,0 +1,8 @@
+id,value,weight
+1,"{ capitalize({ decla.sujet.sujet }) } { `source ||= Media`.coi({ decla.sujet.avoir } (déclaré|affirmé)( { Moment(proche) })?) } “{ decla }”.",10
+2,"“{ decla }” { decla_phrase = ({ decla.sujet.avoir } (déclaré|affirmé)( { Moment(proche) })? { decla.sujet.sujet_explicite }) } ({ `source ||= Media`.coi({ decla_phrase }) }|{ decla_phrase })",10
+3,"
+
+🎙 “{ decla }” { decla.sujet.sujet_explicite }( { Moment(proche) })?( { `source ||= Media`.coi })?.
+
+",5
