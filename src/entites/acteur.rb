@@ -1,6 +1,8 @@
-require_relative 'acteur_proxy'
+require_relative "../refinements"
 
 module Acteur
+
+	using Refinements
 	
 	# @param masc [String]
 	# @param fem [String]
@@ -411,6 +413,8 @@ module Acteur
 			"seraient"
 		)
 	end
+
+	require_relative "acteur_proxy"
 
 	# @return [Acteur]
 	def to_1e_personne
