@@ -1,3 +1,2 @@
 id,value,weight,info
-1,"{ phrase = s({ `sujet = acteur(from:info)`.sujet } { info.action }.({ decla = info.decla; StructDecla } )?(\({ `source = Media` }\))? { info.hashtag }); Accroche; capitalize({ phrase }) }",10,
-2,"{ phrase = s({ info.action }. ({ decla = info.decla; StructDecla } )?(\({ `source = Media` }\))? { info.hashtag }); Accroche; capitalize({ phrase }) },10,
+1,"{ phrase = s({ info.action }. ({ decla = info.decla; StructDecla } )?(\({ `source = Media` }\))? { info.hashtag }); Accroche; capitalize({ phrase }) }",10,
