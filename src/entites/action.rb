@@ -36,7 +36,7 @@ class Action < Rosace::Entity
 	# @param args [Array<String>]
 	# @return [Boolean]
 	def pick?(*args)
-		args.all? { |arg| arg.empty? || !send(arg).empty? }
+		args.any? { |role| !role.empty? && send(role) == :sujet }
 	end
 
 	# @return [Boolean]
