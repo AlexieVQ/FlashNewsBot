@@ -103,7 +103,12 @@ class Info < Rosace::Entity
 		phrase = action.value + if !coupable.empty? || !victime.empty? ||
 			!denonciateur.empty?
 			# @type [Action]
-			action_motif = context.pick_entity(:Action, "accusation")
+			action_motif = context.pick_entity(
+				:Action,
+				coupable.empty? ? "" : "coupable",
+				victime.empty? ? "" : "victime",
+				denonciateur.empty? ? "" : "denonciateur"
+			)
 			motif = nil
 			[:coupable, :victime, :denonciateur].each do |role|
 				if send(role) == :objet && action_motif.send(role) == :sujet

@@ -1,13 +1,18 @@
 require "rosace"
 require_relative "info"
+require_relative "../refinements"
 
 class Action < Rosace::Entity
+
+	using Refinements
 
 	self.file = "regles/action.csv"
 
 	# @!attribute [r] verbe
 	#  @return [String]
 	# @!attribute [r] infinitif
+	#  @return [String]
+	# @!attribute [r] participe
 	#  @return [String]
 	# @!attribute [r] complement
 	#  @return [String]
@@ -28,14 +33,10 @@ class Action < Rosace::Entity
 	#  @return [:sujet, :objet, :""]
 	enum :denonciateur, *Info::ROLES
 
-	# @param arg [String, nil]
+	# @param args [Array<String>]
 	# @return [Boolean]
-	def pick?(arg = nil)
-		if arg.strip == "accusation"
-			!coupable.empty? || !victime.empty? || !denonciateur.empty?
-		else
-			info.nil?
-		end
+	def pick?(*args)
+		args.all? { |arg| arg.empty? || !send(arg).empty? }
 	end
 
 	# @return [Boolean]
@@ -59,9 +60,17 @@ class Action < Rosace::Entity
 		# @type [Acteur, nil]
 		@objet = objet || old_objet
 		out = if verbe_obligatoire
-			self.sujet.sujet(verbe)
+			self.sujet.sujet(verbe) + if !participe.empty?
+				" " + participe
+			else
+				""
+			end
 		elsif verbe_contient_sujet
-			verbe
+			verbe + if !participe.empty?
+				" " + participe
+			else
+				""
+			end
 		else
 			self.sujet.sujet_explicite
 		end + " " + complement
@@ -140,7 +149,14 @@ class Action < Rosace::Entity
 	# @param info [Info, nil]
 	# @return [String]
 	def accusation(info: nil)
-		rand(2) == 1 ? accusation_de(info: info) : accusation_pour(info: info)
+		case rand(3)
+		when 0
+			accusation_pour(info: info)
+		when 1
+			accusation_car(info: info)
+		else
+			accusation_parce_que(info: info)
+		end
 	end
 
 	# @param info [Info, nil]
@@ -166,6 +182,26 @@ class Action < Rosace::Entity
 
 	# @param info [Info, nil]
 	# @return [String]
+	def accusation_car(info: nil)
+		old_info = @info_accu
+		@info_accu = info || old_info
+		out = car
+		@info_accu = old_info
+		out
+	end
+
+	# @param info [Info, nil]
+	# @return [String]
+	def accusation_parce_que(info: nil)
+		old_info = @info_accu
+		@info_accu = info || old_info
+		out = parce_que
+		@info_accu = old_info
+		out
+	end
+
+	# @param info [Info, nil]
+	# @return [String]
 	def accusation_qui(info: nil)
 		old_info = @info_accu
 		@info_accu = info || old_info
@@ -176,13 +212,18 @@ class Action < Rosace::Entity
 
 	# @return [Acteur, nil]
 	def sujet
+		puts "sujet #{self}, info_accu = #{@info_accu}"
 		if @sujet
+			puts "1"
 			@sujet
 		elsif @info_accu
+			puts "2"
 			get_accusation_sujet(@info_accu)
 		elsif info
+			puts "3"
 			info.sujet
 		else
+			puts "4"
 			nil
 		end
 	end
@@ -217,6 +258,7 @@ class Action < Rosace::Entity
 	# @param info [Info]
 	# @return [Acteur, nil]
 	def get_accusation_sujet(info)
+		puts "gas #{info}"
 		if victime == :sujet
 			info.get_victime || info.get_denonciateur
 		elsif coupable == :sujet
