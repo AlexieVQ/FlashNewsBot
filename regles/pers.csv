@@ -1,2 +1,2 @@
-id,nom,pascal_case,weight,genre,nombre,categories,lieu,cw
-1,"{ h /* TODO */ }Norman( Thavaud)?","Norman(Thavaud)?",10,M,S,internet,1,
+id,nom,pascal_case,weight,genre,nombre,qte,categories,origine,cw
+1,"{ h }Norman( Thavaud)?","Norman(Thavaud)?",10,M,S,1,internet,1,

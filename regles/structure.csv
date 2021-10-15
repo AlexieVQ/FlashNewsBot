@@ -1,2 +1,1 @@
 id,value,weight,info
-1,"{ phrase = s({ info.action }. ({ decla = info.decla; StructDecla } )?(\({ `source = Media` }\))? { info.hashtag }); Accroche; capitalize({ phrase }) }",10,

@@ -1,0 +1,3 @@
+id,value,weight,info,sujet,objet,pers
+1,"{ .sujet.sujet(dédi{ .sujet.n(e,ons) } ); .tierce = .info.acteur; .tierce.coi({.sujet.comp(la fortune)}) }",10,1,sujet,,
+2,"Yes { .objet.gn(le mec,la meuf,les gens,les meufs) } { .objet.est } dead",10,1,tierce,sujet,

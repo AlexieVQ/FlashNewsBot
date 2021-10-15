@@ -1,2 +1,2 @@
-id,description,weight,hashtag,emoji,acteurs,categories,coupable,victime,denonciateur
-1,"mort",20,"RIP{ sujet.pascal_case }",,pers,,,,
+id,description,before,weight,hashtag,emoji,acteurs,categories,temporalite,coupable,victime,denonciateur
+1,"mort",,20,"RIP{ .sujet.pascal_case }",,pers,,passe proche,,,
