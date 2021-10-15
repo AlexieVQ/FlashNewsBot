@@ -28,9 +28,14 @@ class Decla < Rosace::Entity
 		out
 	end
 
+	# @return [Boolean]
+	def pick?
+		info == nil
+	end
+
 	# @return [Info, nil]
 	def info
-		@info || super
+		@info || super || context.variable(:info)
 	end
 
 	# @return [Acteur, nil]

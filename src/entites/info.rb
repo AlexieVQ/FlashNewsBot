@@ -82,11 +82,11 @@ class Info < Rosace::Entity
 	#  @return [Array<Action>]
 	has_many :Action, :info, :_action
 
-	# @!attribute [r] decla
+	# @!attribute [r] _decla
 	#  @return [Decla, nil]
-	# @!attribute [r] decla_list
+	# @!attribute [r] _decla_list
 	#  @return [Array<Decla>]
-	has_many :Decla, :info, :decla
+	has_many :Decla, :info, :_decla
 
 	# @return [Acteur, nil]
 	attr_accessor :objet
@@ -100,8 +100,8 @@ class Info < Rosace::Entity
 	# @return [String]
 	def value
 		before
-		phrase = action.value + if !coupable.empty? || !victime.empty? ||
-			!denonciateur.empty?
+		phrase = action.value(force_verbe: false) + if !coupable.empty? ||
+			!victime.empty? || !denonciateur.empty?
 			# @type [Action]
 			action_motif = context.pick_entity(
 				:Action,
@@ -125,11 +125,8 @@ class Info < Rosace::Entity
 			" " + motif
 		else
 			""
-		end + ". " + unless decla_list.empty?
-			context.pick_entity(:StructDecla).value + " "
-		else
-			""
-		end + if rand(2) == 1
+		end + ". " + context.pick_entity(:StructDecla).value + " " +
+		if rand(2) == 1
 			"(#{context.pick_entity(:Media).value}) "
 		else
 			""
@@ -145,6 +142,11 @@ class Info < Rosace::Entity
 		else
 			'#' + s
 		end
+	end
+
+	# @return [Decla]
+	def decla
+		@decla ||= _decla || context.pick_entity(:Decla)
 	end
 
 	# @return [Acteur, nil]

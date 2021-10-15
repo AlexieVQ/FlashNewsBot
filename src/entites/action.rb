@@ -51,22 +51,23 @@ class Action < Rosace::Entity
 
 	# @param sujet [Acteur, nil]
 	# @param objet [Acteur, nil]
+	# @param force_verbe [Boolean]
 	# @return [String]
-	def value(sujet: nil, objet: nil)
+	def value(sujet: nil, objet: nil, force_verbe: true)
 		old_sujet = @sujet
 		old_objet = @objet
 		# @type [Acteur, nil]
 		@sujet = sujet || old_sujet
 		# @type [Acteur, nil]
 		@objet = objet || old_objet
-		out = if verbe_obligatoire
-			self.sujet.sujet(verbe) + if !participe.empty?
+		out = if verbe_contient_sujet
+			verbe + if !participe.empty?
 				" " + participe
 			else
 				""
 			end
-		elsif verbe_contient_sujet
-			verbe + if !participe.empty?
+		elsif verbe_obligatoire || force_verbe
+			self.sujet.sujet(verbe) + if !participe.empty?
 				" " + participe
 			else
 				""
