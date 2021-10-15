@@ -1,2 +1,5 @@
 id,description,before,weight,hashtag,emoji,acteurs,categories,temporalite,coupable,victime,denonciateur
-1,"mort",,20,"RIP{ .sujet.pascal_case }",,pers,,passe proche,,,
+1,mort,,20,RIP{ .sujet.pascal_case },,pers,,passe proche,,,
+2,fraude,,10,,,pers,,passe proche,,,
+3,élu président français,,10,Présidentielles,,pers,politique,proche,,,
+4,arrêté,,20,,,pers,,passe proche,sujet,,
