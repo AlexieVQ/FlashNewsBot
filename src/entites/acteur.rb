@@ -3,6 +3,46 @@ require_relative "../refinements"
 module Acteur
 
 	using Refinements
+
+	GENRES = [:M, :F]
+	NOMBRES = [:S, :P]
+
+	# @return [Acteur]
+	def self.new(nom:, genre: :M, nombre: :S, personne: 3)
+		Class.new do
+			include Acteur
+
+			def initialize(nom, genre, nombre, personne)
+				@nom = nom
+				@genre = genre
+				@nombre = nombre
+				@personne = personne
+			end
+
+			def nom
+				@nom
+			end
+
+			def genre
+				@genre
+			end
+
+			def nombre
+				@nombre
+			end
+
+			def personne
+				@personne
+			end
+		end.new(nom, genre, nombre, personne)
+	end
+
+	# @!attribute [r] genre
+	#  @return [:M, :F]
+	# @!attribute [r] nombre
+	#  @return [:S, :P]
+	# @!attribute [r] personne
+	#  @return [1, 2, 3]
 	
 	# @param masc [String]
 	# @param fem [String]
@@ -54,7 +94,12 @@ module Acteur
 	end
 
 	# @return [String]
-	def gnes
+	def s
+		self.n("", "s")
+	end
+
+	# @return [String]
+	def es
 		self.gn("", "e", "s", "es")
 	end
 
@@ -418,12 +463,30 @@ module Acteur
 
 	# @return [Acteur]
 	def to_1e_personne
-		self.personne == 1 ? self : ActeurProxy.new(self, personne: 1)
+		_nombre = if respond_to?(:qte)
+			qte > 1 ? :P : :S
+		else
+			nombre
+		end
+		self.personne == 1 ? self : ActeurProxy.new(
+			self,
+			personne: 1,
+			nombre: _nombre
+		)
 	end
 
 	# @return [Acteur]
 	def to_2e_personne
-		self.personne == 2 ? self : ActeurProxy.new(self, personne: 2)
+		_nombre = if respond_to?(:qte)
+			qte > 1 ? :P : :S
+		else
+			nombre
+		end
+		self.personne == 2 ? self : ActeurProxy.new(
+			self,
+			personne: 2,
+			nombre: _nombre
+		)
 	end
 
 	# @return [Acteur]

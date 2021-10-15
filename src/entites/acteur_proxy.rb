@@ -25,6 +25,18 @@ class ActeurProxy
 		@personne = personne || acteur.personne
 		@genre = genre || acteur.genre
 		@nombre = nombre || acteur.nombre
+
+		if acteur.respond_to?(:qte)
+			define_singleton_method(:qte) do
+				acteur.qte
+			end
+		end
+
+		if acteur.respond_to?(:surnom)
+			define_singleton_method(:surnom) do
+				acteur.surnom
+			end
+		end
 	end
 
 	# @return [String]
@@ -33,21 +45,29 @@ class ActeurProxy
 	end
 
 	def to_1e_personne
+		_nombre = if respond_to?(:qte)
+			qte > 1 ? :P : :S
+		else
+			nombre
+		end
 		personne == 1 ?
 			self :
-			ActeurProxy.new(acteur, personne: 1, genre: genre, nombre: nombre)
+			ActeurProxy.new(acteur, personne: 1, genre: genre, nombre: _nombre)
 	end
 
 	def to_2e_personne
+		_nombre = if respond_to?(:qte)
+			qte > 1 ? :P : :S
+		else
+			nombre
+		end
 		personne == 2 ?
 			self :
-			ActeurProxy.new(acteur, personne: 2, genre: genre, nombre: nombre)
+			ActeurProxy.new(acteur, personne: 2, genre: genre, nombre: _nombre)
 	end
 
 	def to_3e_personne
-		personne == 3 ?
-			self :
-			ActeurProxy.new(acteur, personne: 3, genre: genre, nombre: nombre)
+		personne == 3 ? self : ActeurProxy.new(acteur, personne: 3)
 	end
 
 end
