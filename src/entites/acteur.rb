@@ -459,6 +459,16 @@ module Acteur
 		)
 	end
 
+	# @return [String]
+	def le
+		self.gn("le", "la", "les", "les")
+	end
+
+	# @return [String]
+	def un
+		self.gn("un", "une", "des", "des")
+	end
+
 	require_relative "acteur_proxy"
 
 	# @return [Acteur]
