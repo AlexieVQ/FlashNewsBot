@@ -2,4 +2,4 @@ id,verbe,infinitif,complement,forme_nom,weight,verbe_obligatoire,verbe_contient_
 1,"{ .sujet.est }","être","mort{ .sujet.es }","la mort",10,1,0,1,,sujet,
 2,"{ .sujet.a }","avoir","été retrouvé{ .sujet.es } mort{ .sujet.es }","la mort",10,1,0,1,,sujet,
 3,"{ .sujet.est }","être","mort{ .sujet.es } noyer","la noyade",5,0,0,1,,sujet,
-4,"{ .sujet.est }","être","mort{ .sujet.es } puce{ .sujet.gn(au,lle,aux,lles) }","la mort",1,1,1,1,,sujet,
+4,"{ .sujet.est }","être","mort{ .sujet.es } puce{ .sujet.gn(au,lle,aux,lles) }","la mort",1,1,0,1,,sujet,
