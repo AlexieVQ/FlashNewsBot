@@ -139,7 +139,6 @@ class Info < Rosace::Entity
 
 	# @return [String]
 	def hashtag
-		puts "salut"
 		s = super
 		if s.empty?
 			s

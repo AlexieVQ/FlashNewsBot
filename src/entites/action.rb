@@ -212,18 +212,13 @@ class Action < Rosace::Entity
 
 	# @return [Acteur, nil]
 	def sujet
-		puts "sujet #{self}, info_accu = #{@info_accu}"
 		if @sujet
-			puts "1"
 			@sujet
 		elsif @info_accu
-			puts "2"
 			get_accusation_sujet(@info_accu)
 		elsif info
-			puts "3"
 			info.sujet
 		else
-			puts "4"
 			nil
 		end
 	end
@@ -258,7 +253,6 @@ class Action < Rosace::Entity
 	# @param info [Info]
 	# @return [Acteur, nil]
 	def get_accusation_sujet(info)
-		puts "gas #{info}"
 		if victime == :sujet
 			info.get_victime || info.get_denonciateur
 		elsif coupable == :sujet
