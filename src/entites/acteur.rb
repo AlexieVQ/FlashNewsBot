@@ -103,23 +103,32 @@ module Acteur
 		self.gn("", "e", "s", "es")
 	end
 
+	def implicite?
+		[1, 2].include?(personne) || @_acteur_nom_cite
+	end
+
 	# @return [String]
 	def sujet_explicite
+		# @type [Boolean]
+		@_acteur_nom_cite = true
 		self.nom
 	end
 
 	# @return [String]
 	def tonique_explicite
+		@_acteur_nom_cite = true
 		self.nom
 	end
 
 	# @return [String]
 	def cod_explicite
+		@_acteur_nom_cite = true
 		self.nom
 	end
 
 	# @return [String]
 	def coi_explicite
+		@_acteur_nom_cite = true
 		match = /\A\s*(?<article>(le |les )?)(?<nom>.*)\z/i.match(self.nom)
 		if /\Ale \z/i =~ match[:article] 
 			"au " + match[:nom]
@@ -132,6 +141,7 @@ module Acteur
 
 	# @return [String]
 	def comp_explicite
+		@_acteur_nom_cite = true
 		match = /\A\s*(?<article>(le |les )?)(?<nom>.*)\z/i.match(self.nom)
 		if /\Ale \z/i =~ match[:article]
 			"du " + match[:nom]
@@ -298,7 +308,7 @@ module Acteur
 	# @param verbe [String]
 	# @return [String]
 	def sujet(verbe)
-		if [1, 2].include?(self.personne)
+		if implicite?
 			self.sujet_implicite(verbe)
 		else
 			self.sujet_explicite + " " + verbe
@@ -309,7 +319,7 @@ module Acteur
 	# @param participe [String]
 	# @return [String]
 	def sujet_inverse(verbe, participe = "")
-		if [1, 2].include?(self.personne)
+		if implicite?
 			self.sujet_inverse_implicite(verbe) +
 				(participe.empty? ? "" : " " + participe)
 		elsif participe.empty?
@@ -321,7 +331,7 @@ module Acteur
 
 	# @return [String]
 	def tonique
-		if [1, 2].include?(self.personne)
+		if implicite?
 			self.tonique_implicite
 		else
 			self.tonique_explicite
@@ -330,13 +340,14 @@ module Acteur
 
 	# @return [String]
 	def vocatif
+		@_acteur_nom_cite = true
 		self.nom.gsub(/\A(le |la |les |l’|un |une |des )/i, "")
 	end
 
 	# @param verbe [String]
 	# @return [String]
 	def cod(verbe)
-		if [1, 2].include?(self.personne)
+		if implicite?
 			self.cod_implicite(verbe)
 		else
 			verbe + " " + self.cod_explicite
@@ -346,7 +357,7 @@ module Acteur
 	# @param verbe [String]
 	# @return [String]
 	def coi(verbe)
-		if [1, 2].include?(self.personne)
+		if implicite?
 			self.coi_implicite(verbe)
 		else
 			verbe + " " + self.coi_explicite
@@ -356,7 +367,7 @@ module Acteur
 	# @param nom [String]
 	# @return String
 	def comp(nom)
-		if [1, 2].include?(self.personne)
+		if implicite?
 			self.comp_implicite(nom)
 		else
 			nom + " " + self.comp_explicite
