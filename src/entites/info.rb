@@ -196,10 +196,17 @@ class Info < Rosace::Entity
 		when :objet
 			objet ||= acteur
 		else
-			if !denonciateur.empty?
-				get_denonciateur
+			case action.victime
+			when :sujet
+				sujet
+			when :objet
+				objet ||= acteur
 			else
-				nil
+				if !denonciateur.empty? || !action.denonciateur.empty?
+					get_denonciateur
+				else
+					nil
+				end
 			end
 		end
 	end
@@ -212,7 +219,14 @@ class Info < Rosace::Entity
 		when :objet
 			objet ||= acteur
 		else
-			nil
+			case action.coupable
+			when :sujet
+				sujet
+			when :objet
+				objet ||= acteur
+			else
+				nil
+			end
 		end
 	end
 
@@ -224,10 +238,17 @@ class Info < Rosace::Entity
 		when :objet
 			objet ||= acteur
 		else
-			if !victime.empty?
-				get_victime
+			case action.denonciateur
+			when :sujet
+				sujet
+			when :objet
+				objet ||= acteur
 			else
-				nil
+				if !victime.empty? || !action.victime.empty?
+					get_victime
+				else
+					nil
+				end
 			end
 		end
 	end
