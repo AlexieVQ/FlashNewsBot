@@ -189,14 +189,18 @@ class Info < Rosace::Entity
 		@action ||= _action
 	end
 
+	# @param action [Action, nil]
 	# @return [Acteur, nil]
-	def get_victime
+	def get_victime(action: nil)
+		action ||= self.action
+		puts "info #{id}, victime #{victime}"
 		case victime
 		when :sujet
 			sujet
 		when :objet
 			objet ||= acteur
 		else
+			puts "victime #{action.victime}"
 			case action.victime
 			when :sujet
 				sujet
@@ -204,7 +208,7 @@ class Info < Rosace::Entity
 				objet ||= acteur
 			else
 				if !denonciateur.empty? || !action.denonciateur.empty?
-					get_denonciateur
+					get_denonciateur(action: action)
 				else
 					nil
 				end
@@ -212,8 +216,10 @@ class Info < Rosace::Entity
 		end
 	end
 
+	# @param action [Action, nil]
 	# @return [Acteur, nil]
-	def get_coupable
+	def get_coupable(action: nil)
+		action ||= self.action
 		case coupable
 		when :sujet
 			sujet
@@ -231,8 +237,10 @@ class Info < Rosace::Entity
 		end
 	end
 
+	# @param action [Action]
 	# @return [Acteur, nil]
-	def get_denonciateur
+	def get_denonciateur(action: nil)
+		action ||= self.action
 		case denonciateur
 		when :sujet
 			sujet
@@ -246,7 +254,7 @@ class Info < Rosace::Entity
 				objet ||= acteur
 			else
 				if !victime.empty? || !action.victime.empty?
-					get_victime
+					get_victime(action: action)
 				else
 					nil
 				end

@@ -264,11 +264,11 @@ class Action < Rosace::Entity
 	# @return [Acteur, nil]
 	def get_accusation_sujet(info)
 		if victime == :sujet
-			info.get_victime
+			info.get_victime(action: self)
 		elsif coupable == :sujet
-			info.get_coupable
+			info.get_coupable(action: self)
 		elsif denonciateur == :sujet
-			info.get_denonciateur
+			info.get_denonciateur(action: self)
 		else
 			nil
 		end
@@ -278,11 +278,11 @@ class Action < Rosace::Entity
 	# @return [Acteur, nil]
 	def get_accusation_objet(info)
 		if victime == :objet
-			info.get_victime
+			info.get_victime(action: self)
 		elsif coupable == :objet
-			info.get_coupable
+			info.get_coupable(action: self)
 		elsif denonciateur == :objet
-			info.get_denonciateur
+			info.get_denonciateur(action: self)
 		else
 			nil
 		end || info.acteur
