@@ -480,6 +480,30 @@ module Acteur
 		self.gn("un", "une", "des", "des")
 	end
 
+	# @param verbe [String]
+	# @return [String]
+	def se(verbe)
+		if verbe.voyelle?
+			self.pn(
+				"m’",
+				"t’",
+				"s’",
+				"nous ",
+				"vous ",
+				"s’"
+			) + verbe
+		else
+			self.pn(
+				"me ",
+				"te ",
+				"se ",
+				"nous ",
+				"vous ",
+				"se "
+			)
+		end
+	end
+
 	require_relative "acteur_proxy"
 
 	# @return [Acteur]
