@@ -29,6 +29,7 @@ class Info < Rosace::Entity
 			:cinema,		# Personnage ou comédien de cinéma
 			:animation,		# Personnage de cartoon ou anime
 			:bd,			# Personnage de bande dessinée, comics ou manga
+			:humour,		# Humoristes
 			:litterature,	# Personnage de littérature ou écrivain
 		:anonyme,			# Monsieur-madame tout le monde
 		:patronat,			# CEO, PDG, propriétaire d’entreprise
