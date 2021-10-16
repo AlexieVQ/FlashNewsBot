@@ -5,3 +5,8 @@ id,description,before,weight,hashtag,emoji,acteurs,categories,temporalite,coupab
 4,arrêté,,20,,,pers,,passe proche,sujet,,
 5,assassiné,,20,(RIP{ .sujet.pascal_case })?,,pers,,passe proche,,,
 7,a assassiné,{ .objet = .acteur },30,(RIP{ .objet.pascal_case })?,,pers,,passe proche,,,
+8,a assassiné un anonyme,,10,,,pers,,passe proche,,,
+13,nommé premier ministre,,10,,,pers,politique,proche,,,
+14,nomme objet premier ministre,{ .objet = .acteur },10,,,pers,politique,proche,,,
+15,dissout l’Assemblée Nationale,,10,,,pers,politique,proche,,,
+16,annonce un album,{ .style_m = s(rap|metal|punk|R’n’B|reggaeton|dancehall|raï|disco|jazz( fusion)?); .style_f = s(K-pop|variété|trap|drill|funk|synthwave|zumba|pop); .style = s({ .style_m }|{ .style_f }) },10,,,pers,culture musique,proche,,,

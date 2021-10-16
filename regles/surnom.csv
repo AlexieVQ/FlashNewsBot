@@ -7,3 +7,70 @@ id,value,weight,pers
 8,le dinosaure,10,3
 9,le petit dinosaure,10,3
 10,le dinosaure vert,10,3
+11,le plombier,10,5
+12,le plombier italien,10,5
+13,l’homme politique,10,6
+14,le député,10,6
+15,le député insoumis,10,6
+17,l’ancien président américain,10,7
+18,le leader,10,8
+19,le dictateur,10,8
+20,le leader nord-coréen,10,8
+21,le rappeur,10,9
+22,le rappeur,10,10
+23,le rappeur,10,11
+24,le rappeur marseillais,10,11
+25,le vidéaste,10,12
+26,le vidéaste,10,13
+27,le comédien,10,13
+28,le rappeur,10,13
+29,le vidéaste,10,4
+30,l’auteur,10,4
+31,l’humoriste,10,4
+32,l’humoriste préféré des français,10,4
+33,le vidéaste,10,14
+34,l’homme,10,15
+35,le futur bachelier,10,16
+36,le rappeur,10,17
+38,le chef d’entreprise,10,19
+39,le milliardaire,10,19
+40,le comédien,10,20
+41,le personnage,10,21
+42,l’ancien Premier Ministre,10,22
+43,l’ancien candidat à l’élection présidentielle,10,22
+44,l’ancien président de la République,10,23
+49,le milliardaire,10,26
+50,le fondateur de Facebook,10,26
+52,le milliardaire,10,27
+53,le fondateur d’Amazon,10,27
+54,le supporter marseillais,10,28
+55,l’ancien président de la République,10,29
+56,le plombier,10,30
+57,le plombier italien,10,30
+58,le plombier,10,31
+59,le plombier,10,35
+60,le rappeur,10,36
+61,le rappeur français,10,36
+62,le rappeur rouennais,10,36
+63,le rappeur américain français,10,36
+64,le rappeur sous-côté surveillant à Rouen,10,36
+68,l’ancien Président,10,34
+69,l’ancien Président américain,10,34
+70,le footballer,10,37
+71,le rappeur,10,38
+72,Fouiny,10,38
+73,le chroniqueur,10,39
+74,le vidéaste,10,39
+75,l’éditorialiste,10,39
+76,l’ancien Premier Ministre,10,40
+77,l’ancien Maire de Bordeaux,10,40
+1000,le candidat à l’élection présidentielle,10,6
+1001,le candidat insoumis,10,6
+1002,le candidat insoumis à l’élection présidentielle,10,6
+1004,le youtubeur,10,14
+1006,l’auteur du « Temps des Tempêtes »( sur Audible)?,1,23
+1007,le patron de Facebook,20,26
+1008,le patron d’Amazon,20,27
+1009,l’éditorialiste politique,10,39
+1010,le chroniqueur de Mediapart,10,39
+1011,le chroniqueur de Backseat,10,39
