@@ -39,7 +39,13 @@ class Decla < Rosace::Entity
 				!roles.include?(sujet(sym: true)) &&
 				!roles.include?(objet(sym: true))
 		else
-			args.any? { |role| sujet(sym: true) == role.to_sym }
+			if roles.include?(sujet(sym: true))
+				args.any? { |role| sujet(sym: true) == role.to_sym }
+			elsif roles.include?(objet(sym: true))
+				args.any? { |role| objet(sym: true) == role.to_sym }
+			else
+				false
+			end
 		end
 	end
 
