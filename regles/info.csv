@@ -3,3 +3,5 @@ id,description,before,weight,hashtag,emoji,acteurs,categories,temporalite,coupab
 2,fraude,,10,,,pers,,passe proche,,,
 3,élu président français,,10,Présidentielles,,pers,politique,proche,,,
 4,arrêté,,20,,,pers,,passe proche,sujet,,
+5,assassiné,,20,(RIP{ .sujet.pascal_case })?,,pers,,passe proche,,,
+7,a assassiné,{ .objet = .acteur },30,(RIP{ .objet.pascal_case })?,,pers,,passe proche,,,

@@ -1,5 +1,8 @@
 id,value,weight,ref_info,sujet,objet,pers
-1,"{ .sujet.sujet({ .tierce = .info.acteur; .tierce.coi(dédi{ .sujet.n(e,ons) } {.sujet.comp(la fortune) }) }); }",10,1,sujet,,
+1,"{ .sujet.sujet(dédi{ .sujet.n(e,ons) } ); .tierce = .info.acteur; .tierce.coi({.sujet.comp(la fortune)}) }",10,1,sujet,,
 2,"Yes { .objet.gn(le mec,la meuf,les gens,les meufs) } { .objet.est } dead",10,1,tierce,sujet,
+5,"Yes { .objet.gn(le mec,la meuf,les gens,les meufs) } { .objet.est } dead",10,5,tierce,sujet,
+6,Adieu salope{ .objet.s },10,7,coupable,victime,
+7,"Yes { .objet.gn(le mec,la meuf,les gens,les meufs) } { .objet.est } dead",10,7,coupable,victime,
 1000,Et { `decla1000ratio = new_acteur(ce ratio)`.tonique_explicite } { .info.action.avec_sujet(decla1000ratio) } ?( 🤣)?,20,,sujet,,
 1001,Et { `decla1001ratio = new_acteur(ce ratio)`.tonique_explicite } { .info.motif.avec_sujet(decla1001ratio) } ?( 🤣)?,20,,coupable,,
