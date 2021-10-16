@@ -1,4 +1,9 @@
 id,value,weight,pers
-1,"le youtubeur",10,1
-3,"l’humoriste français",10,1
-5,"l’auteur de la vidéo “Les chemises”",10,1
+1,le youtubeur,10,1
+3,l’humoriste français,10,1
+5,l’auteur de la vidéo “Les chemises”,10,1
+6,le Président de la République,10,2
+7,le Président,10,2
+8,le dinosaure,10,3
+9,le petit dinosaure,10,3
+10,le dinosaure vert,10,3

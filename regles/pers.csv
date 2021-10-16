@@ -1,2 +1,4 @@
 id,nom,pascal_case,weight,genre,nombre,qte,categories,origine,cw
-1,"{ h }Norman( Thavaud)?","Norman(Thavaud)?",10,M,S,1,internet,1,
+1,{ h }Norman( Thavaud)?,Norman(Thavaud)?,10,M,S,1,internet,1,
+2,Emmanuel Macron,(Emmanuel)?Macron,10,M,S,1,politique centre,1,
+3,Yoshi,Yoshi,10,M,S,1,fiction jeu_video,32,
