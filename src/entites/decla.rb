@@ -54,7 +54,7 @@ class Decla < Rosace::Entity
 		if sym
 			super()
 		else
-			(@sujet || pers || case super()
+			a = @sujet || pers || case super()
 			when :sujet
 				info.sujet
 			when :objet
@@ -67,7 +67,8 @@ class Decla < Rosace::Entity
 				info.get_denonciateur
 			else
 				@sujet = info.acteur
-			end).to_1e_personne
+			end
+			a ? a.to_1e_personne : nil
 		end
 	end
 
