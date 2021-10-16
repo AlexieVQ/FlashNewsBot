@@ -12,8 +12,6 @@ class Action < Rosace::Entity
 	#  @return [String]
 	# @!attribute [r] infinitif
 	#  @return [String]
-	# @!attribute [r] participe
-	#  @return [String]
 	# @!attribute [r] complement
 	#  @return [String]
 	# @!attribute [r] forme_nom
@@ -61,20 +59,16 @@ class Action < Rosace::Entity
 		# @type [Acteur, nil]
 		@objet = objet || old_objet
 		out = if verbe_contient_sujet
-			verbe + if !participe.empty?
-				" " + participe
-			else
-				""
-			end
+			verbe
 		elsif verbe_obligatoire || force_verbe
-			self.sujet.sujet(verbe) + if !participe.empty?
-				" " + participe
-			else
-				""
-			end
+			self.sujet.sujet(verbe)
 		else
 			self.sujet.sujet_explicite
-		end + " " + complement
+		end
+		c = complement
+		unless c.empty?
+			out += " " + c
+		end
 		@sujet = old_sujet
 		@objet = old_objet
 		out
@@ -237,9 +231,24 @@ class Action < Rosace::Entity
 		end
 	end
 
+	# @param acteur [Acteur]
+	# @return [Acteur]
+	def objet=(acteur)
+		if info(static: true)
+			info(static: true).objet = acteur
+		else
+			@objet = acteur
+		end
+	end
+
+	# @param static [Boolean]
 	# @return [Info, nil]
-	def info
-		@info_accu || super
+	def info(static: false)
+		if static
+			super()
+		else
+			@info_accu || super()
+		end
 	end
 
 	private
@@ -276,7 +285,7 @@ class Action < Rosace::Entity
 			info.get_denonciateur
 		else
 			nil
-		end
+		end || info.acteur
 	end
 
 end
