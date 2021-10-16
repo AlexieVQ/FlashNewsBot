@@ -86,7 +86,7 @@ class Info < Rosace::Entity
 	#  @return [Decla, nil]
 	# @!attribute [r] _decla_list
 	#  @return [Array<Decla>]
-	has_many :Decla, :info, :_decla
+	has_many :Decla, :ref_info, :_decla
 
 	# @return [Acteur, nil]
 	attr_accessor :objet
@@ -100,29 +100,21 @@ class Info < Rosace::Entity
 	# @return [String]
 	def value
 		before
-		phrase = action.value(force_verbe: false) + if !coupable.empty? ||
-			!victime.empty? || !denonciateur.empty?
-			# @type [Action]
-			action_motif = context.pick_entity(
-				:Action,
-				coupable.empty? ? "" : "coupable",
-				victime.empty? ? "" : "victime",
-				denonciateur.empty? ? "" : "denonciateur"
-			)
-			motif = nil
+		phrase = action.value(force_verbe: false) + if motif
+			phrase_motif = nil
 			[:coupable, :victime, :denonciateur].each do |role|
-				if send(role) == :objet && action_motif.send(role) == :sujet
+				if send(role) == :objet && motif.send(role) == :sujet
 					saved_context = context.clone
 					begin
-						motif = action_motif.accusation_qui(info: self)
+						phrase_motif = motif.accusation_qui(info: self)
 					rescue Rosace::EvaluationException => e
 						context.log(e)
 						context.restore_state(saved_context)
 					end
 				end
 			end
-			motif ||= action_motif.accusation(info: self)
-			" " + motif
+			phrase_motif ||= motif.accusation(info: self)
+			" " + phrase_motif
 		else
 			""
 		end + ". " + context.pick_entity(:StructDecla).value + " " +
@@ -144,9 +136,30 @@ class Info < Rosace::Entity
 		end
 	end
 
+	# @return [Action, nil]
+	def motif
+		if !coupable.empty? || !victime.empty? || !denonciateur.empty?
+			@motif ||= context.pick_entity(
+				:Action,
+				coupable.empty? ? "" : "coupable",
+				victime.empty? ? "" : "victime",
+				denonciateur.empty? ? "" : "denonciateur"
+			)
+		else
+			nil
+		end
+	end
+
 	# @return [Decla]
 	def decla
-		@decla ||= _decla || context.pick_entity(:Decla)
+		spec = rand(2) == 1
+		accu = rand(2) == 1
+		@decla ||= spec && _decla || context.pick_entity(
+			:Decla,
+			!accu || coupable.empty? ? "" : "coupable",
+			!accu || victime.empty? ? "" : "victime",
+			!accu || denonciateur.empty? ? "" : "denonciateur"
+		)
 	end
 
 	# @return [Acteur, nil]
@@ -183,7 +196,11 @@ class Info < Rosace::Entity
 		when :objet
 			objet ||= acteur
 		else
-			nil
+			if !denonciateur.empty?
+				get_denonciateur
+			else
+				nil
+			end
 		end
 	end
 
@@ -207,7 +224,11 @@ class Info < Rosace::Entity
 		when :objet
 			objet ||= acteur
 		else
-			nil
+			if !victime.empty?
+				get_victime
+			else
+				nil
+			end
 		end
 	end
 end
