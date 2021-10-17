@@ -170,7 +170,14 @@ class Info < Rosace::Entity
 
 	# @return [Acteur, nil]
 	def acteur
-		context.pick_entity(:Pers)
+		a = []
+		if acteurs.include?(:pers)
+			a << context.pick_entity(:Pers)
+		end
+		if acteurs.include?(:pays)
+			a << context.pick_entity(:Lieu, "pays")
+		end
+		a[rand(a.length)]
 	end
 
 	# @return [Acteur, nil]

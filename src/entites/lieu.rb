@@ -61,6 +61,11 @@ class Lieu < Rosace::Entity
 	#  @return [Array<Symbol>]
 	mult_enum :regime, *REGIMES
 
+	# @return [Boolean]
+	def pick?(*args)
+		args.empty? || args.any? { |arg| arg.to_sym == type }
+	end
+
 	# @return [String]
 	def code
 		c = super
@@ -100,6 +105,11 @@ class Lieu < Rosace::Entity
 	# @return [Integer]
 	def qte
 		1000
+	end
+
+	# @return [Boolean]
+	def paradis_fiscal
+		super.to_i == 1
 	end
 
 end
