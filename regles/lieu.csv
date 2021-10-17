@@ -1,0 +1,11 @@
+id,nom,nom_en,pascal_case,genre,nombre,weight,adj_ms,adj_fs,adj_mp,adj_fp,parent,code,emoji,type,regime
+1,la France,France,France,F,S,10,français,française,français,françaises,133,FR,🇫🇷,pays,republique president
+2,l’Allemagne,Germany,Allemagne,F,S,10,allemand,allemande,allemands,allemandes,133,DE,🇩🇪,pays,republique chancelier
+3,les États-Unis( d’Amérique)?,(USA|America),USA,M,P,10,américain,américaine,américains,américaines,,US(A)?,🇺🇸,pays,republique president
+4,le Royaume-Uni,United Kingdom,UK,M,S,10,britannique,britannique,britanniques,britanniques,132,UK,🇬🇧,pays,royaume parlement
+5,l’Espagne,Spain,Espagne,F,S,10,espagnol,espagnole,espagnols,espagnoles,133,ES,🇪🇸,pays,royaume parlement
+6,le Portugal,Portugal,Portugal,M,S,10,portugais,portugaise,portugais,portugaises,133,PT,🇵🇹,pays,republique president
+7,l’Italie,Italy,Italie,F,S,10,italien,italienne,italiens,italiennes,133,IT,🇮🇹,pays,republique parlement
+8,la Belgique,Belgium,Belgique,F,S,10,belge,belge,belges,belges,133,BE,🇧🇪,pays,royaume parlement
+9,le Canada,Canada,Canada,M,S,10,canadien,canadienne,canadiens,canadiennes,,CA,🇨🇦,pays,royaume parlement
+10,la (République populaire de )?Chine,China,Chine,F,S,10,chinois,chinoise,chinois,chinoises,,CN,🇨🇳,pays,dictature president
