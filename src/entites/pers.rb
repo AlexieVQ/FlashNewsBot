@@ -25,6 +25,10 @@ class Pers < Rosace::Entity
 	#  @return [Array<Symbol>]
 	mult_enum :categories, *Info::CATEGORIES
 
+	# @!attribute [r] origine
+	#  @return [Lieu, nil]
+	reference :origine, :Lieu, :optional
+
 	# @!attribute [r] surnom
 	#  @return [Surnom, nil]
 	# @!attribute [r] surnom_list
@@ -55,6 +59,24 @@ class Pers < Rosace::Entity
 	# @return [Integer]
 	def qte
 		super.to_i
+	end
+
+	# @return [Lieu, nil]
+	def pays
+		if origine
+			origine.pays
+		else
+			nil
+		end
+	end
+
+	# @return [String]
+	def emoji_origine
+		if origine
+			origine.emoji
+		else
+			""
+		end
 	end
 
 end
