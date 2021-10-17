@@ -152,7 +152,7 @@ class Info < Rosace::Entity
 				denonciateur.empty? ? "" : "denonciateur"
 			)
 		else
-			action
+			nil
 		end
 	end
 
@@ -162,15 +162,9 @@ class Info < Rosace::Entity
 		accu = rand(10) > 0
 		@decla ||= spec && _decla || context.pick_entity(
 			:Decla,
-			!accu || coupable.empty? && action.coupable.empty? ?
-				"" :
-				"coupable",
-			!accu || victime.empty? && action.victime.empty? ?
-				"" :
-				"victime",
-			!accu || denonciateur.empty? && action.denonciateur.empty? ?
-				"" :
-				"denonciateur"
+			!accu || coupable.empty? ? "" : "coupable",
+			!accu || victime.empty? ? "" : "victime",
+			!accu || denonciateur.empty? ? "" : "denonciateur"
 		)
 	end
 
