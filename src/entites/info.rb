@@ -101,7 +101,7 @@ class Info < Rosace::Entity
 	# @return [String]
 	def value
 		before
-		phrase = action.value(force_verbe: false) + if motif
+		phrase = action.value(force_verbe: false) + if has_motif?
 			phrase_motif = nil
 			[:coupable, :victime, :denonciateur].each do |role|
 				if send(role) == :objet && motif.send(role) == :sujet
@@ -137,6 +137,11 @@ class Info < Rosace::Entity
 		end
 	end
 
+	# @return [Boolean]
+	def has_motif?
+		!coupable.empty? || !victime.empty? || !denonciateur.empty?
+	end
+
 	# @return [Action, nil]
 	def motif
 		if !coupable.empty? || !victime.empty? || !denonciateur.empty?
@@ -147,19 +152,25 @@ class Info < Rosace::Entity
 				denonciateur.empty? ? "" : "denonciateur"
 			)
 		else
-			nil
+			action
 		end
 	end
 
 	# @return [Decla]
 	def decla
-		spec = rand(2) == 1
-		accu = rand(2) == 1
+		spec = rand(1 + _decla_list.reduce(0) { |w, d| w + d.weight }) > 0
+		accu = rand(10) > 0
 		@decla ||= spec && _decla || context.pick_entity(
 			:Decla,
-			!accu || coupable.empty? ? "" : "coupable",
-			!accu || victime.empty? ? "" : "victime",
-			!accu || denonciateur.empty? ? "" : "denonciateur"
+			!accu || coupable.empty? && action.coupable.empty? ?
+				"" :
+				"coupable",
+			!accu || victime.empty? && action.victime.empty? ?
+				"" :
+				"victime",
+			!accu || denonciateur.empty? && action.denonciateur.empty? ?
+				"" :
+				"denonciateur"
 		)
 	end
 
