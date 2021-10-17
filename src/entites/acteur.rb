@@ -500,7 +500,7 @@ module Acteur
 				"nous ",
 				"vous ",
 				"se "
-			)
+			) + verbe
 		end
 	end
 
