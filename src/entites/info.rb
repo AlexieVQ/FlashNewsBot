@@ -193,14 +193,12 @@ class Info < Rosace::Entity
 	# @return [Acteur, nil]
 	def get_victime(action: nil)
 		action ||= self.action
-		puts "info #{id}, victime #{victime}"
 		case victime
 		when :sujet
 			sujet
 		when :objet
 			objet ||= acteur
 		else
-			puts "victime #{action.victime}"
 			case action.victime
 			when :sujet
 				sujet
