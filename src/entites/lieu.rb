@@ -63,7 +63,9 @@ class Lieu < Rosace::Entity
 
 	# @return [Boolean]
 	def pick?(*args)
-		args.empty? || args.any? { |arg| arg.to_sym == type }
+		args.empty? || args.any? do |arg|
+			arg.to_sym == type || arg == "paradis_fiscal" && paradis_fiscal
+		end
 	end
 
 	# @return [String]
