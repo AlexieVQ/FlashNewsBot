@@ -8,11 +8,7 @@ class Action < Rosace::Entity
 
 	self.file = "regles/action.csv"
 
-	# @!attribute [r] verbe
-	#  @return [String]
-	# @!attribute [r] infinitif
-	#  @return [String]
-	# @!attribute [r] complement
+	# @!attribute [r] verbiale
 	#  @return [String]
 	# @!attribute [r] forme_nom
 	#  @return [String]
@@ -30,6 +26,11 @@ class Action < Rosace::Entity
 	# @!attribute [r] denonciateur
 	#  @return [:sujet, :objet, :""]
 	enum :denonciateur, *Info::ROLES
+
+	def init
+		# @type [:present, :passe, :infinitif_present, :infinitif_passe]
+		@temps = :passe
+	end
 
 	# @param args [Array<String>]
 	# @return [Boolean]
@@ -49,29 +50,104 @@ class Action < Rosace::Entity
 
 	# @param sujet [Acteur, nil]
 	# @param objet [Acteur, nil]
+	# @param temps [:present, :passe, :infinitif_present, :infinitif_passe]
 	# @param force_verbe [Boolean]
 	# @return [String]
-	def value(sujet: nil, objet: nil, force_verbe: true)
+	def value(sujet: nil, objet: nil, temps: :passe, force_verbe: true)
 		old_sujet = @sujet
 		old_objet = @objet
+		old_temps = @temps
 		# @type [Acteur, nil]
 		@sujet = sujet || old_sujet
 		# @type [Acteur, nil]
 		@objet = objet || old_objet
-		out = if verbe_contient_sujet
-			verbe
-		elsif verbe_obligatoire || force_verbe
-			self.sujet.sujet(verbe)
+		@temps = temps || @temps
+		out = if [:passe, :present].include?(@temps)
+			self.sujet.sujet(verbiale)
 		else
-			self.sujet.sujet_explicite
-		end
-		c = complement
-		unless c.empty?
-			out += " " + c
+			verbiale
 		end
 		@sujet = old_sujet
 		@objet = old_objet
+		@temps = old_temps
 		out
+	end
+
+	# @param present [String]
+	# @param passe [String]
+	# @param infinitif_present [String]
+	# @param infinitif_passe [String]
+	# @return [String]
+	def v(present, passe, infinitif_present, infinitif_passe)
+		case @temps
+		when :present
+			present
+		when :passe
+			passe
+		when :infinitif_present
+			infinitif_present
+		when :infinitif_passe
+			infinitif_passe
+		else
+			passe
+		end
+	end
+
+	# @return [String]
+	def etre
+		v(sujet.est, sujet.est, "être", "être")
+	end
+
+	# @return [String]
+	def avoir_ete
+		v(sujet.est, "#{sujet.a} été", "être", "avoir été")
+	end
+
+	# @return [String]
+	def avoir
+		v(sujet.a, sujet.a, "avoir", "avoir")
+	end
+
+	# @return [String]
+	def avoir_eu
+		v(sujet.a, "#{sujet.a} eu", "avoir", "avoir eu")
+	end
+
+	# @param s1 [String]
+	# @param s2 [String]
+	# @param s3 [String]
+	# @param p1 [String]
+	# @param p2 [String]
+	# @param p3 [String]
+	# @param infinitif [String]
+	# @param participe [String]
+	# @return [String]
+	def a(s1, s2, s3, p1, p2, p3, infinitif, participe)
+		v(
+			sujet.pn(s1, s2, s3, p1, p2, p3),
+			"#{sujet.a} #{participe}",
+			infinitif,
+			"avoir #{participe}"
+		)
+	end
+
+
+	# @param s1 [String]
+	# @param s2 [String]
+	# @param s3 [String]
+	# @param p1 [String]
+	# @param p2 [String]
+	# @param p3 [String]
+	# @param infinitif [String]
+	# @param participe [String]
+	# @return [String]
+	def est(s1, s2, s3, p1, p2, p3, infinitif, participe)
+		v(
+			sujet.pn(s1, s2, s3, p1, p2, p3),
+			"#{sujet.est} #{participe}",
+			infinitif,
+			"être #{participe}"
+		)
 	end
 
 	# @param nom_var [String]
@@ -117,27 +193,36 @@ class Action < Rosace::Entity
 			raise Rosace::EvaluationException,
 				"Action[#{id}]: le verbe contient le sujet"
 		end
-		old_sujet = @sujet
-		old_objet = @objet
-		@sujet = sujet || old_sujet
-		@objet = objet || old_objet
-		out = "qui " + verbe + " " + complement
-		@sujet = old_sujet
-		@objet = old_objet
+		"qui " + value(
+			sujet: sujet,
+			objet: objet,
+			temps: :passe,
+			force_verbe: true
+		)
 	end
 
 	# @param sujet [Acteur, nil]
 	# @param objet [Acteur, nil]
 	# @return [String]
 	def car(sujet: nil, objet: nil)
-		"car " + value(sujet: sujet, objet: objet)
+		"car " + value(
+			sujet: sujet,
+			objet: objet,
+			temps: :passe,
+			force_verbe: true
+		)
 	end
 
 	# @param sujet [Acteur, nil]
 	# @param objet [Acteur, nil]
 	# @return [String]
 	def parce_que(sujet: nil, objet: nil)
-		out = value(sujet: sujet, objet: objet)
+		out = value(
+			sujet: sujet,
+			objet: objet,
+			temps: :passe,
+			force_verbe: true
+		)
 		(out.voyelle? ? "parce qu’" : "parce que ") + out
 	end
 
@@ -256,7 +341,7 @@ class Action < Rosace::Entity
 	# @return [String]
 	def infinitif_ou_nom
 		rand(2) == 1 ?
-			infinitif + " " + complement :
+			value(temps: :infinitif_passe) :
 			forme_nom.gsub(/\A(un |une |des |le |la |les |l’)/, "")
 	end
 
