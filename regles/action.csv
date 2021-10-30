@@ -14,7 +14,7 @@ id,verbale,nominale,weight,verbe_contient_sujet,info,coupable,victime,denonciate
 15,{ .avoir_ete } condamné{ .sujet.es } à { `.prison ||= s(10|20|30|50)` } ans de prison dont { `.sursis ||= s(2|5|8|10)` } avec sursis,{ .sujet.comp(la condamnation) } à { `.prison ||= s(10|20|30|50)` } ans de prison dont { `.sursis ||= s(2|5|8|10)` } avec sursis,10,,4,,sujet,
 16,{ .etre } activement recherché{ .sujet.es } par Interpol,{ .sujet.comp(la recherche) } par Interpol,10,,4,,sujet,
 17,{ .avoir_ete } tué{ .sujet.es },{ .sujet.comp(l’assassinat) },10,,5,,sujet,
-18,"{ .v({ .sujet.se({ .sujet.pn(fais,fais,fait,faisons,faites,font) }) },{ .sujet.se({ .sujet.est }) } fait{ .sujet.es },se faire,s’être fait{ .sujet.est }) } planter",{ .sujet.comp(le plantage) },5,,5,,sujet,
+18,"{ .sujet.se({ .verbe({ .sujet.pn(fais,fais,fait,faisons,faites,font) },{ .sujet.est } fait{ .sujet.es },faire,être fait{ .sujet.est }) }) } planter",{ .sujet.comp(le plantage) },5,,5,,sujet,
 21,"{ .objet.cod({ .a(assassine,assassines,assassine,assassinons,assassinez,assassinent,assassiner,assassiné) }) }",{ .objet.comp(l’assassinat) },10,,7,sujet,objet,
 23,"{ .objet.cod({ .a(plante,plantes,plante,plantons,plantez,plantent,planter,planté) }) }",{ .objet.comp(le plantage) },10,,7,sujet,objet,
 24,"{ .a(plante,plantes,plante,plantons,plantez,plantent,planter,planté) } un mec",le plantage d’un mec,10,,8,sujet,,

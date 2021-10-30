@@ -72,7 +72,7 @@ class Action < Rosace::Entity
 	# @param infinitif_present [String]
 	# @param infinitif_passe [String]
 	# @return [String]
-	def v(present, passe, infinitif_present, infinitif_passe)
+	def verbe(present, passe, infinitif_present, infinitif_passe)
 		case @temps
 		when :present
 			present
@@ -89,22 +89,22 @@ class Action < Rosace::Entity
 
 	# @return [String]
 	def etre
-		v(sujet.est, sujet.est, "être", "être")
+		verbe(sujet.est, sujet.est, "être", "être")
 	end
 
 	# @return [String]
 	def avoir_ete
-		v(sujet.est, "#{sujet.a} été", "être", "avoir été")
+		verbe(sujet.est, "#{sujet.a} été", "être", "avoir été")
 	end
 
 	# @return [String]
 	def avoir
-		v(sujet.a, sujet.a, "avoir", "avoir")
+		verbe(sujet.a, sujet.a, "avoir", "avoir")
 	end
 
 	# @return [String]
 	def avoir_eu
-		v(sujet.a, "#{sujet.a} eu", "avoir", "avoir eu")
+		verbe(sujet.a, "#{sujet.a} eu", "avoir", "avoir eu")
 	end
 
 	# @param s1 [String]
@@ -117,7 +117,7 @@ class Action < Rosace::Entity
 	# @param participe [String]
 	# @return [String]
 	def a(s1, s2, s3, p1, p2, p3, infinitif, participe)
-		v(
+		verbe(
 			sujet.pn(s1, s2, s3, p1, p2, p3),
 			"#{sujet.a} #{participe}",
 			infinitif,
@@ -136,7 +136,7 @@ class Action < Rosace::Entity
 	# @param participe [String]
 	# @return [String]
 	def est(s1, s2, s3, p1, p2, p3, infinitif, participe)
-		v(
+		verbe(
 			sujet.pn(s1, s2, s3, p1, p2, p3),
 			"#{sujet.est} #{participe}",
 			infinitif,
