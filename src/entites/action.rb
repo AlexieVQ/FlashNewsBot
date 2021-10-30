@@ -12,6 +12,8 @@ class Action < Rosace::Entity
 	#  @return [String]
 	# @!attribute [r] nominale
 	#  @return [String]
+	# @!attribute [r] sujet_perso
+	#  @return [String]
 
 	reference :info, :Info, :optional
 
@@ -38,16 +40,12 @@ class Action < Rosace::Entity
 		args.any? { |role| !role.empty? && send(role) == :sujet }
 	end
 
-	# @return [Boolean]
-	def verbe_contient_sujet
-		super.to_i == 1
-	end
-
 	# @param sujet [Acteur, nil]
 	# @param objet [Acteur, nil]
 	# @param temps [:present, :passe, :infinitif_present, :infinitif_passe]
+	# @param sujet? [Boolean]
 	# @return [String]
-	def value(sujet: nil, objet: nil, temps: :passe)
+	def value(sujet: nil, objet: nil, temps: :passe, mettre_sujet: true)
 		old_sujet = @sujet
 		old_objet = @objet
 		old_temps = @temps
@@ -56,10 +54,16 @@ class Action < Rosace::Entity
 		# @type [Acteur, nil]
 		@objet = objet || old_objet
 		@temps = temps || @temps
-		out = if [:passe, :present].include?(@temps)
-			self.sujet.sujet(verbale)
-		else
+		out = if [:infinitif_passe, :infinitif_present].include?(@temps) ||
+			!mettre_sujet
 			verbale
+		else
+			sp = sujet_perso
+			unless sp.empty?
+				sp + " " + verbale
+			else
+				self.sujet.sujet(verbale)
+			end
 		end
 		@sujet = old_sujet
 		@objet = old_objet
@@ -183,11 +187,16 @@ class Action < Rosace::Entity
 	# @return [String]
 	# @raise [Rosace::EvaluationException]
 	def qui(sujet: nil, objet: nil)
-		if verbe_contient_sujet
+		unless sujet_perso.empty?
 			raise Rosace::EvaluationException,
-				"Action[#{id}]: le verbe contient le sujet"
+				"Action[#{id}]: l’action a un sujet personnalisé"
 		end
-		"qui " + value(sujet: sujet, objet: objet, temps: :passe)
+		"qui " + value(
+			sujet: sujet,
+			objet: objet,
+			temps: :passe,
+			mettre_sujet: false
+		)
 	end
 
 	# @param sujet [Acteur, nil]
