@@ -102,20 +102,7 @@ class Info < Rosace::Entity
 	def value
 		before
 		phrase = action.value + if has_motif?
-			phrase_motif = nil
-			[:coupable, :victime, :denonciateur].each do |role|
-				if send(role) == :objet && motif.send(role) == :sujet
-					saved_context = context.clone
-					begin
-						phrase_motif = motif.accusation_qui(info: self)
-					rescue Rosace::EvaluationException => e
-						context.log(e)
-						context.restore_state(saved_context)
-					end
-				end
-			end
-			phrase_motif ||= motif.accusation(info: self)
-			" " + phrase_motif
+			" " + motif.accusation(info: self)
 		else
 			""
 		end + ". " + context.pick_entity(:StructDecla).value + " " +
@@ -209,13 +196,13 @@ class Info < Rosace::Entity
 		when :sujet
 			sujet
 		when :objet
-			objet ||= acteur
+			self.objet ||= acteur
 		else
 			case action.victime
 			when :sujet
 				sujet
 			when :objet
-				objet ||= acteur
+				self.objet ||= acteur
 			else
 				if !denonciateur.empty? || !action.denonciateur.empty?
 					get_denonciateur(action: action)
@@ -234,13 +221,13 @@ class Info < Rosace::Entity
 		when :sujet
 			sujet
 		when :objet
-			objet ||= acteur
+			self.objet ||= acteur
 		else
 			case action.coupable
 			when :sujet
 				sujet
 			when :objet
-				objet ||= acteur
+				self.objet ||= acteur
 			else
 				nil
 			end
@@ -255,13 +242,13 @@ class Info < Rosace::Entity
 		when :sujet
 			sujet
 		when :objet
-			objet ||= acteur
+			self.objet ||= acteur
 		else
 			case action.denonciateur
 			when :sujet
 				sujet
 			when :objet
-				objet ||= acteur
+				self.objet ||= acteur
 			else
 				if !victime.empty? || !action.victime.empty?
 					get_victime(action: action)
