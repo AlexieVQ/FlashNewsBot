@@ -1,7 +1,7 @@
 id,description,before,weight,hashtag,emoji,acteurs,categories,temporalite,coupable,victime,denonciateur
 1,mort,,20,RIP{ .sujet.pascal_case },,pers,,passe proche,,,
 2,fraude,,10,,,pers,,passe proche,,,
-3,élu président français,,10,Présidentielles,,pers,politique,proche,,,
+3,élu président français,,10,Présidentielles,🗳️,pers,politique,proche,,,
 4,arrêté,,20,,,pers,,passe proche,sujet,,
 5,assassiné,,20,(RIP{ .sujet.pascal_case })?,,pers,,passe proche,,,
 7,a assassiné,{ .objet = .acteur },30,(RIP{ .objet.pascal_case })?,,pers,,passe proche,,,
@@ -9,4 +9,13 @@ id,description,before,weight,hashtag,emoji,acteurs,categories,temporalite,coupab
 13,nommé premier ministre,,10,,,pers,politique,proche,,,
 14,nomme objet premier ministre,{ .objet = .acteur },10,,,pers,politique,proche,,,
 15,dissout l’Assemblée Nationale,,10,,,pers,politique,proche,,,
-16,annonce un album,{ .style_m = s(rap|metal|punk|R’n’B|reggaeton|dancehall|raï|disco|jazz( fusion)?); .style_f = s(K-pop|variété|trap|drill|funk|synthwave|zumba|pop); .style = s({ .style_m }|{ .style_f }) },10,,,pers,culture musique,proche,,,
+16,annonce un album,{ .style_m = s(rap|metal|punk|R’n’B|reggaeton|dancehall|raï|disco|jazz( fusion)?); .style_f = s(K-pop|variété|trap|drill|funk|synthwave|zumba|pop); .style = s({ .style_m }|{ .style_f }) },10,,💿,pers,culture musique,proche,,,
+21,candidat à l’élection présidentielle,,10,Présidentielle(s)?2022,,pers,politique,proche,,,
+27,poursuit en justice,{ .objet = .acteur },10,,,pers,,proche,objet,sujet,sujet
+29,aurait été aperçu,,1,Paranormal,,pers,,proche,,,
+30,aperçu en train de se droguer,,5,,🌿,pers,,proche,,,
+31,aperçu en fursuit,,10,,🐺|🦊,pers,,proche,,,
+32,se lance dans le X,,2,,🔞,pers,,proche,,,
+33,se lance dans la musique,,2,,🎹|🎤,pers,,proche,,,
+34,se lance dans le cinéma,,2,,🎥|🎞️|📽️,pers,,proche,,,
+35,se lance dans la politique,,2,,,pers,,proche,,,
