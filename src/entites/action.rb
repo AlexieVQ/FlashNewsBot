@@ -8,9 +8,9 @@ class Action < Rosace::Entity
 
 	self.file = "regles/action.csv"
 
-	# @!attribute [r] verbiale
+	# @!attribute [r] verbale
 	#  @return [String]
-	# @!attribute [r] forme_nom
+	# @!attribute [r] nominale
 	#  @return [String]
 
 	reference :info, :Info, :optional
@@ -63,9 +63,9 @@ class Action < Rosace::Entity
 		@objet = objet || old_objet
 		@temps = temps || @temps
 		out = if [:passe, :present].include?(@temps)
-			self.sujet.sujet(verbiale)
+			self.sujet.sujet(verbale)
 		else
-			verbiale
+			verbale
 		end
 		@sujet = old_sujet
 		@objet = old_objet
@@ -342,7 +342,7 @@ class Action < Rosace::Entity
 	def infinitif_ou_nom
 		rand(2) == 1 ?
 			value(temps: :infinitif_passe) :
-			forme_nom.gsub(/\A(un |une |des |le |la |les |l’)/, "")
+			nominale.gsub(/\A(un |une |des |le |la |les |l’)/, "")
 	end
 
 	# @param info [Info]

@@ -1,4 +1,4 @@
-id,verbiale,forme_nom,weight,verbe_obligatoire,verbe_contient_sujet,info,coupable,victime,denonciateur
+id,verbale,nominale,weight,verbe_obligatoire,verbe_contient_sujet,info,coupable,victime,denonciateur
 1,{ .etre } mort{ .sujet.es },{ .sujet.comp(la mort) },10,1,0,1,,sujet,
 2,{ .avoir } été retrouvé{ .sujet.es } mort{ .sujet.es },{ .sujet.comp(la mort) },10,1,0,1,,sujet,
 3,{ .etre } mort{ .sujet.es } noyer,{ .sujet.comp(la noyade) },5,0,0,1,,sujet,
