@@ -101,7 +101,7 @@ class Info < Rosace::Entity
 	# @return [String]
 	def value
 		before
-		phrase = action.value(force_verbe: false) + if has_motif?
+		phrase = action.value + if has_motif?
 			phrase_motif = nil
 			[:coupable, :victime, :denonciateur].each do |role|
 				if send(role) == :objet && motif.send(role) == :sujet

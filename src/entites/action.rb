@@ -39,11 +39,6 @@ class Action < Rosace::Entity
 	end
 
 	# @return [Boolean]
-	def verbe_obligatoire
-		super.to_i == 1
-	end
-
-	# @return [Boolean]
 	def verbe_contient_sujet
 		super.to_i == 1
 	end
@@ -51,9 +46,8 @@ class Action < Rosace::Entity
 	# @param sujet [Acteur, nil]
 	# @param objet [Acteur, nil]
 	# @param temps [:present, :passe, :infinitif_present, :infinitif_passe]
-	# @param force_verbe [Boolean]
 	# @return [String]
-	def value(sujet: nil, objet: nil, temps: :passe, force_verbe: true)
+	def value(sujet: nil, objet: nil, temps: :passe)
 		old_sujet = @sujet
 		old_objet = @objet
 		old_temps = @temps
@@ -193,36 +187,21 @@ class Action < Rosace::Entity
 			raise Rosace::EvaluationException,
 				"Action[#{id}]: le verbe contient le sujet"
 		end
-		"qui " + value(
-			sujet: sujet,
-			objet: objet,
-			temps: :passe,
-			force_verbe: true
-		)
+		"qui " + value(sujet: sujet, objet: objet, temps: :passe)
 	end
 
 	# @param sujet [Acteur, nil]
 	# @param objet [Acteur, nil]
 	# @return [String]
 	def car(sujet: nil, objet: nil)
-		"car " + value(
-			sujet: sujet,
-			objet: objet,
-			temps: :passe,
-			force_verbe: true
-		)
+		"car " + value(sujet: sujet, objet: objet, temps: :passe)
 	end
 
 	# @param sujet [Acteur, nil]
 	# @param objet [Acteur, nil]
 	# @return [String]
 	def parce_que(sujet: nil, objet: nil)
-		out = value(
-			sujet: sujet,
-			objet: objet,
-			temps: :passe,
-			force_verbe: true
-		)
+		out = value(sujet: sujet, objet: objet, temps: :passe)
 		(out.voyelle? ? "parce qu’" : "parce que ") + out
 	end
 
