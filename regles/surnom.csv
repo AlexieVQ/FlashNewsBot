@@ -64,6 +64,79 @@ id,value,weight,pers
 75,l’éditorialiste,10,39
 76,l’ancien Premier Ministre,10,40
 77,l’ancien Maire de Bordeaux,10,40
+78,l’entrepreneur,10,41
+82,le maître jedi,10,42
+83,le jedi,10,42
+84,le jedi à la retraite,10,42
+85,l’éditorialiste,10,44
+87,le chroniqueur,10,45
+88,le chroniqueur,10,46
+89,le philosophe,30,47
+90,le “philosophe”,10,47
+91,le « philosophe »,10,47
+92,le “philosophe mes couilles” d’après { Pers.tonique },10,47
+93,l’ancien Premier Ministre,10,48
+94,le maire du Havre,10,48
+95,le syndicaliste,10,49
+96,le secrétaire général de la CGT,10,49
+97,l’homme à la moustache,5,49
+98,le consultant sportif,10,50
+99,le chroniqueur,10,50
+100,le journaliste,10,50
+101,l’artiste,10,51
+102,l’artiste de rue,10,51
+104,le chef de l’église catholique,10,52
+105,le chef des catholiques,10,52
+106,le chef d’État russe,10,53
+107,le Président russe,10,53
+108,l’ancien garde du corps du Président,10,54
+109,le Maire de Levallois-Perret,10,55
+110,le Maire LES RÉPUBLICAINS de Levallois-Perret,10,55
+111,le Maire de Levallois-Perret dans les Hauts-de-Seine,10,55
+112,le Maire de Levallois-Perret et roi des roublards,10,55
+113,le roi des roublards,10,55
+114,l’ancien Ministre de l’Intérieur,10,56
+115,l’ancien Ministre,10,56
+116,l’ancien Maire de Lyon,10,56
+117,le gardien de la paix,10,57
+118,le fonctionnaire,10,57
+120,le vidéaste,10,59
+121,le youtubeur,10,59
+122,le rappeur,10,60
+123,“B2O”,10,60
+124,le rappeur de Boulogne-Billancourt,10,60
+125,le “Duc de Boulogne”,10,60
+126,le rappeur,10,61
+127,le rappeur de Sevran,10,61
+128,le rappeur sevranais,10,61
+129,le rappeur du 93,10,61
+130,le journaliste,10,62
+131,l’animal,10,63
+132,l’animal,10,64
+133,l’ancien Ministre de la Transition écologique,10,65
+134,le militant écologiste,10,65
+138,l’écologiste,10,67
+139,l’essayiste,10,67
+140,l’animateur,10,68
+141,l’essayiste,10,69
+142,le chroniqueur,10,69
+143,le polémiste,10,69
+144,l’animateur,10,70
+145,l’animateur,10,71
+146,l’assistant vocal,10,72
+147,l’assistant personnel,10,72
+148,l’assistant vocal,10,73
+149,l’assistant personnel,10,73
+150,l’assistant d’Apple,10,73
+151,l’assassin présumé,10,74
+152,le suspect,10,74
+153,le dinosaure,10,75
+154,le commercial,10,76
+155,l’homme politique,10,77
+156,l’ancien président du FN,10,77
+157,l’ancien Premier Ministre,10,78
+158,l’homme politique,10,78
+159,l’animateur,10,79
 1000,le candidat à l’élection présidentielle,10,6
 1001,le candidat insoumis,10,6
 1002,le candidat insoumis à l’élection présidentielle,10,6
@@ -74,3 +147,4 @@ id,value,weight,pers
 1009,l’éditorialiste politique,10,39
 1010,le chroniqueur de Mediapart,10,39
 1011,le chroniqueur de Backseat,10,39
+1012,le PDG de Free,10,41
