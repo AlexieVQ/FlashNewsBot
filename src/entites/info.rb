@@ -5,7 +5,8 @@ class Info < Rosace::Entity
 
 	TYPES_ACTEUR = [
 		:pers,
-		:pays
+		:pays,
+		:entreprise
 	]
 
 	CATEGORIES = [
@@ -44,7 +45,7 @@ class Info < Rosace::Entity
 
 	ROLES = [:"", :sujet, :objet]
 
-	TEMPORALITES = [:proche, :passe, :futur]
+	TEMPORALITES = [:proche, :passe, :futur, :present]
 
 	self.file = "regles/info.csv"
 
@@ -163,6 +164,9 @@ class Info < Rosace::Entity
 		end
 		if acteurs.include?(:pays)
 			a << context.pick_entity(:Lieu, "pays")
+		end
+		if acteurs.include?(:entreprise)
+			a << context.pick_entity(:Entreprise)
 		end
 		a[rand(a.length)]
 	end
