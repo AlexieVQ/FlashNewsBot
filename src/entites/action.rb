@@ -43,7 +43,7 @@ class Action < Rosace::Entity
 	# @param sujet [Acteur, nil]
 	# @param objet [Acteur, nil]
 	# @param temps [:present, :passe, :infinitif_present, :infinitif_passe]
-	# @param sujet? [Boolean]
+	# @param mettre_sujet [Boolean]
 	# @return [String]
 	def value(sujet: nil, objet: nil, temps: :passe, mettre_sujet: true)
 		old_sujet = @sujet
@@ -154,6 +154,22 @@ class Action < Rosace::Entity
 		value(sujet: context.variable(nom_var))
 	end
 
+	# @param nom_var [String]
+	# @param var_info_accu [String, nil]
+	# @return [String]
+	def nominale_avec_sujet(nom_var, id_info_accu = nil)
+		old_sujet = @sujet
+		old_info = @info_accu
+		@sujet = context.variable(nom_var)
+		@info_accu = id_info_accu ?
+				context.entity(:Info, id_info_accu.to_i) :
+				old_info
+		out = nominale
+		@sujet = old_sujet
+		@info_accu = old_info
+		out
+	end
+
 	# @param sujet [Acteur, nil]
 	# @param objet [Acteur, nil]
 	# @return [String]
@@ -197,6 +213,24 @@ class Action < Rosace::Entity
 			temps: :passe,
 			mettre_sujet: false
 		)
+	end
+
+	# @param var_sujet [String]
+	# @param id_info_accu [String, nil]
+	# @return [String]
+	def infinitif_passe_seul(var_sujet, id_info_accu = nil)
+		unless sujet_perso.empty?
+			raise Rosace::EvaluationException,
+				"Action[#{id}]: l’action a un sujet personnalisé"
+		end
+		old_info = @info_accu
+		@info_accu = id_info_accu ?
+				context.entity(:Info, id_info_accu.to_i) :
+				old_info
+		out = value(sujet: context.variable(var_sujet), temps: :infinitif_passe,
+				mettre_sujet: false)
+		@info_accu = old_info
+		out
 	end
 
 	# @param sujet [Acteur, nil]
