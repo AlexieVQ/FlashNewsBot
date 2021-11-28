@@ -30,8 +30,7 @@ class Action < Rosace::Entity
 	enum :denonciateur, *Info::ROLES
 
 	def init
-		# @type [:present, :passe, :infinitif_present, :infinitif_passe]
-		@temps = :passe
+		self.temps = :passe
 	end
 
 	# @param args [Array<String>]
@@ -42,19 +41,19 @@ class Action < Rosace::Entity
 
 	# @param sujet [Acteur, nil]
 	# @param objet [Acteur, nil]
-	# @param temps [:present, :passe, :infinitif_present, :infinitif_passe]
+	# @param temps [:simple, :passe, :infinitif, :infinitif_passe]
 	# @param mettre_sujet [Boolean]
 	# @return [String]
 	def value(sujet: nil, objet: nil, temps: :passe, mettre_sujet: true)
 		old_sujet = @sujet
 		old_objet = @objet
-		old_temps = @temps
+		old_temps = self.temps
 		# @type [Acteur, nil]
 		@sujet = sujet || old_sujet
 		# @type [Acteur, nil]
 		@objet = objet || old_objet
-		@temps = temps || @temps
-		out = if [:infinitif_passe, :infinitif_present].include?(@temps) ||
+		self.temps = temps || self.temps
+		out = if [:infinitif_passe, :infinitif].include?(self.temps) ||
 			!mettre_sujet
 			verbale
 		else
@@ -67,85 +66,115 @@ class Action < Rosace::Entity
 		end
 		@sujet = old_sujet
 		@objet = old_objet
-		@temps = old_temps
+		self.temps = old_temps
 		out
 	end
 
-	# @param present [String]
-	# @param passe [String]
-	# @param infinitif_present [String]
-	# @param infinitif_passe [String]
-	# @return [String]
-	def verbe(present, passe, infinitif_present, infinitif_passe)
-		case @temps
-		when :present
-			present
+	# Conjugue le verbe selon ses différentes formes données.
+	# @param auxiliaire ["être", "avoir"] Auxiliaire à utiliser
+	# @param participe [String] Participe passé (accordé avec le sujet pour 
+	#  l'auxiliaire +"être"+)
+	# @param infinitif [String] Infinitif du verbe
+	# @param s1 [String, nil] Première personne du singulier d'un temps simple
+	#  (souvent présent ou futur)
+	# @param s2 [String, nil] Deuxième personne du singulier
+	# @param s3 [String, nil] Troisième personne du singulier
+	# @param p1 [String, nil] Première personne du pluriel
+	# @param p2 [String, nil] Deuxième personne du pluriel
+	# @param p3 [String, nil] Troisième personne du pluriel
+	# @return [String] Verbe conjugué selon le temps de l'action
+	def verbe(auxiliaire,
+			  participe,
+			  infinitif,
+			  s1 = nil,
+			  s2 = nil,
+			  s3 = nil,
+			  p1 = nil,
+			  p2 = nil,
+			  p3 = nil)
+		unless ["être", "avoir"].include?(auxiliaire)
+			raise Rosace::EvaluationException,
+					"Action[#{id}]: #{auxiliaire} n'est pas un auxiliaire"
+		end
+		passe = (auxiliaire == "avoir" ? sujet.a : sujet.est) + " " + participe
+		infinitif_passe = "#{auxiliaire} #{participe}"
+		simple = sujet.pn(
+			s1 || passe,
+			s2 || passe,
+			s3 || passe,
+			p1 || passe,
+			p2 || passe,
+			p3 || passe
+		)
+		case temps
 		when :passe
 			passe
-		when :infinitif_present
-			infinitif_present
+		when :infinitif
+			infinitif
 		when :infinitif_passe
 			infinitif_passe
 		else
-			passe
+			simple
 		end
 	end
 
-	# @return [String]
-	def etre
-		verbe(sujet.est, sujet.est, "être", "être")
+	# Conjugue le verbe selon ses différentes formes données, avec l'auxiliaire
+	#  *avoir* pour les temps composés.
+	# @param participe [String] Participe passé
+	# @param infinitif [String] Infinitif du verbe
+	# @param s1 [String, nil] Première personne du singulier d'un temps simple
+	#  (souvent présent ou futur)
+	# @param s2 [String, nil] Deuxième personne du singulier
+	# @param s3 [String, nil] Troisième personne du singulier
+	# @param p1 [String, nil] Première personne du pluriel
+	# @param p2 [String, nil] Deuxième personne du pluriel
+	# @param p3 [String, nil] Troisième personne du pluriel
+	# @return [String] Verbe conjugué selon le temps de l'action
+	def a(participe,
+		  infinitif,
+		  s1 = nil,
+		  s2 = nil,
+		  s3 = nil,
+		  p1 = nil,
+		  p2 = nil,
+		  p3 = nil)
+		verbe("avoir", participe, infinitif, s1, s2, s3, p1, p2, p3)
 	end
 
-	# @return [String]
-	def avoir_ete
-		verbe(sujet.est, "#{sujet.a} été", "être", "avoir été")
+	# Conjugue le verbe selon ses différentes formes données, avec l'auxiliaire
+	#  *être* pour les temps composés.
+	# @param participe [String] Participe passé accordé avec le sujet
+	# @param infinitif [String, nil] Infinitif du verbe
+	# @param s1 [String, nil] Première personne du singulier d'un temps simple
+	#  (souvent présent ou futur)
+	# @param s2 [String, nil] Deuxième personne du singulier
+	# @param s3 [String, nil] Troisième personne du singulier
+	# @param p1 [String, nil] Première personne du pluriel
+	# @param p2 [String, nil] Deuxième personne du pluriel
+	# @param p3 [String, nil] Troisième personne du pluriel
+	# @return [String] Verbe conjugué selon le temps de l'action
+	def est(participe,
+		  infinitif = nil,
+		  s1 = nil,
+		  s2 = nil,
+		  s3 = nil,
+		  p1 = nil,
+		  p2 = nil,
+		  p3 = nil)
+		verbe("être", participe, infinitif || "être #{participe}", s1, s2, s3,
+				p1, p2, p3)
 	end
 
-	# @return [String]
+	# @return [String] Verbe *avoir* conjugué selon le temps de l'action (au
+	#  présent pour le temps simple)
 	def avoir
-		verbe(sujet.a, sujet.a, "avoir", "avoir")
+		a("eu", "avoir", "ai", "as", "a", "avons", "avez", "ont")
 	end
 
-	# @return [String]
-	def avoir_eu
-		verbe(sujet.a, "#{sujet.a} eu", "avoir", "avoir eu")
-	end
-
-	# @param s1 [String]
-	# @param s2 [String]
-	# @param s3 [String]
-	# @param p1 [String]
-	# @param p2 [String]
-	# @param p3 [String]
-	# @param infinitif [String]
-	# @param participe [String]
-	# @return [String]
-	def a(s1, s2, s3, p1, p2, p3, infinitif, participe)
-		verbe(
-			sujet.pn(s1, s2, s3, p1, p2, p3),
-			"#{sujet.a} #{participe}",
-			infinitif,
-			"avoir #{participe}"
-		)
-	end
-
-
-	# @param s1 [String]
-	# @param s2 [String]
-	# @param s3 [String]
-	# @param p1 [String]
-	# @param p2 [String]
-	# @param p3 [String]
-	# @param infinitif [String]
-	# @param participe [String]
-	# @return [String]
-	def est(s1, s2, s3, p1, p2, p3, infinitif, participe)
-		verbe(
-			sujet.pn(s1, s2, s3, p1, p2, p3),
-			"#{sujet.est} #{participe}",
-			infinitif,
-			"être #{participe}"
-		)
+	# @return [String] Verbe *être* conjugué selon le temps de l'action (au
+	#  présent pour le temps simple)
+	def etre
+		a("été", "être", "suis", "es", "est", "sommes", "êtes", "sont")
 	end
 
 	# @param nom_var [String]
@@ -394,5 +423,16 @@ class Action < Rosace::Entity
 			nil
 		end || info.acteur
 	end
+
+	private
+
+	# @return [:passe, :infinitif, :infinitif_passe, :simple] Temps du verbe de
+	#  l'action :
+	#  - +:passe+ pour le passé composé
+	#  - +:infinitif+ pour l'infinitif présent
+	#  - +:infinitif_passe+ pour l'infinitif passé
+	#  - +:simple+ pour le temps simple de l'action, généralement le présent ou
+	#    le futur
+	attr_accessor :temps
 
 end
