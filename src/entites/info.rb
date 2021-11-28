@@ -196,7 +196,7 @@ class Info < Rosace::Entity
 		when :objet
 			objet
 		else
-			nil
+			@coupable
 		end
 	end
 
@@ -208,7 +208,11 @@ class Info < Rosace::Entity
 		when :objet
 			objet
 		else
-			denonciateur
+			if @victime
+				@victime
+			else
+				denonciateur
+			end
 		end
 	end
 
@@ -222,6 +226,28 @@ class Info < Rosace::Entity
 		else
 			nil
 		end
+	end
+
+	# Définit le coupable, s'il n'est pas déjà défini.
+	# @param coupable [Acteur] Coupable à définir
+	# @return [Acteur] Coupable défini
+	# @raise Coupable déjà défini
+	def coupable=(coupable)
+		if self.coupable
+			raise "Info[#{id}]: coupable déjà défini"
+		end
+		@coupable = coupable
+	end
+
+	# Définit la victime, si elle n'est pas déjà définie.
+	# @param victime [Acteur] Victime à définir
+	# @return [Acteur] Victime définie
+	# @raise Victime déjà définie
+	def victime=(victime)
+		if self.victime
+			raise "Info[#{id}]: victime déjà définie"
+		end
+		@victime = victime
 	end
 
 end

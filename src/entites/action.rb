@@ -32,21 +32,29 @@ class Action < Rosace::Entity
 
 	# @return [Acteur, nil] Acteur objet de cette action
 	def objet
+		# @type [Info]
+		info = context.variable(:info)
 		if @objet
 			@objet
-		elsif coupable == :objet || victime == :objet
-			@objet = context.variable(:info).acteur
+		elsif coupable == :objet
+			@objet = info.coupable ||= info.acteur
+		elsif victime == :objet
+			@objet = info.victime ||= info.acteur
 		else
-			context.variable(:info).objet
+			info.objet
 		end
 	end
 
 	# @return [Acteur] Acteur sujet de cette action
 	def sujet
+		# @type [Info]
+		info = context.variable(:info)
 		if @sujet
 			@sujet
-		elsif coupable == :sujet || victime == :sujet
-			@sujet = context.variable(:info).acteur
+		elsif coupable == :sujet
+			@sujet = info.coupable ||= info.acteur
+		elsif victime == :sujet
+			@sujet = info.victime ||= info.acteur
 		else
 			context.variable(:info).sujet
 		end
