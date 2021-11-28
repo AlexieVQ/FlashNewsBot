@@ -94,7 +94,7 @@ class Info < Rosace::Entity
 	# @return [String]
 	def value
 		before
-		phrase = action.value + if has_motif?
+		phrase = action.value(sujet: sujet, objet: objet) + if has_motif?
 			" pour " + motif.value(
 				temps: :infinitif_passe,
 				coupable: coupable,
