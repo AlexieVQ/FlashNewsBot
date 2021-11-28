@@ -66,16 +66,8 @@ class Info < Rosace::Entity
 	#  @return [Symbol]
 	mult_enum :temporalite, *TEMPORALITES
 
-	# @!attribute [r] coupable
-	#  @return [Symbol]
 	enum :coupable, *ROLES
-
-	# @!attribute [r] victime
-	#  @return [Symbol]
 	enum :victime, *ROLES
-
-	# @!attribute [r] denonciateur
-	#  @return [Symbol]
 	enum :denonciateur, *ROLES
 
 	# @!attribute [r] _action
@@ -103,10 +95,14 @@ class Info < Rosace::Entity
 	def value
 		before
 		phrase = action.value + if has_motif?
-			" " + motif.accusation(info: self)
+			" pour " + motif.value(
+				temps: :infinitif_passe,
+				coupable: coupable,
+				victime: victime
+			)
 		else
 			""
-		end + ". " + context.pick_entity(:StructDecla).value + " " +
+		end + ". " # + context.pick_entity(:StructDecla).value + " " +
 		if rand(2) == 1
 			"(#{context.pick_entity(:Media).value}) "
 		else
@@ -127,17 +123,17 @@ class Info < Rosace::Entity
 
 	# @return [Boolean]
 	def has_motif?
-		!coupable.empty? || !victime.empty? || !denonciateur.empty?
+		!coupable.nil? || !victime.nil? || !denonciateur.nil?
 	end
 
 	# @return [Action, nil]
 	def motif
-		if !coupable.empty? || !victime.empty? || !denonciateur.empty?
+		if has_motif?
 			@motif ||= context.pick_entity(
 				:Action,
-				coupable.empty? ? "" : "coupable",
-				victime.empty? ? "" : "victime",
-				denonciateur.empty? ? "" : "denonciateur"
+				coupable.nil? ? "" : "coupable",
+				victime.nil? ? "" : "victime",
+				denonciateur.nil? ? "" : "denonciateur"
 			)
 		else
 			nil
@@ -150,9 +146,9 @@ class Info < Rosace::Entity
 		accu = rand(10) > 0
 		@decla ||= spec && _decla || context.pick_entity(
 			:Decla,
-			!accu || coupable.empty? ? "" : "coupable",
-			!accu || victime.empty? ? "" : "victime",
-			!accu || denonciateur.empty? ? "" : "denonciateur"
+			!accu || coupable.nil? ? "" : "coupable",
+			!accu || victime.nil? ? "" : "victime",
+			!accu || denonciateur.nil? ? "" : "denonciateur"
 		)
 	end
 
@@ -192,74 +188,40 @@ class Info < Rosace::Entity
 		@action ||= _action
 	end
 
-	# @param action [Action, nil]
-	# @return [Acteur, nil]
-	def get_victime(action: nil)
-		action ||= self.action
-		case victime
+	# @return [Acteur, nil] Coupable de l'information
+	def coupable
+		case super
 		when :sujet
 			sujet
 		when :objet
-			self.objet ||= acteur
+			objet
 		else
-			case action.victime
-			when :sujet
-				sujet
-			when :objet
-				self.objet ||= acteur
-			else
-				if !denonciateur.empty? || !action.denonciateur.empty?
-					get_denonciateur(action: action)
-				else
-					nil
-				end
-			end
+			nil
 		end
 	end
 
-	# @param action [Action, nil]
-	# @return [Acteur, nil]
-	def get_coupable(action: nil)
-		action ||= self.action
-		case coupable
+	# @return [Acteur, nil] Victime de l'information
+	def victime
+		case super
 		when :sujet
 			sujet
 		when :objet
-			self.objet ||= acteur
+			objet
 		else
-			case action.coupable
-			when :sujet
-				sujet
-			when :objet
-				self.objet ||= acteur
-			else
-				nil
-			end
+			denonciateur
 		end
 	end
 
-	# @param action [Action]
-	# @return [Acteur, nil]
-	def get_denonciateur(action: nil)
-		action ||= self.action
-		case denonciateur
+	# @return [Acteur, nil] Dénonciateur de l'information
+	def denonciateur
+		case super
 		when :sujet
 			sujet
 		when :objet
-			self.objet ||= acteur
+			objet
 		else
-			case action.denonciateur
-			when :sujet
-				sujet
-			when :objet
-				self.objet ||= acteur
-			else
-				if !victime.empty? || !action.victime.empty?
-					get_victime(action: action)
-				else
-					nil
-				end
-			end
+			nil
 		end
 	end
+
 end

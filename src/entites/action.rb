@@ -15,6 +15,8 @@ class Action < Rosace::Entity
 	# @!attribute [r] sujet_perso
 	#  @return [String]
 
+	# @!attribute [r] info
+	#  @return [Info, nil] Information pour laquelle cette action est définie
 	reference :info, :Info, :optional
 
 	# @!attribute [r] coupable
@@ -25,9 +27,30 @@ class Action < Rosace::Entity
 	#  @return [:sujet, :objet, :""]
 	enum :victime, *Info::ROLES
 
-	# @!attribute [r] denonciateur
-	#  @return [:sujet, :objet, :""]
-	enum :denonciateur, *Info::ROLES
+	attr_writer :sujet
+	attr_writer :objet
+
+	# @return [Acteur, nil] Acteur objet de cette action
+	def objet
+		if @objet
+			@objet
+		elsif coupable == :objet || victime == :objet
+			@objet = context.variable(:info).acteur
+		else
+			context.variable(:info).objet
+		end
+	end
+
+	# @return [Acteur] Acteur sujet de cette action
+	def sujet
+		if @sujet
+			@sujet
+		elsif coupable == :sujet || victime == :sujet
+			@sujet = context.variable(:info).acteur
+		else
+			context.variable(:info).sujet
+		end
+	end
 
 	def init
 		self.temps = :passe
@@ -41,10 +64,21 @@ class Action < Rosace::Entity
 
 	# @param sujet [Acteur, nil]
 	# @param objet [Acteur, nil]
+	# @param coupable [Acteur, nil] Coupable de l'action. À éviter d'utiliser
+	#  avec +sujet+ ou +objet+.
+	# @param victime [Acteur, nil] victime de l'action. À éviter d'utiliser avec
+	#  +sujet+ ou +objet+.
+	# @param forme [:verbale, :nominale] Forme verbale ou nominale
 	# @param temps [:simple, :passe, :infinitif, :infinitif_passe]
 	# @param mettre_sujet [Boolean]
 	# @return [String]
-	def value(sujet: nil, objet: nil, temps: :passe, mettre_sujet: true)
+	def value(sujet: nil,
+			  objet: nil,
+			  coupable: nil,
+			  victime: nil,
+			  forme: :verbale,
+			  temps: :passe,
+			  mettre_sujet: true)
 		old_sujet = @sujet
 		old_objet = @objet
 		old_temps = self.temps
@@ -52,22 +86,64 @@ class Action < Rosace::Entity
 		@sujet = sujet || old_sujet
 		# @type [Acteur, nil]
 		@objet = objet || old_objet
-		self.temps = temps || self.temps
-		out = if [:infinitif_passe, :infinitif].include?(self.temps) ||
-			!mettre_sujet
-			verbale
-		else
-			sp = sujet_perso
-			unless sp.empty?
-				sp + " " + verbale
+		self.coupable = coupable
+		self.victime = victime
+		self.temps = temps
+		out = if forme == :verbale
+			if [:infinitif_passe, :infinitif].include?(self.temps) ||
+				!mettre_sujet
+				verbale
 			else
-				self.sujet.sujet(verbale)
+				sp = sujet_perso
+				unless sp.empty?
+					sp + " " + verbale
+				else
+					self.sujet.sujet(verbale)
+				end
 			end
+		else
+			nominale
 		end
 		@sujet = old_sujet
 		@objet = old_objet
 		self.temps = old_temps
 		out
+	end
+
+	# Appelle {#value} avec les arguments convertis dans le type attendu.
+	# @param args [Array<String>] arguments sous la forme "clef:valeur"
+	# @return [String] Retour de {#value}
+	def val(*args)
+		kwargs = {}
+		args.each do |arg|
+			match = /\A\s*(?<clef>\w+)\s*:(?<valeur>.*)\z/.match(arg)
+			if match.nil?
+				raise Rosace::EvaluationException,
+						"Action[#{id}]: Argument #{arg} mal formé"
+			end
+			valeur = match[:valeur].strip
+			clef = match[:clef]
+			case clef
+			when "sujet"
+				kwargs[:sujet] = context.variable(valeur)
+			when "objet"
+				kwargs[:objet] = context.variable(valeur)
+			when "temps"
+				kwargs[:temps] = valeur.to_sym
+			when "mettre_sujet"
+				kwargs[:mettre_sujet] = valeur != "false"
+			when "coupable"
+				kwargs[:coupable] = context.variable(valeur)
+			when "victime"
+				kwargs[:victime] = context.variable(valeur)
+			when "forme"
+				kwargs[:forme] = valeur.to_sym
+			else
+				raise Rosace::EvaluationException,
+						"Action[#{id}]: Paramètre #{clef} inconnu"
+			end
+		end
+		value(**kwargs)
 	end
 
 	# Conjugue le verbe selon ses différentes formes données.
@@ -177,253 +253,6 @@ class Action < Rosace::Entity
 		a("été", "être", "suis", "es", "est", "sommes", "êtes", "sont")
 	end
 
-	# @param nom_var [String]
-	# @return [String]
-	def avec_sujet(nom_var)
-		value(sujet: context.variable(nom_var))
-	end
-
-	# @param nom_var [String]
-	# @param var_info_accu [String, nil]
-	# @return [String]
-	def nominale_avec_sujet(nom_var, id_info_accu = nil)
-		old_sujet = @sujet
-		old_info = @info_accu
-		@sujet = context.variable(nom_var)
-		@info_accu = id_info_accu ?
-				context.entity(:Info, id_info_accu.to_i) :
-				old_info
-		out = nominale
-		@sujet = old_sujet
-		@info_accu = old_info
-		out
-	end
-
-	# @param sujet [Acteur, nil]
-	# @param objet [Acteur, nil]
-	# @return [String]
-	def pour(sujet: nil, objet: nil)
-		old_sujet = @sujet
-		old_objet = @objet
-		@sujet = sujet || old_sujet
-		@objet = objet || old_objet
-		out = "pour " + infinitif_ou_nom
-		@sujet = old_sujet
-		@objet = old_objet
-		out
-	end
-
-	# @param sujet [Acteur, nil]
-	# @param objet [Acteur, nil]
-	# @return [String]
-	def de(sujet: nil, objet: nil)
-		old_sujet = @sujet
-		old_objet = @objet
-		@sujet = sujet || old_sujet
-		@objet = objet || old_objet
-		out = infinitif_ou_nom
-		@sujet = old_sujet
-		@objet = old_objet
-		out.voyelle? ? "d’" + out : "de " + out
-	end
-
-	# @param sujet [Acteur, nil]
-	# @param objet [Acteur, nil]
-	# @return [String]
-	# @raise [Rosace::EvaluationException]
-	def qui(sujet: nil, objet: nil)
-		unless sujet_perso.empty?
-			raise Rosace::EvaluationException,
-				"Action[#{id}]: l’action a un sujet personnalisé"
-		end
-		"qui " + value(
-			sujet: sujet,
-			objet: objet,
-			temps: :passe,
-			mettre_sujet: false
-		)
-	end
-
-	# @param var_sujet [String]
-	# @param id_info_accu [String, nil]
-	# @return [String]
-	def infinitif_passe_seul(var_sujet, id_info_accu = nil)
-		unless sujet_perso.empty?
-			raise Rosace::EvaluationException,
-				"Action[#{id}]: l’action a un sujet personnalisé"
-		end
-		old_info = @info_accu
-		@info_accu = id_info_accu ?
-				context.entity(:Info, id_info_accu.to_i) :
-				old_info
-		out = value(sujet: context.variable(var_sujet), temps: :infinitif_passe,
-				mettre_sujet: false)
-		@info_accu = old_info
-		out
-	end
-
-	# @param sujet [Acteur, nil]
-	# @param objet [Acteur, nil]
-	# @return [String]
-	def car(sujet: nil, objet: nil)
-		"car " + value(sujet: sujet, objet: objet, temps: :passe)
-	end
-
-	# @param sujet [Acteur, nil]
-	# @param objet [Acteur, nil]
-	# @return [String]
-	def parce_que(sujet: nil, objet: nil)
-		out = value(sujet: sujet, objet: objet, temps: :passe)
-		(out.voyelle? ? "parce qu’" : "parce que ") + out
-	end
-
-	# @param info [Info, nil]
-	# @return [String]
-	def accusation(info: nil)
-		case rand(3)
-		when 0
-			accusation_pour(info: info)
-		when 1
-			accusation_car(info: info)
-		else
-			accusation_parce_que(info: info)
-		end
-	end
-
-	# @param info [Info, nil]
-	# @return [String]
-	def accusation_de(info: nil)
-		old_info = @info_accu
-		# @type [Info, nil]
-		@info_accu = info || old_info
-		out = de
-		@info_accu = old_info
-		out
-	end
-
-	# @param info [Info, nil]
-	# @return [String]
-	def accusation_pour(info: nil)
-		old_info = @info_accu
-		@info_accu = info || old_info
-		out = pour
-		@info_accu = old_info
-		out
-	end
-
-	# @param info [Info, nil]
-	# @return [String]
-	def accusation_car(info: nil)
-		old_info = @info_accu
-		@info_accu = info || old_info
-		out = car
-		@info_accu = old_info
-		out
-	end
-
-	# @param info [Info, nil]
-	# @return [String]
-	def accusation_parce_que(info: nil)
-		old_info = @info_accu
-		@info_accu = info || old_info
-		out = parce_que
-		@info_accu = old_info
-		out
-	end
-
-	# @param info [Info, nil]
-	# @return [String]
-	def accusation_qui(info: nil)
-		old_info = @info_accu
-		@info_accu = info || old_info
-		out = qui
-		@info_accu = old_info
-		out
-	end
-
-	# @return [Acteur, nil]
-	def sujet
-		if @sujet
-			@sujet
-		elsif @info_accu
-			get_accusation_sujet(@info_accu)
-		elsif info
-			info.sujet
-		else
-			nil
-		end
-	end
-
-	# @return [Acteur, nil]
-	def objet
-		if @objet
-			@objet
-		elsif @info_accu
-			get_accusation_objet(@info_accu)
-		elsif info
-			info.objet
-		else
-			nil
-		end
-	end
-
-	# @param acteur [Acteur]
-	# @return [Acteur]
-	def objet=(acteur)
-		if info(static: true)
-			info(static: true).objet = acteur
-		else
-			@objet = acteur
-		end
-	end
-
-	# @param static [Boolean]
-	# @return [Info, nil]
-	def info(static: false)
-		if static
-			super()
-		else
-			@info_accu || super()
-		end
-	end
-
-	private
-
-	# @return [String]
-	def infinitif_ou_nom
-		rand(2) == 1 ?
-			value(temps: :infinitif_passe) :
-			nominale.gsub(/\A(un |une |des |le |la |les |l’)/, "")
-	end
-
-	# @param info [Info]
-	# @return [Acteur, nil]
-	def get_accusation_sujet(info)
-		if victime == :sujet
-			info.get_victime(action: self)
-		elsif coupable == :sujet
-			info.get_coupable(action: self)
-		elsif denonciateur == :sujet
-			info.get_denonciateur(action: self)
-		else
-			nil
-		end
-	end
-
-	# @param info [Info]
-	# @return [Acteur, nil]
-	def get_accusation_objet(info)
-		if victime == :objet
-			info.get_victime(action: self)
-		elsif coupable == :objet
-			info.get_coupable(action: self)
-		elsif denonciateur == :objet
-			info.get_denonciateur(action: self)
-		else
-			nil
-		end || info.acteur
-	end
-
 	private
 
 	# @return [:passe, :infinitif, :infinitif_passe, :simple] Temps du verbe de
@@ -433,6 +262,34 @@ class Action < Rosace::Entity
 	#  - +:infinitif_passe+ pour l'infinitif passé
 	#  - +:simple+ pour le temps simple de l'action, généralement le présent ou
 	#    le futur
-	attr_accessor :temps
+	attr_reader :temps
+
+	def temps=(temps)
+		@temps = temps || self.temps
+	end
+
+	# Définit le coupable de l'action.
+	# @param coupable [Acteur] Coupable de l'action
+	# @return [void]
+	def coupable=(coupable)
+		case self.coupable
+		when :sujet
+			self.sujet = coupable || self.sujet
+		when :objet
+			self.objet = coupable || self.objet
+		end
+	end
+
+	# Définit la victime de l'action.
+	# @param victime [Acteur] Victime de l'action
+	# @return [void]
+	def victime=(victime)
+		case self.victime
+		when :sujet
+			self.sujet = victime || self.sujet
+		when :objet
+			self.objet = victime || self.objet
+		end
+	end
 
 end
