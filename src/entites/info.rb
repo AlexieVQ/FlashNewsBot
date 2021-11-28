@@ -102,7 +102,7 @@ class Info < Rosace::Entity
 			)
 		else
 			""
-		end + ". " # + context.pick_entity(:StructDecla).value + " " +
+		end + ". " + context.pick_entity(:StructDecla).value + " " +
 		if rand(2) == 1
 			"(#{context.pick_entity(:Media).value}) "
 		else

@@ -66,11 +66,11 @@ class Decla < Rosace::Entity
 			when :objet
 				info.objet
 			when :coupable
-				info.get_coupable
+				info.coupable
 			when :victime
-				info.get_victime
+				info.victime
 			when :denonciateur
-				info.get_denonciateur
+				info.denonciateur
 			else
 				@sujet = info.acteur
 			end
@@ -90,11 +90,11 @@ class Decla < Rosace::Entity
 			when :objet
 				info.objet
 			when :coupable
-				info.get_coupable
+				info.coupable
 			when :victime
-				info.get_victime
+				info.victime
 			when :denonciateur
-				info.get_denonciateur
+				info.denonciateur
 			else
 				@objet = info.acteur
 			end
