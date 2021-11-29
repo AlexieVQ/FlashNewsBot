@@ -67,7 +67,7 @@ class Action < Rosace::Entity
 	# @param args [Array<String>]
 	# @return [Boolean]
 	def pick?(*args)
-		args.any? { |role| !role.empty? && send(role) == :sujet }
+		args.all? { |role| roles.include?(role.strip.to_sym) }
 	end
 
 	# @param sujet [Acteur, nil]
@@ -259,6 +259,15 @@ class Action < Rosace::Entity
 	#  présent pour le temps simple)
 	def etre
 		a("été", "être", "suis", "es", "est", "sommes", "êtes", "sont")
+	end
+
+	# @return [List<:coupable, :victime>] Liste des rôles définis pour cette
+	#  action.
+	def roles
+		roles = []
+		roles << :coupable if !coupable.empty?
+		roles << :victime if !victime.empty?
+		roles
 	end
 
 	private
