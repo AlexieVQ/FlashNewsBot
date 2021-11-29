@@ -39,6 +39,16 @@ GENERATEUR = Rosace::Generator.new(
 					nom.context
 				)
 			end
+		),
+		Rosace::Function.new(
+			:que,
+			->(phrase) do
+				Rosace::ContextualValue.new(
+					(phrase.value =~ /\A[aeiou]/i ? "qu’" : "que ") +
+							phrase.value,
+					phrase.context
+				)
+			end
 		)
 	]
 )
