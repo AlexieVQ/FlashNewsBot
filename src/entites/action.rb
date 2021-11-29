@@ -79,6 +79,8 @@ class Action < Rosace::Entity
 	# @param forme [:verbale, :nominale] Forme verbale ou nominale
 	# @param temps [:simple, :passe, :infinitif, :infinitif_passe]
 	# @param mettre_sujet [Boolean]
+	# @param sujet_explicite [Boolean] Vrai si le sujet doit être écrit
+	#  explicitement
 	# @return [String]
 	def value(sujet: nil,
 			  objet: nil,
@@ -86,7 +88,8 @@ class Action < Rosace::Entity
 			  victime: nil,
 			  forme: :verbale,
 			  temps: :passe,
-			  mettre_sujet: true)
+			  mettre_sujet: true,
+			  sujet_explicite: false)
 		old_sujet = @sujet
 		old_objet = @objet
 		old_temps = self.temps
@@ -103,8 +106,10 @@ class Action < Rosace::Entity
 				verbale
 			else
 				sp = sujet_perso
-				unless sp.empty?
+				if !sp.empty?
 					sp + " " + verbale
+				elsif sujet_explicite
+					self.sujet.sujet_explicite + " " + verbale
 				else
 					self.sujet.sujet(verbale)
 				end

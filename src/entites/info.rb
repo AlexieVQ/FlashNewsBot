@@ -97,7 +97,8 @@ class Info < Rosace::Entity
 	# @return [String]
 	def value
 		before
-		phrase = action.value(sujet: sujet, objet: objet) + ". " + context.
+		phrase = action.value(sujet: sujet, objet: objet,
+				sujet_explicite: true) + ". " + context.
 				pick_entity(:StructDecla).value + " " + if rand(2) == 1
 			"(#{context.pick_entity(:Media).value}) "
 		else
