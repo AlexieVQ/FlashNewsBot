@@ -68,7 +68,6 @@ class Info < Rosace::Entity
 
 	enum :coupable, *ROLES
 	enum :victime, *ROLES
-	enum :denonciateur, *ROLES
 
 	# @!attribute [r] _action
 	#  @return [Action, nil]
@@ -129,13 +128,12 @@ class Info < Rosace::Entity
 		end
 	end
 
-	# @return [Array<:coupable, :victime, :denonciateur>] Rôles définis pour
+	# @return [Array<:coupable, :victime>] Rôles définis pour
 	#  cette information.
 	def roles
 		roles = []
 		roles << :coupable if coupable
 		roles << :victime if victime
-		roles << :denonciateur if denonciateur
 		roles
 	end
 
@@ -202,23 +200,7 @@ class Info < Rosace::Entity
 		when :objet
 			objet
 		else
-			if @victime
-				@victime
-			else
-				denonciateur
-			end
-		end
-	end
-
-	# @return [Acteur, nil] Dénonciateur de l'information
-	def denonciateur
-		case super
-		when :sujet
-			sujet
-		when :objet
-			objet
-		else
-			nil
+			@victime
 		end
 	end
 

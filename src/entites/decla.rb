@@ -5,7 +5,7 @@ class Decla < Rosace::Entity
 	
 	self.file = "regles/decla.csv"
 
-	ROLES = Info::ROLES + [:tierce, :coupable, :victime, :denonciateur]
+	ROLES = Info::ROLES + [:tierce, :coupable, :victime]
 	
 	# @!attribute [r] ref_info
 	#  @return [Info, nil]
@@ -33,7 +33,7 @@ class Decla < Rosace::Entity
 	# @param args [Array<String>]
 	# @return [Boolean]
 	def pick?(*args)
-		roles = [:coupable, :victime, :denonciateur]
+		roles = [:coupable, :victime]
 		if args.all? { |arg| arg.empty? }
 			ref_info == nil &&
 				!roles.include?(sujet(sym: true)) &&
@@ -69,8 +69,6 @@ class Decla < Rosace::Entity
 				info.coupable
 			when :victime
 				info.victime
-			when :denonciateur
-				info.denonciateur
 			else
 				@sujet = context.pick_entity(:Pers)
 			end
@@ -93,8 +91,6 @@ class Decla < Rosace::Entity
 				info.coupable
 			when :victime
 				info.victime
-			when :denonciateur
-				info.denonciateur
 			else
 				@objet = context.pick_entity(:Pers)
 			end
