@@ -64,7 +64,7 @@ class Info < Rosace::Entity
 
 	# @!attribute [r] temporalite
 	#  @return [Symbol]
-	mult_enum :temporalite, *TEMPORALITES
+	enum :temporalite, *TEMPORALITES
 
 	enum :coupable, *ROLES
 	enum :victime, *ROLES
@@ -97,8 +97,20 @@ class Info < Rosace::Entity
 	# @return [String]
 	def value
 		before
+		temps = case :temporalite
+		when :proche
+			:passe
+		when :present
+			:simple
+		when :passe
+			:passe
+		when :futur
+			:simple
+		else
+			:passe
+		end
 		phrase = action.value(sujet: sujet, objet: objet,
-				sujet_explicite: true) + ". " + context.
+				sujet_explicite: true, temps: temps) + ". " + context.
 				pick_entity(:StructDecla).value + " " + if rand(2) == 1
 			"(#{context.pick_entity(:Media).value}) "
 		else
