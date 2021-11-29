@@ -85,6 +85,9 @@ class Info < Rosace::Entity
 	# @return [Acteur, nil]
 	attr_accessor :objet
 
+	# @return [Action, nil] Motif d'accusation.
+	attr_accessor :motif
+
 	# @return [void]
 	def init
 		@objet = nil
@@ -94,16 +97,8 @@ class Info < Rosace::Entity
 	# @return [String]
 	def value
 		before
-		phrase = action.value(sujet: sujet, objet: objet) + if has_motif?
-			" pour " + motif.value(
-				temps: :infinitif_passe,
-				coupable: coupable,
-				victime: victime
-			)
-		else
-			""
-		end + ". " + context.pick_entity(:StructDecla).value + " " +
-		if rand(2) == 1
+		phrase = action.value(sujet: sujet, objet: objet) + ". " + context.
+				pick_entity(:StructDecla).value + " " + if rand(2) == 1
 			"(#{context.pick_entity(:Media).value}) "
 		else
 			""
@@ -121,35 +116,22 @@ class Info < Rosace::Entity
 		end
 	end
 
-	# @return [Boolean]
-	def has_motif?
-		!coupable.nil? || !victime.nil? || !denonciateur.nil?
-	end
-
-	# @return [Action, nil]
-	def motif
-		if has_motif?
-			@motif ||= context.pick_entity(
-				:Action,
-				coupable.nil? ? "" : "coupable",
-				victime.nil? ? "" : "victime",
-				denonciateur.nil? ? "" : "denonciateur"
-			)
-		else
-			nil
-		end
+	# @return [Array<:coupable, :victime, :denonciateur>] Rôles définis pour
+	#  cette information.
+	def roles
+		roles = []
+		roles << :coupable if coupable
+		roles << :victime if victime
+		roles << :denonciateur if denonciateur
+		roles
 	end
 
 	# @return [Decla]
 	def decla
 		spec = rand(1 + _decla_list.reduce(0) { |w, d| w + d.weight }) > 0
 		accu = rand(10) > 0
-		@decla ||= spec && _decla || context.pick_entity(
-			:Decla,
-			!accu || coupable.nil? ? "" : "coupable",
-			!accu || victime.nil? ? "" : "victime",
-			!accu || denonciateur.nil? ? "" : "denonciateur"
-		)
+		@decla ||= spec && _decla || context.pick_entity(:Decla,
+				*(accu ? roles.map { |role| role.to_s } : []))
 	end
 
 	# @return [Acteur, nil]
