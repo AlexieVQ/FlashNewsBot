@@ -149,17 +149,16 @@ class Info < Rosace::Entity
 
 	# @return [Acteur, nil]
 	def acteur
-		a = []
-		if acteurs.include?(:pers)
-			a << context.pick_entity(:Pers)
+		case type_acteur
+		when :pers
+			context.pick_entity(:Pers)
+		when :pays
+			context.pick_entity(:Lieu, "pays")
+		when :entreprise
+			context.pick_entity(:Entreprise)
+		else
+			nil
 		end
-		if acteurs.include?(:pays)
-			a << context.pick_entity(:Lieu, "pays")
-		end
-		if acteurs.include?(:entreprise)
-			a << context.pick_entity(:Entreprise)
-		end
-		a[rand(a.length)]
 	end
 
 	# @return [Acteur, nil]
@@ -243,6 +242,13 @@ class Info < Rosace::Entity
 			raise "Info[#{id}]: victime déjà définie"
 		end
 		@victime = victime
+	end
+
+	private
+
+	# @return [Symbol] Type d'acteur de l'information
+	def type_acteur
+		@type_acteur ||= acteurs[rand(acteurs.size)]
 	end
 
 end

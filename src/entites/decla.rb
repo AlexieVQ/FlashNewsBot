@@ -72,7 +72,7 @@ class Decla < Rosace::Entity
 			when :denonciateur
 				info.denonciateur
 			else
-				@sujet = info.acteur
+				@sujet = context.pick_entity(:Pers)
 			end
 			a ? a.to_1e_personne : nil
 		end
@@ -96,7 +96,7 @@ class Decla < Rosace::Entity
 			when :denonciateur
 				info.denonciateur
 			else
-				@objet = info.acteur
+				@objet = context.pick_entity(:Pers)
 			end
 		end
 	end
