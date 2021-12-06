@@ -93,6 +93,7 @@ class Action < Rosace::Entity
 		old_sujet = @sujet
 		old_objet = @objet
 		old_temps = self.temps
+		old_mettre_sujet = self.mettre_sujet
 		# @type [Acteur, nil]
 		@sujet = sujet || old_sujet
 		# @type [Acteur, nil]
@@ -100,6 +101,7 @@ class Action < Rosace::Entity
 		self.coupable = coupable
 		self.victime = victime
 		self.temps = temps
+		self.mettre_sujet = mettre_sujet
 		out = if forme == :verbale
 			if [:infinitif_passe, :infinitif].include?(self.temps) ||
 				!mettre_sujet
@@ -120,6 +122,7 @@ class Action < Rosace::Entity
 		@sujet = old_sujet
 		@objet = old_objet
 		self.temps = old_temps
+		self.mettre_sujet = old_mettre_sujet
 		out
 	end
 
@@ -266,6 +269,21 @@ class Action < Rosace::Entity
 		a("été", "être", "suis", "es", "est", "sommes", "êtes", "sont")
 	end
 
+	# Partie de la forme {#nominale} contenant une alusion au sujet.
+	# @param si_sujet [String] partie contenant le sujet
+	# @param sinon [String] partie à retourner dans le cas contraire
+	# @return [String] Partie contenant le sujet si {#mettre_sujet} est vrai
+	def s(si_sujet, sinon = "")
+		mettre_sujet ? si_sujet : sinon
+	end
+
+	# Retourne la proposition et le {sujet} en complément, ou non.
+	# @param nom [String] sujet de la proposition
+	# @return la propositon avec ou non le {sujet} en complément
+	def s_comp(nom)
+		s(sujet.comp(nom), nom)
+	end
+
 	# @return [List<:coupable, :victime>] Liste des rôles définis pour cette
 	#  action.
 	def roles
@@ -285,6 +303,10 @@ class Action < Rosace::Entity
 	#  - +:simple+ pour le temps simple de l'action, généralement le présent ou
 	#    le futur
 	attr_reader :temps
+
+	# @return [Boolean] Vrai s'il faut retourner explicitement le sujet dans les
+	#  formes nominale ou verbale.
+	attr_accessor :mettre_sujet
 
 	def temps=(temps)
 		@temps = temps || self.temps
