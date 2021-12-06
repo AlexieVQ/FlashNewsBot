@@ -284,6 +284,32 @@ class Action < Rosace::Entity
 		s(sujet.comp(nom), nom)
 	end
 
+	# Retourne un motif d'accusation sous la forme "pour [forme infinitive ou
+	# nominale]".
+	# @return [String] motif d'accusation
+	def pour_motif
+		# @type [Action]
+		motif = info.motif ||= context.pick_entity(:Action,
+				*info.roles.map { |role| role.id2name })
+		args = {}
+		args[:forme] = [:verbale, :nominale][rand(2)]
+		args[:temps] = :infinitif_passe
+		case coupable
+		when :sujet
+			args[:coupable] = sujet
+		when :objet
+			args[:coupable] = objet
+		end
+		case victime
+		when :sujet
+			args[:victime] = sujet
+		when :objet
+			args[:victime] = objet
+		end
+		args[:mettre_sujet] = false
+		value(**args)
+	end
+
 	# @return [List<:coupable, :victime>] Liste des rôles définis pour cette
 	#  action.
 	def roles
