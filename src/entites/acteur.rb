@@ -23,6 +23,10 @@ module Acteur
 				@nom
 			end
 
+			alias :value :nom
+
+			alias :to_s :nom
+
 			def genre
 				@genre
 			end
