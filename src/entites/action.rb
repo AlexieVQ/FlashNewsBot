@@ -1,5 +1,6 @@
 require "rosace"
 require_relative "info"
+require_relative "acteur"
 require_relative "../refinements"
 
 class Action < Rosace::Entity
@@ -26,6 +27,14 @@ class Action < Rosace::Entity
 	# @!attribute [r] victime
 	#  @return [:sujet, :objet, :""]
 	enum :victime, *Info::ROLES
+
+	# @!attribute [r] genre
+	#  @return [:M, :F] Genre de la forme {nominale} de l’action
+	enum :genre, *Acteur::GENRES
+
+	# @!attribute [r] nombre
+	#  @return [:S, :P] Nombre de la forme {nominale} de l’action
+	enum :nombre, *Acteur::NOMBRES
 
 	attr_writer :sujet
 	attr_writer :objet
@@ -81,7 +90,8 @@ class Action < Rosace::Entity
 	# @param mettre_sujet [Boolean]
 	# @param sujet_explicite [Boolean] Vrai si le sujet doit être écrit
 	#  explicitement
-	# @return [String]
+	# @return [String, Acteur] String pour la forme verbale ou nominale dans
+	#  sujet, Acteur pour la forme nominale avec sujet
 	def value(sujet: nil,
 			  objet: nil,
 			  coupable: nil,
@@ -123,12 +133,16 @@ class Action < Rosace::Entity
 		@objet = old_objet
 		self.temps = old_temps
 		self.mettre_sujet = old_mettre_sujet
-		out
+		if forme == :nominale && mettre_sujet == true
+			Acteur.new(nom: out, genre: genre, nombre: nombre)
+		else
+			out
+		end
 	end
 
 	# Appelle {#value} avec les arguments convertis dans le type attendu.
 	# @param args [Array<String>] arguments sous la forme "clef:valeur"
-	# @return [String] Retour de {#value}
+	# @return [String, Acteur] Retour de {#value}
 	def val(*args)
 		kwargs = {}
 		args.each do |arg|
@@ -297,26 +311,42 @@ class Action < Rosace::Entity
 				:nominale :
 				[:verbale, :nominale][rand(2)]
 		args[:temps] = :infinitif_passe
-		case coupable
-		when :sujet
-			args[:coupable] = sujet
-		when :objet
-			args[:coupable] = objet
+		if info.coupable
+			args[:coupable] = info.coupable
 		end
-		case victime
-		when :sujet
-			args[:victime] = sujet
-		when :objet
-			args[:victime] = objet
+		if info.victime
+			args[:victime] = info.victime
 		end
 		args[:mettre_sujet] = false
-		value(**args)
+		out = motif.value(**args)
+		out.is_a?(Acteur) ? out.nom : out
 	end
 
 	# Retourne un motif d'accusation sous la forme "pour [forme nominale]".
 	# @return [String] motif d'accusation
 	def pour_motif_nominal
 		pour_motif(forcer_nominale: true)
+	end
+
+	# Retourne un motif d'accusation sous la forme "dans le cadre de
+	# [motif]".
+	# @return [String] motif d'accusation
+	def dans_le_cadre_de_motif
+		# @type [Action]
+		motif = info.motif ||= context.pick_entity(:Action,
+				*info.roles.map { |role| role.id2name })
+		args = {}
+		args[:forme] = :nominale
+		args[:temps] = :infinitif_passe
+		if info.coupable
+			args[:coupable] = info.coupable
+		end
+		if info.victime
+			args[:victime] = info.victime
+		end
+		args[:mettre_sujet] = true
+		out = motif.value(**args)
+		"dans " + out.comp("le cadre")
 	end
 
 	# @return [List<:coupable, :victime>] Liste des rôles définis pour cette
