@@ -286,13 +286,16 @@ class Action < Rosace::Entity
 
 	# Retourne un motif d'accusation sous la forme "pour [forme infinitive ou
 	# nominale]".
+	# @param forcer_nominale [Boolean] Obliger la forme nominale
 	# @return [String] motif d'accusation
-	def pour_motif
+	def pour_motif(forcer_nominale: false)
 		# @type [Action]
 		motif = info.motif ||= context.pick_entity(:Action,
 				*info.roles.map { |role| role.id2name })
 		args = {}
-		args[:forme] = [:verbale, :nominale][rand(2)]
+		args[:forme] = forcer_nominale ?
+				:nominale :
+				[:verbale, :nominale][rand(2)]
 		args[:temps] = :infinitif_passe
 		case coupable
 		when :sujet
@@ -308,6 +311,12 @@ class Action < Rosace::Entity
 		end
 		args[:mettre_sujet] = false
 		value(**args)
+	end
+
+	# Retourne un motif d'accusation sous la forme "pour [forme nominale]".
+	# @return [String] motif d'accusation
+	def pour_motif_nominal
+		pour_motif(forcer_nominale: true)
 	end
 
 	# @return [List<:coupable, :victime>] Liste des rôles définis pour cette
