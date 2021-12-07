@@ -31,3 +31,6 @@ id,description,before,weight,hashtag,emoji,acteurs,categories,temporalite,coupab
 53,nommé ministre,{ .pays_info = Lieu[1]; .ministere = s(des Affaires étrangères|de la Transition écologique|de l’Éducation nationale|de l’Économie|des Finances|des Armées|de la Défense|de l’Intérieur|du Travail|des Outre-mer|de la Justice|de la Culture|de la Santé|de la Mer|de l’Enseignement supérieur|de l’Agriculture|de l’Égalité femmes-hommes|du Logement|des Transports|des Sports|des Comptes publics|de l’Industrie|de la Ville|des Territoires|des Affaires européennes|de la Jeunesse|du Numérique|de la Ruralité|de la Famille|de l’Enfance) },10,,,pers,politique,present,,
 55,avoue sa culpabilité,,30,,,pers,,proche,,
 56,soutien objet,{ .objet = .acteur },10,,,pers entreprise pays,,present,,objet
+58,est exécuté,,10,{ .sujet.pascal_case }Exécution,,pers,,futur,sujet,
+59,auditionné,,10,,,pers,politique,present,sujet,
+60,devient l’avocat de,{ .objet = Pers }|{ .objet = Entreprise },10,,,pers,,present,sujet,

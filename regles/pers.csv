@@ -60,7 +60,6 @@ id,nom,pascal_case,weight,genre,nombre,qte,categories,origine,cw
 63,un chien,UnChien,10,M,S,1,non_humain,,
 64,un chat,UnChat,10,M,S,1,non_humain,,
 65,Nicolas Hulot,NicolasHulot,10,M,S,1,politique ecolo,1,
-67,Pierre Rabhi,PierreRabhi,10,M,S,1,ecolo,1,
 68,Stéphane Bern,StéphaneBern,10,M,S,1,tv,1,
 69,Éric Zemmour,ÉricZemmour,30,M,S,1,politique ext_droite media,1,Zemmour
 70,Laurent Ruquier,(Laurent)?Ruquier,10,M,S,1,tv,1,
