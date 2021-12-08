@@ -23,7 +23,8 @@ class Lieu < Rosace::Entity
 		"dictature",
 		"president",
 		"chancelier",
-		"parlement"
+		"parlement",
+		"empire"
 	]
 
 	# @!attribute [r] nom
@@ -31,14 +32,6 @@ class Lieu < Rosace::Entity
 	# @!attribute [r] nom_en
 	#  @return [String]
 	# @!attribute [r] pascal_case
-	#  @return [String]
-	# @!attribute [r] adj_ms
-	#  @return [String]
-	# @!attribute [r] adj_fs
-	#  @return [String]
-	# @!attribute [r] adj_mp
-	#  @return [String]
-	# @!attribute [r] adj_fp
 	#  @return [String]
 
 	# @!attribute [r] genre
@@ -68,11 +61,21 @@ class Lieu < Rosace::Entity
 		end
 	end
 
-	# @return [String]
-	def code
+	# @return [String] Code à deux signes du lieu ou d'un parent.
+	def code2
 		c = super
 		if c.empty? && parent
-			parent.code
+			parent.code2
+		else
+			c
+		end
+	end
+
+	# @return [String] Code à trois signes du lieu ou d'un parent.
+	def code3
+		c = super
+		if c.empty? && parent
+			parent.code3
 		else
 			c
 		end
@@ -113,5 +116,45 @@ class Lieu < Rosace::Entity
 	def paradis_fiscal
 		super.to_i == 1
 	end
+
+	# Gentilé du lieu.
+	# @param genre [#to_sym] Genre de l'adjectif
+	# @param nombre [#to_sym] Nombre de l'adjectif
+	# @return [String] Gentilé du lieu
+	def adj(genre = :M, nombre = :S)
+		self.genre_adj = genre.to_sym
+		self.nombre_adj = nombre.to_sym
+		super()
+	end
+
+	# Définit les formes différentes d'{adj} selon le genre et le nombre
+	# @param ms [String] Masculin singulier
+	# @param fs [String] Féminin singulier
+	# @param mp [String] Masculin pluriel
+	# @param fp [String] Féminin pluriel
+	# @return [String] Forme correspondant au genre et au nombre courent
+	def defgn(ms, fs, mp, fp)
+		if genre_adj == :M
+			if nombre_adj == :S
+				ms
+			else
+				mp
+			end
+		else
+			if nombre_adj == :S
+				fs
+			else
+				fp
+			end
+		end
+	end
+
+	private
+
+	# @return [:M, :F] Genre courent de l'adjectif
+	attr_accessor :genre_adj
+
+	# @return [:S, :P] Nombre courent de l'adjectif
+	attr_accessor :nombre_adj
 
 end
