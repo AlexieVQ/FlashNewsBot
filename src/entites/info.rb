@@ -36,6 +36,7 @@ class Info < Rosace::Entity
 		:patronat,			# CEO, PDG, propriétaire d’entreprise
 			:gafam,			# Patron de grande entreprise du numérique
 		:sport,				# Sportif ou journaliste sportif
+			:foot,			# Footballer ou personnalité du monde du football
 		:media,				# Personnalité des médias
 			:edito,			# Éditorialiste
 			:journalisme,	# Journaliste "neutre"
