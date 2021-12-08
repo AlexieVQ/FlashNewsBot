@@ -1,6 +1,7 @@
 id,nom,weight,genre,nombre,origine,categories,patron,emoji
 1,Facebook|Meta,10,F,S,3,internet gafam,26,📱
 2,Amazon,10,F,S,3,internet gafam,27,📦
-3,Google,10,M,S,3,internet gafam,,🔍
+3,Google,10,M,S,3,internet gafam,,🔍|🇬
 4,Apple,10,M,S,3,internet gafam,,🍏|🍎
-5,Microsoft,10,F,S,3,internet gafam,,🪟|🖥️|💻
+5,Microsoft,10,F,S,3,internet gafam,82,🪟|🖥️|💻
+6,LVMH,10,F,S,1,,83,👜

@@ -10,6 +10,7 @@ id,value,weight,ref_info,sujet,objet,pers
 11,Il y aura du lourd dans les featurings,10,16,sujet,,
 12,{ `.pers_decla = .info.acteur`.sujet({ .pers_decla.sera }) } présent{ .pers_decla.es },10,16,sujet,,
 13,Le projet il est prêt il arrive,10,16,sujet,,
+17,{ `.pers_decla = .info.acteur`.sujet({ .pers_decla.a }) } endetté la France,10,21,sujet,,
 1000,Et { `decla1000ratio = new_acteur(ce ratio)`.tonique_explicite } { .info.action.val(sujet: decla1000ratio) } ?( 🤣)?,20,,sujet,,
 1001,Et { `decla1001ratio = new_acteur(ce ratio)`.tonique_explicite } { .info.motif.val(sujet: decla1001ratio) } ?( 🤣)?,20,,coupable,,
 1002,Oof,20,,tierce,coupable,
