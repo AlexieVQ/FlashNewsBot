@@ -135,6 +135,51 @@ id,value,weight,pers
 157,l’ancien Premier Ministre,10,78
 158,l’homme politique,10,78
 159,l’animateur,10,79
+160,le rappeur,10,80
+161,le rappeur américain,10,80
+162,le rappeur,10,81
+163,le rappeur américain,10,81
+164,“Yeezus”,10,81
+165,le milliardaire,10,82
+166,le fondateur de Microsoft,10,82
+167,le milliardaire,10,83
+168,le PDG de LVMH,10,83
+173,l’ancien Ministre de l’Intérieur,10,86
+174,le comédien,10,87
+175,le comédien,10,88
+176,le king,10,89
+177,le Français,10,90
+178,l’influenceur,10,91
+179,l’artiste 2 rue,10,92
+180,le producteur X,10,93
+181,le rappeur,10,94
+182,le chanteur,10,94
+183,le comédien,10,95
+184,l’humoriste,10,95
+186,le vidéaste,10,97
+189,le mathématicien,10,99
+190,le député,10,99
+191,le gouvernement( Jean Castex)?,10,100
+192,l’ancien candidat à l’élection présidentielle,10,101
+193,le président de l’UPR,10,101
+194,le comédien,10,102
+195,le mexicain,10,103
+196,l’homme politique,10,104
+197,le Président de la Région Auvergne-Rhône-Alpes,10,104
+198,le député,10,105
+199,le député insoumis,10,105
+200,le directeur de Mediapart,10,106
+201,le journaliste,10,106
+203,l’homme d’affaires,10,107
+204,le président de l’(Olympique Lyonnais|OL),10,107
+206,le sélectionneur de l’Équipe de France,10,108
+207,l’entraîneur,10,109
+208,le footballer,10,110
+210,le footballer,10,112
+211,le personnage,10,113
+214,le manifestant,10,115
+215,le Titan,10,116
+219,l’ancien candidat à la primaire démocrate,10,120
 1000,le candidat à l’élection présidentielle,10,6
 1001,le candidat insoumis,10,6
 1002,le candidat insoumis à l’élection présidentielle,10,6
@@ -146,3 +191,8 @@ id,value,weight,pers
 1010,le chroniqueur de Mediapart,10,39
 1011,le chroniqueur de Backseat,10,39
 1012,le PDG de Free,10,41
+1013,“Ye”,10,81
+1014,le Président du groupe (LREM|LaREM|La République en Marche) à l’Assemblée Nationale,10,86
+1015,l’entraîneur du Stade Rennais FC,10,109
+1016,l’attaquant de l’AC Milan,10,110
+1017,le milieu de terrain de l’Inter Miami,10,112
