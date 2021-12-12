@@ -154,7 +154,7 @@ class Bot
 	##
 	# Compte utilisé par le bot (+nil+ si hors-ligne)
 	def Bot.compte
-		return nil # @@compte
+		return @@compte
 	end
 	
 	##
