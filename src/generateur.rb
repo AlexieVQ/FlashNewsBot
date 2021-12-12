@@ -22,7 +22,10 @@ GENERATEUR = Rosace::Generator.new(
 		Entreprise
 	],
 	functions: [
-		Rosace::Function.new(:emoji_pays, ->(arg) { arg }),
+		Rosace::Function.new(:emojis_pays, ->(arg = nil) do
+			Rosace::ContextualValue.new(
+					arg.context.variable(:$info).emojis_pays, arg.context)
+		end),
 		Rosace::Function.new(:h, ->(arg) do
 			Rosace::ContextualValue.new(rand(2) == 1 ? "#" : "", arg.context)
 		end),

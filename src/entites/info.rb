@@ -82,6 +82,11 @@ class Info < Rosace::Entity
 		lieux.uniq
 	end
 
+	# @return [String] Retourne les emojis des pays présents dans l'info.
+	def emojis_pays
+		lieux.map { |lieu| lieu.emoji }.uniq.join("")
+	end
+
 	# @return [void]
 	def init
 		@objet = nil
