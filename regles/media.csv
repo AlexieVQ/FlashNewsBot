@@ -1,2 +1,11 @@
 id,value,nom,pascal_case,weight,genre,nombre,types,lieu
-1,"Le Monde","le Monde","LeMonde",10,M,S,papier,1
+1,Le Monde,le Monde,LeMonde,10,M,S,papier,1
+2,Le Figaro,le Figaro,LeFigaro,10,M,S,papier,1
+3,L’Express,l’Express,Lexpress,10,M,S,papier,1
+4,Libération,Libération,Libération,10,M,S,papier,1
+5,Ouest-France,le Ouest-France,OuestFrance,3,M,S,papier,1
+6,La Voix du Nord,la Voix du Nord,LaVoixDuNord,3,F,S,papier,1
+7,Journal du Dimanche|JDD,le (JDD|Journal du Dimanche),JDD,10,M,S,papier,1
+8,Le Point,le Point,LePoint,10,M,S,papier,1
+9,Corse-Matin,Corse-Matin,CorseMatin,3,M,S,papier,1
+10,L’Humanité,l’Humanité,L(H)uma(nité)?,5,M,S,papier,1
