@@ -4,9 +4,15 @@ require "levenshtein-ffi"
 I18n.config.available_locales = :en
 
 module Refinements
-	
+
 	refine String do
-		
+
+		# Met la première lettre en majuscule sans changer le reste.
+		# @return [String] Cette chaîne avec le premier caractère en majuscule
+		def majuscule
+			self[0].upcase + self[1, length]
+		end
+
 		# @return [Boolean]
 		def voyelle?
 			/\A([aeiouéèàêâôûùïî]|y([^aeiouéèàêâôûùïî]|\z))/i.match?(self)
