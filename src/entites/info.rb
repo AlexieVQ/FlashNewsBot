@@ -129,11 +129,11 @@ class Info < Rosace::Entity
 			# end
 			# poids += Bot.bdd.interactions_info(self, Bot.compte)
 			# @type [Integer]
-			taille = plain_value(:value).length
-			poids += (taille - Bot.compte.tendances.
+			taille = _action.plain_value(:value).length if _action
+			poids += ([taille - Bot.compte.tendances.
 					reduce(1000) do |distance, tendance|
 				[self.distance(tendance), distance].min
-			end) * 10
+			end, 0].max) * 10
 		end
 		poids
 	end
@@ -142,7 +142,11 @@ class Info < Rosace::Entity
 	# @param chaine [String] chaîne à comparer
 	# @return [Integer] Distance entre les deux chaînes
 	def distance(chaine)
-		plain_value(:value).levenshtein(chaine)
+		if _action
+			_action.plain_value(:value).levenshtein(chaine)
+		else
+			chaine.length
+		end
 	end
 
 	# @return [String]
