@@ -51,7 +51,7 @@ class Decla < Rosace::Entity
 
 	# @return [Info, nil]
 	def info
-		@info || ref_info || context.variable(:info)
+		@info || ref_info || context.variable(:$info)
 	end
 
 	# @param sym [Boolean]

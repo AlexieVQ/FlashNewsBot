@@ -2,17 +2,6 @@ require 'daemons'
 require_relative 'Status.rb'
 require_relative 'Bdd.rb'
 require_relative 'CompteTwitter.rb'
-require_relative 'elements/Info.rb'
-require_relative 'elements/Pers.rb'
-require_relative 'elements/Accroche.rb'
-require_relative 'elements/DateInfo.rb'
-require_relative 'elements/Lieu.rb'
-require_relative 'elements/Localite.rb'
-require_relative 'elements/Parti.rb'
-require_relative 'elements/Media.rb'
-require_relative 'elements/Circo.rb'
-require_relative 'elements/Decla.rb'
-require_relative 'elements/Reponse.rb'
 
 ##
 # Classe contenant le programme principal du bot.
@@ -141,27 +130,6 @@ class Bot
 				end
 				exit(false) if(self.debug?)
 			end
-		
-			while(restant > 0) do
-				if(@@compte) then # Traitement des mentions
-					begin
-						@@compte.repondre(@@taux) { |mention|
-							reponse = Reponse.repondre(mention)
-							reponse ? reponse.reponse : nil
-						}
-					rescue => e
-						if(e.respond_to? :full_message) then
-							$stderr.puts(e.full_message)
-						else
-							$stderr.puts(e)
-						end
-						exit(false) if(self.debug?)
-					end
-				end
-				sleep(restant > mini_inter ? mini_inter : restant)
-				restant -= Time.now.to_i - marque
-				marque = Time.now.to_i
-			end
 			
 		}
 	end
@@ -182,7 +150,7 @@ class Bot
 	##
 	# Compte utilisé par le bot (+nil+ si hors-ligne)
 	def Bot.compte
-		return @@compte
+		return nil # @@compte
 	end
 	
 	##
@@ -202,61 +170,6 @@ class Bot
 	# Intervalle (minutes) entre chaque status (Integer ou Float)
 	def Bot.intervalle
 		return @@intervalle
-	end
-	
-	##
-	# Teste si le sujet a été surnommé dans le status, ou non (booléen).
-	def Bot.sujet_surnomme?
-		return @@sujet_surnomme
-	end
-	
-	##
-	# Définit si le sujet a été surnommé dans le status, ou non (booléen).
-	def Bot.sujet_surnomme=(bool)
-		return @@sujet_surnomme = bool
-	end
-	
-	##
-	# Index (Hash) faisant correspondre des identifiants utilisés dans les
-	# expressions à leurs valeurs associées.
-	#
-	# Les éléments présent dans l'index sont des Expression, des instances ou
-	# des classes héritant de Element. Ils doivent tous implémenter une méthode
-	# +retourner+ prenant en paramètres +attribut+ (String) et +pamaretres+
-	# (Array de String). Voir la documentation de String#evaluer pour plus de
-	# détails.
-	def Bot.index
-		return @@index
-	end
-	
-	##
-	# (Ré)initialise l'index (voir Bot::index) en définissant les commandes
-	# +rand+, +maj+, +cap+, +genre+, +gse+, +h+ (voir Expression) et les classes
-	# d'éléments +accroche+ (voir Accroche), +pers+ (voir Pers), +date+ (voir
-	# DateInfo), +lieu+ (voir Lieu), +localite+ (voir Localite), +parti+ (voir
-	# Parti), +media+ (voir Media), +circo+ (voir Circo) et +decla+ (voir
-	# Decla).
-	def Bot.index_reset
-		@@index = Hash.new
-		
-		@@index['rand'] = Expression.new(:rand)
-		@@index['maj'] = Expression.new(:maj)
-		@@index['cap'] = Expression.new(:cap)
-		@@index['genre'] = Expression.new(:genre)
-		@@index['gse'] = Expression.new(:gse)
-		@@index['h'] = Expression.new(:h)
-		@@index['randn'] = Expression.new(:randn)
-		@@index['accroche'] = Accroche
-		@@index['pers'] = Pers
-		@@index['date'] = DateInfo
-		@@index['lieu'] = Lieu
-		@@index['localite'] = Localite
-		@@index['parti'] = Parti
-		@@index['media'] = Media
-		@@index['circo'] = Circo
-		@@index['decla'] = Decla
-		
-		return @@index
 	end
 	
 	private_class_method :new

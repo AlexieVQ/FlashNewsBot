@@ -1,6 +1,8 @@
 require "rosace"
 require_relative "acteur"
-require_relative "info"
+require_relative "../Bot"
+require_relative "../refinements"
+require_relative "categories"
 
 class Pers < Rosace::Entity
 	include Acteur
@@ -23,7 +25,7 @@ class Pers < Rosace::Entity
 
 	# @!attribute [r] categories
 	#  @return [Array<Symbol>]
-	mult_enum :categories, *Info::CATEGORIES
+	mult_enum :categories, *CATEGORIES
 
 	# @!attribute [r] origine
 	#  @return [Lieu, nil]
@@ -49,6 +51,43 @@ class Pers < Rosace::Entity
 		else
 			surnom.value
 		end
+	end
+
+	# @return [Integer] Poids du personnage dans les choix aléatoires
+	def weight
+		poids = super
+		if Bot.compte
+			if Bot.bdd.pers_recemment_poste(self, Bot.compte) > 0
+				return 1
+			end
+			poids += Bot.bdd.interactions_pers(self, Bot.compte)
+			# @type [Integer]
+			taille = plain_value(:nom).length
+			poids += (taille - Bot.compte.tendances.
+					reduce(1000) do |distance, tendance|
+				[self.distance(tendance), distance].min
+			end) * 10
+		end
+		# @type [Info, nil]
+		info = context.variable(:$info)
+		if info
+			cat_sujet = info.instance_variable_get(:@sujet).
+					respond_to?(:categories) ?
+					info.sujet.categories :
+					[]
+			((info.categories | cat_sujet) & categories).each { poids *= 20 }
+			if info.lieux.any? { |lieu| lieu.parent?(origine) }
+				poids *= 20
+			end
+		end
+		poids
+	end
+
+	# Retourne la distance avec la chaîne donnée
+	# @param chaine [String] chaîne à comparer
+	# @return [Integer] Distance entre les deux chaînes
+	def distance(chaine)
+		plain_value(:nom).levenshtein(chaine)
 	end
 
 	# @return [1, 2, 3]

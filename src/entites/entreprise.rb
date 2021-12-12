@@ -1,6 +1,6 @@
 require "rosace"
 require_relative "acteur"
-require_relative "info"
+require_relative "categories"
 
 class Entreprise < Rosace::Entity
 
@@ -34,7 +34,7 @@ class Entreprise < Rosace::Entity
     #  @return [Pers, nil]
     reference :patron, :Pers, :optional
 
-    mult_enum :categories, *Info::CATEGORIES
+    mult_enum :categories, *CATEGORIES
 
     # @return [Array<Symbol>]
     def categories

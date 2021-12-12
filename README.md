@@ -17,3 +17,4 @@ Ruby.
 - [json](https://flori.github.io/json/)
 - [daemons](https://github.com/thuehlinger/daemons)
 - [i18n](https://github.com/ruby-i18n/i18n)
+- [levenshtein-ffi](https://github.com/dbalatero/levenshtein-ffi)

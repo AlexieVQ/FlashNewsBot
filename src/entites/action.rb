@@ -39,10 +39,24 @@ class Action < Rosace::Entity
 	attr_writer :sujet
 	attr_writer :objet
 
+	# Retournes tous les lieux présents dans l'action.
+	# @return [Array<Lieu>] Lieux présents dans l'action
+	def lieux
+		lieux = []
+		[@sujet, @objet].each do |acteur|
+			if acteur.is_a?(Pers) || acteur.is_a?(Entreprise)
+				lieux << acteur.origine if acteur.origine
+			elsif acteur.is_a?(Lieu)
+				lieux << acteur
+			end
+		end
+		lieux.uniq
+	end
+
 	# @return [Acteur, nil] Acteur objet de cette action
 	def objet
 		# @type [Info]
-		info = context.variable(:info)
+		info = context.variable(:$info)
 		if @objet
 			@objet
 		elsif coupable == :objet
@@ -57,7 +71,7 @@ class Action < Rosace::Entity
 	# @return [Acteur] Acteur sujet de cette action
 	def sujet
 		# @type [Info]
-		info = context.variable(:info)
+		info = context.variable(:$info)
 		if @sujet
 			@sujet
 		elsif coupable == :sujet
@@ -65,7 +79,7 @@ class Action < Rosace::Entity
 		elsif victime == :sujet
 			@sujet = info.victime ||= info.acteur
 		else
-			context.variable(:info).sujet
+			context.variable(:$info).sujet
 		end
 	end
 
@@ -356,6 +370,13 @@ class Action < Rosace::Entity
 		roles << :coupable if !coupable.empty?
 		roles << :victime if !victime.empty?
 		roles
+	end
+
+	# Calcule la distance avec la chaîne donnée.
+	# @param chaine [String] Chaîne à comparer
+	# @return [Integer] Nombre de différences entre les deux chaînes
+	def distance(chaine)
+		plain_value(:value).levenshtein(chaine)
 	end
 
 	private

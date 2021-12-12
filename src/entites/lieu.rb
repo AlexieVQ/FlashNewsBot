@@ -61,6 +61,30 @@ class Lieu < Rosace::Entity
 		end
 	end
 
+	# @return [Integer] Poids du lieu dans les choix aléatoires
+	def weight
+		poids = super
+		# @type [Info]
+		info = context.variable(:$info)
+		if info.sujet.respond_to?(:origine) && parent?(info.sujet.origine)
+			poids *= 100
+		end
+		poids
+	end
+
+	# Teste si +self+ est un parent (direct ou indirect) du lieu donné
+	# @param lieu [Lieu] lieu enfant potentiel
+	# @return [Boolean] Vrai si ce lieu est un parent du lieu donné
+	def parent?(lieu)
+		if self == lieu
+			true
+		elsif parent.nil?
+			false
+		else
+			parent.parent?(lieu)
+		end
+	end
+
 	# @return [String] Code à deux signes du lieu ou d'un parent.
 	def code2
 		c = super

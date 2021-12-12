@@ -1,47 +1,19 @@
 require "rosace"
+require_relative "../Bot"
+require_relative "../refinements"
 require_relative "action"
+require_relative "entreprise"
+require_relative "lieu"
+require_relative "categories"
 
 class Info < Rosace::Entity
+
+	using Refinements
 
 	TYPES_ACTEUR = [
 		:pers,
 		:pays,
 		:entreprise
-	]
-
-	CATEGORIES = [
-		:internet,			# Personnalité liée à internet
-			:videaste,		# Vidéaste sur internet
-			:youtube,		# Youtubeur
-			:twitch,		# Streamer
-			:twitter,		# Twitto
-		:politique,			# Personnalité politique
-			:gauche,		# Gauche (officiellement)
-			:droite,		# Droite (officiellement)
-			:ext_gauche,	# Extrême-gauche (officiellement)
-			:ext_droite,	# Extrême-droite (officiellement)
-			:ecolo,			# Centre-gauche écologiste
-			:centre,		# Centre (officiellement)
-		:fiction,			# Personnage de fiction
-		:culture,			# Personnalité culturelle
-			:musique,		# Chanteur, musicien
-			:jeu_video,		# Personnage ou personnalité du jeu vidéo
-			:serie,			# Personnage ou comédien de série
-			:cinema,		# Personnage ou comédien de cinéma
-			:animation,		# Personnage de cartoon ou anime
-			:bd,			# Personnage de bande dessinée, comics ou manga
-			:humour,		# Humoristes
-			:litterature,	# Personnage de littérature ou écrivain
-		:anonyme,			# Monsieur-madame tout le monde
-		:patronat,			# CEO, PDG, propriétaire d’entreprise
-			:gafam,			# Patron de grande entreprise du numérique
-		:sport,				# Sportif ou journaliste sportif
-			:foot,			# Footballer ou personnalité du monde du football
-		:media,				# Personnalité des médias
-			:edito,			# Éditorialiste
-			:journalisme,	# Journaliste "neutre"
-		:tv,				# Personnalité de divertissement télévisé
-		:non_humain,		# Animal
 	]
 
 	ROLES = [:"", :sujet, :objet]
@@ -88,6 +60,25 @@ class Info < Rosace::Entity
 	# @return [Action, nil] Motif d'accusation.
 	attr_accessor :motif
 
+	# Retourne tous les lieux présents dans l'info.
+	# @param multi_niveaux [Boolean] Vrai s'il faut retourner également les
+	#  lieux qui ne sont pas directement dans l'info
+	# @return [Array<Lieu>] Lieux présents dans l'info
+	def lieux(multi_niveaux: true)
+		lieux = []
+		lieux << lieu if respond_to?(:lieu)
+		[@sujet, @objet].each do |acteur|
+			if multi_niveaux && (acteur.is_a?(Pers) || acteur.is_a?(Entreprise))
+				lieux << acteur.origine if acteur.origine
+			elsif acteur.is_a?(Lieu)
+				lieux << acteur
+			end
+		end
+		lieux += @action.lieux if multi_niveaux && @action
+		lieux += @motif.lieux if multi_niveaux && @motif
+		lieux.uniq
+	end
+
 	# @return [void]
 	def init
 		@objet = nil
@@ -117,6 +108,33 @@ class Info < Rosace::Entity
 			""
 		end + hashtag
 		context.pick_entity(:Accroche).value + " " + phrase
+	end
+
+	# Calcule le poids de l'information lors de choix aléatoires.
+	# @return [Integer] Poids de l'information
+	def weight
+		# @type [Integer]
+		poids = super
+		if Bot.compte
+			if Bot.bdd.info_recemment_poste(self, Bot.compte) > 0
+				return 1
+			end
+			poids += Bot.bdd.interactions_info(self, Bot.compte)
+			# @type [Integer]
+			taille = plain_value(:value).length
+			poids += (taille - Bot.compte.tendances.
+					reduce(1000) do |distance, tendance|
+				[self.distance(tendance), distance].min
+			end) * 10
+		end
+		poids
+	end
+
+	# Retourne la distance avec la chaîne donnée
+	# @param chaine [String] chaîne à comparer
+	# @return [Integer] Distance entre les deux chaînes
+	def distance(chaine)
+		plain_value(:value).levenshtein(chaine)
 	end
 
 	# @return [String]
