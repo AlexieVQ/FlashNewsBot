@@ -5,7 +5,11 @@ require_relative "../refinements"
 require_relative "categories"
 
 class Pers < Rosace::Entity
+
+	using Refinements
+
 	include Acteur
+
 	self.file = "regles/pers.csv"
 
 	# @!attribute [r] nom
