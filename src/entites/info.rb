@@ -129,7 +129,7 @@ class Info < Rosace::Entity
 			# end
 			# poids += Bot.bdd.interactions_info(self, Bot.compte)
 			# @type [Integer]
-			taille = _action.plain_value(:value).length if _action
+			taille = _action.plain_value(:nominale).length if _action
 			poids += ([taille - Bot.compte.tendances.
 					reduce(1000) do |distance, tendance|
 				[self.distance(tendance), distance].min
@@ -143,7 +143,7 @@ class Info < Rosace::Entity
 	# @return [Integer] Distance entre les deux chaînes
 	def distance(chaine)
 		if _action
-			_action.plain_value(:value).levenshtein(chaine)
+			_action.plain_value(:nominale).levenshtein(chaine)
 		else
 			chaine.length
 		end

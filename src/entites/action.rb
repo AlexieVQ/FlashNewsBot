@@ -385,7 +385,7 @@ class Action < Rosace::Entity
 	# @param chaine [String] Chaîne à comparer
 	# @return [Integer] Nombre de différences entre les deux chaînes
 	def distance(chaine)
-		plain_value(:value).levenshtein(chaine)
+		plain_value(:nominale).levenshtein(chaine)
 	end
 
 	private
