@@ -143,8 +143,8 @@ class CompteTwitter < Compte
 			reponse.value
 		end
 		tweet = JSON.parse(reponse.body)
-		Bot.bdd.insert_status(tweet["id"].to_i, self, tweet["created_at"],
-							  status.info, status.pers)
+		# Bot.bdd.insert_status(tweet["id"].to_i, self, tweet["created_at"],
+		# 					  status.info, status.pers)
 		return tweet["id"].to_i
 	end
 	
