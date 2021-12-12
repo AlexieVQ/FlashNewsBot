@@ -72,10 +72,10 @@ class Pers < Rosace::Entity
 			end
 		end
 		if Bot.compte
-			if Bot.bdd.pers_recemment_poste(self, Bot.compte) > 0
-				return 1
-			end
-			poids += Bot.bdd.interactions_pers(self, Bot.compte)
+			# if Bot.bdd.pers_recemment_poste(self, Bot.compte) > 0
+			# 	return 1
+			# end
+			# poids += Bot.bdd.interactions_pers(self, Bot.compte)
 			# @type [Integer]
 			taille = plain_value(:nom).length
 			poids += (taille - Bot.compte.tendances.

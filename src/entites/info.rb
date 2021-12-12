@@ -119,10 +119,10 @@ class Info < Rosace::Entity
 		# @type [Integer]
 		poids = super
 		if Bot.compte
-			if Bot.bdd.info_recemment_poste(self, Bot.compte) > 0
-				return 1
-			end
-			poids += Bot.bdd.interactions_info(self, Bot.compte)
+			# if Bot.bdd.info_recemment_poste(self, Bot.compte) > 0
+			# 	return 1
+			# end
+			# poids += Bot.bdd.interactions_info(self, Bot.compte)
 			# @type [Integer]
 			taille = plain_value(:value).length
 			poids += (taille - Bot.compte.tendances.
