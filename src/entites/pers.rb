@@ -56,6 +56,21 @@ class Pers < Rosace::Entity
 	# @return [Integer] Poids du personnage dans les choix aléatoires
 	def weight
 		poids = super
+		# @type [Info, nil]
+		info = context.variable(:$info)
+		if info
+            if info.contient?(self)
+                return 1
+            end
+			cat_sujet = info.instance_variable_get(:@sujet).
+					respond_to?(:categories) ?
+					info.sujet.categories :
+					[]
+			((info.categories | cat_sujet) & categories).each { poids *= 20 }
+			if info.lieux.any? { |lieu| lieu.parent?(origine) }
+				poids *= 20
+			end
+		end
 		if Bot.compte
 			if Bot.bdd.pers_recemment_poste(self, Bot.compte) > 0
 				return 1
@@ -67,18 +82,6 @@ class Pers < Rosace::Entity
 					reduce(1000) do |distance, tendance|
 				[self.distance(tendance), distance].min
 			end) * 10
-		end
-		# @type [Info, nil]
-		info = context.variable(:$info)
-		if info
-			cat_sujet = info.instance_variable_get(:@sujet).
-					respond_to?(:categories) ?
-					info.sujet.categories :
-					[]
-			((info.categories | cat_sujet) & categories).each { poids *= 20 }
-			if info.lieux.any? { |lieu| lieu.parent?(origine) }
-				poids *= 20
-			end
 		end
 		poids
 	end

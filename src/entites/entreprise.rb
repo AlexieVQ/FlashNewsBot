@@ -36,6 +36,35 @@ class Entreprise < Rosace::Entity
 
     mult_enum :categories, *CATEGORIES
 
+	# @return [Integer] Poids de l'entreprise dans les choix aléatoires
+	def weight
+		# @type [Info, nil]
+		info = context.variable(:$info)
+		poids = super
+		if info
+            if info.contient?(self)
+                return 1
+            end
+			cat_sujet = info.instance_variable_get(:@sujet).
+					respond_to?(:categories) ?
+					info.sujet.categories :
+					[]
+			((info.categories | cat_sujet) & categories).each { poids *= 20 }
+			if info.lieux.any? { |lieu| lieu.parent?(origine) }
+				poids *= 20
+			end
+		end
+		if Bot.compte
+			# @type [Integer]
+			taille = plain_value(:nom).length
+			poids += (taille - Bot.compte.tendances.
+					reduce(1000) do |distance, tendance|
+				[self.distance(tendance), distance].min
+			end) * 10
+		end
+		poids
+	end
+
     # @return [Array<Symbol>]
     def categories
         super + [:patronat]

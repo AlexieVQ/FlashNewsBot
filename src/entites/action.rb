@@ -2,10 +2,13 @@ require "rosace"
 require_relative "info"
 require_relative "acteur"
 require_relative "../refinements"
+require_relative "../inspectable"
 
 class Action < Rosace::Entity
 
 	using Refinements
+
+	include Inspectable
 
 	self.file = "regles/action.csv"
 
@@ -152,6 +155,12 @@ class Action < Rosace::Entity
 		else
 			out
 		end
+	end
+
+	# @return [Integer] Poids de l'action dans les choix aléatoires
+	def weight
+		info = context.variable(:$info)
+		(info && info.contient?(self)) ? 1 : super
 	end
 
 	# Appelle {#value} avec les arguments convertis dans le type attendu.

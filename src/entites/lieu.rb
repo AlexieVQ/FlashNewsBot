@@ -66,8 +66,13 @@ class Lieu < Rosace::Entity
 		poids = super
 		# @type [Info]
 		info = context.variable(:$info)
-		if info.sujet.respond_to?(:origine) && parent?(info.sujet.origine)
-			poids *= 100
+		if info
+			if info.lieux(multi_niveaux: false).any? { |lieu| lieu == self }
+				return 1
+			end
+			if info.sujet.respond_to?(:origine) && parent?(info.sujet.origine)
+				poids *= 100
+			end
 		end
 		poids
 	end

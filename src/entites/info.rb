@@ -1,6 +1,7 @@
 require "rosace"
 require_relative "../Bot"
 require_relative "../refinements"
+require_relative "../inspectable"
 require_relative "action"
 require_relative "entreprise"
 require_relative "lieu"
@@ -9,6 +10,8 @@ require_relative "categories"
 class Info < Rosace::Entity
 
 	using Refinements
+
+	include Inspectable
 
 	TYPES_ACTEUR = [
 		:pers,
@@ -66,7 +69,7 @@ class Info < Rosace::Entity
 	# @return [Array<Lieu>] Lieux présents dans l'info
 	def lieux(multi_niveaux: true)
 		lieux = []
-		lieux << lieu if respond_to?(:lieu)
+		lieux << lieu if respond_to?(:lieu) && lieu
 		[@sujet, @objet].each do |acteur|
 			if multi_niveaux && (acteur.is_a?(Pers) || acteur.is_a?(Entreprise))
 				lieux << acteur.origine if acteur.origine
