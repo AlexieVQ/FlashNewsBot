@@ -129,7 +129,7 @@ class Bot
 				end
 				exit(false) if(self.debug?)
 			end
-			sleep(60 * @@intervalle)
+			sleep(60 * intervalle)
 		}
 	end
 	
