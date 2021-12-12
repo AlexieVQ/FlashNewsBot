@@ -129,7 +129,12 @@ class Bot
 				end
 				exit(false) if(self.debug?)
 			end
-			sleep(60 * intervalle)
+
+			while(restant > 0) do
+				sleep(restant > mini_inter ? mini_inter : restant)
+				restant -= Time.now.to_i - marque
+				marque = Time.now.to_i
+			end
 		}
 	end
 	
