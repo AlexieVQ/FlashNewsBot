@@ -50,7 +50,6 @@ class Bot
 		@@compte = nil
 		@@debug = offline || debug
 		@@taux = taux
-		self.index_reset
 		
 		unless(offline) then
 			@@bdd = Bdd.new(password) # Doit être connectée pour enregistrer le 
