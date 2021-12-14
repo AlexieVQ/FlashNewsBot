@@ -73,7 +73,7 @@ class Entreprise < Rosace::Entity
 	# @return [Integer] Distance entre les deux chaînes
 	def distance(chaine)
 		if
-			plain_value(:value).levenshtein(chaine)
+			plain_value(:nom).levenshtein(chaine)
 		else
 			chaine.length
 		end
