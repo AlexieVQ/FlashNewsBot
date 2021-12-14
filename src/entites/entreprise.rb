@@ -1,8 +1,11 @@
 require "rosace"
 require_relative "acteur"
 require_relative "categories"
+require_relative "../refinements"
 
 class Entreprise < Rosace::Entity
+
+    using Refinements
 
     include Acteur
 
@@ -63,6 +66,17 @@ class Entreprise < Rosace::Entity
 			end) * 10
 		end
 		poids
+	end
+
+	# Retourne la distance avec la chaîne donnée
+	# @param chaine [String] chaîne à comparer
+	# @return [Integer] Distance entre les deux chaînes
+	def distance(chaine)
+		if
+			plain_value(:value).levenshtein(chaine)
+		else
+			chaine.length
+		end
 	end
 
     # @return [Array<Symbol>]
