@@ -33,4 +33,8 @@ id,description,before,weight,hashtag,emoji,acteurs,categories,temporalite,coupab
 56,soutien objet,{ .objet = .acteur },10,,,pers entreprise pays,,present,,objet
 58,est exécuté,,10,{ .sujet.pascal_case }Exécution,,pers,,futur,sujet,
 59,auditionné,,10,,,pers,politique,present,sujet,
-60,devient l’avocat de,{ .objet = Pers }|{ .objet = Entreprise },10,,,pers,,present,sujet,
+60,devient l’avocat de,{ .objet = Pers }|{ .objet = Entreprise },10,,,pers,,present,objet,
+61,abandonne la défense de,{ .objet = Pers }|{ .objet = Entreprise },10,,,pers,,present,objet,
+64,porte plainte contre,{ .objet = .acteur },50,,,pers entreprise,,present,objet,sujet
+65,bat objet aux élections,{ .objet = .acteur },10,,🗳️,pers,politique,present,,
+67,perquisition,,10,,,pers,politique,proche,sujet,
