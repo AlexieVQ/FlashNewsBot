@@ -12,10 +12,6 @@ class Pers < Rosace::Entity
 
 	self.file = "regles/pers.csv"
 
-	# @!attribute [r] nom
-	#  @return [String]
-	# @!attribute [r] pascal_name
-	#  @return [String]
 	# @!attribute [r] cw
 	#  @return [String]
 
@@ -45,16 +41,25 @@ class Pers < Rosace::Entity
 	def init
 		# @type [Boolean]
 		@nom_cite = false
+		# @type [Boolean]
+		@commun = false
 	end
 
-	# @return [String]
+	# @return [String] Nom ou surnom du personnage, si son nom a déjà été donné.
 	def nom
+		commun
 		if !@nom_cite || surnom_list.empty?
 			@nom_cite = true
 			super
 		else
 			surnom.value
 		end
+	end
+
+	# @return [String] Nom en PascalCase du personnage (pour les hashtags)
+	def pascal_case
+		commun
+		super
 	end
 
 	# @return [Integer] Poids du personnage dans les choix aléatoires
@@ -123,6 +128,17 @@ class Pers < Rosace::Entity
 		else
 			""
 		end
+	end
+
+	# Exécute les macros définis dans l'attribut +commun+ avant d'accéder aux
+	# informations du personnage.
+	# @return [void]
+	def commun
+		unless @commun
+			super
+			@commun = true
+		end
+		self
 	end
 
 end
