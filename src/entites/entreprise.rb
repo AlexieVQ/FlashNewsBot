@@ -81,7 +81,7 @@ class Entreprise < Rosace::Entity
             puts "length = #{o}"
             o
 		end
-        puts "distance avec #{chaine} = #{out}"
+        puts "distance avec #{chaine} = #{out} (#{out.class})"
         out
 	end
 
