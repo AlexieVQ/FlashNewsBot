@@ -56,6 +56,12 @@ GENERATEUR = Rosace::Generator.new(
 	]
 )
 
+GENERATEUR.print_messages
+
+if GENERATEUR.failed?
+	exit(1)
+end
+
 def generer
 	context = GENERATEUR.new_evaluation_context
 	context.pick_entity(:Main).value
