@@ -28,7 +28,8 @@ class Lieu < Rosace::Entity
 		"emirat",
 		"saint_siege",
 		"principaute",
-		"grand_duche"
+		"grand_duche",
+		"guide_supreme"
 	]
 
 	# @!attribute [r] nom
