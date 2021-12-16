@@ -25,7 +25,8 @@ class Lieu < Rosace::Entity
 		"chancelier",
 		"parlement",
 		"empire",
-		"emirat"
+		"emirat",
+		"saint_siege"
 	]
 
 	# @!attribute [r] nom
