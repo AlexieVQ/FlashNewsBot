@@ -183,6 +183,24 @@ class Lieu < Rosace::Entity
 		end
 	end
 
+	# Similaire à `.defgn(,e,s,es)`
+	# @see #defgn
+	def defes
+		defgn("", "e", "s", "es")
+	end
+
+	# Similaire à `.defgn(,e,,es)`
+	# @see #defgn
+	def defs
+		defgn("", "e", "", "es")
+	end
+
+	# Similaire à `.defgn(,ne,s,nes)`
+	# @see #defgn
+	def defnes
+		defgn("", "ne", "s", "nes")
+	end
+
 	private
 
 	# @return [:M, :F] Genre courent de l'adjectif
