@@ -8,6 +8,7 @@ require_relative "entites/media"
 require_relative "entites/surnom"
 require_relative "entites/lieu"
 require_relative "entites/entreprise"
+require_relative "entites/orga"
 
 GENERATEUR = Rosace::Generator.new(
 	path: "regles/",
@@ -19,7 +20,8 @@ GENERATEUR = Rosace::Generator.new(
 		Media,
 		Surnom,
 		Lieu,
-		Entreprise
+		Entreprise,
+		Orga
 	],
 	functions: [
 		Rosace::Function.new(:emojis_pays, ->(arg = nil) do
