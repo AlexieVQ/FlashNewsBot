@@ -33,8 +33,6 @@ class Lieu < Rosace::Entity
 
 	# @!attribute [r] nom
 	#  @return [String]
-	# @!attribute [r] nom_en
-	#  @return [String]
 	# @!attribute [r] pascal_case
 	#  @return [String]
 
