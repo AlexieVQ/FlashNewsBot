@@ -75,7 +75,9 @@ class Lieu < Rosace::Entity
 			if info.lieux(multi_niveaux: false).any? { |lieu| lieu == self }
 				return 1
 			end
-			if info.sujet.respond_to?(:origine) && parent?(info.sujet.origine)
+			# @type [#origine, nil]
+			sujet = info.instance_variable_get(:@sujet)
+			if sujet.respond_to?(:origine) && parent?(sujet.origine)
 				poids *= 100
 			end
 		end
