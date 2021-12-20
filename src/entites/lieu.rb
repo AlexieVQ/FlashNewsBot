@@ -274,6 +274,30 @@ class Lieu < Rosace::Entity
 		fonctions.empty? ? nil : fonctions[rand(fonctions.length)]
 	end
 
+	# Retourne le verbe donné avec ce lieu en complément circonstanciel.
+	# @param verbe [String] Verbe
+	# @return [String] Verbe suivi du lieu
+	def loc(verbe)
+		@_acteur_nom_cite ? "y #{verbe}" : "#{verbe} #{loc_explicite}"
+	end
+
+	# @return [String] Le nom du lieu précédé d'une préposition
+	def loc_explicite
+		ponctuel = type == :ville
+		@_acteur_nom_cite = true
+		match = /\A\s*(?<article>(le |la |les )?)(?<nom>.*)\z/i =~ nom
+		article = match[:article]
+		if /\Ale \z/i =~ article
+			"au"
+		elsif /\Ala \z/i =~ article
+			ponctuel ? "à" : "en"
+		elsif /\Ales \z/i =~ article
+			type == :region ? "dans les" : "aux"
+		else
+			"à"
+		end + " " + match[:nom]
+	end
+
 	private
 
 	# @return [:M, :F] Genre courent de l'adjectif
