@@ -202,6 +202,72 @@ class Lieu < Rosace::Entity
 		defgn("", "ne", "s", "nes")
 	end
 
+	# Retourne la fonction du chef de l'exécutif de ce lieu.
+	#
+	# S’applique aux villes (maire), départements (président du conseil
+	# départemental) et aux lieux ayant des régimes spécifiés.
+	# @param genre ["M", "F", :M, :F] genre de la personne
+	# @param nombre ["S", "P", :S, :P] nombre de personnes
+	# @return [String, nil] la fonction, ou +nil+ si ce
+	#  n'est pas applicable pour ce lieu.
+	def chef(genre = :M, nombre = :S)
+		f = ->(ms, fs, mp, fp) do
+			if genre.to_sym == :M
+				if nombre.to_sym == :S
+					ms
+				else
+					mp
+				end
+			else
+				if nombre.to_sym == :S
+					fs
+				else
+					fp
+				end
+			end
+		end
+		# @type [Array<String>]
+		fonctions = regime.map do |regime|
+			case regime
+			when :royaume
+				f("roi", "reine", "rois", "reines")
+			when :dictature
+				f("dictateur", "dictatrice", "dictateurs", "dictatrice")
+			when :president
+				f("président", "présidente", "présidents", "présidentes")
+			when :chancelier
+				f("chancelier", "chancelière", "chanceliers", "chancelières")
+			when :parlement
+				f("premier ministre", "première ministre", "premiers ministres",
+						"premières ministres")
+			when :empire
+				f("empereur", "impératrice", "empereurs", "impératrices")
+			when :emirat
+				f("émir", "émiresse", "émirs", "émiresses")
+			when :saint_siege
+				f("pape", "papesse", "papes", "papesses")
+			when :principaute
+				f("prince", "princesse", "princes", "princesses")
+			when :grand_duche
+				f("grand duc", "grande duchesse", "grands ducs",
+						"grandes duchesses")
+			when :guide_supreme
+				f("guide suprême", "guide suprême", "guides suprêmes",
+						"guides suprêmes")
+			else
+				raise "Régime inconnu #{regime}"
+			end
+		end
+		case type
+		when :ville
+			fonctions << f("maire", "maire", "maires", "maires")
+		when :departement
+			fonctions << f("président", "présidente", "présidents",
+					"présidentes") + " du conseil départemental"
+		end
+		fonctions.empty? ? nil : fonctions[rand(fonctions.length)]
+	end
+
 	private
 
 	# @return [:M, :F] Genre courent de l'adjectif
