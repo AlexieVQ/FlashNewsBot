@@ -18,7 +18,6 @@ class Lieu < Rosace::Entity
 	]
 
 	REGIMES = [
-		"republique",
 		"royaume",
 		"dictature",
 		"president",

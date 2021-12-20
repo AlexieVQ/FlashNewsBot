@@ -1,60 +1,60 @@
 id,nom,nom_en,pascal_case,genre,nombre,weight,adj,parent,code2,code3,emoji,type,regime,paradis_fiscal
-1,la France,France,France,F,S,10,français{.defs },133,FR,FRA,🇫🇷,pays,republique president,
-2,l’Allemagne,Germany,Allemagne,F,S,10,allemand{ .defes },133,DE,DEU,🇩🇪,pays,republique chancelier,
-3,les États-Unis( d’Amérique)?,(USA|America),USA,M,P,10,américain{.defes },,US,USA,🇺🇸,pays,republique president,
+1,la France,France,France,F,S,10,français{.defs },133,FR,FRA,🇫🇷,pays,president,
+2,l’Allemagne,Germany,Allemagne,F,S,10,allemand{ .defes },133,DE,DEU,🇩🇪,pays,chancelier,
+3,les États-Unis( d’Amérique)?,(USA|America),USA,M,P,10,américain{.defes },,US,USA,🇺🇸,pays,president,
 4,le Royaume-Uni,United Kingdom,UK,M,S,10,"britannique{.defgn(,,s,s) }",132,UK|GB,GRB,🇬🇧,pays,royaume parlement,
 5,l’Espagne,Spain,Espagne,F,S,10,espagnol{.defes },133,ES,ESP,🇪🇸,pays,royaume parlement,
-6,le Portugal,Portugal,Portugal,M,S,10,portugais{.defs },133,PT,PRT,🇵🇹,pays,republique president,
-7,l’Italie,Italy,Italie,F,S,10,italien{.defnes },133,IT,ITA,🇮🇹,pays,republique parlement,
+6,le Portugal,Portugal,Portugal,M,S,10,portugais{.defs },133,PT,PRT,🇵🇹,pays,president,
+7,l’Italie,Italy,Italie,F,S,10,italien{.defnes },133,IT,ITA,🇮🇹,pays,parlement,
 8,la Belgique,Belgium,Belgique,F,S,10,"belge{.defgn(,,s,s) }",133,BE,BEL,🇧🇪,pays,royaume parlement,
 9,le Canada,Canada,Canada,M,S,10,canadien{.defnes },,CA,CAN,🇨🇦,pays,royaume parlement,
 10,la (République populaire de )?Chine,China,Chine,F,S,10,chinois{.defs },,CN,CHN,🇨🇳,pays,dictature president,
 11,le Japon,Japan,Japon,M,S,10,japonais{ .defs },,JP,JPN,🇯🇵,pays,empire parlement,
 12,la Corée du Nord,North Korea,CoréeDuNord,F,S,10,nord-coréen{ .defnes },,KP|NK,PRK,🇰🇵,pays,dictature,
-13,la Corée du Sud,South Korea,CoréeDuSud,F,S,10,(sud-)?coréen{ .defnes },,KR|SK,KOR,🇰🇷,pays,republique president,
-14,la Russie,Russia,Russie,F,S,10,"russe{ .defgn(,,s,s) }",,RU,RUS,🇷🇺,pays,republique president,
-15,le Brésil,Brazil,Brésil,M,S,10,brésilien{ .defnes },,BR,BRA,🇧🇷,pays,republique president,
-16,le Venezuela,Venezuela,Venezuela,M,S,10,vénézuélien{ .defnes },,VE,VEN,🇻🇪,pays,republique president,
-17,le Mexique,Mexico,Mexique,M,S,10,mexicain{ .defes },,MX,MEX,🇲🇽,pays,republique president,
-18,l’Autriche,Austria,Autriche,F,S,10,autrichien{ .defnes },133,AT,AUT,🇦🇹,pays,republique president,
-19,la Suisse,Switzerland,Suisse,F,S,10,"suisse{ .defgn(,,s,s) }",132,CH,CHE,🇨🇭,pays,republique parlement,1
-20,l’Inde,India,Inde,F,S,10,indien{ .defnes },,IN,IND,🇮🇳,pays,republique parlement,
-21,l’Algérie,Algeria,Algérie,F,S,10,algérien{ .defnes },,DZ,DZA,🇩🇿,pays,republique president,
+13,la Corée du Sud,South Korea,CoréeDuSud,F,S,10,(sud-)?coréen{ .defnes },,KR|SK,KOR,🇰🇷,pays,president,
+14,la Russie,Russia,Russie,F,S,10,"russe{ .defgn(,,s,s) }",,RU,RUS,🇷🇺,pays,president,
+15,le Brésil,Brazil,Brésil,M,S,10,brésilien{ .defnes },,BR,BRA,🇧🇷,pays,president,
+16,le Venezuela,Venezuela,Venezuela,M,S,10,vénézuélien{ .defnes },,VE,VEN,🇻🇪,pays,president,
+17,le Mexique,Mexico,Mexique,M,S,10,mexicain{ .defes },,MX,MEX,🇲🇽,pays,president,
+18,l’Autriche,Austria,Autriche,F,S,10,autrichien{ .defnes },133,AT,AUT,🇦🇹,pays,president,
+19,la Suisse,Switzerland,Suisse,F,S,10,"suisse{ .defgn(,,s,s) }",132,CH,CHE,🇨🇭,pays,parlement,1
+20,l’Inde,India,Inde,F,S,10,indien{ .defnes },,IN,IND,🇮🇳,pays,parlement,
+21,l’Algérie,Algeria,Algérie,F,S,10,algérien{ .defnes },,DZ,DZA,🇩🇿,pays,president,
 22,le Maroc,Morocco,Maroc,M,S,10,marocain{ .defes },,MA,MAR,🇲🇦,pays,royaume,
-23,Israël,Israel,Israël,M,S,10,israélien{ .defnes },,IL,ISR,🇮🇱,pays,republique parlement,
-24,la Palestine,Palestine,Palestine,F,S,10,palestinien{ .defnes },,PS,PSE,🇵🇸,pays,republique president,
+23,Israël,Israel,Israël,M,S,10,israélien{ .defnes },,IL,ISR,🇮🇱,pays,parlement,
+24,la Palestine,Palestine,Palestine,F,S,10,palestinien{ .defnes },,PS,PSE,🇵🇸,pays,president,
 25,la Syrie,Syria,Syrie,F,S,10,syrien{ .defnes },,SY,SYR,🇸🇾,pays,dictature president,
 26,l’Arabie saoudite,Saudi Arabia,ArabieSaoudite,F,S,10,saoudien{ .defnes },,SA,SAU,🇸🇦,pays,royaume,
 27,le Qatar,Qatar,Qatar,M,S,10,qatari{ .defes },,QA,QAT,🇶🇦,pays,emirat,
 28,le Vatican,Vatican City,Vatican,M,S,10,vatican{ .defes },132,VA,VAT,🇻🇦,pays,saint_siege,
 29,Monaco,Monaco,Monaco,M,S,10,"monégasque{ .defgn(,,s,s) }",132,MC,MCO,🇲🇨,pays,principaute,1
-30,l’Irlande,Ireland,Irlande,F,S,10,irlandais{ .defs },133,IE,IRL,🇮🇪,pays,republique parlement,
-31,(le|la Présipauté de) Groland,(Presipality of )?Groland,Groland,F,S,10,grolandais{ .defs },,GRD,GRD,🏺,pays,republique president,
+30,l’Irlande,Ireland,Irlande,F,S,10,irlandais{ .defs },133,IE,IRL,🇮🇪,pays,parlement,
+31,(le|la Présipauté de) Groland,(Presipality of )?Groland,Groland,F,S,10,grolandais{ .defs },,GRD,GRD,🏺,pays,president,
 32,le Royaume Champignon,Mushroom Kingdom,RoyaumeChampignon,M,S,10,champignonnais{ .defs },,,,🍄,pays,royaume,
 33,le (Grand Duché de )?Luxembourg,(Grand Duchy of )?Luxembourg,Luxembourg,M,S,10,luxembourgeois{ .defs },133,LU,LUX,🇱🇺,pays,grand_duche parlement,1
-34,l’Ukraine,Ukraine,Ukraine,F,S,10,ukrainien{ .defnes },132,UA,UKR,🇺🇦,pays,republique parlement,
+34,l’Ukraine,Ukraine,Ukraine,F,S,10,ukrainien{ .defnes },132,UA,UKR,🇺🇦,pays,parlement,
 35,la Biélorussie,Belarus,Biélorussie,F,S,10,"biélorusse{ .defgn(,,s,s) }",132,BY,BLR,🇧🇾,pays,dictature president,
-36,la Pologne,Poland,Pologne,F,S,10,polonais{ .defs },133,PL,POL,🇵🇱,pays,republique president,
+36,la Pologne,Poland,Pologne,F,S,10,polonais{ .defs },133,PL,POL,🇵🇱,pays,president,
 37,l’Australie,Australia,Australie,F,S,10,australien{ .defnes },,AU,AUS,🇦🇺,pays,parlement,
 38,le Danemark,Denmark,Danemark,M,S,10,danois{ .defs },133,DK,DNK,🇩🇰,pays,royaume parlement,
 39,la Norvège,Norway,Norvège,F,S,10,norvégien{ .defnes },132,NO,NOR,🇳🇴,pays,royaume parlement,
 40,la Suède,Sweden,Suède,F,S,10,suédois{ .defs },133,SE,SWE,🇸🇪,pays,royaume parlement,
-41,la Finlande,Finland,Finlande,F,S,10,finlandais{ .defs },133,FI,FIN,🇫🇮,pays,republique parlement,
-42,l’Islande,Iceland,Islande,F,S,10,islandais{ .defs },132,IS,ISL,🇮🇸,pays,republique parlement,
-43,la Turquie,Turkey,Turquie,F,S,10,"tur{ .defgn(c,que,cs,ques) }",,TR,TUR,🇹🇷,pays,republique president,
-44,la Grèce,Greece,Grèce,F,S,10,"grec{ .defgn(,que,s,ques) }",133,GR,GRC,🇬🇷,pays,republique parlement,
-45,la Serbie,Serbia,Serbie,F,S,10,"serbe{ .defgn(,,s,s) }",133,RS,SRB,🇷🇸,pays,republique parlement,
-46,la Croatie,Croatia,Croatie,F,S,10,"croate{ .defgn(,,s,s) }",133,HR,HRV,🇭🇷,pays,republique parlement,
-47,la Bosnie(-Herzégovine)?,Bosnia( & Herzegovina),Bosnie,F,S,10,bosnien{ .defnes },132,BA,BIH,🇧🇦,pays,republique parlement,
-48,la Tunisie,Tunisia,Tunisie,F,S,10,tunisien{ .defnes },,TN,TUN,🇹🇳,pays,republique president,
-49,la Libye,Libya,Libye,F,S,10,libyen{ .defnes },,LY,LBY,🇱🇾,pays,republique parlement,
-50,l’Égypte,Egypt,Égypte,F,S,10,égyptien{ .defnes },,EG,EGY,🇪🇬,pays,republique president,
-51,le Mali,Mali,Mali,M,S,10,malien{ .defnes },,ML,MLI,🇲🇱,pays,republique president,
-52,le Nigeria,Nigeria,Nigeria,M,S,10,nigérian{ .defes },,NG,NGA,🇳🇬,pays,republique president,
-53,l’Éthiopie,Ethiopia,Éthiopie,F,S,10,éthiopien{ .defnes },,ET,ETH,🇪🇹,pays,republique parlement,
-54,la République Démocratique du Congo,DR Congo,RDC,F,S,10,congolais{ .defs },,CD,COD,🇨🇩,pays,republique president,
-55,l’Iran,Iran,Iran,M,S,10,iranien{ .defnes },,IR,IRN,🇮🇷,pays,republique guide_supreme,
-56,l’Irak,Iraq,Irak,M,S,10,irakien{ .defnes },,IQ,IRQ,🇮🇶,pays,republique parlement,
+41,la Finlande,Finland,Finlande,F,S,10,finlandais{ .defs },133,FI,FIN,🇫🇮,pays,parlement,
+42,l’Islande,Iceland,Islande,F,S,10,islandais{ .defs },132,IS,ISL,🇮🇸,pays,parlement,
+43,la Turquie,Turkey,Turquie,F,S,10,"tur{ .defgn(c,que,cs,ques) }",,TR,TUR,🇹🇷,pays,president,
+44,la Grèce,Greece,Grèce,F,S,10,"grec{ .defgn(,que,s,ques) }",133,GR,GRC,🇬🇷,pays,parlement,
+45,la Serbie,Serbia,Serbie,F,S,10,"serbe{ .defgn(,,s,s) }",133,RS,SRB,🇷🇸,pays,parlement,
+46,la Croatie,Croatia,Croatie,F,S,10,"croate{ .defgn(,,s,s) }",133,HR,HRV,🇭🇷,pays,parlement,
+47,la Bosnie(-Herzégovine)?,Bosnia( & Herzegovina),Bosnie,F,S,10,bosnien{ .defnes },132,BA,BIH,🇧🇦,pays,parlement,
+48,la Tunisie,Tunisia,Tunisie,F,S,10,tunisien{ .defnes },,TN,TUN,🇹🇳,pays,president,
+49,la Libye,Libya,Libye,F,S,10,libyen{ .defnes },,LY,LBY,🇱🇾,pays,parlement,
+50,l’Égypte,Egypt,Égypte,F,S,10,égyptien{ .defnes },,EG,EGY,🇪🇬,pays,president,
+51,le Mali,Mali,Mali,M,S,10,malien{ .defnes },,ML,MLI,🇲🇱,pays,president,
+52,le Nigeria,Nigeria,Nigeria,M,S,10,nigérian{ .defes },,NG,NGA,🇳🇬,pays,president,
+53,l’Éthiopie,Ethiopia,Éthiopie,F,S,10,éthiopien{ .defnes },,ET,ETH,🇪🇹,pays,parlement,
+54,la République Démocratique du Congo,DR Congo,RDC,F,S,10,congolais{ .defs },,CD,COD,🇨🇩,pays,president,
+55,l’Iran,Iran,Iran,M,S,10,iranien{ .defnes },,IR,IRN,🇮🇷,pays,guide_supreme,
+56,l’Irak,Iraq,Irak,M,S,10,irakien{ .defnes },,IQ,IRQ,🇮🇶,pays,parlement,
 57,Paris,,Paris,F,S,10,parisien{ .defnes },122,75,,,ville,,
 58,Marseille,,Marseille,F,S,10,marseillais{ .defs },1113,,,,ville,,
 59,Lyon,,Lyon,F,S,10,lyonnais{ .defs },1169,,,,ville,,
@@ -241,20 +241,20 @@ id,nom,nom_en,pascal_case,genre,nombre,weight,adj,parent,code2,code3,emoji,type,
 1195,le Val-d’Oise,,ValdOise,M,S,10,valdoisien{ .defnes },122,95,,,departement,,
 1200,la Corse-du-Sud,,CorseDuSud,F,S,10,"corse{ .defgn(,,s,s) }",114,2A,,,departement,,
 1201,la Haute-Corse,,HauteCorse,F,S,10,"corse{ .defgn(,,s,s) }",114,2B,,,departement,,
-1202,l’Île Maurice,Mauritius,(Île)?Maurice,F,S,3,mauricien{ .defnes },,MU,MUS,🇲🇺,pays,republique parlement,1
-1203,Djibouti,Djibouti,Djibouti,F,S,3,djiboutien{ .defnes },,DJ,DJI,🇩🇯,pays,republique president,1
+1202,l’Île Maurice,Mauritius,(Île)?Maurice,F,S,3,mauricien{ .defnes },,MU,MUS,🇲🇺,pays,parlement,1
+1203,Djibouti,Djibouti,Djibouti,F,S,3,djiboutien{ .defnes },,DJ,DJI,🇩🇯,pays,president,1
 1204,les Bahamas,the Bahamas,Bahamas,F,P,5,bahaméen{ .defnes },,BS,BHS,🇧🇸,pays,royaume parlement,1
 1205,les Bermudes,Bermuda,Bermudes,F,P,5,bermudien{ .defnes },4,BM,BMU,🇧🇲,region,,1
 1206,les Îles Caïmans,Cayman Islands,ÎlesCaïmans,F,P,5,caïmanien{ .defnes },4,KY,CYM,🇰🇾,region,,1
-1207,le Panama,Panama,Panama,M,S,8,panaméen{ .defnes },,PA,PAN,🇵🇦,pays,republique president,1
-1208,l’Uruguay,Uruguay,Uruguay,F,S,6,uruguayen{ .defnes },,UY,URY,🇺🇾,pays,republique president,1
+1207,le Panama,Panama,Panama,M,S,8,panaméen{ .defnes },,PA,PAN,🇵🇦,pays,president,1
+1208,l’Uruguay,Uruguay,Uruguay,F,S,6,uruguayen{ .defnes },,UY,URY,🇺🇾,pays,president,1
 1209,Bahreïn,Bahrain,Bahreïn,M,S,5,bahreïnien{ .defnes },,BH,BHR,🇧🇭,pays,royaume parlement,1
 1210,le Liechtenstein,Liechtenstein,Liechtenstein,M,S,7,liechtensteinois{ .defs },132,LI,LIE,🇱🇮,pays,principaute parlement,1
-1211,Malte,Malta,Malte,F,S,10,maltais{ .defs },133,MT,MLT,🇲🇹,pays,republique parlement,1
+1211,Malte,Malta,Malte,F,S,10,maltais{ .defs },133,MT,MLT,🇲🇹,pays,parlement,1
 1212,Hong Kong,Hong Kong,HongKong,F,S,10,hongkongais{ .defs },10,HK,HKG,🇭🇰,ville,,1
-1213,les Maldives,Maldives,Maldives,F,P,10,maldivien{ .defnes },,MV,MDV,🇲🇻,pays,republique president,1
-1214,Singapour,Singapore,Singapour,F,S,8,singapourien{ .defnes },,SG,SGP,🇸🇬,pays,republique parlement,1
-1215,les Seychelles,Seychelles,Seychelles,F,P,5,seychellois{ .defs },,SC,SYC,🇸🇨,pays,republique president,1
-1216,la Bulgarie,Bulgaria,Bulgarie,F,S,8,"bulgare{ .defgn(,,s,s) }",133,BG,BGR,🇧🇬,pays,republique parlement,1
+1213,les Maldives,Maldives,Maldives,F,P,10,maldivien{ .defnes },,MV,MDV,🇲🇻,pays,president,1
+1214,Singapour,Singapore,Singapour,F,S,8,singapourien{ .defnes },,SG,SGP,🇸🇬,pays,parlement,1
+1215,les Seychelles,Seychelles,Seychelles,F,P,5,seychellois{ .defs },,SC,SYC,🇸🇨,pays,president,1
+1216,la Bulgarie,Bulgaria,Bulgarie,F,S,8,"bulgare{ .defgn(,,s,s) }",133,BG,BGR,🇧🇬,pays,parlement,1
 1217,Dubaï,Dubai,Dubaï,F,S,10,"dubaïote{ .defgn(,,s,s) }",1218,,,,ville,,1
 1218,Émirats Arabes Unis ,United Arab Emirates,EAU|Émirats(ArabesUnis)?,M,P,7,émirati{ .defes },,AE,ARE,🇦🇪,pays,president,
