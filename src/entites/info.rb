@@ -16,7 +16,10 @@ class Info < Rosace::Entity
 	TYPES_ACTEUR = [
 		:pers,
 		:pays,
-		:entreprise
+		:entreprise,
+		:parti,
+		:syndicat,
+		:association
 	]
 
 	ROLES = [:"", :sujet, :objet]
@@ -185,6 +188,12 @@ class Info < Rosace::Entity
 			context.pick_entity(:Lieu, "pays")
 		when :entreprise
 			context.pick_entity(:Entreprise)
+		when :parti
+			context.pick_entity(:Orga, "parti")
+		when :syndicat
+			context.pick_entity(:Orga, "syndicat")
+		when :association
+			context.pick_entity(:Orga, "association")
 		else
 			nil
 		end

@@ -11,7 +11,7 @@ id,description,before,weight,hashtag,emoji,acteurs,categories,temporalite,coupab
 15,dissout l’Assemblée Nationale,,10,,,pers,politique,proche,,
 16,annonce un album,{ .style_m = s(rap|metal|punk|R’n’B|reggaeton|dancehall|raï|disco|jazz( fusion)?); .style_f = s(K-pop|variété|trap|drill|funk|synthwave|zumba|pop); .style = s({ .style_m }|{ .style_f }) },10,,💿,pers,culture musique,proche,,
 21,candidat à l’élection présidentielle,,10,Présidentielle(s)?2022,,pers,politique,present,,
-27,poursuit en justice,{ .objet = .acteur },10,,,pers entreprise,,present,objet,sujet
+27,poursuit en justice,{ .objet = .acteur },10,,,pers entreprise parti syndicat association,,present,objet,sujet
 29,aurait été aperçu,,1,Paranormal,,pers,,present,,
 30,aperçu en train de se droguer,,5,,🌿,pers,,proche,,
 31,aperçu en fursuit,,10,,🐺|🦊,pers,,proche,,
@@ -30,11 +30,11 @@ id,description,before,weight,hashtag,emoji,acteurs,categories,temporalite,coupab
 52,pressenti pour être ministre,{ .lieu = Lieu[1]; .ministere = s(des Affaires étrangères|de la Transition écologique|de l’Éducation nationale|de l’Économie|des Finances|des Armées|de la Défense|de l’Intérieur|du Travail|des Outre-mer|de la Justice|de la Culture|de la Santé|de la Mer|de l’Enseignement supérieur|de l’Agriculture|de l’Égalité femmes-hommes|du Logement|des Transports|des Sports|des Comptes publics|de l’Industrie|de la Ville|des Territoires|des Affaires européennes|de la Jeunesse|du Numérique|de la Ruralité|de la Famille|de l’Enfance) },10,,,pers,politique,present,,
 53,nommé ministre,{ .lieu = Lieu[1]; .ministere = s(des Affaires étrangères|de la Transition écologique|de l’Éducation nationale|de l’Économie|des Finances|des Armées|de la Défense|de l’Intérieur|du Travail|des Outre-mer|de la Justice|de la Culture|de la Santé|de la Mer|de l’Enseignement supérieur|de l’Agriculture|de l’Égalité femmes-hommes|du Logement|des Transports|des Sports|des Comptes publics|de l’Industrie|de la Ville|des Territoires|des Affaires européennes|de la Jeunesse|du Numérique|de la Ruralité|de la Famille|de l’Enfance) },10,,,pers,politique,present,,
 55,avoue sa culpabilité,,30,,,pers,,proche,,
-56,soutien objet,{ .objet = .acteur },10,,,pers entreprise pays,,present,,objet
+56,soutien objet,{ .objet = .acteur },10,,,pers entreprise pays parti syndicat association,,present,,objet
 58,est exécuté,,10,{ .sujet.pascal_case }Exécution,,pers,,futur,sujet,
 59,auditionné,,10,,,pers,politique,present,sujet,
 60,devient l’avocat de,{ .objet = Pers }|{ .objet = Entreprise },10,,,pers,,present,objet,
 61,abandonne la défense de,{ .objet = Pers }|{ .objet = Entreprise },10,,,pers,,present,objet,
-64,porte plainte contre,{ .objet = .acteur },50,,,pers entreprise,,present,objet,sujet
-65,bat objet aux élections,{ .objet = .acteur },10,,🗳️,pers,politique,present,,
+64,porte plainte contre,{ .objet = .acteur },50,,,pers entreprise parti syndicat association,,present,objet,sujet
+65,bat objet aux élections,{ .objet = .acteur },10,,🗳️,pers parti,politique,present,,
 67,perquisition,,10,,,pers,politique,proche,sujet,
