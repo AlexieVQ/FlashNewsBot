@@ -63,6 +63,14 @@ class Lieu < Rosace::Entity
 		end
 	end
 
+	# @return [String] Nom de ce lieu
+	def nom
+		code = parent ? parent.code2 : nil
+		super + if type == :ville && rand(2) == 1 && code
+			" (#{code})"
+		end
+	end
+
 	# @return [Integer] Poids du lieu dans les choix aléatoires
 	def weight
 		poids = super
@@ -94,11 +102,11 @@ class Lieu < Rosace::Entity
 		end
 	end
 
-	# @return [String] Code à deux signes du lieu ou d'un parent.
+	# @return [String, nil] Code à deux signes du lieu ou d'un parent.
 	def code2
 		c = super
-		if c.empty? && parent
-			parent.code2
+		if c.empty?
+			parent ? parent.code2 : nil
 		else
 			c
 		end
@@ -107,24 +115,24 @@ class Lieu < Rosace::Entity
 	# @return [String] Code à trois signes du lieu ou d'un parent.
 	def code3
 		c = super
-		if c.empty? && parent
-			parent.code3
+		if c.empty?
+			parent ? parent.code3 : nil
 		else
 			c
 		end
 	end
 
-	# @return [String]
+	# @return [String, nil] Emoji du lieu ou d'un parent.
 	def emoji
 		e = super
-		if e.empty? && parent
-			parent.emoji
+		if e.empty?
+			parent ? parent.emoji : nil
 		else
 			e
 		end
 	end
 
-	# @return [Lieu, nil]
+	# @return [Lieu, nil] Pays de ce lieu (ou +self+ si c'est un pays)
 	def pays
 		if type == :pays
 			self
