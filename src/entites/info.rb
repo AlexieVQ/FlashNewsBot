@@ -16,6 +16,7 @@ class Info < Rosace::Entity
 	TYPES_ACTEUR = [
 		:pers,
 		:pays,
+		:region,		# Concerne aussi les départements et états
 		:entreprise,
 		:parti,
 		:syndicat,
@@ -187,6 +188,8 @@ class Info < Rosace::Entity
 			context.pick_entity(:Pers)
 		when :pays
 			context.pick_entity(:Lieu, "pays")
+		when :region
+			context.pick_entity(:Lieu, "region", "departement", "etat")
 		when :entreprise
 			context.pick_entity(:Entreprise)
 		when :parti
