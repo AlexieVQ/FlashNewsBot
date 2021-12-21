@@ -309,10 +309,11 @@ class Action < Rosace::Entity
 	end
 
 	# Retourne la proposition et le {sujet} en complément, ou non.
+	# @param article [String] article du sujet de la proposition
 	# @param nom [String] sujet de la proposition
 	# @return la propositon avec ou non le {sujet} en complément
-	def s_comp(nom)
-		s(sujet.comp(nom), nom)
+	def s_comp(article, nom)
+		s(sujet.comp(article + nom), nom)
 	end
 
 	# Retourne un motif d'accusation sous la forme "pour [forme infinitive ou

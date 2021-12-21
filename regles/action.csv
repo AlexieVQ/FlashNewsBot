@@ -1,11 +1,11 @@
 id,commun,sujet_perso,verbale,nominale,weight,info,coupable,victime,genre,nombre
-1,,,"{ .est(mort{ .sujet.es },mourir) }",{ .s_comp(la mort) },10,1,,sujet,F,S
-2,,,{ .etre } retrouvé{ .sujet.es } mort{ .sujet.es },{ .s_comp(la mort) },10,1,,sujet,F,S
-3,,,"{ .est(mort{ .sujet.es }, mourir) } noyer",{ .s_comp(la noyade) },5,1,,sujet,F,S
-4,,,"{ .est(mort{ .sujet.es }, mourir) } puce{ .sujet.gn(au,lle,aux,lles) }",{ .s_comp(la mort) },1,1,,sujet,F,S
-5,,,"{ .a(fraudé,frauder,fraude,fraudes,fraude,fraudons,fraudez,fraudent) } le fisc",{ .s_comp(la fraude fiscale) },10,2,sujet,,F,S
-6,,,"{ .a(fraudé,frauder,fraude,fraudes,fraude,fraudons,fraudez,fraudent) } les impôts",{ .s_comp(la fraude fiscale) },10,2,sujet,,F,S
-7,,,"{ .a(commis,commettre,commets,commets,commet,commettons,commettez,commettent) } de la fraude fiscale",{ .s_comp(la fraude fiscale) },10,2,sujet,,F,S
+1,,,"{ .est(mort{ .sujet.es },mourir) }","{ .s_comp(la ,mort) }",10,1,,sujet,F,S
+2,,,{ .etre } retrouvé{ .sujet.es } mort{ .sujet.es },"{ .s_comp(la ,mort) }",10,1,,sujet,F,S
+3,,,"{ .est(mort{ .sujet.es }, mourir) } noyer","{ .s_comp(la ,noyade) }",5,1,,sujet,F,S
+4,,,"{ .est(mort{ .sujet.es }, mourir) } puce{ .sujet.gn(au,lle,aux,lles) }","{ .s_comp(la ,mort) }",1,1,,sujet,F,S
+5,,,"{ .a(fraudé,frauder,fraude,fraudes,fraude,fraudons,fraudez,fraudent) } le fisc","{ .s_comp(la ,fraude fiscale) }",10,2,sujet,,F,S
+6,,,"{ .a(fraudé,frauder,fraude,fraudes,fraude,fraudons,fraudez,fraudent) } les impôts","{ .s_comp(la ,fraude fiscale) }",10,2,sujet,,F,S
+7,,,"{ .a(commis,commettre,commets,commets,commet,commettons,commettez,commettent) } de la fraude fiscale","{ .s_comp(la ,fraude fiscale) }",10,2,sujet,,F,S
 8,,,{ .etre } élu{ .sujet.es } Président{ .sujet.es } de la République( française)?,{ .sujet.comp(l’élection) } à la tête du pays,10,3,,,F,S
 9,,,{ .etre } élu{ .sujet.es } à la tête de l’État,{ .sujet.comp(l’élection) } à la tête de l’État,10,3,,,F,S
 10,,,"{ .est(devenu{ .sujet.gn(,e,s,es) },devenir,deviens,deviens,devient,devenons,devenez,deviennent) } { .sujet.le } nouve{ .sujet.gn(au,lle,aux,lles) } Président{ .sujet.es } de la République( française)?",{ .sujet.comp(l’élection) } à la tête du pays,10,3,,,F,S
@@ -15,24 +15,24 @@ id,commun,sujet_perso,verbale,nominale,weight,info,coupable,victime,genre,nombre
 16,,,{ .est(activement recherché{ .sujet.es }) } par Interpol pour { .pour_motif },{ .sujet.comp(la recherche) } par Interpol,10,4,,sujet,F,S
 17,,,{ .etre } tué{ .sujet.es },{ .sujet.comp(l’assassinat) },10,5,,sujet,M,S
 18,,,"{ .sujet.se({ .est(fait{ .sujet.es },faire,fais,fais,fait,faisons,faisez,font) }) } planter",{ .sujet.comp(le plantage) },5,5,,sujet,M,S
-21,,,"{ .objet.cod({ .a(assassiné,assassiner,assassine,assassines,assassine,assassinons,assassinez,assassinent) }) }",{ .objet.comp(l’assassinat) },10,7,sujet,objet,M,S
-23,,,"{ .objet.cod({ .a(planté,planter,plante,plantes,plante,plantons,plantez,plantent) }) }",{ .objet.comp(le plantage) },10,7,sujet,objet,M,S
+21,,,"{ .objet.cod({ .a(assassiné,assassiner,assassine,assassines,assassine,assassinons,assassinez,assassinent) }) }",{ .objet.comp(l’assassinat) }{ .s( par { .sujet.tonique }) },10,7,sujet,objet,M,S
+23,,,"{ .objet.cod({ .a(planté,planter,plante,plantes,plante,plantons,plantez,plantent) }) }",{ .objet.comp(le plantage) }{ .s( par { .sujet.tonique }) },10,7,sujet,objet,M,S
 24,,,"{ .a(planté,planter,plante,plantes,plante,plantons,plantez,plantent) } un mec",le plantage d’un mec{ .s( par { .sujet.tonique }) },10,8,sujet,,M,S
 30,{ .nomme_par = s(( par { `.objet ||= .info.acteur`.tonique })?) },,"{ .etre } nommé{ .sujet.es } Premi{ .sujet.gn(er,ère,ers,ères) } Ministre{ .sujet.s }{ .nomme_par }",{ .sujet.comp(la nomination) } à la tête du gouvernement{ .nomme_par },10,13,,,F,S
-31,,,"{ .objet.cod({ .a(nommé,nommer,nomme,nommes,nomme,nommons,nommez,nomment) }) } Premi{ .objet.gn(er,ère,ers,ères) } Ministre{ .sujet.s }",{ .objet.comp(la nomination) } à la tête du gouvernement,10,14,,,F,S
+31,,,"{ .objet.cod({ .a(nommé,nommer,nomme,nommes,nomme,nommons,nommez,nomment) }) } Premi{ .objet.gn(er,ère,ers,ères) } Ministre{ .sujet.s }",{ .objet.comp(la nomination) } à la tête du gouvernement{ .s( par { .sujet.tonique }) },10,14,,,F,S
 32,,,"{ .a(décidé,décider,décide,décides,décide,décidons,décidez,décident) } de dissoudre l’Assemblée Nationale",la dissolution de l’Assemblée Nationale{ .s( par { .sujet.tonique }) },10,15,sujet,,F,S
-33,,,"{ .a(sorti,sortir,sors,sors,sort,sortons,sortez,sortent) } un nouvel album","{ new_acteur({ .s_comp(un nouvel album) },M,S,3).comp(la sortie) }",10,16,,,M,S
-35,"({ style0 = new_acteur(rap|metal|punk|R’n’B|reggaeton|dancehall|raï|disco|jazz( fusion)?,M) }|{ style0 = new_acteur(K-pop|variété|trap|drill|funk|synthwave|zumba|pop) }){ .style = new_acteur({ style0.nom }( conscient{ style0.g(,e) })?,{ style0.genre }) }",,"{ .a(annoncé,annoncer,annonce,annonces,annonce,annonçons,annoncez,annoncent) } un album de { .style }","{ new_acteur({ .s_comp(un album de { .style }) },M,S,3).comp(l’annonce) }",20,16,,,M,S
-48,,,"{ .sujet.se({ .est(porté{ .sujet.es },porter,porte,portes,porte,portons,portez,portent) }) } candidat{ .sujet.es } à l’élection présidentielle",{ .s_comp(la candidature) } à l’élection présidentielle,10,21,,,F,S
-49,,,"{ .est(candidat{ .sujet.es },candidater) } à l’élection présidentielle",{ .s_comp(la candidature) } à l’élection présidentielle,10,21,,,F,S
+33,,,"{ .a(sorti,sortir,sors,sors,sort,sortons,sortez,sortent) } un nouvel album","{ new_acteur({ .s_comp(,un nouvel album) },M,S,3).comp(la sortie) }",10,16,,,M,S
+35,"({ style0 = new_acteur(rap|metal|punk|R’n’B|reggaeton|dancehall|raï|disco|jazz( fusion)?,M) }|{ style0 = new_acteur(K-pop|variété|trap|drill|funk|synthwave|zumba|pop) }){ .style = new_acteur({ style0.nom }( conscient{ style0.g(,e) })?,{ style0.genre }) }",,"{ .a(annoncé,annoncer,annonce,annonces,annonce,annonçons,annoncez,annoncent) } un album de { .style }","{ new_acteur({ .s_comp(,un album de { .style }) },M,S,3).comp(l’annonce) }",20,16,,,M,S
+48,,,"{ .sujet.se({ .est(porté{ .sujet.es },porter,porte,portes,porte,portons,portez,portent) }) } candidat{ .sujet.es } à l’élection présidentielle","{ .s_comp(la ,candidature) } à l’élection présidentielle",10,21,,,F,S
+49,,,"{ .est(candidat{ .sujet.es },candidater) } à l’élection présidentielle","{ .s_comp(la ,candidature) } à l’élection présidentielle",10,21,,,F,S
 64,,,"{ .objet.cod({ .a(poursuivi,poursuivre,poursuis,poursuis,poursuit,poursuivons,poursuivez,poursuivent) }) } en justice pour { .pour_motif }",{ .objet.comp(la poursuite) } en justice{ .s( par { .sujet.tonique }) },10,27,sujet,objet,F,S
 65,,,"{ .objet.cod({ .a(attaqué,attaquer,attaque,attaques,attaque,attaquons,attaquez,attaquent) }) } en justice pour { .pour_motif }",{ .objet.comp(l’attaque) } en justice{ .s( par { .sujet.tonique }) },10,27,sujet,objet,F,S
 68,,,"{ .a(été,être,aurais été,aurais été,aurait été,aurions été, auriez été, auraient été) } aperçu{ .sujet.es }",{ .sujet.comp(l’apparition) },10,29,,,F,S
 69,,,"{ .a(été,être,aurais été,aurais été,aurait été,aurions été, auriez été, auraient été) } aperçu{ .sujet.es } de manière fantomatique",{ .sujet.comp(l’apparition fantomatique) },10,29,,,F,S
-70,,,{ .etre } aperçu{ .sujet.es } en train de prendre de la drogue,{ .s_comp(la consommation de drogue) },10,30,sujet,,F,S
-71,,,{ .etre } aperçu{ .sujet.es } en train de prendre du cannabis,{ .s_comp(la consommation de cannabis) },10,30,sujet,,F,S
-72,,,{ .etre } aperçu{ .sujet.es } en train de se rouler un gros splif,{ .s_comp(la consommation de drogue) },10,30,sujet,,F,S
-73,,,{ .etre } aperçu{ .sujet.es } en train de se rouler un gros joint,{ .s_comp(la consommation de joint) },10,30,sujet,,F,S
+70,,,{ .etre } aperçu{ .sujet.es } en train de prendre de la drogue,"{ .s_comp(la ,consommation de drogue) }",10,30,sujet,,F,S
+71,,,{ .etre } aperçu{ .sujet.es } en train de prendre du cannabis,"{ .s_comp(la ,consommation de cannabis) }",10,30,sujet,,F,S
+72,,,{ .etre } aperçu{ .sujet.es } en train de se rouler un gros splif,"{ .s_comp(la ,consommation de drogue) }",10,30,sujet,,F,S
+73,,,{ .etre } aperçu{ .sujet.es } en train de se rouler un gros joint,"{ .s_comp(la ,consommation de joint) }",10,30,sujet,,F,S
 74,,,{ .etre } aperçu{ .sujet.es } en fursuit,{ .sujet.comp(l’apparition) } en fursuit,10,31,,,F,S
 75,,,{ .etre } aperçu{ .sujet.es } en combinaison furry,{ .sujet.comp(l’apparition) } en combinaison furry,10,31,,,F,S
 79,,,"{ .sujet.se({ .est(lancé{ .sujet.es },lancer,lance,lances,lance,lançons,lancez,lancent) }) } dans le X",{ .sujet.comp(le lancement) } dans le X,10,32,,,M,S
