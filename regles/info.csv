@@ -38,3 +38,10 @@ id,description,before,weight,hashtag,emoji,acteurs,categories,temporalite,coupab
 64,porte plainte contre,{ .objet = .acteur },50,,,pers entreprise parti syndicat association media,,present,objet,sujet
 65,bat objet aux élections,{ .objet = .acteur },10,,🗳️,pers parti,politique,present,,
 67,perquisition,,10,,,pers,politique,proche,sujet,
+68,candidat aux municipales,{ .lieu = Lieu(ville) },10,(Municipales)?(.lieu.pascal_case)?,🗳️,pers,politique,present,,
+69,drogue retrouvée chez sujet,,10,,🌿,pers,,proche,,
+70,publie la sextape d’objet,{ .objet = Pers },10,{ .objet.pascal_case }Sextape,🔞,pers media parti pays,,present,,
+72,révèle une affaire de fraude fiscale,{ .lieu = Lieu(paradis_fiscal) }({ .objet = Pers }|{ .objet = Entreprise }|{ .objet = Orga }),10,{ .lieu.pascal_case }Papers,,pers media,journalisme,present,,
+73,perd les élections municipales,{ .lieu = Lieu(ville) },10,(Municipales)?(.lieu.pascal_case)?,🗳️,pers parti,politique,present,,
+74,déclare la guerre,"{ .objet = Lieu(pays,region) }",10,{ .sujet.pascal_case }VS{ .objet.pascal_case },💣,pers pays region,politique,present,,
+79,retient objet en otage,{ .objet = .acteur },10,,,pers,,present,objet,sujet
