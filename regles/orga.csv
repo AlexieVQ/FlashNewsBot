@@ -5,7 +5,7 @@ id,nom,sigle,genre,nombre,weight,adj,emoji,type,categories,origine
 4,le Parti Communiste( français)?,PCF,M,S,10,commun{ .iste },🚩,parti,gauche ext_gauche,1
 5,le Rassemblement National,RN,M,S,10,national{ .iste },🔥,parti,ext_droite,1
 6,la France Insoumise,LFI,F,S,10,"insoumis{ .defgn(,e,,es) }",φ,parti,gauche ext_gauche ecolo,1
-7,Génération·s,Gs,M,S,5,hamon{ .iste },🇬,parti,gauche ecolo,1
+7,Génération·s,Gs,M,S,5,hamon{ .iste },,parti,gauche ecolo,1
 8,Europe Écologie les Verts,E(E|É)LV,F,S,10,"écolog{ .iste }|vert{ .defgn(,e,s,es) }",🌻,parti,gauche ecolo,1
 9,le Nouveau Parti Anticapitaliste,NPA,M,S,5,anticapital{ .iste }|trotsk{ .iste },📣,parti,ext_gauche,1
 10,Lutte Ouvrière,LO,F,S,5,trotsk{ .iste },☭,parti,ext_gauche,1
