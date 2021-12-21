@@ -1,4 +1,4 @@
-id,description,before,weight,hashtag,emoji,acteurs,type_objet,categories,temporalite,coupable,victime
+id,description,commun,weight,hashtag,emoji,acteurs,type_objet,categories,temporalite,coupable,victime
 1,mort,,20,RIP{ .sujet.pascal_case },,pers,,,proche,,
 2,fraude,,10,,,pers,,,proche,,
 3,élu président français,,10,Présidentielles,🗳️,pers,,politique,present,,

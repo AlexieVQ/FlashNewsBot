@@ -32,8 +32,6 @@ class Info < Rosace::Entity
 
 	# @!attribute [r] emoji
 	#  @return [String]
-	# @!attribute [r] before
-	#  @return [void]
 
 	# @!attribute [r] acteurs
 	#  @return [Array<Symbol>]
@@ -95,11 +93,12 @@ class Info < Rosace::Entity
 	def init
 		@objet = nil
 		@action = nil
+		@commun = false
 	end
 
 	# @return [String]
 	def value
-		before
+		commun
 		temps = case :temporalite
 		when :proche
 			:passe
@@ -166,6 +165,7 @@ class Info < Rosace::Entity
 
 	# @return [String]
 	def hashtag
+		commun
 		s = super
 		if s.empty?
 			s
@@ -289,6 +289,17 @@ class Info < Rosace::Entity
 			raise "Info[#{id}]: victime déjà définie"
 		end
 		@victime = victime
+	end
+
+	# Exécute les macros définis dans l'attribut +commun+ avant d'accéder aux
+	# informations de l'info.
+	# @return [void]
+	def commun
+		unless @commun
+			super
+			@commun = true
+		end
+		self
 	end
 
 	private

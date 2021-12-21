@@ -370,6 +370,7 @@ class Action < Rosace::Entity
 	def commun
 		unless @commun
 			super
+			info.commun if info
 			@commun = true
 		end
 		self
