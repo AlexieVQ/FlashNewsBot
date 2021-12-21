@@ -12,13 +12,6 @@ class Action < Rosace::Entity
 
 	self.file = "regles/action.csv"
 
-	# @!attribute [r] verbale
-	#  @return [String]
-	# @!attribute [r] nominale
-	#  @return [String]
-	# @!attribute [r] sujet_perso
-	#  @return [String]
-
 	# @!attribute [r] info
 	#  @return [Info, nil] Information pour laquelle cette action est définie
 	reference :info, :Info, :optional
@@ -88,6 +81,7 @@ class Action < Rosace::Entity
 
 	def init
 		self.temps = :passe
+		@commun = false
 	end
 
 	# @param args [Array<String>]
@@ -386,6 +380,35 @@ class Action < Rosace::Entity
 	# @return [Integer] Nombre de différences entre les deux chaînes
 	def distance(chaine)
 		plain_value(:nominale).levenshtein(chaine)
+	end
+
+	# Exécute les macros définis dans l'attribut +commun+ avant d'accéder aux
+	# informations de l'action.
+	# @return [void]
+	def commun
+		unless @commun
+			super
+			@commun = true
+		end
+		self
+	end
+
+	# @return [String] Forme verbale de l'action
+	def verbale
+		commun
+		super
+	end
+
+	# @return [String] Forme nominale de l'action
+	def nominale
+		commun
+		super
+	end
+
+	# @return [String] Sujet personnalisé de l'action
+	def sujet_perso
+		commun
+		super
 	end
 
 	private
