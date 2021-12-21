@@ -180,6 +180,55 @@ id,value,weight,pers
 214,le manifestant,10,115
 215,le Titan,10,116
 219,l’ancien candidat à la primaire démocrate,10,120
+220,le journaliste,10,121
+221,l’ancien présentateur du 13H,10,121
+224,le vidéaste,10,123
+225,le youtubeur,10,123
+226,le polémiste,10,124
+227,l’idéologue d’extrême-droite,10,124
+228,l’humoriste polémique,10,125
+229,le porte-parole du NPA,10,126
+230,le candidat à l’élection présidentielle,10,126
+231,le porte-parole du NPA,10,127
+232,l’ancien candidat à l’élection présidentielle,10,127
+233,le vidéaste,10,128
+235,le footballer,10,129
+236,le président chinois,10,130
+237,le journaliste,10,131
+241,le juriste,10,134
+242,l’homme,10,135
+245,l’industriel,10,137
+246,l’animateur,10,138
+247,l’animateur,10,139
+248,l’animateur,10,140
+249,la petite boule,10,141
+250,le député,10,142
+251,la personne,10,143
+252,personne,10,144
+253,le fan,10,145
+254,l’agent immobilier,10,146
+255,l’acteur,10,147
+256,le vidéaste,10,148
+257,le youtubeur,10,148
+258,le sociologue,10,148
+259,le footballer,10,149
+260,le rappeur,10,150
+261,le militant,10,151
+262,le chanteur,10,152
+263,le chanteur engagé,10,152
+264,l’ancien ministre,10,153
+265,l’ancien ministre du budget,10,153
+266,le journaliste,10,154
+267,le député,10,154
+268,le député insoumis,10,154
+269,le député picard,10,154
+270,l’ancien président des États-Unis,10,155
+271,le comédien,10,156
+272,l’ancien premier ministre israélien,10,157
+273,{ .pers.acteur1.comp(l’enfant caché) },10,158
+274,l’homme,10,159
+275,le militant,10,160
+276,le militant anarchiste,10,160
 1000,le candidat à l’élection présidentielle,10,6
 1001,le candidat insoumis,10,6
 1002,le candidat insoumis à l’élection présidentielle,10,6
@@ -196,3 +245,9 @@ id,value,weight,pers
 1015,l’entraîneur du Stade Rennais FC,10,109
 1016,l’attaquant de l’AC Milan,10,110
 1017,le milieu de terrain de l’Inter Miami,10,112
+1018,l’avant-centre du Real Madrid,10,129
+1019,le candidat à l’élection présidentielle,10,142
+1020,le président de Debout la France,10,142
+1021,l’attaquant de l’Atlético de Madrid,10,149
+1022,le chanteur misogyne,5,152
+1023,l’individu,10,159
