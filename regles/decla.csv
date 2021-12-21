@@ -11,7 +11,7 @@ id,value,weight,ref_info,sujet,objet,pers
 12,{ `.pers_decla = .info.acteur`.sujet({ .pers_decla.sera }) } présent{ .pers_decla.es },10,16,sujet,,
 13,Le projet il est prêt il arrive,10,16,sujet,,
 17,{ `.pers_decla = .info.acteur`.sujet({ .pers_decla.a }) } endetté la France,10,21,sujet,,
-19,"{ .objet.to_2e_personne.sujet({ .objet.n(vas,allez) }) } { .sujet.coi(le payer cher) }",10,,victime,coupable,
+19,"{ `o = .objet.to_2e_personne`.sujet({ o.n(vas,allez) }) } { .sujet.coi(le payer cher) }",10,,victime,coupable,
 20,Bon shit ça mère,1,30,sujet,,
 21,Casse la gorge,1,30,sujet,,
 22,"{ `o = .objet.to_2e_personne`.sujet({ o.n(clashes,clashez) }) } dès que quelqu’un met une vidéo en ligne",1,48,objet,sujet,
