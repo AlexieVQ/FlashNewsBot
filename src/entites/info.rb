@@ -30,9 +30,6 @@ class Info < Rosace::Entity
 
 	self.file = "regles/info.csv"
 
-	# @!attribute [r] emoji
-	#  @return [String]
-
 	# @!attribute [r] acteurs
 	#  @return [Array<Symbol>]
 	mult_enum :acteurs, *TYPES_ACTEUR
@@ -150,6 +147,15 @@ class Info < Rosace::Entity
 		else
 			chaine.length
 		end
+	end
+
+	# @return [String] Émojis de l'info et des acteurs si applicable
+	def emoji
+		([super] + [@sujet, @objet].map do |acteur|
+			(!acteur.is_a?(Lieu) && acteur.respond_to?(:emoji)) ?
+					acteur.emoji :
+					""
+		end).uniq.join("")
 	end
 
 	# @return [Symbol] Type d'acteur d'{#objet}
