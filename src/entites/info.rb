@@ -39,6 +39,8 @@ class Info < Rosace::Entity
 	#  @return [Array<Symbol>]
 	mult_enum :acteurs, *TYPES_ACTEUR
 
+	mult_enum :type_objet, *TYPES_ACTEUR
+
 	# @!attribute [r] categories
 	#  @return [Array<Symbol>]
 	mult_enum :categories, *CATEGORIES
@@ -61,9 +63,6 @@ class Info < Rosace::Entity
 	# @!attribute [r] _decla_list
 	#  @return [Array<Decla>]
 	has_many :Decla, :ref_info, :_decla
-
-	# @return [Acteur, nil]
-	attr_accessor :objet
 
 	# @return [Action, nil] Motif d'accusation.
 	attr_accessor :motif
@@ -154,6 +153,17 @@ class Info < Rosace::Entity
 		end
 	end
 
+	# @return [Symbol] Type d'acteur d'{#objet}
+	def type_objet
+		if super.empty? || super.any? { |type| type == type_acteur }
+			type_acteur
+		else
+			@type_objet ||= super[rand(super.length)]
+		end
+	end
+
+	# @return [Acteur, nil] Objet 
+
 	# @return [String]
 	def hashtag
 		s = super
@@ -181,9 +191,13 @@ class Info < Rosace::Entity
 				*(accu ? roles.map { |role| role.to_s } : []))
 	end
 
-	# @return [Acteur, nil]
-	def acteur
-		case type_acteur
+	# Retourne un acteur correspondant à un type d'{#acteurs} ou de
+	# {#type_objet}.
+	# @param role [:sujet, :objet] Rôle de l'acteur voulu
+	# @return [Acteur, nil] Acteur correspondant au type donné, ou aucun acteur
+	#  si cette information ne spécifie aucun type
+	def acteur(role: :sujet)
+		case (role == :sujet ? type_acteur : type_objet)
 		when :pers
 			context.pick_entity(:Pers)
 		when :pays
@@ -205,10 +219,15 @@ class Info < Rosace::Entity
 		end
 	end
 
-	# @return [Acteur, nil]
+	# @return [Acteur, nil] Sujet de l'information
 	def sujet
 		# @type [Acteur, nil]
-		@sujet ||= acteur
+		@sujet ||= acteur(role: :sujet)
+	end
+
+	# @return [Acteur, nil] Objet de l'information
+	def objet
+		@objet ||= acteur(role: :objet)
 	end
 
 	# @param acteur [Acteur]
