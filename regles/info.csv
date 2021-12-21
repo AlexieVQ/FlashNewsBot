@@ -29,7 +29,7 @@ id,description,before,weight,hashtag,emoji,acteurs,categories,temporalite,coupab
 51,se bat avec objet,{ .objet = .acteur },10,{ .sujet.pascal_case }VS{ .objet.pascal_case },,pers,,proche,objet,sujet
 52,pressenti pour être ministre,{ .lieu = Lieu[1] },10,,,pers,politique,present,,
 53,nommé ministre,{ .lieu = Lieu[1] },10,,,pers,politique,present,,
-55,avoue sa culpabilité,,30,,,pers,,proche,,
+55,avoue sa culpabilité,,30,,,pers,,proche,sujet,
 56,soutien objet,{ .objet = .acteur },10,,,pers entreprise pays region parti syndicat association,,present,,objet
 58,est exécuté,,10,{ .sujet.pascal_case }Exécution,,pers,,futur,sujet,
 59,auditionné,,10,,,pers,politique,present,sujet,
