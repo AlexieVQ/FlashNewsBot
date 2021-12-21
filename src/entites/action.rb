@@ -337,7 +337,7 @@ class Action < Rosace::Entity
 		end
 		args[:mettre_sujet] = false
 		out = motif.value(**args)
-		out.is_a?(Acteur) ? out.nom : out
+		"pour " + (out.is_a?(Acteur) ? out.nom : out)
 	end
 
 	# Retourne un motif d'accusation sous la forme "pour [forme nominale]".
