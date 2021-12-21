@@ -19,7 +19,8 @@ class Info < Rosace::Entity
 		:entreprise,
 		:parti,
 		:syndicat,
-		:association
+		:association,
+		:media
 	]
 
 	ROLES = [:"", :sujet, :objet]
@@ -194,6 +195,8 @@ class Info < Rosace::Entity
 			context.pick_entity(:Orga, "syndicat")
 		when :association
 			context.pick_entity(:Orga, "association")
+		when :media
+			context.pick_entity(:Media)
 		else
 			nil
 		end
