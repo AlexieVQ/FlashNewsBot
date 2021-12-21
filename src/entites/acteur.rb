@@ -297,12 +297,12 @@ module Acteur
 			) + match[:nom]
 		elsif /\A(un|une|des) \z/i =~ match[:article]
 			nom + self.pn(
-				" à moi",
-				" à toi",
-				self.g(" à lui", " à elle"),
-				" à nous",
-				" à vous",
-				self.g(" à eux", " à elles")
+				" de moi",
+				" de toi",
+				self.g(" de lui", " d’elle"),
+				" de nous",
+				" de vous",
+				self.g(" d’eux", " d’elles")
 			)
 		else
 			nom + " " + self.comp_implicite
