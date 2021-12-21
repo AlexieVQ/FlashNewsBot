@@ -287,7 +287,7 @@ class Lieu < Rosace::Entity
 	def loc_explicite
 		ponctuel = type == :ville
 		@_acteur_nom_cite = true
-		match = /\A\s*(?<article>(le |la |les )?)(?<nom>.*)\z/i =~ nom
+		match = /\A\s*(?<article>(le |la |les )?)(?<nom>.*)\z/i.match(nom)
 		article = match[:article]
 		if /\Ale \z/i =~ article
 			"au"
