@@ -54,6 +54,13 @@ GENERATEUR = Rosace::Generator.new(
 					phrase.context
 				)
 			end
+		),
+		Rosace::Function.new(
+			:voy,
+			->(phrase, si_voy, si_cons) do
+				phrase.value =~ /\A[aeiou]/i ? si_voy : si_cons
+			end,
+			:concurrent
 		)
 	]
 )
