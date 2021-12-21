@@ -68,6 +68,8 @@ class Lieu < Rosace::Entity
 		code = parent ? parent.code2 : nil
 		super + if type == :ville && rand(2) == 1 && code
 			" (#{code})"
+		else 
+			""
 		end
 	end
 
