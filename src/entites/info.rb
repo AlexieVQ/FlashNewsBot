@@ -59,6 +59,8 @@ class Info < Rosace::Entity
 	#  @return [Array<Decla>]
 	has_many :Decla, :ref_info, :_decla
 
+	attr_writer :objet
+
 	# @return [Action, nil] Motif d'accusation.
 	attr_accessor :motif
 
