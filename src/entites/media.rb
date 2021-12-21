@@ -1,8 +1,11 @@
 require "rosace"
 require_relative "acteur"
 require_relative "categories"
+require_relative "../refinements"
 
 class Media < Rosace::Entity
+
+	using Refinements
 
 	include Acteur
 
