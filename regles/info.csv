@@ -45,3 +45,13 @@ id,description,commun,weight,hashtag,emoji,acteurs,type_objet,categories,tempora
 73,perd les élections municipales,{ .lieu = Lieu(ville) },10,(Municipales)?(.lieu.pascal_case)?,🗳️,pers parti,,politique,present,,
 74,déclare la guerre,,10,{ .sujet.pascal_case }VS{ .objet.pascal_case },💣,pers pays region,pays region,politique,present,,
 79,retient objet en otage,,10,,,pers,,,present,objet,sujet
+82,proclame son indépendance,,10,Free{ .sujet.pascal_case }|{ .sujet.pascal_case }Indépendant{ .sujet.es },,region,,politique,present,,
+83,jouera en équipe de France,{ .lieu = Lieu[1] },10,{ .sujet.pascal_case }En(EDF|ÉquipeDeFrance),⚽,pers,,sport foot,futur,,
+84,se lance sur YouTube,,10,YouTube,▶️,pers,,,present,,
+85,à l’affiche d’un festival,,10,,🎸|🎤,pers,,culture musique,futur,,
+88,devient vegan,,10,Véganisme,🌱,pers,,,present,,
+91,appelle à manifester,,10,,,pers parti syndicat,,politique,present,,
+92,accuse objet,{ .motif = Action(coupable) },10,JAccuse,,pers entreprise pays region parti syndicat association media,,,present,objet,
+93,épouse,,5,{ .sujet.pascal_case }{ .objet.pascal_case },💒|👰,pers,,,present,,
+99,accuse de fakes news,,10,,,pers parti media pays,media,politique,present,,
+100,bloque objet sur les réseaux,,10,{ .sujet.pascal_case }VS{ .objet.pascal_case },,pers pays,,,present,objet,sujet
