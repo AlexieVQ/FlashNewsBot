@@ -62,7 +62,6 @@ class Action < Rosace::Entity
 
 	def init
 		self.temps = :passe
-		self.verbe_obligatoire = true
 		@commun = false
 	end
 
@@ -107,7 +106,6 @@ class Action < Rosace::Entity
 		self.victime = victime
 		self.temps = temps
 		self.mettre_sujet = mettre_sujet
-		self.verbe_obligatoire = verbe_obligatoire
 		out = if forme == :verbale
 			if [:infinitif_passe, :infinitif].include?(self.temps) ||
 				!mettre_sujet
@@ -129,9 +127,10 @@ class Action < Rosace::Entity
 		@objet = old_objet
 		self.temps = old_temps
 		self.mettre_sujet = old_mettre_sujet
-		self.verbe_obligatoire = true
 		if forme == :nominale && mettre_sujet == true
 			Acteur.new(nom: out, genre: genre, nombre: nombre)
+		elsif !verbe_obligatoire
+			out.gsub(/\A(est|sont) /, "")
 		else
 			out
 		end
@@ -207,8 +206,6 @@ class Action < Rosace::Entity
 		end
 		passe = if auxiliaire == "avoir"
 			sujet.a + " " + participe
-		elsif verbe_obligatoire
-			sujet.est + " " + participe
 		else
 			participe
 		end
@@ -425,10 +422,6 @@ class Action < Rosace::Entity
 	# @return [Boolean] Vrai s'il faut retourner explicitement le sujet dans les
 	#  formes nominale ou verbale.
 	attr_accessor :mettre_sujet
-
-	# @return [Boolean] +true+ si le verbe doit être mis obligatoirement
-	#  (concerne le verbe être)
-	attr_accessor :verbe_obligatoire
 
 	def temps=(temps)
 		@temps = temps || self.temps
