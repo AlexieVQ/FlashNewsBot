@@ -33,8 +33,6 @@ class Lieu < Rosace::Entity
 
 	# @!attribute [r] nom
 	#  @return [String]
-	# @!attribute [r] pascal_case
-	#  @return [String]
 
 	# @!attribute [r] genre
 	#  @return [:M, :F]
@@ -65,12 +63,17 @@ class Lieu < Rosace::Entity
 
 	# @return [String] Nom de ce lieu
 	def nom
-		code = parent ? parent.code2 : nil
+		code = parent ? parent.code2(recursif: true) : nil
 		super + if type == :ville && rand(2) == 1 && code
 			" (#{code})"
 		else 
 			""
 		end
+	end
+
+	# @return [String] Nom de ce lieu en PascalCase
+	def pascal_case
+		(type == :departement && rand(2) == 1) ? code2 : super
 	end
 
 	# @return [Integer] Poids du lieu dans les choix aléatoires
@@ -104,21 +107,25 @@ class Lieu < Rosace::Entity
 		end
 	end
 
+	# @param recursif [Boolean] Vrai pour retourner le code d'un parent si
+	#  besoin
 	# @return [String, nil] Code à deux signes du lieu ou d'un parent.
-	def code2
-		c = super
+	def code2(recursif: false)
+		c = super()
 		if c.empty?
-			parent ? parent.code2 : nil
+			(recursif && parent) ? parent.code2 : nil
 		else
 			c
 		end
 	end
 
+	# @param recursif [Boolean] Vrai pour retourner le code d'un parent si
+	#  besoin
 	# @return [String] Code à trois signes du lieu ou d'un parent.
-	def code3
-		c = super
+	def code3(recursif: false)
+		c = super()
 		if c.empty?
-			parent ? parent.code3 : nil
+			(recursif && parent) ? parent.code3 : nil
 		else
 			c
 		end
