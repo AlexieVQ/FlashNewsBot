@@ -55,3 +55,11 @@ id,description,commun,weight,hashtag,emoji,acteurs,categories,temporalite,coupab
 93,épouse,{ .objet = .acteur },5,{ .sujet.pascal_case }{ .objet.pascal_case },💒|👰,pers,,present,,
 99,accuse de fakes news,{ .objet = Media },10,,,pers parti media pays,politique,present,,
 100,bloque objet sur les réseaux,{ .objet = .acteur },10,{ .sujet.pascal_case }VS{ .objet.pascal_case },,pers pays,,present,objet,sujet
+102,soutient objet aux présidentielles,{ .objet = Pers }|{ .objet = Orga(parti) },10,Présidentielle(s)?2022,🗳️,pers parti,politique,present,,
+105,se lance sur TikTok,,10,TikTok,,pers parti pays region,,proche,,
+106,condamné au goulag,{ .prison = s(goulag|goulp) },10,{ .sujet.pascal_case }Au{ .prison.capitalize },,pers,politique,proche,sujet,
+108,élu Miss ,"{ .lieu = Lieu(pays,etat); .concours = .sujet.g(Mister|Miss,Miss) }",10,{ .concours }{ .lieu.pascal_case },(👸)?,pers,,proche,,
+110,quitte parti,{ .objet = Orga(parti) },10,,,pers,politique,present,objet,sujet
+111,prend la tête de parti,{ .objet = Orga(parti) },10,,,pers,politique,present,,
+112,rejoint parti,{ .objet = Orga(parti) },10,,,pers,politique,present,,
+113,interdit l’hétérosexualité,{ .ou = s(( sur la voix publique)?) },5,Hétérophobie,👫 ⃠,pers parti pays,politique,present,,
