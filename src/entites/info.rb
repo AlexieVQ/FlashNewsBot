@@ -103,7 +103,7 @@ class Info < Rosace::Entity
 	# @return [String]
 	def value
 		commun
-		temps = case :temporalite
+		temps = case temporalite
 		when :proche
 			:passe
 		when :present
