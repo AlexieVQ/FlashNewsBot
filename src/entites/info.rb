@@ -116,7 +116,8 @@ class Info < Rosace::Entity
 			:passe
 		end
 		phrase = action.value(sujet: sujet, objet: objet,
-				sujet_explicite: true, temps: temps) + ".\n\n" +
+				sujet_explicite: true, temps: temps, verbe_obligatoire: false) +
+				".\n\n" +
 				context.pick_entity(:StructDecla).value.majuscule + ".\n\n" +
 				"(#{context.pick_entity(:Media).value}) " +
 				hashtag

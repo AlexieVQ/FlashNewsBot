@@ -62,6 +62,7 @@ class Action < Rosace::Entity
 
 	def init
 		self.temps = :passe
+		self.verbe_obligatoire = true
 		@commun = false
 	end
 
@@ -82,6 +83,7 @@ class Action < Rosace::Entity
 	# @param mettre_sujet [Boolean]
 	# @param sujet_explicite [Boolean] Vrai si le sujet doit être écrit
 	#  explicitement
+	# @param verbe_obligatoire [Boolean] Faux pour omettre le verbe être
 	# @return [String, Acteur] String pour la forme verbale ou nominale dans
 	#  sujet, Acteur pour la forme nominale avec sujet
 	def value(sujet: nil,
@@ -91,7 +93,8 @@ class Action < Rosace::Entity
 			  forme: :verbale,
 			  temps: :passe,
 			  mettre_sujet: true,
-			  sujet_explicite: false)
+			  sujet_explicite: false,
+			  verbe_obligatoire: true)
 		old_sujet = @sujet
 		old_objet = @objet
 		old_temps = self.temps
@@ -104,6 +107,7 @@ class Action < Rosace::Entity
 		self.victime = victime
 		self.temps = temps
 		self.mettre_sujet = mettre_sujet
+		self.verbe_obligatoire = verbe_obligatoire
 		out = if forme == :verbale
 			if [:infinitif_passe, :infinitif].include?(self.temps) ||
 				!mettre_sujet
@@ -125,6 +129,7 @@ class Action < Rosace::Entity
 		@objet = old_objet
 		self.temps = old_temps
 		self.mettre_sujet = old_mettre_sujet
+		self.verbe_obligatoire = true
 		if forme == :nominale && mettre_sujet == true
 			Acteur.new(nom: out, genre: genre, nombre: nombre)
 		else
@@ -200,7 +205,13 @@ class Action < Rosace::Entity
 			raise Rosace::EvaluationException,
 					"Action[#{id}]: #{auxiliaire} n'est pas un auxiliaire"
 		end
-		passe = (auxiliaire == "avoir" ? sujet.a : sujet.est) + " " + participe
+		passe = if auxiliaire == "avoir"
+			sujet.a + " " + participe
+		elsif verbe_obligatoire
+			sujet.est + " " + participe
+		else
+			participe
+		end
 		infinitif_passe = "#{auxiliaire} #{participe}"
 		simple = sujet.pn(
 			s1 || passe,
@@ -408,6 +419,10 @@ class Action < Rosace::Entity
 	# @return [Boolean] Vrai s'il faut retourner explicitement le sujet dans les
 	#  formes nominale ou verbale.
 	attr_accessor :mettre_sujet
+
+	# @return [Boolean] +true+ si le verbe doit être mis obligatoirement
+	#  (concerne le verbe être)
+	attr_accessor :verbe_obligatoire
 
 	def temps=(temps)
 		@temps = temps || self.temps
