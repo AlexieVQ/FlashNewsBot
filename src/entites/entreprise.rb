@@ -13,6 +13,8 @@ class Entreprise < Rosace::Entity
 
     # @!attribute [r] nom
     #  @return [String]
+    # @!attribute [r] pascal_case
+    #  @return [String] Nom en PascalCase, pour les hashtags
     # @!attribute [r] emoji
     #  @return [String]
 
