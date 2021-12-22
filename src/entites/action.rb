@@ -130,7 +130,7 @@ class Action < Rosace::Entity
 		if forme == :nominale && mettre_sujet == true
 			Acteur.new(nom: out, genre: genre, nombre: nombre)
 		elsif !verbe_obligatoire
-			out.gsub(/\A(est|sont) /, "")
+			out.gsub(/\A(est|sont|a été|ont été) /, "")
 		else
 			out
 		end
@@ -207,7 +207,7 @@ class Action < Rosace::Entity
 		passe = if auxiliaire == "avoir"
 			sujet.a + " " + participe
 		else
-			participe
+			sujet.est + " " + participe
 		end
 		infinitif_passe = "#{auxiliaire} #{participe}"
 		simple = sujet.pn(
