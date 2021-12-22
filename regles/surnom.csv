@@ -253,6 +253,7 @@ id,value,weight,pers
 311,le président du Venezuela,10,181
 312,le président vénézuélien,10,181
 315,l’individu,10,183
+316,le mec,10,183
 317,l’ancien président de Nintendo of America,10,184
 318,le vidéaste,10,185
 319,le rappeur,10,186
@@ -271,10 +272,62 @@ id,value,weight,pers
 342,le rappeur,10,196
 343,le rappeur américain,10,196
 344,l’humoriste,10,197
+345,l’urologue,30,198
 346,« l’intellectuel »,10,198
 347,le spécialiste de l’urine,10,198
 348,la charmante demoiselle,10,199
 349,la première dame,10,200
+351,la princesse,10,202
+352,la secrétaire,10,203
+353,la présidente du Rassemblement National,10,204
+354,la présidente du RN,10,204
+355,l’assistant personnel,10,205
+356,l’assistant personnel d’Amazon,10,205
+357,l’ex-candidate à la présidence des États-Unis,10,206
+359,l’animal,10,208
+360,la vidéaste,10,209
+361,l’humoriste,10,209
+362,la youtubeuse,10,209
+363,la comédienne,10,209
+364,la chanteuse,10,210
+365,la « Queen of the Gays »,1,210
+366,la chanteuse,10,211
+367,l’actrice,10,211
+368,l’animatrice,10,212
+369,l’animatrice,10,213
+370,la député,10,214
+371,la député En Marche,10,214
+374,la présidente d’honneur de VIA,10,216
+375,l’humoriste,10,217
+376,l’ex-Première Ministre britannique,10,218
+377,la chanteuse,10,219
+378,l’ex-chancelière allemande,10,220
+379,l’ancienne première adjointe au maire de Levalois-Perret ,10,221
+380,la journaliste,10,222
+381,la personnalité de télé-réalité,10,223
+382,la maire de Paris,10,224
+383,« Annie Dingo »,1,224
+384,« Annie Dingo » d’après { Pers.tonique },1,224
+387,la Reine,10,226
+390,la journaliste,10,229
+391,la journaliste d’investigation,10,229
+392,la journaliste,10,230
+393,l’essayiste,10,230
+394,la chanteuse,10,231
+395,la romancière,10,232
+396,l’écrivaine,10,232
+397,l’auteure,10,232
+398,l’actrice,10,233
+401,la vidéaste,10,235
+402,la vidéo-blogueuse,10,235
+403,la rappeuse,10,236
+404,la militante,10,237
+406,la personnalité,10,238
+407,la femme d’affaires,10,238
+409,la Ministre déléguée,10,239
+410,la Ministre déléguée à la Citoyenneté,10,239
+411,la conseillère en image,10,240
+412,l’animatrice,10,240
 694,le Ministre de la Justice,10,182
 695,le Garde des Sceaux,10,182
 1000,le candidat à l’élection présidentielle,10,6
@@ -301,3 +354,4 @@ id,value,weight,pers
 1023,l’individu,10,159
 1024,le streameur,10,185
 1025,le mangeur de homard,1,192
+1026,les militants,10,1001
