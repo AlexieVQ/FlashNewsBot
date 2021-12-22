@@ -22,7 +22,7 @@ id,description,commun,weight,hashtag,emoji,acteurs,categories,temporalite,coupab
 40,devient secrétaire général de la CGT,,1,CGT,,pers,politique gauche ext_gauche,present,,
 42,a fait son coming out,,5,,🏳️‍🌈,pers,,proche,,
 43,élu personnalité préférée des français,{ .lieu = Lieu[1] },5,,,pers,,proche,,
-45,rachète une entreprise,{ .objet = Entreprise}|{ .objet = Media },10,,,pers entreprise media,patronat,present,,
+45,rachète une entreprise,{ .objet = Entreprise}|{ .objet = Media },10,,,pers entreprise,patronat,present,,
 46,démissionne,,10,{ .sujet.pascal_case }Démission,,pers,politique,present,sujet,
 47,destitué,,10,{ .sujet.pascal_case }Destitution,,pers,politique,proche,sujet,
 48,provoque objet,{ .objet = .acteur },10,{ .sujet.pascal_case }VS{ .objet.pascal_case },,pers,,present,objet,sujet
