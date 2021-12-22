@@ -118,9 +118,7 @@ class Info < Rosace::Entity
 		phrase = action.value(sujet: sujet, objet: objet,
 				sujet_explicite: true, temps: temps) + ".\n\n" +
 				context.pick_entity(:StructDecla).value.majuscule + ".\n\n" +
-				(rand(2) == 1 ?
-						"(#{context.pick_entity(:Media).value}) " :
-						"") +
+				"(#{context.pick_entity(:Media).value}) " +
 				hashtag
 		context.pick_entity(:Accroche).value + " " + phrase
 	end
