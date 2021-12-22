@@ -68,7 +68,8 @@ class Action < Rosace::Entity
 	# @param args [Array<String>]
 	# @return [Boolean]
 	def pick?(*args)
-		args.all? { |role| roles.include?(role.strip.to_sym) }
+		args.any? { |role| send(role) == :sujet } &&
+				args.all? { |role| roles.include?(role.strip.to_sym) }
 	end
 
 	# @param sujet [Acteur, nil]
