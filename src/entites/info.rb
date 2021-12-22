@@ -267,6 +267,16 @@ class Info < Rosace::Entity
 		self
 	end
 
+	def inspect
+		"#<Info[#{id}]#{ instance_variables.reduce("") do |str, variable|
+			unless [:@attributes, :@context].include?(variable)
+				str + " #{variable}=#{instance_variable_get(variable).inspect}"
+			else
+				str
+			end
+		end }>"
+	end
+
 	private
 
 	# @return [Symbol] Type d'acteur de l'information
