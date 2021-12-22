@@ -405,6 +405,12 @@ class Action < Rosace::Entity
 		super
 	end
 
+	# @return [String] Partie comprenant le motif
+	def part_motif
+		commun
+		super
+	end
+
 	private
 
 	# @return [:passe, :infinitif, :infinitif_passe, :simple] Temps du verbe de

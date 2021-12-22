@@ -114,10 +114,13 @@ class Info < Rosace::Entity
 		else
 			:passe
 		end
-		phrase = action.value(sujet: sujet, objet: objet,
-				sujet_explicite: true, temps: temps, verbe_obligatoire: false) +
+		part_value = action.value(sujet: sujet, objet: objet,
+				sujet_explicite: true, temps: temps, verbe_obligatoire: false)
+		part_motif = action.part_motif
+		part_decla = context.pick_entity(:StructDecla).value.majuscule
+		phrase = part_value + (part_motif.empty? ? "" : " " + part_motif) +
 				".\n\n" +
-				context.pick_entity(:StructDecla).value.majuscule + ".\n\n" +
+				part_decla + ".\n\n" +
 				"(#{context.pick_entity(:Media).value}) " +
 				hashtag
 		context.pick_entity(:Accroche).value + " " + phrase
