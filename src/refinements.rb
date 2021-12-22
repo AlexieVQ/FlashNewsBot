@@ -15,7 +15,7 @@ module Refinements
 
 		# @return [Boolean]
 		def voyelle?
-			/\A([aeiouéèàêâôûùïî]|y([^aeiouéèàêâôûùïî]|\z))/i.match?(self)
+			/\A([aeiou]|y([^aeiou]|\z))/i.match?(I18n.transliterate(self))
 		end
 
 		# Calcule la distance de Levenshtein avec la chaîne donnée.

@@ -1,4 +1,5 @@
 require "rosace"
+require_relative "refinements"
 require_relative "entites/action"
 require_relative "entites/info"
 require_relative "entites/pers"
@@ -9,6 +10,8 @@ require_relative "entites/surnom"
 require_relative "entites/lieu"
 require_relative "entites/entreprise"
 require_relative "entites/orga"
+
+using Refinements
 
 GENERATEUR = Rosace::Generator.new(
 	path: "regles/",
@@ -49,7 +52,7 @@ GENERATEUR = Rosace::Generator.new(
 			:que,
 			->(phrase) do
 				Rosace::ContextualValue.new(
-					(phrase.value =~ /\A[aeiou]/i ? "qu’" : "que ") +
+					(phrase.value.voyelle? ? "qu’" : "que ") +
 							phrase.value,
 					phrase.context
 				)
@@ -58,7 +61,7 @@ GENERATEUR = Rosace::Generator.new(
 		Rosace::Function.new(
 			:voy,
 			->(phrase, si_voy, si_cons) do
-				phrase.value =~ /\A[aeiou]/i ? si_voy : si_cons
+				phrase.value.voyelle? ? si_voy : si_cons
 			end,
 			:concurrent
 		),
