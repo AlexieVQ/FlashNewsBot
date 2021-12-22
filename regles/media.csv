@@ -17,7 +17,7 @@ id,nom,pascal_case,weight,genre,nombre,types,categories,origine
 16,l’Équipe,LÉquipe,10,F,S,papier,sport,1
 17,TF1,TF1,10,F,S,tv,politique sport,1
 18,France Info|franceinfo,FranceInfo|franceinfo,10,F,S,tv radio,politique edito,1
-19,BFM( )?TV,BFMTV,10,F,S,tv,politique edito,1
+19,BFMTV,BFMTV,10,F,S,tv,politique edito,1
 20,RMC,RMC,10,F,S,tv radio,politique edito sport,1
 21,Mediapart,Mediapart,10,F,S,internet,politique gauche edito,1
 22,le Media,LeMedia,2,F,S,internet,politique gauche ext_gauche edito,1

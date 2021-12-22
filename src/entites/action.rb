@@ -109,28 +109,36 @@ class Action < Rosace::Entity
 		out = if forme == :verbale
 			if [:infinitif_passe, :infinitif].include?(self.temps) ||
 				!mettre_sujet
+				unless plain_value(:sujet_perso).empty?
+					raise Rosace::EvaluationException,
+							"Sujet perso pour Action[#{id}]"
+				end
 				verbale
 			else
 				sp = sujet_perso
 				if !sp.empty?
-					sp + " " + verbale
+					sp + " " + (verbe_obligatoire ?
+							verbale :
+							verbale.gsub(/\A(est|sont|a été|ont été) /, ""))
 				elsif sujet_explicite
-					self.sujet.sujet_explicite + " " + verbale
+					self.sujet.sujet_explicite + " " + (verbe_obligatoire ?
+							verbale :
+							verbale.gsub(/\A(est|sont|a été|ont été) /, ""))
 				else
-					self.sujet.sujet(verbale)
+					self.sujet.sujet(verbe_obligatoire ?
+							verbale :
+							verbale.gsub(/\A(est|sont|a été|ont été) /, ""))
 				end
 			end
 		else
 			nominale
 		end
-		@sujet = old_sujet
-		@objet = old_objet
-		self.temps = old_temps
-		self.mettre_sujet = old_mettre_sujet
+		#@sujet = old_sujet
+		#@objet = old_objet
+		#self.temps = old_temps
+		#self.mettre_sujet = old_mettre_sujet
 		if forme == :nominale && mettre_sujet == true
 			Acteur.new(nom: out, genre: genre, nombre: nombre)
-		elsif !verbe_obligatoire
-			out.gsub(/\A(est|sont|a été|ont été) /, "")
 		else
 			out
 		end

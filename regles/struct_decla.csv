@@ -1,4 +1,4 @@
 id,value,weight
-1,"{ $info.decla.sujet.to_3e_personne.sujet({ `source ||= Media`.coi({ $info.decla.sujet.to_3e_personne.a } (déclaré|affirmé)) }) }( { Moment(proche) })? “{ $info.decla }”",10
-2,"“{ $info.decla }”{ decla_phrase = s({ $info.decla.sujet.to_3e_personne.sujet_inverse({$info.decla.sujet.to_3e_personne.a},(déclaré|affirmé)( { Moment(proche) })?) }) } ({ `source ||= Media`.coi({ decla_phrase }) }|{ decla_phrase })",10
-3,"🎙 “{ $info.decla }” { $info.decla.sujet.to_3e_personne.sujet_explicite }( { Moment(proche) })?( { `source ||= Media`.coi_explicite })?",5
+1,{ $info.decla.sujet.to_3e_personne.sujet({ `source ||= Media`.coi({ $info.decla.sujet.to_3e_personne.a } (déclaré|affirmé)) }) }( { Moment(proche) })? “{ capitalize({ $info.decla }) }”,10
+2,"“{ capitalize({ $info.decla }) }”{ decla_phrase = s({ $info.decla.sujet.to_3e_personne.sujet_inverse({$info.decla.sujet.to_3e_personne.a},(déclaré|affirmé)( { Moment(proche) })?) }) } ({ `source ||= Media`.coi({ decla_phrase }) }|{ decla_phrase })",10
+3,🎙 “{ capitalize({ $info.decla }) }” { $info.decla.sujet.to_3e_personne.sujet_explicite }( { Moment(proche) })?( { `source ||= Media`.coi_explicite })?,5

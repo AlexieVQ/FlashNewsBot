@@ -146,7 +146,7 @@ id,commun,nom,pascal_case,weight,genre,nombre,qte,categories,origine,cw
 165,,David Guetta,DavidGuetta,5,M,S,1,culture musique,1,
 166,,Jack Dorsey,Jack(Dorsey)?,10,M,S,1,patronat gafam,3,
 167,,Benoît Hamon,(Benoît)?Hamon,10,M,S,1,politique gauche ecolo,1,
-168,{ .orga = Orga },"un militant ({ .orga.adj(M,S) }|{ .orga.nom })",Militant{ .orga.pascal_case },10,M,S,1,politique anonyme,,
+168,{ .orga = Orga },"un militant ({ .orga.adj(M,S) }|{ .orga.sigle })",Militant{ .orga.pascal_case },10,M,S,1,politique anonyme,,
 169,,Jeremy Corbyn,(Jeremy)?Corbyn,10,M,S,1,politique gauche,4,
 170,,un CRS,CRS,10,M,S,1,anonyme,1,
 171,,Gérard Depardieu,(Gérard)?Depardieu,3,M,S,1,culture cinema,1,

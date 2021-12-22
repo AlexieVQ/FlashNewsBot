@@ -115,13 +115,19 @@ class Info < Rosace::Entity
 			:passe
 		end
 		part_value = action.value(sujet: sujet, objet: objet,
-				sujet_explicite: true, temps: temps, verbe_obligatoire: false)
+				sujet_explicite: true, temps: temps, verbe_obligatoire: false).
+				majuscule
 		part_motif = action.part_motif
-		part_decla = context.pick_entity(:StructDecla).value.majuscule
+		part_decla = begin
+			context.pick_entity(:StructDecla).value.majuscule
+		rescue Rosace::EvaluationException => e
+			$stderr.puts "Pas de decla pour Info[#{id}]" if Bot.debug?
+			nil
+		end
 		phrase = part_value + (part_motif.empty? ? "" : " " + part_motif) +
 				".\n\n" +
-				part_decla + ".\n\n" +
-				"(#{context.pick_entity(:Media).value}) " +
+				(part_decla ? part_decla + ".\n\n" : "") +
+				"(#{context.pick_entity(:Media).vocatif.majuscule}) " +
 				hashtag
 		context.pick_entity(:Accroche).value + " " + phrase
 	end

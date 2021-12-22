@@ -70,4 +70,8 @@ class ActeurProxy
 		personne == 3 ? self : ActeurProxy.new(acteur, personne: 3)
 	end
 
+	def unwrap
+		acteur.unwrap
+	end
+
 end

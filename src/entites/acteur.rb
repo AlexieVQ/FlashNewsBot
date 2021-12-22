@@ -543,4 +543,9 @@ module Acteur
 		self.personne == 3 ? self : ActeurProxy.new(self, personne: 3)
 	end
 
+	# @return [Acteur] instance originale
+	def unwrap
+		self
+	end
+
 end
