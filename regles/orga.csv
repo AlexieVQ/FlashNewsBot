@@ -16,7 +16,7 @@ id,nom,sigle,genre,nombre,weight,adj,emoji,type,categories,origine
 15,le Parti Républicain,GOP,M,S,10,"républicain{ .defgn(,e,s,es) }",🔴,parti,droite ext_droite,3
 16,les Conservateurs,Tories,M,P,10,"conservat{ .defgn(eur,rice,eurs,rices) }",🌳,parti,droite,4
 17,le Parti Travailliste,Labour,M,S,10,travaill{ .iste },🌹,parti,gauche centre,4
-18,l’Union Chrétienne-Démocrate d’Allemagne,CDU,F,P,10,"chrétien{ .defgn(,ne,s,nes) }-démocrate{ .defgn(,,s,s) }",⚫,parti,droite,2
+18,l’Union Chrétienne-Démocrate d’Allemagne,CDU,F,S,10,"chrétien{ .defgn(,ne,s,nes) }-démocrate{ .defgn(,,s,s) }",⚫,parti,droite,2
 19,la CGT,CGT,F,S,10,cégét{ .iste },👷,syndicat,gauche ext_gauche,1
 20,la CFDT,CFDT,F,S,10,syndical{ .iste },🟠,syndicat,gauche centre,1
 21,le Medef,Medef,M,S,10,"patrona{ .defgn(l,le,ux,les) }",🟣,syndicat,droite,1
