@@ -353,7 +353,6 @@ class Action < Rosace::Entity
 				*info.roles.map { |role| role.id2name })
 		args = {}
 		args[:forme] = :nominale
-		args[:temps] = :infinitif_passe
 		unless info.coupable.empty?
 			args[:coupable] = info.coupable == :sujet ? sujet : objet
 		end
@@ -363,6 +362,26 @@ class Action < Rosace::Entity
 		args[:mettre_sujet] = true
 		out = motif.value(**args)
 		"dans " + out.comp("le cadre")
+	end
+
+	# Retourne un motif d'accusation sous la forme "parce que [motif]"
+	# @return [String] motif d'accusation
+	def parce_que_motif
+		# @type [Action]
+		motif = info.motif ||= context.pick_entity(:Action,
+			*info.roles.map { |role| role.id2name })
+		args = {}
+		args[:forme] = :verbale
+		args[:temps] = :passe
+		unless info.coupable.empty?
+			args[:coupable] = info.coupable == :sujet ? sujet : objet
+		end
+		unless info.victime.empty?
+			args[:victime] = info.victime == :sujet ? sujet : objet
+		end
+		args[:mettre_sujet] = true
+		out = motif.value(**args)
+		"parce qu#{out.voyelle? ? "’" : "e "}#{out}"
 	end
 
 	# @return [List<:coupable, :victime>] Liste des rôles définis pour cette
