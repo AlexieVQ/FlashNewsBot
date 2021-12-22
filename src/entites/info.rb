@@ -34,8 +34,6 @@ class Info < Rosace::Entity
 	#  @return [Array<Symbol>]
 	mult_enum :acteurs, *TYPES_ACTEUR
 
-	mult_enum :type_objet, *TYPES_ACTEUR
-
 	# @!attribute [r] categories
 	#  @return [Array<Symbol>]
 	mult_enum :categories, *CATEGORIES
@@ -64,7 +62,8 @@ class Info < Rosace::Entity
 	#  @return [Array<Decla>]
 	has_many :Decla, :ref_info, :_decla
 
-	attr_writer :objet
+	# @return [Acteur, nil] Objet de l'information
+	attr_reader :objet
 
 	# @return [Action, nil] Motif d'accusation.
 	attr_accessor :motif
@@ -164,17 +163,6 @@ class Info < Rosace::Entity
 		end).uniq.join("")
 	end
 
-	# @return [Symbol] Type d'acteur d'{#objet}
-	def type_objet
-		if super.empty? || super.any? { |type| type == type_acteur }
-			type_acteur
-		else
-			@type_objet ||= super[rand(super.length)]
-		end
-	end
-
-	# @return [Acteur, nil] Objet 
-
 	# @return [String]
 	def hashtag
 		commun
@@ -203,13 +191,11 @@ class Info < Rosace::Entity
 				*(accu ? roles.map { |role| role.to_s } : []))
 	end
 
-	# Retourne un acteur correspondant à un type d'{#acteurs} ou de
-	# {#type_objet}.
-	# @param role [:sujet, :objet] Rôle de l'acteur voulu
+	# Retourne un acteur correspondant à un type d'{#acteurs}.
 	# @return [Acteur, nil] Acteur correspondant au type donné, ou aucun acteur
 	#  si cette information ne spécifie aucun type
-	def acteur(role: :sujet)
-		case (role == :sujet ? type_acteur : type_objet)
+	def acteur
+		case type_acteur
 		when :pers
 			context.pick_entity(:Pers)
 		when :pays
@@ -234,22 +220,23 @@ class Info < Rosace::Entity
 	# @return [Acteur, nil] Sujet de l'information
 	def sujet
 		# @type [Acteur, nil]
-		@sujet ||= acteur(role: :sujet)
+		@sujet ||= acteur
 	end
 
-	# @return [Acteur, nil] Objet de l'information
-	def objet
-		@objet ||= acteur(role: :objet)
-	end
-
-	# @param acteur [Acteur]
-	# @return [Acteur]
 	def sujet=(acteur)
 		unless @sujet.nil?
 			raise Rosace::EvaluationException,
 				"sujet déjà défini pour Info[#{id}]"
 		end
 		@sujet = acteur
+	end
+
+	def objet=(acteur)
+		unless @objet.nil?
+			raise Rosace::EvaluationException,
+				"objet déjà défini pour Info[#{id}]"
+		end
+		@objet = acteur
 	end
 
 	# @return [Action, nil]
