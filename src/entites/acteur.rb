@@ -305,7 +305,7 @@ module Acteur
 				self.g(" d’eux", " d’elles")
 			)
 		else
-			nom + " " + self.comp_implicite
+			nom + " " + self.comp_explicite
 		end
 	end
 
