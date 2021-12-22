@@ -41,7 +41,7 @@ class Orga < Rosace::Entity
     # @param types [Array<String>] types attendus
     # @return [Boolean] +true+ si l'organisation est de type attendu
     def pick?(*types)
-        types.any? { |type| type.strip.to_sym == self.type }
+        types.empty? || types.any? { |type| type.strip.to_sym == self.type }
     end
 
 	# @return [Integer] Poids de l'organisation dans les choix aléatoires
