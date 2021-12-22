@@ -229,6 +229,54 @@ id,value,weight,pers
 274,l’homme,10,159
 275,le militant,10,160
 276,le militant anarchiste,10,160
+277,le rappeur,10,161
+280,le chat,10,163
+281,l’animateur,10,164
+282,le DJ,10,165
+283,le disk jockey,10,165
+284,l’ancien PDG de Twitter,10,166
+285,l’entrepreneur,10,166
+286,l’ancien candidat à l’élection présidentielle,10,167
+287,l’ancien Ministre,10,167
+288,le militant,10,168
+289,l’ancien chef du parti Travailliste,10,169
+290,l’agent des forces de l’ordre,10,170
+291,le comédien,10,171
+292,le philosophe,10,172
+293,le youtubeur,10,173
+294,le vidéaste,10,173
+297,l’écrivain,10,176
+298,le dessinateur,10,175
+299,Jean Plantureux,10,175
+309,le rappeur,10,180
+310,le rappeur américain,10,180
+311,le président du Venezuela,10,181
+312,le président vénézuélien,10,181
+315,l’individu,10,183
+317,l’ancien président de Nintendo of America,10,184
+318,le vidéaste,10,185
+319,le rappeur,10,186
+320,le rappeur canadien,10,186
+326,l’humoriste,10,188
+327,le comédien,10,188
+328,le cuisinier,10,189
+329,le chef,10,189
+330,le chef cuisinier,10,189
+336,l’homme politique,10,192
+337,l’ancien Ministre de la Transition écologique,10,192
+338,le Premier Ministre britannique,10,193
+339,Monsieur le Maire,10,194
+340,l’élu,10,194
+341,le chanteur,10,195
+342,le rappeur,10,196
+343,le rappeur américain,10,196
+344,l’humoriste,10,197
+346,« l’intellectuel »,10,198
+347,le spécialiste de l’urine,10,198
+348,la charmante demoiselle,10,199
+349,la première dame,10,200
+694,le Ministre de la Justice,10,182
+695,le Garde des Sceaux,10,182
 1000,le candidat à l’élection présidentielle,10,6
 1001,le candidat insoumis,10,6
 1002,le candidat insoumis à l’élection présidentielle,10,6
@@ -251,3 +299,5 @@ id,value,weight,pers
 1021,l’attaquant de l’Atlético de Madrid,10,149
 1022,le chanteur misogyne,5,152
 1023,l’individu,10,159
+1024,le streameur,10,185
+1025,le mangeur de homard,1,192
