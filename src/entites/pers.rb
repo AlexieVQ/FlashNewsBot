@@ -45,15 +45,22 @@ class Pers < Rosace::Entity
 		@commun = false
 	end
 
+	# @param surnom [Boolean] Vrai pour renvoyer le surnom si le nom a déjà été
+	#  donné
 	# @return [String] Nom ou surnom du personnage, si son nom a déjà été donné.
-	def nom
+	def nom(surnom: true)
 		commun
-		if !@nom_cite || surnom_list.empty?
+		if !surnom || !@nom_cite || surnom_list.empty?
 			@nom_cite = true
-			super
+			super()
 		else
-			surnom.value
+			self.surnom.value
 		end
+	end
+
+	# @return [String] Nom du personnage uniquement
+	def forcer_nom
+		nom(surnom: false)
 	end
 
 	# @return [String] Nom en PascalCase du personnage (pour les hashtags)
