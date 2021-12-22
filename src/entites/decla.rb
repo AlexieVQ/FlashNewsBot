@@ -19,17 +19,6 @@ class Decla < Rosace::Entity
 	#  @return [Pers, nil]
 	reference :pers, :Pers, :optional
 
-	# @param info [Info, nil]
-	# @return [String]
-	def value(info: nil)
-		old_info = @info
-		# @type [Info, nil]
-		@info = info || old_info
-		out = super()
-		@info = old_info
-		out
-	end
-
 	# @param args [Array<String>]
 	# @return [Boolean]
 	def pick?(*args)
@@ -51,7 +40,7 @@ class Decla < Rosace::Entity
 
 	# @return [Info, nil]
 	def info
-		@info || ref_info || context.variable(:$info)
+		context.variable(:$info)
 	end
 
 	# @param sym [Boolean]
@@ -66,9 +55,23 @@ class Decla < Rosace::Entity
 			when :objet
 				info.objet
 			when :coupable
-				info.coupable
+				case info.coupable
+				when :sujet
+					info.sujet
+				when :objet
+					info.objet
+				else
+					nil
+				end
 			when :victime
-				info.victime
+				case info.victime
+				when :sujet
+					info.sujet
+				when :objet
+					info.objet
+				else
+					nil
+				end
 			else
 				@sujet = context.pick_entity(:Pers)
 			end
@@ -88,9 +91,23 @@ class Decla < Rosace::Entity
 			when :objet
 				info.objet
 			when :coupable
-				info.coupable
+				case info.coupable
+				when :sujet
+					info.sujet
+				when :objet
+					info.objet
+				else
+					nil
+				end
 			when :victime
-				info.victime
+				case info.victime
+				when :sujet
+					info.sujet
+				when :objet
+					info.objet
+				else
+					nil
+				end
 			else
 				@objet = context.pick_entity(:Pers)
 			end

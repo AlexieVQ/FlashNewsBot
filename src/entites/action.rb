@@ -310,11 +310,11 @@ class Action < Rosace::Entity
 				:nominale :
 				[:verbale, :nominale][rand(2)]
 		args[:temps] = :infinitif_passe
-		if info.coupable
-			args[:coupable] = info.coupable
+		unless info.coupable.empty?
+			args[:coupable] = info.coupable == :sujet ? sujet : objet
 		end
-		if info.victime
-			args[:victime] = info.victime
+		unless info.victime.empty?
+			args[:victime] = info.victime == :sujet ? sujet : objet
 		end
 		args[:mettre_sujet] = false
 		out = motif.value(**args)
@@ -337,11 +337,11 @@ class Action < Rosace::Entity
 		args = {}
 		args[:forme] = :nominale
 		args[:temps] = :infinitif_passe
-		if info.coupable
-			args[:coupable] = info.coupable
+		unless info.coupable.empty?
+			args[:coupable] = info.coupable == :sujet ? sujet : objet
 		end
-		if info.victime
-			args[:victime] = info.victime
+		unless info.victime.empty?
+			args[:victime] = info.victime == :sujet ? sujet : objet
 		end
 		args[:mettre_sujet] = true
 		out = motif.value(**args)

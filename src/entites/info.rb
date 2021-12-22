@@ -44,7 +44,12 @@ class Info < Rosace::Entity
 	#  @return [Symbol]
 	enum :temporalite, *TEMPORALITES
 
+	# @!attribute [r] coupable
+	#  @return [:sujet, :objet, :""] coupable de l'info
 	enum :coupable, *ROLES
+
+	# @!attribute [r] victime
+	#  @return [:sujet, :objet, :""] victime de l'info
 	enum :victime, *ROLES
 
 	# @!attribute [r] _action
@@ -186,8 +191,8 @@ class Info < Rosace::Entity
 	#  cette information.
 	def roles
 		roles = []
-		roles << :coupable if coupable
-		roles << :victime if victime
+		roles << :coupable unless coupable.empty?
+		roles << :victime unless victime.empty?
 		roles
 	end
 
@@ -251,52 +256,6 @@ class Info < Rosace::Entity
 	# @return [Action, nil]
 	def action
 		@action ||= _action
-	end
-
-	# @return [Acteur, nil] Coupable de l'information
-	def coupable
-		case super
-		when :sujet
-			sujet
-		when :objet
-			objet
-		else
-			@coupable
-		end
-	end
-
-	# @return [Acteur, nil] Victime de l'information
-	def victime
-		case super
-		when :sujet
-			sujet
-		when :objet
-			objet
-		else
-			@victime
-		end
-	end
-
-	# Définit le coupable, s'il n'est pas déjà défini.
-	# @param coupable [Acteur] Coupable à définir
-	# @return [Acteur] Coupable défini
-	# @raise Coupable déjà défini
-	def coupable=(coupable)
-		if self.coupable
-			raise "Info[#{id}]: coupable déjà défini"
-		end
-		@coupable = coupable
-	end
-
-	# Définit la victime, si elle n'est pas déjà définie.
-	# @param victime [Acteur] Victime à définir
-	# @return [Acteur] Victime définie
-	# @raise Victime déjà définie
-	def victime=(victime)
-		if self.victime
-			raise "Info[#{id}]: victime déjà définie"
-		end
-		@victime = victime
 	end
 
 	# Exécute les macros définis dans l'attribut +commun+ avant d'accéder aux
