@@ -377,12 +377,51 @@ id,value,weight,pers
 470,le rappeur,10,276
 471,le « petit prince de l’afrotrap »,5,276
 480,la productrice,10,280
+481,l’avocat,10,281
+482,le pamphlétaire,10,281
+483,l’essayiste,10,282
+484,la polémiste,10,282
+485,le philosophe,10,283
+486,l’homme,10,284
 487,le rappeur blanc,10,262
+488,le rappeur blanc,10,264
+491,l’artiste,10,287
+492,le pape de la musique électronique,10,287
+493,la chanteuse,10,288
+494,l’ancien président brésilien,10,289
+495,l’acteur,10,290
+496,l’acteur franco-américain,10,290
 508,le rappeur,10,262
 509,le rappeur belge,10,262
 510,la chanteuse,10,263
 511,le rappeur,10,264
 512,l’homme,10,266
+514,la journaliste,10,291
+515,l’animateur,10,292
+518,l’humoriste,10,294
+519,Jean-Christophe Le Texier,1,294
+520,{ Pers[13].comp(le cousin) },1,294
+525,l’homme politique,10,296
+527,le rappeur,10,298
+528,le rappeur conscient,5,298
+534,le journaliste,10,302
+535,le journaliste indépendant,10,302
+536,le journaliste jeux vidéo,10,302
+537,le philosophe,10,303
+538,l’essayiste,10,303
+541,le rappeur,10,305
+548,le rappeur,10,312
+549,l’acteur,10,313
+550,le comédien,10,313
+552,le cinéaste,10,314
+553,le cinéaste coréen,10,314
+554,le cinéaste à la Palme d’Or,10,314
+559,le médecin,10,317
+560,le médecin préféré des Français,10,317
+561,le médecin du PAF,10,317
+562,le président américain,10,318
+564,l’ancienne candidate à la primaire démocrate,10,319
+565,l’ancien candidat à la primaire démocrate,10,320
 694,le Ministre de la Justice,10,182
 695,le Garde des Sceaux,10,182
 1000,le candidat à l’élection présidentielle,10,6
@@ -412,6 +451,14 @@ id,value,weight,pers
 1026,les militants,10,1001
 1027,la candidate à l’élection présidentielle,10,241
 1028,la candidate à l’élection présidentielle,10,204
-1029,le rappeur blanc,10,264
 1030,les rappeurs,10,1005
 1031,les rappeurs originaires de Corbeil-Essonnes,10,1005
+1032,l’« ange noir de Saint-Germain-des-Prés »,10,281
+1033,les rappeurs,10,1006
+1034,les rappeurs toulousains,10,1006
+1035,les musiciens,10,1007
+1036,les musiciens mythiques,10,1007
+1037,les papes de la French Touch,10,1007
+1038,les rappeurs,10,301
+1039,le rappeur originaire de Caen,10,305
+1040,les youtubeurs,10,1008
