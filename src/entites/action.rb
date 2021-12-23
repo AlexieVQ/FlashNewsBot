@@ -53,12 +53,12 @@ class Action < Rosace::Entity
 	# @return [Acteur, nil] Acteur objet de cette action
 	def objet
 		# @type [Info]
-		@objet || (info ? info.objet : nil)
+		@objet ||= (info ? info.objet : nil) || context.variable(:$info).acteur
 	end
 
 	# @return [Acteur] Acteur sujet de cette action
 	def sujet
-		@sujet || (info ? info.sujet : nil)
+		@sujet ||= (info ? info.sujet : nil) || context.variable(:$info).acteur
 	end
 
 	def init
@@ -135,10 +135,10 @@ class Action < Rosace::Entity
 		else
 			nominale
 		end
-		#@sujet = old_sujet
-		#@objet = old_objet
-		#self.temps = old_temps
-		#self.mettre_sujet = old_mettre_sujet
+		@sujet = old_sujet || @sujet
+		@objet = old_objet || @objet
+		self.temps = old_temps
+		self.mettre_sujet = old_mettre_sujet
 		if forme == :nominale && mettre_sujet == true
 			Acteur.new(nom: out, genre: genre, nombre: nombre)
 		else
