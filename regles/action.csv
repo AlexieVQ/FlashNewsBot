@@ -116,7 +116,7 @@ id,commun,sujet_perso,verbale,nominale,part_motif,weight,info,coupable,victime,g
 285,{ .info.lieu = Lieu[3] },,"{ .a(participé,participer,participerai,participeras,participera,participeront,participerez,participeront) } à RuPaul’s Drag Race","{ .s_comp(la ,participation) } à RuPaul’s Drag Race",,10,130,,,F,S
 293,,,"{ .objet.cod({ .a(plagié,plagier,plagie,plagies,plagie,plagions,plagiez,plagient) }) }","{ .s_comp(le ,plagiat) } sur { .objet.tonique }",,10,,sujet,objet,M,S
 294,,,"{ .sujet.se({ .est(fait{ .sujet.es },faire,fais,fais,fait,faisons,faisez,font) }) } plagier par { .objet.tonique }","{ .s_comp(le ,plagiat) } par { .objet.tonique }",,10,,objet,sujet,M,S
-296,,,"{ .a(donné,donner,donne,donnes,donne,donnons,donnez,donnent) } { .somme }euros (au|lors du) Zevent","{ .s_comp(le ,don de { .somme }euros) } au ZEvent",,10,134,,,M,S
+296,,,"{ .a(donné,donner,donne,donnes,donne,donnons,donnez,donnent) } { .info.somme }euros (au|lors du) Zevent","{ .s_comp(le ,don de { .info.somme }euros) } au ZEvent",,10,134,,,M,S
 302,,,"{ .a(été,être,serai,seras,sera,serons,serez,seront) } présent{ .sujet.es } à la Japan Expo",{ .sujet.comp(la présence) } à la Japan Expo,,2,138,,,F,S
 306,,,"{ .est(devenu{ .sujet.es },devenir,deviens,deviens,devient,devenons,devenez,deviennent) } { .sujet.gn(le premier youtubeur,la première youtubeuse,les premiers youtubeurs,les premières youtubeuses) } au monde",{ .sujet.comp(le record mondial d’abonnés sur YouTube) },,2,140,,,M,S
 307,,,"{ .est(devenu{ .sujet.es },devenir,deviens,deviens,devient,devenons,devenez,deviennent) } { .sujet.gn(le youtubeur,la youtubeuse,les youtubeurs,les youtubeuses) } numéro{ .sujet.s } 1",{ .sujet.comp(le record d’abonnés sur YouTube) },,2,140,,,M,S
