@@ -21,7 +21,6 @@ id,value,weight,ref_info,sujet,objet,pers
 29,Wallah wallah wallah village de merde,10,73,sujet,,
 34,Oui bah { `.tierce = $info.acteur`.sujet({ .tierce.a }) } fait pire déjà,10,,coupable,,
 35,"{ .objet.n(C’est,Ce sont) } { .objet.gn(l’homme,la femme,les personnes,les femmes) } de { .sujet.comp_implicite(la vie) }",10,93,sujet,objet,
-44,Ces dîners avec { `.tierce ||= $info.acteur`.tonique } étaient à caractère professionnel,10,144,sujet,,
 46,Et alors ça vous dérange ?,10,,coupable,,
 48,C’est faux. Ce sont des calomnies.,5,,coupable,,
 49,C’est de la diffamation,5,,coupable,,
