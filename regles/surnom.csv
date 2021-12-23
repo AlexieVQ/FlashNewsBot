@@ -328,6 +328,61 @@ id,value,weight,pers
 410,la Ministre déléguée à la Citoyenneté,10,239
 411,la conseillère en image,10,240
 412,l’animatrice,10,240
+413,la présidente de la région Île-de-France,10,241
+414,la chanteuse,10,242
+415,« Queen B »,5,242
+416,la chanteuse,10,243
+417,la rappeuse,10,243
+420,la militante écologiste,10,245
+421,la jeune militante,10,245
+422,la journaliste,10,246
+423,l’ancien candidat à la mairie de Paris,10,247
+424,le journaliste,5,248
+425,le journaliste indépendant,5,248
+426,le philosophe,10,248
+427,le penseur,10,248
+428,le twitto,10,248
+429,le twitto anonyme,10,248
+430,Wint,10,248
+431,le rappeur,10,249
+432,le rappeur américain,10,249
+433,la chanteuse,10,250
+434,la chanteuse virtuelle,10,250
+435,la créatrice de Minecraft,1,250
+436,Miku,10,250
+437,la journaliste,10,251
+438,le professeur de rhétorique,10,252
+439,le chroniqueur,10,252
+440,le journaliste,10,253
+441,l’animateur,10,254
+442,le président brésilien,10,255
+443,la femme politique,10,256
+445,le chanteur,10,257
+447,le streameur,10,258
+448,le streameur salé,1,258
+449,l’homme politique,10,259
+450,le maire de Pau,10,259
+451,le président du MoDem,10,259
+452,le journaliste,10,260
+453,le journaliste,10,261
+454,la femme,10,267
+455,l’homme,10,268
+456,la femme,10,269
+457,le chanteur,10,270
+458,le chanteur pour enfants,10,270
+459,le chanteur à textes,10,270
+460,la marionnette,10,271
+468,le philosophe,10,275
+469,le résistant,10,275
+470,le rappeur,10,276
+471,le « petit prince de l’afrotrap »,5,276
+480,la productrice,10,280
+487,le rappeur blanc,10,262
+508,le rappeur,10,262
+509,le rappeur belge,10,262
+510,la chanteuse,10,263
+511,le rappeur,10,264
+512,l’homme,10,266
 694,le Ministre de la Justice,10,182
 695,le Garde des Sceaux,10,182
 1000,le candidat à l’élection présidentielle,10,6
@@ -355,3 +410,8 @@ id,value,weight,pers
 1024,le streameur,10,185
 1025,le mangeur de homard,1,192
 1026,les militants,10,1001
+1027,la candidate à l’élection présidentielle,10,241
+1028,la candidate à l’élection présidentielle,10,204
+1029,le rappeur blanc,10,264
+1030,les rappeurs,10,1005
+1031,les rappeurs originaires de Corbeil-Essonnes,10,1005
