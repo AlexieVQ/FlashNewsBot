@@ -1,7 +1,7 @@
 id,description,commun,weight,hashtag,emoji,acteurs,categories,temporalite,coupable,victime
 1,mort,,20,RIP{ .sujet.pascal_case },,pers,,proche,,
 2,fraude,,10,,,pers,,proche,,
-3,élu président français,,10,Présidentielles,🗳️,pers,politique,present,,
+3,élu président français,,10,Présidentielles|{ .sujet.pascal_case }2022,🗳️,pers,politique,present,,
 4,arrêté,,20,,,pers,,proche,sujet,
 5,assassiné,{ .objet = .acteur },20,(RIP{ .sujet.pascal_case })?,,pers,,proche,,
 7,a assassiné,,30,(RIP{ .objet.pascal_case })?,,pers,,proche,,
@@ -10,7 +10,7 @@ id,description,commun,weight,hashtag,emoji,acteurs,categories,temporalite,coupab
 14,nomme objet premier ministre,{ .objet = .acteur },10,,,pers,politique,present,,
 15,dissout l’Assemblée Nationale,,10,,,pers,politique,proche,,
 16,annonce un album,,10,,💿,pers,culture musique,proche,,
-21,candidat à l’élection présidentielle,,10,Présidentielle(s)?2022,,pers,politique,present,,
+21,candidat à l’élection présidentielle,,10,Présidentielle(s)?2022|{ .sujet.pascal_case }2022,,pers,politique,present,,
 27,poursuit en justice,{ .objet = .acteur },10,,,pers entreprise parti syndicat association media,,present,objet,sujet
 29,aurait été aperçu,,1,Paranormal,,pers,,present,,
 30,aperçu en train de se droguer,,5,,🌿,pers,,proche,,
@@ -55,7 +55,7 @@ id,description,commun,weight,hashtag,emoji,acteurs,categories,temporalite,coupab
 93,épouse,{ .objet = .acteur },5,{ .sujet.pascal_case }X{ .objet.pascal_case },💒|👰,pers,,present,,
 99,accuse de fakes news,{ .objet = Media },10,,,pers parti media pays,politique,present,,
 100,bloque objet sur les réseaux,{ .objet = .acteur },10,{ .sujet.pascal_case }VS{ .objet.pascal_case },,pers pays,,present,objet,sujet
-102,soutient objet aux présidentielles,{ .objet = Pers }|{ .objet = Orga(parti) },10,Présidentielle(s)?2022,🗳️,pers parti,politique,present,,
+102,soutient objet aux présidentielles,{ .objet = Pers }|{ .objet = Orga(parti) },10,Présidentielle(s)?2022|{ .objet.pascal_case }2022,🗳️,pers parti,politique,present,,
 105,se lance sur TikTok,,10,TikTok,,pers parti pays region,,proche,,
 106,condamné au goulag,{ .prison = s(goulag|goulp) },10,{ .sujet.pascal_case }Au{ .prison.capitalize },,pers,politique,proche,sujet,
 108,élu Miss ,"{ .lieu = Lieu(pays,etat); .concours = .sujet.g(Mister|Miss,Miss) }",10,{ .concours }{ .lieu.pascal_case },(👸)?,pers,,proche,,
@@ -70,3 +70,11 @@ id,description,commun,weight,hashtag,emoji,acteurs,categories,temporalite,coupab
 134,donne au ZEvent,{ .somme = s(10 |50 |500 |1000 |5000 |10 000 |20 000 |25 000 |40 000 |100 000 |1 million d’) },1,ZEvent,💚,pers entreprise,internet patronat,present,,
 138,sera présent à la japan expo,{ .lieu = Lieu[11] },2,JapanExpo,,pers,internet videaste youtube culture bd musique,futur,,
 140,devient le premier youtubeur,,2,{ .sujet.pascal_case }First,▶️,pers,internet videaste youtube,present,,
+142,devient parent,{ .de = s(d’un petit garçons|d’une petite fille|de jumeaux|de triplets) },10,"{ .sujet.gn(Papa,Maman,Parents,Mamans); .sujet.pascal_case }",👪,pers,,present,,
+145,porté disparu,,10,AlerteEnlèvement,🚨,pers,,present,,
+150,fait un don,"{ .objet = Orga(parti,association); .somme = s(de 2 |de 10| de 50 |de 100 |de 1000 |de 5000 |de 10 000 |de 50 000 |de 100 000 |d’1 million d’) }",10,{ .objet.pascal_case },,pers entreprise parti syndicat association media region,politique patronat,proche,,
+151,mis en examen,,10,Affaire{ .sujet.pascal_case },,pers,politique,proche,sujet,
+152,a été cancelled,,10,{ .sujet.pascal_case }Is(Cancelled|Over)Party,,pers parti syndicat association pays region entreprise,,proche,sujet,
+153,call-out objet,{ .objet = .acteur },10,{ .objet.pascal_case }Is(Cancelled|Over)Party,,pers parti syndicat association pays region entreprise,,proche,objet,sujet
+157,lance une cagnotte,{ .objet = .acteur },10,Free{ .objet.pascal_case },,pers entreprise parti syndicat association media region pays,,present,,objet
+159,appelle à tirer à balles réelles,{ .objet = Pers },5,,,pers parti syndicat pays,politique,present,objet,sujet
