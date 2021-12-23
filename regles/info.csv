@@ -78,3 +78,10 @@ id,description,commun,weight,hashtag,emoji,acteurs,categories,temporalite,coupab
 153,call-out objet,{ .objet = .acteur },10,{ .objet.pascal_case }Is(Cancelled|Over)Party,,pers parti syndicat association pays region entreprise,,proche,objet,sujet
 157,lance une cagnotte,{ .objet = .acteur },10,Free{ .objet.pascal_case },,pers entreprise parti syndicat association media region pays,,present,,objet
 159,appelle à tirer à balles réelles,{ .objet = Pers },5,,,pers parti syndicat pays,politique,present,objet,sujet
+164,rejoint l’heure des pros,{ .objet = Pers[45] },5,HeureDesPros,,pers,media edito politique ext_droite,present,,
+165,rejoint l’équipe des grandes gueules,,5,GGRMC,,pers,media edito culture politique,present,,
+166,rejoint l’équipe des grosses têtes,,5,GrossesTêtes,,pers,culture humour tv,present,,
+167,lance une polémique sur le voile,,5,Voile|VoileIslamique|Hijab,(🧕)?,pers parti,politique droite ext_droite,present,,
+168,animera une émission de débat,{ .chaine = Media(tv) },10,{ .chaine.pascal_case },,pers,media edito tv,futur,,
+169,gagne un Grammy,"{ .categorie = s(du meilleur album|{ .sujet.gn(du meilleur artiste,de la meilleure artiste,du meilleur groupe,du meilleur groupe) }); .lieu = Lieu[3] }",5,GRAMMYs,,pers,culture musique,proche,,
+170,gagne une Victoire,"{ .categorie = s(du meilleur album|{ .sujet.gn(du meilleur artiste,de la meilleure artiste,du meilleur groupe,du meilleur groupe) }); .lieu = Lieu[1] }",5,LesVictoires,,pers,culture musique,proche,,
