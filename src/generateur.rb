@@ -71,6 +71,13 @@ GENERATEUR = Rosace::Generator.new(
 				puts string.value
 				Rosace::ContextualValue.empty(string.context)
 			end
+		),
+		Rosace::Function.new(
+			:gn,
+			->(acteur, ms, fs, mp, fp) do
+				a = acteur.context.variable(acteur.value).gn(ms, fs, mp, fp)
+			end,
+			:concurrent
 		)
 	]
 )

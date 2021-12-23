@@ -87,6 +87,6 @@ id,description,commun,weight,hashtag,emoji,acteurs,categories,temporalite,coupab
 170,gagne une Victoire,"{ .categorie = s(du meilleur album|{ .sujet.gn(du meilleur artiste,de la meilleure artiste,du meilleur groupe,du meilleur groupe) }); .lieu = Lieu[1] }",5,LesVictoires,,pers,culture musique,proche,,
 171,décide de reconstruire le mur de Berlin,{ .lieu = Lieu[102] },1,Berlin,,pers parti,politique gauche ext_gauche,present,,
 172,déguisé en hamburger sur NRJ,,1,{ .sujet.pascal_case }DéguiséEnHamburgerSurNRJ,🍔,pers,tv,present,,
-174,a accidentellement posté une photo intime,,10,,🔞,pers,,proche,,
+174,a accidentellement posté une photo intime,,10,,🔞|👀,pers,,proche,,
 177,appelle à la grève générale,,10,GrèveGénérale,,pers syndicat,politique gauche ext_gauche,present,,
-180,des photos intimes fuitent,,10,,🔞,pers,,proche,,
+180,des photos intimes fuitent,,10,Oups,🔞|👀,pers,,proche,,

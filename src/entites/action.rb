@@ -108,6 +108,7 @@ class Action < Rosace::Entity
 		self.victime = victime
 		self.temps = temps
 		self.mettre_sujet = mettre_sujet
+		pattern = /\A(est|sont) /
 		out = if forme == :verbale
 			if [:infinitif_passe, :infinitif].include?(self.temps) ||
 				!mettre_sujet
@@ -121,15 +122,15 @@ class Action < Rosace::Entity
 				if !sp.empty?
 					sp + " " + (verbe_obligatoire ?
 							verbale :
-							verbale.gsub(/\A(est|sont|a été|ont été) /, ""))
+							verbale.gsub(pattern, ""))
 				elsif sujet_explicite
 					self.sujet.sujet_explicite + " " + (verbe_obligatoire ?
 							verbale :
-							verbale.gsub(/\A(est|sont|a été|ont été) /, ""))
+							verbale.gsub(pattern, ""))
 				else
 					self.sujet.sujet(verbe_obligatoire ?
 							verbale :
-							verbale.gsub(/\A(est|sont|a été|ont été) /, ""))
+							verbale.gsub(pattern, ""))
 				end
 			end
 		else
