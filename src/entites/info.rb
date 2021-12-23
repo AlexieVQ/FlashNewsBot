@@ -127,7 +127,7 @@ class Info < Rosace::Entity
 		phrase = part_value + (part_motif.empty? ? "" : " " + part_motif) +
 				".\n\n" +
 				(part_decla ? part_decla + ".\n\n" : "") +
-				"(#{context.pick_entity(:Media).vocatif.majuscule}) " +
+				"(#{context.pick_entity(:Media).nom.majuscule}) " +
 				hashtag
 		context.pick_entity(:Accroche).value + " " + phrase
 	end
