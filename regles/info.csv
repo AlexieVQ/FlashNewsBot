@@ -72,7 +72,7 @@ id,description,commun,weight,hashtag,emoji,acteurs,categories,temporalite,coupab
 140,devient le premier youtubeur,,2,{ .sujet.pascal_case }First,▶️,pers,internet videaste youtube,present,,
 142,devient parent,{ .de = s(d’un petit garçons|d’une petite fille|de jumeaux|de triplets) },10,"{ .sujet.gn(Papa,Maman,Parents,Mamans); .sujet.pascal_case }",👪,pers,,present,,
 145,porté disparu,,10,AlerteEnlèvement,🚨,pers,,present,,
-150,fait un don,"{ .objet = Orga(parti,association); .somme = s(de 2 |de 10| de 50 |de 100 |de 1000 |de 5000 |de 10 000 |de 50 000 |de 100 000 |d’1 million d’) }",10,{ .objet.pascal_case },,pers entreprise parti syndicat association media region,politique patronat,proche,,
+150,fait un don,"{ .objet = Orga(parti,association); .somme = s(de 2 |de 10|de 50 |de 100 |de 1000 |de 5000 |de 10 000 |de 50 000 |de 100 000 |d’1 million d’) }",10,{ .objet.pascal_case },,pers entreprise parti syndicat association media region,politique patronat,proche,,
 151,mis en examen,,10,Affaire{ .sujet.pascal_case },,pers,politique,proche,sujet,
 152,a été cancelled,,10,{ .sujet.pascal_case }Is(Cancelled|Over)Party,,pers parti syndicat association pays region entreprise,,proche,sujet,
 153,call-out objet,{ .objet = .acteur },10,{ .objet.pascal_case }Is(Cancelled|Over)Party,,pers parti syndicat association pays region entreprise,,proche,objet,sujet
