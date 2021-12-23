@@ -81,7 +81,7 @@ id,commun,sujet_perso,verbale,nominale,part_motif,weight,info,coupable,victime,g
 175,,,"{ .a(joué,jouer,jouerai,joueras,jouera,jouerons,jouerez,joueront) } en Équipe de France",{ .sujet.comp(la sélection) } en Équipe de France,,10,83,,,F,S
 176,,,"{ .a(lancé,lancer,lance,lances,lance,lançons,lancez,lancent) } { .sujet.comp_implicite(la chaîne YouTube) }",le lancement de { .sujet.comp(la chaîne YouTube) },,10,84,,,M,S
 177,,,"{ .sujet.se({ .est(lancé{ .sujet.es },lancer,lance,lances,lance,lançons,lancez,lancent) }) } sur YouTube",le lancement de { .sujet.comp(la chaîne YouTube) },,10,84,,,M,S
-178,{ .topic = s(de tutoriels beauté|de lifestyle|de vlogs|(de )?gaming|de vulgarisation( scientifique)?) },,"{ .a(lancé,lancer,lance,lances,lance,lançons,lancez,lancent) } { .sujet.comp_implicite(la chaîne YouTube de { .topic }) }",le lancement de { .sujet.comp(la chaîne YouTube de { .topic }) },,10,84,,,M,S
+178,{ .topic = s(de tutoriels beauté|de lifestyle|de vlogs|(de )?gaming|de vulgarisation( scientifique)?) },,"{ .a(lancé,lancer,lance,lances,lance,lançons,lancez,lancent) } { .sujet.comp_implicite(la chaîne YouTube { .topic }) }",le lancement de { .sujet.comp(la chaîne YouTube { .topic }) },,10,84,,,M,S
 179,{ .festival = s(du festival Coachella|de la Fête de l’Humanité) },,"{ .a(été,être,serai,seras,sera,serons,serez,seront) } à l’affiche { .festival }",{ .sujet.comp(la programmation) } à l’affiche { .festival },,10,85,,,F,S
 186,,,{ .avoir } une relation extraconjugale avec { .objet.tonique },"{ .s_comp(la ,relation extraconjugale) } avec { .objet.tonique }",,10,,sujet,,F,S
 190,,,"{ .est(devenu{ .sujet.es },devenir,deviens,deviens,devient,devenons,devenez,deviennent) } végan{ .sujet.es }","{ .s_comp(le ,véganisme) }",,10,88,sujet,,M,S

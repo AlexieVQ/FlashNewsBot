@@ -9,6 +9,9 @@ class Media < Rosace::Entity
 
 	include Acteur
 
+	# Id du média FlashNewsBot
+	FNB = 27
+
 	self.file = "regles/media.csv"
 
 	# @!attribute [r] value
@@ -22,8 +25,6 @@ class Media < Rosace::Entity
 	#  @return [:M, :F]
 	enum :genre, *Acteur::GENRES
 
-	# @!attribute [r] nombre
-	#  @return [:S, :P]
 	enum :nombre, *Acteur::NOMBRES
 
 	# @!attribute [r] types
@@ -88,7 +89,12 @@ class Media < Rosace::Entity
 
 	# @return [1, 3] Personne du média (3e sauf pour FlashNewsBot à la 1e)
 	def personne
-		id == 27 ? 1 : 3
+		id == FNB ? 1 : 3
+	end
+
+	# @return [:S, :P] Nombre grammatical du media
+	def nombre
+		id == FNB ? :P : super
 	end
 
 	# @return [Integer] Entier supérieur à 1

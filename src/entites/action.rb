@@ -40,9 +40,10 @@ class Action < Rosace::Entity
 	def lieux
 		lieux = []
 		[@sujet, @objet].each do |acteur|
-			if acteur.is_a?(Pers) || acteur.is_a?(Entreprise)
-				lieux << acteur.origine if acteur.origine
-			elsif acteur.is_a?(Lieu)
+			lieux << acteur.origine if acteur.respond_to?(:origine) &&
+					acteur.origine
+			lieux << acteur.lieu if acteur.respond_to?(:lieu) && acteur.lieu
+			if acteur.is_a?(Lieu)
 				lieux << acteur
 			end
 		end

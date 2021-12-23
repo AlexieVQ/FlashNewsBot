@@ -76,8 +76,10 @@ class Info < Rosace::Entity
 		lieux = []
 		lieux << lieu if respond_to?(:lieu) && lieu
 		[@sujet, @objet].each do |acteur|
-			if multi_niveaux && acteur.respond_to?(:origine)
-				lieux << acteur.origine if acteur.origine
+			if multi_niveaux
+				lieux << acteur.origine if acteur.respond_to?(:origine) &&
+						acteur.origine
+				lieux << acteur.lieu if acteur.respond_to?(:lieu) && acteur.lieu
 			elsif acteur.is_a?(Lieu)
 				lieux << acteur
 			end
