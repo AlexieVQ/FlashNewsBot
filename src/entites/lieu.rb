@@ -245,29 +245,29 @@ class Lieu < Rosace::Entity
 		fonctions = regime.map do |regime|
 			case regime
 			when :royaume
-				f("roi", "reine", "rois", "reines")
+				f.("roi", "reine", "rois", "reines")
 			when :dictature
-				f("dictateur", "dictatrice", "dictateurs", "dictatrice")
+				f.("dictateur", "dictatrice", "dictateurs", "dictatrice")
 			when :president
-				f("président", "présidente", "présidents", "présidentes")
+				f.("président", "présidente", "présidents", "présidentes")
 			when :chancelier
-				f("chancelier", "chancelière", "chanceliers", "chancelières")
+				f.("chancelier", "chancelière", "chanceliers", "chancelières")
 			when :parlement
-				f("premier ministre", "première ministre", "premiers ministres",
+				f.("premier ministre", "première ministre", "premiers ministres",
 						"premières ministres")
 			when :empire
-				f("empereur", "impératrice", "empereurs", "impératrices")
+				f.("empereur", "impératrice", "empereurs", "impératrices")
 			when :emirat
-				f("émir", "émiresse", "émirs", "émiresses")
+				f.("émir", "émiresse", "émirs", "émiresses")
 			when :saint_siege
-				f("pape", "papesse", "papes", "papesses")
+				f.("pape", "papesse", "papes", "papesses")
 			when :principaute
-				f("prince", "princesse", "princes", "princesses")
+				f.("prince", "princesse", "princes", "princesses")
 			when :grand_duche
-				f("grand duc", "grande duchesse", "grands ducs",
+				f.("grand duc", "grande duchesse", "grands ducs",
 						"grandes duchesses")
 			when :guide_supreme
-				f("guide suprême", "guide suprême", "guides suprêmes",
+				f.("guide suprême", "guide suprême", "guides suprêmes",
 						"guides suprêmes")
 			else
 				raise "Régime inconnu #{regime}"

@@ -101,3 +101,4 @@ id,description,commun,weight,hashtag,emoji,acteurs,categories,temporalite,coupab
 194,pris à parti,{ .objet = .acteur },10,,,pers,,proche,sujet,objet
 195,collaboration,{ .objet = .acteur },10,{ .sujet.pascal_case }X{ .objet.pascal_case },💽,pers,culture musique,proche,,
 199,chute des escaliers,{ .lieu = Lieu[3] },1,MetGala,,pers,culture,present,,
+1000,devient chef d’état,{ .lieu = .sujet.pays }|{ .lieu = Lieu(pays) },10,,,pers,politique,present,,
