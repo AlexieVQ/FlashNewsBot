@@ -42,7 +42,7 @@ id,description,commun,weight,hashtag,emoji,acteurs,categories,temporalite,coupab
 69,drogue retrouvée chez sujet,,10,,🌿,pers,,proche,,
 70,publie la sextape d’objet,{ .objet = Pers },10,{ .objet.pascal_case }Sextape,🔞,pers media parti pays,,present,,
 72,révèle une affaire de fraude fiscale,{ .lieu = Lieu(paradis_fiscal) }({ .objet = Pers }|{ .objet = Entreprise }|{ .objet = Orga }),10,{ .lieu.pascal_case }Papers,,pers media,journalisme,present,,
-73,perd les élections municipales,{ .lieu = Lieu(ville) },10,(Municipales)?(.lieu.pascal_case)?,🗳️,pers parti,politique,present,,
+73,perd les élections municipales,{ .lieu = Lieu(ville) },10,(Municipales)?({ .lieu.pascal_case })?,🗳️,pers parti,politique,present,,
 74,déclare la guerre,"{ .objet = Lieu(pays,region) }",10,{ .sujet.pascal_case }VS{ .objet.pascal_case },💣,pers pays region,politique,present,,
 79,retient objet en otage,{ .objet = .acteur },10,,,pers,,present,objet,sujet
 82,proclame son indépendance,{ .objet = .sujet.pays },10,Free{ .sujet.pascal_case }|{ .sujet.pascal_case }Indépendant{ .sujet.es },,region,politique,present,,
@@ -101,4 +101,11 @@ id,description,commun,weight,hashtag,emoji,acteurs,categories,temporalite,coupab
 194,pris à parti,{ .objet = .acteur },10,,,pers,,proche,sujet,objet
 195,collaboration,{ .objet = .acteur },10,{ .sujet.pascal_case }X{ .objet.pascal_case },💽,pers,culture musique,proche,,
 199,chute des escaliers,{ .lieu = Lieu[3] },1,MetGala,,pers,culture,present,,
+201,rejoint TPMP,,10,({ .sujet.pascal_case }Dans)?TPMP,,pers,tv media,present,,
+202,décide de bannir TikTok,,2,TikTokBan,,pers parti pays,politique,present,,
+203,en couple avec objet,{ .objet = .acteur },3,{ .sujet.pascal_case }X{ .objet.pascal_case },,pers,,present,,
+204,refonde l’URSS,{ .lieu = Lieu[140] },5,URSS2,,pers parti syndicat,politique gauche ext_gauche,present,,
+206,s’administre des hormones,,2,,💊,pers,,present,,
+207,banni du tchat d’objet,{ .objet = .acteur },10,Twitch,👾,pers,internet twitch,proche,sujet,objet
+211,victime de la cancel culture,,10,CancelCulture,,pers pays,,present,sujet,
 1000,devient chef d’état,{ .lieu = .sujet.pays }|{ .lieu = Lieu(pays) },10,,,pers,politique,present,,
