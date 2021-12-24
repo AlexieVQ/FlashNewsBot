@@ -234,6 +234,28 @@ class Info < Rosace::Entity
 		@sujet ||= acteur
 	end
 
+	# Lève une exception si le {Pers} d'id donné est sujet.
+	# @param id [#to_i] Id du personnage
+	# @return [""]
+	# @raise Rosace::EvaluationException Le {Pers} d'id donné est sujet
+	def not_sujet(id)
+		if sujet.respond_to?(:id) && sujet.id == id.to_i
+			raise Rosace::EvaluationException, "Pers[#{id}] est déjà sujet"
+		end
+		""
+	end
+
+	# Lève une exception si le {Pers} d'id donné est objet.
+	# @param id [#to_i] Id du personnage
+	# @return [""]
+	# @raise Rosace::EvaluationException Le {Pers} d'id donné est objet
+	def not_objet(id)
+		if objet.respond_to?(:id) && objet.id == id.to_i
+			raise Rosace::EvaluationException, "Pers[#{id}] est déjà objet"
+		end
+		""
+	end
+
 	def sujet=(acteur)
 		unless @sujet.nil?
 			raise Rosace::EvaluationException,
