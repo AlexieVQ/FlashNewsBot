@@ -1,1 +1,2 @@
 id,value,weight,info
+1,"{ capitalize({$info.sujet.nom }) } X { $info.objet.nom }, c’est fait !",10,195
