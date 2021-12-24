@@ -1,7 +1,7 @@
 id,description,commun,weight,hashtag,emoji,acteurs,categories,temporalite,coupable,victime
 1,mort,,20,RIP{ .sujet.pascal_case },,pers,,proche,,
 2,fraude,,10,,,pers,,proche,,
-3,élu président français,,10,Présidentielles|{ .sujet.pascal_case }2022,🗳️,pers,politique,present,,
+3,élu président français,{ .objet = .acteur },10,Présidentielles|{ .sujet.pascal_case }2022,🗳️,pers,politique,present,,
 4,arrêté,,20,,,pers,,proche,sujet,
 5,assassiné,{ .objet = .acteur },20,(RIP{ .sujet.pascal_case })?,,pers,,proche,,
 7,a assassiné,{ .objet = .acteur },30,(RIP{ .objet.pascal_case })?,,pers,,proche,,
@@ -9,10 +9,10 @@ id,description,commun,weight,hashtag,emoji,acteurs,categories,temporalite,coupab
 13,nommé premier ministre,,10,,,pers,politique,proche,,
 14,nomme objet premier ministre,{ .objet = .acteur },10,,,pers,politique,present,,
 15,dissout l’Assemblée Nationale,,10,,,pers,politique,proche,,
-16,annonce un album,,10,,💿,pers,culture musique,proche,,
+16,annonce un album,{ .objet = .acteur },10,,💿,pers,culture musique,proche,,
 21,candidat à l’élection présidentielle,,10,Présidentielle(s)?2022|{ .sujet.pascal_case }2022,,pers,politique,present,,
 27,poursuit en justice,{ .objet = .acteur },10,,,pers entreprise parti syndicat association media,,present,objet,sujet
-29,aurait été aperçu,,1,Paranormal,,pers,,present,,
+29,aurait été aperçu,{ .circo = s(| dans le ciel| d’après des témoins anonymes) },1,Paranormal,,pers,,present,,
 30,aperçu en train de se droguer,,5,,🌿,pers,,proche,,
 31,aperçu en fursuit,,10,,🐺|🦊,pers,,proche,,
 32,se lance dans le X,,2,,🔞,pers,,proche,,
@@ -21,12 +21,12 @@ id,description,commun,weight,hashtag,emoji,acteurs,categories,temporalite,coupab
 35,se lance dans la politique,,2,,,pers,,proche,,
 40,devient secrétaire général de la CGT,,1,CGT,,pers,politique gauche ext_gauche,present,,
 42,a fait son coming out,,5,,🏳️‍🌈,pers,,proche,,
-43,élu personnalité préférée des français,{ .lieu = Lieu[1] },5,,,pers,,proche,,
+43,élu personnalité préférée des français,{ .lieu = Lieu[1]; .sondage = s(| d’après un sondage IPSOS| d’après un sondage Twitter) },5,,,pers,,proche,,
 45,rachète une entreprise,{ .objet = Entreprise}|{ .objet = Media },10,,,pers entreprise,patronat,present,,
 46,démissionne,,10,{ .sujet.pascal_case }Démission,,pers,politique,present,sujet,
 47,destitué,,10,{ .sujet.pascal_case }Destitution,,pers,politique,proche,sujet,
-48,provoque objet,{ .objet = .acteur },10,{ .sujet.pascal_case }VS{ .objet.pascal_case },,pers,,present,objet,sujet
-51,se bat avec objet,,10,{ .sujet.pascal_case }VS{ .objet.pascal_case },,pers,,proche,objet,sujet
+48,provoque objet,{ .objet = .acteur; .circo = s(| sur YouTube| sur Twitter| sur les réseaux sociaux) },10,{ .sujet.pascal_case }VS{ .objet.pascal_case },,pers,,present,objet,sujet
+51,se bat avec objet,{ .objet = .acteur },10,{ .sujet.pascal_case }VS{ .objet.pascal_case },,pers,,proche,objet,sujet
 52,pressenti pour être ministre,{ .lieu = Lieu[1] },10,,,pers,politique,present,,
 53,nommé ministre,{ .lieu = Lieu[1] },10,,,pers,politique,present,,
 55,avoue sa culpabilité,,30,,,pers,,proche,sujet,
