@@ -54,13 +54,19 @@ class Info < Rosace::Entity
 	#  @return [Action, nil]
 	# @!attribute [r] _action_list
 	#  @return [Array<Action>]
-	has_many :Action, :info, :_action
+	has_many :Action, :info, :_action, :required
 
 	# @!attribute [r] _decla
 	#  @return [Decla, nil]
 	# @!attribute [r] _decla_list
 	#  @return [Array<Decla>]
 	has_many :Decla, :ref_info, :_decla
+
+	# @!attribute [r] structure
+	#  @return [Structure, nil] Structure personnalisée de l'info
+	# @!attribute [r] structure_list
+	#  @return [Structure, nil] Structures personnalisées de l'info
+	has_many :Structure, :info, :structure
 
 	# @return [Acteur, nil] Objet de l'information
 	attr_reader :objet
@@ -104,34 +110,38 @@ class Info < Rosace::Entity
 	# @return [String]
 	def value
 		commun
-		temps = case temporalite
-		when :proche
-			:passe
-		when :present
-			:simple
-		when :passe
-			:passe
-		when :futur
-			:simple
+		if structure_list.empty?
+			temps = case temporalite
+			when :proche
+				:passe
+			when :present
+				:simple
+			when :passe
+				:passe
+			when :futur
+				:simple
+			else
+				:passe
+			end
+			part_value = action.value(sujet: sujet, objet: objet,
+					sujet_explicite: true, temps: temps, verbe_obligatoire: false).
+					majuscule
+			part_motif = action.part_motif
+			part_decla = begin
+				context.pick_entity(:StructDecla).value.majuscule
+			rescue Rosace::EvaluationException => e
+				$stderr.puts "Pas de decla pour Info[#{id}]" if Bot.debug?
+				nil
+			end
+			phrase = part_value + (part_motif.empty? ? "" : " " + part_motif) +
+					".\n\n" +
+					(part_decla ? part_decla + ".\n\n" : "") +
+					"(#{context.pick_entity(:Media).nom.majuscule}) " +
+					hashtag
+			context.pick_entity(:Accroche).value + " " + phrase
 		else
-			:passe
+			structure
 		end
-		part_value = action.value(sujet: sujet, objet: objet,
-				sujet_explicite: true, temps: temps, verbe_obligatoire: false).
-				majuscule
-		part_motif = action.part_motif
-		part_decla = begin
-			context.pick_entity(:StructDecla).value.majuscule
-		rescue Rosace::EvaluationException => e
-			$stderr.puts "Pas de decla pour Info[#{id}]" if Bot.debug?
-			nil
-		end
-		phrase = part_value + (part_motif.empty? ? "" : " " + part_motif) +
-				".\n\n" +
-				(part_decla ? part_decla + ".\n\n" : "") +
-				"(#{context.pick_entity(:Media).nom.majuscule}) " +
-				hashtag
-		context.pick_entity(:Accroche).value + " " + phrase
 	end
 
 	# Calcule le poids de l'information lors de choix aléatoires.
