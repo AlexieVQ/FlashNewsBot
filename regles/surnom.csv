@@ -295,8 +295,8 @@ id,value,weight,pers
 367,l’actrice,10,211
 368,l’animatrice,10,212
 369,l’animatrice,10,213
-370,la député,10,214
-371,la député En Marche,10,214
+370,la députée,10,214
+371,la députée En Marche,10,214
 374,la présidente d’honneur de VIA,10,216
 375,l’humoriste,10,217
 376,l’ex-Première Ministre britannique,10,218
@@ -481,8 +481,66 @@ id,value,weight,pers
 640,la chanteuse,10,358
 642,l’ex-porte-parole du gouvernement,10,359
 643,le hérisson,10,360
+647,le mineur,10,362
+648,la guichetière,10,363
+649,la guichetière à la retraite,10,363
+652,le journaliste,10,365
+657,le sportif,10,367
+658,l’oiseau,10,367
+659,le businessman,10,368
+660,le businesscat,10,368
+661,le Ministre de la Santé,10,369
+662,le lapin,10,370
+663,le lapin non-costumé,10,370
+664,la Ministre de l’Enseignement Supérieur et de la Recherche,10,371
+665,le député,10,372
+666,l’essayiste,10,373
+667,l’essayiste,10,374
+668,le youtubeur,10,375
+669,le vidéaste,10,375
+670,le critique musical,10,375
+671,le marchand d’art,10,376
+672,la chanteuse,10,377
+673,la chanteuse canadienne,10,377
+674,le fils d’Elon Musk,10,378
+675,le fils d’Elon Musk et Grimes,10,378
+676,la députée,10,379
+677,le vidéaste,10,380
+678,le youtubeur beauté,10,380
+679,le vidéaste,10,381
+680,le youtubeur beauté,10,381
+681,le vidéaste,10,382
+682,le youtubeur,10,382
+683,le chanteur,10,383
+684,le chanteur américain,10,383
+685,Adrien Nagouret,10,384
+686,le streameur,10,384
+689,la femme,10,386
+690,le chef bouddhiste,10,387
+691,le chef spirituel,10,387
+692,le Premier Ministre,10,388
 694,le Ministre de la Justice,10,182
 695,le Garde des Sceaux,10,182
+696,le Christ,10,389
+697,le messie,10,389
+698,le Ministre de l’Intérieur,10,390
+699,le Ministre de l’Économie,10,391
+700,le Ministre de l’Économie et des Finances,10,391
+703,le haut-fonctionnaire,10,394
+704,le modérateur de JeuxVidéo.com,10,395
+705,le modérateur historique du Blabla 15-18 ans,10,395
+706,le youtubeur américain,10,396
+707,le youtubeur,10,397
+708,le youtubeur tech,10,397
+709,le rappeur,10,398
+710,le fondateur du 667,10,398
+711,le cinéaste,10,399
+712,le comédien,10,399
+713,Xavier Dang,10,400
+714,le streameur,10,400
+715,le streameur et compositeur,10,400
+716,le rappeur,10,401
+717,le rappeur d’Aulnay-sous-Bois,10,401
 1000,le candidat à l’élection présidentielle,10,6
 1001,le candidat insoumis,10,6
 1002,le candidat insoumis à l’élection présidentielle,10,6
@@ -521,3 +579,8 @@ id,value,weight,pers
 1038,les rappeurs,10,301
 1039,le rappeur originaire de Caen,10,305
 1040,les youtubeurs,10,1008
+1041,le mineur à la retraite,10,362
+1042,l’“abject Darmanin”,1,390
+1043,l’“abject Darmanin” d’après { Pers.tonique },1,390
+1044,les musiciens,10,1009
+1045,les musiciens américains,10,1009
