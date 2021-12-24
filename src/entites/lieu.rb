@@ -275,9 +275,9 @@ class Lieu < Rosace::Entity
 		end
 		case type
 		when :ville
-			fonctions << f("maire", "maire", "maires", "maires")
+			fonctions << f.("maire", "maire", "maires", "maires")
 		when :departement
-			fonctions << f("président", "présidente", "présidents",
+			fonctions << f.("président", "présidente", "présidents",
 					"présidentes") + " du conseil départemental"
 		end
 		fonctions.empty? ? nil : fonctions[rand(fonctions.length)]
