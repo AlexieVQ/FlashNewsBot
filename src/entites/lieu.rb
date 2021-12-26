@@ -31,6 +31,9 @@ class Lieu < Rosace::Entity
 		"guide_supreme"
 	]
 
+	# Id de la France
+	FRANCE = 1
+
 	# @!attribute [r] nom
 	#  @return [String]
 
@@ -63,8 +66,8 @@ class Lieu < Rosace::Entity
 
 	# @return [String] Nom de ce lieu
 	def nom
-		code = parent ? parent.code2(recursif: true) : nil
-		super + if type == :ville && rand(2) == 1 && code
+		code = code2
+		super + if type == :ville && code && pays.id == FRANCE
 			" (#{code})"
 		else 
 			""

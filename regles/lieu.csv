@@ -257,4 +257,4 @@ id,nom,pascal_case,genre,nombre,weight,adj,parent,code2,code3,emoji,type,regime,
 1215,les Seychelles,Seychelles,F,P,5,seychellois{ .defs },,SC,SYC,🇸🇨,pays,president,1
 1216,la Bulgarie,Bulgarie,F,S,8,"bulgare{ .defgn(,,s,s) }",133,BG,BGR,🇧🇬,pays,parlement,1
 1217,Dubaï,Dubaï,F,S,10,"dubaïote{ .defgn(,,s,s) }",1218,,,,ville,,1
-1218,Émirats Arabes Unis ,EAU|Émirats(ArabesUnis)?,M,P,7,émirati{ .defes },,AE,ARE,🇦🇪,pays,president,
+1218,les Émirats Arabes Unis,EAU|Émirats(ArabesUnis)?,M,P,7,émirati{ .defes },,AE,ARE,🇦🇪,pays,president,
