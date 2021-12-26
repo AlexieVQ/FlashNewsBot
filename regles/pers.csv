@@ -340,3 +340,5 @@ id,commun,nom,pascal_case,weight,genre,nombre,qte,categories,origine,cw
 1007,,les Daft Punk,DaftPunk,10,M,P,2,culture musique,1,
 1008,,McFly et Carlito,McFlyEtCarlito,10,M,P,2,internet videaste youtube,1,
 1009,,100 gecs,100gecs,10,M,P,2,culture musique,3,
+1010,{ .acteur1 = Pers(S); .acteur2 = Pers(S) },{ .acteur1.tonique } et { .acteur2.tonique },{ .acteur1.pascal_case }Et{ .acteur2.pascal_case },200,C,P,2,,,
+1011,{ .acteur1 = Pers(S); .acteur2 = Pers(S); .acteur3 = Pers(S) },"{ .acteur1.tonique }, { .acteur2.tonique } et { .acteur3.tonique }",{ .acteur1.pascal_case }{ .acteur2.pascal_case }Et{ .acteur3.pascal_case },70,C,P,3,,,

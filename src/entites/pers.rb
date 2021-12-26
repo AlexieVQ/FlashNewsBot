@@ -15,9 +15,7 @@ class Pers < Rosace::Entity
 	# @!attribute [r] cw
 	#  @return [String]
 
-	# @!attribute [r] genre
-	#  @return [:M, :F]
-	enum :genre, *Acteur::GENRES
+	enum :genre, *Acteur::GENRES, :C
 
 	# @!attribute [r] nombre
 	#  @return [:S, :P]
@@ -31,11 +29,7 @@ class Pers < Rosace::Entity
 	#  @return [Lieu, nil]
 	reference :origine, :Lieu, :optional
 
-	# @!attribute [r] surnom
-	#  @return [Surnom, nil]
-	# @!attribute [r] surnom_list
-	#  @return [Array<Surnom>]
-	has_many :Surnom, :pers, :surnom
+	has_many :Surnom, :pers, :_surnom
 
 	# @return [void]
 	def init
@@ -48,11 +42,30 @@ class Pers < Rosace::Entity
 	# @return [String] Nom ou surnom du personnage, si son nom a déjà été donné.
 	def nom
 		commun
-		if @forcer_nom || !@nom_cite || surnom_list.empty?
+		if @forcer_nom || !@nom_cite
 			@nom_cite = true
 			super()
 		else
-			self.surnom.value
+			self.surnom
+		end
+	end
+
+	# @return [String] Surnom du personnage
+	def surnom
+		_surnom_list.empty? ?
+				"l#{ n("’", "es ") }intéressé#{ es }" :
+				_surnom.value
+	end
+
+	# @return [:M, :F] Genre grammatical du personnage
+	def genre
+		if super == :C
+			qte.times do |i|
+				return :M if send(:"acteur#{i + 1}").genre == :M
+			end
+			:F
+		else
+			super
 		end
 	end
 
@@ -100,6 +113,13 @@ class Pers < Rosace::Entity
 			end) * 10
 		end
 		poids
+	end
+
+	# Teste si ce personnage peut-être choisi.
+	# @param nombre ["S", nil] Nombre du personnage
+	# @return [Boolean] Vrai si le personnage peut-être choisi
+	def pick?(nombre = nil)
+		nombre == "S" ? self.nombre == :S : true
 	end
 
 	# Retourne la distance avec la chaîne donnée
