@@ -604,5 +604,11 @@ id,value,weight,pers
 1063,le député des Alpes-Maritimes,10,1025
 1064,le négociateur du Brexit pour la France,10,1026
 1065,le Président de la Région Hauts-de-France,10,1027
-1066,le “prouteur”,1,1027
-1067,le “prouteur” d’après { Pers.tonique },1,1027
+1066,"{ p = Pers }celui { que({ p.sujet({ p.pn(appelle,appelles,appelle,appelons,appelez,appellent) }) }) } “le prouteur”",1,1027
+1067,l’homme politique( du Nord)?,10,1028
+1068,la femme politique,10,1029
+1069,la girlboss,1,1029
+1070,le président français,10,1030
+1071,l’homme politique,10,1031
+1072,l’homme politique,10,1032
+1073,le président de Debout le Peuple,10,1032
