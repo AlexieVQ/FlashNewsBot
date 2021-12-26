@@ -6,6 +6,7 @@ require_relative "action"
 require_relative "entreprise"
 require_relative "lieu"
 require_relative "categories"
+require_relative "moment"
 
 class Info < Rosace::Entity
 
@@ -26,8 +27,6 @@ class Info < Rosace::Entity
 
 	ROLES = [:"", :sujet, :objet]
 
-	TEMPORALITES = [:proche, :passe, :futur, :present]
-
 	self.file = "regles/info.csv"
 
 	# @!attribute [r] acteurs
@@ -40,7 +39,7 @@ class Info < Rosace::Entity
 
 	# @!attribute [r] temporalite
 	#  @return [Symbol]
-	enum :temporalite, *TEMPORALITES
+	enum :temporalite, *Moment::TEMPORALITES
 
 	# @!attribute [r] coupable
 	#  @return [:sujet, :objet, :""] coupable de l'info
@@ -130,8 +129,9 @@ class Info < Rosace::Entity
 				$stderr.puts "Pas de decla pour Info[#{id}]" if Bot.debug?
 				nil
 			end
-			phrase = part_value + (part_motif.empty? ? "" : " " + part_motif) +
-					".\n\n" +
+			phrase = part_value + " " +
+					context.pick_entity(:Moment, temporalite.to_s).value +
+					(part_motif.empty? ? "" : " " + part_motif) + ".\n\n" +
 					(part_decla ? part_decla + ".\n\n" : "") +
 					"(#{context.pick_entity(:Media).nom.majuscule}) " +
 					hashtag

@@ -11,6 +11,7 @@ require_relative "entites/lieu"
 require_relative "entites/entreprise"
 require_relative "entites/orga"
 require_relative "entites/structure"
+require_relative "entites/moment"
 
 using Refinements
 
@@ -26,7 +27,8 @@ GENERATEUR = Rosace::Generator.new(
 		Lieu,
 		Entreprise,
 		Orga,
-		Structure
+		Structure,
+		Moment
 	],
 	functions: [
 		Rosace::Function.new(:emojis_pays, ->(arg = nil) do
