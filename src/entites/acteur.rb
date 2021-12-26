@@ -146,10 +146,10 @@ module Acteur
 	# @return [String]
 	def comp_explicite
 		@_acteur_nom_cite = true
-		match = /\A\s*(?<article>(le |les )?)(?<nom>.*)\z/i.match(self.nom)
+		match = /\A\s*(?<article>(le |les |des )?)(?<nom>.*)\z/i.match(self.nom)
 		if /\Ale \z/i =~ match[:article]
 			"du " + match[:nom]
-		elsif /\Ales \z/i =~ match[:article]
+		elsif /\Ales \z/i =~ match[:article] || /\Ades \z/i =~ match[:article]
 			"des " + match[:nom]
 		else
 			(match[:nom].voyelle? ? "d’" : "de ") + match[:nom]
