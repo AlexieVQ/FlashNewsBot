@@ -1,7 +1,7 @@
 id,description,commun,weight,hashtag,emoji,acteurs,categories,temporalite,coupable,victime
 1,mort,,20,RIP{ .sujet.pascal_case },,pers,,proche,,
 2,fraude,,10,,,pers,,proche,,
-3,élu président français,{ .objet = .acteur },10,Présidentielles|{ .sujet.pascal_case }2022,🗳️,pers,politique,present,,
+3,élu président français,{ .objet = .acteur; .lieu = Lieu[1] },10,Présidentielles|{ .sujet.pascal_case }2022,🗳️,pers,politique,present,,
 4,arrêté,,20,,,pers,,proche,sujet,
 5,assassiné,{ .objet = .acteur },20,(RIP{ .sujet.pascal_case })?,,pers,,proche,,
 7,a assassiné,{ .objet = .acteur },30,(RIP{ .objet.pascal_case })?,,pers,,proche,,
@@ -10,7 +10,7 @@ id,description,commun,weight,hashtag,emoji,acteurs,categories,temporalite,coupab
 14,nomme objet premier ministre,{ .objet = .acteur },10,,,pers,politique,present,,
 15,dissout l’Assemblée Nationale,,10,,,pers,politique,proche,,
 16,annonce un album,{ .objet = .acteur },10,,💿,pers,culture musique,proche,,
-21,candidat à l’élection présidentielle,,10,{ .sujet.pascal_case }2022,,pers,politique,present,,
+21,candidat à l’élection présidentielle,{ .lieu = Lieu[1] },10,{ .sujet.pascal_case }2022,,pers,politique,present,,
 27,poursuit en justice,{ .objet = .acteur },10,,,pers entreprise parti syndicat association media,,present,objet,sujet
 29,aurait été aperçu,{ .circo = s(| dans le ciel| d’après des témoins anonymes) },1,Paranormal,,pers,,present,,
 30,aperçu en train de se droguer,,5,,🌿,pers,,proche,,
