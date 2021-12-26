@@ -71,9 +71,6 @@ class Info < Rosace::Entity
 	# @return [Acteur, nil] Objet de l'information
 	attr_reader :objet
 
-	# @return [Action, nil] Motif d'accusation.
-	attr_accessor :motif
-
 	# Retourne tous les lieux présents dans l'info.
 	# @param multi_niveaux [Boolean] Vrai s'il faut retourner également les
 	#  lieux qui ne sont pas directement dans l'info
@@ -282,9 +279,24 @@ class Info < Rosace::Entity
 		@objet = acteur
 	end
 
-	# @return [Action, nil]
+	# @return [Action] Action de l'information.
 	def action
 		@action ||= _action
+	end
+
+	# @return [Action, nil] Motif d'accusation correspondant à l'information.
+	def motif
+		@motif ||= context.pick_entity(:Action, *roles.map do |role|
+			role.id2name
+		end)
+	end
+
+	def motif=(action)
+		unless @motif.nil?
+			raise Rosace::EvaluationException,
+				"motif déjà défini pour Info[#{id}]"
+		end
+		@motif = action
 	end
 
 	# Exécute les macros définis dans l'attribut +commun+ avant d'accéder aux

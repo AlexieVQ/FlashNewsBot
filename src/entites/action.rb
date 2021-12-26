@@ -321,9 +321,6 @@ class Action < Rosace::Entity
 	# @param forcer_nominale [Boolean] Obliger la forme nominale
 	# @return [String] motif d'accusation
 	def pour_motif(forcer_nominale: false)
-		# @type [Action]
-		motif = info.motif ||= context.pick_entity(:Action,
-				*info.roles.map { |role| role.id2name })
 		args = {}
 		args[:forme] = forcer_nominale ?
 				:nominale :
@@ -336,7 +333,7 @@ class Action < Rosace::Entity
 			args[:victime] = info.victime == :sujet ? sujet : objet
 		end
 		args[:mettre_sujet] = false
-		out = motif.value(**args)
+		out = info.motif.value(**args)
 		"pour " + (out.is_a?(Acteur) ? out.nom : out)
 	end
 
@@ -350,9 +347,6 @@ class Action < Rosace::Entity
 	# [motif]".
 	# @return [String] motif d'accusation
 	def dans_le_cadre_de_motif
-		# @type [Action]
-		motif = info.motif ||= context.pick_entity(:Action,
-				*info.roles.map { |role| role.id2name })
 		args = {}
 		args[:forme] = :nominale
 		unless info.coupable.empty?
@@ -362,16 +356,13 @@ class Action < Rosace::Entity
 			args[:victime] = info.victime == :sujet ? sujet : objet
 		end
 		args[:mettre_sujet] = true
-		out = motif.value(**args)
+		out = info.motif.value(**args)
 		"dans " + out.comp("le cadre")
 	end
 
 	# Retourne un motif d'accusation sous la forme "parce que [motif]"
 	# @return [String] motif d'accusation
 	def parce_que_motif
-		# @type [Action]
-		motif = info.motif ||= context.pick_entity(:Action,
-			*info.roles.map { |role| role.id2name })
 		args = {}
 		args[:forme] = :verbale
 		args[:temps] = :passe
@@ -382,7 +373,7 @@ class Action < Rosace::Entity
 			args[:victime] = info.victime == :sujet ? sujet : objet
 		end
 		args[:mettre_sujet] = true
-		out = motif.value(**args)
+		out = info.motif.value(**args)
 		"parce qu#{out.voyelle? ? "’" : "e "}#{out}"
 	end
 
