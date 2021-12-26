@@ -1,5 +1,5 @@
 id,commun,sujet_perso,verbale,nominale,part_motif,weight,info,coupable,victime,genre,nombre
-1,{ .circo = s(à son domicile|dans un accident d’avion|d’une intoxication au monoxyde de dihydrogène) },,"{ .est(mort{ .sujet.es },mourir) } { .circo }","{ .s_comp(la ,mort) }",,10,1,,sujet,F,S
+1,{ .circo = s(à son domicile|dans un accident d’avion|d’une intoxication au monoxyde de dihydrogène|d’une overdose de chloroquine|d’une overdose de Xanogen et de Nitro XL) },,"{ .est(mort{ .sujet.es },mourir) } { .circo }","{ .s_comp(la ,mort) }",,10,1,,sujet,F,S
 2,,,{ .etre } retrouvé{ .sujet.es } mort{ .sujet.es },"{ .s_comp(la ,mort) }",,10,1,,sujet,F,S
 3,,,"{ .est(mort{ .sujet.es }, mourir) } noyer( la fin dune grande aventure putain { .sujet.vocatif } { .sujet.n(tetais,vous etais) } comme { .sujet.gn(un frere,une soeur,des freres,des seurs)} adieu salope{ .sujet.s })?","{ .s_comp(la ,noyade) }",,5,1,,sujet,F,S
 4,,,"{ .est(mort{ .sujet.es }, mourir) } puce{ .sujet.gn(au,lle,aux,lles) }","{ .s_comp(la ,mort) }",,1,1,,sujet,F,S
@@ -198,6 +198,38 @@ id,commun,sujet_perso,verbale,nominale,part_motif,weight,info,coupable,victime,g
 675,,,{ .est(moche{ .sujet.s }) },"{ .s_comp(la ,mocheté) }",,10,,sujet,,F,S
 676,,,"{ .a(partagé,partager,partage,partages,partage,partageons,partagez,partagent) } des fake news",{ .s(le ) }partage de fake news{ .s( par { .sujet.tonique }) },,10,,sujet,,M,S
 680,,,{ .est(problématique{ .sujet.s }) },"{ .s_comp(le ,comportement problématique) }",,10,,sujet,,M,S
+681,,,"{ .a(cassé,casser,casse,casses,casse,cassons,cassez,cassent) } des trucs","{ .s_comp(le ,cassage de trucs) }",,10,,sujet,,M,S
+686,"{ .insulte = .objet.gn(de fils de pute,d’enfant du putain,d’enfants de putains,d’enfants de putains) }",,"{ .objet.cod({ .a(traité,traiter,traite,traites,traite,traitons,traitez,traitent) }) } { .insulte }","{ .s_comp(l’,insulte { .insulte }) } envers { .objet.tonique }",,10,,sujet,objet,F,S
+688,"{ .quoi = new_acteur({ .sujet.gn(le pénis,les tétons,leurs parties intimes,leurs tétons) },{ .sujet.gn(M,M,F,M) },{ .sujet.gn(S,P,P,P) }); .ou = .sujet.g(, sur Instagram) }",,"{ .a(montré,montrer,montre,montres,montre,montrons,montrez,montrent) } { .sujet.comp_implicite({ .quoi }) }{ .ou }",{ .s(la ) }publication { .sujet.comp({ .quoi.comp_explicite }) }{ .ou },,10,,sujet,,F,S
+690,,,{ .etre } flashé{ .sujet.es } à 90 km/h en trottinette électrique,"{ .s_comp(l’,excès de vitesse) } en trottinette électrique",,10,,sujet,,M,S
+696,,,"{ .objet.cod({ .a(diffamé,diffamer,diffame,diffames,diffame,diffamons,diffamez,diffament) }) }","{ .s_comp(la ,diffamation) } envers { .objet.tonique }",,10,,sujet,objet,F,S
+698,,,"{ .objet.cod({ .a(tué,tuer,tue,tues,tue,tuons,tuez,tuent) }) }",{ .objet.comp(l’assassinat) }{ .s( par { .sujet.tonique }) },,10,,sujet,objet,M,S
+699,,,"{ .a(griefé,griefer,griefe,griefes,griefe,griefons,griefez,griefent) } { .objet.comp(la maison) } sur Minecraft",{ .s(le ) }grief de { .objet.comp(la maison) } sur Minecraft{ .s( par { .sujet.comp }) },,10,,sujet,objet,M,S
+701,,,"{ .a(tenu,tenir,tiens,tiens,tient,tenons,tenez,tiennent) } des propos problématiques",{ .s(la ) }tenue de propos problématiques{ .s( par { .sujet.tonique }) },,10,,sujet,,F,S
+706,,,"{ .a(chanté,chanter,chante,chantes,chante,chantons,chantez,chantent) } “Fuck le 17”",{ .s(le ) }chant de “Fuck le 17”{ .s( par { .sujet.tonique }) },,3,,sujet,,M,S
+708,,,"{ .a(chanté,chanter,chante,chantes,chante,chantons,chantez,chantent) } “Fornique la Maréchaussée”",{ .s(le ) }chant de “Fornique la Maréchaussée”{ .s( par { .sujet.tonique }) },,3,,sujet,,M,S
+709,,,"{ .a(commis,commettre,commets,commets,commet,commettons,commettez,commettent) } du racisme anti-blanc","{ .s_comp(le ,racisme anti-blanc) }",,10,,sujet,,M,S
+710,,,"{ .a(raté,rater,rate,rates,rate,ratons,ratez,ratent) } le #NoPeeJanuary","{ .s_comp(l’,échec du #NoPeeJanuary) }",,10,,sujet,,M,S
+713,,,{ .etre } horny on main,"{ .s_comp(le ,pêché d’horny on main) }",,10,,sujet,,M,S
+714,,,{ .etre } horny sur { .objet.tonique },"{ .s_comp(le ,pêché d’horny sur { .objet.tonique }) }",,10,,sujet,objet,M,S
+737,,,"{ .a(fait,faire,fais,fais,fait,faisons,faites,font) } un fanart","{ .s_comp(le ,fanart) }",,2,,sujet,,M,S
+738,,,"{ .a(fait,faire,fais,fais,fait,faisons,faites,font) } un fanart de Tintin","{ .s_comp(le ,fanart de Tintin) }",,10,,sujet,,M,S
+739,"{ lui = .objet.tonique; .delui = voy({ lui },d’{ lui },de { lui }) }",,"{ .a(fait,faire,fais,fais,fait,faisons,faites,font) } un fanart { .delui }","{ .s_comp(le ,fanart { .delui }) }",,2,,sujet,objet,M,S
+740,,,"{ .objet.cod({ .a(payé,payer,paye,payes,paye,payons,payez,payent) }) } en visibilité",{ .objet.comp(le paiement en visibilité) }{ .s( par { .sujet.tonique }) },,10,,sujet,objet,M,S
+754,,,"{ .a(fait,faire,fais,fais,fait,faisons,faites,font) } une black face","{ .s_comp(la ,black face) }",,10,,sujet,,F,S
+755,,,"{ .a(porté,porter,porte,portes,porte,portons,portez,portent) } un t-shirt ahegao","{ .s_comp(le ,port { .s(d’un,de) } t-shirt ahegao) }",,10,,sujet,,M,S
+762,,,"{ .sujet.se({ .est(fait{ .sujet.es },faire,fais,fais,fait,faisons,faisez,font) }) } passer pour { .objet.tonique } sur Twitter",{ .s(l’) }usurpation de { .objet.comp(l’identité) }{ .s( par { .sujet.tonique }) },,10,,sujet,objet,F,S
+764,,,"{ .objet.coi({ .a(implanté,implanter,implante,implantes,implante,implantons,implantez,implantent) } une puce 5G) }( sans { .objet.comp_implicite(le consentement) })?","{ .s_comp(l’,implantation d’une puce 5G) } { .objet.coi_explicite }",,10,,sujet,objet,F,S
+779,,,{ .a(time travel) } sur Animal Crossing,"{ .s_comp(le ,time travel) } sur Animal Crossing",,5,,sujet,,M,S
+780,,,"{ .objet.cod({ .a(séquestré,séquestrer,séquestre,séquestres,séquestre,séquestrons,séquestrez,séquestrent) }) }",{ .objet.comp({ .s(la ) }séquestration) }{ .s( par { .sujet.tonique }) },,10,,sujet,objet,F,S
+784,,,"{ .a(volé,voler,vole,voles,vole,volons,volez,volent) } des courges à Nigloland","{ .s_comp(le ,vol de courges à Nigloland) }",,10,,sujet,,M,S
+785,,,"{ .a(défendu,défendre,défends,défends,défend,défendons,défendez,défendent) } { .sujet.comp_implicite(les convictions) }",{ .sujet.comp(les convictions) },,10,,sujet,,F,P
+788,,,"{ .a(touché,toucher,touche,touches,touche,touchons,touchez,touchent) } { .objet.comp(les pierres) }",{ raise(pas de forme nominale pour Action[788]) },,10,,sujet,objet,M,S
+789,,,"{ .a(lancé,lancer,lance,lances,lance,lançons,lancez,lancent) } une malédiction sur la Lune","{ .s_comp(le ,lancement d’une malédiction) } sur la Lune",,10,,sujet,,M,S
+790,,,"{ .a(pratiqué,pratiquer,pratique,pratiques,pratique,pratiquons,pratiquez,pratiquent) } la sorcellerie","{ .s_comp(la pratique de la ,sorcellerie) }",,10,,sujet,,F,S
+791,,,"{ .objet.coi({ .a(lancé,lancer,lance,lances,lance,lançons,lancez,lancent) } une malédiction) }","{ .s_comp(le ,lancement d’une malédiction) } sur { .objet.tonique }",,10,,sujet,objet,M,S
+792,,,"{ .sujet.se({ .est(rendu{ .sujet.es },rendre,rends,rends,rend,rendons,rendez,rendent) }) } coupable{ .sujet.s } d’actes christianophobes","{ .s_comp(les ,actes christianophobes) }",,10,,sujet,,M,P
+794,,,"{ .a(porté,porter,porte,portes,porte,portons,portez,portent) } le masque sous { .sujet.comp_implicite({ .sujet.n(le nez,les nez) }) }","{ .s_comp(le ,port du masque sous le nez) }",,10,,sujet,,M,S
 1000,{ $action1000sujet = .sujet },,"{ .a(avoué,avouer,avoue,avoues,avoue,avouons,avouez,avouent) }","{ .sujet.comp(l’aveu) } { m = .info.motif.val(coupable: $action1000sujet, forme: nominale, mettre_sujet: false); voy({ m },d’{ m },de { m }) }","{ .info.motif.val(coupable: $action1000sujet, temps: infinitif_passe) }",10,55,,,M,S
 1001,,,"{ .objet.coi({ .a(apporté,apporter,apporte,apportes,apporte,apportons,apportez,apportent) } { .sujet.comp_implicite(le soutien) }) } (aux|pour les) élections présidentielles( de 2022)?","{ .s_comp(le ,soutien) } apporté à { .objet.tonique } (aux|pour les) élections présidentielles( de 2022)?",,10,102,sujet,,M,S
 1002,,,{ .etre } cancelled,{ .sujet.comp(le call-out) },{ .pour_motif },10,152,,sujet,M,S
