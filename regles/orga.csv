@@ -21,8 +21,13 @@ id,nom,sigle,genre,nombre,weight,adj,emoji,type,categories,origine
 20,la CFDT,CFDT,F,S,10,syndical{ .iste },🟠,syndicat,gauche centre,1
 21,le Medef,Medef,M,S,10,"patrona{ .defgn(l,le,ux,les) }",🟣,syndicat,droite,1
 22,Extinction Rebellion,XR,F,S,10,écolog{ .iste },⏳,association,politique ecolo,
-23,l’Engagement,LE,M,S,1,souverain{ .iste },,parti,gauche centre,1
-24,Reconquête,R,F,S,5,pro-Zemmour,,parti,ext_droite,1
-25,Révolution Permanente,CCR|RP,F,S,3,trotsk{ .iste },🔴,parti,ext_gauche,1
-26,le Parti Animaliste,PA,M,S,3,animal{ .iste },🐶|🐱,parti,ecolo,1
-27,Action Contre la Faim,ACF,F,S,10,contre la faim,🌱,association,,
+1000,{ Pers[1014].comp(l’Engagement) },LE,M,S,1,souverain{ .iste },,parti,gauche centre,1
+1001,Reconquête,Reconquête,F,S,5,pro-Zemmour,,parti,ext_droite,1
+1002,Révolution Permanente,CCR|RP,F,S,3,trotsk{ .iste },🔴,parti,ext_gauche,1
+1003,le Parti Animaliste,PA,M,S,3,animal{ .iste },🐶|🐱,parti,ecolo,1
+1004,Action Contre la Faim,ACF,F,S,10,contre la faim,🌱,association,,
+1005,{ Pers[6].comp(l’Union Populaire) },UP,F,S,5,"insoumis{ .defgn(,e,,es) }",🟣,parti,gauche ext_gauche ecolo,1
+1006,Horizons,Horizons,M,S,5,de la droite macroniste,,parti,droite,1
+1007,Ensemble Citoyens,EC,M,S,1,macron{ .iste },🟡,parti,centre droite,1
+1008,le Parti Radical,PRV,M,S,2,"radica{ .defgn(l,le,ux,les) }",,parti,centre droite,1
+1009,Debout la France,DLF,M,S,5,souverain{ .iste },,parti,droite ext_droite,1
