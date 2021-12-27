@@ -178,7 +178,7 @@ id,commun,sujet_perso,verbale,nominale,part_motif,weight,info,coupable,victime,g
 418,{ .variant = s(delta|omicron) },,"{ .objet.coi({ .a(transmis,transmettre,transmets,transmets,transmet,transmettons,transmettez,transmettent) } le variant { .variant }) }","{ .s_comp(la ,transmission du variant { .variant }) } { .objet.coi_explicite }",,10,,sujet,objet,F,S
 419,,,{ .etre } victime{ .sujet.s } de la cancel culture( sur Twitter)?,{ .sujet.comp(le cancelling) } sur (Twitter|les réseaux sociaux),{ .pour_motif },10,211,,sujet,M,S
 540,,,{ .est(impliqué{ .sujet.es }) } dans l’affaire Bygmalion,"{ .s_comp(l’,implication) } dans l’affaire Bygmalion",,1,,sujet,,F,S
-541,,{ .sujet.comp(les comptes de campagne) },possèdent des irrégularités,les irrégularités sur { .sujet.comp(les comptes de campagne) },,5,,sujet,,F,P
+541,,{ .sujet.comp(les comptes de campagne) },possèdent des irrégularités,{ .s(les ) }irrégularités sur { .sujet.comp(les comptes de campagne) },,5,,sujet,,F,P
 544,,,"{ Pers[2].cod({ .a(appelé,appeler,appelle,appelles,appelle,appelons,appelez,appellent) }) } “Manu”","{ .s_comp(le ,manque de respect) } { Pers[2].coi_explicite }",,10,,sujet,,M,S
 545,,,{ .est(impliqué{ .sujet.es }) } dans l’affaire Benalla,"{ .s_comp(l’,implication) } dans l’affaire Benalla",,5,,sujet,,F,S
 546,({ .acteur = Pers }|{ .acteur = Orga(parti) }|{ .acteur = Entreprise }){ .affaire = s(l’affaire { .acteur.vocatif }|l’#Affaire{ .acteur.pascal_case }|le #{ .acteur.pascal_case }Gate) },,{ .est(impliqué{ .sujet.es }) } dans { .affaire },"{ .s_comp(l’,implication) } dans { .affaire }",,10,,sujet,,F,S
