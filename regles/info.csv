@@ -109,3 +109,9 @@ id,description,commun,weight,hashtag,emoji,acteurs,categories,temporalite,coupab
 207,banni du tchat d’objet,{ .objet = .acteur },10,Twitch,👾,pers,internet twitch,proche,sujet,objet
 211,victime de la cancel culture,,10,CancelCulture,,pers pays,,present,sujet,
 1000,devient chef d’état,{ .lieu = .sujet.pays }|{ .lieu = Lieu(pays) },10,,,pers,politique,present,,
+1001,interdit les plans à 3,,1,PlansÀ3,🚫,pers parti pays,politique,present,,
+1002,soupçonne objet d’être un agent de la CIA,{ .objet = Pers },5,CIA,,pers parti pays media,politique,present,,
+1003,reçoit le prix Nobel de la paix,,10,PrixNobel,,pers,politique,proche,,
+1004,suspendu sur Twitter,,10,TwitterBan,🐦,pers entreprise parti syndicat association media pays,,proche,sujet,
+1005,invite pour une vidéo YouTube,{ .objet = .acteur },10,{ .sujet.pascal_case }X{ .objet.pascal_case },▶️,pers,internet videaste youtube,present,,
+1006,décide de reformer les Daft Punk,{ .sujet = Pers(P) },10,DaftPunk(AreBack)?,💿|📀,,culture musique,present,,

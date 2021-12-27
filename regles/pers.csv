@@ -373,3 +373,8 @@ id,commun,nom,pascal_case,weight,genre,nombre,qte,categories,origine,cw
 1040,,Domingo,Domingo,10,M,S,1,internet twitch,1,
 1041,,Ponce,Ponce,10,M,S,1,internet twitch,1,
 1042,,(le streameur )?Étoiles,Étoiles,10,M,S,1,internet twitch,1,
+1043,,Gabriel Attal,GabrielAttal,10,M,S,1,politique centre droite,1,
+1044,,Kamala Harris,KamalaHarris,10,F,S,1,politique gauche centre,3,
+1045,,Astolfo,Astolfo,5,M,S,1,fiction jeu_video,,
+1046,,Alexeï Navalny,Navalny,10,M,S,1,politique,14,
+1047,,Francis Lalanne,FrancisLalanne,10,M,S,1,culture musique politique ext_droite,1,
