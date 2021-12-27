@@ -122,3 +122,15 @@ id,description,commun,weight,hashtag,emoji,acteurs,categories,temporalite,coupab
 1011,agresse,{ .objet = .acteur },10,{ .sujet.pascal_case }VS{ .objet.pascal_case },,pers,,proche,objet,sujet
 1012,se ligue contre,{ .objet = .acteur },10,{ .sujet.pascal_case }VS{ .objet.pascal_case },,pers parti pays,politique media edito,present,,sujet
 1013,refuse le débat avec,{ .objet = .acteur },10,{ .sujet.pascal_case }VS{ .objet.pascal_case },,pers parti,politique,present,objet,sujet
+1014,veut censurer objet,{ .objet = Pers }|{ .objet = Media }|{ .objet = Orga },5,Censure{ .objet.pascal_case },🤐,pers parti pays entreprise,politique,present,objet,sujet
+1015,a censuré objet,{ .objet = Pers }|{ .objet = Media }|{ .objet = Orga },5,Censure{ .objet.pascal_case },🤐,pers parti pays entreprise,politique,proche,objet,sujet
+1016,appelle à la haine,{ .objet = Pers },10,{ .sujet.pascal_case }VS{ .objet.pascal_case },,pers parti pays,politique,present,objet,
+1017,a été reçu à l’élysée,,10,,,pers,culture internet,proche,,
+1018,explose,,1,{ .sujet.pascal_case }Explosion,💥,pers entreprise parti pays region,,proche,,
+1019,a participé à des dîners clandestins,,5,DînersClandestins,,pers,politique culture,proche,,
+1020,est boycotté,{ .objet = Pers }|{ .objet = Orga }|{ .objet = Lieu(pays) },5,Boycott{ .sujet.pascal_case },,pers entreprise pays parti,politique,present,sujet,
+1021,boycott,{ .objet = Pers }|{ .objet = Entreprise }|{ .objet = Lieu(pays) }|{ .objet = Orga(parti) },5,Boycott{ .objet.pascal_case },,pers pays parti syndicat association,politique,present,objet,
+1022,interdit l’écriture inclusive,,10,ÉcritureInclusive,,pers pays parti,politique,proche,,
+1023,interdit les pronoms,,10,Pronoms,,pers pays parti,politique,proche,,
+1024,se lance dans les NFT,,10,NFT,,pers,culture,proche,,
+1025,achète un NFT,{ .somme = s(1 ($)?ETH \(3600 €\)|5 ($)?ETH \(18 000 €\)|10 ($)?ETH \(36 000 €\)|20 ($)?ETH \(72 000 €\)|50 ($)?ETH \(180 000 €\)); .objet = .acteur },,,,pers,culture,proche,,

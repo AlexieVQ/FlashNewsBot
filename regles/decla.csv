@@ -29,3 +29,6 @@ id,value,weight,ref_info,sujet,objet,pers
 1002,Oof,20,,tierce,coupable,
 1003,Oof,20,,tierce,victime,
 1004,((C’est )?littéralement )?1984,20,,coupable,,
+1005,"{ .sujet.n(Je ne m’inclinerai,Nous ne nous inclinerons) } jamais devant la censure",10,1014,objet,,
+1006,"{ .sujet.n(Je ne m’inclinerai,Nous ne nous inclinerons) } jamais devant la censure",10,1015,objet,,
+1007,"Imagine-ton { `degaulle = new_acteur(le général De Gaulle)`.nom } { .info.motif.val(victime: degaulle, temps: infinitif, personne_victime: { personne_objet }) } ?",10,,victime,,
