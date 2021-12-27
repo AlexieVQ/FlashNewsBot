@@ -633,3 +633,33 @@ id,value,weight,pers
 1092,le chanteur,10,1047
 1093,le militant anti-masque,10,1047
 1094,le militant antivax,10,1047
+1095,le gaulois,10,1048
+1096,le guerrier,10,1048
+1097,le gaulois,10,1049
+1098,le guerrier,10,1049
+1099,le chien,10,1050
+1100,le druide,10,1051
+1101,{ .pers.origine.comp(le chef) },10,1052
+1102,le barde,10,1053
+1103,le commerçant,10,1054
+1104,l’ancien Premier Ministre,10,1055
+1105,le lapin,10,1056
+1106,le canard,10,1057
+1107,la lapine,10,1058
+1108,l’ancien directeur de la rédaction de Libération,10,1059
+1109,l’ancien directeur de la rédaction du Nouvel Obs,10,1059
+1110,le journaliste(-streameur)?,10,1060
+1111,l’animateur de Questions Pour Un Champion,10,1060
+1112,la comédienne( américaine)?,10,1061
+1113,l’épouse du prince Harry,5,1061
+1114,le duc de Sussex,10,1062
+1115,le duc de Cambridge,10,1063
+1116,l’héritier du trône britannique,10,1063
+1117,l’épouse du prince William,10,1064
+1118,la duchesse de Cambridge,10,1064
+1119,les militants en ligne,10,1065
+1120,le journaliste militant,10,1066
+1121,les étudiants,10,1068
+1122,les militantes,10,1069
+1123,le chanteur,10,1070
+1124,les militants,10,1071

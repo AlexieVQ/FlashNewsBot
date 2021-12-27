@@ -113,5 +113,12 @@ id,description,commun,weight,hashtag,emoji,acteurs,categories,temporalite,coupab
 1002,soupçonne objet d’être un agent de la CIA,{ .objet = Pers },5,CIA,,pers parti pays media,politique,present,,
 1003,reçoit le prix Nobel de la paix,,10,PrixNobel,,pers,politique,proche,,
 1004,suspendu sur Twitter,,10,TwitterBan,🐦,pers entreprise parti syndicat association media pays,,proche,sujet,
-1005,invite pour une vidéo YouTube,{ .objet = .acteur },10,{ .sujet.pascal_case }X{ .objet.pascal_case },▶️,pers,internet videaste youtube,present,,
+1005,invite pour une vidéo YouTube,{ .objet = .acteur },10,{ .sujet.pascal_case }X{ .objet.pascal_case },▶️,pers,internet videaste youtube politique,present,,
 1006,décide de reformer les Daft Punk,{ .sujet = Pers(P) },10,DaftPunk(AreBack)?,💿|📀,,culture musique,present,,
+1007,quitte la famille royale britannique,{ .lieu = Lieu[4] },1,,,pers,politique,present,,
+1008,invite sur Twitch,{ .objet = .acteur },10,,👾,pers,internet twitch politique,present,,
+1009,a harcelé,{ .objet = .acteur },10,Harcèlement|{ .sujet.pascal_case }VS{ .objet.pascal_case },,pers parti pays,,proche,objet,sujet
+1010,est parti en croise,{ .objet = .acteur },10,{ .sujet.pascal_case }VS{ .objet.pascal_case },,pers parti pays,politique media edito,proche,objet,sujet
+1011,agresse,{ .objet = .acteur },10,{ .sujet.pascal_case }VS{ .objet.pascal_case },,pers,,proche,objet,sujet
+1012,se ligue contre,{ .objet = .acteur },10,{ .sujet.pascal_case }VS{ .objet.pascal_case },,pers parti pays,politique media edito,present,,sujet
+1013,refuse le débat avec,{ .objet = .acteur },10,{ .sujet.pascal_case }VS{ .objet.pascal_case },,pers parti,politique,present,objet,sujet

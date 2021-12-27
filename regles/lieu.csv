@@ -259,3 +259,4 @@ id,nom,pascal_case,genre,nombre,weight,adj,parent,code2,code3,emoji,type,regime,
 1217,Dubaï,Dubaï,F,S,10,"dubaïote{ .defgn(,,s,s) }",1218,,,,ville,,1
 1218,les Émirats Arabes Unis,EAU|Émirats(ArabesUnis)?,M,P,7,émirati{ .defes },,AE,ARE,🇦🇪,pays,president,
 1219,Grenoble,Grenoble,F,S,10,grenoblois{ .defs },1138,,,,ville,,
+1220,le village gaulois,VillageGaulois,M,S,5,gaulois{ .defs },1122,,,,ville,,
