@@ -9,7 +9,7 @@ id,nom,pascal_case,weight,genre,nombre,types,categories,origine
 8,le Point,LePoint,10,M,S,papier,politique droite edito,1
 9,Corse-Matin,CorseMatin,3,M,S,papier,,114
 10,l’Humanité,LHuma(nité)?,5,M,S,papier,politique gauche ext_gauche,1
-11,Valeurs Actuelles,ValeursActuelles,8,F,P,papier,politique ext_droite edito,1
+11,Valeurs Actuelles,ValeursActuelles,5,F,P,papier,politique ext_droite edito,1
 12,le Courrier de l’Ouest,CourrierDelOuest,5,M,S,papier,,1149
 13,le Parisien,LeParisien,10,M,S,papier,politique edito,122
 14,le Maine Libre,LeMaineLibre,5,M,S,papier,,1172
@@ -33,4 +33,27 @@ id,nom,pascal_case,weight,genre,nombre,types,categories,origine
 32,CNN,CNN,10,M,S,tv,politique,3
 33,Fox News,FoxNews,10,F,S,tv,politique droite ext_droite edito,3
 34,le Gorafi,LeGorafi,10,M,S,internet,politique edito humour,1
-35,Memri TV,MemriTV,5,F,S,tv,politique edito,3
+1000,RRI,RFI,5,F,S,radio,politique,1
+1001,le Télégramme,LeTélégramme,5,M,S,papier,,109
+1002,la RTBF,RTBF,8,F,S,tv radio,politique,8
+1003,Conflits France,ConflitsFrance,7,M,S,internet,,1
+1004,Mediavenir,Mediavenir,7,M,S,internet,,1
+1005,LCI,LCI,10,F,S,tv,politique edito,1
+1006,France Bleu,FranceBleu,5,F,S,radio,,1
+1007,France 3,France3,5,F,S,tv,,1
+1008,l’AFP,AFP,10,F,S,agence,,1
+1009,le Progrès,LeProgrès,5,M,S,papier,,1169
+1010,20 Minutes,20Minutes,10,F,S,papier,,1
+1011,le HuffPost,LeHuffPost,10,M,S,internet,,1
+1012,France 24,France24,5,F,S,tv,,1
+1013,le Dauphiné( Libéré)?,LeDauphiné,5,M,S,papier,,1138
+1014,Reuters,Reuters,10,F,S,agence,,4
+1015,Associated Press,AP,10,F,S,agence,,3
+1016,l’Obs,LObs,10,M,S,papier,politique edito centre gauche,1
+1017,la BBC,BBC,10,F,S,tv,,4
+1018,Var-Matin,VarMatin,5,M,S,papier,,1183
+1019,le Guardian,Guardian,10,M,S,papier,politique edito,4
+1020,Sud Ouest,SudOuest,8,M,S,papier,,1003
+1021,CNN,CNN,10,F,S,tv,politique,3
+1022,CANAL International,CANALInternational,10,F,S,tv,fiction humour,31
+1023,Euronews,Euronews,10,F,S,tv,politique,132

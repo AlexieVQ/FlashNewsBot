@@ -29,7 +29,7 @@ class Media < Rosace::Entity
 
 	# @!attribute [r] types
 	#  @return [Array<Symbol>]
-	mult_enum :types, :papier, :tv, :radio, :internet
+	mult_enum :types, :papier, :tv, :radio, :internet, :agence
 
 	mult_enum :categories, *CATEGORIES
 
@@ -40,6 +40,15 @@ class Media < Rosace::Entity
 	# @see #nom
 	def value
 		nom
+	end
+
+	# Teste si ce média est d'un des types données
+	# @param types [Array<String>] types attendus
+	# @return [Boolean] Vrai si ce média est d'un des types donnés
+	def pick?(*types)
+		types.empty? || types.map { |type| type.strip.to_sym }.any? do |type|
+			self.types.any? { |stype| stype == type }
+		end
 	end
 
 	# @return [Integer] Poids du média dans les choix aléatoires
