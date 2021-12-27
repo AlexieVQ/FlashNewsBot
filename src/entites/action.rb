@@ -256,6 +256,7 @@ class Action < Rosace::Entity
 	# @param p1 [String, nil] Première personne du pluriel
 	# @param p2 [String, nil] Deuxième personne du pluriel
 	# @param p3 [String, nil] Troisième personne du pluriel
+	# @param adverbe [String, nil] Adverbe
 	# @return [String] Verbe conjugué selon le temps de l'action
 	def a(participe,
 		  infinitif,
@@ -264,8 +265,9 @@ class Action < Rosace::Entity
 		  s3 = nil,
 		  p1 = nil,
 		  p2 = nil,
-		  p3 = nil)
-		verbe("avoir", participe, infinitif, s1, s2, s3, p1, p2, p3)
+		  p3 = nil,
+		  adverbe = nil)
+		verbe("avoir", participe, infinitif, s1, s2, s3, p1, p2, p3, adverbe)
 	end
 
 	# Conjugue le verbe selon ses différentes formes données, avec l'auxiliaire
