@@ -543,6 +543,24 @@ module Acteur
 		self.personne == 3 ? self : ActeurProxy.new(self, personne: 3)
 	end
 
+	# Retourne l'acteur à la personne donnée.
+	# @param personne [1, 2, 3, nil] Personne grammaticale attendue
+	# @return [Acteur] Acteur à la personne donnée.
+	def to_personne(personne)
+		case personne
+		when 1
+			to_1e_personne
+		when 2
+			to_2e_personne
+		when 3
+			to_3e_personne
+		when nil
+			self
+		else
+			raise ArgumentError, "#{personne} personne invalide"
+		end
+	end
+
 	# @return [Acteur] instance originale
 	def unwrap
 		self

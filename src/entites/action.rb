@@ -52,18 +52,21 @@ class Action < Rosace::Entity
 
 	# @return [Acteur, nil] Acteur objet de cette action
 	def objet
-		# @type [Info]
 		@objet ||= (info ? info.objet : nil) || context.variable(:$info).acteur
+		@objet.to_personne(personne_objet)
 	end
 
 	# @return [Acteur] Acteur sujet de cette action
 	def sujet
 		@sujet ||= (info ? info.sujet : nil) || context.variable(:$info).acteur
+		@sujet.to_personne(personne_sujet)
 	end
 
 	def init
 		self.temps = :passe
 		@commun = false
+		self.personne_sujet = nil
+		self.personne_objet = nil
 	end
 
 	# @param args [Array<String>]
@@ -85,6 +88,10 @@ class Action < Rosace::Entity
 	# @param sujet_explicite [Boolean] Vrai si le sujet doit être écrit
 	#  explicitement
 	# @param verbe_obligatoire [Boolean] Faux pour omettre le verbe être
+	# @param personne_sujet [1, 2, 3, nil] Personne du sujet
+	# @param personne_objet [1, 2, 3, nil] Personne de l'objet
+	# @param personne_coupable [1, 2, 3, nil] Personne du coupable
+	# @param personne_victime [1, 2, 3, nil] Personne de la victime
 	# @return [String, Acteur] String pour la forme verbale ou nominale dans
 	#  sujet, Acteur pour la forme nominale avec sujet
 	def value(sujet: nil,
@@ -95,7 +102,11 @@ class Action < Rosace::Entity
 			  temps: :passe,
 			  mettre_sujet: true,
 			  sujet_explicite: false,
-			  verbe_obligatoire: true)
+			  verbe_obligatoire: true,
+			  personne_sujet: nil,
+			  personne_objet: nil,
+			  personne_coupable: nil,
+			  personne_victime: nil)
 		old_sujet = @sujet
 		old_objet = @objet
 		old_temps = self.temps
@@ -106,6 +117,10 @@ class Action < Rosace::Entity
 		@objet = objet || old_objet
 		self.coupable = coupable
 		self.victime = victime
+		self.personne_sujet = personne_sujet
+		self.personne_objet = personne_objet
+		self.personne_coupable = personne_coupable
+		self.personne_victime = personne_victime
 		self.temps = temps
 		self.mettre_sujet = mettre_sujet
 		pattern = /\A(est|sont) /
@@ -123,7 +138,7 @@ class Action < Rosace::Entity
 					sp + " " + (verbe_obligatoire ?
 							verbale :
 							verbale.gsub(pattern, ""))
-				elsif sujet_explicite
+				elsif sujet_explicite && self.sujet.personne == 3
 					self.sujet.sujet_explicite + " " + (verbe_obligatoire ?
 							verbale :
 							verbale.gsub(pattern, ""))
@@ -138,6 +153,8 @@ class Action < Rosace::Entity
 		end
 		@sujet = old_sujet || @sujet
 		@objet = old_objet || @objet
+		self.personne_sujet = nil
+		self.personne_objet = nil
 		self.temps = old_temps
 		self.mettre_sujet = old_mettre_sujet
 		if forme == :nominale && mettre_sujet == true
@@ -181,6 +198,14 @@ class Action < Rosace::Entity
 				kwargs[:victime] = context.variable(valeur)
 			when "forme"
 				kwargs[:forme] = valeur.to_sym
+			when "personne_sujet"
+				kwargs[:personne_sujet] = valeur.to_i
+			when "personne_objet"
+				kwargs[:personne_objet] = valeur.to_i
+			when "personne_coupable"
+				kwargs[:personne_coupable] = valeur.to_i
+			when "personne_victime"
+				kwargs[:personne_victime] = valeur.to_i
 			else
 				raise Rosace::EvaluationException,
 						"Action[#{id}]: Paramètre #{clef} inconnu"
@@ -450,6 +475,14 @@ class Action < Rosace::Entity
 	#  formes nominale ou verbale.
 	attr_accessor :mettre_sujet
 
+	# @return [1, 2, 3, nil] Personne grammaticale du sujet (+nil+ pour
+	#  inchangé)
+	attr_accessor :personne_sujet
+
+	# @return [1, 2, 3, nil] Personne grammaticale de l'objet (+nil+ pour
+	#  inchangé)
+	attr_accessor :personne_objet
+
 	def temps=(temps)
 		@temps = temps || self.temps
 	end
@@ -475,6 +508,30 @@ class Action < Rosace::Entity
 			self.sujet = victime || self.sujet
 		when :objet
 			self.objet = victime || self.objet
+		end
+	end
+
+	# Définit la personne du coupable
+	# @param personne [1, 2, 3, nil] personne du coupable
+	# @return [1, 2, 3, nil]
+	def personne_coupable=(personne)
+		case self.coupable
+		when :sujet
+			self.personne_sujet = personne || personne_sujet
+		when :objet
+			self.personne_objet = personne || personne_objet
+		end
+	end
+
+	# Définit la personne de la victime
+	# @param personne [1, 2, 3, nil] personne de la victime
+	# @return [1, 2, 3, nil]
+	def personne_victime=(personne)
+		case self.victime
+		when :sujet
+			self.personne_sujet = personne || personne_sujet
+		when :objet
+			self.personne_objet = personne || personne_objet
 		end
 	end
 

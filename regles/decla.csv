@@ -25,7 +25,7 @@ id,value,weight,ref_info,sujet,objet,pers
 48,C’est faux. Ce sont des calomnies.,5,,coupable,,
 49,C’est de la diffamation,5,,coupable,,
 51,Ça arrive,10,,coupable,,
-1001,"Et { `decla1001ratio = new_acteur(ce ratio)`.tonique_explicite } { .info.motif.val(coupable: decla1001ratio, temps: passe) } ?( 🤣)?",20,,coupable,,
+1001,"Et { `decla1001ratio = new_acteur(ce ratio)`.tonique_explicite } { .info.motif.val(coupable: decla1001ratio, temps: passe, personne_victime: { .personne_objet }) } ?( 🤣)?",20,,coupable,,
 1002,Oof,20,,tierce,coupable,
 1003,Oof,20,,tierce,victime,
 1004,((C’est )?littéralement )?1984,20,,coupable,,

@@ -113,4 +113,10 @@ class Decla < Rosace::Entity
 			end
 		end
 	end
+
+	# @return [2, 3] Personne grammaticale de l'objet
+	def personne_objet
+		3
+	end
+
 end
