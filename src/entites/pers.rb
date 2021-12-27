@@ -116,10 +116,16 @@ class Pers < Rosace::Entity
 	end
 
 	# Teste si ce personnage peut-être choisi.
-	# @param nombre ["S", nil] Nombre du personnage
+	# @param nombre ["S", "P", nil] Nombre du personnage
 	# @return [Boolean] Vrai si le personnage peut-être choisi
 	def pick?(nombre = nil)
-		nombre == "S" ? self.nombre == :S : true
+		if nombre == "S"
+			self.nombre == :S
+		elsif nombre == "P"
+			self.nombre == :P
+		else
+			true
+		end
 	end
 
 	# Retourne la distance avec la chaîne donnée
