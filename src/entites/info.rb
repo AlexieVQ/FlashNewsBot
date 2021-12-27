@@ -129,8 +129,8 @@ class Info < Rosace::Entity
 				$stderr.puts "Pas de decla pour Info[#{id}]" if Bot.debug?
 				nil
 			end
-			phrase = part_value + " " +
-					context.pick_entity(:Moment, temporalite.to_s).value +
+			phrase = part_value +
+					#" " +context.pick_entity(:Moment, temporalite.to_s).value +
 					(part_motif.empty? ? "" : " " + part_motif) + ".\n\n" +
 					(part_decla ? part_decla + ".\n\n" : "") +
 					"(#{context.pick_entity(:Media).nom.majuscule}) " +
