@@ -7,7 +7,7 @@ id,commun,sujet_perso,verbale,nominale,part_motif,weight,info,coupable,victime,g
 6,,,"{ .a(fraudé,frauder,fraude,fraudes,fraude,fraudons,fraudez,fraudent) } les impôts","{ .s_comp(la ,fraude fiscale) }",,10,2,sujet,,F,S
 7,,,"{ .a(commis,commettre,commets,commets,commet,commettons,commettez,commettent) } de la fraude fiscale","{ .s_comp(la ,fraude fiscale) }",,10,2,sujet,,F,S
 8,,,{ .etre } élu{ .sujet.es } Président{ .sujet.es } de la République( française)? face { .objet.coi_explicite },{ .sujet.comp(l’élection) } à la tête du pays { .objet.coi_explicite },,10,3,,,F,S
-9,,,{ .etre } élu{ .sujet.es } à la tête de l’État { .objet.coi_explicite },{ .sujet.comp(l’élection) } à la tête de l’État { .objet.coi_explicite },,10,3,,,F,S
+9,,,{ .etre } élu{ .sujet.es } à la tête de l’État face { .objet.coi_explicite },{ .sujet.comp(l’élection) } à la tête de l’État { .objet.coi_explicite },,10,3,,,F,S
 10,,,"{ .est(devenu{ .sujet.gn(,e,s,es) },devenir,deviens,deviens,devient,devenons,devenez,deviennent) } { .sujet.le } nouve{ .sujet.gn(au,lle,aux,lles) } Président{ .sujet.es } de la République( française)? { .objet.coi_explicite }",{ .sujet.comp(l’élection) } à la tête du pays { .objet.coi_explicite },,10,3,,,F,S
 13,,,{ .etre } placé{ .sujet.es } en garde à vue,{ .sujet.comp(le placement) } en garde à vue,{ .pour_motif },10,4,,sujet,M,S
 14,,,"{ .etre } arrêté{ .sujet.es } pour { .info.motif.val(temps: infinitif_passe, coupable: { action14sujet ||= .sujet } action14sujet) }",{ .sujet.comp(l’arrestation) },,10,4,,sujet,F,S
