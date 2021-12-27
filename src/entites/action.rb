@@ -201,6 +201,7 @@ class Action < Rosace::Entity
 	# @param p1 [String, nil] Première personne du pluriel
 	# @param p2 [String, nil] Deuxième personne du pluriel
 	# @param p3 [String, nil] Troisième personne du pluriel
+	# @param adverbe [String, nil] Adverbe
 	# @return [String] Verbe conjugué selon le temps de l'action
 	def verbe(auxiliaire,
 			  participe,
@@ -210,17 +211,20 @@ class Action < Rosace::Entity
 			  s3 = nil,
 			  p1 = nil,
 			  p2 = nil,
-			  p3 = nil)
+			  p3 = nil,
+			  adverbe = nil)
 		unless ["être", "avoir"].include?(auxiliaire)
 			raise Rosace::EvaluationException,
 					"Action[#{id}]: #{auxiliaire} n'est pas un auxiliaire"
 		end
 		passe = if auxiliaire == "avoir"
-			sujet.a + " " + participe
+			sujet.a + " " + (adverbe ? adverbe + " " : "") + participe
 		else
-			sujet.est + " " + participe
+			sujet.est + " " + (adverbe ? adverbe + " " : "") + participe
 		end
-		infinitif_passe = "#{auxiliaire} #{participe}"
+		infinitif_passe = "#{auxiliaire} #{participe}" + (adverbe ?
+				" " + adverbe :
+				"")
 		simple = sujet.pn(
 			s1 || passe,
 			s2 || passe,
@@ -228,12 +232,12 @@ class Action < Rosace::Entity
 			p1 || passe,
 			p2 || passe,
 			p3 || passe
-		)
+		) + (adverbe ? " " + adverbe : "")
 		case temps
 		when :passe
 			passe
 		when :infinitif
-			infinitif
+			infinitif + (adverbe ? " " + adverbe : "")
 		when :infinitif_passe
 			infinitif_passe
 		else
