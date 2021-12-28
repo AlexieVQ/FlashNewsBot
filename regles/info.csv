@@ -153,3 +153,14 @@ id,description,commun,weight,hashtag,emoji,acteurs,categories,temporalite,coupab
 1042,lance un mouvement politique,{ .objet = .acteur; .bord = s(Gauche|Droite) },10,{ .bord }Avec{ .objet.pascal_case },,pers,politique,present,,
 1043,pays annexe pays,"{ .objet = Lieu(pays,region) }",10,{ .objet.pascal_case }Annexion,,pays,,proche,,
 1044,pays envahit pays,"{ .objet = Lieu(pays,region) }",10,{ .sujet.pascal_case }VS{ .objet.pascal_case },,pays,,proche,,
+1045,"moquée, ridiculisée",,10,,,pers,internet,proche,,
+1046,appelle à voter pour … pour faire barrage à …,{ .acteur1 = .acteur; .objet = .acteur },10,{ .acteur1.pascal_case }2022,🗳️,pers parti,politique,present,,
+1047,est en cavale,,10,,,pers,,present,sujet,
+1048,exclu d’un parti,"{ .objet = Orga(parti,syndicat) }",10,,,pers,politique,proche,sujet,
+1049,lance sa crypto,{ .crypto = s({ .sujet.pascal_case }Coin) },10,{ .crypto },🪙,pers pays,,proche,,
+1050,crée une secte,,10,,,pers,,proche,,
+1051,proclame la commune de ville,{ .lieu = Lieu(ville) },10,"Commune{ v = .lieu.pascal_case; voy({ v },D{ v },De{ v }) }",,pers parti syndicat,politique gauche ext_gauche,present,,
+1052,a été mis au coin,,10,{ .sujet.pascal_case }AuCoin,,pers,,proche,sujet,
+1053,propose d’imprimer plus de billets,,10,,💵,pers pays parti,politique,present,,
+1054,a ratio,{ .objet = .acteur },10,Ratio,,pers,,proche,objet,sujet
+1055,s’est fait ratio,{ .objet = .acteur },10,Ratio,,pers,,proche,sujet,objet

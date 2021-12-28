@@ -281,7 +281,7 @@ id,commun,sujet_perso,verbale,nominale,part_motif,adverbe_neg,weight,info,coupab
 1048,,{ .info.lieu.comp(des (habitants|riverains)) },se plaignent { `.dequoi ||= s(de la dégradation de|des travaux dans|des dégradations dans|de l’état déplorable de|du “saccage” de)` } leur ville,"l’exaspération ({ .info.lieu.comp(des habitants) }|des { .info.lieu.adj(M,P) }) face (à la dégradation|au “saccage”) de leur ville",,,10,1028,,,F,S
 1049,,,{ .est() }woke{ .sujet.s },"{ .s_comp(le ,wokisme) }",,,10,,sujet,,M,S
 1050,,,"{ .a(incarné,incarner,incarnerai,incarneras,incarnera,incarnerons,incarnerez,incarneront) } le prochain James Bond",{ .s(l’) }incarnation du prochain James Bond{ .s( par { .sujet.tonique }) },,,10,1029,,,F,S
-1051,,,"{ .objet.cod({ .a(ratio,ratio) }) }",{ .objet.comp({ .s(le ) }ratio) }{ .s( par { .sujet.tonique }) },,,10,,sujet,objet,M,S
+1051,,,"{ .objet.cod({ .a(ratio,ratio) }) }",{ .objet.comp({ .s(le ) }ratio) }{ .s( par { .sujet.tonique }) },{ .parce_que_motif },,10,1054,sujet,objet,M,S
 1052,,,"{ .a(annoncé,annoncer,annonce,annonces,annonce,annonçons,annoncez,annoncent) } Vatican 3",{ .s(l’) }annonce de Vatican 3{ .s(par { .sujet.tonique }) },,,10,1030,sujet,,F,S
 1053,,,"{ .a(annoncé,annoncer,annonce,annonces,annonce,annonçons,annoncez,annoncent) } { .sujet.comp_implicite(la présence) } sur { Pers[1105].comp(la {h}ZiziCacaMixtape) }",{ .sujet.comp(la présence) } sur la {h}ZiziCacaMixtape,,,10,1031,,,F,S
 1054,,,"{ .a(confirmé,confirmer,confirme,confirmes,confirme,confirmons,confirmez,confirment) } { .sujet.comp_implicite(la présence) } sur { Pers[1105].comp(la {h}ZiziCacaMixtape) }",{ .sujet.comp(la présence) } sur la {h}ZiziCacaMixtape,,,10,1031,,,F,S
@@ -309,3 +309,24 @@ id,commun,sujet_perso,verbale,nominale,part_motif,adverbe_neg,weight,info,coupab
 1076,{ .mouv = s(La { .info.bord } avec { .objet.nom }) },,"{ .a(lancé,lancer,lance,lances,lance,lançons,lancez,lancent) } le mouvement “{ .mouv }”",{ .s(le ) }lancement du mouvement “{ .mouv }”{ .s( par { .sujet.tonique }) },,,10,1042,,,M,S
 1077,,,"{ .objet.cod({ .a(annexé,annexer,annexe,annexes,annexe,annexons,annexez,annexent) }) }",{ .objet.comp({ .s(l’) }annexion) }{ .s( par { .sujet.tonique }) },,,10,1043,sujet,objet,F,S
 1078,,,"{ .objet.cod({ .a(envahi,envahir,envahis,envahis,envahit,envahissons,envahissez,envahissent) }) }",{ .objet.comp({ .s(l’) }invasion) }{ .s( par { .sujet.tonique }) },,,10,1044,sujet,objet,F,S
+1079,,,"{ .etre } moqué{ .sujet.es }, ridiculisé{ .sujet.es } sur les réseaux simplement parce { que({ .sujet.sujet_implicite({ .sujet.etait }) }) } con{ .sujet.gn(,ne,s,nes) }","{ .s_comp(le ,harcèlement) }",,,10,1045,,sujet,M,S
+1080,,,{ .a(pété et chié) },"{ .s_comp(les ,pets) } et { .s_comp(la ,merde) }",,,10,,sujet,,M,P
+1081,,,"{ .a(volé,voler,vole,voles,vole,volons,volez,volent) } { .objet.comp(la plus-value) }",{ .s(le ) }vol de { .objet.comp(la plus-value) }{ .s( par { .sujet.tonique }) },,,10,,sujet,objet,M,S
+1082,,,"{ .a(appelé,appeler,appelle,appelles,appelle,appelons,appelez,appellent) } à voter { .acteur1.vocatif } pour { .objet.coi(faire barrage) }","{ .s_comp(l’,appel) } à voter { .acteur1.vocatif } pour { .objet.coi(faire barrage) }",,,10,1046,sujet,objet,M,S
+1083,,,{ .etre } en cavale,"{ .s_comp(la ,cavale) }","après { .info.motif.val(forme: (verbale|nominale), temps: infinitif_passe, coupable: { action1083sujet = .sujet } action1083sujet, mettre_sujet: true) }",,10,1047,,,F,S
+1084,"{ .lieu = Lieu; .de = rand(1950,1985); .to = rand(1986,2020) }",,"{ .lieu.loc({ .a(commis,commettre,commets,commets,commet,commettons,commettez,commettent) } de nombreux crimes) } entre { .de } à { .to }",de nombreux crimes commis{ .s( par { .sujet.tonique }) } { .lieu.loc_explicite } entre { .de } et { .to },,,10,,sujet,,M,P
+1085,,,"{ .a(fumé,fumer,fume,fumes,fume,fumons,fumez,fument) } un joint","{ .s_comp(la ,consommation de joint) }",,,10,,sujet,,F,S
+1086,,,"{ .a(utilisé,utiliser,utilise,utilises,utilise,utilisons,utilisez,utilisent) } l’écriture inclusive",{ .s(l’) }utilisation de l’écriture inclusive{ .s( par { .sujet.tonique }) },,,10,,sujet,,F,S
+1087,,,"{ .objet.cod({ .a(cité,citer,cite,cites,cite,citons,citez,citent) }) } en privé",{ .objet.comp({ .s(la ) }citation) }{ .s( par { .sujet.tonique }) } en privé,,,10,,sujet,objet,F,S
+1088,{ .philippe = Pers[48] },,"{ .sujet.se({ .est(moqué,moquer,moque,moques,moque,moquons,moquez,moquent) }) } de { .philippe.comp(la barge) }","{ .s_comp(la ,moquerie) } envers { .philippe.comp(la barbe) }",,,10,,sujet,,F,S
+1089,,,"{ .sujet.se({ .est(moqué,moquer,moque,moques,moque,moquons,moquez,moquent) }) } de { .objet.comp(la calvitie) }","{ .s_comp(la ,moquerie) } envers { .objet.comp(la calvitie) }",,,10,,sujet,objet,F,S
+1090,,,{ .etre } exclu{ .sujet.es } { .objet.comp_explicite },"{ .s_comp(l’,exclusion) } { .objet.comp_explicite }",,,10,1048,,sujet,F,S
+1091,,,"{ .a(niqué,niquer,nique,niques,nique,niquons,niquez,niquent) } { .objet.comp(la femme) }","{ .s_comp(l’,aventure) } avec { .objet.comp(la femme) }",,,10,,sujet,objet,F,S
+1092,,,"{ .a(lancé,lancer,lance,lances,lance,lançons,lancez,lancent) } ({ .sujet.comp_implicite(la cryptomonnaie) }|{ voy({ .info.crypto },l’{ .info.crypto },le { .info.crypto }) })",{ .s(le ) }lancement de { .sujet.comp(la cryptomonnaie) },,,10,1049,,,M,S
+1093,,,"{ .a(créé,créer,crée,crées,crée,créons,créez,créent) } une communauté aux atours de secte",{ .s(la ) }création d’une secte{ .s( par { .sujet.tonique }) },,,10,1050,sujet,,F,S
+1094,,,"{ .a(proclamé,proclamer,proclame,proclames,proclame,proclamons,proclamez,proclament) } la commune { .info.lieu.comp_explicite }",{ .s(la ) }proclamation de la commune { .info.lieu.comp_explicite }{ .s( par { .sujet.tonique }) },,,10,1051,sujet,,F,S
+1095,,,"{ .objet.coi({ .a(fait,faire,fais,fais,fait,faisons,faisez,font) } un rond avec les doigts) }","{ .s_comp(le ,rond avec les doigts) } { .objet.coi_explicite }",,,10,,sujet,objet,M,S
+1096,,,{ .etre } mis{ .sujet.es } au coin,"{ .s_comp(la ,mise au coin) }",,,10,1052,,sujet,F,S
+1097,,,"{ .a(décidé,décider,décide,décides,décide,décidons,décidez,décident) } d’imprimer plus de billets","{ .s_comp(la ,décision) } d’imprimer plus de billets",,,10,1053,,,F,S
+1098,,,"{ .a(imprimé,imprimer,imprime,imprimes,imprime,imprimons,imprimez,impriment) } plus de billets",{ .s(l’) }impression de plus de billets{ .s( par { .sujet.tonique }) },,,10,1053,,,F,S
+1099,,,"{ .sujet.se({ .est(fait{ .sujet.es },faire,fais,fais,fait,faisons,faisez,font) } ratio) }",{ .sujet.comp(le ratio) } par { .objet.tonique },{ .pour_motif },,10,1055,objet,sujet,M,S
