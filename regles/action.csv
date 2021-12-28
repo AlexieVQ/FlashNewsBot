@@ -330,3 +330,7 @@ id,commun,sujet_perso,verbale,nominale,part_motif,adverbe_neg,weight,info,coupab
 1097,,,"{ .a(décidé,décider,décide,décides,décide,décidons,décidez,décident) } d’imprimer plus de billets","{ .s_comp(la ,décision) } d’imprimer plus de billets",,,10,1053,,,F,S
 1098,,,"{ .a(imprimé,imprimer,imprime,imprimes,imprime,imprimons,imprimez,impriment) } plus de billets",{ .s(l’) }impression de plus de billets{ .s( par { .sujet.tonique }) },,,10,1053,,,F,S
 1099,,,"{ .sujet.se({ .est(fait{ .sujet.es },faire,fais,fais,fait,faisons,faisez,font) } ratio) }",{ .sujet.comp(le ratio) } par { .objet.tonique },{ .pour_motif },,10,1055,objet,sujet,M,S
+1100,,,"{ .a(fait,faire,fais,fais,fait,faisons,faites,font,trop) } des expériences scientifiques non-réglementaires sur { .objet.tonique }",{ .s(la ) }réalisation d’expériences scientifiques{ .s( par { .sujet.tonique }) } sur { .objet.tonique },,,10,,sujet,objet,F,S
+1101,,,"{ .a(mis,mettre,mets,mets,met,mettons,mettez,mettent) } de la crème dans la carbonara",{ .s(l’) }ajout de crème dans la carbonara{ .s( par { .sujet.tonique }) },,,10,,sujet,,M,S
+1102,,,"{ .a(coupé,couper,coupe,coupes,coupe,coupons,coupez,coupent) } ses spaghetti","{ .s({ .sujet.comp(l’habitude) } à couper les,coupage de) } spaghetti",,,10,,sujet,,F,S
+1103,,,"{ .a(fait,faire,fais,fais,fait,faisons,faites,font,trop) } partie de la mafia bretonne","{ .s_comp(l’,appartenance) } à la mafia bretonne",,,10,,sujet,,F,S

@@ -498,3 +498,7 @@ id,commun,nom,pascal_case,weight,genre,nombre,qte,categories,origine,cw
 1165,{ .pays = Lieu(pays) },"les espions { .pays.adj(M,P) }",Espions{ .pays.pascal_case },10,M,P,1000,politique,,
 1166,,Alec Baldwin,AlecBaldwin,10,M,S,1,culture cinema,3,
 1167,,un chasseur,Chasseur,10,M,S,1,anonyme,,
+1168,,un bot,Bot,10,M,S,1,non_humain internet,,
+1169,,la majorité,Majorité,10,F,S,347,politique centre droite,1,
+1170,,l’opposition,Opposition,10,F,S,201,politique gauche droite,1,
+1171,,la mafia bretonne,MafiaBretonne,10,F,S,1000,,109,
