@@ -144,3 +144,12 @@ id,description,commun,weight,hashtag,emoji,acteurs,categories,temporalite,coupab
 1033,coupe ses relations diplomatiques,{ .objet = .acteur },10,{ .sujet.pascal_case }VS{ .objet.pascal_case },,pays,politique,present,objet,sujet
 1034,a déménagé dans un paradis fiscal,{ .lieu = Lieu(paradis_fiscal) },10,{ .lieu.pascal_case },,pers,,proche,,
 1035,refuse de se faire vacciner,,10,{ .sujet.pascal_case }Antivaxx,💉,pers,,present,,
+1036,entre au musée grévin,,10,{ .sujet.pascal_case }AuMuséeGrévin,,pers,,proche,,
+1037,ne reconnaît pas le résultat des élections,{ .lieu = Lieu(pays) },10,,,pers parti,politique,present,,
+1038,en tête dans les sondages,{ .lieu = Lieu[1] },10,{ .sujet.pascal_case }2022,📊,pers parti,politique,present,,
+1039,fait son retour sur le devant de la scène,,10,,,pers,,present,,
+1040,est toujours en vie,,1,,,pers,,present,,
+1041,sort romain policier,{ .qui = s(le Policier|le Jardinier|le Cuisinier|le Charcutier|le Boulanger|{ Pers.nom }) },10,,📖,pers,culture litterature,present,,
+1042,lance un mouvement politique,{ .objet = .acteur; .bord = s(Gauche|Droite) },10,{ .bord }Avec{ .objet.pascal_case },,pers,politique,present,,
+1043,pays annexe pays,"{ .objet = Lieu(pays,region) }",10,{ .objet.pascal_case }Annexion,,pays,,proche,,
+1044,pays envahit pays,"{ .objet = Lieu(pays,region) }",10,{ .sujet.pascal_case }VS{ .objet.pascal_case },,pays,,proche,,

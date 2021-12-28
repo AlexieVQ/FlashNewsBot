@@ -289,3 +289,23 @@ id,commun,sujet_perso,verbale,nominale,part_motif,adverbe_neg,weight,info,coupab
 1056,,,"{ .a(coupé,couper,coupe,coupes,coupe,coupons,coupez,coupent) } { .info.lieu.comp_implicite(les relations diplomatiques) } avec { .objet.tonique }","{ .s(l’) }arrêt { .s_comp(,des relations diplomatiques) } avec { .objet.tonique }",{ .parce_que_motif },,10,1033,sujet,objet,M,S
 1057,,,"{ .a(annulé,annuler,annule,annules,annule,annulons,annulez,annulent) } un contrat de vente de sous-marins avec { .objet.tonique }","{ .s(l’) }annulation { .s_comp(,du contrat de vente de sous-marins) } avec { .objet.motif }",,,10,,sujet,objet,F,S
 1058,,,"{ .info.lieu.loc({ .a(déménagé,déménager,déménage,déménages,déménage,déménageons,déménagez,déménagent) }) }","{ .s_comp(le ,déménagement) } { .info.lieu.loc_explicite }",,,10,1034,sujet,,M,S
+1059,,,"{ .est(entré{ .sujet.es },entrer,entre,entres,entre,entrons,entrez,entrent) } au Musée Grévin","{ .s_comp(l’,entrée) } au Musée Grévin",,,10,1036,,,F,S
+1060,,,"{ .a(pris,prendre,prends,prends,prend,prenons,prenez,prennent) } de douche","{ .s_comp(l’,absence d’hygiène) }",,pas,10,,sujet,,F,S
+1061,,,{ .etre } cringe{ .sujet.es },"{ .s_comp(le ,comportement cringe) }",,,10,,sujet,,M,S
+1062,,,{ .etre } antivaxx,"{ .s_comp(la ,position antivaxx) }",,,10,,sujet,,F,S
+1063,,,"{ .a(reconnu,reconnaître,reconnais,reconnais,reconnaît,reconnaissons,reconnaissez,reconnaissent) } les résultats des élections { .info.lieu.adj(F,P) }","{ .s(la ) }non-reconnaissance des résultats des élections { .info.lieu.adj(F,P) }{ .s( par { .sujet.tonique }) }",,pas,10,1037,sujet,,F,S
+1064,,,"{ .a(refusé,refuser,refuse,refuses,refuse,refusons,refusez,refusent) } de reconnaître les résultats des élections { .info.lieu.adj(F,P) }","{ .s_comp(le ,refus) } de reconnaître le résultat des élections { .info.lieu.adj(F,P) }",,,10,1037,sujet,,M,S
+1065,,,"{ .etre } { .sujet.gn(un,une,des,des) } trotskyste{ .sujet.s } infiltré{ .sujet.es }","{ .s_comp(le ,trotskysme) }",,,10,,sujet,,M,S
+1066,,,{ .etre } en tête dans les sondages devant { `.acteur2 ||= .info.acteur`.tonique } et { `.acteur3 ||= .info.acteur`.tonique },"{ .s_comp(l’,avance) } dans les sondages",,,10,1038,,,F,S
+1067,{ .objet ||= .info.acteur },,{ .etre } en tête dans les sondages devant { .objet.tonique },"{ .s_comp(l’,avance) } dans les sondages devant { .objet.tonique }",,,10,1038,sujet,objet,F,S
+1068,,,"{ .a(commis,commettre,commets,commets,commet,commettons,commettez,commettent) } un outrage à agent","{ .s_comp(l’,outrage à agent) }",,,10,,sujet,,M,S
+1069,,,{ .avoir } un emploi fictif,"{ .s_comp(l’,emploi fictif) }",,,10,,sujet,,M,S
+1070,,,"{ .a(fait,faire,fais,fais,fait,faisons,faites,font,trop) } { .sujet.comp_implicite(le retour) } sur le devant de la scène","{ .s_comp(le ,retour sur le devant de la scène) }",,,10,1039,,,M,S
+1071,,,"{ .a(subi,subir,subis,subis,subit,subissons,subissez,subissent) } un ratio","{ .s_comp(le ,ratio) }",,,10,,,sujet,M,S
+1072,,,"{ .a(subi,subir,subis,subis,subit,subissons,subissez,subissent) } { .objet.comp(un ratio) }",{ .objet.comp(le ratio) } subi par { .sujet.tonique },,,10,,objet,sujet,M,S
+1073,,,"{ .a(dit,dire,dis,dis,dit,disons,dites,disent) } que la police tuait","{ .s_comp(la ,déclaration que la police tuait) }",,,10,,sujet,,F,S
+1074,,,{ .etre } toujours en vie,"{ .s_comp(l’,existence) }",,,10,1040,,,F,S
+1075,,,"{ .a(sorti,sortir,sors,sors,sort,sortons,sortez,sortent) } un roman policier intitulé “En Fait C’était { .info.qui }”",{ .sujet.comp(le nouveau roman policier) } intitulé “En Fait C’était { .info.qui }”,,,10,1041,,,M,S
+1076,{ .mouv = s(La { .info.bord } avec { .objet.nom }) },,"{ .a(lancé,lancer,lance,lances,lance,lançons,lancez,lancent) } le mouvement “{ .mouv }”",{ .s(le ) }lancement du mouvement “{ .mouv }”{ .s( par { .sujet.tonique }) },,,10,1042,,,M,S
+1077,,,"{ .objet.cod({ .a(annexé,annexer,annexe,annexes,annexe,annexons,annexez,annexent) }) }",{ .objet.comp({ .s(l’) }annexion) }{ .s( par { .sujet.tonique }) },,,10,1043,sujet,objet,F,S
+1078,,,"{ .objet.cod({ .a(envahi,envahir,envahis,envahis,envahit,envahissons,envahissez,envahissent) }) }",{ .objet.comp({ .s(l’) }invasion) }{ .s( par { .sujet.tonique }) },,,10,1044,sujet,objet,F,S

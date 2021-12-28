@@ -34,3 +34,6 @@ id,value,weight,ref_info,sujet,objet,pers
 1007,"Imagine-ton { `degaulle = new_acteur(le général De Gaulle)`.nom } { .info.motif.val(victime: degaulle, temps: infinitif, personne_victime: { personne_objet }) } ?",10,,victime,,
 1008,"{ .sujet.n(Je n’ai,Nous n’avons) } jamais eu de compte{ .sujet.s } { .info.loc_explicite } { .sujet.n(je vous le dis,nous vous le disons) } les yeux dans les yeux",10,72,objet,,
 1009,{ .objet.tonique } aussi { decla1009sujet = .sujet; decla1009objet = .objet; .info.motif.val(coupable: decla1009objet; victime: decla1009sujet; temps: passe; personne_coupable: { .personne_objet }) },10,,coupable,victime,
+1010,"{ .sujet.n(Je vais,Nous allons) } devenir le Joker",10,,coupable,,
+1011,C’est sad,10,,tierce,victime,
+1012,"Mais { .sujet.n(je suis,nous sommes) } neurodivergeant{ .sujet.es } et mineur{ .sujet.es }",10,,coupable,,
