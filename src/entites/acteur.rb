@@ -566,4 +566,12 @@ module Acteur
 		self
 	end
 
+	# Retourne un des objets donnés si l'acteur a déjà été cité, ou non.
+	# @param alors Objet à retourner si l'acteur a déjà été cité
+	# @param sinon Objet à retourner si l'acteur n'a pas été cité
+	# @return +alors+ ou +sinon+
+	def si_implicite(alors, sinon)
+		self.implicite? ? alors : sinon
+	end
+
 end
