@@ -82,6 +82,15 @@ GENERATEUR = Rosace::Generator.new(
 				a = acteur.context.variable(acteur.value).gn(ms, fs, mp, fp)
 			end,
 			:concurrent
+		),
+		Rosace::Function.new(
+			:rand,
+			->(de, a) do
+				Rosace::ContextualValue.new(
+					rand(de.value.to_i..a.value.to_i).to_s,
+					de.context
+				)
+			end
 		)
 	]
 )

@@ -688,3 +688,35 @@ id,value,weight,pers
 1147,l’attaquant du (PSG|Paris Saint-Germain),10,1091
 1148,le footballer,10,1092
 1149,le meneur de l’(OM|Olympique de Marseille),10,1092
+1150,le chanteur,10,1093
+1151,la chanteur contestataire,10,1093
+1152,le philosophe,10,1094
+1153,le philosophe spinoziste,10,1094
+1154,l’économiste,10,1095
+1155,l’économiste marixiste,10,1095
+1156,l’économiste,10,1096
+1157,l’humoriste,10,1097
+1158,l’humoriste de France Inter,10,1097
+1159,le streameur,10,1098
+1160,le CEO de la KCorp,10,1098
+1161,l’ancien Premier Ministre,10,1099
+1162,le comédien,10,1100
+1163,le comédien,10,1101
+1164,le youtubeur musical,10,1102
+1165,le youtubeur belge,10,1102
+1166,{ Pers[1103].comp(le rappeur) },10,1102
+1167,les chanteurs roumains( franco-belges)?,10,1103
+1168,le youtubeur musical,10,1104
+1169,les youtubeurs musicaux,10,1105
+1170,les internautes,10,1106
+1171,le plombier de métal,10,1107
+1172,{ .pers.acteur1.surnom } de métal,10,1108
+1173,le cinéaste,10,1109
+1174,l’humoriste,10,1110
+1175,le journaliste,10,1111
+1176,la poupée,10,1112
+1177,les Français interrogés,10,1113
+1178,les potes,10,1114
+1179,les chanteurs coréens,10,1115
+1180,les chanteuses coréennes,10,1116
+1181,la girafe en caoutchouc,10,1117
