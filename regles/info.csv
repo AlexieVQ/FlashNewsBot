@@ -134,3 +134,5 @@ id,description,commun,weight,hashtag,emoji,acteurs,categories,temporalite,coupab
 1023,interdit les pronoms,,10,Pronoms,,pers pays parti,politique,proche,,
 1024,se lance dans les NFT,,10,NFT,,pers,culture,proche,,
 1025,achète un NFT,{ .somme = s(1 ($)?ETH \(3600 €\)|5 ($)?ETH \(18 000 €\)|10 ($)?ETH \(36 000 €\)|20 ($)?ETH \(72 000 €\)|50 ($)?ETH \(180 000 €\)); .objet = .acteur },,,,pers,culture,proche,,
+1026,trouve objet suspect,{ .objet = .acteur },10,{ .sujet.pascal_case }IsSus|AmongUs,,pers,jeu_video,present,objet,
+1027,a déboulonné une statue de,{ .objet = Pers },10,({ .sujet.pascal_case })?Déboulonnage,,pers pays parti region,politique,proche,objet,

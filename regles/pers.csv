@@ -418,3 +418,8 @@ id,commun,nom,pascal_case,weight,genre,nombre,qte,categories,origine,cw
 1085,,le prolétariat,Prolétariat,10,M,S,1000,anonyme gauche ext_gauche,,
 1086,,les pauvres,LesPauvres,10,M,P,1000,anonyme gauche ext_gauche,,
 1087,,Selena Gomez,SelenaGomez,10,F,S,1,culture musique serie cinema,3,
+1088,,Valérie Boyer,ValérieBoyer,5,F,S,1,politique droite,1,
+1089,,Thomas Pesquet,ThomasPesquet,10,M,S,1,,1,
+1090,,Mimie Mathy,MimieMathy,10,F,S,1,tv culture serie,1,
+1091,,Lionel Messi,(Lionel|Leo)?Messi,10,M,S,1,sport foot,,
+1092,,Dimitri Payet,(Dimitri)?Payet,10,M,S,1,sport foot,1,

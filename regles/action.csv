@@ -127,7 +127,7 @@ id,commun,sujet_perso,verbale,nominale,part_motif,adverbe_neg,weight,info,coupab
 315,,,{ .etre } porté{ .sujet.es } disparu{ .sujet.es },{ .sujet.comp(la disparition) },,,10,145,,sujet,F,S
 320,,,"{ .a(mangé,manger,mange,manges,mange,mangeons,mangez,mangent) } tout le sable de Metz Plage",{ .s(la ) }consommation du sable de Metz Plage{ .s( par { .sujet.tonique }) },,,10,,sujet,,F,S
 322,,,"{ .objet.coi({ .a(fait,faire,fais,fais,fait,faisons,faisez,font) } un don { .info.somme }euros) }","{ .s_comp(le ,don { .info.somme }euros) } { .objet.coi_explicite }",,,10,150,sujet,,M,S
-323,,,{ .etre } mis{ .sujet.es } en examen,"{ .s_comp(la ,mise en examen) }",{ .pour_motif }|{ .dans_le_cadre_de_motif },,10,151,sujet,,F,S
+323,,,"{ .etre } mis{ .sujet.gn(,e,,es) } en examen","{ .s_comp(la ,mise en examen) }",{ .pour_motif }|{ .dans_le_cadre_de_motif },,10,151,sujet,,F,S
 324,{ .objet ||= .info.acteur },,{ .etre } cancelled par { .objet.tonique },{ .sujet.comp(le call-out) } par { .objet.tonique },{ .pour_motif },,10,152,objet,sujet,M,S
 325,,,"{ .objet.cod({ .a(call-out,dénoncer) }) }","{ .s({ .objet.comp(le call-out) } par { .sujet.tonique },call-out { .objet.comp_explicite }) }",{ .pour_motif_nominal }|{ .parce_que_motif },,10,153,sujet,objet,M,S
 330,,,"{ .a(lancé,lancer,lance,lances,lance,lançons,lancez,lancent) } une cagnotte pour { .objet.cod(libérer) }",{ .sujet.comp(la cagnotte) } en soutien { .objet.coi_explicite },"qui { .info.motif.val(victime: { action330objet = .objet } action330objet, temps: (simple|passe), mettre_sujet: false) }",,10,157,,,F,S
@@ -272,3 +272,9 @@ id,commun,sujet_perso,verbale,nominale,part_motif,adverbe_neg,weight,info,coupab
 1039,,,"{ .a(publié,publier,publie,publies,publie,publions,publiez,publient) } { .sujet.comp_implicite(le premier { h }NFT) }","{ .s_comp(le ,lancement) } dans les { h }NFT",,,10,1024,sujet,,M,S
 1040,,,"{ .sujet.se({ .est(lancé{ .sujet.es },lancer,lance,lances,lance,lançons,lancez,lancent) }) } dans les { h }NFT","{ .s_comp(le ,lancement) } dans les { h }NFT",,,10,1024,sujet,,M,S
 1041,,,"{ .objet.coi({ .a(acheté,acheter,achète,achètes,achète,achetons,achetez,achètent) } un { h }NFT pour { .info.somme }) }",{ .s(l’) }achat d’un { h }NFT pour { .info.somme } { .objet.coi_explicite }{ .s( par { .sujet.tonique }) },,,10,1025,,,M,S
+1042,,,"{ .objet.cod({ .a(trouvé,trouver,trouve,trouves,trouve,trouvons,trouvez,trouvent) }) } (suspect{ .sujet.es }|“sus”)","{ .s_comp(la ,suspicion) } envers { .objet.tonique }",{ .parce_que_motif },,10,1026,,,F,S
+1043,{ .ou = s(( dans Among Us)?) },,{ .sujet.a(vent) }{ .ou },"{ .s_comp(la ,vent) }{ .ou }",,,10,,sujet,,F,S
+1044,,{ .sujet.comp(le pass sanitaire) },est invalide,{ .s(l’) }invalidité { .sujet.comp(du pass sanitaire{ .sujet.s }) },,,5,,sujet,,F,S
+1045,,{ .sujet.comp(le pass sanitaire) },est falsifié,{ .s(la ) }falsification { .sujet.comp(du pass sanitaire{ .sujet.s }) },,,5,,sujet,,F,S
+1046,,,"{ .a(déboulonné,déboulonner,déboulonne,déboulonnes,déboulonne,déboulonnons,déboulonnez,déboulonnent) } { .objet.comp(la statue) }",{ .s(le ) }déboulonnage de { .objet.comp(la statue) }{ .s( par { .sujet.tonique }) },{ .parce_que_motif },,10,1027,sujet,objet,M,S
+1047,,,"{ .a(décidé,décider,décide,décides,décide,décidons,décidez,décident) } de déboulonner { .objet.comp(la statue) }",{ .sujet.comp(la décision) } de déboulonner { .objet.comp(la statue) },,,10,1027,sujet,objet,F,S
