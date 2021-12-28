@@ -21,7 +21,6 @@ class Info < Rosace::Entity
 		:entreprise,
 		:parti,
 		:syndicat,
-		:association,
 		:media
 	]
 
@@ -226,8 +225,6 @@ class Info < Rosace::Entity
 			context.pick_entity(:Orga, "parti")
 		when :syndicat
 			context.pick_entity(:Orga, "syndicat")
-		when :association
-			context.pick_entity(:Orga, "association")
 		when :media
 			context.pick_entity(:Media)
 		else

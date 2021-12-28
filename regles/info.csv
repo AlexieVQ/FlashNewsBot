@@ -11,7 +11,7 @@ id,description,commun,weight,hashtag,emoji,acteurs,categories,temporalite,coupab
 15,dissout l’Assemblée Nationale,,10,,,pers,politique,proche,,
 16,annonce un album,{ .objet = .acteur },10,,💿,pers,culture musique,proche,,
 21,candidat à l’élection présidentielle,{ .lieu = Lieu[1] },10,{ .sujet.pascal_case }2022,,pers,politique,present,,
-27,poursuit en justice,{ .objet = .acteur },10,,,pers entreprise parti syndicat association media,,present,objet,sujet
+27,poursuit en justice,{ .objet = .acteur },10,,,pers entreprise parti syndicat media,,present,objet,sujet
 29,aurait été aperçu,{ .circo = s(| dans le ciel| d’après des témoins anonymes) },1,Paranormal,,pers,,present,,
 30,aperçu en train de se droguer,,5,,🌿,pers,,proche,,
 31,aperçu en fursuit,,10,,🐺|🦊,pers,,proche,,
@@ -30,12 +30,12 @@ id,description,commun,weight,hashtag,emoji,acteurs,categories,temporalite,coupab
 52,pressenti pour être ministre,{ .lieu = Lieu[1] },10,,,pers,politique,present,,
 53,nommé ministre,{ .lieu = Lieu[1] },10,,,pers,politique,present,,
 55,avoue sa culpabilité,,30,,,pers,,proche,sujet,
-56,soutien objet,{ .objet = .acteur },10,,,pers entreprise pays region parti syndicat association,,present,,objet
+56,soutien objet,{ .objet = .acteur },10,,,pers entreprise pays region parti syndicat,,present,,objet
 58,est exécuté,,10,{ .sujet.pascal_case }Exécution,,pers,,futur,sujet,
 59,auditionné,,10,,,pers,politique,present,sujet,
 60,devient l’avocat de,{ .objet = Pers }|{ .objet = Entreprise }|{ .objet = Orga },10,,,pers,,present,objet,
 61,abandonne la défense de,{ .objet = Pers }|{ .objet = Entreprise }|{ .objet = Orga },10,,,pers,,present,objet,
-64,porte plainte contre,{ .objet = .acteur },50,,,pers entreprise parti syndicat association media,,present,objet,sujet
+64,porte plainte contre,{ .objet = .acteur },50,,,pers entreprise parti syndicat media,,present,objet,sujet
 65,bat objet aux élections,,10,,🗳️,pers parti,politique,present,,
 67,perquisition,,10,,,pers,politique,proche,sujet,
 68,candidat aux municipales,{ .lieu = Lieu(ville) },10,(Municipales)?({ .lieu.pascal_case })?,🗳️,pers,politique,present,,
@@ -51,7 +51,7 @@ id,description,commun,weight,hashtag,emoji,acteurs,categories,temporalite,coupab
 85,à l’affiche d’un festival,,10,,🎸|🎤,pers,culture musique,futur,,
 88,devient vegan,,10,Véganisme,🌱,pers,,present,,
 91,appelle à manifester,,10,,,pers parti syndicat,politique,present,,
-92,accuse objet,{ .objet = .acteur },10,JAccuse,,pers entreprise pays region parti syndicat association media,,present,objet,
+92,accuse objet,{ .objet = .acteur },10,JAccuse,,pers entreprise pays region parti syndicat media,,present,objet,
 93,épouse,{ .objet = .acteur },5,{ .sujet.pascal_case }X{ .objet.pascal_case },💒|👰,pers,,present,,
 99,accuse de fakes news,{ .objet = Media },10,,,pers parti media pays,politique,present,,
 100,bloque objet sur les réseaux,{ .objet = .acteur },10,{ .sujet.pascal_case }VS{ .objet.pascal_case },,pers pays,,present,objet,sujet
@@ -64,7 +64,7 @@ id,description,commun,weight,hashtag,emoji,acteurs,categories,temporalite,coupab
 112,rejoint parti,{ .objet = Orga(parti) },10,,,pers,politique,present,,
 113,interdit l’hétérosexualité,{ .ou = s(( sur la voix publique)?) },5,Hétérophobie,👫🚫,pers parti pays,politique,present,,
 126,se convertit,{ .a = s(au (techno-)?druidisme|au (turbo-)?chamanisme|au (néo-)?paganisme|à la wicca|à la sorcellerie) },1,"{ .sujet.gn(Sorcier|Wizard,Sorcière|Witch,Sorciers|Wizards,Sorcières|Witches); .sujet.pascal_case }",🧙,pers,,present,,
-127,saccage,{ .lieu = Lieu(ville) },10,Saccage{ .lieu.pascal_case },,pers parti syndicat association,politique,proche,,
+127,saccage,{ .lieu = Lieu(ville) },10,Saccage{ .lieu.pascal_case },,pers parti syndicat,politique,proche,,
 128,annonce qu’il votera une loi,"{ .loi = s(la loi { Pers.vocatif }|le pass vaccinal|la #Loi{ Pers.pascal_case }|la loi anti-{ Orga.adj(M,P) }|la réforme des retraites); .position = s(pour |contre |) }",10,,,pers parti,politique,present,,
 130,participera à RPDR,,10,(RuPauls)DragRace,,pers,tv,futur,,
 134,donne au ZEvent,{ .somme = s(10 |50 |500 |1000 |5000 |10 000 |20 000 |25 000 |40 000 |100 000 |1 million d’) },1,ZEvent,💚,pers entreprise,internet patronat,present,,
@@ -72,11 +72,11 @@ id,description,commun,weight,hashtag,emoji,acteurs,categories,temporalite,coupab
 140,devient le premier youtubeur,,2,{ .sujet.pascal_case }First,▶️,pers,internet videaste youtube,present,,
 142,devient parent,{ .de = s(d’un petit garçons|d’une petite fille|de jumeaux|de triplets) },10,"{ .sujet.gn(Papa,Maman,Parents,Mamans); .sujet.pascal_case }",👪,pers,,present,,
 145,porté disparu,,10,AlerteEnlèvement,🚨,pers,,present,,
-150,fait un don,"{ .objet = Orga(parti,association); .somme = s(de 2 |de 10|de 50 |de 100 |de 1000 |de 5000 |de 10 000 |de 50 000 |de 100 000 |d’1 million d’) }",10,{ .objet.pascal_case },,pers entreprise parti syndicat association media region,politique patronat,proche,,
+150,fait un don,"{ .objet = Orga(parti,association); .somme = s(de 2 |de 10|de 50 |de 100 |de 1000 |de 5000 |de 10 000 |de 50 000 |de 100 000 |d’1 million d’) }",10,{ .objet.pascal_case },,pers entreprise parti syndicat media region,politique patronat,proche,,
 151,mis en examen,,10,Affaire{ .sujet.pascal_case },,pers,politique,proche,sujet,
-152,a été cancelled,,10,{ .sujet.pascal_case }Is(Cancelled|Over)Party,,pers parti syndicat association pays region entreprise,,proche,sujet,
-153,call-out objet,{ .objet = .acteur },10,{ .objet.pascal_case }Is(Cancelled|Over)Party,,pers parti syndicat association pays region entreprise,,proche,objet,sujet
-157,lance une cagnotte,{ .objet = .acteur },10,Free{ .objet.pascal_case },,pers entreprise parti syndicat association region pays,,present,,objet
+152,a été cancelled,,10,{ .sujet.pascal_case }Is(Cancelled|Over)Party,,pers parti syndicat pays region entreprise,,proche,sujet,
+153,call-out objet,{ .objet = .acteur },10,{ .objet.pascal_case }Is(Cancelled|Over)Party,,pers parti syndicat pays region entreprise,,proche,objet,sujet
+157,lance une cagnotte,{ .objet = .acteur },10,Free{ .objet.pascal_case },,pers entreprise parti syndicat region pays,,present,,objet
 159,appelle à tirer à balles réelles,{ .objet = Pers },5,,,pers parti syndicat pays,politique,present,objet,sujet
 164,rejoint l’heure des pros,{ .objet = Pers[45] },5,HeureDesPros,,pers,media edito politique ext_droite,present,,
 165,rejoint l’équipe des grandes gueules,,5,GGRMC,,pers,media edito culture politique,present,,
@@ -112,7 +112,7 @@ id,description,commun,weight,hashtag,emoji,acteurs,categories,temporalite,coupab
 1001,interdit les plans à 3,,1,PlansÀ3,🚫,pers parti pays,politique,present,,
 1002,soupçonne objet d’être un agent de la CIA,{ .objet = Pers },5,CIA,,pers parti pays media,politique,present,,
 1003,reçoit le prix Nobel de la paix,,10,PrixNobel,,pers,politique,proche,,
-1004,suspendu sur Twitter,,10,TwitterBan,🐦,pers entreprise parti syndicat association media pays,,proche,sujet,
+1004,suspendu sur Twitter,,10,TwitterBan,🐦,pers entreprise parti syndicat media pays,,proche,sujet,
 1005,invite pour une vidéo YouTube,{ .objet = .acteur },10,{ .sujet.pascal_case }X{ .objet.pascal_case },▶️,pers,internet videaste youtube politique,present,,
 1006,décide de reformer les Daft Punk,{ .sujet = Pers(P) },10,DaftPunk(AreBack)?,💿|📀,,culture musique,present,,
 1007,quitte la famille royale britannique,{ .lieu = Lieu[4] },1,,,pers,politique,present,,
@@ -129,7 +129,7 @@ id,description,commun,weight,hashtag,emoji,acteurs,categories,temporalite,coupab
 1018,explose,,1,{ .sujet.pascal_case }Explosion,💥,pers entreprise parti pays region,,proche,,
 1019,a participé à des dîners clandestins,,5,DînersClandestins,,pers,politique culture,proche,,
 1020,est boycotté,{ .objet = Pers }|{ .objet = Orga }|{ .objet = Lieu(pays) },5,Boycott{ .sujet.pascal_case },,pers entreprise pays parti,politique,present,sujet,
-1021,boycott,{ .objet = Pers }|{ .objet = Entreprise }|{ .objet = Lieu(pays) }|{ .objet = Orga(parti) },5,Boycott{ .objet.pascal_case },,pers pays parti syndicat association,politique,present,objet,
+1021,boycott,{ .objet = Pers }|{ .objet = Entreprise }|{ .objet = Lieu(pays) }|{ .objet = Orga(parti) },5,Boycott{ .objet.pascal_case },,pers pays parti syndicat,politique,present,objet,
 1022,interdit l’écriture inclusive,,10,ÉcritureInclusive,,pers pays parti,politique,proche,,
 1023,interdit les pronoms,,10,Pronoms,,pers pays parti,politique,proche,,
 1024,se lance dans les NFT,,10,NFT,,pers,culture,proche,,
