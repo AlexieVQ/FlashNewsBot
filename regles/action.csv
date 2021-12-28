@@ -269,6 +269,6 @@ id,commun,sujet_perso,verbale,nominale,part_motif,adverbe_neg,weight,info,coupab
 1036,,,"{ .a(décidé,décider,décide,décides,décide,décidons,décidez,décident) } d’interdire l’écriture inclusive",{ .s(l’) }interdiction de l’écriture inclusive{ .s( par { .sujet.tonique }) },,,10,1022,,,F,S
 1037,,,"{ .a(interdit,interdire,interdis,interdis,interdit,interdisons,interdisez,interdisent) } les pronoms",{ .s(l’) }interdiction des pronoms{ .s( par { .sujet.tonique }) },,,10,1023,,,F,S
 1038,,,"{ .a(décidé,décider,décide,décides,décide,décidons,décidez,décident) } d’interdire les pronoms",{ .s(l’) }interdiction des pronoms{ .s( par { .sujet.tonique }) },,,10,1023,,,F,S
-1039,,,"{ .a(publié,publier,publie,publies,publie,publions,publiez,publient) } { .sujet.comp_implicite(le premier NFT) }","{ .s_comp(le ,lancement) } dans les NFT",,,10,1024,sujet,,M,S
-1040,,,"{ .sujet.se({ .est(lancé{ .sujet.es },lancer,lance,lances,lance,lançons,lancez,lancent) }) } dans les NFT","{ .s_comp(le ,lancement) } dans les NFT",,,10,1024,sujet,,M,S
-1041,,,"{ .objet.coi({ .a(acheté,acheter,achète,achètes,achète,achetons,achetez,achètent) }un NFT { .info.somme }) }",{ .s(l’) }achat d’un NFT { .info.somme } { .objet.coi_explicite }{ .s( par { .sujet.tonique }) },,,10,1025,,,M,S
+1039,,,"{ .a(publié,publier,publie,publies,publie,publions,publiez,publient) } { .sujet.comp_implicite(le premier { h }NFT) }","{ .s_comp(le ,lancement) } dans les { h }NFT",,,10,1024,sujet,,M,S
+1040,,,"{ .sujet.se({ .est(lancé{ .sujet.es },lancer,lance,lances,lance,lançons,lancez,lancent) }) } dans les { h }NFT","{ .s_comp(le ,lancement) } dans les { h }NFT",,,10,1024,sujet,,M,S
+1041,,,"{ .objet.coi({ .a(acheté,acheter,achète,achètes,achète,achetons,achetez,achètent) } un { h }NFT pour { .info.somme }) }",{ .s(l’) }achat d’un { h }NFT pour { .info.somme } { .objet.coi_explicite }{ .s( par { .sujet.tonique }) },,,10,1025,,,M,S

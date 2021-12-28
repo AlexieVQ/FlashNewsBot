@@ -250,7 +250,7 @@ class Lieu < Rosace::Entity
 			when :royaume
 				f.("roi", "reine", "rois", "reines")
 			when :dictature
-				f.("dictateur", "dictatrice", "dictateurs", "dictatrice")
+				f.("dictateur", "dictatrice", "dictateurs", "dictatrices")
 			when :president
 				f.("président", "présidente", "présidents", "présidentes")
 			when :chancelier
