@@ -92,6 +92,7 @@ class Action < Rosace::Entity
 	# @param personne_objet [1, 2, 3, nil] Personne de l'objet
 	# @param personne_coupable [1, 2, 3, nil] Personne du coupable
 	# @param personne_victime [1, 2, 3, nil] Personne de la victime
+	# @param adverbe_neg [String, nil] Adverbe de négation
 	# @return [String, Acteur] String pour la forme verbale ou nominale dans
 	#  sujet, Acteur pour la forme nominale avec sujet
 	def value(sujet: nil,
@@ -106,7 +107,8 @@ class Action < Rosace::Entity
 			  personne_sujet: nil,
 			  personne_objet: nil,
 			  personne_coupable: nil,
-			  personne_victime: nil)
+			  personne_victime: nil,
+			  adverbe_neg: nil)
 		old_sujet = @sujet
 		old_objet = @objet
 		old_temps = self.temps
@@ -123,6 +125,7 @@ class Action < Rosace::Entity
 		self.personne_victime = personne_victime
 		self.temps = temps
 		self.mettre_sujet = mettre_sujet
+		@adverbe_neg = adverbe_neg
 		pattern = /\A(est|sont) /
 		out = if forme == :verbale
 			if [:infinitif_passe, :infinitif].include?(self.temps) ||
@@ -157,6 +160,7 @@ class Action < Rosace::Entity
 		self.personne_objet = nil
 		self.temps = old_temps
 		self.mettre_sujet = old_mettre_sujet
+		@adverbe_neg = nil
 		if forme == :nominale && mettre_sujet == true
 			Acteur.new(nom: out, genre: genre, nombre: nombre)
 		else
@@ -206,6 +210,8 @@ class Action < Rosace::Entity
 				kwargs[:personne_coupable] = valeur.to_i
 			when "personne_victime"
 				kwargs[:personne_victime] = valeur.to_i
+			when "adverbe_neg"
+				kwargs[:adverbe_neg] = valeur
 			else
 				raise Rosace::EvaluationException,
 						"Action[#{id}]: Paramètre #{clef} inconnu"
@@ -242,14 +248,16 @@ class Action < Rosace::Entity
 			raise Rosace::EvaluationException,
 					"Action[#{id}]: #{auxiliaire} n'est pas un auxiliaire"
 		end
+		neg = adverbe_neg
 		passe = if auxiliaire == "avoir"
-			sujet.a + " " + (adverbe ? adverbe + " " : "") + participe
+			sujet.a + " " + (neg ? neg + " " : "") +
+					(adverbe ? adverbe + " " : "") + participe
 		else
-			sujet.est + " " + (adverbe ? adverbe + " " : "") + participe
+			sujet.est + " " + (neg ? neg + " " : "") +
+					(adverbe ? adverbe + " " : "") + participe
 		end
-		infinitif_passe = "#{auxiliaire} #{participe}" + (adverbe ?
-				" " + adverbe :
-				"")
+		infinitif_passe = "#{auxiliaire} #{participe}" +
+				(neg ? neg + " " : "") + (adverbe ?	" " + adverbe :	"")
 		simple = sujet.pn(
 			s1 || passe,
 			s2 || passe,
@@ -257,17 +265,18 @@ class Action < Rosace::Entity
 			p1 || passe,
 			p2 || passe,
 			p3 || passe
-		) + (adverbe ? " " + adverbe : "")
-		case temps
+		) + (neg ? neg + " " : "") + (adverbe ? " " + adverbe : "")
+		out = case temps
 		when :passe
 			passe
 		when :infinitif
-			infinitif + (adverbe ? " " + adverbe : "")
+			(neg ? neg + " " : "") + infinitif + (adverbe ? " " + adverbe : "")
 		when :infinitif_passe
 			infinitif_passe
 		else
 			simple
 		end
+		neg ? (out.voyelle? ? "n’" + out : "ne " + out) : out
 	end
 
 	# Conjugue le verbe selon ses différentes formes données, avec l'auxiliaire
@@ -345,6 +354,16 @@ class Action < Rosace::Entity
 	# @return la propositon avec ou non le {sujet} en complément
 	def s_comp(article, nom)
 		s(sujet.comp(article + nom), nom)
+	end
+
+	# @return [String, nil] Adverbe de négation
+	def adverbe_neg
+		if @adverbe_neg
+			@adverbe_neg
+		else
+			s = super
+			s.empty? ? nil : s
+		end
 	end
 
 	# Retourne un motif d'accusation sous la forme "pour [forme infinitive ou
