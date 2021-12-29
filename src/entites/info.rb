@@ -203,9 +203,9 @@ class Info < Rosace::Entity
 	# @return [Decla]
 	def decla
 		spec = rand(1 + _decla_list.reduce(0) { |w, d| w + d.weight }) > 0
-		accu = rand(10) > 0
-		@decla ||= spec && _decla || context.pick_entity(:Decla,
-				*(accu ? roles.map { |role| role.to_s } : []))
+		gen = roles.empty? ? rand(100) == 0 : rand(10) > 1
+		@decla ||= spec && _decla || gen && context.pick_entity(:Decla,
+				*(gen ? roles.map { |role| role.to_s } : [])) || nil
 	end
 
 	# Retourne un acteur correspondant à un type d'{#acteurs}.
