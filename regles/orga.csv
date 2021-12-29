@@ -1,0 +1,38 @@
+id,nom,sigle,genre,nombre,weight,adj,emoji,type,categories,origine
+1,la République en Marche|LREM,L(a)?REM,F,S,10,"marcheu{ .defgn(r,se,rs,ses) }|macron{ .iste }",🟡,parti,centre droite,1
+2,les Républicains|LR,LR,M,P,10,"républicain{ .defgn(,e,s,es) }",🔵,parti,droite,1
+3,le Parti Socialiste|le PS,PS,M,S,10,social{ .iste },🌹,parti,gauche,1
+4,le Parti Communiste|le PCF,PCF,M,S,10,commun{ .iste },🚩,parti,gauche ext_gauche,1
+5,le Rassemblement National|le RN,RN,M,S,10,national{ .iste },🔥,parti,ext_droite,1
+6,la France Insoumise,LFI,F,S,10,"insoumis{ .defgn(,e,,es) }",,parti,gauche ext_gauche ecolo,1
+7,Génération·s,Gs,M,S,5,hamon{ .iste },,parti,gauche ecolo,1
+8,Europe Écologie les Verts|EELV,E(E|É)LV,F,S,10,"écolog{ .iste }|vert{ .defgn(,e,s,es) }",🌻,parti,gauche ecolo,1
+9,le NPA,NPA,M,S,5,anticapital{ .iste }|trotsk{ .iste },📣,parti,ext_gauche,1
+10,Lutte Ouvrière|LO,LO,F,S,5,trotsk{ .iste },,parti,ext_gauche,1
+11,l’UDI,UDI,F,S,5,"démocrate{ .defgn(,,s,s) } indépendant{ .defgn(,e,s,es) }",🟣,parti,centre droite,1
+12,le MoDem,Modem,M,S,8,centr{ .iste },🟠,parti,centre droite,1
+13,l’UPR,UPR,F,S,7,"eurosceptique{ .defgn(,,s,s) }",🌿,parti,droite ext_droite,1
+14,le Parti Démocrate,Dems,M,S,10,"démocrate{ .defgn(,,s,s) }",🔵,parti,gauche centre,3
+15,le Parti Républicain,GOP,M,S,10,"républicain{ .defgn(,e,s,es) }",🔴,parti,droite ext_droite,3
+16,les Conservateurs,Tories,M,P,10,"conservat{ .defgn(eur,rice,eurs,rices) }",🌳,parti,droite,4
+17,le Parti Travailliste|le Labour,Labour,M,S,10,travaill{ .iste },🌹,parti,gauche centre,4
+18,la CDU,CDU,F,S,10,"chrétien{ .defgn(,ne,s,nes) }-démocrate{ .defgn(,,s,s) }",⚫,parti,droite,2
+19,la CGT,CGT,F,S,10,cégét{ .iste },👷,syndicat,gauche ext_gauche,1
+20,la CFDT,CFDT,F,S,10,syndical{ .iste },🟠,syndicat,gauche centre,1
+21,le Medef,Medef,M,S,10,"patrona{ .defgn(l,le,ux,les) }",🟣,syndicat,droite,1
+22,Extinction Rebellion,XR,F,S,10,écolog{ .iste },⏳,association,politique ecolo,
+1000,"{ orga1000m = Pers[1014]; si_implicite(orga1000m,l’Engagement,l’Engagement { orga1000m.comp_explicite }) }",LEngagement,M,S,1,souverain{ .iste },,parti,gauche centre,1
+1001,Reconquête,Reconquête,F,S,5,pro-Zemmour,,parti,ext_droite,1
+1002,Révolution Permanente,CCR|RP,F,S,3,trotsk{ .iste },🔴,parti,ext_gauche,1
+1003,le Parti Animaliste,PA,M,S,3,animal{ .iste },🐶|🐱,parti,ecolo,1
+1004,Action Contre la Faim,ACF,F,S,10,contre la faim,🌱,association,,1
+1005,{ Pers[6].comp(l’Union Populaire) },UP,F,S,5,"insoumis{ .defgn(,e,,es) }",🟣,parti,gauche ext_gauche ecolo,1
+1006,Horizons,Horizons,M,S,5,de la droite macroniste,,parti,droite,1
+1007,Ensemble Citoyens,EC,M,S,1,macron{ .iste },🟡,parti,centre droite,1
+1008,le Parti Radical,PRV,M,S,2,"radica{ .defgn(l,le,ux,les) }",,parti,centre droite,1
+1009,Debout la France,DLF,M,S,5,souverain{ .iste },,parti,droite ext_droite,1
+1010,Debout le Peuple,DLP,M,S,10,vidal{ .iste },🌿,parti,gauche ext_gauche fiction serie,1
+1011,La France unie,LFU,F,S,5,dorend{ .iste },🟡,parti,gauche centre droite fiction serie,1
+1012,Les Jeunes avec { `.acteur1 ||= Pers`.nom },JeunesAvec{ `.acteur1 ||= Pers`.pascal_case },M,P,10,pro-{ `.acteur1 ||= Pers`.vocatif },,parti,,
+1013,Place Publique,PP,F,S,2,"socia{ .defgn(l,le,ux,les) }-démocrate{ .defgn(,,s,s) }",🟡,parti,gauche centre,1
+1014,le (Parti Ouvrier Indépendant|POI),POI,M,S,1,trotsk{ .iste }|lambert{ .iste },🔴,parti,ext_gauche,1

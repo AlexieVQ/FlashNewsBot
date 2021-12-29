@@ -2,7 +2,6 @@
 
 require 'optparse'
 require_relative 'src/Bot.rb'
-require_relative 'src/TestTendances.rb'
 
 intervalle = 60
 hors_ligne = false
@@ -66,8 +65,4 @@ if(tendances && username.empty?) then
 	exit
 end
 
-if(tendances) then
-	TestTendances.exec(username, password)
-else
-	Bot.exec(hors_ligne, username, intervalle, debug, password, taux)
-end
+Bot.exec(hors_ligne, username, intervalle, debug, password, taux)

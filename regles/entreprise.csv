@@ -1,0 +1,7 @@
+id,nom,pascal_case,weight,genre,nombre,origine,categories,patron,emoji
+1,Facebook|Meta,Facebook|Meta,10,F,S,3,internet gafam,26,📱
+2,Amazon,Amazon,10,F,S,3,internet gafam,27,📦
+3,Google,Google,10,M,S,3,internet gafam,,🔍
+4,Apple,Apple,10,M,S,3,internet gafam,,🍏|🍎
+5,Microsoft,Microsoft,10,F,S,3,internet gafam,82,🪟|🖥️|💻
+6,LVMH,LVMH,10,F,S,1,,83,👜

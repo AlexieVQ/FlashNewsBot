@@ -1,0 +1,3 @@
+id,value,weight
+3,"{ $info.emoji; emojis_pays } FLASH -",100
+7,"{ $info.emoji; emojis_pays } ALERTE INFO -",10

@@ -1,0 +1,10 @@
+id,value,temporalite
+1,ce matin,proche
+4,hier,passe
+5,à l’instant,proche present
+6,ce soir,futur
+7,ce midi,proche present
+8,dans la journée,proche futur
+9,dans la soirée de dimanche a lundi,passe futur
+10,durant la nuit,passe
+15,il y a de cela 5 ans,passe
