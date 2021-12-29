@@ -151,7 +151,7 @@ id,description,commun,weight,hashtag,emoji,acteurs,categories,temporalite,coupab
 1039,fait son retour sur le devant de la scène,,10,,,pers,,present,,
 1040,est toujours en vie,,1,,,pers,,present,,
 1041,sort romain policier,{ .qui = s(le Policier|le Jardinier|le Cuisinier|le Charcutier|le Boulanger|{ Pers.nom }) },10,,📖,pers,culture litterature,present,,
-1042,lance un mouvement politique,{ .objet = .acteur; .bord = s(Gauche|Droite) },10,{ .bord }Avec{ .objet.pascal_case },,pers,politique,present,,
+1042,lance un mouvement politique,{ .objet = .acteur; .bord = s(Gauche|Droite) },10,La{ .bord }Avec{ .objet.pascal_case },,pers,politique,present,,
 1043,pays annexe pays,"{ .objet = Lieu(pays,region) }",10,{ .objet.pascal_case }Annexion,,pays,,proche,,
 1044,pays envahit pays,"{ .objet = Lieu(pays,region) }",10,{ .sujet.pascal_case }VS{ .objet.pascal_case },,pays,,proche,,
 1045,"moquée, ridiculisée",,10,,,pers,internet,proche,,
@@ -165,7 +165,7 @@ id,description,commun,weight,hashtag,emoji,acteurs,categories,temporalite,coupab
 1053,propose d’imprimer plus de billets,,10,,💵,pers pays parti,politique,present,,
 1054,a ratio,{ .objet = .acteur },10,Ratio,,pers,,proche,objet,sujet
 1055,s’est fait ratio,{ .objet = .acteur },10,Ratio,,pers,,proche,sujet,objet
-1056,a pété et chié,,10,"Prout|{ .sujet.pascal_case }{ .sujet.gn(LeProuteur,LaProuteuse,LesProuteurs,LesProuteuses) }",💨,pers,,proche,,
+1056,a pété et chié,,10,"{ .sujet.pascal_case }{ .sujet.gn(LeProuteur,LaProuteuse,LesProuteurs,LesProuteuses) }",💨,pers,,proche,,
 1057,renvoyé d’entreprise,{ .objet = Entreprise },10,,,pers,,proche,sujet,objet
 1058,atomise avec les faits et la logique,{ .objet = .acteur },10,{ .sujet.pascal_case }VS{ .objet.pascal_case },,pers,politique media edito,proche,,
 1059,a détourné des aides,,10,,,pers entreprise,patronat anonyme,proche,,
@@ -186,6 +186,6 @@ id,description,commun,weight,hashtag,emoji,acteurs,categories,temporalite,coupab
 1074,a dit que c’était un pays de merde,{ .lieu = Lieu(pays) },1,{ .sujet.pascal_case }VS{ .lieu.pascal_case },,pays,,proche,,
 1075,gagne la primaire,{ .primaire = s(Populaire); .pc = .primaire }|{ .primaire = s(de la gauche); .pc = s(DeLaGauche) },10,Primaire{ .pc }|{ .sujet.pascal_case }2022,🗳️,pers,politique gauche,proche,,
 1076,lance son burger,{ .chaine = s(McDonald’s|Quick|Burger King) },10,{ .sujet.pascal_case }Burger,🍔,pers,,proche,,
-1077,debrief space,{ .sujet = Pers[1001]; .parti = .sujet.orga },10,DebriefSpace{ .parti.pascal_case },,,politique,proche,,
+1077,debrief space,{ .sujet = Pers[1001]; .sujet.commun; .parti = .sujet.orga },10,DebriefSpace{ .parti.pascal_case },,,politique,proche,,
 1078,boycott les JO,{ .lieu = Lieu[104]; .objet = .lieu.pays },10,BoycottJO,🏟️,pays,,present,,
 1079,rayés de la carte,{ .objet = .acteur },10,{ .sujet.pascal_case }VS{ .objet.pascal_case },💥,pays,politique,proche,sujet,objet

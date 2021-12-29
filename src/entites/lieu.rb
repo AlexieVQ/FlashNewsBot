@@ -34,9 +34,6 @@ class Lieu < Rosace::Entity
 	# Id de la France
 	FRANCE = 1
 
-	# @!attribute [r] nom
-	#  @return [String]
-
 	# @!attribute [r] genre
 	#  @return [:M, :F]
 	enum :genre, *Acteur::GENRES
@@ -73,6 +70,8 @@ class Lieu < Rosace::Entity
 			""
 		end
 	end
+
+	alias :value :nom
 
 	# @return [String] Nom de ce lieu en PascalCase
 	def pascal_case
@@ -297,11 +296,11 @@ class Lieu < Rosace::Entity
 	def loc_explicite
 		ponctuel = type == :ville
 		@_acteur_nom_cite = true
-		match = /\A\s*(?<article>(le |la |les )?)(?<nom>.*)\z/i.match(nom)
+		match = /\A\s*(?<article>(le |la |les |l’)?)(?<nom>.*)\z/i.match(nom)
 		article = match[:article]
 		if /\Ale \z/i =~ article
 			"au"
-		elsif /\Ala \z/i =~ article
+		elsif /\A(la |l’)\z/i =~ article
 			ponctuel ? "à" : "en"
 		elsif /\Ales \z/i =~ article
 			type == :region ? "dans les" : "aux"

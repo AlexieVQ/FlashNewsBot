@@ -443,7 +443,7 @@ id,commun,nom,pascal_case,weight,genre,nombre,qte,categories,origine,cw
 1110,,Yassine Belattar,YassineBelattar,5,M,S,1,culture humour media,1,
 1111,,Éric Naulleau,(Éric)?Naulleau,10,M,S,1,media edito politique gauche ext_droite,1,
 1112,,la poupé de Squid Game,SquidGame,10,F,S,1,fiction non_humain serie,13,
-1113,"{ .p = rand(0,100) }",{ .p } % des Français,{ .p }PourcentDesFrançais,10,M,P,1000,anonyme,1,
+1113,"{ .pc = rand(0,100) }",{ .pc } % des Français,{ .pc }PourcentDesFrançais,10,M,P,1000,anonyme,1,
 1114,,les potes d’Attention à la Marche,Potes|Zizipotes,2,M,P,10,tv fiction non_humain,1,
 1115,,les BTS,BTS,10,M,P,7,culture musique,13,
 1116,,Blackpink,Blackpink,10,F,P,4,culture musique,13,

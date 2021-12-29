@@ -119,8 +119,8 @@ class Info < Rosace::Entity
 				:passe
 			end
 			part_value = action.value(sujet: sujet, objet: objet,
-					sujet_explicite: true, temps: temps, verbe_obligatoire: false).
-					majuscule
+					sujet_explicite: true, temps: temps,
+					verbe_obligatoire: true).majuscule
 			part_motif = action.part_motif
 			part_decla = begin
 				context.pick_entity(:StructDecla).value.majuscule
@@ -173,11 +173,16 @@ class Info < Rosace::Entity
 
 	# @return [String] Émojis de l'info et des acteurs si applicable
 	def emoji
-		([super] + [@sujet, @objet].map do |acteur|
-			(!acteur.is_a?(Lieu) && acteur.respond_to?(:emoji)) ?
-					acteur.emoji :
-					""
-		end).uniq.join("")
+		s = super
+		if s.empty?
+			[@sujet, @objet].map do |acteur|
+				(!acteur.is_a?(Lieu) && acteur.respond_to?(:emoji)) ?
+						acteur.emoji :
+						""
+			end.uniq.join("")
+		else
+			s
+		end
 	end
 
 	# @return [String]
@@ -203,7 +208,7 @@ class Info < Rosace::Entity
 	# @return [Decla]
 	def decla
 		spec = rand(1 + _decla_list.reduce(0) { |w, d| w + d.weight }) > 0
-		gen = roles.empty? ? rand(100) == 0 : rand(10) > 1
+		gen = roles.empty? ? rand(100) == 0 : rand(10) > 5
 		@decla ||= spec && _decla || gen && context.pick_entity(:Decla,
 				*(gen ? roles.map { |role| role.to_s } : [])) || nil
 	end

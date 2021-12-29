@@ -59,6 +59,7 @@ class Pers < Rosace::Entity
 
 	# @return [:M, :F] Genre grammatical du personnage
 	def genre
+		commun
 		if super == :C
 			qte.times do |i|
 				return :M if send(:"acteur#{i + 1}").genre == :M
