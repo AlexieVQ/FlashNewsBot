@@ -257,7 +257,7 @@ class Action < Rosace::Entity
 					(adverbe ? adverbe + " " : "") + participe
 		end
 		infinitif_passe = "#{auxiliaire} #{participe}" +
-				(neg ? neg + " " : "") + (adverbe ?	" " + adverbe :	"")
+				(neg ? " " + neg : "") + (adverbe ?	" " + adverbe :	"")
 		simple = sujet.pn(
 			s1 || passe,
 			s2 || passe,
@@ -265,7 +265,7 @@ class Action < Rosace::Entity
 			p1 || passe,
 			p2 || passe,
 			p3 || passe
-		) + (neg ? neg + " " : "") + (adverbe ? " " + adverbe : "")
+		) + (neg ? " " + neg : "") + (adverbe ? " " + adverbe : "")
 		out = case temps
 		when :passe
 			passe

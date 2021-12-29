@@ -805,3 +805,51 @@ id,value,weight,pers
 1264,l’animateur,10,1192
 1265,l’animateur “Affaires Sensibles”,10,1193
 1266,le profiler,10,1194
+1267,le vidéaste,10,1195
+1268,le décrypteur de l’actu,10,1195
+1269,le rappeur américain,10,1196
+1270,le chanteur( canadien)?,10,1197
+1271,le malfrat,10,1198
+1272,le hors-la-loi,10,1199
+1273,la grenouille,10,1200
+1274,la « chose énervante »,5,1200
+1275,la chose qui n’est « pas une grenouille et pas particulièrement folle » d’après { Pers.tonique },1,1200
+1276,le streameur,10,1201
+1277,le twitto,10,1201
+1278,le streameur,10,1202
+1279,le twitto,10,1202
+1280,le bot Twitch,10,1203
+1281,l’énarque,10,1204
+1282,{ Pers[69].comp(la compagne) },10,1204
+1283,l’humoriste,10,1205
+1284,le vieil homme,10,1206
+1285,l’individu,10,1207
+1286,l’idéologie,10,1208
+1287,le variant,10,1209
+1288,omicron,10,1209
+1289,la poubelle,10,1210
+1290,les bêtes,10,1211
+1291,la femme politique,10,1212
+1292,l’organisme,10,1213
+1293,l’agence,10,1214
+1294,les gens,10,1215
+1295,le journaliste,10,1216
+1296,la chanteuse américaine,10,1217
+1297,la rappeuse américaine,10,1217
+1298,l’alter,10,1218
+1299,{ .pers.acteur1.comp(l’ami imaginaire) },1,1218
+1300,l’assemblée,10,1219
+1301,le Sénat,10,1220
+1302,le garçon,10,1221
+1303,l’ancienne Garde des Sceaux,10,1222
+1304,la communauté,10,1223
+1305,le streameur « bienveillant »,2,1060
+1306,{ Pers[1222].comp(l’attaquant) },2,1060
+1307,le député européen,10,1224
+1308,le conseil,10,1225
+1309,la victime de harcèlement,10,1226
+1310,le vulgarisateur scientifique,10,1227
+1311,l’ingénieur,10,1228
+1312,les « espaces »,10,1229
+1313,les                  ,10,1229
+1314,les hommes privilégiés,10,1230

@@ -26,6 +26,7 @@ id,description,commun,weight,hashtag,emoji,acteurs,categories,temporalite,coupab
 46,démissionne,,10,{ .sujet.pascal_case }Démission,,pers,politique,present,sujet,
 47,destitué,,10,{ .sujet.pascal_case }Destitution,,pers,politique,proche,sujet,
 48,provoque objet,{ .objet = .acteur; .circo = s(| sur YouTube| sur Twitter| sur les réseaux sociaux) },10,{ .sujet.pascal_case }VS{ .objet.pascal_case },,pers,,present,objet,sujet
+50,participera à l’Eurovision,{ .lieu = .sujet.pays }|{ .lieu = Lieu(pays) },10,{ .sujet.pascal_case }ÀLEurovision|ESC2022,🎤,pers,culture musique,futur,,
 51,se bat avec objet,{ .objet = .acteur },10,{ .sujet.pascal_case }VS{ .objet.pascal_case },,pers,,proche,objet,sujet
 52,pressenti pour être ministre,{ .lieu = Lieu[1] },10,,,pers,politique,present,,
 53,nommé ministre,{ .lieu = Lieu[1] },10,,,pers,politique,present,,
@@ -175,3 +176,16 @@ id,description,commun,weight,hashtag,emoji,acteurs,categories,temporalite,coupab
 1064,réaffirme son soutien,{ .objet = .acteur },10,,,pers parti,politique,present,,objet
 1065,refuse de reconnaître la souveraineté de pays,{ .objet = Lieu(pays) },10,,,pers parti pays,politique,present,,
 1066,dissout parti,{ .objet = Orga },10,{ .objet.pascal_case }Dissolution,,pers pays,politique,present,objet,
+1067,annonce une info par erreur,{ .info = Info; .act = .info.action },10,{ .info.hashtag },{ .info.emoji },media,,proche,,
+1068,est devenu le joker,,10,Joker,,pers,,proche,,sujet
+1069,rien,,1,Rien,,,,present,,
+1070,est un gros fils de pute,,1,"{ .sujet.pascal_case }{ .sujet.gn(LeFilsDePute,LenfantDePutain,LesFilsDePute,LesEnfantsDePutain) }",,pers,,present,,
+1071,Nouveau variant détecté,{ .lieu = Lieu(pays); .lettre = s(pi|rhô|sigma|tau|upsilon|phi|chi|psi|oméga|ligma|xi|nu) },10,Variant{ capitalize({ .lettre }) },🦠,,,proche,,
+1072,établit le communisme,{ .lieu = .sujet.origine.pays }|{ .lieu = Lieu(pays) },10,Communisme,🚩,pers parti syndicat,politique,present,,
+1073,devient communiste,,10,Communisme,🚩,pays,politique,present,,
+1074,a dit que c’était un pays de merde,{ .lieu = Lieu(pays) },1,{ .sujet.pascal_case }VS{ .lieu.pascal_case },,pays,,proche,,
+1075,gagne la primaire,{ .primaire = s(Populaire); .pc = .primaire }|{ .primaire = s(de la gauche); .pc = s(DeLaGauche) },10,Primaire{ .pc }|{ .sujet.pascal_case }2022,🗳️,pers,politique gauche,proche,,
+1076,lance son burger,{ .chaine = s(McDonald’s|Quick|Burger King) },10,{ .sujet.pascal_case }Burger,🍔,pers,,proche,,
+1077,debrief space,{ .sujet = Pers[1001]; .parti = .sujet.orga },10,DebriefSpace{ .parti.pascal_case },,,politique,proche,,
+1078,boycott les JO,{ .lieu = Lieu[104]; .objet = .lieu.pays },10,BoycottJO,🏟️,pays,,present,,
+1079,rayés de la carte,{ .objet = .acteur },10,{ .sujet.pascal_case }VS{ .objet.pascal_case },💥,pays,politique,proche,sujet,objet

@@ -1,2 +1,3 @@
 id,value,weight,info
-1,"{ capitalize({$info.sujet.nom }) } X { $info.objet.nom }, c’est fait !",10,195
+1,"{ capitalize({$info.sujet.vocatif }) } X { $info.objet.vocatif }, c’est fait !",10,195
+2,(🔴|🚨) 🇫🇷 (FLASH|ALERTE INFO) non rien( lol)?,10,1069
