@@ -519,6 +519,7 @@ module Acteur
 		end
 		self.personne == 1 ? self : ActeurProxy.new(
 			self,
+			genre: nombre == :S && _nombre == :P ? :M : genre,
 			personne: 1,
 			nombre: _nombre
 		)
@@ -533,6 +534,7 @@ module Acteur
 		end
 		self.personne == 2 ? self : ActeurProxy.new(
 			self,
+			genre: nombre == :S && _nombre == :P ? :M : genre,
 			personne: 2,
 			nombre: _nombre
 		)
