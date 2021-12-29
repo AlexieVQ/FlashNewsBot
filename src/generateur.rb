@@ -91,6 +91,15 @@ GENERATEUR = Rosace::Generator.new(
 					de.context
 				)
 			end
+		),
+		Rosace::Function.new(
+			:si_implicite,
+			->(acteur, alors, sinon) do
+				# @type [Acteur]
+				a = acteur.context.variable(acteur.value)
+				a.implicite? ? alors : sinon
+			end,
+			:concurrent
 		)
 	]
 )
