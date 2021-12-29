@@ -171,3 +171,7 @@ id,description,commun,weight,hashtag,emoji,acteurs,categories,temporalite,coupab
 1060,victime du wokisme,,10,Wokisme,,pers,,present,sujet,
 1061,supprime de ses amis Facebook,{ .objet = .acteur },10,,,pers,,present,objet,sujet
 1062,pendu en place publique,,10,,,pers,,proche,sujet,
+1063,retire son soutien,{ .objet = .acteur },10,,,pers parti,politique,present,objet,sujet
+1064,réaffirme son soutien,{ .objet = .acteur },10,,,pers parti,politique,present,,objet
+1065,refuse de reconnaître la souveraineté de pays,{ .objet = Lieu(pays) },10,,,pers parti pays,politique,present,,
+1066,dissout parti,{ .objet = Orga },10,{ .objet.pascal_case }Dissolution,,pers pays,politique,present,objet,

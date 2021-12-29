@@ -72,7 +72,7 @@ id,commun,sujet_perso,verbale,nominale,part_motif,adverbe_neg,weight,info,coupab
 153,,,"{ .a(publié,publier,publie,publies,publie,publions,publiez,publient) } { .objet.comp(des photos intimes) }",{ .s(la ) }publication { .objet.comp(des photos intimes) }{ .s( par { .sujet.tonique }) },,,10,70,sujet,objet,F,S
 155,,,"{ .a(révélé,révéler,révèle,révèles,révèle,révélons,révélez,révèlent) } une importante affaire d’évasion fiscale { .info.lieu.loc_explicite } { .objet.cod(impliquant) }",{ .s(la ) }révélation d’une importante affaire d’évasion fiscale { .info.lieu.loc_explicite }{ .s( par { .sujet.tonique }) } { .objet.cod(impliquant) },,,10,72,objet,,F,S
 158,,,"{ .a(perdu,perdre,perds,perds,perd,perdons,perdez,perdent) } { .info.lieu.comp(les élections municipales) }",{ .sujet.comp(la défaite) } { .info.lieu.comp(aux élections municipales) },,,10,73,,sujet,F,S
-160,{ .objet ||= .info.acteur },,"{ .a(perdu,perdre,perds,perds,perd,perdons,perdez,perdent) } { .info.lieu.comp(les élections municipales) } face à { .objet.tonique }",{ .sujet.comp(la défaite) } { .info.lieu.comp(aux élections municipales) } face à { .objet.tonique },,,10,73,objet,sujet,F,S
+160,{ .objet ||= .info.acteur },,"{ .a(perdu,perdre,perds,perds,perd,perdons,perdez,perdent) } { .info.lieu.comp(les élections municipales) } face { .objet.coi_explicite }",{ .sujet.comp(la défaite) } { .info.lieu.comp(aux élections municipales) } face { .objet.coi_explicite },,,10,73,objet,sujet,F,S
 161,,,"{ .objet.coi({ .a(déclaré,déclarer,déclare,déclares,déclare,déclarons,déclarez,déclarent) } la guerre) }","{ .s_comp(la ,déclaration de guerre) } { .objet.coi_explicite }",,,10,74,sujet,objet,F,S
 166,,,"{ .objet.cod({ .a(retenu,retenir,retiens,retiens,retient,retenons,retenez,retiennent) }) } en otage",{ .objet.comp(la prise d’otage) }{ .s( par { .sujet.tonique }) },{ .parce_que_motif },,10,79,sujet,objet,F,S
 167,,,"{ .objet.cod({ .a(pris,prendre,prends,prends,prend,prenons,prenez,prennent) }) } en otage",{ .objet.comp(la prise d’otage) }{ .s( par { .sujet.tonique }) },{ .parce_que_motif },,10,79,sujet,objet,F,S
@@ -220,7 +220,7 @@ id,commun,sujet_perso,verbale,nominale,part_motif,adverbe_neg,weight,info,coupab
 755,,,"{ .a(porté,porter,porte,portes,porte,portons,portez,portent) } un t-shirt ahegao","{ .s_comp(le ,port { .s(d’un,de) } t-shirt ahegao) }",,,10,,sujet,,M,S
 762,,,"{ .sujet.se({ .est(fait{ .sujet.es },faire,fais,fais,fait,faisons,faisez,font) }) } passer pour { .objet.tonique } sur Twitter",{ .s(l’) }usurpation de { .objet.comp(l’identité) }{ .s( par { .sujet.tonique }) },,,10,,sujet,objet,F,S
 764,,,"{ .objet.coi({ .a(implanté,implanter,implante,implantes,implante,implantons,implantez,implantent) } une puce 5G) }( sans { .objet.comp_implicite(le consentement) })?","{ .s_comp(l’,implantation d’une puce 5G) } { .objet.coi_explicite }",,,10,,sujet,objet,F,S
-779,,,{ .a(time travel) } sur Animal Crossing,"{ .s_comp(le ,time travel) } sur Animal Crossing",,,5,,sujet,,M,S
+779,,,"{ .a(time travel,time travel) } sur Animal Crossing","{ .s_comp(le ,time travel) } sur Animal Crossing",,,5,,sujet,,M,S
 780,,,"{ .objet.cod({ .a(séquestré,séquestrer,séquestre,séquestres,séquestre,séquestrons,séquestrez,séquestrent) }) }",{ .objet.comp({ .s(la ) }séquestration) }{ .s( par { .sujet.tonique }) },,,10,,sujet,objet,F,S
 784,,,"{ .a(volé,voler,vole,voles,vole,volons,volez,volent) } des courges à Nigloland","{ .s_comp(le ,vol de courges à Nigloland) }",,,10,,sujet,,M,S
 785,,,"{ .a(défendu,défendre,défends,défends,défend,défendons,défendez,défendent) } { .sujet.comp_implicite(les convictions) }",{ .sujet.comp(les convictions) },,,10,,sujet,,F,P
@@ -231,7 +231,7 @@ id,commun,sujet_perso,verbale,nominale,part_motif,adverbe_neg,weight,info,coupab
 792,,,"{ .sujet.se({ .est(rendu{ .sujet.es },rendre,rends,rends,rend,rendons,rendez,rendent) }) } coupable{ .sujet.s } d’actes christianophobes","{ .s_comp(les ,actes christianophobes) }",,,10,,sujet,,M,P
 794,,,"{ .a(porté,porter,porte,portes,porte,portons,portez,portent) } le masque sous { .sujet.comp_implicite({ .sujet.n(le nez,les nez) }) }","{ .s_comp(le ,port du masque sous le nez) }",,,10,,sujet,,M,S
 1000,{ $action1000sujet = .sujet },,"{ .a(avoué,avouer,avoue,avoues,avoue,avouons,avouez,avouent) }","{ .sujet.comp(l’aveu) } { m = .info.motif.val(coupable: $action1000sujet, forme: nominale, mettre_sujet: false); voy({ m },d’{ m },de { m }) }","{ .info.motif.val(coupable: $action1000sujet, temps: infinitif_passe) }",,10,55,,,M,S
-1001,,,"{ .objet.coi({ .a(apporté,apporter,apporte,apportes,apporte,apportons,apportez,apportent) } { .sujet.comp_implicite(le soutien) }) } (aux|pour les) élections présidentielles( de 2022)?","{ .s_comp(le ,soutien) } apporté à { .objet.tonique } (aux|pour les) élections présidentielles( de 2022)?",,,10,102,sujet,,M,S
+1001,,,"{ .objet.coi({ .a(apporté,apporter,apporte,apportes,apporte,apportons,apportez,apportent) } { .sujet.comp_implicite(le soutien) }) } (aux|pour les) élections présidentielles( de 2022)?","{ .s_comp(le ,soutien) } apporté { .objet.coi_explicite } (aux|pour les) élections présidentielles( de 2022)?",,,10,102,sujet,,M,S
 1002,,,{ .etre } cancelled,{ .sujet.comp(le call-out) },{ .pour_motif },,10,152,,sujet,M,S
 1003,,,"{ .est(devenu{ .sujet.es },devenir,deviens,deviens,devient,devenons,devenez,deviennent) } { .info.lieu.comp({ .info.lieu.chef({ .sujet.genre },{ .sujet.nombre }) }) }",{ .sujet.comp(l’accession) } à { .info.lieu.comp(la tête) },,,10,1000,,,F,S
 1004,,,"{ .a(fait,faire,fais,fais,fait,faisons,faites,font,trop) } la bamboche","{ .s_comp(l’,excès de bamboche) }",,,5,,sujet,,M,S
@@ -250,13 +250,13 @@ id,commun,sujet_perso,verbale,nominale,part_motif,adverbe_neg,weight,info,coupab
 1017,,,"{ .objet.cod({ .a(harcelé,harceler,harcèle,harcèles,harcèle,harcelons,harcelez,harcèlent) }) }",{ .objet.comp({ .s(le ) }harcèlement) }{ .s( par { .sujet.tonique }) },{ .parce_que_motif },,10,1009,sujet,objet,M,S
 1018,,,"{ .a(appelé,appeler,appelle,appelles,appelle,appelons,appelez,appellent) } { .objet.comp(au harcèlement) }","{ .s_comp(l’,appel) } { .objet.comp(au harcèlement) }",{ .parce_que_motif },,10,1009,sujet,objet,M,S
 1019,,,"{ .est(parti,partir,pars,pars,part,partons,partez,partent) } en croisade contre { .objet.tonique }","{ .s_comp(la ,croisade) } contre { .objet.tonique }",{ .parce_que_motif },,10,1010,sujet,objet,F,S
-1020,,,"{ .objet.cod({ .a(agressé,agresser,agresse,agresses,agresse,agressons,agressez,agressent) }) }","{ .s_comp(l’,agression) } envers { .objet.tonique }",{ .parce_que_motif },,10,1011,sujet,objet,F,S
+1020,{ .comment = s(( au couteau)?( dans la rue)?) },,"{ .objet.cod({ .a(agressé,agresser,agresse,agresses,agresse,agressons,agressez,agressent) }) }{ .comment }","{ .s_comp(l’,agression{ .comment }) } envers { .objet.tonique }",{ .parce_que_motif },,10,1011,sujet,objet,F,S
 1021,,,"{ .sujet.se({ .est(ligué,liguer,ligue,ligues,ligue,liguons,liguez,liguent) }) } contre { .objet.tonique }","{ .s_comp(la ,levée de bouclier{ .sujet.s }) } contre { .objet.tonique }",{ .parce_que_motif },,10,1012,sujet,objet,F,S
 1022,,,"{ .a(refusé,refuser,refuse,refuses,refuse,refusons,refusez,refusent) } de débattre avec { .objet.tonique }","{ .s_comp(le ,refus du débat) } avec { .objet.tonique }",{ .parce_que_motif },,10,1013,sujet,objet,M,S
 1023,,,"{ .a(refusé,refuser,refuse,refuses,refuse,refusons,refusez,refusent) } le débat avec { .objet.tonique }","{ .s_comp(le ,refus du débat) } avec { .objet.tonique }",{ .parce_que_motif },,10,1013,sujet,objet,M,S
 1024,,,"{ .a(voulé,vouloir,veux,veux,veut,voulons,voulez,veulent) } { .objet.cod(faire taire) }","{ .s_comp(la ,tentative { .objet.comp(de censure) }) }",,,10,1014,sujet,objet,F,S
 1025,,,"{ .objet.comp({ .a(censuré,censurer,censure,censures,censure,censurons,censurez,censurent) }) }",{ .objet.comp({ .s(la ) }censure) }{ .s( par { .sujet.tonique }) },{ .parce_que_motif },,10,1015,sujet,objet,F,S
-1026,,,"{ .objet.comp({ .a(fait,faire,fais,fais,fait,faisons,faites,font,trop) } censurer) }",{ .objet.comp({ .s(la ) }censure) }{ .s( par { .sujet.tonique }) },{ .parce_que_motif },,10,1015,sujet,objet,F,S
+1026,,,"{ .objet.comp({ .a(fait,faire,fais,fais,fait,faisons,faites,font) } censurer) }",{ .objet.comp({ .s(la ) }censure) }{ .s( par { .sujet.tonique }) },{ .parce_que_motif },,10,1015,sujet,objet,F,S
 1027,,,"{ .a(appelé,appeler,appelle,appelles,appelle,appelons,appelez,appellent) } à la haine contre { .objet.tonique }","{ .s_comp(l’,appel à la haine) } envers { .objet.tonique }",{ .parce_que_motif },,10,1016,sujet,objet,M,S
 1028,,,{ .etre } reçu{ .sujet.es } à l’Élysée,"{ .s_comp(la ,réception) } à l’Élysée",,,10,1017,,,F,S
 1029,,,"{ .a(explosé,exploser,explose,exploses,explose,explosons,explosez,explosent) }","{ .s_comp(l’,explosion) }",,,10,1018,,sujet,F,S
@@ -273,7 +273,7 @@ id,commun,sujet_perso,verbale,nominale,part_motif,adverbe_neg,weight,info,coupab
 1040,,,"{ .sujet.se({ .est(lancé{ .sujet.es },lancer,lance,lances,lance,lançons,lancez,lancent) }) } dans les { h }NFT","{ .s_comp(le ,lancement) } dans les { h }NFT",,,10,1024,sujet,,M,S
 1041,,,"{ .objet.coi({ .a(acheté,acheter,achète,achètes,achète,achetons,achetez,achètent) } un { h }NFT pour { .info.somme }) }",{ .s(l’) }achat d’un { h }NFT pour { .info.somme } { .objet.coi_explicite }{ .s( par { .sujet.tonique }) },,,10,1025,,,M,S
 1042,,,"{ .objet.cod({ .a(trouvé,trouver,trouve,trouves,trouve,trouvons,trouvez,trouvent) }) } (suspect{ .sujet.es }|“sus”)","{ .s_comp(la ,suspicion) } envers { .objet.tonique }",{ .parce_que_motif },,10,1026,,,F,S
-1043,{ .ou = s(( dans Among Us)?) },,{ .sujet.a(vent) }{ .ou },"{ .s_comp(la ,vent) }{ .ou }",,,10,,sujet,,F,S
+1043,{ .ou = s(( dans Among Us)?) },,"{ .sujet.a(vent,vent) }{ .ou }","{ .s_comp(la ,vent) }{ .ou }",,,10,,sujet,,F,S
 1044,,{ .sujet.comp(le pass sanitaire) },est invalide,{ .s(l’) }invalidité { .sujet.comp(du pass sanitaire{ .sujet.s }) },,,5,,sujet,,F,S
 1045,,{ .sujet.comp(le pass sanitaire) },est falsifié,{ .s(la ) }falsification { .sujet.comp(du pass sanitaire{ .sujet.s }) },,,5,,sujet,,F,S
 1046,,,"{ .a(déboulonné,déboulonner,déboulonne,déboulonnes,déboulonne,déboulonnons,déboulonnez,déboulonnent) } { .objet.comp(la statue) }",{ .s(le ) }déboulonnage de { .objet.comp(la statue) }{ .s( par { .sujet.tonique }) },{ .parce_que_motif },,10,1027,sujet,objet,M,S
@@ -300,7 +300,7 @@ id,commun,sujet_perso,verbale,nominale,part_motif,adverbe_neg,weight,info,coupab
 1067,{ .objet ||= .info.acteur },,{ .etre } en tête dans les sondages devant { .objet.tonique },"{ .s_comp(l’,avance) } dans les sondages devant { .objet.tonique }",,,10,1038,sujet,objet,F,S
 1068,,,"{ .a(commis,commettre,commets,commets,commet,commettons,commettez,commettent) } un outrage à agent","{ .s_comp(l’,outrage à agent) }",,,10,,sujet,,M,S
 1069,,,{ .avoir } un emploi fictif,"{ .s_comp(l’,emploi fictif) }",,,10,,sujet,,M,S
-1070,,,"{ .a(fait,faire,fais,fais,fait,faisons,faites,font,trop) } { .sujet.comp_implicite(le retour) } sur le devant de la scène","{ .s_comp(le ,retour sur le devant de la scène) }",,,10,1039,,,M,S
+1070,,,"{ .a(fait,faire,fais,fais,fait,faisons,faites,font) } { .sujet.comp_implicite(le retour) } sur le devant de la scène","{ .s_comp(le ,retour sur le devant de la scène) }",,,10,1039,,,M,S
 1071,,,"{ .a(subi,subir,subis,subis,subit,subissons,subissez,subissent) } un ratio","{ .s_comp(le ,ratio) }",,,10,,,sujet,M,S
 1072,,,"{ .a(subi,subir,subis,subis,subit,subissons,subissez,subissent) } { .objet.comp(un ratio) }",{ .objet.comp(le ratio) } subi par { .sujet.tonique },,,10,,objet,sujet,M,S
 1073,,,"{ .a(dit,dire,dis,dis,dit,disons,dites,disent) } que la police tuait","{ .s_comp(la ,déclaration que la police tuait) }",,,10,,sujet,,F,S
@@ -330,10 +330,10 @@ id,commun,sujet_perso,verbale,nominale,part_motif,adverbe_neg,weight,info,coupab
 1097,,,"{ .a(décidé,décider,décide,décides,décide,décidons,décidez,décident) } d’imprimer plus de billets","{ .s_comp(la ,décision) } d’imprimer plus de billets",,,10,1053,,,F,S
 1098,,,"{ .a(imprimé,imprimer,imprime,imprimes,imprime,imprimons,imprimez,impriment) } plus de billets",{ .s(l’) }impression de plus de billets{ .s( par { .sujet.tonique }) },,,10,1053,,,F,S
 1099,,,"{ .sujet.se({ .est(fait{ .sujet.es },faire,fais,fais,fait,faisons,faisez,font) } ratio) }",{ .sujet.comp(le ratio) } par { .objet.tonique },{ .pour_motif },,10,1055,objet,sujet,M,S
-1100,,,"{ .a(fait,faire,fais,fais,fait,faisons,faites,font,trop) } des expériences scientifiques non-réglementaires sur { .objet.tonique }",{ .s(la ) }réalisation d’expériences scientifiques{ .s( par { .sujet.tonique }) } sur { .objet.tonique },,,10,,sujet,objet,F,S
+1100,,,"{ .a(fait,faire,fais,fais,fait,faisons,faites,font) } des expériences scientifiques non-réglementaires sur { .objet.tonique }",{ .s(la ) }réalisation d’expériences scientifiques{ .s( par { .sujet.tonique }) } sur { .objet.tonique },,,10,,sujet,objet,F,S
 1101,,,"{ .a(mis,mettre,mets,mets,met,mettons,mettez,mettent) } de la crème dans la carbonara",{ .s(l’) }ajout de crème dans la carbonara{ .s( par { .sujet.tonique }) },,,10,,sujet,,M,S
 1102,,,"{ .a(coupé,couper,coupe,coupes,coupe,coupons,coupez,coupent) } ses spaghetti","{ .s({ .sujet.comp(l’habitude) } à couper les,coupage de) } spaghetti",,,10,,sujet,,F,S
-1103,,,"{ .a(fait,faire,fais,fais,fait,faisons,faites,font,trop) } partie de la mafia bretonne","{ .s_comp(l’,appartenance) } à la mafia bretonne",,,10,,sujet,,F,S
+1103,,,"{ .a(fait,faire,fais,fais,fait,faisons,faites,font) } partie de la mafia bretonne","{ .s_comp(l’,appartenance) } à la mafia bretonne",,,10,,sujet,,F,S
 1104,"{ e = .objet.tonique; .de = voy({ e },d’{ e },de { e }) }",,{ .etre } renvoyé{ .sujet.es } { .de },"{ .s_comp(le ,licenciement) } { .de }",{ .pour_motif }|{ .parce_que_motif },,10,1057,objet,sujet,M,S
 1105,,,"{ .objet.cod({ .a(atomisé,atomiser,atomise,atomises,atomise,atomisons,atomisez,atomisent) }) } avec les faits et la logique",{ .objet.comp({ .s(l’) }atomisation) }{ .s( par { .sujet.tonique }) } avec les faits et la logique,,,10,1058,sujet,objet,F,S
 1106,,,"{ .a(tenu,tenir,tiens,tiens,tient,tenons,tenez,tiennent) } des propos misogynes","{ .s_comp(la ,misogynie) }",,,10,,sujet,,F,S
@@ -343,3 +343,10 @@ id,commun,sujet_perso,verbale,nominale,part_motif,adverbe_neg,weight,info,coupab
 1110,,,"{ .objet.cod({ .a(supprimé,supprimer,supprime,supprimes,supprime,supprimons,supprimez,suppriment) }) } { .sujet.pn(mes,tes,ses,nos,vos,leurs) } amis Facebook",{ .objet.comp({ .s(la ) }suppression) } { .sujet.comp(des amis Facebook) },{ .parce_que_motif },,10,1061,sujet,objet,F,S
 1111,,,{ .etre } pendu{ .sujet.es } en place publique,"{ .s_comp(la ,pendaison en place publique) }",{ .pour_motif },,10,1062,,sujet,F,S
 1112,,,"{ .a(détourné,détourner,détourne,détournes,détourne,détournons,détournez,détournent) } les dons du { h }ZEvent","{ .s_comp(le ,détournement) } des dons du { h }ZEvent",,,10,,sujet,,M,S
+1113,,,"{ .objet.coi({ .a(retiré,retirer,retire,retires,retire,retirons,retirez,retirent) } { .sujet.comp_implicite(le soutien) }) }","{ .s_comp(le ,soutien) } retiré { .objet.coi_explicite }",{ .parce_que_motif },,10,1063,sujet,objet,M,S
+1114,,,"{ .objet.coi({ .a(réaffirmé,réaffirmer,réaffirme,réaffirmes,réaffirme,réaffirmons,réaffirmez,réaffirment) } { .sujet.comp_implicite(le soutien) }) }","{ .s_comp(le ,soutien) } réaffirmé { .objet.coi_explicite }","qui { .info.motif.val(victime: { action1114objet = .objet } action1114objet, temps: passe, mettre_sujet: false) }",,10,1064,,,M,S
+1115,,,"{ .a(refusé,refuser,refuse,refuses,refuse,refusons,refusez,refusent) } de reconnaître { .objet.comp(la souveraineté) }","{ .s_comp(le ,refus) } de reconnaître { .objet.comp(la souveraineté) }",,,10,1065,sujet,objet,M,S
+1116,,,"{ .objet.cod({ .a(accusé,accuser,accuse,accuses,accuse,accusons,accusez,accusent) }) } de ne pas être un vrai pays","{ .s_comp(le ,refus) } de reconnaître { .objet.comp(la souveraineté) }",,,10,1065,sujet,,M,S
+1117,,,"{ .sujet.se({ .est(tatoué{ .sujet.es },tatouer,tatoue,tatoues,tatoue,tatouons,tatouez,tatouent) }) } { .objet.comp(un dessin) } sans { .objet.comp_implicite(l’accord) }","{ .s_comp(le ,tatouage) } { .objet.comp(d’un dessin) } sans { .objet.comp_implicite(l’accord) }",,,10,,sujet,objet,M,S
+1118,,,"{ .objet.cod({ .a(fait,faire,fais,fais,fait,faisons,faisez,font) } dissoudre) }",{ .objet.comp({ .s(la ) }dissolution) }{ .s( par { .sujet.tonique }) },,,10,1066,sujet,objet,F,S
+1119,,,"{ .a(décidé,décider,décide,décides,décide,décidons,décidez,décident) } de { .objet.comp(dissoudre) }",{ .objet.comp({ .s(la ) }dissolution) }{ .s( par { .sujet.tonique }) },,,10,1066,sujet,objet,F,S
