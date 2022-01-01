@@ -26,7 +26,7 @@ id,nom,sigle,genre,nombre,weight,adj,emoji,type,categories,origine
 1002,Révolution Permanente,CCR|RP,F,S,3,trotsk{ .iste },🔴,parti,ext_gauche,1
 1003,le Parti Animaliste,PA,M,S,3,animal{ .iste },🐶|🐱,parti,ecolo,1
 1004,Action Contre la Faim,ACF,F,S,10,contre la faim,🌱,association,,1
-1005,{ Pers[6].comp(l’Union Populaire) },UP,F,S,5,"insoumis{ .defgn(,e,,es) }",🟣,parti,gauche ext_gauche ecolo,1
+1005,"{ orga1005jlm = Pers[6]; si_implicite(orga1005jlm,l’Union Populaire,l’Union Populaire de Jean-Luc Mélenchon) }",UP,F,S,5,"insoumis{ .defgn(,e,,es) }",🟣,parti,gauche ext_gauche ecolo,1
 1006,Horizons,Horizons,M,S,5,de la droite macroniste,,parti,droite,1
 1007,Ensemble Citoyens,EC,M,S,1,macron{ .iste },🟡,parti,centre droite,1
 1008,le Parti Radical,PRV,M,S,2,"radica{ .defgn(l,le,ux,les) }",,parti,centre droite,1

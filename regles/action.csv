@@ -274,7 +274,7 @@ id,commun,sujet_perso,verbale,nominale,part_motif,adverbe_neg,weight,info,coupab
 1040,,,"{ .sujet.se({ .est(lancé{ .sujet.es },lancer,lance,lances,lance,lançons,lancez,lancent) }) } dans les { h }NFT","{ .s_comp(le ,lancement) } dans les { h }NFT",,,10,1024,sujet,,M,S
 1041,,,"{ .objet.coi({ .a(acheté,acheter,achète,achètes,achète,achetons,achetez,achètent) } un { h }NFT pour { .info.somme }) }",{ .s(l’) }achat d’un { h }NFT pour { .info.somme } { .objet.coi_explicite }{ .s( par { .sujet.tonique }) },,,10,1025,,,M,S
 1042,,,"{ .objet.cod({ .a(trouvé,trouver,trouve,trouves,trouve,trouvons,trouvez,trouvent) }) } (suspect{ .sujet.es }|“sus”)","{ .s_comp(la ,suspicion) } envers { .objet.tonique }",{ .parce_que_motif },,10,1026,,,F,S
-1043,{ .ou = s(( dans Among Us)?) },,"{ .sujet.a(vent,vent) }{ .ou }","{ .s_comp(la ,vent) }{ .ou }",,,10,,sujet,,F,S
+1043,{ .ou = s(( dans Among Us)?) },,"{ .a(vent,vent) }{ .ou }","{ .s_comp(la ,vent) }{ .ou }",,,10,,sujet,,F,S
 1044,,{ .sujet.comp(le pass sanitaire) },est invalide,{ .s(l’) }invalidité { .sujet.comp(du pass sanitaire{ .sujet.s }) },,,5,,sujet,,F,S
 1045,,{ .sujet.comp(le pass sanitaire) },est falsifié,{ .s(la ) }falsification { .sujet.comp(du pass sanitaire{ .sujet.s }) },,,5,,sujet,,F,S
 1046,,,"{ .a(déboulonné,déboulonner,déboulonne,déboulonnes,déboulonne,déboulonnons,déboulonnez,déboulonnent) } { .objet.comp(la statue) }",{ .s(le ) }déboulonnage de { .objet.comp(la statue) }{ .s( par { .sujet.tonique }) },{ .parce_que_motif },,10,1027,sujet,objet,M,S
