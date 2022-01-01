@@ -168,7 +168,7 @@ id,description,commun,weight,hashtag,emoji,acteurs,categories,temporalite,coupab
 1056,a pété et chié,,10,"{ .sujet.pascal_case }{ .sujet.gn(LeProuteur,LaProuteuse,LesProuteurs,LesProuteuses) }",💨,pers,,proche,,
 1057,renvoyé d’entreprise,{ .objet = Entreprise },10,,,pers,,proche,sujet,objet
 1058,atomise avec les faits et la logique,{ .objet = .acteur },10,{ .sujet.pascal_case }VS{ .objet.pascal_case },,pers,politique media edito,proche,,
-1059,a détourné des aides,,10,,,pers entreprise,patronat anonyme,proche,,
+1059,a détourné des aides,,10,,,pers entreprise,patronat,proche,,
 1060,victime du wokisme,,10,Wokisme,,pers,,present,sujet,
 1061,supprime de ses amis Facebook,{ .objet = .acteur },10,,,pers,,present,objet,sujet
 1062,pendu en place publique,,10,,,pers,,proche,sujet,

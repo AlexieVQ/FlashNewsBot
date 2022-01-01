@@ -21,7 +21,7 @@ CATEGORIES = [
         :bd,			# Personnage de bande dessinée, comics ou manga
         :humour,		# Humoristes
         :litterature,	# Personnage de littérature ou écrivain
-    :anonyme,			# Monsieur-madame tout le monde
+#    :anonyme,			# Monsieur-madame tout le monde
     :patronat,			# CEO, PDG, propriétaire d’entreprise
         :gafam,			# Patron de grande entreprise du numérique
     :sport,				# Sportif ou journaliste sportif
