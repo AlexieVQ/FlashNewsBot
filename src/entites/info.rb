@@ -192,7 +192,7 @@ class Info < Rosace::Entity
 		if s.empty?
 			s
 		else
-			'#' + s
+			/\A#/ =~ s ? s : '#' + s
 		end
 	end
 

@@ -33,7 +33,7 @@ id,nom,pascal_case,weight,genre,nombre,types,categories,origine
 32,CNN,CNN,10,M,S,tv,politique,3
 33,Fox News,FoxNews,10,F,S,tv,politique droite ext_droite edito,3
 34,le Gorafi,LeGorafi,10,M,S,internet,politique edito humour,1
-1000,RRI,RFI,5,F,S,radio,politique,1
+1000,RFI,RFI,5,F,S,radio,politique,1
 1001,le Télégramme,LeTélégramme,5,M,S,papier,,109
 1002,la RTBF,RTBF,8,F,S,tv radio,politique,8
 1003,Conflits France,ConflitsFrance,7,M,S,internet,,1
