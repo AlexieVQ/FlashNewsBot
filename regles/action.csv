@@ -205,7 +205,7 @@ id,commun,sujet_perso,verbale,nominale,part_motif,adverbe_neg,weight,info,coupab
 690,,,{ .etre } flashé{ .sujet.es } à 90 km/h en trottinette électrique,"{ .s_comp(l’,excès de vitesse) } en trottinette électrique",,,10,,sujet,,M,S
 696,,,"{ .objet.cod({ .a(diffamé,diffamer,diffame,diffames,diffame,diffamons,diffamez,diffament) }) }","{ .s_comp(la ,diffamation) } envers { .objet.tonique }",,,10,,sujet,objet,F,S
 698,,,"{ .objet.cod({ .a(tué,tuer,tue,tues,tue,tuons,tuez,tuent) }) }",{ .objet.comp(l’assassinat) }{ .s( par { .sujet.tonique }) },,,10,,sujet,objet,M,S
-699,,,"{ .a(griefé,griefer,griefe,griefes,griefe,griefons,griefez,griefent) } { .objet.comp(la maison) } sur Minecraft",{ .s(le ) }grief de { .objet.comp(la maison) } sur Minecraft{ .s( par { .sujet.comp }) },,,10,,sujet,objet,M,S
+699,,,"{ .a(griefé,griefer,griefe,griefes,griefe,griefons,griefez,griefent) } { .objet.comp(la maison) } sur Minecraft",{ .s(le ) }grief de { .objet.comp(la maison) } sur Minecraft{ .s( par { .sujet.tonique }) },,,10,,sujet,objet,M,S
 701,,,"{ .a(tenu,tenir,tiens,tiens,tient,tenons,tenez,tiennent) } des propos problématiques",{ .s(la ) }tenue de propos problématiques{ .s( par { .sujet.tonique }) },,,10,,sujet,,F,S
 706,,,"{ .a(chanté,chanter,chante,chantes,chante,chantons,chantez,chantent) } “Fuck le 17”",{ .s(le ) }chant de “Fuck le 17”{ .s( par { .sujet.tonique }) },,,3,,sujet,,M,S
 708,,,"{ .a(chanté,chanter,chante,chantes,chante,chantons,chantez,chantent) } “Fornique la Maréchaussée”",{ .s(le ) }chant de “Fornique la Maréchaussée”{ .s( par { .sujet.tonique }) },,,3,,sujet,,M,S
