@@ -26,7 +26,9 @@ module Refinements
 		def levenshtein(chaine)
 			s1 = I18n.transliterate(self).downcase
 			s2 = I18n.transliterate(self).downcase
-			Levenshtein.distance(s1, s2)
+			l = Levenshtein.distance(s1, s2)
+			puts "s1 = #{s1}, s2 = #{s2}, d = #{l}"
+			l
 		end
 
 	end

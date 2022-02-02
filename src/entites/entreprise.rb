@@ -74,17 +74,7 @@ class Entreprise < Rosace::Entity
 	# @param chaine [String] chaîne à comparer
 	# @return [Integer] Distance entre les deux chaînes
 	def distance(chaine)
-		out = if
-			o = plain_value(:nom).levenshtein(chaine)
-            puts "levenshtein = #{o}"
-            o
-		else
-			o = chaine.length
-            puts "length = #{o}"
-            o
-		end
-        puts "distance avec #{chaine} = #{out} (#{out.class})"
-        out
+        plain_value(:nom).levenshtein(chaine)
 	end
 
     # @return [Array<Symbol>]
