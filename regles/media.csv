@@ -29,7 +29,6 @@ id,nom,pascal_case,weight,genre,nombre,types,categories,origine
 28,Quotidien,Quotidien,5,M,S,tv,politique culture musique,1
 29,Brut,Brut,10,M,S,internet,internet youtube twitter politique culture,1
 30,Al Jazeera,AlJazeera,5,M,S,tv,politique,27
-31,Russia Today,RussiaToday|RT,8,F,S,tv,politique,14
 32,CNN,CNN,10,M,S,tv,politique,3
 33,Fox News,FoxNews,10,F,S,tv,politique droite ext_droite edito,3
 34,le Gorafi,LeGorafi,10,M,S,internet,politique edito humour,1

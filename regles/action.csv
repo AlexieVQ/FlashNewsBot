@@ -74,7 +74,6 @@ id,commun,sujet_perso,verbale,nominale,part_motif,adverbe_neg,weight,info,coupab
 155,,,"{ .a(révélé,révéler,révèle,révèles,révèle,révélons,révélez,révèlent) } une importante affaire d’évasion fiscale { .info.lieu.loc_explicite } { .objet.cod(impliquant) }",{ .s(la ) }révélation d’une importante affaire d’évasion fiscale { .info.lieu.loc_explicite }{ .s( par { .sujet.tonique }) } { .objet.cod(impliquant) },,,10,72,objet,,F,S
 158,,,"{ .a(perdu,perdre,perds,perds,perd,perdons,perdez,perdent) } { .info.lieu.comp(les élections municipales) }",{ .sujet.comp(la défaite) } { .info.lieu.comp(aux élections municipales) },,,10,73,,sujet,F,S
 160,{ .objet ||= .info.acteur },,"{ .a(perdu,perdre,perds,perds,perd,perdons,perdez,perdent) } { .info.lieu.comp(les élections municipales) } face { .objet.coi_explicite }",{ .sujet.comp(la défaite) } { .info.lieu.comp(aux élections municipales) } face { .objet.coi_explicite },,,10,73,objet,sujet,F,S
-161,,,"{ .objet.coi({ .a(déclaré,déclarer,déclare,déclares,déclare,déclarons,déclarez,déclarent) } la guerre) }","{ .s_comp(la ,déclaration de guerre) } { .objet.coi_explicite }",,,10,74,sujet,objet,F,S
 166,,,"{ .objet.cod({ .a(retenu,retenir,retiens,retiens,retient,retenons,retenez,retiennent) }) } en otage",{ .objet.comp(la prise d’otage) }{ .s( par { .sujet.tonique }) },{ .parce_que_motif },,10,79,sujet,objet,F,S
 167,,,"{ .objet.cod({ .a(pris,prendre,prends,prends,prend,prenons,prenez,prennent) }) } en otage",{ .objet.comp(la prise d’otage) }{ .s( par { .sujet.tonique }) },{ .parce_que_motif },,10,79,sujet,objet,F,S
 173,,,"{ .a(proclamé,proclamer,proclame,proclames,proclame,proclamons,proclamez,proclament) } { .sujet.comp_implicite(l’indépendance) } { .objet.comp_explicite }",{ .sujet.comp(l’indépendance) },,,10,82,,,F,S
@@ -150,7 +149,6 @@ id,commun,sujet_perso,verbale,nominale,part_motif,adverbe_neg,weight,info,coupab
 356,"{ .photo = .sujet.gn(une (dickpic|photo de son pénis),une (nude|photo intime),des (nudes|photos intimes),des (nudes|photos intimes)) }",,"{ .a(posté,poster,poste,postes,poste,postons,postez, postent,accidentellement) } { .photo }","{ .s(la ) }publication accidentelle { .s_comp(,{ .photo }) }",,,10,174,,sujet,F,S
 363,,,"{ .a(appelé,appeler,appelle,appelles,appelle,appelons,appelez,appellent) } à la grève( générale)?","{ .s_comp(l’,appel) } à la grève( générale)?",,,10,177,sujet,,M,S
 369,,"{ action369sujet = .sujet; gn(action369sujet,une photo { .sujet.comp(du pénis) },{ .sujet.comp(une photo (intime|dénudée)) },{ .sujet.comp(une photo (intime|dénudée)) },{ .sujet.comp(une photo (intime|dénudée)) }) }",a fuité,la fuite { .sujet.comp(de photos (dénudées|intimes)) },,,10,180,,sujet,F,S
-373,,,"{ .a(provoqué,provoquer,provoque,provoques,provoque,provoquons,provoquez,provoquent,accidentellement) } la 3e Guerre mondiale",{ .s(la ) }provocation (accidentelle )?de la 3e Guerre mondiale{ .s( par { .sujet.tonique }) },,,10,182,sujet,,F,S
 374,,,{ .etre } banni{ .sujet.es } de Twitch,"{ .s_comp(le ,bannissement de Twitch) }",{ .pour_motif },,10,183,,sujet,M,S
 376,,,"{ .etre } testé{ .sujet.es } positi{ .sujet.gn(f,ve,fs,ves) } au variant { .info.variant }",{ .sujet.comp(la contaminaton au variant { .info.variant }) },,,10,185,,sujet,F,S
 377,,,{ .etre } mis{ .sujet.es } en quarantaine à cause du Covid-19,{ .sujet.comp(la mise en quarantaine) } à cause du Covid-19,,,10,186,,sujet,F,S
@@ -308,8 +306,6 @@ id,commun,sujet_perso,verbale,nominale,part_motif,adverbe_neg,weight,info,coupab
 1074,,,{ .etre } toujours en vie,"{ .s_comp(l’,existence) }",,,10,1040,,,F,S
 1075,,,"{ .a(sorti,sortir,sors,sors,sort,sortons,sortez,sortent) } un roman policier intitulé “En Fait C’était { .info.qui }”",{ .sujet.comp(le nouveau roman policier) } intitulé “En Fait C’était { .info.qui }”,,,10,1041,,,M,S
 1076,{ .mouv = s(La { .info.bord } avec { .objet.nom }) },,"{ .a(lancé,lancer,lance,lances,lance,lançons,lancez,lancent) } le mouvement “{ .mouv }”",{ .s(le ) }lancement du mouvement “{ .mouv }”{ .s( par { .sujet.tonique }) },,,10,1042,,,M,S
-1077,,,"{ .objet.cod({ .a(annexé,annexer,annexe,annexes,annexe,annexons,annexez,annexent) }) }",{ .objet.comp({ .s(l’) }annexion) }{ .s( par { .sujet.tonique }) },,,10,1043,sujet,,F,S
-1078,,,"{ .objet.cod({ .a(envahi,envahir,envahis,envahis,envahit,envahissons,envahissez,envahissent) }) }",{ .objet.comp({ .s(l’) }invasion) }{ .s( par { .sujet.tonique }) },,,10,1044,sujet,,F,S
 1079,,,"{ .etre } moqué{ .sujet.es }, ridiculisé{ .sujet.es } sur les réseaux simplement parce { que({ .sujet.sujet_implicite({ .sujet.etait }) }) } con{ .sujet.gn(,ne,s,nes) }","{ .s_comp(le ,harcèlement) }",,,10,1045,,sujet,M,S
 1080,,,"{ .a(pété et chié,péter et chier) }","{ .s_comp(les ,pets) } et { .s_comp(la ,merde) }",,,10,1056,sujet,,M,P
 1081,,,"{ .a(volé,voler,vole,voles,vole,volons,volez,volent) } { .objet.comp(la plus-value) }",{ .s(le ) }vol de { .objet.comp(la plus-value) }{ .s( par { .sujet.tonique }) },,,10,,sujet,objet,M,S

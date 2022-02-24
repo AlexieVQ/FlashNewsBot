@@ -87,8 +87,6 @@ id,value,weight,pers
 102,l’artiste de rue,10,51
 104,le chef de l’église catholique,10,52
 105,le chef des catholiques,10,52
-106,le chef d’État russe,10,53
-107,le Président russe,10,53
 108,l’ancien garde du corps du Président,10,54
 109,le Maire de Levallois-Perret,10,55
 110,le Maire LES RÉPUBLICAINS de Levallois-Perret,10,55
@@ -628,8 +626,6 @@ id,value,weight,pers
 1087,le porte parole du gouvernement,10,1043
 1088,la vice-présidente américaine,10,1044
 1089,le héros,10,1045
-1090,l’avocat russe,10,1046
-1091,le militant russe,10,1046
 1092,le chanteur,10,1047
 1093,le militant anti-masque,10,1047
 1094,le militant antivax,10,1047
