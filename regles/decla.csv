@@ -78,7 +78,5 @@ id,value,weight,ref_info,sujet,objet,pers
 1134,Évidemment { .objet.sujet({ .objet.a }) } des pronoms et des cheveux bleus !,10,,coupable,victime,
 1135,"Émile Zola a dit « J’accuse », { .sujet.tonique_implicite } { .sujet.n(je dis « Je m’excuse »,on dit « On s’excuse ») }",10,,coupable,,
 1136,U mad bro{ .objet.s }?,10,,coupable,victime,
-1137,Tout le monde s’en (fout|fiche|branle),10,1078,objet,sujet,
-1138,Osef,10,1078,objet,sujet,
 1189,"C’est pas à { .sujet.tonique } de { .objet.n(t’,vous ) }éduquer",10,,victime,coupable,
 1190,"Ce n’est pas { .sujet.tonique } c’est { .sujet.comp_implicite({ .sujet.n(l’alter,les alters) }) }",10,,coupable,,

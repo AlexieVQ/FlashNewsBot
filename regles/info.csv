@@ -184,8 +184,6 @@ id,description,commun,weight,hashtag,emoji,acteurs,categories,temporalite,coupab
 1072,établit le communisme,{ .lieu = .sujet.origine.pays }|{ .lieu = Lieu(pays) },10,Communisme,🚩,pers parti syndicat,politique,present,,
 1073,devient communiste,,10,Communisme,🚩,pays,politique,present,,
 1074,a dit que c’était un pays de merde,{ .lieu = Lieu(pays) },1,{ .sujet.pascal_case }VS{ .lieu.pascal_case },,pays,,proche,,
-1075,gagne la primaire,{ .primaire = s(Populaire); .pc = .primaire }|{ .primaire = s(de la gauche); .pc = s(DeLaGauche) },10,Primaire{ .pc }|{ .sujet.pascal_case }2022,🗳️,pers,politique gauche,proche,,
 1076,lance son burger,{ .chaine = s(McDonald’s|Quick|Burger King) },10,{ .sujet.pascal_case }Burger,🍔,pers,,proche,,
 1077,debrief space,{ .sujet = Pers[1001]; .sujet.commun; .parti = .sujet.orga },10,DebriefSpace{ .parti.pascal_case },,,politique,proche,,
-1078,boycott les JO,{ .lieu = Lieu[104]; .objet = .lieu.pays },10,BoycottJO,🏟️,pays,,present,,
 1079,rayés de la carte,{ .objet = .acteur },10,{ .sujet.pascal_case }VS{ .objet.pascal_case },💥,pays,politique,proche,sujet,objet

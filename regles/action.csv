@@ -364,11 +364,8 @@ id,commun,sujet_perso,verbale,nominale,part_motif,adverbe_neg,weight,info,coupab
 1130,,,"{ .a(mis,mettre,mets,mets,met,mettons,mettez,mettent) } en place le communisme",{ .s(la ) }mise en place du communisme{ .s( { .sujet.loc_explicite }) },,,10,1073,,,F,S
 1131,,,"{ .objet.cod({ .a(forcefem,forcefem) }) }",{ .objet.comp({ .s(le ) }forcefem) }{ .s( par { .sujet.tonique }) },,,10,,sujet,objet,M,S
 1132,,,"{ .a(dit,dire,dis,dis,dit,disons,dites,disent) } { que({ .info.lieu }) } { .info.lieu.etait } un pays de merde","{ .s_comp(l’,insulte) } { .info.lieu.coi_explicite }",,,10,1074,sujet,,F,S
-1133,,,"{ .a(gagné,gagner,gagne,gagnes,gagne,gagnons,gagnez,gagnent) } la Primaire { .info.primaire }","{ .s_comp(la ,victoire) } à la Primaire { .info.primaire }",,,10,1075,,,F,S
-1134,,,"{ .a(remporté,remporter,remporte,remportes,remporte,remportons,remportez,remportent) } la Primaire { .info.primaire }","{ .s_comp(la ,victoire) } à la Primaire { .info.primaire }",,,10,1075,,,F,S
 1135,,,"{ .a(lancé,lancer,lance,lances,lance,lançons,lancez,lancent) } ({ .sujet.comp_implicite(le propre burger) }|le { .info.hashtag }) à { .info.chaine }",le lancement du { .info.haghtag },,,10,1076,,,M,S
 1136,,,"{ .a(pu,pouvoir,peux,peux,peut,pouvons,pouvez,peuvent) } (discuter|débattre) de l’état de décrépitude { .sujet.comp_implicite(du parti) } lors d’un space Twitter",la tenue d’un #{ .info.hashtag } sur Twitter,,,10,1077,,,F,S
-1137,,,"{ .a(décidé,décider,décide,décides,décide,décidons,décidez,décident) } de boycotter les (Jeux Olympiques|JO) de Pékin",{ .s(le ) }boycott des (JO|Jeux Olympiques) de Pékin{ .s( par { .sujet.tonique }) },,,10,1078,,,M,S
 1138,,,"{ .a(utilisé,utiliser,utilise,utilises,utilise,utilisons,utilisez,utilisent) } le pronom “iel”",{ .s(l’) }utilisation du pronom “iel”{ .s( par { .sujet.tonique }) },,,10,,sujet,,F,S
 1139,,,{ .etre } rayé{ .sujet.es } de la carte par { .objet.tonique },{ .objet.comp({ .s(l’) }atomisation) }{ .s( par { .sujet.tonique }) },{ .parce_que_motif },,10,1079,objet,sujet,F,S
 1140,,,"{ .a(agressé,agresser,agresse,agresses,agresse,agressons,agressez,agressen) } un fan au rayon papier toilette",{ .s(l’) }agression d’{ .sujet.comp(un fan) } au rayon papier toilette,,,10,,sujet,,F,S
