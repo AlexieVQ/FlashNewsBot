@@ -57,3 +57,5 @@ id,nom,pascal_case,weight,genre,nombre,types,categories,origine
 1022,CANAL International,CANALInternational,10,F,S,tv,fiction humour,31
 1023,Euronews,Euronews,10,F,S,tv,politique,132
 1024,Hugo Décrypte,HugoDécrypte,10,M,S,internet,,1
+1025,Lundi matin,Lundimatin,2,M,S,internet,politique gauche ext_gauche,1
+1026,Blast,Blast,5,M,S,internet,politique gauche ext_gauche edito,1

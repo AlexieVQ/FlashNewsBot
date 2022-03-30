@@ -103,7 +103,6 @@ id,commun,nom,pascal_case,weight,genre,nombre,qte,categories,origine,cw
 115,,un gilet jaune,GiletJaune,10,M,S,1,politique,1,
 116,,Thanos,Thanos,10,M,S,1,fiction cinema bd,,
 120,,Bernie Sanders,(Bernie)?Sanders,10,M,S,1,politique gauche,3,
-121,,(Jean-Pierre|J.-P.) Pernaut,JeanPierrePernaut|JPP,10,M,S,1,tv journalisme,1,
 123,,Tibo InShape,TiboInShape,10,M,S,1,internet youtube,1,
 124,,Alain Soral,(Alain)?Soral,3,M,S,1,internet politique ext_droite,1,Alain Soral
 125,,Dieudonné,Dieudonné,5,M,S,1,politique ext_droite culture humour,1,Dieudonné
@@ -558,3 +557,7 @@ id,commun,nom,pascal_case,weight,genre,nombre,qte,categories,origine,cw
 1228,,Jean-Marc Jancovici,Jancovici,10,M,S,1,,1,
 1229,,les blancs,LesBlancs,10,M,P,1000,,,
 1230,,les hommes cishets,HommesCishets,10,M,P,1000,,,
+1231,,un himbo,Himbo,5,M,S,1,,,
+1232,,les femboys,Femboys,5,M,P,1000,internet,,
+1233,,Fabrice Di Vizio,DiVizio,10,M,S,1,politique ext_droite,1,
+1234,,des jeunes cons de droite,JeunesConsDeDroite,10,M,P,20,politique droite,,

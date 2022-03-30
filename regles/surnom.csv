@@ -178,8 +178,6 @@ id,value,weight,pers
 214,le manifestant,10,115
 215,le Titan,10,116
 219,l’ancien candidat à la primaire démocrate,10,120
-220,le journaliste,10,121
-221,l’ancien présentateur du 13H,10,121
 224,le vidéaste,10,123
 225,le youtubeur,10,123
 226,le polémiste,10,124
@@ -848,3 +846,5 @@ id,value,weight,pers
 1312,les « espaces »,10,1229
 1313,les                  ,10,1229
 1314,les hommes privilégiés,10,1230
+1315,l’avocat,10,1233
+1316,les jeunes militants,10,1234

@@ -183,3 +183,7 @@ id,description,commun,weight,hashtag,emoji,acteurs,categories,temporalite,coupab
 1076,lance son burger,{ .chaine = s(McDonald’s|Quick|Burger King) },10,{ .sujet.pascal_case }Burger,🍔,pers,,proche,,
 1077,debrief space,{ .sujet = Pers[1001]; .sujet.commun; .parti = .sujet.orga },10,DebriefSpace{ .parti.pascal_case },,,politique,proche,,
 1079,rayés de la carte,{ .objet = .acteur },10,{ .sujet.pascal_case }VS{ .objet.pascal_case },💥,pays,politique,proche,sujet,objet
+1080,gagne au foot,{ .objet = Lieu(pays) },10,{ .sujet.code3 }{ .objet.code3 },⚽,pays,,proche,,
+1081,a fui en Corée du Nord,{ .lieu = Lieu[12] },5,{ .lieu.pascal_case },,pers,,proche,,
+1082,est bisexuel,{ .objet = .acteur },2,,🏳️‍🌈,pers,politique,present,,
+1083,vote Mélenchon,{ .lieu = Lieu[1] },30,Mélenchon2022|MélenchonVaGagner,(🐢|🗳️),pers,,proche,,

@@ -80,3 +80,5 @@ id,value,weight,ref_info,sujet,objet,pers
 1136,U mad bro{ .objet.s }?,10,,coupable,victime,
 1189,"C’est pas à { .sujet.tonique } de { .objet.n(t’,vous ) }éduquer",10,,victime,coupable,
 1190,"Ce n’est pas { .sujet.tonique } c’est { .sujet.comp_implicite({ .sujet.n(l’alter,les alters) }) }",10,,coupable,,
+1191,On va pas s’empêcher de vivre( bordel),10,,coupable,,
+1192,"{ .objet.g(Belle bite ⚔🏴‍☠️,Belles gougouttes (👀|🥵)) }",10,70,tierce,sujet,

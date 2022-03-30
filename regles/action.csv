@@ -369,3 +369,12 @@ id,commun,sujet_perso,verbale,nominale,part_motif,adverbe_neg,weight,info,coupab
 1142,{ .reseau = s(Twitter|Instagram) },,"{ .a(reçu,recevoir,reçois,reçois,reçoit,recevons,recevez,reçoivent) } la certification sur { .reseau }","{ .s_comp(la ,non-certification) } sur { .reseau }",,,10,,,sujet,F,S
 1143,,,"{ .est() }{ .sujet.gn(un mal ,,des mâles ,) }blanc{ .sujet.gn(,he,s,hes) } cishétéro{ .sujet.s }","{ .s_comp(les ,privilèges { .sujet.g(masculins ,) }blancs hétéros) }",,,10,,sujet,,M,P
 1144,,,"{ .a(porté,porter,porte,portes,porte,portons,portez,portent) } le masque","{ .s_comp(le ,non-port du masque) }",,pas,10,,sujet,,M,S
+1145,,,"{ .a(volé,voler,vole,voles,vole,volons,volez,volent) } { .objet.comp(les courges) }","{ .s_comp(le ,vol { .objet.comp(des courges) }) }",,,10,,sujet,objet,M,S
+1146,{ .score = s(10-(2|1|0)|6-(3|0)|5-(4|3|2|1|0)|4-(3|2|1|0)|3-(2|1|0)|2-(1|0)|1-0) },,"{ .a(remporté,remporter,remporte,remportes,remporte,remportons,remportez,remportent) } le match de football { .score } face à { .objet.tonique }","{ .s_comp(la ,victoire) } { .score } face { .objet.tonique }",,,10,1080,,,F,S
+1147,,,"{ .a(mangé,manger,mange,manges,mange,mangeons,mangez,mangent) } le verre","{ .s_comp(la ,consommation de verre) }",,,1,,sujet,,F,S
+1148,,,"{ .lieu.locatif({ .a(fui,fuir,fuis,fuis,fuit,fuyons,fuyez,fuient) }) }","{ .s_comp(la ,fuite) } { .lieu.locatif_explicite }",,,10,1081,,,F,S
+1149,,,"{ .a(fait,faire,fais,fais,fait,faisons,faites,font,trop) } { .sujet.gn(le mec,la meuf,les mecs,les meufs) }","{ .s_comp(l’,attitude) }",,,2,,sujet,,F,S
+1150,,,"{ .a(fait,faire,fais,fais,fait,faisons,faites,font,trop) } { .sujet.gn(le mec,la meuf,les mecs,les meufs) }","{ .s_comp(le ,comportement) }",,,2,,sujet,,M,S
+1151,,,{ .etre } toxique{ .sujet.s },"{ .s_comp(la ,toxicité) }",,,10,,sujet,,F,S
+1152,,,"{ .etre } bisexuel{ .sujet.gn(,le,s,les) } { .sujet.sujet_implicite } couche{ .sujet.n(,nt) } avec { .objet.tonique }","{ .s_comp(la ,bisexualité) }",,,1,1082,sujet,,F,S
+1153,,,"{ .a(décidé,décider,décide,décides,décide,décidons,décidez,décident) }(, après plusieurs années (d’abstention|de vote à droite),) de (voter pour|soutenir la candidature de) JEAN-LUC MÉLENCHON à l’élection présidentielle","{ .s_comp(le ,soutien) } à JEAN-LUC MÉLENCHON",,,10,1083,sujet,,M,S
