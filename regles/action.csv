@@ -381,4 +381,4 @@ id,commun,sujet_perso,verbale,nominale,part_motif,adverbe_neg,weight,info,coupab
 1150,,,"{ .a(fait,faire,fais,fais,fait,faisons,faites,font,trop) } { .sujet.gn(le mec,la meuf,les mecs,les meufs) }","{ .s_comp(le ,comportement) }",,,2,,sujet,,M,S
 1151,,,{ .etre } toxique{ .sujet.s },"{ .s_comp(la ,toxicité) }",,,10,,sujet,,F,S
 1152,,,"{ .etre } bisexuel{ .sujet.gn(,le,s,les) } { .sujet.sujet_implicite } couche{ .sujet.n(,nt) } avec { .objet.tonique }","{ .s_comp(la ,bisexualité) }",,,1,1082,sujet,,F,S
-1153,,,"{ .a(décidé,décider,décide,décides,décide,décidons,décidez,décident) }(, après plusieurs années (d’abstentionnisme|de vote à droite),) de (voter pour|soutenir la candidature de) JEAN-LUC MÉLENCHON","{ .s_comp(le ,soutien) } à JEAN-LUC MÉLENCHON",,,10,1083,sujet,,M,S
+1153,,,"{ .a(décidé,décider,décide,décides,décide,décidons,décidez,décident) }(, après plusieurs années (d’abstention|de vote à droite),) de (voter pour|soutenir la candidature de) JEAN-LUC MÉLENCHON à l’élection présidentielle","{ .s_comp(le ,soutien) } à JEAN-LUC MÉLENCHON",,,10,1083,sujet,,M,S
